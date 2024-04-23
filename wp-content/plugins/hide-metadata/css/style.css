@@ -1,0 +1,4 @@
+.entry-meta .byline,
+.entry-header .entry-meta > span.byline{
+    display: none;
+}
