@@ -1,7 +1,7 @@
 ---
-title: "Allan Lab - Home"
+title: "Zhou Group - Home"
 layout: homelay
-excerpt: "Allan Lab at Leiden University &rarr; LMU."
+excerpt: "Zhou Group at EIT &rarr; LMU."
 sitemap: false
 permalink: /
 ---
