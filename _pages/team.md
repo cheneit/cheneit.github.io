@@ -226,7 +226,7 @@ Jump to [staff](#staff), [postdocs and phd](#postdocs-and-phd), [master and bach
 </div>
 {% endif %}
 
-## Former visitors, BSc/ MSc students
+<!-- ## Former visitors, BSc/ MSc students
 <div class="row">
 
 <div class="col-sm-4 clearfix">
@@ -250,7 +250,7 @@ Jump to [staff](#staff), [postdocs and phd](#postdocs-and-phd), [master and bach
 {% endfor %}
 </div>
 
-</div>
+</div> -->
 
 <!-- 
 ## Administrative Support
