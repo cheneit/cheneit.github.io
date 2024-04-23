@@ -1,7 +1,7 @@
 ---
 title: "Zhou Group - Home"
 layout: homelay
-excerpt: "Zhou Group at EIT &rarr; LMU."
+excerpt: "Zhou Group at EIT"
 sitemap: false
 permalink: /
 ---

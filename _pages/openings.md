@@ -1,41 +1,129 @@
 ---
-title: "Allan Lab - Vacancies"
+title: "Zhou Group - Vacancies"
 layout: textlay
 excerpt: "Openings"
 sitemap: false
 permalink: /vacancies
 ---
 
-# Open positions
+周通课题组长期招聘博士后（颁发中国科学技术大学证书）、博士研究生（授予上海交通大学/香港理工大学博士学位）、研究员（宁波数字孪生研究院岗位）、科研助理、实习生等，提供高质量的科研条件、极具竞争力的薪资待遇以及大量出国学术交流的机会；同时也欢迎海内外科研机构的访问学者与交换生。
 
-**We are currently open for PhD and postdoc applications related to our ERC CoG grant. The positions are mostly related to the Electron Pair Microscopy projects.**
+## 一、课题组介绍
 
-We are  looking for new group members with passion, talent, and grit!
+1. 导师简介：周通，宁波东方理工大学（暂名）助理教授（独立PI）、博士生导师、上海交通大学兼职博导。2017年博士毕业于复旦大学，之后在美国纽约州立大学布法罗分校历任博士后研究员、研究科学家、研究助理教授。目前主要从事拓扑物态与量子计算的理论研究，主要学术成果有：
 
-You will have the chance to work on the grand challenges of condensed matter physics, often at the interface of instrumental design and new physics. You will be involved in determining the important and interesting questions, creating and improving instrumental setups, performing measurements, and making discoveries.
+(1) 将微磁模拟与(含时)BdG方程相结合, 发展了Majorana零能模及其量子比特动力学模拟等方法，为研究Majorana与微磁结构等相互作用及其动力学演化提供了有效工具；
 
-### Past open positions
+(2) 基于平面约瑟夫森结设计了Majorana非阿贝尔统计性质验证方案并得到多个实验跟进与支持；
 
-You find the past job openings here:
-[Opening 1]({{ site.baseurl }}/downloads/GeneralPostdoc_2019_v01.pdf),
-[Opening 2]({{ site.baseurl }}/downloads/PPMS_PhD_2019_v01.pdf),
-[Opening 3]({{ site.baseurl }}/downloads/PD.pdf),
-[Opening 4]({{ site.baseurl }}/downloads/PHD1.pdf),
-[Opening 5]({{ site.baseurl }}/downloads/PHD2.pdf).
+(3) 提出了利用多重拓扑保护来实现无耗散量子传输及通过光学响应来探测拓扑性质的新思路，所设计的材料实现平台被成功制备。
 
-### Applications for PhD and Postdoc positions
-If you are interested in working with us as a PhD student or postdoc, please send me an [email](mailto:milan.allan@gmail.com). State briefly why you are interested and attach a CV, including information about the grades you had as an undergraduate. No need for a separate cover letter or certificates. **Important**: please insert _"Application PhD"_ or _"Application Postdoc"_ in the subject line. If you are applying to a specific advertisement, note this in your email.
+已发表论文40余篇，其中一作/通讯作者论文13篇，包括Nat. Mater. (2023), Nat. Commun. (2022), Phys. Rev. Lett. (2021, 2020, 2020) 等, 谷歌学术论文总引用2500余次，H-index 22；多次受邀在APS March Meeting, SPIE, WINDS等国际知名学术会议上做邀请报告，并担任APS March Meeting分会主席及PRL, Nat. Commun.等期刊审稿人。
 
-We especially welcome postdocs with fellowships. I'd be happy to support you, also after you apply to our group. Take a look at the [veni fellowship](https://www.nwo.nl/en/calls/nwo-talent-programme-veni-science-domain) or the Marie Curie fellowship (currently closed, next deadline probably Fall 2021, [here is last years call]({{ site.baseurl }}/downloads/h2020-wp1820-msca_en.pdf)). In many country, there are also fellowships available for outdoing postdocs.**
+更多导师信息请见：
 
+东方理工导师主页：
 
-### Master projects for Leiden University students
-If you are a Master student at Leiden University looking for a Master project, contact me (or any group member) per email or stop by my office.
+https://www.eitech.edu.cn/?tid=90&p=teacher
 
-### Bsc / Master students from elsewhere
-If you are interested in pursuing a Master degree at Leiden University, see [mastersinleiden.nl](http://www.mastersinleiden.nl/programmes/physics/en/introduction). Sometimes, we take master students or summer interns if we get exceptional applicants (this usually means very good grades and a personal recommendation).
+Google Scholar:
 
+https://scholar.google.com/citations?hl=zh-CN&user=WLkq6ygAAAAJ
 
-<figure>
+ResearchGate:
+
+https://www.researchgate.net/profile/Tong-Zhou-19
+
+联系方式：感兴趣者可将个人简历发送至tzhou@eitech.edu.cn
+
+2. 研究方向：凝聚态物理，目前主要集中于
+
+1) 拓扑量子计算: Majorana等任意子的产生、编织、融合、非阿贝尔统计性质及其拓扑量子比特的构建与操控。
+
+2) 拓扑量子物态: 拓扑绝缘体/半金属/超导体中的量子态及其与外场（力热光电磁等）相互作用。
+
+3) 超导-非超导体界面量子输运: Andreev反射、Josephson效应、超导二极管效应等。
+
+4) 新奇量子材料的电子结构、超导、磁电、光学、输运等性质及功能导向的材料设计与预测。
+
+5) 非共线磁结构(如Skyrmion)与拓扑电子态(如Majorana) 的相互作用。
+
+6) 机器学习在上述研究方向中的应用。
+
+3. 常用研究方法：紧束缚模型、KP模型、散射矩阵、格林函数、(含时) BdG方程、BTK模型、Bethe-Salpeter方程、微磁模拟、第一性原理计算等。熟悉上述方法者优先考虑。
+
+## 二、博士后招聘
+
+1. 招聘条件
+
+(1) 具有良好的学术背景，较强的科研能力，以第一作者或通讯作者发表过高水平文章或主持过国家、省部级科研项目的优先考虑；
+
+(2) 具有良好的英文阅读、交流及写作能力；
+
+(3) 熟悉模型、数值计算或有程序开发经验者将予以优先考虑，包括但不限于紧束缚模型、KP模型、BdG方程、格林函数、第一性原理计算、微磁模拟等，能熟练使用Kwant、Vasp/Wien2k、OMMFF/ Mumax等软件为佳。
+
+2. 薪资福利
+
+(1) 综合年薪税前40-60万元（含地方政府补助），特别优秀者可面议提高；
+
+(2) 缴纳五险一金、带薪年假、节假日福利，优先支持申请政府人才公寓（可拎包入住），享受高研院教职工其他同等福利待遇；
+
+(3) 在站期间可向地方政府申请最高不超过20万元的科研经费资助；
+
+(4) 可作为负责人申请各类人才项目及国家自然科学基金等课题；对获得中国博士后科学基金资助和省级博士后科研项目资助的，宁波市给予各类项目1:1配套经费支持；
+
+(5) 博士后出站留甬工作的，可享受最高不超过60万元的补贴;
+
+(6) 出站后颁发中国科学技术大学博士后证书；
+
+(7) 表现优秀者可长聘为宁波数字孪生研究院研究员序列。
+
+## 三、博士生招生
+
+1. 上海交通大学或中国科学技术大学博士生联培
+
+东方理工自2022年起与上海交通大学（2023年起与中科大）开展联合培养博士生招生，实行双导师制，学生在上海交大（中科大）注册学籍，第一年在上海交大（中科大）进行课程学习，毕业后获得上海交大（中科大）博士学位和毕业证书。本科直博生的基本学习年限为5年，其他博士生的基本学习年限为4年，录取类别为非定向就业，学习形式为全日制。博士生在上海交大（中科大）学习期间，提供与该校博士生同等助研津贴；在东方理工工作期间，将为学生提供非常具有竞争力的助研津贴（相当优厚），特别优秀者将视情况给予额外补助。2024年宁波东方理工大学（暂名）-上海交通大学（中科大）博士生联合招生简章请见:
+
+东方理工官网：
+
+https://www.eitech.edu.cn/?p=1465&cats=74
+
+上海交大研招网：
+
+https://yzb.sjtu.edu.cn/info/1018/3778.htm
+
+中科大与宁波东方理工大学（暂名）联合培养博士生招生简章
+
+https://mp.weixin.qq.com/s/yCo8pebMbaJ1_HeCNSES9A
+
+2. 香港理工大学博士生联培
+
+东方理工自2022年起与香港理工大学开展联合培养博士生招生，实行双导师制，学生前两年在香港理工，后两年在东方理工，毕业后获得香港理工大学博士学位，所获学位与全程在香港理工完成学业的学生完全一致。在香港理工期间，获得与该校博士生同等的奖助学金；在东方理工期间，为学生提供非常具有竞争力的助研津贴，使学生能专注科研。2024年招生简章即将公布，可关注东方理工官网www.eitech.edu.cn。
+
+东方理工将与更多的国内外知名高校开展博士生联合培养招生，请持续关注官网或官微。
+
+## 四、科研助理招聘
+
+1. 岗位职责：参与或主导课题组科研课题; 协助博士后和研究生的科研工作。
+
+2. 应聘条件：一般要求硕士及以上学历；有一定的相关研究经历；有良好的英语读写交流能力及较强的团队协作能力。
+
+3. 薪酬待遇：月薪6000-8000 (具体面议)，缴纳五险一金，优秀者可推荐转博，或推荐至国内外合作课题组读博。
+
+## 五、研究员招聘
+
+宁波数字孪生研究院研究员岗位信息详见：
+
+https://www.gaoxiaojob.com/announcement/detail/118899.html
+
+## 六、应聘方式
+
+有兴趣的同学请将个人简历及相关能力证明材料以pdf形式发送至邮箱tzhou@eitech.edu.cn，邮件主题请注明“申请岗位+姓名”。
+
+## 七、学校简介
+
+宁波东方理工大学（暂名）是一所社会力量举办、国家重点支持、省市共同建设的高起点、高水平、国际化新型研究型大学，由知名教育家、中国科学院院士陈十一担任创校校长。学校以服务社会为使命，注重基础研究、强化工程技术、突出前沿交叉，形成以理学、工学、信息、商科为主，兼备特色人文社科的学科体系，着重培养“理工类拔尖创新人才”。宁波市政府已选定校址并规划用地总规模约2,300亩，计划投资460亿元；永久校区（第一期）预计于2025年建成，规划十年内在校生规模为10,000人，本科、硕士、博士比例为4:3:3。初期与国内外知名高校联合培养研究生。2022年招收首批博士研究生，本科生招生将在教育部正式批准设立大学后开始。按照师生比1:10组建师资队伍。目前，学校已在过渡校区建设3.4万平方米的科研实验场地，可满足约百个实验室布设，其中，已建成高性能超算中心、先进制造工业仿真重点实验室，正在谋划建设的第三代半导体技术工程研究中心、数字孪生技术工程研究中心、微纳平台、成像平台、电化学平台、智慧能源实验室、新能源与先进材料重点实验室等。详情请关注东方理工官网：https://www.eitech.edu.cn/
+
+<!-- <figure>
 <img src="{{ site.url }}{{ site.baseurl }}/images/picpic/Gallery/DSC_0696.jpg" width="95%">
-</figure>
+</figure> -->
