@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Organic Chemistry Feeds</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-head">
+    <h1>Organic Chemistry Feeds <span class="badge small">last updates</span></h1>
+    <div id="legend" class="legend"></div>
+  </header>
+
+  <section class="toolbar">
+    <input id="q" type="search" placeholder="关键词（标题/作者/摘要） … 回车" />
+    <select id="src" aria-label="来源"></select>
+    <select id="win" aria-label="时间窗口">
+      <option value="3">最近 3 天</option>
+      <option value="7">最近 7 天</option>
+      <option value="14">最近 14 天</option>
+      <option value="all">全部时间</option>
+    </select>
+    <select id="stat" aria-label="状态">
+      <option value="all">全部状态</option>
+      <option value="published">Published</option>
+      <option value="preprint">Preprint</option>
+      <option value="accepted">Accepted</option>
+    </select>
+    <button id="btn-refresh" title="刷新">🔄 刷新</button>
+    <button id="btn-favs" title="收藏夹">⭐ 收藏夹 (<span id="fav-count">0</span>)</button>
+    <button id="btn-export-bib" title="导出 .bib">📚 导出 .bib</button>
+  </section>
+
+  <main class="content">
+    <p class="meta">共 <span id="total">0</span> 篇</p>
+    <div id="cards" class="cards"></div>
+  </main>
+
+  <!-- 收藏夹弹窗 -->
+  <dialog id="fav-dialog" class="dialog">
+    <header class="dialog-head">
+      <strong>我的收藏</strong>
+      <div class="spacer"></div>
+      <button id="btn-export-bib-2">导出 .bib</button>
+      <button id="btn-clear-favs" class="danger">清空</button>
+      <form method="dialog"><button>关闭</button></form>
+    </header>
+    <div id="fav-list" class="cards"></div>
+  </dialog>
+
+  <!-- 卡片模板 -->
+  <template id="card-tpl">
+    <article class="card tone">
+      <div class="card-head">
+        <span class="badge"></span>
+        <span class="type"></span>
+        <span class="time"></span>
+        <button class="star" title="收藏">☆</button>
+      </div>
+      <h3 class="title"></h3>
+      <p class="meta"></p>
+      <p class="abs"></p>
+      <p class="links"></p>
+    </article>
+  </template>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
