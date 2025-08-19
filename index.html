@@ -1,70 +1,129 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Organic Chemistry Feeds</title>
-  <link rel="stylesheet" href="assets/style.css">
+  <title>BibLab — XC的文献加工车间</title>
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-  <header class="site-head">
-    <h1>Organic Chemistry Feeds <span class="badge small">last updates</span></h1>
-    <div id="legend" class="legend"></div>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">BibLab</span>
+      <span class="muted">.bib 导入 / 拖拽分类 / 备注与星级 / 导出</span>
+    </div>
+
+    <div class="toolbar">
+      <label class="btn">
+        <input type="file" id="file-bib" accept=".bib,.txt" hidden />
+        导入 .bib
+      </label>
+      <label class="btn">
+        <input type="file" id="file-json" accept=".json" hidden />
+        导入快照(.json)
+      </label>
+      <button class="btn" id="btn-export-json">导出快照</button>
+      <button class="btn" id="btn-export-bib">导出 .bib（当前视图）</button>
+
+      <input id="q" type="search" placeholder="搜索 标题/作者/期刊/DOI/摘要…" />
+      <select id="sort">
+        <option value="date_desc">新→旧</option>
+        <option value="date_asc">旧→新</option>
+        <option value="title_asc">标题 A→Z</option>
+        <option value="title_desc">标题 Z→A</option>
+      </select>
+
+      <button class="btn solid" id="btn-unsorted">未分类</button>
+      <button class="btn" id="btn-board">分类看板</button>
+      <button class="btn" id="btn-clear">清空本地数据</button>
+      <button class="btn ghost" id="btn-theme" title="切换浅色/深色">🌙 深色</button>
+    </div>
   </header>
 
-  <section class="toolbar">
-    <input id="q" type="search" placeholder="关键词（标题/作者/摘要） … 回车" />
-    <select id="src" aria-label="来源"></select>
-    <select id="win" aria-label="时间窗口">
-      <option value="3">最近 3 天</option>
-      <option value="7">最近 7 天</option>
-      <option value="14">最近 14 天</option>
-      <option value="all">全部时间</option>
-    </select>
-    <select id="stat" aria-label="状态">
-      <option value="all">全部状态</option>
-      <option value="published">Published</option>
-      <option value="preprint">Preprint</option>
-      <option value="accepted">Accepted</option>
-    </select>
-    <button id="btn-refresh" title="刷新">🔄 刷新</button>
-    <button id="btn-favs" title="收藏夹">⭐ 收藏夹 (<span id="fav-count">0</span>)</button>
-    <button id="btn-export-bib" title="导出 .bib">📚 导出 .bib</button>
-  </section>
+  <main id="app">
+    <aside class="sidebar" id="category-list">
+      <div class="cat-toolbar">
+        <button class="btn mini" id="btn-add-cat">＋ 新增分类</button>
+      </div>
+    </aside>
 
-  <main class="content">
-    <p class="meta">共 <span id="total">0</span> 篇</p>
-    <div id="cards" class="cards"></div>
+    <section class="content">
+      <div class="hint" id="hint">
+        <p>提示：点击“导入 .bib”载入你的文献库，也可把 .bib 直接拖到页面。</p>
+        <p id="log" style="opacity:.8"></p>
+      </div>
+
+      <div class="board" id="board" hidden></div>
+      <div class="cards" id="cards"></div>
+    </section>
   </main>
 
-  <!-- 收藏夹弹窗 -->
-  <dialog id="fav-dialog" class="dialog">
-    <header class="dialog-head">
-      <strong>我的收藏</strong>
-      <div class="spacer"></div>
-      <button id="btn-export-bib-2">导出 .bib</button>
-      <button id="btn-clear-favs" class="danger">清空</button>
-      <form method="dialog"><button>关闭</button></form>
-    </header>
-    <div id="fav-list" class="cards"></div>
-  </dialog>
-
-  <!-- 卡片模板 -->
-  <template id="card-tpl">
-    <article class="card tone">
-      <div class="card-head">
-        <span class="badge"></span>
-        <span class="type"></span>
-        <span class="time"></span>
-        <button class="star" title="收藏">☆</button>
+  <template id="tpl-card">
+    <article class="card" draggable="true">
+      <div class="badges">
+        <span class="badge journal"></span>
+        <span class="badge type"></span>
+        <span class="badge category" hidden></span>
+        <span class="badge note-indicator" hidden>有备注</span>
       </div>
+
+      <div class="topline">
+        <time class="date"></time>
+        <div class="rating" title="点击可手动打星（0~5，支持半颗）">
+          <div class="stars stars-bg">★★★★★</div>
+          <div class="stars stars-fg">★★★★★</div>
+        </div>
+      </div>
+
       <h3 class="title"></h3>
-      <p class="meta"></p>
-      <p class="abs"></p>
-      <p class="links"></p>
+
+      <div class="meta">
+        <span class="authors"></span><span class="sep">·</span>
+        <span class="journal-name"></span>
+      </div>
+      <p class="abstract"></p>
+      <div class="links">
+        <a class="lnk primary" target="_blank" rel="noopener">页面</a>
+        <a class="lnk" target="_blank" rel="noopener">DOI</a>
+        <a class="lnk" target="_blank" rel="noopener">arXiv</a>
+        <button class="lnk note-toggle" type="button">✍️ 备注</button>
+      </div>
+      <div class="note-block" hidden>
+        <textarea class="note" placeholder="在这里写下你的想法/阅读笔记（自动保存；每 50 字加半颗星，最高 5 星）"></textarea>
+      </div>
     </article>
   </template>
 
-  <script src="assets/app.js"></script>
+  <template id="tpl-category-item">
+    <div class="cat-item" data-cid="">
+      <div class="cat-head">
+        <div class="dot"></div>
+        <div class="cat-name" contenteditable="true" spellcheck="false"></div>
+        <span class="count">0</span>
+      </div>
+      <div class="cat-actions">
+        <button class="mini enter">进入</button>
+        <button class="mini exp">导出</button>
+        <button class="mini clr">清空</button>
+      </div>
+      <div class="dropzone" data-cid=""></div>
+    </div>
+  </template>
+
+  <template id="tpl-board-column">
+    <div class="col" data-cid="">
+      <div class="col-head">
+        <div class="dot"></div>
+        <div class="name" contenteditable="true" spellcheck="false"></div>
+        <span class="count">0</span>
+        <button class="mini exp">导出</button>
+      </div>
+      <div class="dropzone" data-cid=""></div>
+    </div>
+  </template>
+
+  <script src="assets/bibtex.js"></script>
+  <script type="module" src="assets/app.js"></script>
+  <script type="module" src="assets/ux.js"></script>
 </body>
 </html>

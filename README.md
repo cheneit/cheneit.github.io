@@ -1,14 +1,31 @@
-# Organic Chemistry Feeds
 
-A static website that aggregates latest articles (default last 3 days) from major **organic chemistry** journals via RSS/Atom feeds. Builds on GitHub Actions and renders on GitHub Pages.
+# BibLab v4.2 — 分类看板美化版
 
-## Journals included
-- JACS, Angew. Chem. Int. Ed., Chemistry–A European Journal, Eur. J. Org. Chem., Advanced Synthesis & Catalysis
-- Organic & Biomolecular Chemistry, Organic Chemistry Frontiers
-- Tetrahedron, Tetrahedron Letters
-- Beilstein J. Org. Chem., Nature Chemistry, Chemical Science
+本版本在你现有需求基础上新增：
 
-## Deploy
-1. Create a public repo, push these files.
-2. Enable GitHub Pages (from `main` / root).
-3. Run workflow **Fetch latest journal feeds (3-day window)** once.
+1. **分类看板 = 单独页面**：点击“分类看板”后进入独立页面，隐藏侧栏；整页显示 **6 个固定尺寸分类块**，多余文献在分类块内部滚动查看。
+2. **看板卡片缩略图**：在看板中，每篇文章以**小方块**显示（仅“标题 + 评分”）。把鼠标悬停在任意小方块上，会在旁边**自动放大显示完整信息**（预览面板，不影响拖拽）。
+3. **评分与日期置顶**：所有卡片把**发表日期（加粗）与评分**放在**最上行**，评分靠右，其它结构保持不变。
+
+## 使用方法
+```bash
+# 任意静态服务器均可（建议）
+python -m http.server 8000
+# 浏览器打开 http://localhost:8000/biblab/
+```
+
+## 主要文件
+```
+biblab/
+├─ index.html
+├─ assets/
+│  ├─ style.css   # 主题 & 看板布局 & 缩略卡片 & 预览面板样式
+│  ├─ app.js      # 站点核心逻辑（导入/导出/搜索/排序/拖拽/评分/备注/看板）
+│  ├─ bibtex.js   # 轻量 BibTeX 解析与导出
+│  └─ ux.js       # 看板独立页面切换 + 悬停放大预览
+```
+
+> 说明：若你已有旧版 `app.js / bibtex.js`，也可直接只替换 `index.html` 与 `assets/style.css` 与新增 `assets/ux.js`，但需保证旧版接口包含：
+> - `.date` 写入日期、`.rating` 星级容器、`.note` 备注输入等；
+> - 看板容器 `#board` 用列模板 `#tpl-board-column` 渲染；
+> - 卡片模板为 `#tpl-card`。
