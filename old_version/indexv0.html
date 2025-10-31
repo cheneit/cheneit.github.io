@@ -278,18 +278,9 @@
       function onSaveCfg(newCfg){ setCfg(newCfg); saveCfg(newCfg); }
       function onSaveToken(t){ setToken(t); saveToken(t); setMode(t ? 'admin' : 'preview'); }
 
-      function goHome(){
-        setQuery('');
-        setSortBy('time_desc');
-        setActiveTag('');
-        setActiveTopic('');
-        setMode('preview');
-        setViewerItem(null);
-      }
-
       return (
         <div className="min-h-full flex flex-col">
-          <Header mode={mode} setMode={setMode} query={query} setQuery={setQuery} cfg={cfg} setCfg={onSaveCfg} token={token} setToken={onSaveToken} onHome={goHome} />
+          <Header mode={mode} setMode={setMode} query={query} setQuery={setQuery} cfg={cfg} setCfg={onSaveCfg} token={token} setToken={onSaveToken} />
 
           <main className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
             {mode === 'admin' ? (
@@ -297,7 +288,6 @@
             ) : null}
 
             <PreviewPanel
-              cfg={cfg}
               loading={loading}
               error={error}
               items={filtered}
@@ -323,17 +313,17 @@
     }
 
     // ------------------ Header ------------------
-    function Header({ mode, setMode, query, setQuery, cfg, setCfg, token, setToken, onHome }){
+    function Header({ mode, setMode, query, setQuery, cfg, setCfg, token, setToken }){
       const [openCfg, setOpenCfg] = useState(false);
       return (
         <header className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-700 text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center gap-3">
-            <a href="#" onClick={(e)=>{e.preventDefault(); onHome && onHome();}} className="flex items-center gap-2 hover:opacity-90 group">
+            <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center ring-1 ring-white/20">
                 <fileIcon className="w-5 h-5" />
               </div>
-              <div className="text-lg font-semibold underline decoration-dotted decoration-white/40 group-hover:decoration-white">Repo Library</div>
-            </a>
+              <div className="text-lg font-semibold">Repo Library</div>
+            </div>
             <div className="flex-1" />
             <div className="relative w-full max-w-xl">
               <div className="absolute left-3 top-2.5 text-white/60"><searchIcon /></div>
@@ -341,12 +331,10 @@
                      className="w-full pl-10 pr-3 py-2 rounded-xl bg-white/10 backdrop-blur text-white placeholder-white/60 border border-white/20 focus:outline-none focus:ring-2 focus:ring-white/40" />
             </div>
             <div className="flex items-center gap-2">
-              {token ? (
-                <button onClick={()=>setMode(mode==='admin'?'preview':'admin')}
-                        className="px-3 py-2 rounded-xl bg-white/10 border border-white/20 hover:bg-white/20 transition">
-                  {mode==='admin' ? '切换到预览' : '切换到管理'}
-                </button>
-              ) : null}
+              <button onClick={()=>setMode(mode==='admin'?'preview':'admin')}
+                      className="px-3 py-2 rounded-xl bg-white/10 border border-white/20 hover:bg-white/20 transition">
+                {mode==='admin' ? '切换到预览' : '切换到管理'}
+              </button>
               <button onClick={()=>setOpenCfg(true)} className="p-2 rounded-xl bg-white/10 border border-white/20 hover:bg-white/20 transition"><settingsIcon/></button>
             </div>
           </div>
@@ -512,7 +500,7 @@
     }
 
     // ------------------ Preview Panel ------------------
-    function PreviewPanel({ loading, error, items, allTopics, allTags, activeTopic, setActiveTopic, activeTag, setActiveTag, sortBy, setSortBy, onOpen, cfg }){
+    function PreviewPanel({ loading, error, items, allTopics, allTags, activeTopic, setActiveTopic, activeTag, setActiveTag, sortBy, setSortBy, onOpen }){
       return (
         <section>
           <div className="flex flex-wrap items-center gap-3 mb-3">
@@ -550,14 +538,14 @@
             <div className="p-8 text-slate-500">暂无内容。</div>
           ) : (
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {items.map(item => <Card key={item.id} cfg={cfg} item={item} onOpen={()=>onOpen(item)} />)}
+              {items.map(item => <Card key={item.id} item={item} onOpen={()=>onOpen(item)} />)}
             </div>
           )}
         </section>
       );
     }
 
-    function Card({ cfg, item, onOpen }){
+    function Card({ item, onOpen }){
       const kindMeta = FILE_KINDS[item.kind] || FILE_KINDS.other;
       const Icon = kindMeta.icon;
       return (
@@ -578,7 +566,7 @@
           ) : null}
           <div className="mt-4 flex gap-2">
             <button onClick={onOpen} className="px-3 py-2 rounded-xl bg-slate-900 text-white hover:bg-slate-800">预览</button>
-            <a href={ghRawUrl({ owner: cfg.owner, repo: cfg.repo, branch: cfg.branch, path: item.path })}
+            <a href={ghRawUrl({ owner: window.__cfg?.owner||'', repo: window.__cfg?.repo||'', branch: window.__cfg?.branch||'', path: item.path })}
                target="_blank" rel="noreferrer"
                className="px-3 py-2 rounded-xl bg-slate-200 hover:bg-slate-300">Raw</a>
           </div>
