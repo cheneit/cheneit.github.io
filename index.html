@@ -47,7 +47,7 @@
 
     // -------- 简单密码保护配置（前端防君子，不是绝对安全） --------
     // 请把 PASSWORD_HASH 替换成你自己的密码的 SHA-256 十六进制字符串
-    const PASSWORD_HASH = '6543cc38c0864d19a15351545d60e99307b9cef4d9c2c21c225735744ea00762';
+    const PASSWORD_HASH = 'CHANGE_ME_TO_YOUR_SHA256_HASH';
     const AUTH_KEY = 'repoLibrary.authed';
 
     async function sha256Hex(str) {
@@ -785,7 +785,7 @@
       const coverSrc = item.imagePath ? buildRawUrl(cfg, item.imagePath) : '';
 
       return (
-        <div className="bg-white rounded-3xl border border-slate-200 shadow-soft p-4 flex flex-col h-full min-h-[340px]">
+        <div className="bg白 rounded-3xl border border-slate-200 shadow-soft p-4 flex flex-col h-full min-h-[340px]">
           <div className="mb-3 w-full h-36 rounded-2xl overflow-hidden bg-slate-100 flex items-center justify-center">
             {coverSrc ? (
               <img src={coverSrc} alt="cover" className="w-full h-full object-cover" />
@@ -824,7 +824,7 @@
           ) : null}
           <div className="mt-4 flex flex-wrap gap-2">
             {item.kind !== 'pdf' ? (
-              <button onClick={onOpen} className="px-3 py-2 rounded-xl bg-slate-900 text-white hover:bg-slate-800 text-sm">
+              <button onClick={onOpen} className="px-3 py-2 rounded-xl bg-slate-900 text白 hover:bg-slate-800 text-sm">
                 预览
               </button>
             ) : null}
@@ -925,7 +925,7 @@
                   onClick={() => setMode('html')}
                   disabled={item.kind !== 'html'}
                   className={`px-3 py-1.5 rounded-lg border text-xs ${
-                    mode === 'html' ? 'bg-slate-900 text-white border-slate-900' : 'bg-white text-slate-700 border-slate-200'
+                    mode === 'html' ? 'bg-slate-900 text白 border-slate-900' : 'bg白 text-slate-700 border-slate-200'
                   } ${item.kind !== 'html' ? 'opacity-50 cursor-not-allowed' : ''}`}
                 >
                   HTML
@@ -934,7 +934,7 @@
                   onClick={() => setMode(item.kind === 'code' ? 'code' : 'text')}
                   disabled={!(item.kind === 'text' || item.kind === 'code')}
                   className={`px-3 py-1.5 rounded-lg border text-xs ${
-                    mode !== 'html' ? 'bg-slate-900 text-white border-slate-900' : 'bg-white text-slate-700 border-slate-200'
+                    mode !== 'html' ? 'bg-slate-900 text白 border-slate-900' : 'bg白 text-slate-700 border-slate-200'
                   } ${!(item.kind === 'text' || item.kind === 'code') ? 'opacity-50 cursor-not-allowed' : ''}`}
                 >
                   {item.kind === 'code' ? 'Code' : 'Text'}
@@ -957,7 +957,7 @@
                 <div className="p-6 text-rose-600">{err}</div>
               ) : mode === 'html' ? (
                 <iframe
-                  className="w-full h-[75vh] bg-white"
+                  className="w-full h-[75vh] bg白"
                   srcDoc={text}
                   sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
                   title={item.title || item.filename}
@@ -970,7 +970,7 @@
               {!loading && !err && mode !== 'html' ? (
                 <button
                   onClick={() => scrollRef.current && scrollRef.current.scrollTo({ top: 0, behavior: 'smooth' })}
-                  className="absolute right-4 bottom-4 px-3 py-1.5 rounded-full bg-slate-700 text-xs text-white shadow-lg hover:bg-slate-600"
+                  className="absolute right-4 bottom-4 px-3 py-1.5 rounded-full bg-slate-700 text-xs text白 shadow-lg hover:bg-slate-600"
                 >
                   回到顶部
                 </button>
@@ -1007,12 +1007,12 @@
           onClick={onClose}
         >
           <div
-            className="bg-white rounded-3xl max-w-3xl w-full border border-slate-200 shadow-2xl"
+            className="bg白 rounded-3xl max-w-3xl w-full border border-slate-200 shadow-2xl"
             onClick={e=>e.stopPropagation()}
           >
             <div className="flex items-center justify-between px-4 py-3 border-b border-slate-200">
               <div className="font-semibold">编辑条目信息</div>
-              <button onClick={onClose} className="px-3 py-1.5 rounded-lg bg-slate-900 text-white hover:bg-slate-800 text-sm">关闭</button>
+              <button onClick={onClose} className="px-3 py-1.5 rounded-lg bg-slate-900 text白 hover:bg-slate-800 text-sm">关闭</button>
             </div>
             <div className="p-4 space-y-4">
               <label className="text-sm block">
@@ -1081,7 +1081,7 @@
               </button>
               <button
                 onClick={handleSubmit}
-                className="px-4 py-2 rounded-xl bg-slate-900 text-white hover:bg-slate-800 text-sm"
+                className="px-4 py-2 rounded-xl bg-slate-900 text白 hover:bg-slate-800 text-sm"
               >
                 保存
               </button>
@@ -1089,6 +1089,98 @@
           </div>
         </div>
       );
+    }
+
+    // ------------------ 简单密码门 AuthGate ------------------
+    function AuthGate({ children }) {
+      const [authed, setAuthed] = useState(false);
+      const [pw, setPw] = useState('');
+      const [error, setError] = useState('');
+      const [checking, setChecking] = useState(true);
+
+      useEffect(() => {
+        // 页面加载时先检查本地是否已经通过过验证
+        const stored = localStorage.getItem(AUTH_KEY);
+        if (stored === 'ok') {
+          setAuthed(true);
+        }
+        setChecking(false);
+      }, []);
+
+      async function handleSubmit(e) {
+        e.preventDefault();
+        setError('');
+        try {
+          const input = pw.trim();
+          if (!input) {
+            setError('请输入密码');
+            return;
+          }
+          const hash = await sha256Hex(input);
+          if (hash === PASSWORD_HASH) {
+            setAuthed(true);
+            localStorage.setItem(AUTH_KEY, 'ok'); // 记住登录状态
+            setPw('');
+          } else {
+            setError('密码错误');
+          }
+        } catch (err) {
+          console.error(err);
+          setError('浏览器不支持加密 API，请更换现代浏览器');
+        }
+      }
+
+      // 初次检查 localStorage 时的过渡状态
+      if (checking) {
+        return (
+          <div className="min-h-screen flex items-center justify-center bg-slate-900 text-slate-100">
+            <div className="text-sm">加载中...</div>
+          </div>
+        );
+      }
+
+      // 未通过密码验证时，只显示密码表单
+      if (!authed) {
+        return (
+          <div className="min-h-screen flex items-center justify-center bg-slate-900 text-slate-50">
+            <form
+              onSubmit={handleSubmit}
+              className="bg-slate-800 rounded-3xl p-6 w-full max-w-sm border border-slate-700 shadow-xl space-y-4"
+            >
+              <div className="text-lg font-semibold text-center">Private Repo Library</div>
+
+              <label className="block text-sm">
+                <span className="block mb-1 text-slate-200">访问密码</span>
+                <input
+                  type="password"
+                  value={pw}
+                  onChange={(e) => setPw(e.target.value)}
+                  className="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-600 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400"
+                  placeholder="请输入密码"
+                />
+              </label>
+
+              {error ? (
+                <div className="text-xs text-rose-400">{error}</div>
+              ) : null}
+
+              <button
+                type="submit"
+                className="w-full px-3 py-2 rounded-xl bg-amber-400 text-slate-900 text-sm font-medium hover:bg-amber-300"
+              >
+                进入
+              </button>
+
+              <div className="mt-2 text-[11px] text-slate-400 text-center">
+                本站仅供个人使用，文件托管于 GitHub。
+              </div>
+            </form>
+          </div>
+        );
+      }
+
+      // 通过验证后，渲染真正的应用
+      return children;
     }
 
     // ------------------ Footer ------------------
@@ -1100,7 +1192,11 @@
       );
     }
 
-    ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+    ReactDOM.createRoot(document.getElementById('root')).render(
+      <AuthGate>
+        <App />
+      </AuthGate>
+    );
 </script>
 
 </body>
