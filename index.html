@@ -829,7 +829,17 @@
     function CardV2({ cfg, item, onOpen, onEdit, onDelete, canAdmin }){
       const kindMeta = FILE_KINDS[item.kind] || FILE_KINDS.other;
       const Icon = kindMeta.icon;
+
+      // rawHref：统一指向 raw.githubusercontent.com（或保留绝对URL），用于下载 / 原始查看
       const rawHref = buildRawUrl(cfg, item.path);
+
+      // browserHref：用于“在浏览器中打开 / 点标题”的链接
+      // - PDF：走 Pages 站点路径（buildPdfBrowserUrl），在浏览器直接展示
+      // - 其他类型：沿用 rawHref
+      const browserHref = item.kind === 'pdf'
+        ? buildPdfBrowserUrl(item.path)
+        : rawHref;
+
       const coverSrc = item.imagePath ? buildRawUrl(cfg, item.imagePath) : '';
 
       return (
@@ -847,8 +857,8 @@
             </div>
             <div className="flex-1 min-w-0">
               <div className="font-semibold text-slate-900 truncate">
-                <a href={rawHref} target="_blank" rel="noreferrer" className="hover:underline">
-                  {item.title || item.filename}
+                <a href={browserHref} target="_blank" rel="noreferrer" className="hover:underline">
+                    {item.title || item.filename}
                 </a>
               </div>
               <div className="text-xs text-slate-500 mt-0.5">
@@ -879,7 +889,7 @@
             <a href={rawHref} download className="px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-sm">
               下载
             </a>
-            <a href={rawHref} target="_blank" rel="noreferrer" className="px-3 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 text-sm">
+            <a href={browserHref} target="_blank" rel="noreferrer" className="px-3 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 text-sm">
               在浏览器打开
             </a>
             {canAdmin ? (
