@@ -35,1253 +35,1295 @@
   <div id="root" class="min-h-full"></div>
 
 <script type="text/babel">
-    const { useState, useEffect, useMemo, useRef } = React;
+  const { useState, useEffect, useMemo, useRef } = React;
 
-    /**
-     * =========================
-     * Single-file SPA for a GitHub-hosted library
-     * Modes: Admin (upload & manage) / Preview (browse & search)
-     * Files stored in a GitHub repo; metadata in /data/index.json.
-     * =========================
-     */
+  /**
+   * =========================
+   * Single-file SPA for a GitHub-hosted library
+   * Modes: Admin (upload & manage) / Preview (browse & search)
+   * Files stored in a GitHub repo; metadata in /data/index.json.
+   * =========================
+   */
 
-    // -------- 简单密码保护配置（前端防君子，不是绝对安全） --------
-    // 请把 PASSWORD_HASH 替换成你自己的密码的 SHA-256 十六进制字符串
-    const PASSWORD_HASH = '6543cc38c0864d19a15351545d60e99307b9cef4d9c2c21c225735744ea00762';
-    const AUTH_KEY = 'repoLibrary.authed';
+  // -------- 简单密码保护配置（前端防君子，不是绝对安全） --------
+  // 请把 PASSWORD_HASH 替换成你自己的密码的 SHA-256 十六进制字符串
+  const PASSWORD_HASH = '6543cc38c0864d19a15351545d60e99307b9cef4d9c2c21c225735744ea00762';
+  const AUTH_KEY = 'repoLibrary.authed';
 
-    async function sha256Hex(str) {
-      const enc = new TextEncoder().encode(str);
-      const buf = await crypto.subtle.digest('SHA-256', enc);
-      return Array.from(new Uint8Array(buf))
-        .map(b => b.toString(16).padStart(2, '0'))
-        .join('');
+  async function sha256Hex(str) {
+    const enc = new TextEncoder().encode(str);
+    const buf = await crypto.subtle.digest('SHA-256', enc);
+    return Array.from(new Uint8Array(buf))
+      .map(b => b.toString(16).padStart(2, '0'))
+      .join('');
+  }
+
+  // ------------------ Utilities ------------------
+  const fmtDate = (ts) => new Date(ts).toISOString().split('T')[0];
+  const uid = () => Math.random().toString(36).slice(2) + Date.now().toString(36);
+
+  const FILE_KINDS = {
+    pdf: { label: 'PDF', color: 'bg-red-100 text-red-700', icon: pdfIcon },
+    html: { label: 'HTML', color: 'bg-orange-100 text-orange-700', icon: htmlIcon },
+    text: { label: 'TEXT', color: 'bg-blue-100 text-blue-700', icon: textIcon },
+    code: { label: 'CODE', color: 'bg-emerald-100 text-emerald-700', icon: codeIcon },
+    other: { label: 'FILE', color: 'bg-slate-100 text-slate-700', icon: fileIcon }
+  };
+
+  const EXT_KIND = {
+    pdf: 'pdf',
+    html: 'html', htm: 'html',
+    txt: 'text', md: 'text', rtf: 'text', log: 'text',
+    py: 'code', js: 'code', ts: 'code', ipynb: 'code', sh: 'code', c: 'code', cpp: 'code',
+    cu: 'code', f90: 'code', f: 'code', jl: 'code', m: 'code', rs: 'code',
+    tex: 'code', css: 'code', json: 'code', yml: 'code', yaml: 'code'
+  };
+
+  function extOf(name) {
+    const m = name.toLowerCase().match(/\.([a-z0-9]+)$/);
+    return m ? m[1] : '';
+  }
+
+  function guessKind(filename, override) {
+    if (override) return override;
+    const ext = extOf(filename);
+    return EXT_KIND[ext] || 'other';
+  }
+
+  function guessHighlightLanguage(filename) {
+    const ext = extOf(filename || '');
+    switch (ext) {
+      case 'py': return 'python';
+      case 'js':
+      case 'jsx': return 'javascript';
+      case 'ts':
+      case 'tsx': return 'typescript';
+      case 'sh':
+      case 'bash': return 'bash';
+      case 'json': return 'json';
+      case 'html':
+      case 'htm': return 'xml';
+      case 'css': return 'css';
+      case 'c': return 'c';
+      case 'cpp':
+      case 'cc':
+      case 'cxx':
+      case 'h':
+      case 'hpp': return 'cpp';
+      case 'java': return 'java';
+      case 'rb': return 'ruby';
+      case 'go': return 'go';
+      case 'rs':
+      case 'rust': return 'rust';
+      default: return '';
     }
+  }
 
-    // ------------------ Utilities ------------------
-    const fmtDate = (ts) => new Date(ts).toISOString().split('T')[0];
-    const uid = () => Math.random().toString(36).slice(2) + Date.now().toString(36);
+  function b64EncodeUint8(arr) {
+    let binary = '';
+    const len = arr.byteLength;
+    for (let i = 0; i < len; i++) binary += String.fromCharCode(arr[i]);
+    return btoa(binary);
+  }
 
-    const FILE_KINDS = {
-      pdf: { label: 'PDF', color: 'bg-red-100 text-red-700', icon: pdfIcon },
-      html: { label: 'HTML', color: 'bg-orange-100 text-orange-700', icon: htmlIcon },
-      text: { label: 'TEXT', color: 'bg-blue-100 text-blue-700', icon: textIcon },
-      code: { label: 'CODE', color: 'bg-emerald-100 text-emerald-700', icon: codeIcon },
-      other: { label: 'FILE', color: 'bg-slate-100 text-slate-700', icon: fileIcon }
-    };
+  function b64DecodeToUint8(b64) {
+    const binary = atob(b64);
+    const len = binary.length;
+    const bytes = new Uint8Array(len);
+    for (let i = 0; i < len; i++) bytes[i] = binary.charCodeAt(i);
+    return bytes;
+  }
 
-    const EXT_KIND = {
-      pdf: 'pdf',
-      html: 'html', htm: 'html',
-      txt: 'text', md: 'text', rtf: 'text', log: 'text',
-      py: 'code', js: 'code', ts: 'code', ipynb: 'code', sh: 'code', c: 'code', cpp: 'code',
-      cu: 'code', f90: 'code', f: 'code', jl: 'code', m: 'code', rs: 'code',
-      tex: 'code', css: 'code', json: 'code', yml: 'code', yaml: 'code'
-    };
+  // ------------------ GitHub helpers ------------------
+  function ghApiUrl({ owner, repo, path }) {
+    return `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+  }
 
-    function extOf(name) {
-      const m = name.toLowerCase().match(/\.([a-z0-9]+)$/);
-      return m ? m[1] : '';
-    }
+  function ghRawUrl({ owner, repo, branch, path }) {
+    return `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/${path}`;
+  }
 
-    function guessKind(filename, override) {
-      if (override) return override;
-      const ext = extOf(filename);
-      return EXT_KIND[ext] || 'other';
-    }
+  function isAbsoluteUrl(path) {
+    return /^https?:\/\//.test(path || '');
+  }
 
-    function guessHighlightLanguage(filename) {
-      const ext = extOf(filename || '');
-      switch (ext) {
-        case 'py': return 'python';
-        case 'js':
-        case 'jsx': return 'javascript';
-        case 'ts':
-        case 'tsx': return 'typescript';
-        case 'sh':
-        case 'bash': return 'bash';
-        case 'json': return 'json';
-        case 'html':
-        case 'htm': return 'xml';
-        case 'css': return 'css';
-        case 'c': return 'c';
-        case 'cpp':
-        case 'cc':
-        case 'cxx':
-        case 'h':
-        case 'hpp': return 'cpp';
-        case 'java': return 'java';
-        case 'rb': return 'ruby';
-        case 'go': return 'go';
-        case 'rs':
-        case 'rust': return 'rust';
-        default: return '';
-      }
-    }
+  function buildRawUrl(cfg, path) {
+    if (!path) return '#';
+    if (isAbsoluteUrl(path)) return path;
+    return ghRawUrl({ owner: cfg.owner, repo: cfg.repo, branch: cfg.branch, path });
+  }
 
-    function b64EncodeUint8(arr) {
-      let binary = '';
-      const len = arr.byteLength;
-      for (let i = 0; i < len; i++) binary += String.fromCharCode(arr[i]);
-      return btoa(binary);
-    }
-
-    function b64DecodeToUint8(b64) {
-      const binary = atob(b64);
-      const len = binary.length;
-      const bytes = new Uint8Array(len);
-      for (let i = 0; i < len; i++) bytes[i] = binary.charCodeAt(i);
-      return bytes;
-    }
-
-    // ------------------ GitHub helpers ------------------
-    function ghApiUrl({ owner, repo, path }) {
-      return `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
-    }
-
-    function ghRawUrl({ owner, repo, branch, path }) {
-      return `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/${path}`;
-    }
-
-    function isAbsoluteUrl(path) {
-      return /^https?:\/\//.test(path || '');
-    }
-
-    function buildRawUrl(cfg, path) {
-      if (!path) return '#';
-      if (isAbsoluteUrl(path)) return path;
-      return ghRawUrl({ owner: cfg.owner, repo: cfg.repo, branch: cfg.branch, path });
-    }
-
-    // 专门给 PDF 在浏览器中打开用：
-    // - 对 github.com/.../blob/... 链接，截出 /uploads/... 或 /data/files/... 这段路径
-    // - 对 raw.githubusercontent.com 链接，截出仓库里的相对路径
-    // - 对相对路径（uploads/... 或 data/files/...），加上前导斜杠变成 /uploads/... 这样的站点路径
-    // - 对其他域名的绝对 URL，保持原样
-    function buildPdfBrowserUrl(path) {
-        if (!path) return '#';
+  // 专门给 PDF 在浏览器中打开用：
+  // - 对 github.com/.../blob/... 链接，截出 /uploads/... 或 /data/files/... 这段路径
+  // - 对 raw.githubusercontent.com 链接，截出仓库里的相对路径
+  // - 对相对路径（uploads/... 或 data/files/...），加上前导斜杠变成 /uploads/... 这样的站点路径
+  // - 对其他域名的绝对 URL，保持原样
+  function buildPdfBrowserUrl(path) {
+    if (!path) return '#';
 
     try {
       const u = new URL(path);
       const host = u.hostname;
       const pathname = u.pathname;
 
-    // 1) https://github.com/<owner>/<repo>/blob/<ref>/<path...>
-    if (host === 'github.com') {
-      const blobIndex = pathname.indexOf('/blob/');
-      if (blobIndex !== -1) {
-        const afterBlob = pathname.substring(blobIndex + '/blob/'.length); // "<ref>/<rest>"
-        const firstSlash = afterBlob.indexOf('/');
-        if (firstSlash !== -1) {
-          const rest = afterBlob.substring(firstSlash + 1); // "uploads/2025/10/xxx.pdf"
+      // 1) https://github.com/<owner>/<repo>/blob/<ref>/<path...>
+      if (host === 'github.com') {
+        const blobIndex = pathname.indexOf('/blob/');
+        if (blobIndex !== -1) {
+          const afterBlob = pathname.substring(blobIndex + '/blob/'.length); // "<ref>/<rest>"
+          const firstSlash = afterBlob.indexOf('/');
+          if (firstSlash !== -1) {
+            const rest = afterBlob.substring(firstSlash + 1); // "uploads/2025/10/xxx.pdf"
+            return '/' + rest;
+          }
+        }
+        // 找不到 blob，就退而求其次用原始 pathname
+        return pathname;
+      }
+
+      // 2) https://raw.githubusercontent.com/<owner>/<repo>/<branch>/<path...>
+      if (host === 'raw.githubusercontent.com') {
+        const parts = pathname.split('/').filter(Boolean);
+        if (parts.length >= 4) {
+          const rest = parts.slice(3).join('/'); // 从第四段开始是仓库内部的路径
           return '/' + rest;
         }
+        return pathname;
       }
-      // 找不到 blob，就退而求其次用原始 pathname
-      return pathname;
-    }
 
-    // 2) https://raw.githubusercontent.com/<owner>/<repo>/<branch>/<path...>
-    if (host === 'raw.githubusercontent.com') {
-      const parts = pathname.split('/').filter(Boolean);
-      if (parts.length >= 4) {
-        const rest = parts.slice(3).join('/'); // 从第四段开始是仓库内部的路径
-        return '/' + rest;
-      }
-      return pathname;
+      // 3) 其他域名的绝对 URL：不做处理，直接用
+      return path;
+    } catch (e) {
+      // 4) 不是绝对 URL，当作仓库根目录下的相对路径
+      if (path.startsWith('/')) return path;
+      return '/' + path;
     }
-
-    // 3) 其他域名的绝对 URL：不做处理，直接用
-    return path;
-  } catch (e) {
-    // 4) 不是绝对 URL，当作仓库根目录下的相对路径
-    if (path.startsWith('/')) return path;
-    return '/' + path;
   }
-}
 
+  async function ghGetJSONRaw(cfg, path) {
+    const url = buildRawUrl(cfg, path);
+    const res = await fetch(url);
+    if (!res.ok) return null;
+    return await res.json();
+  }
 
-    async function ghGetJSONRaw(cfg, path) {
-      const url = buildRawUrl(cfg, path);
-      const res = await fetch(url);
-      if (!res.ok) return null;
-      return await res.json();
+  async function ghGetTextRaw(cfg, path) {
+    const url = buildRawUrl(cfg, path);
+    const res = await fetch(url);
+    if (!res.ok) return null;
+    return await res.text();
+  }
+
+  async function ghGetBlobRaw(cfg, path) {
+    const url = buildRawUrl(cfg, path);
+    const res = await fetch(url);
+    if (!res.ok) return null;
+    return await res.blob();
+  }
+
+  async function ghGetContentMeta(cfg, path, token) {
+    const url = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${path}`;
+    const res = await fetch(url, {
+      headers: token ? { Authorization: `Bearer ${token}` } : {}
+    });
+    if (!res.ok) return null;
+    return await res.json();
+  }
+
+  async function ghPutContent(cfg, path, contentB64, message, token, sha) {
+    const url = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${path}`;
+    const body = { message, content: contentB64 };
+    if (sha) body.sha = sha;
+    const res = await fetch(url, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        ...(token ? { Authorization: `Bearer ${token}` } : {})
+      },
+      body: JSON.stringify(body)
+    });
+    if (!res.ok) {
+      const txt = await res.text();
+      throw new Error(`PUT failed: ${res.status} ${res.statusText} - ${txt}`);
+    }
+    return res.json();
+  }
+
+  async function ghDeleteContent(cfg, path, message, token, sha) {
+    const url = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${path}`;
+    const body = { message, sha };
+    const res = await fetch(url, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        ...(token ? { Authorization: `Bearer ${token}` } : {})
+      },
+      body: JSON.stringify(body)
+    });
+    if (!res.ok) {
+      const txt = await res.text();
+      throw new Error(`DELETE failed: ${res.status} ${res.statusText} - ${txt}`);
+    }
+    return res.json();
+  }
+
+  async function updateIndex(cfg, token, updater) {
+    let indexData = await ghGetJSONRaw(cfg, cfg.indexPath);
+    if (!indexData) indexData = { items: [] };
+    const indexMeta = await ghGetContentMeta(cfg, cfg.indexPath, token);
+    const sha = indexMeta?.sha;
+    const newData = await updater(indexData);
+    const enc = new TextEncoder().encode(JSON.stringify(newData, null, 2));
+    const b64 = b64EncodeUint8(new Uint8Array(enc));
+    await ghPutContent(cfg, cfg.indexPath, b64, `Update index.json`, token, sha);
+    return true;
+  }
+
+  async function uploadCoverIfNeeded(cfg, token, coverFile, existingPath) {
+    if (!coverFile) return existingPath || '';
+    const y = new Date().getFullYear();
+    const m = String(new Date().getMonth() + 1).padStart(2, '0');
+    const baseDir = `${cfg.dataDir}/${y}/${m}`;
+    const buf = new Uint8Array(await coverFile.arrayBuffer());
+    const b64 = b64EncodeUint8(buf);
+    const imgName = `${uid()}__${coverFile.name}`;
+    const imagePath = `${baseDir}/images/${imgName}`;
+    const meta = await ghGetContentMeta(cfg, imagePath, token);
+    await ghPutContent(cfg, imagePath, b64, `Upload cover ${coverFile.name}`, token, meta?.sha);
+    return imagePath;
+  }
+
+  // ------------------ Icons ------------------
+  function pdfIcon(props) { return <span {...props}>📄</span>; }
+  function htmlIcon(props) { return <span {...props}>🌐</span>; }
+  function textIcon(props) { return <span {...props}>📃</span>; }
+  function codeIcon(props) { return <span {...props}>💻</span>; }
+  function fileIcon(props) { return <span {...props}>📦</span>; }
+
+  // ------------------ Local Storage helpers ------------------
+  function loadConfig() {
+    try {
+      const raw = localStorage.getItem('repoLibrary.config');
+      if (!raw) return null;
+      return JSON.parse(raw);
+    } catch (e) {
+      console.error('loadConfig error', e);
+      return null;
+    }
+  }
+
+  function saveConfig(cfg) {
+    try {
+      localStorage.setItem('repoLibrary.config', JSON.stringify(cfg));
+    } catch (e) {
+      console.error('saveConfig error', e);
+    }
+  }
+
+  function loadToken() { return localStorage.getItem('repoLibrary.token') || ''; }
+  function saveToken(t) { if (!t) localStorage.removeItem('repoLibrary.token'); else localStorage.setItem('repoLibrary.token', t); }
+
+  // ------------------ App ------------------
+  function App(){
+    const [cfg, setCfg] = useState(() => loadConfig() || {
+      owner: 'cheneit',
+      repo: 'cheneit.github.io',
+      branch: 'main',
+      dataDir: 'data/files',
+      indexPath: 'data/index.json'
+    });
+    const [token, setToken] = useState(() => loadToken());
+    const [mode, setMode] = useState('preview'); // 'preview' | 'admin'
+    const [index, setIndex] = useState({ items: [] });
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('');
+    const [query, setQuery] = useState('');
+    const [activeTopic, setActiveTopic] = useState('');
+    const [activeTag, setActiveTag] = useState('');
+    const [sortBy, setSortBy] = useState('time_desc');
+    const [selectedItem, setSelectedItem] = useState(null);
+    const [editingItem, setEditingItem] = useState(null);
+
+    function onSaveCfg(newCfg){
+      setCfg(newCfg);
+      saveConfig(newCfg);
+    }
+    function onSaveToken(t){
+      setToken(t);
+      saveToken(t);
     }
 
-    async function ghGetTextRaw(cfg, path) {
-      const url = buildRawUrl(cfg, path);
-      const res = await fetch(url);
-      if (!res.ok) return null;
-      return await res.text();
-    }
-
-    async function ghGetBlobRaw(cfg, path) {
-      const url = buildRawUrl(cfg, path);
-      const res = await fetch(url);
-      if (!res.ok) return null;
-      return await res.blob();
-    }
-
-    async function ghGetContentMeta(cfg, path, token) {
-      const url = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${path}`;
-      const res = await fetch(url, {
-        headers: token ? { Authorization: `Bearer ${token}` } : {}
-      });
-      if (!res.ok) return null;
-      return await res.json();
-    }
-
-    async function ghPutContent(cfg, path, contentB64, message, token, sha) {
-      const url = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${path}`;
-      const body = { message, content: contentB64 };
-      if (sha) body.sha = sha;
-      const res = await fetch(url, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          ...(token ? { Authorization: `Bearer ${token}` } : {})
-        },
-        body: JSON.stringify(body)
-      });
-      if (!res.ok) {
-        const txt = await res.text();
-        throw new Error(`PUT failed: ${res.status} ${res.statusText} - ${txt}`);
-      }
-      return res.json();
-    }
-
-    async function ghDeleteContent(cfg, path, message, token, sha) {
-      const url = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${path}`;
-      const body = { message, sha };
-      const res = await fetch(url, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
-          ...(token ? { Authorization: `Bearer ${token}` } : {})
-        },
-        body: JSON.stringify(body)
-      });
-      if (!res.ok) {
-        const txt = await res.text();
-        throw new Error(`DELETE failed: ${res.status} ${res.statusText} - ${txt}`);
-      }
-      return res.json();
-    }
-
-    async function updateIndex(cfg, token, updater) {
-      let indexData = await ghGetJSONRaw(cfg, cfg.indexPath);
-      if (!indexData) indexData = { items: [] };
-      const indexMeta = await ghGetContentMeta(cfg, cfg.indexPath, token);
-      const sha = indexMeta?.sha;
-      const newData = await updater(indexData);
-      const enc = new TextEncoder().encode(JSON.stringify(newData, null, 2));
-      const b64 = b64EncodeUint8(new Uint8Array(enc));
-      await ghPutContent(cfg, cfg.indexPath, b64, `Update index.json`, token, sha);
-      return true;
-    }
-
-    async function uploadCoverIfNeeded(cfg, token, coverFile, existingPath) {
-      if (!coverFile) return existingPath || '';
-      const y = new Date().getFullYear();
-      const m = String(new Date().getMonth() + 1).padStart(2, '0');
-      const baseDir = `${cfg.dataDir}/${y}/${m}`;
-      const buf = new Uint8Array(await coverFile.arrayBuffer());
-      const b64 = b64EncodeUint8(buf);
-      const imgName = `${uid()}__${coverFile.name}`;
-      const imagePath = `${baseDir}/images/${imgName}`;
-      const meta = await ghGetContentMeta(cfg, imagePath, token);
-      await ghPutContent(cfg, imagePath, b64, `Upload cover ${coverFile.name}`, token, meta?.sha);
-      return imagePath;
-    }
-
-    // ------------------ Icons ------------------
-    function pdfIcon(props) { return <span {...props}>📄</span>; }
-    function htmlIcon(props) { return <span {...props}>🌐</span>; }
-    function textIcon(props) { return <span {...props}>📃</span>; }
-    function codeIcon(props) { return <span {...props}>💻</span>; }
-    function fileIcon(props) { return <span {...props}>📦</span>; }
-
-    // ------------------ Local Storage helpers ------------------
-    function loadConfig() {
+    async function refreshIndex(){
+      setLoading(true); setError('');
       try {
-        const raw = localStorage.getItem('repoLibrary.config');
-        if (!raw) return null;
-        return JSON.parse(raw);
-      } catch (e) {
-        console.error('loadConfig error', e);
-        return null;
+        const data = await ghGetJSONRaw(cfg, cfg.indexPath);
+        setIndex(data || { items: [] });
+      } catch(e) {
+        console.error(e);
+        setError('无法加载 index.json：' + e.message);
+      } finally {
+        setLoading(false);
       }
     }
 
-    function saveConfig(cfg) {
-      try {
-        localStorage.setItem('repoLibrary.config', JSON.stringify(cfg));
-      } catch (e) {
-        console.error('saveConfig error', e);
-      }
-    }
+    useEffect(() => { refreshIndex(); }, [cfg.owner, cfg.repo, cfg.branch, cfg.dataDir, cfg.indexPath]);
 
-    function loadToken() { return localStorage.getItem('repoLibrary.token') || ''; }
-    function saveToken(t) { if (!t) localStorage.removeItem('repoLibrary.token'); else localStorage.setItem('repoLibrary.token', t); }
+    const allItems = index.items || [];
 
-    // ------------------ App ------------------
-    function App(){
-      const [cfg, setCfg] = useState(() => loadConfig() || {
-        owner: 'cheneit',
-        repo: 'cheneit.github.io',
-        branch: 'main',
-        dataDir: 'data/files',
-        indexPath: 'data/index.json'
-      });
-      const [token, setToken] = useState(() => loadToken());
-      const [mode, setMode] = useState('preview'); // 'preview' | 'admin'
-      const [index, setIndex] = useState({ items: [] });
-      const [loading, setLoading] = useState(false);
-      const [error, setError] = useState('');
-      const [query, setQuery] = useState('');
-      const [activeTopic, setActiveTopic] = useState('');
-      const [activeTag, setActiveTag] = useState('');
-      const [sortBy, setSortBy] = useState('time_desc');
-      const [selectedItem, setSelectedItem] = useState(null);
-      const [editingItem, setEditingItem] = useState(null);
-
-      function onSaveCfg(newCfg){
-        setCfg(newCfg);
-        saveConfig(newCfg);
-      }
-      function onSaveToken(t){
-        setToken(t);
-        saveToken(t);
-      }
-
-      async function refreshIndex(){
-        setLoading(true); setError('');
-        try {
-          const data = await ghGetJSONRaw(cfg, cfg.indexPath);
-          setIndex(data || { items: [] });
-        } catch(e) {
-          console.error(e);
-          setError('无法加载 index.json：' + e.message);
-        } finally {
-          setLoading(false);
-        }
-      }
-
-      useEffect(() => { refreshIndex(); }, [cfg.owner, cfg.repo, cfg.branch, cfg.dataDir, cfg.indexPath]);
-
-      const allItems = index.items || [];
-
-      const topics = useMemo(() => {
-        const s = new Set();
-        allItems.forEach(i => { if (i.topic) s.add(i.topic); });
-        return Array.from(s).sort();
-      }, [allItems]);
-
-      const allTags = useMemo(() => {
-        const s = new Set();
-        allItems.forEach(i => (i.tags||[]).forEach(t => s.add(t)));
-        return Array.from(s).sort();
-      }, [allItems]);
-
-      const filtered = useMemo(() => {
-        const q = query.trim().toLowerCase();
-        let arr = [...allItems];
-        if (q) {
-          arr = arr.filter(i => {
-            const text = [
-              i.title,
-              i.filename,
-              i.topic,
-              (i.tags||[]).join(' '),
-              i.desc
-            ].join(' ').toLowerCase();
-            return text.includes(q);
-          });
-        }
-        if (activeTopic) arr = arr.filter(i => i.topic === activeTopic);
-        if (activeTag) arr = arr.filter(i => (i.tags||[]).includes(activeTag));
-
-        arr.sort((a, b) => {
-          if (sortBy === 'time_desc') return (b.ts||0) - (a.ts||0);
-          if (sortBy === 'time_asc') return (a.ts||0) - (b.ts||0);
-          if (sortBy === 'title_asc') return (a.title||a.filename||'').localeCompare(b.title||b.filename||'');
-          if (sortBy === 'title_desc') return (b.title||b.filename||'').localeCompare(a.title||a.filename||'');
-          if (sortBy === 'type') return (a.kind||'').localeCompare(b.kind||'');
-          return 0;
+    // 多 topic：从 item.topics 数组收集所有 topic，兼容旧的 item.topic
+    const topics = useMemo(() => {
+      const s = new Set();
+      allItems.forEach(i => {
+        const arr = i.topics || (i.topic ? [i.topic] : []);
+        arr.forEach(t => {
+          if (t) s.add(t);
         });
-        return arr;
-      }, [allItems, query, activeTopic, activeTag, sortBy]);
+      });
+      return Array.from(s).sort();
+    }, [allItems]);
 
-      function goHome(){
-        setQuery('');
-        setActiveTopic('');
-        setActiveTag('');
-        setSortBy('time_desc');
+    const allTags = useMemo(() => {
+      const s = new Set();
+      allItems.forEach(i => (i.tags||[]).forEach(t => s.add(t)));
+      return Array.from(s).sort();
+    }, [allItems]);
+
+    const filtered = useMemo(() => {
+      const q = query.trim().toLowerCase();
+      let arr = [...allItems];
+      if (q) {
+        arr = arr.filter(i => {
+          const topicsArr = i.topics || (i.topic ? [i.topic] : []);
+          const text = [
+            i.title,
+            i.filename,
+            topicsArr.join(' '),
+            (i.tags||[]).join(' '),
+            i.desc
+          ].join(' ').toLowerCase();
+          return text.includes(q);
+        });
       }
+      if (activeTopic) {
+        arr = arr.filter(i => {
+          const topicsArr = i.topics || (i.topic ? [i.topic] : []);
+          return topicsArr.includes(activeTopic);
+        });
+      }
+      if (activeTag) arr = arr.filter(i => (i.tags||[]).includes(activeTag));
 
-      async function handleDeleteItem(item){
-        if (!token) return alert('需要管理员令牌');
-        if (!confirm(`确认删除：${item.title || item.filename} ?`)) return;
-        try {
-          const itemPath = item.path || '';
-          if (itemPath && !isAbsoluteUrl(itemPath)) {
-            const meta = await ghGetContentMeta(cfg, itemPath, token);
-            if (meta?.sha) {
-              await ghDeleteContent(cfg, itemPath, `Delete ${item.filename}`, token, meta.sha);
-            }
+      arr.sort((a, b) => {
+        if (sortBy === 'time_desc') return (b.ts||0) - (a.ts||0);
+        if (sortBy === 'time_asc') return (a.ts||0) - (b.ts||0);
+        if (sortBy === 'title_asc') return (a.title||a.filename||'').localeCompare(b.title||b.filename||'');
+        if (sortBy === 'title_desc') return (b.title||b.filename||'').localeCompare(a.title||a.filename||'');
+        if (sortBy === 'type') return (a.kind||'').localeCompare(b.kind||'');
+        return 0;
+      });
+      return arr;
+    }, [allItems, query, activeTopic, activeTag, sortBy]);
+
+    function goHome(){
+      setQuery('');
+      setActiveTopic('');
+      setActiveTag('');
+      setSortBy('time_desc');
+    }
+
+    async function handleDeleteItem(item){
+      if (!token) return alert('需要管理员令牌');
+      if (!confirm(`确认删除：${item.title || item.filename} ?`)) return;
+      try {
+        const itemPath = item.path || '';
+        if (itemPath && !isAbsoluteUrl(itemPath)) {
+          const meta = await ghGetContentMeta(cfg, itemPath, token);
+          if (meta?.sha) {
+            await ghDeleteContent(cfg, itemPath, `Delete ${item.filename}`, token, meta.sha);
           }
-          if (item.imagePath && !isAbsoluteUrl(item.imagePath)) {
-            try {
-              const m2 = await ghGetContentMeta(cfg, item.imagePath, token);
-              if (m2?.sha) {
-                await ghDeleteContent(cfg, item.imagePath, `Delete cover for ${item.filename}`, token, m2.sha);
-              }
-            } catch(e) {
-              console.warn('删除封面失败', e);
-            }
-          }
-          await updateIndex(cfg, token, data => ({ 
-            ...data, 
-            items: (data.items || []).filter(x => x.id !== item.id) 
-          }));
-          await refreshIndex();
-        } catch(e) { 
-          alert('删除失败：' + e.message); 
         }
-      }
-
-      async function handleSaveEdit(updated, newCoverFile){
-        if (!token) return alert('需要管理员令牌');
-        try {
-          const imagePath = await uploadCoverIfNeeded(cfg, token, newCoverFile, updated.imagePath || '');
-          const newItem = { ...updated, imagePath };
-          await updateIndex(cfg, token, data => ({ 
-            ...data, 
-            items: (data.items || []).map(x => x.id === newItem.id ? newItem : x) 
-          }));
-          setEditingItem(null);
-          await refreshIndex();
-        } catch(e) { 
-          alert('保存失败：' + e.message); 
-        }
-      }
-
-      return (
-        <div className="min-h-full flex flex-col">
-          <Header mode={mode} setMode={setMode} query={query} setQuery={setQuery} onSaveCfg={onSaveCfg} token={token} setToken={onSaveToken} onHome={goHome} />
-
-          <main className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            {mode === 'admin' ? (
-              <AdminPanelV2 cfg={cfg} token={token} onUploaded={refreshIndex} />
-            ) : null}
-
-            <PreviewPanel
-              loading={loading}
-              error={error}
-              items={filtered}
-              allTopics={topics}
-              allTags={allTags}
-              activeTopic={activeTopic}
-              setActiveTopic={setActiveTopic}
-              activeTag={activeTag}
-              setActiveTag={setActiveTag}
-              sortBy={sortBy}
-              setSortBy={setSortBy}
-              onOpen={setSelectedItem}
-              cfg={cfg}
-              mode={mode}
-              onEdit={setEditingItem}
-              onDeleted={handleDeleteItem}
-            />
-          </main>
-
-          <Footer />
-
-          {selectedItem ? (
-            <ViewerModal cfg={cfg} item={selectedItem} onClose={() => setSelectedItem(null)} />
-          ) : null}
-
-          {editingItem ? (
-            <EditItemModal cfg={cfg} item={editingItem} onClose={() => setEditingItem(null)} onSave={handleSaveEdit} />
-          ) : null}
-        </div>
-      );
-    }
-
-    // ------------------ Header ------------------
-    function Header({ mode, setMode, query, setQuery, onSaveCfg, token, setToken, onHome }){
-      const [showCfg, setShowCfg] = useState(false);
-
-      return (
-        <header className="bg-slate-900 text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col gap-4">
-            <div className="flex items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-2xl bg-slate-800 flex items-center justify-center text-lg">📚</div>
-                <div>
-                  <div className="text-lg font-semibold">Repo Library</div>
-                  <div className="text-xs text-slate-300">GitHub 驱动的一页式文献 / 代码管理工具</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={onHome}
-                  className="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs"
-                >
-                  重置搜索
-                </button>
-                <button
-                  onClick={() => setMode('preview')}
-                  className={`px-3 py-1.5 rounded-xl text-xs ${mode==='preview' ? 'bg-white text-slate-900' : 'bg-slate-800 text-slate-200'}`}
-                >
-                  预览模式
-                </button>
-                <button
-                  onClick={() => setMode('admin')}
-                  className={`px-3 py-1.5 rounded-xl text-xs ${mode==='admin' ? 'bg-amber-400 text-slate-900' : 'bg-slate-800 text-slate-200'}`}
-                >
-                  管理模式
-                </button>
-                <button
-                  onClick={() => setShowCfg(s => !s)}
-                  className="px-3 py-1.5 rounded-xl text-xs bg-slate-700 hover:bg-slate-600"
-                >
-                  仓库设置
-                </button>
-              </div>
-            </div>
-
-            <div className="flex flex-col md:flex-row gap-3">
-              <div className="flex-1">
-                <input
-                  value={query}
-                  onChange={(e)=>setQuery(e.target.value)}
-                  className="w-full px-3 py-2 rounded-xl bg-slate-800 border border-slate-700 placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400"
-                  placeholder="搜索标题 / 文件名 / Topic / 标签 / 描述..."
-                />
-              </div>
-            </div>
-
-            {showCfg ? (
-              <div className="mt-2 border border-slate-700 rounded-2xl p-3">
-                <ConfigPanel cfg={loadConfig() || { owner: 'cheneit', repo: 'cheneit.github.io', branch: 'main', dataDir: 'data/files', indexPath: 'data/index.json' }} setCfg={onSaveCfg} token={token} setToken={setToken} />
-              </div>
-            ) : null}
-          </div>
-        </header>
-      );
-    }
-
-    function LabeledInput({ label, value, onChange, placeholder }) {
-      return (
-        <label className="text-sm">
-          <div className="mb-1 text-white/80">{label}</div>
-          <input
-            value={value}
-            onChange={e=>onChange(e.target.value)}
-            placeholder={placeholder}
-            className="w-full px-3 py-1.5 rounded-lg bg-white/10 border border-white/20 text-xs placeholder-white/40 focus:outline-none focus:ring-1 focus:ring-amber-400"
-          />
-        </label>
-      );
-    }
-
-    function ConfigPanel({ cfg, setCfg, token, setToken }){
-      const [localCfg, setLocalCfg] = useState(cfg);
-      const [localToken, setLocalToken] = useState(token);
-      return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
-            <div className="font-semibold mb-3">GitHub 仓库设置</div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <LabeledInput label="Owner" value={localCfg.owner} onChange={v=>setLocalCfg({...localCfg, owner:v})} />
-              <LabeledInput label="Repo" value={localCfg.repo} onChange={v=>setLocalCfg({...localCfg, repo:v})} />
-              <LabeledInput label="Branch" value={localCfg.branch} onChange={v=>setLocalCfg({...localCfg, branch:v})} />
-              <LabeledInput label="数据目录 (files)" value={localCfg.dataDir} onChange={v=>setLocalCfg({...localCfg, dataDir:v})} />
-              <LabeledInput label="索引文件路径" value={localCfg.indexPath} onChange={v=>setLocalCfg({...localCfg, indexPath:v})} />
-            </div>
-            <div className="mt-3 flex gap-2">
-              <button onClick={()=>setCfg(localCfg)} className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-sm">保存配置</button>
-              <a className="px-4 py-2 rounded-xl bg-slate-600 hover:bg-slate-500 text-sm" target="_blank" rel="noreferrer"
-                 href={`https://github.com/${localCfg.owner}/${localCfg.repo}`}>打开仓库</a>
-            </div>
-          </div>
-          <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
-            <div className="font-semibold mb-3">管理员令牌 (Personal Access Token)</div>
-            <p className="text-sm text-white/70 mb-2">建议使用细粒度令牌（对目标仓库授予 Contents: Read &amp; Write）。令牌只保存在本机浏览器 LocalStorage。</p>
-            <input type="password" className="w-full px-3 py-2 rounded-lg bg白/10 text-sm placeholder白/60 border border白/20 focus:outline-none"
-                   placeholder="github_pat_xxx 或 ghp_xxx" value={localToken} onChange={(e)=>setLocalToken(e.target.value)} />
-            <div className="mt-3 flex gap-2">
-              <button onClick={()=>setToken(localToken)} className="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-sm">保存令牌</button>
-              <button onClick={()=>{setLocalToken(''); setToken('');}} className="px-4 py-2 rounded-xl bg-slate-600 hover:bg-slate-500 text-sm">清除令牌</button>
-            </div>
-          </div>
-        </div>
-      );
-    }
-
-    // ------------------ Admin Panel ------------------
-    function AdminPanelV2({ cfg, token, onUploaded }){
-      const [files, setFiles] = useState([]);
-      const [title, setTitle] = useState('');
-      const [topic, setTopic] = useState('');
-      const [tags, setTags] = useState('');
-      const [desc, setDesc] = useState('');
-      const [cover, setCover] = useState(null);
-      const [busy, setBusy] = useState(false);
-      const [msg, setMsg] = useState('');
-
-      function handleSelect(e){ setFiles(Array.from(e.target.files||[])); }
-      function handleCover(e){ setCover((e.target.files||[])[0] || null); }
-
-      async function uploadAll(){
-        if (!token) { alert('请先在上方设置管理员令牌 (GitHub PAT)。'); return; }
-        if (!files.length) { alert('请选择文件'); return; }
-        setBusy(true); setMsg('');
-        try {
-          let indexData = await ghGetJSONRaw(cfg, cfg.indexPath);
-          if (!indexData) indexData = { items: [] };
-          const indexMeta = await ghGetContentMeta(cfg, cfg.indexPath, token);
-          const indexSha = indexMeta?.sha;
-
-          // 上传封面（如果有）
-          const imagePath = await uploadCoverIfNeeded(cfg, token, cover, '');
-
-          const y = new Date().getFullYear();
-          const m = String(new Date().getMonth()+1).padStart(2,'0');
-          const baseDir = `${cfg.dataDir}/${y}/${m}`;
-
-          let i = 0;
-          for (const file of files) {
-  i += 1;
-  setMsg(`正在上传 (${i}/${files.length})：${file.name}`);
-
-  const buf = new Uint8Array(await file.arrayBuffer());
-  const base64 = b64EncodeUint8(buf);
-
-  const id = uid();
-  const cleanTitle = title || file.name.replace(/\.[^/.]+$/, '');
-  const kind = guessKind(file.name);
-
-  // 这里判断是不是 pdf
-  const ext = file.name.split('.').pop().toLowerCase();
-
-  // 存到仓库里的真实文件名：
-  // - 如果是 pdf：只用随机ID，如 q7n2kpux2rmhedzcjb.pdf
-  // - 其他类型：继续使用  随机ID__原文件名
-  let storedFilename;
-  if (kind === 'pdf' || ext === 'pdf') {
-    storedFilename = `${id}.pdf`;
-  } else {
-    storedFilename = `${id}__${file.name}`;
-  }
-
-  const path = `${baseDir}/${storedFilename}`;
-
-  const meta = await ghGetContentMeta(cfg, path, token);
-  await ghPutContent(
-    cfg,
-    path,
-    base64,
-    `Upload ${file.name} via Repo Library`,
-    token,
-    meta?.sha
-  );
-
-  // 这里的 filename 字段还是保留原始文件名，用于界面显示
-  indexData.items.push({
-    id,
-    title: cleanTitle,
-    filename: file.name,   // 显示用，不影响仓库存储名字
-    path,                  // 真正的访问路径，已是随机名
-    kind,
-    topic: topic || '',
-    tags: tags
-      ? tags.split(',').map(s => s.trim()).filter(Boolean)
-      : [],
-    ts: Date.now(),
-    size: file.size,
-    desc: desc || '',
-    imagePath: imagePath || '',
-  });
-}
-
-
-          const updated = new TextEncoder().encode(JSON.stringify(indexData, null, 2));
-          const updatedB64 = b64EncodeUint8(new Uint8Array(updated));
-          await ghPutContent(cfg, cfg.indexPath, updatedB64, `Update index.json (${files.length} items)`, token, indexSha);
-
-          setMsg(`成功上传 ${files.length} 个文件，并更新索引。`);
-          setFiles([]); setTitle(''); setTopic(''); setTags(''); setDesc(''); setCover(null);
-          onUploaded && onUploaded();
-        } catch(e) {
-          console.error(e);
-          setMsg('出错：' + e.message);
-        } finally { setBusy(false); }
-      }
-
-      const fileCount = files.length;
-      const fileNames = fileCount ? files.map(f=>f.name).join(', ') : '未选择文件';
-
-      return (
-        <section className="mb-6">
-          <div className="bg-white rounded-3xl shadow-soft border border-slate-200 p-4">
-            <div className="flex items-center justify-between mb-3">
-              <div className="font-semibold text-slate-900">上传新条目</div>
-              <div className="text-xs text-slate-500">文件会按年月自动存入：{cfg.dataDir}/YYYY/MM</div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-3">
-                <label className="text-sm block">
-                  <div className="mb-1 text-slate-700">选择文件 (支持多选)</div>
-                  <input type="file" multiple onChange={handleSelect} className="block w-full text-sm" />
-                  <div className="mt-1 text-xs text-slate-500 truncate">当前: {fileNames}</div>
-                </label>
-                <label className="text-sm block">
-                  <div className="mb-1 text-slate-700">统一标题（可选，留空则用文件名）</div>
-                  <input value={title} onChange={e=>setTitle(e.target.value)} className="w-full px-3 py-2 rounded-xl border border-slate-300 text-sm" />
-                </label>
-                <label className="text-sm block">
-                  <div className="mb-1 text-slate-700">Topic（如：Majorana, Skyrmion, Altermagnet）</div>
-                  <input value={topic} onChange={e=>setTopic(e.target.value)} className="w-full px-3 py-2 rounded-xl border border-slate-300 text-sm" />
-                </label>
-                <label className="text-sm block">
-                  <div className="mb-1 text-slate-700">标签（逗号分隔）</div>
-                  <input value={tags} onChange={e=>setTags(e.target.value)} className="w-full px-3 py-2 rounded-xl border border-slate-300 text-sm" />
-                </label>
-              </div>
-              <div className="space-y-3">
-                <label className="text-sm block">
-                  <div className="mb-1 text-slate-700">条目简要描述</div>
-                  <textarea value={desc} onChange={e=>setDesc(e.target.value)} rows={5} className="w-full px-3 py-2 rounded-xl border border-slate-300 text-sm" />
-                </label>
-                <label className="text-sm block">
-                  <div className="mb-1 text-slate-700">封面图（可选，建议 16:9 或 4:3）</div>
-                  <input type="file" accept="image/*" onChange={handleCover} className="block w-full text-sm" />
-                </label>
-              </div>
-            </div>
-            <div className="mt-4 flex items-center gap-3">
-              <button
-                onClick={uploadAll}
-                disabled={busy}
-                className={`px-4 py-2 rounded-2xl text-sm text-white ${busy ? 'bg-slate-400' : 'bg-slate-900 hover:bg-slate-800'}`}
-              >
-                {busy ? '上传中…' : '上传所有文件'}
-              </button>
-              {msg ? <div className="text-xs text-slate-600">{msg}</div> : null}
-            </div>
-          </div>
-        </section>
-      );
-    }
-
-    // ------------------ Preview Panel ------------------
-    function PreviewPanel({ loading, error, items, allTopics, allTags, activeTopic, setActiveTopic, activeTag, setActiveTag, sortBy, setSortBy, onOpen, cfg, mode, onEdit, onDeleted }){
-      const total = items.length;
-
-      function handleResetFilters(){
-        setActiveTopic('');
-        setActiveTag('');
-        setSortBy('time_desc');
-      }
-
-      return (
-        <section>
-          <div className="flex flex-wrap items-center gap-3 mb-4">
-            <select
-              value={activeTopic}
-              onChange={(e)=>setActiveTopic(e.target.value)}
-              className="px-3 py-2 rounded-xl border border-slate-300 bg-white"
-            >
-              <option value="">全部 Topic</option>
-              {allTopics.map(t => <option key={t} value={t}>{t}</option>)}
-            </select>
-            <select
-              value={activeTag}
-              onChange={(e)=>setActiveTag(e.target.value)}
-              className="px-3 py-2 rounded-xl border border-slate-300 bg-white"
-            >
-              <option value="">全部标签</option>
-              {allTags.map(t => <option key={t} value={t}>{t}</option>)}
-            </select>
-            <select
-              value={sortBy}
-              onChange={(e)=>setSortBy(e.target.value)}
-              className="px-3 py-2 rounded-xl border border-slate-300 bg-white"
-            >
-              <option value="time_desc">按时间(新→旧)</option>
-              <option value="time_asc">按时间(旧→新)</option>
-              <option value="title_asc">标题(A→Z)</option>
-              <option value="title_desc">标题(Z→A)</option>
-              <option value="type">按类型</option>
-            </select>
-            <button
-              type="button"
-              onClick={handleResetFilters}
-              className="px-3 py-2 rounded-xl border border-slate-300 bg-white hover:bg-slate-100 text-sm"
-            >
-              重置筛选
-            </button>
-            <span className="ml-auto text-sm text-slate-500">
-              共 {total} 条结果
-            </span>
-          </div>
-
-          {loading ? <div className="text-slate-600">加载中…</div> : null}
-          {error ? <div className="text-rose-600">{error}</div> : null}
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {items.map(item => (
-              <CardV2
-                key={item.id}
-                cfg={cfg}
-                item={item}
-                onOpen={() => onOpen(item)}
-                onEdit={() => onEdit(item)}
-                onDelete={() => onDeleted && onDeleted(item)}
-                canAdmin={mode==='admin'}
-              />
-            ))}
-          </div>
-
-          {!loading && !items.length ? (
-            <div className="text-sm text-slate-500 mt-6">没有符合条件的条目。</div>
-          ) : null}
-        </section>
-      );
-    }
-
-    // ------------------ Card ------------------
-    function CardV2({ cfg, item, onOpen, onEdit, onDelete, canAdmin }){
-      const kindMeta = FILE_KINDS[item.kind] || FILE_KINDS.other;
-      const Icon = kindMeta.icon;
-
-      // rawHref：统一指向 raw.githubusercontent.com（或保留绝对URL），用于下载 / 原始查看
-      const rawHref = buildRawUrl(cfg, item.path);
-
-      // browserHref：用于“在浏览器中打开 / 点标题”的链接
-      // - PDF：走 Pages 站点路径（buildPdfBrowserUrl），在浏览器直接展示
-      // - 其他类型：沿用 rawHref
-      const browserHref = item.kind === 'pdf'
-        ? buildPdfBrowserUrl(item.path)
-        : rawHref;
-
-      const coverSrc = item.imagePath ? buildRawUrl(cfg, item.imagePath) : '';
-
-      return (
-        <div className="bg白 rounded-3xl border border-slate-200 shadow-soft p-4 flex flex-col h-full min-h-[340px]">
-          <div className="mb-3 w-full h-36 rounded-2xl overflow-hidden bg-slate-100 flex items-center justify-center">
-            {coverSrc ? (
-              <img src={coverSrc} alt="cover" className="w-full h-full object-cover" />
-            ) : (
-              <div className="text-slate-400 text-sm">无封面</div>
-            )}
-          </div>
-          <div className="flex items-start gap-3">
-            <div className="w-10 h-10 rounded-2xl flex items-center justify-center text-slate-700 bg-slate-50">
-              <Icon className="w-6 h-6" />
-            </div>
-            <div className="flex-1 min-w-0">
-              <div className="font-semibold text-slate-900 truncate">
-                <a href={browserHref} target="_blank" rel="noreferrer" className="hover:underline">
-                    {item.title || item.filename}
-                </a>
-              </div>
-              <div className="text-xs text-slate-500 mt-0.5">
-                {kindMeta.label} · {fmtDate(item.ts)}{item.topic ? ` · ${item.topic}` : ''}
-              </div>
-            </div>
-          </div>
-          {item.tags && item.tags.length ? (
-            <div className="mt-3 flex flex-wrap gap-2">
-              {item.tags.map(t => (
-                <span key={t} className="text-xs px-2 py-1 rounded-full bg-slate-100 text-slate-700">
-                  #{t}
-                </span>
-              ))}
-            </div>
-          ) : null}
-          {item.desc ? (
-            <div className="mt-3 text-sm text-slate-700 max-h-20 overflow-hidden">
-              {item.desc}
-            </div>
-          ) : null}
-          <div className="mt-4 flex flex-wrap gap-2">
-            {item.kind !== 'pdf' ? (
-              <button onClick={onOpen} className="px-3 py-2 rounded-xl bg-slate-900 text白 hover:bg-slate-800 text-sm">
-                预览
-              </button>
-            ) : null}
-            <a href={rawHref} download className="px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-sm">
-              下载
-            </a>
-            <a href={browserHref} target="_blank" rel="noreferrer" className="px-3 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 text-sm">
-              在浏览器打开
-            </a>
-            {canAdmin ? (
-              <>
-                <button onClick={onEdit} className="px-3 py-2 rounded-xl bg-amber-100 text-amber-800 hover:bg-amber-200 text-sm">
-                  编辑
-                </button>
-                <button onClick={onDelete} className="px-3 py-2 rounded-xl bg-rose-100 text-rose-800 hover:bg-rose-200 text-sm">
-                  删除
-                </button>
-              </>
-            ) : null}
-          </div>
-        </div>
-      );
-    }
-
-    // ------------------ Viewer Modal ------------------
-    function ViewerModal({ cfg, item, onClose }){
-      const [mode, setMode] = useState(item.kind);
-      const [loading, setLoading] = useState(true);
-      const [err, setErr] = useState('');
-      const [blobUrl, setBlobUrl] = useState('');
-      const [text, setText] = useState('');
-      const scrollRef = useRef(null);
-
-      useEffect(() => {
-        (async () => {
-          setLoading(true);
-          setErr('');
-          setBlobUrl('');
-          setText('');
+        if (item.imagePath && !isAbsoluteUrl(item.imagePath)) {
           try {
-            if (mode === 'html') {
-              const t = await ghGetTextRaw(cfg, item.path);
-              if (t == null) throw new Error('无法获取HTML');
-              setText(t);
-            } else {
-              const t = await ghGetTextRaw(cfg, item.path);
-              if (t == null) throw new Error('无法获取文本');
-              setText(t);
-              setTimeout(() => {
-                document.querySelectorAll('pre code').forEach(block => hljs.highlightElement(block));
-              }, 0);
+            const m2 = await ghGetContentMeta(cfg, item.imagePath, token);
+            if (m2?.sha) {
+              await ghDeleteContent(cfg, item.imagePath, `Delete cover for ${item.filename}`, token, m2.sha);
             }
           } catch(e) {
-            setErr(e.message);
+            console.warn('删除封面失败', e);
           }
-          setLoading(false);
-        })();
-      }, [cfg.owner, cfg.repo, cfg.branch, item.path, mode]);
-
-      const kindMeta = FILE_KINDS[item.kind] || FILE_KINDS.other;
-      const Icon = kindMeta.icon;
-      const rawHref = buildRawUrl(cfg, item.path);
-      const language = guessHighlightLanguage(item.filename || '');
-
-      return (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={onClose}>
-          <div className="bg-white max-w-6xl w-full max-h-[90vh] rounded-3xl overflow-hidden border border-slate-200 shadow-2xl" onClick={e=>e.stopPropagation()}>
-            <div className="flex items-center justify-between px-4 py-3 border-b border-slate-200">
-              <div className="flex items-center gap-2">
-                <Icon className="w-5 h-5 text-slate-700"/>
-                <div className="font-semibold truncate max-w-[450px]" title={item.title || item.filename}>
-                  {item.title || item.filename}
-                </div>
-                <div className="text-xs text-slate-500">· {kindMeta.label} · {fmtDate(item.ts)}</div>
-              </div>
-              <div className="flex items-center gap-2">
-                {(item.kind === 'text' || item.kind === 'code') ? (
-                  <button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      navigator.clipboard.writeText(text || '');
-                    }}
-                    className="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-sm"
-                  >
-                    复制
-                  </button>
-                ) : null}
-                <button onClick={onClose} className="px-3 py-1.5 rounded-lg bg-slate-900 text-white hover:bg-slate-800 text-sm">
-                  关闭
-                </button>
-              </div>
-            </div>
-
-            <div className="p-3 bg-slate-50 border-b border-slate-200 flex items-center gap-2 text-sm">
-              <span className="text-slate-600">渲染为:</span>
-              <div className="flex gap-2">
-                <button
-                  onClick={() => setMode('html')}
-                  disabled={item.kind !== 'html'}
-                  className={`px-3 py-1.5 rounded-lg border text-xs ${
-                    mode === 'html' ? 'bg-slate-900 text白 border-slate-900' : 'bg白 text-slate-700 border-slate-200'
-                  } ${item.kind !== 'html' ? 'opacity-50 cursor-not-allowed' : ''}`}
-                >
-                  HTML
-                </button>
-                <button
-                  onClick={() => setMode(item.kind === 'code' ? 'code' : 'text')}
-                  disabled={!(item.kind === 'text' || item.kind === 'code')}
-                  className={`px-3 py-1.5 rounded-lg border text-xs ${
-                    mode !== 'html' ? 'bg-slate-900 text白 border-slate-900' : 'bg白 text-slate-700 border-slate-200'
-                  } ${!(item.kind === 'text' || item.kind === 'code') ? 'opacity-50 cursor-not-allowed' : ''}`}
-                >
-                  {item.kind === 'code' ? 'Code' : 'Text'}
-                </button>
-                <a
-                  className="px-3 py-1.5 rounded-lg bg-slate-200 hover:bg-slate-300 text-xs"
-                  href={rawHref}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Raw
-                </a>
-              </div>
-            </div>
-
-            <div ref={scrollRef} className="p-0 max-h-[75vh] overflow-auto relative">
-              {loading ? (
-                <div className="p-6 text-slate-600">加载中…</div>
-              ) : err ? (
-                <div className="p-6 text-rose-600">{err}</div>
-              ) : mode === 'html' ? (
-                <iframe
-                  className="w-full h-[75vh] bg白"
-                  srcDoc={text}
-                  sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
-                  title={item.title || item.filename}
-                />
-              ) : (
-                <pre className="p-4 text-sm bg-[#0b1020] text-slate-50 overflow-auto">
-                  <code className={language ? `language-${language}` : ''}>{text}</code>
-                </pre>
-              )}
-              {!loading && !err && mode !== 'html' ? (
-                <button
-                  onClick={() => scrollRef.current && scrollRef.current.scrollTo({ top: 0, behavior: 'smooth' })}
-                  className="absolute right-4 bottom-4 px-3 py-1.5 rounded-full bg-slate-700 text-xs text白 shadow-lg hover:bg-slate-600"
-                >
-                  回到顶部
-                </button>
-              ) : null}
-            </div>
-          </div>
-        </div>
-      );
-    }
-
-    // ------------------ Edit Modal ------------------
-    function EditItemModal({ cfg, item, onClose, onSave }){
-      const [title, setTitle] = useState(item.title || '');
-      const [topic, setTopic] = useState(item.topic || '');
-      const [tags, setTags] = useState((item.tags||[]).join(', '));
-      const [desc, setDesc] = useState(item.desc || '');
-      const [cover, setCover] = useState(null);
-      const rawCover = item.imagePath ? buildRawUrl(cfg, item.imagePath) : '';
-
-      function handleSubmit(){
-        const updated = { 
-          ...item, 
-          title, 
-          topic, 
-          tags: tags.split(',').map(s=>s.trim()).filter(Boolean), 
-          desc 
-        };
-        onSave && onSave(updated, cover);
-      }
-
-      return (
-        <div 
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-          onClick={onClose}
-        >
-          <div
-            className="bg白 rounded-3xl max-w-3xl w-full border border-slate-200 shadow-2xl"
-            onClick={e=>e.stopPropagation()}
-          >
-            <div className="flex items-center justify-between px-4 py-3 border-b border-slate-200">
-              <div className="font-semibold">编辑条目信息</div>
-              <button onClick={onClose} className="px-3 py-1.5 rounded-lg bg-slate-900 text白 hover:bg-slate-800 text-sm">关闭</button>
-            </div>
-            <div className="p-4 space-y-4">
-              <label className="text-sm block">
-                <div className="mb-1 text-slate-700">标题</div>
-                <input
-                  value={title}
-                  onChange={e=>setTitle(e.target.value)}
-                  className="w-full px-3 py-2 rounded-xl border border-slate-300"
-                />
-              </label>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <label className="text-sm block">
-                  <div className="mb-1 text-slate-700">Topic</div>
-                  <input
-                    value={topic}
-                    onChange={e=>setTopic(e.target.value)}
-                    className="w-full px-3 py-2 rounded-xl border border-slate-300"
-                  />
-                </label>
-                <label className="text-sm block">
-                  <div className="mb-1 text-slate-700">Tags（逗号分隔）</div>
-                  <input
-                    value={tags}
-                    onChange={e=>setTags(e.target.value)}
-                    className="w-full px-3 py-2 rounded-xl border border-slate-300"
-                  />
-                </label>
-              </div>
-              <label className="text-sm block">
-                <div className="mb-1 text-slate-700">简要描述</div>
-                <textarea
-                  value={desc}
-                  onChange={e=>setDesc(e.target.value)}
-                  className="w-full px-3 py-2 rounded-xl border border-slate-300"
-                  rows={3}
-                />
-              </label>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
-                <div>
-                  <div className="mb-1 text-slate-700 text-sm">封面图（可选，上传新图将覆盖旧图）</div>
-                  <input
-                    type="file"
-                    accept="image/*"
-                    onChange={e=>setCover((e.target.files || [])[0] || null)}
-                    className="w-full px-3 py-2 rounded-xl border border-slate-300"
-                  />
-                </div>
-                <div>
-                  <div className="mb-1 text-slate-700 text-sm">当前封面</div>
-                  <div className="w-full h-36 rounded-xl overflow-hidden bg-slate-100 flex items-center justify-center">
-                    {rawCover ? (
-                      <img src={rawCover} alt="cover" className="w-full h-full object-cover" />
-                    ) : (
-                      <div className="text-slate-400 text-sm">无封面</div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="px-4 py-3 border-t border-slate-200 flex justify-end gap-2">
-              <button
-                onClick={onClose}
-                className="px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 text-sm"
-              >
-                取消
-              </button>
-              <button
-                onClick={handleSubmit}
-                className="px-4 py-2 rounded-xl bg-slate-900 text白 hover:bg-slate-800 text-sm"
-              >
-                保存
-              </button>
-            </div>
-          </div>
-        </div>
-      );
-    }
-
-    // ------------------ 简单密码门 AuthGate ------------------
-    function AuthGate({ children }) {
-      const [authed, setAuthed] = useState(false);
-      const [pw, setPw] = useState('');
-      const [error, setError] = useState('');
-      const [checking, setChecking] = useState(true);
-
-      useEffect(() => {
-        // 页面加载时先检查本地是否已经通过过验证
-        const stored = localStorage.getItem(AUTH_KEY);
-        if (stored === 'ok') {
-          setAuthed(true);
         }
-        setChecking(false);
-      }, []);
-
-      async function handleSubmit(e) {
-        e.preventDefault();
-        setError('');
-        try {
-          const input = pw.trim();
-          if (!input) {
-            setError('请输入密码');
-            return;
-          }
-          const hash = await sha256Hex(input);
-          if (hash === PASSWORD_HASH) {
-            setAuthed(true);
-            localStorage.setItem(AUTH_KEY, 'ok'); // 记住登录状态
-            setPw('');
-          } else {
-            setError('密码错误');
-          }
-        } catch (err) {
-          console.error(err);
-          setError('浏览器不支持加密 API，请更换现代浏览器');
-        }
+        await updateIndex(cfg, token, data => ({ 
+          ...data, 
+          items: (data.items || []).filter(x => x.id !== item.id) 
+        }));
+        await refreshIndex();
+      } catch(e) { 
+        alert('删除失败：' + e.message); 
       }
-
-      // 初次检查 localStorage 时的过渡状态
-      if (checking) {
-        return (
-          <div className="min-h-screen flex items-center justify-center bg-slate-900 text-slate-100">
-            <div className="text-sm">加载中...</div>
-          </div>
-        );
-      }
-
-      // 未通过密码验证时，只显示密码表单
-      if (!authed) {
-        return (
-          <div className="min-h-screen flex items-center justify-center bg-slate-900 text-slate-50">
-            <form
-              onSubmit={handleSubmit}
-              className="bg-slate-800 rounded-3xl p-6 w-full max-w-sm border border-slate-700 shadow-xl space-y-4"
-            >
-              <div className="text-lg font-semibold text-center">Private Repo Library</div>
-
-              <label className="block text-sm">
-                <span className="block mb-1 text-slate-200">访问密码</span>
-                <input
-                  type="password"
-                  value={pw}
-                  onChange={(e) => setPw(e.target.value)}
-                  className="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-600 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400"
-                  placeholder="请输入密码"
-                />
-              </label>
-
-              {error ? (
-                <div className="text-xs text-rose-400">{error}</div>
-              ) : null}
-
-              <button
-                type="submit"
-                className="w-full px-3 py-2 rounded-xl bg-amber-400 text-slate-900 text-sm font-medium hover:bg-amber-300"
-              >
-                进入
-              </button>
-
-              <div className="mt-2 text-[11px] text-slate-400 text-center">
-                本站仅供个人使用，文件托管于 GitHub。
-              </div>
-            </form>
-          </div>
-        );
-      }
-
-      // 通过验证后，渲染真正的应用
-      return children;
     }
 
-    // ------------------ Footer ------------------
-    function Footer(){
-      return (
-        <footer className="border-t border-slate-200 mt-auto py-3 text-xs text-slate-500 text-center">
-          <div>© {new Date().getFullYear()} Repo Library · GitHub 托管 · 单文件网页</div>
-        </footer>
-      );
+    async function handleSaveEdit(updated, newCoverFile){
+      if (!token) return alert('需要管理员令牌');
+      try {
+        const imagePath = await uploadCoverIfNeeded(cfg, token, newCoverFile, updated.imagePath || '');
+        const newItem = { ...updated, imagePath };
+        await updateIndex(cfg, token, data => ({ 
+          ...data, 
+          items: (data.items || []).map(x => x.id === newItem.id ? newItem : x) 
+        }));
+        setEditingItem(null);
+        await refreshIndex();
+      } catch(e) { 
+        alert('保存失败：' + e.message); 
+      }
     }
 
-    ReactDOM.createRoot(document.getElementById('root')).render(
-      <AuthGate>
-        <App />
-      </AuthGate>
+    return (
+      <div className="min-h-full flex flex-col">
+        <Header mode={mode} setMode={setMode} query={query} setQuery={setQuery} onSaveCfg={onSaveCfg} token={token} setToken={onSaveToken} onHome={goHome} />
+
+        <main className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          {mode === 'admin' ? (
+            <AdminPanelV2 cfg={cfg} token={token} onUploaded={refreshIndex} />
+          ) : null}
+
+          <PreviewPanel
+            loading={loading}
+            error={error}
+            items={filtered}
+            allTopics={topics}
+            allTags={allTags}
+            activeTopic={activeTopic}
+            setActiveTopic={setActiveTopic}
+            activeTag={activeTag}
+            setActiveTag={setActiveTag}
+            sortBy={sortBy}
+            setSortBy={setSortBy}
+            onOpen={setSelectedItem}
+            cfg={cfg}
+            mode={mode}
+            onEdit={setEditingItem}
+            onDeleted={handleDeleteItem}
+          />
+        </main>
+
+        <Footer />
+
+        {selectedItem ? (
+          <ViewerModal cfg={cfg} item={selectedItem} onClose={() => setSelectedItem(null)} />
+        ) : null}
+
+        {editingItem ? (
+          <EditItemModal cfg={cfg} item={editingItem} onClose={() => setEditingItem(null)} onSave={handleSaveEdit} />
+        ) : null}
+      </div>
     );
+  }
+
+  // ------------------ Header ------------------
+  function Header({ mode, setMode, query, setQuery, onSaveCfg, token, setToken, onHome }){
+    const [showCfg, setShowCfg] = useState(false);
+
+    return (
+      <header className="bg-slate-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col gap-4">
+          <div className="flex items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-2xl bg-slate-800 flex items-center justify-center text-lg">📚</div>
+              <div>
+                <div className="text-lg font-semibold">Repo Library</div>
+                <div className="text-xs text-slate-300">GitHub 驱动的一页式文献 / 代码管理工具</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={onHome}
+                className="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs"
+              >
+                重置搜索
+              </button>
+              <button
+                onClick={() => setMode('preview')}
+                className={`px-3 py-1.5 rounded-xl text-xs ${mode==='preview' ? 'bg-white text-slate-900' : 'bg-slate-800 text-slate-200'}`}
+              >
+                预览模式
+              </button>
+              <button
+                onClick={() => setMode('admin')}
+                className={`px-3 py-1.5 rounded-xl text-xs ${mode==='admin' ? 'bg-amber-400 text-slate-900' : 'bg-slate-800 text-slate-200'}`}
+              >
+                管理模式
+              </button>
+              <button
+                onClick={() => setShowCfg(s => !s)}
+                className="px-3 py-1.5 rounded-xl text-xs bg-slate-700 hover:bg-slate-600"
+              >
+                仓库设置
+              </button>
+            </div>
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-3">
+            <div className="flex-1">
+              <input
+                value={query}
+                onChange={(e)=>setQuery(e.target.value)}
+                className="w-full px-3 py-2 rounded-xl bg-slate-800 border border-slate-700 placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400"
+                placeholder="搜索标题 / 文件名 / Topic / 标签 / 描述..."
+              />
+            </div>
+          </div>
+
+          {showCfg ? (
+            <div className="mt-2 border border-slate-700 rounded-2xl p-3">
+              <ConfigPanel cfg={loadConfig() || { owner: 'cheneit', repo: 'cheneit.github.io', branch: 'main', dataDir: 'data/files', indexPath: 'data/index.json' }} setCfg={onSaveCfg} token={token} setToken={setToken} />
+            </div>
+          ) : null}
+        </div>
+      </header>
+    );
+  }
+
+  function LabeledInput({ label, value, onChange, placeholder }) {
+    return (
+      <label className="text-sm">
+        <div className="mb-1 text-white/80">{label}</div>
+        <input
+          value={value}
+          onChange={e=>onChange(e.target.value)}
+          placeholder={placeholder}
+          className="w-full px-3 py-1.5 rounded-lg bg-white/10 border border-white/20 text-xs placeholder-white/40 focus:outline-none focus:ring-1 focus:ring-amber-400"
+        />
+      </label>
+    );
+  }
+
+  function ConfigPanel({ cfg, setCfg, token, setToken }){
+    const [localCfg, setLocalCfg] = useState(cfg);
+    const [localToken, setLocalToken] = useState(token);
+    return (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
+          <div className="font-semibold mb-3">GitHub 仓库设置</div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <LabeledInput label="Owner" value={localCfg.owner} onChange={v=>setLocalCfg({...localCfg, owner:v})} />
+            <LabeledInput label="Repo" value={localCfg.repo} onChange={v=>setLocalCfg({...localCfg, repo:v})} />
+            <LabeledInput label="Branch" value={localCfg.branch} onChange={v=>setLocalCfg({...localCfg, branch:v})} />
+            <LabeledInput label="数据目录 (files)" value={localCfg.dataDir} onChange={v=>setLocalCfg({...localCfg, dataDir:v})} />
+            <LabeledInput label="索引文件路径" value={localCfg.indexPath} onChange={v=>setLocalCfg({...localCfg, indexPath:v})} />
+          </div>
+          <div className="mt-3 flex gap-2">
+            <button onClick={()=>setCfg(localCfg)} className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-sm">保存配置</button>
+            <a className="px-4 py-2 rounded-xl bg-slate-600 hover:bg-slate-500 text-sm" target="_blank" rel="noreferrer"
+               href={`https://github.com/${localCfg.owner}/${localCfg.repo}`}>打开仓库</a>
+          </div>
+        </div>
+        <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
+          <div className="font-semibold mb-3">管理员令牌 (Personal Access Token)</div>
+          <p className="text-sm text-white/70 mb-2">建议使用细粒度令牌（对目标仓库授予 Contents: Read &amp; Write）。令牌只保存在本机浏览器 LocalStorage。</p>
+          <input type="password" className="w-full px-3 py-2 rounded-lg bg白/10 text-sm placeholder白/60 border border白/20 focus:outline-none"
+                 placeholder="github_pat_xxx 或 ghp_xxx" value={localToken} onChange={(e)=>setLocalToken(e.target.value)} />
+          <div className="mt-3 flex gap-2">
+            <button onClick={()=>setToken(localToken)} className="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-sm">保存令牌</button>
+            <button onClick={()=>{setLocalToken(''); setToken('');}} className="px-4 py-2 rounded-xl bg-slate-600 hover:bg-slate-500 text-sm">清除令牌</button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // ------------------ Admin Panel ------------------
+  function AdminPanelV2({ cfg, token, onUploaded }){
+    const [files, setFiles] = useState([]);
+    const [title, setTitle] = useState('');
+    const [topicsInput, setTopicsInput] = useState('');
+    const [tags, setTags] = useState('');
+    const [desc, setDesc] = useState('');
+    const [cover, setCover] = useState(null);
+    const [busy, setBusy] = useState(false);
+    const [msg, setMsg] = useState('');
+
+    function handleSelect(e){ setFiles(Array.from(e.target.files||[])); }
+    function handleCover(e){ setCover((e.target.files||[])[0] || null); }
+
+    async function uploadAll(){
+      if (!token) { alert('请先在上方设置管理员令牌 (GitHub PAT)。'); return; }
+      if (!files.length) { alert('请选择文件'); return; }
+      setBusy(true); setMsg('');
+      try {
+        let indexData = await ghGetJSONRaw(cfg, cfg.indexPath);
+        if (!indexData) indexData = { items: [] };
+        const indexMeta = await ghGetContentMeta(cfg, cfg.indexPath, token);
+        const indexSha = indexMeta?.sha;
+
+        // 上传封面（如果有）
+        const imagePath = await uploadCoverIfNeeded(cfg, token, cover, '');
+
+        const y = new Date().getFullYear();
+        const m = String(new Date().getMonth()+1).padStart(2,'0');
+        const baseDir = `${cfg.dataDir}/${y}/${m}`;
+
+        let i = 0;
+        for (const file of files) {
+          i += 1;
+          setMsg(`正在上传 (${i}/${files.length})：${file.name}`);
+
+          const buf = new Uint8Array(await file.arrayBuffer());
+          const base64 = b64EncodeUint8(buf);
+
+          const id = uid();
+          const cleanTitle = title || file.name.replace(/\.[^/.]+$/, '');
+          const kind = guessKind(file.name);
+          const ext = file.name.split('.').pop().toLowerCase();
+
+          // 存到仓库里的真实文件名：
+          // - 如果是 pdf：只用随机ID，如 q7n2kpux2rmhedzcjb.pdf
+          // - 其他类型：继续使用 随机ID__原文件名
+          let storedFilename;
+          if (kind === 'pdf' || ext === 'pdf') {
+            storedFilename = `${id}.pdf`;
+          } else {
+            storedFilename = `${id}__${file.name}`;
+          }
+
+          const path = `${baseDir}/${storedFilename}`;
+
+          const meta = await ghGetContentMeta(cfg, path, token);
+          await ghPutContent(
+            cfg,
+            path,
+            base64,
+            `Upload ${file.name} via Repo Library`,
+            token,
+            meta?.sha
+          );
+
+          const topicsArr = topicsInput
+            ? topicsInput.split(',').map(s => s.trim()).filter(Boolean)
+            : [];
+          const tagsArr = tags
+            ? tags.split(',').map(s => s.trim()).filter(Boolean)
+            : [];
+
+          // 写入 index.json：多 topics + 兼容单 topic 字段
+          indexData.items.push({
+            id,
+            title: cleanTitle,
+            filename: file.name,   // 显示用，不影响仓库存储名字
+            path,                  // 真正的访问路径，已是随机名
+            kind,
+            topics: topicsArr,
+            topic: topicsArr[0] || '',
+            tags: tagsArr,
+            ts: Date.now(),
+            size: file.size,
+            desc: desc || '',
+            imagePath: imagePath || '',
+          });
+        }
+
+        const updated = new TextEncoder().encode(JSON.stringify(indexData, null, 2));
+        const updatedB64 = b64EncodeUint8(new Uint8Array(updated));
+        await ghPutContent(cfg, cfg.indexPath, updatedB64, `Update index.json (${files.length} items)`, token, indexSha);
+
+        setMsg(`成功上传 ${files.length} 个文件，并更新索引。`);
+        setFiles([]); setTitle(''); setTopicsInput(''); setTags(''); setDesc(''); setCover(null);
+        onUploaded && onUploaded();
+      } catch(e) {
+        console.error(e);
+        setMsg('出错：' + e.message);
+      } finally { setBusy(false); }
+    }
+
+    const fileCount = files.length;
+    const fileNames = fileCount ? files.map(f=>f.name).join(', ') : '未选择文件';
+
+    return (
+      <section className="mb-6">
+        <div className="bg-white rounded-3xl shadow-soft border border-slate-200 p-4">
+          <div className="flex items-center justify-between mb-3">
+            <div className="font-semibold text-slate-900">上传新条目</div>
+            <div className="text-xs text-slate-500">文件会按年月自动存入：{cfg.dataDir}/YYYY/MM</div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-3">
+              <label className="text-sm block">
+                <div className="mb-1 text-slate-700">选择文件 (支持多选)</div>
+                <input type="file" multiple onChange={handleSelect} className="block w-full text-sm" />
+                <div className="mt-1 text-xs text-slate-500 truncate">当前: {fileNames}</div>
+              </label>
+              <label className="text-sm block">
+                <div className="mb-1 text-slate-700">统一标题（可选，留空则用文件名）</div>
+                <input value={title} onChange={e=>setTitle(e.target.value)} className="w-full px-3 py-2 rounded-xl border border-slate-300 text-sm" />
+              </label>
+              <label className="text-sm block">
+                <div className="mb-1 text-slate-700">Topics（如：Majorana, Skyrmion, Altermagnet，多 topic 逗号分隔）</div>
+                <input
+                  value={topicsInput}
+                  onChange={e=>setTopicsInput(e.target.value)}
+                  className="w-full px-3 py-2 rounded-xl border border-slate-300 text-sm"
+                />
+              </label>
+              <label className="text-sm block">
+                <div className="mb-1 text-slate-700">标签（逗号分隔）</div>
+                <input value={tags} onChange={e=>setTags(e.target.value)} className="w-full px-3 py-2 rounded-xl border border-slate-300 text-sm" />
+              </label>
+            </div>
+            <div className="space-y-3">
+              <label className="text-sm block">
+                <div className="mb-1 text-slate-700">条目简要描述</div>
+                <textarea value={desc} onChange={e=>setDesc(e.target.value)} rows={5} className="w-full px-3 py-2 rounded-xl border border-slate-300 text-sm" />
+              </label>
+              <label className="text-sm block">
+                <div className="mb-1 text-slate-700">封面图（可选，建议 16:9 或 4:3）</div>
+                <input type="file" accept="image/*" onChange={handleCover} className="block w-full text-sm" />
+              </label>
+            </div>
+          </div>
+          <div className="mt-4 flex items-center gap-3">
+            <button
+              onClick={uploadAll}
+              disabled={busy}
+              className={`px-4 py-2 rounded-2xl text-sm text-white ${busy ? 'bg-slate-400' : 'bg-slate-900 hover:bg-slate-800'}`}
+            >
+              {busy ? '上传中…' : '上传所有文件'}
+            </button>
+            {msg ? <div className="text-xs text-slate-600">{msg}</div> : null}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // ------------------ Preview Panel ------------------
+  function PreviewPanel({ loading, error, items, allTopics, allTags, activeTopic, setActiveTopic, activeTag, setActiveTag, sortBy, setSortBy, onOpen, cfg, mode, onEdit, onDeleted }){
+    const total = items.length;
+
+    function handleResetFilters(){
+      setActiveTopic('');
+      setActiveTag('');
+      setSortBy('time_desc');
+    }
+
+    return (
+      <section>
+        <div className="flex flex-wrap items-center gap-3 mb-4">
+          <select
+            value={activeTopic}
+            onChange={(e)=>setActiveTopic(e.target.value)}
+            className="px-3 py-2 rounded-xl border border-slate-300 bg-white"
+          >
+            <option value="">全部 Topic</option>
+            {allTopics.map(t => <option key={t} value={t}>{t}</option>)}
+          </select>
+          <select
+            value={activeTag}
+            onChange={(e)=>setActiveTag(e.target.value)}
+            className="px-3 py-2 rounded-xl border border-slate-300 bg-white"
+          >
+            <option value="">全部标签</option>
+            {allTags.map(t => <option key={t} value={t}>{t}</option>)}
+          </select>
+          <select
+            value={sortBy}
+            onChange={(e)=>setSortBy(e.target.value)}
+            className="px-3 py-2 rounded-xl border border-slate-300 bg-white"
+          >
+            <option value="time_desc">按时间(新→旧)</option>
+            <option value="time_asc">按时间(旧→新)</option>
+            <option value="title_asc">标题(A→Z)</option>
+            <option value="title_desc">标题(Z→A)</option>
+            <option value="type">按类型</option>
+          </select>
+          <button
+            type="button"
+            onClick={handleResetFilters}
+            className="px-3 py-2 rounded-xl border border-slate-300 bg-white hover:bg-slate-100 text-sm"
+          >
+            重置筛选
+          </button>
+          <span className="ml-auto text-sm text-slate-500">
+            共 {total} 条结果
+          </span>
+        </div>
+
+        {loading ? <div className="text-slate-600">加载中…</div> : null}
+        {error ? <div className="text-rose-600">{error}</div> : null}
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {items.map(item => (
+            <CardV2
+              key={item.id}
+              cfg={cfg}
+              item={item}
+              onOpen={() => onOpen(item)}
+              onEdit={() => onEdit(item)}
+              onDelete={() => onDeleted && onDeleted(item)}
+              canAdmin={mode==='admin'}
+            />
+          ))}
+        </div>
+
+        {!loading && !items.length ? (
+          <div className="text-sm text-slate-500 mt-6">没有符合条件的条目。</div>
+        ) : null}
+      </section>
+    );
+  }
+
+  // ------------------ Card ------------------
+  function CardV2({ cfg, item, onOpen, onEdit, onDelete, canAdmin }){
+    const kindMeta = FILE_KINDS[item.kind] || FILE_KINDS.other;
+    const Icon = kindMeta.icon;
+
+    // rawHref：统一指向 raw.githubusercontent.com（或保留绝对URL），用于下载 / 原始查看
+    const rawHref = buildRawUrl(cfg, item.path);
+
+    // browserHref：用于“在浏览器中打开 / 点标题”的链接
+    // - PDF：走 Pages 站点路径（buildPdfBrowserUrl），在浏览器直接展示
+    // - 其他类型：沿用 rawHref
+    const browserHref = item.kind === 'pdf'
+      ? buildPdfBrowserUrl(item.path)
+      : rawHref;
+
+    const coverSrc = item.imagePath ? buildRawUrl(cfg, item.imagePath) : '';
+    const topicsArr = item.topics || (item.topic ? [item.topic] : []);
+
+    return (
+      <div className="bg白 rounded-3xl border border-slate-200 shadow-soft p-4 flex flex-col h-full min-h-[340px]">
+        <div className="mb-3 w-full h-36 rounded-2xl overflow-hidden bg-slate-100 flex items-center justify-center">
+          {coverSrc ? (
+            <img src={coverSrc} alt="cover" className="w-full h-full object-cover" />
+          ) : (
+            <div className="text-slate-400 text-sm">无封面</div>
+          )}
+        </div>
+        <div className="flex items-start gap-3">
+          <div className="w-10 h-10 rounded-2xl flex items-center justify-center text-slate-700 bg-slate-50">
+            <Icon className="w-6 h-6" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="font-semibold text-slate-900 truncate">
+              <a href={browserHref} target="_blank" rel="noreferrer" className="hover:underline">
+                {item.title || item.filename}
+              </a>
+            </div>
+            <div className="text-xs text-slate-500 mt-0.5">
+              {kindMeta.label} · {fmtDate(item.ts)}{topicsArr[0] ? ` · ${topicsArr[0]}` : ''}
+            </div>
+          </div>
+        </div>
+
+        {topicsArr.length ? (
+          <div className="mt-3 flex flex-wrap gap-2">
+            {topicsArr.map(t => (
+              <span
+                key={t}
+                className="text-xs px-2 py-1 rounded-full bg-sky-100 text-sky-700"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+        ) : null}
+
+        {item.tags && item.tags.length ? (
+          <div className="mt-3 flex flex-wrap gap-2">
+            {item.tags.map(t => (
+              <span key={t} className="text-xs px-2 py-1 rounded-full bg-slate-100 text-slate-700">
+                #{t}
+              </span>
+            ))}
+          </div>
+        ) : null}
+        {item.desc ? (
+          <div className="mt-3 text-sm text-slate-700 max-h-20 overflow-hidden">
+            {item.desc}
+          </div>
+        ) : null}
+        <div className="mt-4 flex flex-wrap gap-2">
+          {item.kind !== 'pdf' ? (
+            <button onClick={onOpen} className="px-3 py-2 rounded-xl bg-slate-900 text白 hover:bg-slate-800 text-sm">
+              预览
+            </button>
+          ) : null}
+          <a href={rawHref} download className="px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-sm">
+            下载
+          </a>
+          <a href={browserHref} target="_blank" rel="noreferrer" className="px-3 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 text-sm">
+            在浏览器打开
+          </a>
+          {canAdmin ? (
+            <>
+              <button onClick={onEdit} className="px-3 py-2 rounded-xl bg-amber-100 text-amber-800 hover:bg-amber-200 text-sm">
+                编辑
+              </button>
+              <button onClick={onDelete} className="px-3 py-2 rounded-xl bg-rose-100 text-rose-800 hover:bg-rose-200 text-sm">
+                删除
+              </button>
+            </>
+          ) : null}
+        </div>
+      </div>
+    );
+  }
+
+  // ------------------ Viewer Modal ------------------
+  function ViewerModal({ cfg, item, onClose }){
+    const [mode, setMode] = useState(item.kind);
+    const [loading, setLoading] = useState(true);
+    const [err, setErr] = useState('');
+    const [blobUrl, setBlobUrl] = useState('');
+    const [text, setText] = useState('');
+    const scrollRef = useRef(null);
+
+    useEffect(() => {
+      (async () => {
+        setLoading(true);
+        setErr('');
+        setBlobUrl('');
+        setText('');
+        try {
+          if (mode === 'html') {
+            const t = await ghGetTextRaw(cfg, item.path);
+            if (t == null) throw new Error('无法获取HTML');
+            setText(t);
+          } else {
+            const t = await ghGetTextRaw(cfg, item.path);
+            if (t == null) throw new Error('无法获取文本');
+            setText(t);
+            setTimeout(() => {
+              document.querySelectorAll('pre code').forEach(block => hljs.highlightElement(block));
+            }, 0);
+          }
+        } catch(e) {
+          setErr(e.message);
+        }
+        setLoading(false);
+      })();
+    }, [cfg.owner, cfg.repo, cfg.branch, item.path, mode]);
+
+    const kindMeta = FILE_KINDS[item.kind] || FILE_KINDS.other;
+    const Icon = kindMeta.icon;
+    const rawHref = buildRawUrl(cfg, item.path);
+    const language = guessHighlightLanguage(item.filename || '');
+
+    return (
+      <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={onClose}>
+        <div className="bg-white max-w-6xl w-full max-h-[90vh] rounded-3xl overflow-hidden border border-slate-200 shadow-2xl" onClick={e=>e.stopPropagation()}>
+          <div className="flex items-center justify-between px-4 py-3 border-b border-slate-200">
+            <div className="flex items-center gap-2">
+              <Icon className="w-5 h-5 text-slate-700"/>
+              <div className="font-semibold truncate max-w-[450px]" title={item.title || item.filename}>
+                {item.title || item.filename}
+              </div>
+              <div className="text-xs text-slate-500">· {kindMeta.label} · {fmtDate(item.ts)}</div>
+            </div>
+            <div className="flex items-center gap-2">
+              {(item.kind === 'text' || item.kind === 'code') ? (
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigator.clipboard.writeText(text || '');
+                  }}
+                  className="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-sm"
+                >
+                  复制
+                </button>
+              ) : null}
+              <button onClick={onClose} className="px-3 py-1.5 rounded-lg bg-slate-900 text白 hover:bg-slate-800 text-sm">
+                关闭
+              </button>
+            </div>
+          </div>
+
+          <div className="p-3 bg-slate-50 border-b border-slate-200 flex items-center gap-2 text-sm">
+            <span className="text-slate-600">渲染为:</span>
+            <div className="flex gap-2">
+              <button
+                onClick={() => setMode('html')}
+                disabled={item.kind !== 'html'}
+                className={`px-3 py-1.5 rounded-lg border text-xs ${
+                  mode === 'html' ? 'bg-slate-900 text白 border-slate-900' : 'bg白 text-slate-700 border-slate-200'
+                } ${item.kind !== 'html' ? 'opacity-50 cursor-not-allowed' : ''}`}
+              >
+                HTML
+              </button>
+              <button
+                onClick={() => setMode(item.kind === 'code' ? 'code' : 'text')}
+                disabled={!(item.kind === 'text' || item.kind === 'code')}
+                className={`px-3 py-1.5 rounded-lg border text-xs ${
+                  mode !== 'html' ? 'bg-slate-900 text白 border-slate-900' : 'bg白 text-slate-700 border-slate-200'
+                } ${!(item.kind === 'text' || item.kind === 'code') ? 'opacity-50 cursor-not-allowed' : ''}`}
+              >
+                {item.kind === 'code' ? 'Code' : 'Text'}
+              </button>
+              <a
+                className="px-3 py-1.5 rounded-lg bg-slate-200 hover:bg-slate-300 text-xs"
+                href={rawHref}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Raw
+              </a>
+            </div>
+          </div>
+
+          <div ref={scrollRef} className="p-0 max-h-[75vh] overflow-auto relative">
+            {loading ? (
+              <div className="p-6 text-slate-600">加载中…</div>
+            ) : err ? (
+              <div className="p-6 text-rose-600">{err}</div>
+            ) : mode === 'html' ? (
+              <iframe
+                className="w-full h-[75vh] bg白"
+                srcDoc={text}
+                sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+                title={item.title || item.filename}
+              />
+            ) : (
+              <pre className="p-4 text-sm bg-[#0b1020] text-slate-50 overflow-auto">
+                <code className={language ? `language-${language}` : ''}>{text}</code>
+              </pre>
+            )}
+            {!loading && !err && mode !== 'html' ? (
+              <button
+                onClick={() => scrollRef.current && scrollRef.current.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="absolute right-4 bottom-4 px-3 py-1.5 rounded-full bg-slate-700 text-xs text白 shadow-lg hover:bg-slate-600"
+              >
+                回到顶部
+              </button>
+            ) : null}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // ------------------ Edit Modal ------------------
+  function EditItemModal({ cfg, item, onClose, onSave }){
+    const initialTopicsArr = item.topics || (item.topic ? [item.topic] : []);
+    const [title, setTitle] = useState(item.title || '');
+    const [topicsInput, setTopicsInput] = useState(initialTopicsArr.join(', '));
+    const [tagsInput, setTagsInput] = useState((item.tags||[]).join(', '));
+    const [desc, setDesc] = useState(item.desc || '');
+    const [cover, setCover] = useState(null);
+    const rawCover = item.imagePath ? buildRawUrl(cfg, item.imagePath) : '';
+
+    function handleSubmit(){
+      const topicsArr = topicsInput
+        ? topicsInput.split(',').map(s=>s.trim()).filter(Boolean)
+        : [];
+      const tagsArr = tagsInput
+        ? tagsInput.split(',').map(s=>s.trim()).filter(Boolean)
+        : [];
+
+      const updated = { 
+        ...item, 
+        title, 
+        desc,
+        topics: topicsArr,
+        topic: topicsArr[0] || '',
+        tags: tagsArr
+      };
+      onSave && onSave(updated, cover);
+    }
+
+    return (
+      <div 
+        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+        onClick={onClose}
+      >
+        <div
+          className="bg白 rounded-3xl max-w-3xl w-full border border-slate-200 shadow-2xl"
+          onClick={e=>e.stopPropagation()}
+        >
+          <div className="flex items-center justify-between px-4 py-3 border-b border-slate-200">
+            <div className="font-semibold">编辑条目信息</div>
+            <button onClick={onClose} className="px-3 py-1.5 rounded-lg bg-slate-900 text白 hover:bg-slate-800 text-sm">关闭</button>
+          </div>
+          <div className="p-4 space-y-4">
+            <label className="text-sm block">
+              <div className="mb-1 text-slate-700">标题</div>
+              <input
+                value={title}
+                onChange={e=>setTitle(e.target.value)}
+                className="w-full px-3 py-2 rounded-xl border border-slate-300"
+              />
+            </label>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <label className="text-sm block">
+                <div className="mb-1 text-slate-700">Topics（逗号分隔）</div>
+                <input
+                  value={topicsInput}
+                  onChange={e=>setTopicsInput(e.target.value)}
+                  className="w-full px-3 py-2 rounded-xl border border-slate-300"
+                />
+              </label>
+              <label className="text-sm block">
+                <div className="mb-1 text-slate-700">Tags（逗号分隔）</div>
+                <input
+                  value={tagsInput}
+                  onChange={e=>setTagsInput(e.target.value)}
+                  className="w-full px-3 py-2 rounded-xl border border-slate-300"
+                />
+              </label>
+            </div>
+            <label className="text-sm block">
+              <div className="mb-1 text-slate-700">简要描述</div>
+              <textarea
+                value={desc}
+                onChange={e=>setDesc(e.target.value)}
+                className="w-full px-3 py-2 rounded-xl border border-slate-300"
+                rows={3}
+              />
+            </label>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
+              <div>
+                <div className="mb-1 text-slate-700 text-sm">封面图（可选，上传新图将覆盖旧图）</div>
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={e=>setCover((e.target.files || [])[0] || null)}
+                  className="w-full px-3 py-2 rounded-xl border border-slate-300"
+                />
+              </div>
+              <div>
+                <div className="mb-1 text-slate-700 text-sm">当前封面</div>
+                <div className="w-full h-36 rounded-xl overflow-hidden bg-slate-100 flex items-center justify-center">
+                  {rawCover ? (
+                    <img src={rawCover} alt="cover" className="w-full h-full object-cover" />
+                  ) : (
+                    <div className="text-slate-400 text-sm">无封面</div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="px-4 py-3 border-t border-slate-200 flex justify-end gap-2">
+            <button
+              onClick={onClose}
+              className="px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 text-sm"
+            >
+              取消
+            </button>
+            <button
+              onClick={handleSubmit}
+              className="px-4 py-2 rounded-xl bg-slate-900 text白 hover:bg-slate-800 text-sm"
+            >
+              保存
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // ------------------ 简单密码门 AuthGate ------------------
+  function AuthGate({ children }) {
+    const [authed, setAuthed] = useState(false);
+    const [pw, setPw] = useState('');
+    const [error, setError] = useState('');
+    const [checking, setChecking] = useState(true);
+
+    useEffect(() => {
+      // 页面加载时先检查本地是否已经通过过验证
+      const stored = localStorage.getItem(AUTH_KEY);
+      if (stored === 'ok') {
+        setAuthed(true);
+      }
+      setChecking(false);
+    }, []);
+
+    async function handleSubmit(e) {
+      e.preventDefault();
+      setError('');
+      try {
+        const input = pw.trim();
+        if (!input) {
+          setError('请输入密码');
+          return;
+        }
+        const hash = await sha256Hex(input);
+        if (hash === PASSWORD_HASH) {
+          setAuthed(true);
+          localStorage.setItem(AUTH_KEY, 'ok'); // 记住登录状态
+          setPw('');
+        } else {
+          setError('密码错误');
+        }
+      } catch (err) {
+        console.error(err);
+        setError('浏览器不支持加密 API，请更换现代浏览器');
+      }
+    }
+
+    // 初次检查 localStorage 时的过渡状态
+    if (checking) {
+      return (
+        <div className="min-h-screen flex items-center justify-center bg-slate-900 text-slate-100">
+          <div className="text-sm">加载中...</div>
+        </div>
+      );
+    }
+
+    // 未通过密码验证时，只显示密码表单
+    if (!authed) {
+      return (
+        <div className="min-h-screen flex items-center justify-center bg-slate-900 text-slate-50">
+          <form
+            onSubmit={handleSubmit}
+            className="bg-slate-800 rounded-3xl p-6 w-full max-w-sm border border-slate-700 shadow-xl space-y-4"
+          >
+            <div className="text-lg font-semibold text-center">Private Repo Library</div>
+
+            <label className="block text-sm">
+              <span className="block mb-1 text-slate-200">访问密码</span>
+              <input
+                type="password"
+                value={pw}
+                onChange={(e) => setPw(e.target.value)}
+                className="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-600 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400"
+                placeholder="请输入密码"
+              />
+            </label>
+
+            {error ? (
+              <div className="text-xs text-rose-400">{error}</div>
+            ) : null}
+
+            <button
+              type="submit"
+              className="w-full px-3 py-2 rounded-xl bg-amber-400 text-slate-900 text-sm font-medium hover:bg-amber-300"
+            >
+              进入
+            </button>
+
+            <div className="mt-2 text-[11px] text-slate-400 text-center">
+              本站仅供个人使用，文件托管于 GitHub。
+            </div>
+          </form>
+        </div>
+      );
+    }
+
+    // 通过验证后，渲染真正的应用
+    return children;
+  }
+
+  // ------------------ Footer ------------------
+  function Footer(){
+    return (
+      <footer className="border-t border-slate-200 mt-auto py-3 text-xs text-slate-500 text-center">
+        <div>© {new Date().getFullYear()} Repo Library · GitHub 托管 · 单文件网页</div>
+      </footer>
+    );
+  }
+
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    <AuthGate>
+      <App />
+    </AuthGate>
+  );
 </script>
 
 </body>
