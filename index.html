@@ -653,32 +653,59 @@
 
           let i = 0;
           for (const file of files) {
-            i += 1;
-            setMsg(`正在上传 (${i}/${files.length})：${file.name}`);
-            const buf = new Uint8Array(await file.arrayBuffer());
-            const base64 = b64EncodeUint8(buf);
-            const id = uid();
-            const cleanTitle = title || file.name.replace(/\.[^/.]+$/, '');
-            const kind = guessKind(file.name);
-            const filename = `${id}__${file.name}`;
-            const path = `${baseDir}/${filename}`;
-            const meta = await ghGetContentMeta(cfg, path, token);
-            await ghPutContent(cfg, path, base64, `Upload ${file.name} via Repo Library`, token, meta?.sha);
+  i += 1;
+  setMsg(`正在上传 (${i}/${files.length})：${file.name}`);
 
-            indexData.items.push({
-              id,
-              title: cleanTitle,
-              filename: file.name,
-              path,
-              kind,
-              topic: topic || '',
-              tags: tags ? tags.split(',').map(s=>s.trim()).filter(Boolean) : [],
-              ts: Date.now(),
-              size: file.size,
-              desc: desc || '',
-              imagePath: imagePath || '',
-            });
-          }
+  const buf = new Uint8Array(await file.arrayBuffer());
+  const base64 = b64EncodeUint8(buf);
+
+  const id = uid();
+  const cleanTitle = title || file.name.replace(/\.[^/.]+$/, '');
+  const kind = guessKind(file.name);
+
+  // 这里判断是不是 pdf
+  const ext = file.name.split('.').pop().toLowerCase();
+
+  // 存到仓库里的真实文件名：
+  // - 如果是 pdf：只用随机ID，如 q7n2kpux2rmhedzcjb.pdf
+  // - 其他类型：继续使用  随机ID__原文件名
+  let storedFilename;
+  if (kind === 'pdf' || ext === 'pdf') {
+    storedFilename = `${id}.pdf`;
+  } else {
+    storedFilename = `${id}__${file.name}`;
+  }
+
+  const path = `${baseDir}/${storedFilename}`;
+
+  const meta = await ghGetContentMeta(cfg, path, token);
+  await ghPutContent(
+    cfg,
+    path,
+    base64,
+    `Upload ${file.name} via Repo Library`,
+    token,
+    meta?.sha
+  );
+
+  // 这里的 filename 字段还是保留原始文件名，用于界面显示
+  indexData.items.push({
+    id,
+    title: cleanTitle,
+    filename: file.name,   // 显示用，不影响仓库存储名字
+    path,                  // 真正的访问路径，已是随机名
+    kind,
+    topic: topic || '',
+    tags: tags
+      ? tags.split(',').map(s => s.trim()).filter(Boolean)
+      : [],
+    ts: Date.now(),
+    size: file.size,
+    desc: desc || '',
+    imagePath: imagePath || '',
+  });
+}
+
 
           const updated = new TextEncoder().encode(JSON.stringify(indexData, null, 2));
           const updatedB64 = b64EncodeUint8(new Uint8Array(updated));
