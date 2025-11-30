@@ -153,6 +153,54 @@
       return ghRawUrl({ owner: cfg.owner, repo: cfg.repo, branch: cfg.branch, path });
     }
 
+    // 专门给 PDF 在浏览器中打开用：
+    // - 对 github.com/.../blob/... 链接，截出 /uploads/... 或 /data/files/... 这段路径
+    // - 对 raw.githubusercontent.com 链接，截出仓库里的相对路径
+    // - 对相对路径（uploads/... 或 data/files/...），加上前导斜杠变成 /uploads/... 这样的站点路径
+    // - 对其他域名的绝对 URL，保持原样
+    function buildPdfBrowserUrl(path) {
+        if (!path) return '#';
+
+    try {
+      const u = new URL(path);
+      const host = u.hostname;
+      const pathname = u.pathname;
+
+    // 1) https://github.com/<owner>/<repo>/blob/<ref>/<path...>
+    if (host === 'github.com') {
+      const blobIndex = pathname.indexOf('/blob/');
+      if (blobIndex !== -1) {
+        const afterBlob = pathname.substring(blobIndex + '/blob/'.length); // "<ref>/<rest>"
+        const firstSlash = afterBlob.indexOf('/');
+        if (firstSlash !== -1) {
+          const rest = afterBlob.substring(firstSlash + 1); // "uploads/2025/10/xxx.pdf"
+          return '/' + rest;
+        }
+      }
+      // 找不到 blob，就退而求其次用原始 pathname
+      return pathname;
+    }
+
+    // 2) https://raw.githubusercontent.com/<owner>/<repo>/<branch>/<path...>
+    if (host === 'raw.githubusercontent.com') {
+      const parts = pathname.split('/').filter(Boolean);
+      if (parts.length >= 4) {
+        const rest = parts.slice(3).join('/'); // 从第四段开始是仓库内部的路径
+        return '/' + rest;
+      }
+      return pathname;
+    }
+
+    // 3) 其他域名的绝对 URL：不做处理，直接用
+    return path;
+  } catch (e) {
+    // 4) 不是绝对 URL，当作仓库根目录下的相对路径
+    if (path.startsWith('/')) return path;
+    return '/' + path;
+  }
+}
+
+
     async function ghGetJSONRaw(cfg, path) {
       const url = buildRawUrl(cfg, path);
       const res = await fetch(url);
