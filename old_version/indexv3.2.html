@@ -1,0 +1,3097 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Repo Library — Admin + Preview (v3.2 Pages 自动发布版)</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Noto Sans", "Ubuntu", "Cantarell", "Helvetica Neue", "Arial", "\"Apple Color Emoji\"", "\"Segoe UI Emoji\"", "\"Segoe UI Symbol\""]
+          },
+          boxShadow: { soft: "0 10px 30px rgba(0,0,0,0.08)" },
+        },
+      },
+    };
+  </script>
+
+  <!-- React UMD + Babel (single-file JSX) -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Fuse.js (optional; keep for future) -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+
+  <!-- highlight.js for code/text display -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+  <style>
+    html, body, #root { height: 100%; }
+    .scrollbar-thin::-webkit-scrollbar { height: 8px; width: 8px; }
+    .scrollbar-thin::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.18); border-radius: 999px; }
+
+    /* Timeline (right sidebar) */
+    .tl { position: relative; padding-left: 18px; }
+    .tl:before { content: ""; position: absolute; left: 7px; top: 0; bottom: 0; width: 2px; background: rgba(15,23,42,0.15); border-radius: 999px; }
+    .tl-dot { position: absolute; left: 1px; width: 14px; height: 14px; border-radius: 999px; background: #fb923c; border: 3px solid white; box-shadow: 0 6px 16px rgba(0,0,0,0.12); }
+    .tl-dot.sm { width: 10px; height: 10px; left: 3px; background: #fbbf24; border-width: 2px; }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+  <div id="root" class="min-h-full"></div>
+
+<script type="text/babel">
+const { useState, useEffect, useMemo, useRef } = React;
+
+/**
+ * =========================
+ * Repo Library — 单文件 SPA（v3.2 Pages 自动发布版）
+ * - Preview：浏览 / 搜索 / 筛选 / Dashboard（统计、日历、归档）
+ * - Admin：上传 / 编辑 / 删除 / 替换PDF（注释后覆盖）
+ *
+ * 关键改动：
+ * 1) A 方案：PDF 分仓（默认 prefix + 年份，例如 cheneit-pdf-2026）
+ * 2) 新上传 PDF：index.json 新条目增加 storage 字段（旧条目不改结构）
+ * 3) 首页仅显示最近 6 条，其余折叠
+ * 4) Tags / Topics 统计（圆圈 badge），词云 + 日历热力图
+ * 5) 右侧归档栏（时间轴式），默认强调最近 3 篇 + 下滑更多
+ * 6) 按钮统一：浅色背景 + 深色字体，不同功能不同背景色
+ * 7) v2：metadata-first 上传、index 写回重试、branch 显式写入、错误状态保留
+ * =========================
+ */
+
+/* ============ 简单密码保护（可选） ============ */
+const PASSWORD_HASH = '6543cc38c0864d19a15351545d60e99307b9cef4d9c2c21c225735744ea00762';
+const AUTH_KEY = 'repoLibrary.authed';
+
+async function sha256Hex(str) {
+  const enc = new TextEncoder().encode(str);
+  const buf = await crypto.subtle.digest('SHA-256', enc);
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+/* ============ UI helpers ============ */
+function cx(...arr){ return arr.filter(Boolean).join(' '); }
+
+function btnClass(variant='slate', extra='') {
+  // 统一“浅色背景 + 深色字体”，不同功能用不同浅色背景
+  const base = "inline-flex items-center justify-center gap-2 px-3 py-2 rounded-xl text-sm font-medium border shadow-sm transition-colors";
+  const map = {
+    primary: "bg-sky-50 text-sky-800 border-sky-200 hover:bg-sky-100",
+    success: "bg-emerald-50 text-emerald-800 border-emerald-200 hover:bg-emerald-100",
+    warn:    "bg-amber-50 text-amber-900 border-amber-200 hover:bg-amber-100",
+    danger:  "bg-rose-50 text-rose-800 border-rose-200 hover:bg-rose-100",
+    slate:   "bg-white text-slate-800 border-slate-200 hover:bg-slate-50",
+    subtle:  "bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100",
+    dark:    "bg-slate-900 text-white border-slate-900 hover:bg-slate-800",
+  };
+  return cx(base, map[variant] || map.slate, extra);
+}
+
+function badgeClass() {
+  return "ml-2 inline-flex items-center justify-center min-w-[22px] h-[22px] px-1.5 rounded-full bg-rose-500 text-white text-xs font-semibold";
+}
+
+function uploadStatusMeta(item) {
+  const s = item?.uploadStatus || '';
+  if (!s || s === 'ready') return null;
+  const map = {
+    metadata_created: { label: '条目已创建，文件待上传', cls: 'bg-amber-50 text-amber-800 border-amber-200' },
+    file_pending:     { label: '文件待上传', cls: 'bg-amber-50 text-amber-800 border-amber-200' },
+    pdf_pending:      { label: 'PDF 待上传', cls: 'bg-amber-50 text-amber-800 border-amber-200' },
+    upload_failed:    { label: '文件上传失败，条目已保留', cls: 'bg-rose-50 text-rose-800 border-rose-200' },
+    partial_ready:     { label: '部分完成', cls: 'bg-amber-50 text-amber-800 border-amber-200' },
+  };
+  return map[s] || { label: s, cls: 'bg-slate-50 text-slate-700 border-slate-200' };
+}
+
+function shortErr(err, n=140) {
+  if (!err) return '';
+  const s = String(err).replace(/\s+/g, ' ').trim();
+  return s.length > n ? s.slice(0, n) + '…' : s;
+}
+
+function humanSize(bytes) {
+  const n = Number(bytes || 0);
+  if (!n) return '0 B';
+  const units = ['B', 'KB', 'MB', 'GB'];
+  let v = n, i = 0;
+  while (v >= 1024 && i < units.length - 1) { v /= 1024; i += 1; }
+  return `${v.toFixed(i === 0 ? 0 : 1)} ${units[i]}`;
+}
+
+
+/* ============ Utilities ============ */
+const fmtDate = (ts) => {
+  try {
+    const d = new Date(ts);
+    if (isNaN(d)) return '';
+    const y = d.getFullYear();
+    const m = String(d.getMonth()+1).padStart(2,'0');
+    const dd = String(d.getDate()).padStart(2,'0');
+    return `${y}-${m}-${dd}`;
+  } catch { return ''; }
+};
+const uid = () => Math.random().toString(36).slice(2) + Date.now().toString(36);
+
+const FILE_KINDS = {
+  pdf:  { label: 'PDF',  pill: 'bg-red-100 text-red-700', icon: () => <span>📄</span> },
+  html: { label: 'HTML', pill: 'bg-orange-100 text-orange-700', icon: () => <span>🌐</span> },
+  text: { label: 'TEXT', pill: 'bg-blue-100 text-blue-700', icon: () => <span>📃</span> },
+  code: { label: 'CODE', pill: 'bg-emerald-100 text-emerald-700', icon: () => <span>💻</span> },
+  other:{ label: 'FILE', pill: 'bg-slate-100 text-slate-700', icon: () => <span>📦</span> },
+};
+
+const EXT_KIND = {
+  pdf: 'pdf',
+  html: 'html', htm: 'html',
+  txt: 'text', md: 'text', rtf: 'text', log: 'text',
+  py: 'code', js: 'code', jsx: 'code', ts: 'code', tsx: 'code', ipynb: 'code',
+  sh: 'code', bash:'code', c: 'code', cpp: 'code', cu: 'code', f90:'code', f:'code',
+  jl:'code', m:'code', rs:'code', tex:'code', css:'code', json:'code', yml:'code', yaml:'code'
+};
+
+function extOf(name) {
+  const m = (name || '').toLowerCase().match(/\.([a-z0-9]+)$/);
+  return m ? m[1] : '';
+}
+
+function guessKind(filename, override) {
+  if (override) return override;
+  const ext = extOf(filename);
+  return EXT_KIND[ext] || 'other';
+}
+
+function guessHighlightLanguage(filename) {
+  const ext = extOf(filename || '');
+  switch (ext) {
+    case 'py': return 'python';
+    case 'js':
+    case 'jsx': return 'javascript';
+    case 'ts':
+    case 'tsx': return 'typescript';
+    case 'sh':
+    case 'bash': return 'bash';
+    case 'json': return 'json';
+    case 'html':
+    case 'htm': return 'xml';
+    case 'css': return 'css';
+    case 'c': return 'c';
+    case 'cpp':
+    case 'cc':
+    case 'cxx':
+    case 'h':
+    case 'hpp': return 'cpp';
+    case 'java': return 'java';
+    case 'rb': return 'ruby';
+    case 'go': return 'go';
+    case 'rs': return 'rust';
+    default: return '';
+  }
+}
+
+function b64EncodeUint8(arr) {
+  // Chunked encoding avoids extremely slow string concatenation for medium/large PDFs.
+  const chunkSize = 0x8000;
+  const parts = [];
+  for (let i = 0; i < arr.byteLength; i += chunkSize) {
+    const chunk = arr.subarray(i, i + chunkSize);
+    let s = '';
+    for (let j = 0; j < chunk.length; j++) s += String.fromCharCode(chunk[j]);
+    parts.push(s);
+  }
+  return btoa(parts.join(''));
+}
+
+/* ============ GitHub helpers (multi-repo) ============ */
+function isAbsoluteUrl(path) { return /^https?:\/\//.test(path || ''); }
+
+function ghRawUrl({ owner, repo, branch, path }) {
+  return `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/${path}`;
+}
+
+function buildRawUrl(cfg, path) {
+  if (!path) return '#';
+  if (isAbsoluteUrl(path)) return path;
+  return ghRawUrl({ owner: cfg.owner, repo: cfg.repo, branch: cfg.branch, path });
+}
+
+/**
+ * PDF 在浏览器打开：
+ * - 新条目：item.path 往往是 Pages 的绝对 URL（直接用）
+ * - 旧条目：相对路径（data/files/...），转为站点路径 /data/files/...
+ * - 也兼容 github.com/blob 和 raw.githubusercontent.com 的路径提取（保持你旧逻辑）
+ */
+function buildPdfBrowserUrl(path) {
+  if (!path) return '#';
+  if (isAbsoluteUrl(path)) return path;
+
+  try {
+    const u = new URL(path);
+    const host = u.hostname;
+    const pathname = u.pathname;
+
+    if (host === 'github.com') {
+      const blobIndex = pathname.indexOf('/blob/');
+      if (blobIndex !== -1) {
+        const afterBlob = pathname.substring(blobIndex + '/blob/'.length);
+        const firstSlash = afterBlob.indexOf('/');
+        if (firstSlash !== -1) {
+          const rest = afterBlob.substring(firstSlash + 1);
+          return '/' + rest;
+        }
+      }
+      return pathname;
+    }
+
+    if (host === 'raw.githubusercontent.com') {
+      const parts = pathname.split('/').filter(Boolean);
+      if (parts.length >= 4) {
+        const rest = parts.slice(3).join('/');
+        return '/' + rest;
+      }
+      return pathname;
+    }
+
+    return path;
+  } catch {
+    if (path.startsWith('/')) return path;
+    return '/' + path;
+  }
+}
+
+function cacheBustUrl(url) {
+  const sep = String(url).includes('?') ? '&' : '?';
+  return `${url}${sep}_repoLibraryFresh=${Date.now()}_${Math.random().toString(36).slice(2)}`;
+}
+
+async function ghGetJSONRaw(owner, repo, branch, path) {
+  const url = cacheBustUrl(ghRawUrl({ owner, repo, branch, path }));
+  const res = await fetch(url, { cache: 'no-store' });
+  if (!res.ok) return null;
+  return await res.json();
+}
+
+async function ghGetTextRaw(owner, repo, branch, path) {
+  const url = cacheBustUrl(ghRawUrl({ owner, repo, branch, path }));
+  const res = await fetch(url, { cache: 'no-store' });
+  if (!res.ok) return null;
+  return await res.text();
+}
+
+function encodeGitHubPath(path) {
+  return String(path || '').split('/').map(encodeURIComponent).join('/');
+}
+
+function ghHeaders(token, extra={}) {
+  return {
+    'Accept': 'application/vnd.github+json',
+    'X-GitHub-Api-Version': '2026-03-10',
+    ...(token ? { Authorization: `Bearer ${token}` } : {}),
+    ...extra,
+  };
+}
+
+// v3.1: 保存最近一次成功写入 index.json 后 GitHub 返回的最新 blob SHA。
+// 同一页面中的连续 metadata -> ready 更新直接沿用 SHA 链；若仓库被外部修改，409 后清空缓存并强制重新读取。
+const INDEX_WRITE_CACHE = new Map();
+
+function indexWriteCacheKey(cfg) {
+  return `${cfg.owner}/${cfg.repo}@${cfg.branch || 'main'}:${cfg.indexPath}`;
+}
+
+function cloneJson(obj) {
+  return JSON.parse(JSON.stringify(obj));
+}
+
+function invalidateIndexWriteCache(cfg) {
+  INDEX_WRITE_CACHE.delete(indexWriteCacheKey(cfg));
+}
+
+function b64DecodeToText(b64) {
+  const clean = String(b64 || '').replace(/\s/g, '');
+  const bin = atob(clean);
+  const arr = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) arr[i] = bin.charCodeAt(i);
+  return new TextDecoder().decode(arr);
+}
+
+function resolvePdfRepoNameFromCfg(cfg, year) {
+  const pdf = cfg.pdf || {};
+  if (pdf.manualRepo && pdf.manualRepo.trim()) return pdf.manualRepo.trim();
+  const prefix = pdf.repoPrefix || 'cheneit-pdf-';
+  return `${prefix}${year}`;
+}
+
+function resolvePagesBaseFromCfg(cfg, owner, repo) {
+  const pdf = cfg.pdf || {};
+  if (pdf.pagesBase && pdf.pagesBase.trim()) return pdf.pagesBase.replace(/\/+$/,'');
+  return `https://${owner}.github.io/${repo}`;
+}
+
+function normalizeIndexData(data) {
+  if (Array.isArray(data)) return { items: data };
+  if (!data || typeof data !== 'object') return { items: [] };
+  if (!Array.isArray(data.items)) data.items = [];
+  return data;
+}
+
+
+/* ============ v3 legacy-data migration helpers ============ */
+function splitLegacyList(value) {
+  if (Array.isArray(value)) return value.map(v => String(v).trim()).filter(Boolean);
+  if (value === null || value === undefined || value === '') return [];
+  return String(value).split(/[,，;；|]/).map(v => v.trim()).filter(Boolean);
+}
+
+function legacyStableId(item, index=0) {
+  if (item?.id) return String(item.id);
+  const src = `${item?.path || ''}|${item?.filename || ''}|${item?.title || ''}|${item?.ts || ''}|${index}`;
+  let h = 2166136261;
+  for (let i=0; i<src.length; i++) {
+    h ^= src.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return `legacy_${(h >>> 0).toString(36)}`;
+}
+
+function filenameFromPath(path) {
+  try {
+    const clean = String(path || '').split('?')[0].split('#')[0];
+    const part = clean.split('/').filter(Boolean).pop() || '';
+    return decodeURIComponent(part);
+  } catch {
+    return String(path || '').split('/').filter(Boolean).pop() || '';
+  }
+}
+
+function normalizeLegacyTimestamp(value) {
+  if (value === null || value === undefined || value === '') return 0;
+  if (typeof value === 'number' && Number.isFinite(value)) {
+    return value > 0 && value < 1e11 ? value * 1000 : value;
+  }
+  const n = Number(value);
+  if (Number.isFinite(n) && n > 0) return n < 1e11 ? n * 1000 : n;
+  const parsed = Date.parse(String(value));
+  return Number.isFinite(parsed) ? parsed : 0;
+}
+
+
+function inferLegacyStorage(path, cfg) {
+  if (!path) return null;
+  if (!isAbsoluteUrl(path)) {
+    return { owner: cfg.owner, repo: cfg.repo, branch: cfg.branch, path, legacyMainRepo: true };
+  }
+  try {
+    const u = new URL(path);
+    const parts = u.pathname.split('/').filter(Boolean);
+    if (u.hostname === 'raw.githubusercontent.com' && parts.length >= 4) {
+      return { owner: parts[0], repo: parts[1], branch: parts[2], path: parts.slice(3).join('/'), inferredFromUrl: true };
+    }
+    if (u.hostname === 'github.com') {
+      const blobAt = parts.indexOf('blob');
+      if (blobAt === 2 && parts.length >= 5) {
+        return { owner: parts[0], repo: parts[1], branch: parts[3], path: parts.slice(4).join('/'), inferredFromUrl: true };
+      }
+    }
+    const expectedPagesHost = `${cfg.owner}.github.io`.toLowerCase();
+    if (u.hostname.toLowerCase() === expectedPagesHost) {
+      // User/organization Pages repo: https://owner.github.io/data/files/...
+      if (cfg.repo === `${cfg.owner}.github.io`) {
+        const first = parts[0] || '';
+        // 若第一段像 PDF 分仓仓库名，则按 project Pages 推断；否则按主仓库推断。
+        if (first && (first === cfg.pdf?.manualRepo || first.startsWith(cfg.pdf?.repoPrefix || 'cheneit-pdf-'))) {
+          return { owner: cfg.owner, repo: first, branch: cfg.pdf?.branch || 'main', path: parts.slice(1).join('/'), inferredFromPages: true };
+        }
+        return { owner: cfg.owner, repo: cfg.repo, branch: cfg.branch, path: parts.join('/'), legacyMainRepo: true, inferredFromPages: true };
+      }
+      // Project Pages: https://owner.github.io/repo/path
+      if (parts.length >= 2) {
+        return { owner: cfg.owner, repo: parts[0], branch: cfg.pdf?.branch || 'main', path: parts.slice(1).join('/'), inferredFromPages: true };
+      }
+    }
+  } catch {}
+  return null;
+}
+
+function migrateLegacyItem(item, cfg, index=0) {
+  const src = (item && typeof item === 'object') ? item : {};
+  const path = src.path || src.url || src.filePath || '';
+  const filename = src.filename || src.fileName || src.name || filenameFromPath(path) || `legacy-${index+1}`;
+  const kind = guessKind(filename || path, src.kind || src.type || undefined);
+  const topics = splitLegacyList(src.topics?.length ? src.topics : (src.topic || src.category || ''));
+  const tags = splitLegacyList(src.tags || src.tag || []);
+  const ts = normalizeLegacyTimestamp(src.ts ?? src.timestamp ?? src.date ?? src.createdAt);
+  const existingStorage = (src.storage && typeof src.storage === 'object') ? src.storage : null;
+  const storage = existingStorage || inferLegacyStorage(path, cfg);
+
+  let uploadStatus = src.uploadStatus || '';
+  if (!uploadStatus) uploadStatus = path ? 'ready' : (kind === 'pdf' ? 'pdf_pending' : 'file_pending');
+
+  const migrated = {
+    ...src,
+    id: legacyStableId(src, index),
+    title: src.title || src.name || filename.replace(/\.[^/.]+$/, ''),
+    filename,
+    path,
+    kind,
+    topics,
+    topic: topics[0] || '',
+    tags,
+    ts,
+    size: Number(src.size || 0) || 0,
+    desc: src.desc ?? src.description ?? src.note ?? '',
+    imagePath: src.imagePath || src.coverPath || src.cover || '',
+    storage,
+    uploadStatus,
+    uploadError: src.uploadError || '',
+    imageUploadError: src.imageUploadError || '',
+  };
+
+  return migrated;
+}
+
+function migrateIndexToV3(data, cfg) {
+  const src = normalizeIndexData(typeof structuredClone === 'function' ? structuredClone(data || {}) : JSON.parse(JSON.stringify(data || {})));
+  const report = {
+    total: src.items.length,
+    addedId: 0,
+    normalizedTopics: 0,
+    normalizedTags: 0,
+    addedStorage: 0,
+    addedUploadStatus: 0,
+    missingPath: 0,
+    missingTime: 0,
+  };
+
+  const migratedItems = src.items.map((item, i) => {
+    if (!item?.id) report.addedId += 1;
+    if (!Array.isArray(item?.topics)) report.normalizedTopics += 1;
+    if (!Array.isArray(item?.tags)) report.normalizedTags += 1;
+    if (!item?.storage && inferLegacyStorage(item?.path || item?.url || item?.filePath || '', cfg)) report.addedStorage += 1;
+    if (!item?.uploadStatus) report.addedUploadStatus += 1;
+    if (!item?.path) report.missingPath += 1;
+    if (!normalizeLegacyTimestamp(item?.ts ?? item?.timestamp ?? item?.date ?? item?.createdAt)) report.missingTime += 1;
+    return migrateLegacyItem(item, cfg, i);
+  });
+
+  const out = {
+    ...src,
+    schemaVersion: 3,
+    migratedAt: Date.now(),
+    items: migratedItems,
+  };
+  return { data: out, report };
+}
+
+function indexDirOf(path) {
+  const parts = String(path || '').split('/').filter(Boolean);
+  parts.pop();
+  return parts.join('/');
+}
+
+function timestampForPath() {
+  const d = new Date();
+  const z = n => String(n).padStart(2,'0');
+  return `${d.getFullYear()}${z(d.getMonth()+1)}${z(d.getDate())}-${z(d.getHours())}${z(d.getMinutes())}${z(d.getSeconds())}`;
+}
+
+async function ghGetContentMeta(owner, repo, path, token, branch) {
+  const p = encodeGitHubPath(path);
+  const ref = branch ? `?ref=${encodeURIComponent(branch)}` : '';
+  // v3.1: GitHub Contents GET 必须是真正的 fresh read，否则连续 PUT 时可能拿到旧 SHA。
+  const url = cacheBustUrl(`https://api.github.com/repos/${owner}/${repo}/contents/${p}${ref}`);
+  const res = await fetch(url, {
+    headers: ghHeaders(token),
+    cache: 'no-store'
+  });
+
+  if (res.status === 404) return null;
+  if (!res.ok) {
+    const txt = await res.text();
+    throw new Error(`GET meta failed: ${res.status} ${res.statusText} - ${txt}`);
+  }
+  return await res.json();
+}
+
+async function ghGetJSONContent(owner, repo, path, token, branch) {
+  const meta = await ghGetContentMeta(owner, repo, path, token, branch);
+  if (!meta) return null;
+  if (meta.type !== 'file') throw new Error(`Index path is not a file: ${path}`);
+  if (!meta.content) return await ghGetJSONRaw(owner, repo, branch || 'main', path);
+  return JSON.parse(b64DecodeToText(meta.content));
+}
+
+async function ghPutContent(owner, repo, path, contentB64, message, token, sha, branch) {
+  const p = encodeGitHubPath(path);
+  const url = `https://api.github.com/repos/${owner}/${repo}/contents/${p}`;
+  const body = { message, content: contentB64 };
+  if (sha) body.sha = sha;
+  if (branch) body.branch = branch;
+
+  const res = await fetch(url, {
+    method: 'PUT',
+    headers: ghHeaders(token, { 'Content-Type': 'application/json' }),
+    body: JSON.stringify(body)
+  });
+
+  if (!res.ok) {
+    const txt = await res.text();
+    throw new Error(`PUT failed: ${res.status} ${res.statusText} - ${txt}`);
+  }
+  return res.json();
+}
+
+async function ghDeleteContent(owner, repo, path, message, token, sha, branch) {
+  const p = encodeGitHubPath(path);
+  const url = `https://api.github.com/repos/${owner}/${repo}/contents/${p}`;
+  const body = { message, sha };
+  if (branch) body.branch = branch;
+
+  const res = await fetch(url, {
+    method: 'DELETE',
+    headers: ghHeaders(token, { 'Content-Type': 'application/json' }),
+    body: JSON.stringify(body)
+  });
+
+  if (!res.ok) {
+    const txt = await res.text();
+    throw new Error(`DELETE failed: ${res.status} ${res.statusText} - ${txt}`);
+  }
+  return res.json();
+}
+
+
+/* ============ v3.2 GitHub Pages build / deployment helpers ============ */
+function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
+
+async function ghGetPagesSite(owner, repo, token) {
+  const url = cacheBustUrl(`https://api.github.com/repos/${owner}/${repo}/pages`);
+  const res = await fetch(url, { headers: ghHeaders(token), cache: 'no-store' });
+  if (res.status === 404) return null;
+  if (!res.ok) {
+    const txt = await res.text();
+    throw new Error(`Pages site check failed: ${res.status} ${res.statusText} - ${txt}`);
+  }
+  return await res.json();
+}
+
+async function ghRequestPagesBuild(owner, repo, token) {
+  const url = `https://api.github.com/repos/${owner}/${repo}/pages/builds`;
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: ghHeaders(token, { 'Content-Type': 'application/json' }),
+    cache: 'no-store'
+  });
+  if (!res.ok) {
+    const txt = await res.text();
+    throw new Error(`Pages build request failed: ${res.status} ${res.statusText} - ${txt}`);
+  }
+  return await res.json();
+}
+
+async function ghGetLatestPagesBuild(owner, repo, token) {
+  const url = cacheBustUrl(`https://api.github.com/repos/${owner}/${repo}/pages/builds/latest`);
+  const res = await fetch(url, { headers: ghHeaders(token), cache: 'no-store' });
+  if (res.status === 404) return null;
+  if (!res.ok) {
+    const txt = await res.text();
+    throw new Error(`Latest Pages build check failed: ${res.status} ${res.statusText} - ${txt}`);
+  }
+  return await res.json();
+}
+
+async function ghGetBranchHeadSha(owner, repo, branch, token) {
+  const url = cacheBustUrl(`https://api.github.com/repos/${owner}/${repo}/branches/${encodeURIComponent(branch)}`);
+  const res = await fetch(url, { headers: ghHeaders(token), cache: 'no-store' });
+  if (!res.ok) {
+    const txt = await res.text();
+    throw new Error(`Branch HEAD check failed: ${res.status} ${res.statusText} - ${txt}`);
+  }
+  const data = await res.json();
+  return data?.commit?.sha || '';
+}
+
+function pagesBuildIsFailure(build) {
+  const status = String(build?.status || '').toLowerCase();
+  if (['errored', 'error', 'failed', 'failure', 'cancelled', 'canceled'].includes(status)) return true;
+  return !!build?.error?.message && !['queued', 'building', 'built'].includes(status);
+}
+
+/**
+ * 主动触发 branch-based GitHub Pages build，并等待“目标分支当前 HEAD”被构建。
+ * - POST /pages/builds 需要 fine-grained PAT: Pages(write)
+ * - GET /pages、/pages/builds/latest 需要 Pages(read)
+ * - 先校验 Pages source branch，避免“文件写在 main、Pages 实际发布其他分支”的假成功。
+ */
+async function publishPagesRepo({ owner, repo, branch, token, onUpdate, timeoutMs=180000, pollMs=3000 }) {
+  const emit = (status, detail, extra={}) => onUpdate && onUpdate({ status, detail, repo, branch, ...extra });
+  emit('checking', '正在检查 Pages 配置…');
+
+  const site = await ghGetPagesSite(owner, repo, token);
+  if (!site) throw new Error(`${owner}/${repo} 尚未启用 GitHub Pages。请先在 Settings → Pages 配置 Deploy from a branch。`);
+
+  const sourceBranch = site?.source?.branch || '';
+  const sourcePath = site?.source?.path || '/';
+  if (sourceBranch && branch && sourceBranch !== branch) {
+    throw new Error(`Pages 发布分支为 ${sourceBranch}，但 Repo Library 正在写入 ${branch}。请统一分支后再发布。`);
+  }
+  if (site?.build_type === 'workflow') {
+    throw new Error(`Pages 当前 build_type=workflow。v3.2 的主动 build API 面向 branch-based Pages；请在 Settings → Pages 改为 Deploy from a branch，或单独配置 workflow_dispatch。`);
+  }
+
+  const expectedCommit = await ghGetBranchHeadSha(owner, repo, branch, token);
+  emit('requesting', `请求 Pages 构建：${branch}${sourcePath}…`, { expectedCommit });
+  const request = await ghRequestPagesBuild(owner, repo, token);
+  emit(request?.status || 'queued', `Pages 已进入构建队列，等待 ${expectedCommit.slice(0, 8)}…`, { expectedCommit });
+
+  const startedAt = Date.now();
+  let lastBuild = null;
+  while (Date.now() - startedAt < timeoutMs) {
+    await sleep(pollMs);
+    lastBuild = await ghGetLatestPagesBuild(owner, repo, token);
+    if (!lastBuild) {
+      emit('waiting', '尚未读取到 Pages build，继续等待…', { expectedCommit });
+      continue;
+    }
+
+    const status = String(lastBuild.status || 'unknown').toLowerCase();
+    const buildCommit = String(lastBuild.commit || '');
+    const sameCommit = !expectedCommit || buildCommit === expectedCommit;
+    const errMsg = lastBuild?.error?.message || '';
+
+    if (status === 'built' && sameCommit) {
+      emit('built', `Pages 已发布目标 commit ${expectedCommit.slice(0, 8)}。`, { expectedCommit, build: lastBuild });
+      return { ok: true, status: 'built', site, build: lastBuild, expectedCommit };
+    }
+    if (pagesBuildIsFailure(lastBuild) && sameCommit) {
+      throw new Error(`Pages build 失败：${errMsg || status}`);
+    }
+
+    const detail = sameCommit
+      ? `Pages 状态：${status}${errMsg ? `；${errMsg}` : ''}`
+      : `等待目标 commit ${expectedCommit.slice(0, 8)}；当前 latest=${buildCommit ? buildCommit.slice(0,8) : 'unknown'} (${status})`;
+    emit(status === 'built' ? 'waiting' : status, detail, { expectedCommit, build: lastBuild });
+  }
+
+  emit('timeout', `等待 Pages 超时；文件和 index 已提交，可稍后手动检查 Actions/Pages。`, { expectedCommit, build: lastBuild });
+  return { ok: false, status: 'timeout', site, build: lastBuild, expectedCommit };
+}
+
+/**
+ * 尝试自动创建 repo（如果 token 权限允许）
+ * - 对 fine-grained token：通常不一定允许创建 repo，因此失败时给提示即可
+ */
+async function ghTryCreateRepo(repoName, token, opts={}) {
+  const payload = {
+    name: repoName,
+    description: opts.description || `PDF storage for Repo Library (${repoName})`,
+    private: !!opts.private,
+    has_issues: false,
+    has_projects: false,
+    has_wiki: false,
+    auto_init: true
+  };
+
+  const res = await fetch("https://api.github.com/user/repos", {
+    method: "POST",
+    headers: ghHeaders(token, { "Content-Type": "application/json" }),
+    body: JSON.stringify(payload)
+  });
+
+  if (!res.ok) {
+    const txt = await res.text();
+    throw new Error(`Create repo failed: ${res.status} ${res.statusText} - ${txt}`);
+  }
+  return res.json();
+}
+
+/* ============ Index update (主仓库 index.json) ============ */
+async function readIndexFresh(cfg, token) {
+  const meta = await ghGetContentMeta(cfg.owner, cfg.repo, cfg.indexPath, token, cfg.branch);
+  let data = null;
+  if (meta?.content) data = JSON.parse(b64DecodeToText(meta.content));
+  else data = await ghGetJSONRaw(cfg.owner, cfg.repo, cfg.branch, cfg.indexPath);
+  return { data: normalizeIndexData(data || { items: [] }), sha: meta?.sha || null };
+}
+
+function isGithubConflictError(e) {
+  const msg = String(e?.message || e || '').toLowerCase();
+  return msg.includes('409') || msg.includes('conflict') || msg.includes('does not match');
+}
+
+async function updateIndexMain(cfg, token, updater, message='Update index.json') {
+  const key = indexWriteCacheKey(cfg);
+  let lastErr = null;
+
+  for (let attempt = 1; attempt <= 4; attempt += 1) {
+    try {
+      // v3.1 SHA chain: 第一次优先沿用前一次成功 PUT 返回的最新 SHA/data。
+      // 发生 409 后 cache 会被清空，下一轮一定 fresh GET + merge。
+      const cached = attempt === 1 ? INDEX_WRITE_CACHE.get(key) : null;
+      let indexData, baseSha;
+
+      if (cached?.sha && cached?.data) {
+        indexData = normalizeIndexData(cloneJson(cached.data));
+        baseSha = cached.sha;
+      } else {
+        const fresh = await readIndexFresh(cfg, token);
+        indexData = fresh.data;
+        baseSha = fresh.sha;
+      }
+
+      const newData = normalizeIndexData(await updater(indexData));
+      const enc = new TextEncoder().encode(JSON.stringify(newData, null, 2));
+      const b64 = b64EncodeUint8(new Uint8Array(enc));
+
+      const result = await ghPutContent(
+        cfg.owner,
+        cfg.repo,
+        cfg.indexPath,
+        b64,
+        message,
+        token,
+        baseSha,
+        cfg.branch
+      );
+
+      // GitHub Create/Update contents 成功响应包含 content.sha；直接作为下一次写入的 base SHA。
+      let newSha = result?.content?.sha || null;
+      if (!newSha) {
+        const verify = await ghGetContentMeta(cfg.owner, cfg.repo, cfg.indexPath, token, cfg.branch);
+        newSha = verify?.sha || null;
+      }
+
+      if (newSha) {
+        INDEX_WRITE_CACHE.set(key, {
+          sha: newSha,
+          data: cloneJson(newData),
+          updatedAt: Date.now()
+        });
+      } else {
+        INDEX_WRITE_CACHE.delete(key);
+      }
+
+      return newData;
+    } catch (e) {
+      lastErr = e;
+      if (!isGithubConflictError(e) || attempt === 4) throw e;
+
+      // 真正的 409 recovery：丢弃旧 SHA/data，下一轮从 GitHub fresh GET 最新 index，再执行 updater merge。
+      INDEX_WRITE_CACHE.delete(key);
+      await new Promise(r => setTimeout(r, 300 * attempt));
+    }
+  }
+
+  throw lastErr;
+}
+
+/* ============ Upload cover (仍在主仓库) ============ */
+async function uploadCoverIfNeeded(cfg, token, coverFile, existingPath) {
+  if (!coverFile) return existingPath || '';
+  const y = new Date().getFullYear();
+  const m = String(new Date().getMonth() + 1).padStart(2, '0');
+  const baseDir = `${cfg.dataDir}/${y}/${m}`;
+  const buf = new Uint8Array(await coverFile.arrayBuffer());
+  const b64 = b64EncodeUint8(buf);
+  const imgName = `${uid()}__${coverFile.name}`;
+  const imagePath = `${baseDir}/images/${imgName}`;
+
+  const meta = await ghGetContentMeta(cfg.owner, cfg.repo, imagePath, token, cfg.branch);
+  await ghPutContent(cfg.owner, cfg.repo, imagePath, b64, `Upload cover ${coverFile.name}`, token, meta?.sha, cfg.branch);
+  return imagePath;
+}
+
+/* ============ v3.1 pending PDF repair ============ */
+function isRepairablePdfItem(item) {
+  if (item?.kind !== 'pdf') return false;
+  const s = item.uploadStatus || '';
+  return ['pdf_pending', 'upload_failed', 'partial_ready', 'metadata_created'].includes(s) || (!item.path && !item.storage);
+}
+
+function expectedPdfStorageForItem(cfg, item) {
+  if (item?.storage?.owner && item?.storage?.repo && item?.storage?.path) {
+    const owner = item.storage.owner;
+    const repo = item.storage.repo;
+    const branch = item.storage.branch || (cfg.pdf?.branch || 'main');
+    const path = item.storage.path;
+    const pagesBase = resolvePagesBaseFromCfg(cfg, owner, repo);
+    return { owner, repo, branch, path, pagesUrl: item.path || `${pagesBase}/${path}` };
+  }
+
+  if (!item?.id) throw new Error('条目缺少 id，无法推导 PDF 分仓路径。');
+  const d = new Date(item.createdTs || item.ts || Date.now());
+  if (isNaN(d)) throw new Error('条目时间无效，无法推导 PDF 分仓路径。');
+  const yy = d.getFullYear();
+  const mm = String(d.getMonth() + 1).padStart(2, '0');
+  const owner = cfg.owner;
+  const repo = resolvePdfRepoNameFromCfg(cfg, yy);
+  const branch = cfg.pdf?.branch || 'main';
+  const baseDir = cfg.pdf?.dataDir || 'data/files';
+  const path = `${baseDir}/${yy}/${mm}/${item.id}.pdf`;
+  const pagesBase = resolvePagesBaseFromCfg(cfg, owner, repo);
+  return { owner, repo, branch, path, pagesUrl: `${pagesBase}/${path}` };
+}
+
+async function repairPendingPdfItem(cfg, token, item) {
+  if (!isRepairablePdfItem(item)) throw new Error('该条目当前不属于可自动修复的 pending/failed PDF。');
+  const target = expectedPdfStorageForItem(cfg, item);
+
+  // 只检查，不上传：只有远端文件真实存在时才修 index。
+  const meta = await ghGetContentMeta(target.owner, target.repo, target.path, token, target.branch);
+  if (!meta || meta.type !== 'file') {
+    throw new Error(`分仓中未找到已上传 PDF：${target.repo}/${target.path}。这说明文件本体尚未上传，需要使用“替换PDF”补传。`);
+  }
+
+  const newData = await updateIndexMain(cfg, token, data => ({
+    ...data,
+    items: (data.items || []).map(x => x.id === item.id ? {
+      ...x,
+      path: target.pagesUrl,
+      storage: {
+        owner: target.owner,
+        repo: target.repo,
+        branch: target.branch,
+        path: target.path
+      },
+      size: meta.size || x.size || 0,
+      uploadStatus: 'ready',
+      uploadError: '',
+      repairedAt: Date.now()
+    } : x)
+  }), `Repair PDF index: ${item.filename || item.id}`);
+
+  return { newData, target, meta };
+}
+
+/* ============ Local Storage helpers ============ */
+function loadConfig() {
+  try {
+    const raw = localStorage.getItem('repoLibrary.config');
+    if (!raw) return null;
+    return JSON.parse(raw);
+  } catch (e) {
+    console.error('loadConfig error', e);
+    return null;
+  }
+}
+function saveConfig(cfg) {
+  try { localStorage.setItem('repoLibrary.config', JSON.stringify(cfg)); }
+  catch (e) { console.error('saveConfig error', e); }
+}
+function loadToken() { return localStorage.getItem('repoLibrary.token') || ''; }
+function saveToken(t) { if (!t) localStorage.removeItem('repoLibrary.token'); else localStorage.setItem('repoLibrary.token', t); }
+
+/* ============ Dashboard computations ============ */
+function getTopicsArr(item) {
+  const arr = item?.topics || (item?.topic ? [item.topic] : []);
+  return (arr || []).filter(Boolean);
+}
+function countBy(items, extractor) {
+  const map = new Map();
+  for (const it of items) {
+    const keys = extractor(it) || [];
+    for (const k of keys) {
+      if (!k) continue;
+      map.set(k, (map.get(k) || 0) + 1);
+    }
+  }
+  return Array.from(map.entries()).sort((a,b)=> b[1]-a[1] || a[0].localeCompare(b[0]));
+}
+
+function buildHeatmap(items, days=365) {
+  const startOfDay = (d) => new Date(d.getFullYear(), d.getMonth(), d.getDate());
+  const addDays = (d, n) => {
+    const out = new Date(d);
+    out.setDate(out.getDate() + n);
+    return out;
+  };
+  const dayKey = (d) => {
+    const y = d.getFullYear();
+    const m = String(d.getMonth()+1).padStart(2,'0');
+    const dd = String(d.getDate()).padStart(2,'0');
+    return `${y}-${m}-${dd}`;
+  };
+  // v3：按中国/ISO 日历习惯，以周一为第一行，周日为最后一行。
+  // 统计区间严格为最近 days 天；为了画完整周，区间前后只补“不可见占位格”，不显示多余方块。
+  const end = startOfDay(new Date());
+  const rangeStart = addDays(end, -(days - 1));
+
+  const counts = new Map();
+  for (const it of items) {
+    const raw = new Date(it.ts || 0);
+    if (isNaN(raw)) continue;
+    const d = startOfDay(raw);
+    if (d < rangeStart || d > end) continue;
+    const k = dayKey(d);
+    counts.set(k, (counts.get(k) || 0) + 1);
+  }
+
+  // JS: Sunday=0. 转成 Monday=0 ... Sunday=6。
+  const mondayIndex = (d) => (d.getDay() + 6) % 7;
+  const gridStart = addDays(rangeStart, -mondayIndex(rangeStart));
+  const gridEnd = addDays(end, 6 - mondayIndex(end));
+
+  const cells = [];
+  for (let d = new Date(gridStart); d <= gridEnd; d = addDays(d, 1)) {
+    const inRange = d >= rangeStart && d <= end;
+    const key = dayKey(d);
+    cells.push({
+      date: new Date(d),
+      key,
+      count: inRange ? (counts.get(key) || 0) : 0,
+      inRange,
+    });
+  }
+
+  const weeks = [];
+  for (let i = 0; i < cells.length; i += 7) {
+    weeks.push(cells.slice(i, i + 7));
+  }
+
+  // 月份标签与周列使用完全相同的 grid columns，因此不会随 gap 累积漂移。
+  // 第一列标当前可见月份；后续月份标记放在“该月 1 日所在周”。
+  const monthMarks = [];
+  const firstVisible = cells.find(c => c.inRange);
+  if (firstVisible) {
+    monthMarks.push({
+      week: Math.floor(cells.indexOf(firstVisible) / 7),
+      month: firstVisible.date.getMonth(),
+      year: firstVisible.date.getFullYear(),
+    });
+  }
+  for (let wi = 0; wi < weeks.length; wi++) {
+    const firstOfMonth = weeks[wi].find(c => c.inRange && c.date.getDate() === 1);
+    if (!firstOfMonth) continue;
+    const exists = monthMarks.some(m => m.week === wi && m.month === firstOfMonth.date.getMonth() && m.year === firstOfMonth.date.getFullYear());
+    if (!exists) monthMarks.push({ week: wi, month: firstOfMonth.date.getMonth(), year: firstOfMonth.date.getFullYear() });
+  }
+
+  return {
+    weeks,
+    monthMarks,
+    rangeStart,
+    rangeEnd: end,
+    weekdayLabels: ['一','二','三','四','五','六','日'],
+  };
+}
+
+function intensityClass(n) {
+  if (!n) return "bg-slate-100 border-slate-200";
+  if (n === 1) return "bg-emerald-100 border-emerald-200";
+  if (n === 2) return "bg-emerald-200 border-emerald-300";
+  if (n === 3) return "bg-emerald-300 border-emerald-400";
+  return "bg-emerald-400 border-emerald-500";
+}
+
+/* ============ App ============ */
+function App() {
+  const [cfg, setCfg] = useState(() => loadConfig() || ({
+    owner: 'cheneit',
+    repo: 'cheneit.github.io',
+    branch: 'main',
+    dataDir: 'data/files',
+    indexPath: 'data/index.json',
+    // PDF 分仓配置（新字段；不影响旧 index.json）
+    pdf: {
+      enabled: true,
+      repoPrefix: 'cheneit-pdf-',
+      mode: 'yearly',              // yearly => prefix + YYYY
+      manualRepo: '',              // 可选：覆盖默认 repo
+      branch: 'main',
+      dataDir: 'data/files',
+      autoCreateRepo: false,       // v3：稳定性优先，推荐先手动建仓并显式授权 PAT
+      pagesBase: '',               // 可选：强制 Pages base（留空则按 owner.github.io/repo 推断）
+      note: ''
+    },
+    pages: {
+      autoBuild: true,             // v3.2：上传后主动请求 GitHub Pages build
+      waitForBuild: true,          // 等到 Pages built 后再报告“发布完成”
+      timeoutSec: 180,             // 单仓最长等待时间
+      pollSec: 3                   // Pages 状态轮询间隔
+    }
+  }));
+  const [token, setToken] = useState(() => loadToken());
+
+  const [mode, setMode] = useState('preview'); // preview | admin
+
+  const [index, setIndex] = useState({ items: [] });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  const [query, setQuery] = useState('');
+  const [activeTopic, setActiveTopic] = useState('');
+  const [activeTag, setActiveTag] = useState('');
+  const [sortBy, setSortBy] = useState('time_desc');
+
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [editingItem, setEditingItem] = useState(null);
+  const [replacingItem, setReplacingItem] = useState(null);
+
+  const [showAllHome, setShowAllHome] = useState(false);
+
+  function onSaveCfg(newCfg) { setCfg(newCfg); saveConfig(newCfg); }
+  function onSaveToken(t) { setToken(t); saveToken(t); }
+
+  async function refreshIndex() {
+    setLoading(true); setError('');
+    // 显式刷新意味着希望以远端为准，避免沿用页面内旧的 SHA chain。
+    invalidateIndexWriteCache(cfg);
+    try {
+      let data = null;
+      if (token) {
+        try { data = await ghGetJSONContent(cfg.owner, cfg.repo, cfg.indexPath, token, cfg.branch); }
+        catch (e) { console.warn('API 读取 index.json 失败，回退 raw 读取', e); }
+      }
+      if (!data) data = await ghGetJSONRaw(cfg.owner, cfg.repo, cfg.branch, cfg.indexPath);
+      setIndex(normalizeIndexData(data || { items: [] }));
+    } catch (e) {
+      console.error(e);
+      setError('无法加载 index.json：' + e.message);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    refreshIndex();
+  }, [cfg.owner, cfg.repo, cfg.branch, cfg.dataDir, cfg.indexPath]);
+
+  const allItems = index.items || [];
+
+  const topicsCount = useMemo(() => countBy(allItems, it => getTopicsArr(it)), [allItems]);
+  const tagsCount = useMemo(() => countBy(allItems, it => (it.tags || [])), [allItems]);
+
+  const allTopics = useMemo(() => topicsCount.map(([k])=>k), [topicsCount]);
+  const allTags = useMemo(() => tagsCount.map(([k])=>k), [tagsCount]);
+
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    let arr = [...allItems];
+
+    if (q) {
+      arr = arr.filter(i => {
+        const topicsArr = getTopicsArr(i);
+        const text = [
+          i.title, i.filename, topicsArr.join(' '),
+          (i.tags||[]).join(' '), i.desc
+        ].join(' ').toLowerCase();
+        return text.includes(q);
+      });
+    }
+    if (activeTopic) arr = arr.filter(i => getTopicsArr(i).includes(activeTopic));
+    if (activeTag) arr = arr.filter(i => (i.tags||[]).includes(activeTag));
+
+    arr.sort((a,b) => {
+      if (sortBy === 'time_desc') return (b.ts||0) - (a.ts||0);
+      if (sortBy === 'time_asc')  return (a.ts||0) - (b.ts||0);
+      if (sortBy === 'title_asc') return (a.title||a.filename||'').localeCompare(b.title||b.filename||'');
+      if (sortBy === 'title_desc')return (b.title||b.filename||'').localeCompare(a.title||a.filename||'');
+      if (sortBy === 'type')      return (a.kind||'').localeCompare(b.kind||'');
+      return 0;
+    });
+
+    return arr;
+  }, [allItems, query, activeTopic, activeTag, sortBy]);
+
+  const isHomeState = useMemo(() => {
+    return !query.trim() && !activeTopic && !activeTag;
+  }, [query, activeTopic, activeTag]);
+
+  const displayItems = useMemo(() => {
+    if (!isHomeState) return filtered;
+    if (showAllHome) return filtered;
+    return filtered.slice(0, 6);
+  }, [filtered, isHomeState, showAllHome]);
+
+  function goHome() {
+    setQuery('');
+    setActiveTopic('');
+    setActiveTag('');
+    setSortBy('time_desc');
+    setShowAllHome(false);
+  }
+
+  async function handleDeleteItem(item) {
+    if (!token) return alert('需要管理员令牌');
+    if (!confirm(`确认删除：${item.title || item.filename} ?`)) return;
+
+    try {
+      // 1) 删除主文件（优先用 storage；否则用当前仓库相对路径）
+      const storage = item.storage;
+      if (storage && storage.owner && storage.repo && storage.path) {
+        const storageBranch = storage.branch || (cfg.pdf?.branch || 'main');
+        const meta = await ghGetContentMeta(storage.owner, storage.repo, storage.path, token, storageBranch);
+        if (meta?.sha) await ghDeleteContent(storage.owner, storage.repo, storage.path, `Delete ${item.filename}`, token, meta.sha, storageBranch);
+      } else if (item.path && !isAbsoluteUrl(item.path)) {
+        const meta = await ghGetContentMeta(cfg.owner, cfg.repo, item.path, token, cfg.branch);
+        if (meta?.sha) await ghDeleteContent(cfg.owner, cfg.repo, item.path, `Delete ${item.filename}`, token, meta.sha, cfg.branch);
+      }
+
+      // 2) 删除封面（仍在主仓库）
+      if (item.imagePath && !isAbsoluteUrl(item.imagePath)) {
+        try {
+          const m2 = await ghGetContentMeta(cfg.owner, cfg.repo, item.imagePath, token, cfg.branch);
+          if (m2?.sha) await ghDeleteContent(cfg.owner, cfg.repo, item.imagePath, `Delete cover for ${item.filename}`, token, m2.sha, cfg.branch);
+        } catch(e) { console.warn('删除封面失败', e); }
+      }
+
+      // 3) 更新 index.json（不改旧结构，仅删除该条）
+      const newData = await updateIndexMain(cfg, token, data => ({
+        ...data,
+        items: (data.items || []).filter(x => x.id !== item.id)
+      }), `Delete item: ${item.filename}`);
+
+      setIndex(newData);
+    } catch (e) {
+      alert('删除失败：' + e.message);
+    }
+  }
+
+  async function handleSaveEdit(updated, newCoverFile) {
+    if (!token) return alert('需要管理员令牌');
+    try {
+      const imagePath = await uploadCoverIfNeeded(cfg, token, newCoverFile, updated.imagePath || '');
+      const newItem = { ...updated, imagePath };
+
+      const newData = await updateIndexMain(cfg, token, data => ({
+        ...data,
+        items: (data.items || []).map(x => x.id === newItem.id ? newItem : x)
+      }), `Edit item: ${newItem.filename}`);
+
+      setEditingItem(null);
+      setIndex(newData);
+    } catch (e) {
+      alert('保存失败：' + e.message);
+    }
+  }
+
+  async function handleReplacePdf(item, newFile) {
+    if (!token) return alert('需要管理员令牌');
+    if (!newFile) return;
+
+    try {
+      if (newFile.size > 95 * 1024 * 1024) {
+        throw new Error(`文件过大（${humanSize(newFile.size)}）。GitHub 普通仓库单文件接近/超过 100 MB 时会失败，建议改用对象存储或先压缩 PDF。`);
+      }
+
+      const buf = new Uint8Array(await newFile.arrayBuffer());
+      const b64 = b64EncodeUint8(buf);
+
+      // 替换目标：优先 storage（新条目）；其次旧条目相对路径；最后为 pending PDF 自动生成分仓路径。
+      let targetOwner = cfg.owner;
+      let targetRepo = cfg.repo;
+      let targetPath = item.path;
+      let targetBranch = cfg.branch;
+      let patch = {};
+
+      if (item.storage?.owner && item.storage?.repo && item.storage?.path) {
+        targetOwner = item.storage.owner;
+        targetRepo = item.storage.repo;
+        targetPath = item.storage.path;
+        targetBranch = item.storage.branch || (cfg.pdf?.branch || 'main');
+      } else if (item.path && !isAbsoluteUrl(item.path)) {
+        targetOwner = cfg.owner;
+        targetRepo = cfg.repo;
+        targetPath = item.path;
+        targetBranch = cfg.branch;
+      } else if (item.kind === 'pdf') {
+        const d = new Date(item.createdTs || item.ts || Date.now());
+        const yy = d.getFullYear();
+        const mm = String(d.getMonth() + 1).padStart(2, '0');
+        const pdfCfg = cfg.pdf || {};
+        targetOwner = cfg.owner;
+        targetRepo = resolvePdfRepoNameFromCfg(cfg, yy);
+        targetBranch = pdfCfg.branch || 'main';
+        const pdfDataDir = pdfCfg.dataDir || 'data/files';
+        targetPath = `${pdfDataDir}/${yy}/${mm}/${item.id || uid()}.pdf`;
+        const pagesBase = resolvePagesBaseFromCfg(cfg, targetOwner, targetRepo);
+        patch = {
+          path: `${pagesBase}/${targetPath}`,
+          storage: { owner: targetOwner, repo: targetRepo, branch: targetBranch, path: targetPath }
+        };
+      } else {
+        throw new Error("该条目没有 storage 信息且 path 是绝对 URL，无法确定仓库位置。建议手动补 storage 字段或重新上传该条目。");
+      }
+
+      if (!targetPath) throw new Error("缺少 path，无法替换。");
+
+      const meta = await ghGetContentMeta(targetOwner, targetRepo, targetPath, token, targetBranch);
+      await ghPutContent(targetOwner, targetRepo, targetPath, b64, `Replace PDF ${item.filename}`, token, meta?.sha, targetBranch);
+
+      const newData = await updateIndexMain(cfg, token, data => ({
+        ...data,
+        items: (data.items || []).map(x => {
+          if (x.id !== item.id) return x;
+          return {
+            ...x,
+            ...patch,
+            filename: newFile.name || x.filename,
+            size: newFile.size,
+            ts: Date.now(),
+            uploadStatus: 'ready',
+            uploadError: ''
+          };
+        })
+      }), `Replace PDF: ${item.filename}`);
+
+      setReplacingItem(null);
+      setIndex(newData);
+      alert("替换/补传成功（链接已更新或保持不变）。");
+    } catch (e) {
+      alert("替换失败：" + e.message);
+    }
+  }
+
+  async function handleRepairPendingPdf(item, quiet=false) {
+    if (!token) {
+      if (!quiet) alert('需要管理员令牌');
+      throw new Error('缺少管理员令牌');
+    }
+    try {
+      const result = await repairPendingPdfItem(cfg, token, item);
+      setIndex(result.newData);
+      if (!quiet) alert(`修复成功：已确认 PDF 存在于 ${result.target.repo}，并补写 storage/path/ready。`);
+      return result;
+    } catch (e) {
+      if (!quiet) alert('自动修复失败：' + e.message);
+      throw e;
+    }
+  }
+
+  async function handleRepairAllPendingPdfs() {
+    if (!token) return alert('需要管理员令牌');
+    const candidates = allItems.filter(isRepairablePdfItem);
+    if (!candidates.length) {
+      alert('当前没有需要检查的 pending/failed PDF 条目。');
+      return { repaired: 0, missing: 0, errors: [] };
+    }
+
+    let repaired = 0;
+    let missing = 0;
+    const errors = [];
+    for (const item of candidates) {
+      try {
+        await handleRepairPendingPdf(item, true);
+        repaired += 1;
+      } catch (e) {
+        missing += 1;
+        errors.push(`${item.title || item.filename}: ${e.message}`);
+      }
+    }
+
+    const extra = errors.length ? `\n\n未自动修复的条目：\n${errors.slice(0, 6).join('\n')}${errors.length > 6 ? `\n…另有 ${errors.length-6} 条` : ''}` : '';
+    alert(`pending PDF 检查完成：修复 ${repaired} 条；未找到远端 PDF/需要补传 ${missing} 条。${extra}`);
+    return { repaired, missing, errors };
+  }
+
+
+  return (
+    <div className="min-h-full flex flex-col">
+      <Header
+        mode={mode}
+        setMode={setMode}
+        query={query}
+        setQuery={setQuery}
+        onSaveCfg={onSaveCfg}
+        token={token}
+        setToken={onSaveToken}
+        onHome={goHome}
+        cfg={cfg}
+      />
+
+      <main className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        {mode === 'admin' ? (
+          <>
+            <PendingRepairPanel
+              items={allItems}
+              onRepairAll={handleRepairAllPendingPdfs}
+            />
+            <MigrationPanel
+              cfg={cfg}
+              token={token}
+              onMigrated={(newData) => { if (newData) setIndex(newData); else refreshIndex(); }}
+            />
+            <AdminPanel
+              cfg={cfg}
+              token={token}
+              onUploaded={(newData) => { if (newData) setIndex(newData); else refreshIndex(); }}
+            />
+          </>
+        ) : null}
+
+        <div className={cx("grid gap-6", "lg:grid-cols-[1fr_360px]")}>
+          <div className="space-y-6">
+            {/* Dashboard 只在首页态展示 */}
+            {isHomeState ? (
+              <Dashboard
+                items={filtered}
+                topicsCount={topicsCount}
+                tagsCount={tagsCount}
+                onPickTopic={(t)=>{ setActiveTopic(t); setShowAllHome(true); }}
+                onPickTag={(t)=>{ setActiveTag(t); setShowAllHome(true); }}
+              />
+            ) : null}
+
+            <PreviewPanel
+              loading={loading}
+              error={error}
+              items={displayItems}
+              totalAll={filtered.length}
+              allTopics={allTopics}
+              allTags={allTags}
+              activeTopic={activeTopic}
+              setActiveTopic={(t)=>{ setActiveTopic(t); setShowAllHome(true); }}
+              activeTag={activeTag}
+              setActiveTag={(t)=>{ setActiveTag(t); setShowAllHome(true); }}
+              sortBy={sortBy}
+              setSortBy={setSortBy}
+              onOpen={setSelectedItem}
+              cfg={cfg}
+              mode={mode}
+              onEdit={setEditingItem}
+              onDeleted={handleDeleteItem}
+              onRepair={handleRepairPendingPdf}
+              showFold={isHomeState}
+              showAllHome={showAllHome}
+              setShowAllHome={setShowAllHome}
+            />
+          </div>
+
+          <div className="lg:sticky lg:top-6 h-fit">
+            <ArchiveSidebar
+              items={filtered}
+              onOpen={(it)=>setSelectedItem(it)}
+            />
+          </div>
+        </div>
+      </main>
+
+      <Footer />
+
+      {selectedItem ? (
+        <ViewerModal cfg={cfg} item={selectedItem} onClose={() => setSelectedItem(null)} onReplace={() => setReplacingItem(selectedItem)} mode={mode} />
+      ) : null}
+
+      {editingItem ? (
+        <EditItemModal item={editingItem} onClose={() => setEditingItem(null)} onSave={handleSaveEdit} />
+      ) : null}
+
+      {replacingItem ? (
+        <ReplacePdfModal
+          item={replacingItem}
+          onClose={() => setReplacingItem(null)}
+          onReplace={(file)=>handleReplacePdf(replacingItem, file)}
+        />
+      ) : null}
+    </div>
+  );
+}
+
+/* ============ Header / Config ============ */
+function Header({ mode, setMode, query, setQuery, onSaveCfg, token, setToken, onHome, cfg }) {
+  const [showCfg, setShowCfg] = useState(false);
+
+  return (
+    <header className="bg-slate-900 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col gap-4">
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-2xl bg-slate-800 flex items-center justify-center text-lg">📚</div>
+            <div>
+              <div className="text-lg font-semibold">Repo Library</div>
+              <div className="text-xs text-slate-300">v3.2 · SHA 稳定上传 + Pages 自动发布 + 构建状态追踪 + pending 修复</div>
+            </div>
+          </div>
+          <div className="flex items-center gap-2 flex-wrap justify-end">
+            <button onClick={onHome} className={btnClass('subtle', 'bg-slate-800 text-white border-slate-700 hover:bg-slate-700')}>
+              重置搜索
+            </button>
+            <button
+              onClick={() => setMode('preview')}
+              className={btnClass('subtle', mode==='preview' ? 'bg-white text-slate-900 border-white' : 'bg-slate-800 text-slate-200 border-slate-700 hover:bg-slate-700')}
+            >
+              预览模式
+            </button>
+            <button
+              onClick={() => setMode('admin')}
+              className={btnClass('warn', mode==='admin' ? 'bg-amber-200 border-amber-200 text-amber-950' : 'bg-slate-800 text-slate-200 border-slate-700 hover:bg-slate-700')}
+              title="需要 PAT 才能上传、删除、替换"
+            >
+              管理模式
+            </button>
+            <button onClick={() => setShowCfg(s => !s)} className={btnClass('subtle', 'bg-slate-800 text-white border-slate-700 hover:bg-slate-700')}>
+              仓库设置
+            </button>
+          </div>
+        </div>
+
+        <div className="flex flex-col md:flex-row gap-3">
+          <div className="flex-1">
+            <input
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              className="w-full px-3 py-2 rounded-xl bg-slate-800 border border-slate-700 placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400"
+              placeholder="搜索标题 / 文件名 / Topic / 标签 / 描述..."
+            />
+          </div>
+        </div>
+
+        {showCfg ? (
+          <div className="mt-2 border border-slate-700 rounded-2xl p-3">
+            <ConfigPanel cfg={cfg} setCfg={onSaveCfg} token={token} setToken={setToken} />
+          </div>
+        ) : null}
+      </div>
+    </header>
+  );
+}
+
+function LabeledInput({ label, value, onChange, placeholder }) {
+  return (
+    <label className="text-sm">
+      <div className="mb-1 text-white/80">{label}</div>
+      <input
+        value={value}
+        onChange={e => onChange(e.target.value)}
+        placeholder={placeholder}
+        className="w-full px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-xs placeholder-white/40 focus:outline-none focus:ring-1 focus:ring-amber-400"
+      />
+    </label>
+  );
+}
+
+function LabeledToggle({ label, checked, onChange, hint }) {
+  return (
+    <div className="flex items-start gap-3">
+      <input type="checkbox" className="mt-1" checked={checked} onChange={e=>onChange(e.target.checked)} />
+      <div>
+        <div className="text-sm text-white/90">{label}</div>
+        {hint ? <div className="text-xs text-white/60 mt-0.5">{hint}</div> : null}
+      </div>
+    </div>
+  );
+}
+
+function GitHubConfigGuide({ cfg, token }) {
+  const [checking, setChecking] = useState(false);
+  const [checks, setChecks] = useState([]);
+  const pdfRepo = resolvePdfRepoNameFromCfg(cfg, new Date().getFullYear());
+  const pdfBranch = cfg.pdf?.branch || 'main';
+  const tokenUrl = 'https://github.com/settings/personal-access-tokens/new';
+  const mainRepoUrl = `https://github.com/${cfg.owner}/${cfg.repo}`;
+  const mainPagesUrl = `https://github.com/${cfg.owner}/${cfg.repo}/settings/pages`;
+  const pdfRepoUrl = `https://github.com/${cfg.owner}/${pdfRepo}`;
+  const pdfPagesUrl = `https://github.com/${cfg.owner}/${pdfRepo}/settings/pages`;
+
+  async function runChecks() {
+    setChecking(true);
+    const out = [];
+    const push = (level, name, detail) => out.push({ level, name, detail });
+    try {
+      if (!token) {
+        push('bad', 'PAT', '未设置令牌。管理模式无法写入 GitHub。');
+        setChecks(out); return;
+      }
+
+      const userRes = await fetch(cacheBustUrl('https://api.github.com/user'), { headers: ghHeaders(token), cache: 'no-store' });
+      if (!userRes.ok) {
+        const txt = await userRes.text();
+        push('bad', 'PAT', `令牌无效或不可用：${userRes.status} ${userRes.statusText} ${shortErr(txt, 100)}`);
+        setChecks(out); return;
+      }
+      const user = await userRes.json();
+      push('ok', 'PAT', `认证成功：${user.login || 'authenticated user'}`);
+
+      const mainRes = await fetch(cacheBustUrl(`https://api.github.com/repos/${cfg.owner}/${cfg.repo}`), { headers: ghHeaders(token), cache: 'no-store' });
+      if (!mainRes.ok) {
+        push('bad', '主仓库', `无法访问 ${cfg.owner}/${cfg.repo}：${mainRes.status} ${mainRes.statusText}`);
+      } else {
+        const main = await mainRes.json();
+        const canPush = !!main.permissions?.push;
+        push(canPush ? 'ok' : 'warn', '主仓库', canPush ? `可写；默认分支 ${main.default_branch}` : '可以读取，但 API 未显示 push/write 权限。请检查 Contents: Read and write。');
+        if (main.default_branch && main.default_branch !== cfg.branch) {
+          push('warn', '主仓分支', `配置为 ${cfg.branch}，仓库默认分支为 ${main.default_branch}。如果你确实使用 ${cfg.branch} 可忽略。`);
+        } else {
+          push('ok', '主仓分支', `使用 ${cfg.branch}`);
+        }
+      }
+
+      try {
+        const meta = await ghGetContentMeta(cfg.owner, cfg.repo, cfg.indexPath, token, cfg.branch);
+        if (meta) push('ok', 'index.json', `找到 ${cfg.indexPath}，可读取 SHA。`);
+        else push('warn', 'index.json', `未找到 ${cfg.indexPath}。首次使用时需要创建，或检查路径/分支。`);
+      } catch (e) {
+        push('bad', 'index.json', shortErr(e.message, 180));
+      }
+
+      try {
+        const site = await ghGetPagesSite(cfg.owner, cfg.repo, token);
+        if (!site) {
+          push('bad', '主仓 Pages', '尚未启用 GitHub Pages。请在 Settings → Pages 配置 Deploy from a branch。');
+        } else {
+          const src = site.source || {};
+          const branchOk = !src.branch || src.branch === cfg.branch;
+          push(branchOk ? 'ok' : 'bad', '主仓 Pages', `可读取；source=${src.branch || '?'}${src.path || '/'}；build_type=${site.build_type || 'legacy'}。${branchOk ? '上传后可由 v3.2 主动触发 build。' : `当前写入分支为 ${cfg.branch}，需要统一。`}`);
+          try {
+            const latest = await ghGetLatestPagesBuild(cfg.owner, cfg.repo, token);
+            if (latest) push('ok', '主仓 Pages 最新构建', `${latest.status || 'unknown'} · commit ${(latest.commit || '').slice(0,8) || '—'}`);
+          } catch (e) { push('warn', '主仓 Pages 最新构建', shortErr(e.message, 160)); }
+        }
+      } catch (e) {
+        push('bad', '主仓 Pages', `${shortErr(e.message, 160)}；若为 403，请给 PAT 增加 Pages: Read and write。`);
+      }
+
+      if (cfg.pdf?.enabled !== false) {
+        const pdfRes = await fetch(cacheBustUrl(`https://api.github.com/repos/${cfg.owner}/${pdfRepo}`), { headers: ghHeaders(token), cache: 'no-store' });
+        if (pdfRes.status === 404) {
+          push('warn', 'PDF 仓库', `未找到 ${pdfRepo}。建议先手动创建，再把它加入 fine-grained PAT 的仓库授权。`);
+        } else if (!pdfRes.ok) {
+          push('bad', 'PDF 仓库', `检查失败：${pdfRes.status} ${pdfRes.statusText}`);
+        } else {
+          const pdfData = await pdfRes.json();
+          const canPush = !!pdfData.permissions?.push;
+          push(canPush ? 'ok' : 'warn', 'PDF 仓库', canPush ? `${pdfRepo} 可写。` : `${pdfRepo} 可读但未确认写权限；请给 Contents: Read and write。`);
+          if (pdfData.default_branch && pdfData.default_branch !== pdfBranch) {
+            push('warn', 'PDF 分支', `配置为 ${pdfBranch}，仓库默认分支为 ${pdfData.default_branch}。`);
+          } else {
+            push('ok', 'PDF 分支', `使用 ${pdfBranch}`);
+          }
+          try {
+            const site = await ghGetPagesSite(cfg.owner, pdfRepo, token);
+            if (!site) {
+              push('bad', 'PDF Pages', '尚未启用 Pages。请使用 Deploy from a branch。');
+            } else {
+              const src = site.source || {};
+              const branchOk = !src.branch || src.branch === pdfBranch;
+              push(branchOk ? 'ok' : 'bad', 'PDF Pages', `可读取；source=${src.branch || '?'}${src.path || '/'}；build_type=${site.build_type || 'legacy'}。${branchOk ? '上传后可主动 build。' : `应改为 ${pdfBranch}。`}`);
+              try {
+                const latest = await ghGetLatestPagesBuild(cfg.owner, pdfRepo, token);
+                if (latest) push('ok', 'PDF Pages 最新构建', `${latest.status || 'unknown'} · commit ${(latest.commit || '').slice(0,8) || '—'}`);
+              } catch (e) { push('warn', 'PDF Pages 最新构建', shortErr(e.message, 160)); }
+            }
+          } catch (e) {
+            push('bad', 'PDF Pages', `${shortErr(e.message, 160)}；若为 403，请给 PAT 增加 Pages: Read and write。`);
+          }
+        }
+      }
+    } catch (e) {
+      push('bad', '自检异常', shortErr(e.message || e, 200));
+    } finally {
+      setChecks(out);
+      setChecking(false);
+    }
+  }
+
+  const cls = level => level === 'ok'
+    ? 'bg-emerald-50 text-emerald-900 border-emerald-200'
+    : level === 'bad'
+      ? 'bg-rose-50 text-rose-900 border-rose-200'
+      : 'bg-amber-50 text-amber-900 border-amber-200';
+  const icon = level => level === 'ok' ? '✓' : level === 'bad' ? '✕' : '!';
+
+  return (
+    <div className="bg-white/5 rounded-2xl p-4 border border-white/10 lg:col-span-2">
+      <div className="flex items-center justify-between gap-3 flex-wrap mb-3">
+        <div>
+          <div className="font-semibold">GitHub 配置向导与自检</div>
+          <div className="text-xs text-white/60 mt-1">自检只执行读取请求，不创建文件、不触发 build；Pages 写权限会在上传发布或手动发布时实际验证。</div>
+        </div>
+        <button onClick={runChecks} disabled={checking} className={btnClass('primary', checking ? 'opacity-60' : '')}>
+          {checking ? '检查中…' : '检查当前配置'}
+        </button>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-4 text-sm">
+        <div className="rounded-2xl bg-slate-950/30 border border-white/10 p-4">
+          <div className="font-semibold mb-2">推荐配置步骤</div>
+          <ol className="list-decimal pl-5 space-y-2 text-white/80 text-xs leading-5">
+            <li>主仓库使用 <b>{cfg.owner}/{cfg.repo}</b>，分支设为 <b>{cfg.branch}</b>；确认 <code>{cfg.indexPath}</code> 所在路径正确。</li>
+            <li>创建 Fine-grained PAT。Repository access 至少包含主仓库和 PDF 仓库；Repository permissions → <b>Contents: Read and write</b>，并设置 <b>Pages: Read and write</b>。</li>
+            <li>PDF 分仓推荐先手动创建 <b>{pdfRepo}</b>。如果 PAT 只授权 Selected repositories，新建仓库后还要回到 token 设置把该仓库加入授权。</li>
+            <li>PDF 仓库：Settings → Pages → Build and deployment → Source 选 <b>Deploy from a branch</b>，Branch 选 <b>{pdfBranch}</b>，目录选 <b>/(root)</b>。</li>
+            <li>回到本页保存 PAT 和配置，再运行“检查当前配置”。主仓库、index.json、PDF 仓库、主仓 Pages、PDF Pages 均无红色错误后再上传。</li>
+          </ol>
+          <div className="flex gap-2 flex-wrap mt-3">
+            <a href={tokenUrl} target="_blank" rel="noreferrer" className={btnClass('warn')}>创建 / 编辑 PAT</a>
+            <a href={mainRepoUrl} target="_blank" rel="noreferrer" className={btnClass('slate')}>主仓库</a>
+            <a href={mainPagesUrl} target="_blank" rel="noreferrer" className={btnClass('slate')}>主仓 Pages</a>
+            <a href={pdfRepoUrl} target="_blank" rel="noreferrer" className={btnClass('slate')}>PDF 仓库</a>
+            <a href={pdfPagesUrl} target="_blank" rel="noreferrer" className={btnClass('success')}>PDF Pages</a>
+          </div>
+        </div>
+
+        <div className="rounded-2xl bg-slate-950/30 border border-white/10 p-4">
+          <div className="font-semibold mb-2">常见错误对应关系</div>
+          <div className="space-y-2 text-xs text-white/75 leading-5">
+            <div><b>401</b>：PAT 无效、过期或粘贴错误。</div>
+            <div><b>403</b>：仓库写入时通常是 Contents 无 Write；Pages build 请求时通常是 Pages 没有 Write。</div>
+            <div><b>404</b>：仓库/文件确实不存在，或 fine-grained PAT 看不到该仓库。</div>
+            <div><b>409</b>：index.json SHA 冲突；v3.2 继承 v3.1 机制：会丢弃旧 SHA，fresh GET 最新索引、重新 merge，并最多重试 4 次。</div>
+            <div><b>422</b>：路径、SHA、分支或请求内容不符合 GitHub Contents API 要求。</div>
+            <div><b>Pages 没有 run / 页面不更新</b>：v3.2 会主动 POST Pages build；若返回 403，请给 PAT 增加 Pages: Read and write。</div>
+            <div><b>PDF 已上传但链接 404</b>：检查 PDF Pages 的 source branch 是否为 {pdfBranch}，并查看 v3.2 发布状态。</div>
+          </div>
+        </div>
+      </div>
+
+      {checks.length ? (
+        <div className="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+          {checks.map((c, i) => (
+            <div key={i} className={cx('rounded-xl border p-3 text-xs', cls(c.level))}>
+              <div className="font-semibold">{icon(c.level)} {c.name}</div>
+              <div className="mt-1 leading-5">{c.detail}</div>
+            </div>
+          ))}
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+function ConfigPanel({ cfg, setCfg, token, setToken }) {
+  const [localCfg, setLocalCfg] = useState(cfg);
+  const [localToken, setLocalToken] = useState(token);
+
+  const pdf = localCfg.pdf || {};
+  const setPdf = (patch) => setLocalCfg({ ...localCfg, pdf: { ...(localCfg.pdf || {}), ...patch } });
+  const pages = localCfg.pages || {};
+  const setPages = (patch) => setLocalCfg({ ...localCfg, pages: { ...(localCfg.pages || {}), ...patch } });
+
+  return (
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
+        <div className="font-semibold mb-3">主仓库设置（index.json 所在仓库）</div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <LabeledInput label="Owner" value={localCfg.owner} onChange={v => setLocalCfg({ ...localCfg, owner: v })} />
+          <LabeledInput label="Repo" value={localCfg.repo} onChange={v => setLocalCfg({ ...localCfg, repo: v })} />
+          <LabeledInput label="Branch" value={localCfg.branch} onChange={v => setLocalCfg({ ...localCfg, branch: v })} />
+          <LabeledInput label="数据目录 (files)" value={localCfg.dataDir} onChange={v => setLocalCfg({ ...localCfg, dataDir: v })} />
+          <LabeledInput label="索引文件路径" value={localCfg.indexPath} onChange={v => setLocalCfg({ ...localCfg, indexPath: v })} />
+        </div>
+        <div className="mt-3 flex gap-2 flex-wrap">
+          <button onClick={() => setCfg(localCfg)} className={btnClass('success', 'text-sm')}>
+            保存配置
+          </button>
+          <a className={btnClass('slate', 'text-sm')} target="_blank" rel="noreferrer"
+             href={`https://github.com/${localCfg.owner}/${localCfg.repo}`}>
+            打开主仓库
+          </a>
+        </div>
+      </div>
+
+      <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
+        <div className="font-semibold mb-3">PDF 分仓设置（A 方案）</div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <LabeledInput label="仓库前缀 (repoPrefix)" value={pdf.repoPrefix || ''} onChange={v => setPdf({ repoPrefix: v })} placeholder="cheneit-pdf-" />
+          <LabeledInput label="PDF 分仓分支" value={pdf.branch || ''} onChange={v => setPdf({ branch: v })} placeholder="main" />
+          <LabeledInput label="PDF 数据目录" value={pdf.dataDir || ''} onChange={v => setPdf({ dataDir: v })} placeholder="data/files" />
+          <LabeledInput label="手动覆盖仓库名（可空）" value={pdf.manualRepo || ''} onChange={v => setPdf({ manualRepo: v })} placeholder="若填则不按年份" />
+          <LabeledInput label="Pages Base（可空）" value={pdf.pagesBase || ''} onChange={v => setPdf({ pagesBase: v })} placeholder="https://owner.github.io/repo" />
+          <LabeledInput label="备注（可空）" value={pdf.note || ''} onChange={v => setPdf({ note: v })} placeholder="比如：首次需在该 repo Settings->Pages 开启部署" />
+        </div>
+
+        <div className="mt-3 space-y-2">
+          <LabeledToggle
+            label="启用 PDF 分仓（新上传 PDF 将进入独立仓库）"
+            checked={pdf.enabled !== false}
+            onChange={(v)=>setPdf({ enabled: v })}
+          />
+          <LabeledToggle
+            label="尝试自动创建 PDF 仓库（若 token 权限允许）"
+            checked={!!pdf.autoCreateRepo}
+            onChange={(v)=>setPdf({ autoCreateRepo: v })}
+            hint="若失败：请手动创建对应仓库并开启 Pages；之后仍可继续使用（会自动写入 storage）。"
+          />
+        </div>
+
+        <div className="mt-3 flex gap-2 flex-wrap">
+          <button onClick={() => setCfg(localCfg)} className={btnClass('success', 'text-sm')}>保存配置</button>
+          <a className={btnClass('slate', 'text-sm')} target="_blank" rel="noreferrer"
+             href={`https://github.com/${localCfg.owner}`}>
+            打开 GitHub 主页
+          </a>
+        </div>
+      </div>
+
+      <div className="bg-white/5 rounded-2xl p-4 border border-white/10 lg:col-span-2">
+        <div className="font-semibold mb-3">Pages 自动发布（v3.2）</div>
+        <div className="grid md:grid-cols-2 gap-3">
+          <LabeledToggle
+            label="上传结束后主动触发 GitHub Pages build"
+            checked={pages.autoBuild !== false}
+            onChange={(v)=>setPages({ autoBuild: v })}
+            hint="建议开启。需要 PAT 对主仓和 PDF 仓具有 Pages: Read and write。"
+          />
+          <LabeledToggle
+            label="等待 Pages 构建完成后再报告发布结果"
+            checked={pages.waitForBuild !== false}
+            onChange={(v)=>setPages({ waitForBuild: v })}
+            hint="建议开启；PDF Pages 会先完成，再发布主仓 Pages。"
+          />
+          <LabeledInput label="单仓等待超时（秒）" value={String(pages.timeoutSec || 180)} onChange={v => setPages({ timeoutSec: Math.max(30, Number(v) || 180) })} />
+          <LabeledInput label="轮询间隔（秒）" value={String(pages.pollSec || 3)} onChange={v => setPages({ pollSec: Math.max(2, Number(v) || 3) })} />
+        </div>
+        <div className="mt-3 text-xs text-white/65 leading-5">
+          发布顺序：文件与 index commit 全部完成 → PDF Pages built → 主仓 Pages built。这样主页面真正上线新条目时，对应 PDF 通常已经可访问。
+        </div>
+        <div className="mt-3">
+          <button onClick={() => setCfg(localCfg)} className={btnClass('success', 'text-sm')}>保存 Pages 配置</button>
+        </div>
+      </div>
+
+      <div className="bg-white/5 rounded-2xl p-4 border border-white/10 lg:col-span-2">
+        <div className="font-semibold mb-3">管理员令牌 (Personal Access Token)</div>
+        <p className="text-sm text-white/70 mb-2">
+          建议使用细粒度令牌：对 <b>主仓库</b> 和 <b>PDF 分仓仓库</b> 均授予 Contents: Read &amp; Write，并授予 <b>Pages: Read &amp; Write</b>，以便 v3.2 主动触发并检查 Pages 构建。
+          若你希望“自动创建仓库”，token 还需要允许创建仓库（通常需要更高权限/Classic token）。
+          令牌只保存在本机浏览器 LocalStorage。
+        </p>
+        <input
+          type="password"
+          className="w-full px-3 py-2 rounded-lg bg-white/10 text-sm placeholder-white/60 border border-white/20 focus:outline-none"
+          placeholder="github_pat_xxx 或 ghp_xxx"
+          value={localToken}
+          onChange={(e) => setLocalToken(e.target.value)}
+        />
+        <div className="mt-3 flex gap-2 flex-wrap">
+          <button onClick={() => setToken(localToken)} className={btnClass('warn', 'text-sm')}>保存令牌</button>
+          <button onClick={() => { setLocalToken(''); setToken(''); }} className={btnClass('slate', 'text-sm')}>清除令牌</button>
+        </div>
+      </div>
+
+      <GitHubConfigGuide cfg={localCfg} token={localToken} />
+    </div>
+  );
+}
+
+/* ============ Migration Panel ============ */
+function PendingRepairPanel({ items, onRepairAll }) {
+  const candidates = (items || []).filter(isRepairablePdfItem);
+  const [busy, setBusy] = useState(false);
+
+  async function run() {
+    if (busy) return;
+    setBusy(true);
+    try { await onRepairAll?.(); }
+    finally { setBusy(false); }
+  }
+
+  if (!candidates.length) return null;
+
+  return (
+    <section className="mb-6">
+      <div className="bg-amber-50 rounded-3xl border border-amber-200 p-4 shadow-soft">
+        <div className="flex items-center justify-between gap-3 flex-wrap">
+          <div>
+            <div className="font-semibold text-amber-950">🧰 v3.1 待完成 PDF 恢复</div>
+            <div className="text-sm text-amber-900/80 mt-1">
+              检测到 <b>{candidates.length}</b> 个 pending/failed PDF 条目。系统可先检查 PDF 分仓中是否已经存在对应 <code>条目ID.pdf</code>；存在则只修复 index.json，不重复上传 PDF。
+            </div>
+          </div>
+          <button onClick={run} disabled={busy} className={btnClass('success', busy ? 'opacity-60 cursor-not-allowed' : '')}>
+            {busy ? '检查修复中…' : `检查并修复 ${candidates.length} 条`}
+          </button>
+        </div>
+        <div className="mt-2 text-xs text-amber-900/70">
+          未在分仓找到文件的条目不会被修改；可之后进入该条目使用“替换PDF”补传。
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function MigrationPanel({ cfg, token, onMigrated }) {
+  const [busy, setBusy] = useState(false);
+  const [analysis, setAnalysis] = useState(null);
+  const [msg, setMsg] = useState('');
+
+  async function readCurrent() {
+    if (!token) throw new Error('请先设置管理员 PAT。');
+    const data = await ghGetJSONContent(cfg.owner, cfg.repo, cfg.indexPath, token, cfg.branch);
+    if (!data) throw new Error(`未找到 ${cfg.indexPath}`);
+    return normalizeIndexData(data);
+  }
+
+  async function analyze() {
+    setBusy(true); setMsg('');
+    try {
+      const current = await readCurrent();
+      const result = migrateIndexToV3(current, cfg);
+      setAnalysis(result.report);
+      setMsg(`分析完成：共 ${result.report.total} 条。这里只分析，不会改 GitHub。`);
+    } catch (e) {
+      setMsg('分析失败：' + (e.message || e));
+    } finally { setBusy(false); }
+  }
+
+  async function migrate() {
+    if (!token) return alert('请先设置管理员 PAT。');
+    if (!confirm('执行 v3 数据迁移？程序会先在 index.json 同目录创建备份，再写入迁移后的索引。旧文件本体不会移动或删除。')) return;
+    setBusy(true); setMsg('正在读取旧索引…');
+    try {
+      const current = await readCurrent();
+      const result = migrateIndexToV3(current, cfg);
+      const dir = indexDirOf(cfg.indexPath);
+      const backupPath = `${dir ? dir + '/' : ''}backups/index-before-v3-${timestampForPath()}.json`;
+      const backupBytes = new TextEncoder().encode(JSON.stringify(current, null, 2));
+      const backupB64 = b64EncodeUint8(new Uint8Array(backupBytes));
+
+      setMsg(`正在备份旧索引到 ${backupPath} …`);
+      const backupMeta = await ghGetContentMeta(cfg.owner, cfg.repo, backupPath, token, cfg.branch);
+      if (backupMeta) throw new Error(`备份路径已存在：${backupPath}。请重新执行以生成新时间戳。`);
+      await ghPutContent(cfg.owner, cfg.repo, backupPath, backupB64, 'Backup index before Repo Library v3 migration', token, null, cfg.branch);
+
+      setMsg('备份完成，正在写入 v3 索引…');
+      const newData = await updateIndexMain(cfg, token, latest => {
+        // 再对最新版本执行一次迁移，避免分析后到写入前 index 发生变化。
+        return migrateIndexToV3(latest, cfg).data;
+      }, 'Migrate Repo Library index to schema v3');
+
+      setAnalysis(result.report);
+      setMsg(`迁移完成。备份：${backupPath}。旧 PDF/文件仍保留原位置；相对路径条目已补充 storage 信息。`);
+      onMigrated && onMigrated(newData);
+    } catch (e) {
+      console.error(e);
+      setMsg('迁移失败：' + (e.message || e));
+    } finally { setBusy(false); }
+  }
+
+  return (
+    <section className="mb-6">
+      <div className="bg-white rounded-3xl shadow-soft border border-slate-200 p-4">
+        <div className="flex items-start justify-between gap-4 flex-wrap">
+          <div>
+            <div className="font-semibold text-slate-900">旧版本 → v3 数据迁移</div>
+            <div className="text-xs text-slate-500 mt-1 max-w-3xl leading-5">
+              迁移对象是主仓库里的 <code>{cfg.indexPath}</code>。程序会统一 id/topics/tags/timestamp/uploadStatus/storage 等字段；
+              <b>不会移动、复制或删除旧 PDF/图片文件</b>，因此旧链接保持不变。执行迁移前会自动备份旧 index.json。
+            </div>
+          </div>
+          <div className="flex gap-2 flex-wrap">
+            <button onClick={analyze} disabled={busy} className={btnClass('slate', busy ? 'opacity-60' : '')}>只分析旧数据</button>
+            <button onClick={migrate} disabled={busy} className={btnClass('warn', busy ? 'opacity-60' : '')}>备份并执行迁移</button>
+          </div>
+        </div>
+
+        {analysis ? (
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2 mt-4 text-xs">
+            {[
+              ['总条目', analysis.total],
+              ['补 id', analysis.addedId],
+              ['规范 Topics', analysis.normalizedTopics],
+              ['规范 Tags', analysis.normalizedTags],
+              ['补 storage', analysis.addedStorage],
+              ['补上传状态', analysis.addedUploadStatus],
+              ['缺文件路径', analysis.missingPath],
+              ['缺时间', analysis.missingTime],
+            ].map(([k,v]) => (
+              <div key={k} className="rounded-xl border border-slate-200 bg-slate-50 p-3">
+                <div className="text-slate-500">{k}</div>
+                <div className="text-lg font-semibold text-slate-900 mt-1">{v}</div>
+              </div>
+            ))}
+          </div>
+        ) : null}
+        {msg ? <div className="mt-3 text-sm text-slate-600 whitespace-pre-wrap">{msg}</div> : null}
+      </div>
+    </section>
+  );
+}
+
+/* ============ Admin Panel ============ */
+function AdminPanel({ cfg, token, onUploaded }) {
+  const [files, setFiles] = useState([]);
+  const [title, setTitle] = useState('');
+  const [topicsInput, setTopicsInput] = useState('');
+  const [tags, setTags] = useState('');
+  const [desc, setDesc] = useState('');
+  const [cover, setCover] = useState(null);
+
+  const [busy, setBusy] = useState(false);
+  const [msg, setMsg] = useState('');
+  const [publishStates, setPublishStates] = useState({});
+  const [publishingRepo, setPublishingRepo] = useState('');
+
+  function setPublishState(repo, patch) {
+    setPublishStates(prev => ({ ...prev, [repo]: { ...(prev[repo] || {}), ...patch, updatedAt: Date.now() } }));
+  }
+
+  async function runPagesPublish(owner, repo, branch, label) {
+    const key = repo;
+    setPublishingRepo(key);
+    setPublishState(key, { status: 'checking', label, detail: '准备发布…' });
+    try {
+      const pagesCfg = cfg.pages || {};
+      if (pagesCfg.waitForBuild === false) {
+        const site = await ghGetPagesSite(owner, repo, token);
+        if (!site) throw new Error(`${repo} 尚未启用 GitHub Pages。`);
+        if (site?.source?.branch && site.source.branch !== branch) throw new Error(`Pages source=${site.source.branch}，但写入分支=${branch}。`);
+        const head = await ghGetBranchHeadSha(owner, repo, branch, token);
+        const req = await ghRequestPagesBuild(owner, repo, token);
+        setPublishState(key, { status: req?.status || 'queued', label, detail: `已请求构建 ${head.slice(0,8)}；未等待完成。` });
+        return { ok: true, status: req?.status || 'queued' };
+      }
+      return await publishPagesRepo({
+        owner, repo, branch, token,
+        timeoutMs: Math.max(30, Number(pagesCfg.timeoutSec || 180)) * 1000,
+        pollMs: Math.max(2, Number(pagesCfg.pollSec || 3)) * 1000,
+        onUpdate: x => setPublishState(key, { ...x, label })
+      });
+    } catch (e) {
+      setPublishState(key, { status: 'failed', label, detail: e.message || String(e) });
+      throw e;
+    } finally {
+      setPublishingRepo('');
+    }
+  }
+
+  function handleSelect(e) { setFiles(Array.from(e.target.files || [])); }
+  function handleCover(e) { setCover((e.target.files || [])[0] || null); }
+
+  function resolvePdfRepoName(year) {
+    const pdf = cfg.pdf || {};
+    if (pdf.manualRepo && pdf.manualRepo.trim()) return pdf.manualRepo.trim();
+    const prefix = pdf.repoPrefix || 'cheneit-pdf-';
+    return `${prefix}${year}`;
+  }
+
+  function resolvePagesBase(owner, repo) {
+    const pdf = cfg.pdf || {};
+    // 如果设置了 pagesBase：直接用（可能想放在自定义域名下）
+    if (pdf.pagesBase && pdf.pagesBase.trim()) {
+      return pdf.pagesBase.replace(/\/+$/,'');
+    }
+    // 默认 Pages base：https://owner.github.io/repo
+    return `https://${owner}.github.io/${repo}`;
+  }
+
+  async function uploadAll() {
+    if (!token) { alert('请先在上方设置管理员令牌 (GitHub PAT)。'); return; }
+    if (!files.length) { alert('请选择文件'); return; }
+
+    setBusy(true);
+    setMsg('');
+
+    let successCount = 0;
+    let failCount = 0;
+    let lastIndexData = null;
+    let mainTouched = false;
+    const touchedPdfRepos = new Map();
+
+    try {
+      const now = new Date();
+      const y = now.getFullYear();
+      const m = String(now.getMonth() + 1).padStart(2, '0');
+
+      const baseDirMain = `${cfg.dataDir}/${y}/${m}`;
+      const pdfCfg = cfg.pdf || {};
+      const pdfEnabled = pdfCfg.enabled !== false;
+      const pdfBranch = pdfCfg.branch || 'main';
+
+      let ensuredPdfRepo = false;
+      let pdfRepoName = null;
+
+      const topicsArr = topicsInput ? topicsInput.split(',').map(s => s.trim()).filter(Boolean) : [];
+      const tagsArr = tags ? tags.split(',').map(s => s.trim()).filter(Boolean) : [];
+
+      let coverAttempted = false;
+      let coverResult = { imagePath: '', error: '' };
+
+      async function uploadCoverOnce() {
+        if (!cover) return coverResult;
+        if (coverAttempted) return coverResult;
+        coverAttempted = true;
+        try {
+          setMsg(`正在上传封面：${cover.name}`);
+          const imagePath = await uploadCoverIfNeeded(cfg, token, cover, '');
+          coverResult = { imagePath, error: '' };
+        } catch (e) {
+          console.warn('封面上传失败，但条目和文件上传将继续', e);
+          coverResult = { imagePath: '', error: e.message || String(e) };
+        }
+        return coverResult;
+      }
+
+      async function ensurePdfRepoOnce() {
+        if (ensuredPdfRepo && pdfRepoName) return pdfRepoName;
+        ensuredPdfRepo = true;
+        pdfRepoName = resolvePdfRepoName(y);
+
+        const test = await fetch(cacheBustUrl(`https://api.github.com/repos/${cfg.owner}/${pdfRepoName}`), {
+          headers: ghHeaders(token),
+          cache: 'no-store'
+        });
+
+        if (test.status === 404) {
+          if (!pdfCfg.autoCreateRepo) {
+            throw new Error(`PDF 仓库不存在：${pdfRepoName}。请先手动创建并开启 Pages。`);
+          }
+          setMsg(`检测到 PDF 仓库不存在，尝试自动创建：${pdfRepoName} ...`);
+          try {
+            await ghTryCreateRepo(pdfRepoName, token, { private: false });
+            const nojekyllMeta = await ghGetContentMeta(cfg.owner, pdfRepoName, '.nojekyll', token, pdfBranch);
+            await ghPutContent(cfg.owner, pdfRepoName, '.nojekyll', b64EncodeUint8(new Uint8Array([])), 'Add .nojekyll', token, nojekyllMeta?.sha, pdfBranch);
+
+            const readme = new TextEncoder().encode(`# ${pdfRepoName}\n\nThis repo is used by Repo Library to store PDFs.\n\n- Enable GitHub Pages: Settings -> Pages -> Deploy from branch -> ${pdfBranch} / root\n`);
+            const readmeB64 = b64EncodeUint8(new Uint8Array(readme));
+            const readmeMeta = await ghGetContentMeta(cfg.owner, pdfRepoName, 'README.md', token, pdfBranch);
+            await ghPutContent(cfg.owner, pdfRepoName, 'README.md', readmeB64, 'Init README for Pages', token, readmeMeta?.sha, pdfBranch);
+          } catch (e) {
+            throw new Error(`自动创建 PDF 仓库失败。请手动创建仓库 "${pdfRepoName}" 并给 token 授权 Contents: Read & Write，然后重试补传 PDF。原始错误：${e.message}`);
+          }
+        } else if (!test.ok) {
+          const txt = await test.text();
+          throw new Error(`检查 PDF 仓库失败：${test.status} ${test.statusText} - ${txt}`);
+        }
+
+        return pdfRepoName;
+      }
+
+      let i = 0;
+      for (const file of files) {
+        i += 1;
+
+        const id = uid();
+        const cleanTitle = title || file.name.replace(/\.[^/.]+$/, '');
+        const kind = guessKind(file.name);
+        const ext = extOf(file.name);
+        const isPdf = (kind === 'pdf' || ext === 'pdf');
+
+        const initialItem = {
+          id,
+          title: cleanTitle,
+          filename: file.name,
+          path: '',
+          kind: isPdf ? 'pdf' : kind,
+          topics: topicsArr,
+          topic: topicsArr[0] || '',
+          tags: tagsArr,
+          ts: Date.now(),
+          createdTs: Date.now(),
+          size: file.size,
+          desc: desc || '',
+          imagePath: '',
+          storage: null,
+          uploadStatus: isPdf ? 'pdf_pending' : 'file_pending',
+          uploadError: '',
+          imageUploadError: ''
+        };
+
+        setMsg(`(${i}/${files.length}) 正在先创建条目：${file.name}`);
+        lastIndexData = await updateIndexMain(cfg, token, data => {
+          const items = data.items || [];
+          if (items.some(x => x.id === id)) return data;
+          return { ...data, items: [...items, initialItem] };
+        }, `Create metadata item: ${file.name}`);
+        mainTouched = true;
+        onUploaded && onUploaded(lastIndexData);
+
+        try {
+          if (file.size > 95 * 1024 * 1024) {
+            throw new Error(`文件过大（${humanSize(file.size)}）。GitHub 普通仓库单文件接近/超过 100 MB 时会失败，建议改用对象存储或先压缩 PDF。`);
+          }
+          if (file.size > 45 * 1024 * 1024) {
+            setMsg(`(${i}/${files.length}) 文件较大（${humanSize(file.size)}），浏览器直传可能较慢：${file.name}`);
+          }
+
+          const coverInfo = await uploadCoverOnce();
+
+          const buf = new Uint8Array(await file.arrayBuffer());
+          const base64 = b64EncodeUint8(buf);
+
+          let patch = {
+            imagePath: coverInfo.imagePath || '',
+            imageUploadError: coverInfo.error || '',
+            uploadStatus: 'ready',
+            uploadError: ''
+          };
+
+          if (isPdf && pdfEnabled) {
+            const repoName = await ensurePdfRepoOnce();
+            const storedFilename = `${id}.pdf`;
+            const pdfDataDir = pdfCfg.dataDir || 'data/files';
+            const baseDirPdf = `${pdfDataDir}/${y}/${m}`;
+            const pathInPdfRepo = `${baseDirPdf}/${storedFilename}`;
+
+            setMsg(`(${i}/${files.length}) 正在上传 PDF 到分仓 ${repoName}：${file.name}`);
+            const meta = await ghGetContentMeta(cfg.owner, repoName, pathInPdfRepo, token, pdfBranch);
+            await ghPutContent(cfg.owner, repoName, pathInPdfRepo, base64, `Upload ${file.name} via Repo Library (PDF storage)`, token, meta?.sha, pdfBranch);
+            touchedPdfRepos.set(repoName, pdfBranch);
+
+            const pagesBase = resolvePagesBase(cfg.owner, repoName);
+            const pagesUrl = `${pagesBase}/${pathInPdfRepo}`;
+            patch = {
+              ...patch,
+              path: pagesUrl,
+              kind: 'pdf',
+              storage: {
+                owner: cfg.owner,
+                repo: repoName,
+                branch: pdfBranch,
+                path: pathInPdfRepo
+              }
+            };
+          } else {
+            const storedFilename = isPdf ? `${id}.pdf` : `${id}__${file.name}`;
+            const pathInMain = `${baseDirMain}/${storedFilename}`;
+
+            setMsg(`(${i}/${files.length}) 正在上传文件到主仓库：${file.name}`);
+            const meta = await ghGetContentMeta(cfg.owner, cfg.repo, pathInMain, token, cfg.branch);
+            await ghPutContent(cfg.owner, cfg.repo, pathInMain, base64, `Upload ${file.name} via Repo Library`, token, meta?.sha, cfg.branch);
+
+            patch = {
+              ...patch,
+              path: pathInMain,
+              kind: isPdf ? 'pdf' : kind,
+              storage: null
+            };
+          }
+
+          successCount += 1;
+          lastIndexData = await updateIndexMain(cfg, token, data => ({
+            ...data,
+            items: (data.items || []).map(x => x.id === id ? { ...x, ...patch, ts: Date.now() } : x)
+          }), `Mark item ready: ${file.name}`);
+          onUploaded && onUploaded(lastIndexData);
+
+        } catch (e) {
+          failCount += 1;
+          console.error('文件上传失败，条目已保留', e);
+          lastIndexData = await updateIndexMain(cfg, token, data => ({
+            ...data,
+            items: (data.items || []).map(x => x.id === id ? {
+              ...x,
+              imagePath: coverResult.imagePath || x.imagePath || '',
+              imageUploadError: coverResult.error || x.imageUploadError || '',
+              uploadStatus: 'upload_failed',
+              uploadError: e.message || String(e),
+              ts: Date.now()
+            } : x)
+          }), `Mark item upload failed: ${file.name}`);
+          onUploaded && onUploaded(lastIndexData);
+        }
+      }
+
+      const publishNotes = [];
+      if ((cfg.pages?.autoBuild !== false) && token) {
+        // 稳定发布顺序：先让 PDF Pages 上线，再发布主仓 Pages。
+        for (const [repoName, branchName] of touchedPdfRepos.entries()) {
+          try {
+            setMsg(`文件提交完成；正在发布 PDF Pages：${repoName}…`);
+            const result = await runPagesPublish(cfg.owner, repoName, branchName, 'PDF Pages');
+            publishNotes.push(`${repoName}: ${result.status}`);
+          } catch (e) {
+            publishNotes.push(`${repoName}: failed (${shortErr(e.message, 90)})`);
+          }
+        }
+        if (mainTouched) {
+          try {
+            setMsg('PDF 发布阶段完成；正在发布主仓 Pages…');
+            const result = await runPagesPublish(cfg.owner, cfg.repo, cfg.branch, '主仓 Pages');
+            publishNotes.push(`${cfg.repo}: ${result.status}`);
+          } catch (e) {
+            publishNotes.push(`${cfg.repo}: failed (${shortErr(e.message, 90)})`);
+          }
+        }
+      } else if (mainTouched) {
+        publishNotes.push('Pages 自动发布已关闭');
+      }
+
+      const publishText = publishNotes.length ? ` Pages：${publishNotes.join('；')}。` : '';
+      setMsg(`上传流程完成：成功 ${successCount} 个，失败 ${failCount} 个。${publishText}${failCount ? ' 失败条目已保留，可后续补传。' : ''}`);
+      setFiles([]); setTitle(''); setTopicsInput(''); setTags(''); setDesc(''); setCover(null);
+      onUploaded && onUploaded(lastIndexData);
+
+    } catch (e) {
+      console.error(e);
+      setMsg('出错：' + e.message);
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  const fileCount = files.length;
+  const fileNames = fileCount ? files.map(f => f.name).join(', ') : '未选择文件';
+
+  const pdfRepoHint = (() => {
+    const y = new Date().getFullYear();
+    const pdfRepoName = (cfg.pdf?.manualRepo && cfg.pdf.manualRepo.trim())
+      ? cfg.pdf.manualRepo.trim()
+      : `${cfg.pdf?.repoPrefix || 'cheneit-pdf-'}${y}`;
+    return pdfRepoName;
+  })();
+
+  return (
+    <section className="mb-6">
+      <div className="bg-white rounded-3xl shadow-soft border border-slate-200 p-4 mb-4">
+        <div className="flex items-center justify-between gap-3 flex-wrap mb-3">
+          <div>
+            <div className="font-semibold text-slate-900">🚀 Pages 发布控制（v3.2）</div>
+            <div className="text-xs text-slate-500 mt-1">可手动触发；正常上传完成后会自动按“PDF Pages → 主仓 Pages”的顺序发布。</div>
+          </div>
+          <div className="flex gap-2 flex-wrap">
+            <button disabled={busy || !!publishingRepo || !token} onClick={()=>runPagesPublish(cfg.owner, pdfRepoHint, cfg.pdf?.branch || 'main', 'PDF Pages').catch(()=>{})} className={btnClass('success', (busy || publishingRepo || !token) ? 'opacity-60' : '')}>发布 PDF Pages</button>
+            <button disabled={busy || !!publishingRepo || !token} onClick={()=>runPagesPublish(cfg.owner, cfg.repo, cfg.branch, '主仓 Pages').catch(()=>{})} className={btnClass('primary', (busy || publishingRepo || !token) ? 'opacity-60' : '')}>发布主仓 Pages</button>
+          </div>
+        </div>
+        <div className="grid md:grid-cols-2 gap-2">
+          {[{repo: pdfRepoHint, label:'PDF Pages'}, {repo: cfg.repo, label:'主仓 Pages'}].map(x => {
+            const st = publishStates[x.repo] || {};
+            const ok = st.status === 'built';
+            const bad = st.status === 'failed';
+            return (
+              <div key={x.repo} className={cx('rounded-xl border p-3 text-xs', ok ? 'bg-emerald-50 border-emerald-200 text-emerald-900' : bad ? 'bg-rose-50 border-rose-200 text-rose-900' : 'bg-slate-50 border-slate-200 text-slate-700')}>
+                <div className="font-semibold">{ok ? '✓' : bad ? '✕' : '•'} {x.label} · {x.repo}</div>
+                <div className="mt-1">状态：{st.status || '未触发'}{publishingRepo === x.repo ? '（进行中）' : ''}</div>
+                {st.detail ? <div className="mt-1 leading-5 break-words">{st.detail}</div> : null}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="bg-white rounded-3xl shadow-soft border border-slate-200 p-4">
+        <div className="flex items-center justify-between mb-3 gap-3 flex-wrap">
+          <div className="font-semibold text-slate-900">上传新条目</div>
+          <div className="text-xs text-slate-500">
+            非 PDF 自动存入：{cfg.dataDir}/YYYY/MM；PDF 默认分仓：<b>{pdfRepoHint}</b>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="space-y-3">
+            <label className="text-sm block">
+              <div className="mb-1 text-slate-700">选择文件 (支持多选)</div>
+              <input type="file" multiple onChange={handleSelect} className="block w-full text-sm" />
+              <div className="mt-1 text-xs text-slate-500 truncate">当前: {fileNames}</div>
+            </label>
+
+            <label className="text-sm block">
+              <div className="mb-1 text-slate-700">统一标题（可选，留空则用文件名）</div>
+              <input value={title} onChange={e => setTitle(e.target.value)} className="w-full px-3 py-2 rounded-xl border border-slate-300 text-sm bg-white" />
+            </label>
+
+            <label className="text-sm block">
+              <div className="mb-1 text-slate-700">Topics（逗号分隔，多 topic）</div>
+              <input value={topicsInput} onChange={e => setTopicsInput(e.target.value)} className="w-full px-3 py-2 rounded-xl border border-slate-300 text-sm bg-white" />
+            </label>
+
+            <label className="text-sm block">
+              <div className="mb-1 text-slate-700">标签（逗号分隔）</div>
+              <input value={tags} onChange={e => setTags(e.target.value)} className="w-full px-3 py-2 rounded-xl border border-slate-300 text-sm bg-white" />
+            </label>
+          </div>
+
+          <div className="space-y-3">
+            <label className="text-sm block">
+              <div className="mb-1 text-slate-700">条目简要描述</div>
+              <textarea value={desc} onChange={e => setDesc(e.target.value)} rows={5} className="w-full px-3 py-2 rounded-xl border border-slate-300 text-sm bg-white" />
+            </label>
+
+            <label className="text-sm block">
+              <div className="mb-1 text-slate-700">封面图（可选，建议 16:9 或 4:3）</div>
+              <input type="file" accept="image/*" onChange={handleCover} className="block w-full text-sm" />
+            </label>
+
+            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-3 text-xs text-slate-600">
+              <div className="font-semibold text-slate-700 mb-1">提示</div>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>新上传 PDF：会写入 <code>storage</code> 字段，方便“替换 PDF/删除”。旧条目不改动。</li>
+                <li>PDF 仓库 Pages 必须使用 <b>Deploy from a branch</b>；v3.2 上传后会主动触发 build 并等待发布。</li>
+                <li>PAT 除 Contents: Read &amp; Write 外，还需 <b>Pages: Read &amp; Write</b>；否则文件能上传，但主动发布会 403。</li>
+                <li>如果你想把 PDF 集中进固定仓库：在「仓库设置 → PDF 分仓」填 <b>手动覆盖仓库名</b>。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-4 flex items-center gap-3 flex-wrap">
+          <button
+            onClick={uploadAll}
+            disabled={busy}
+            className={btnClass('primary', busy ? 'opacity-60 cursor-not-allowed' : '')}
+          >
+            {busy ? '上传中…' : '上传所有文件'}
+          </button>
+          {msg ? <div className="text-sm text-slate-600">{msg}</div> : null}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ============ Dashboard ============ */
+function Dashboard({ items, topicsCount, tagsCount, onPickTopic, onPickTag }) {
+  const heat = useMemo(() => buildHeatmap(items, 365), [items]);
+
+  // 词云：取 topics 前 10
+  const topTopics = topicsCount.slice(0, 10);
+  const maxCnt = topTopics.length ? topTopics[0][1] : 1;
+
+  return (
+    <section className="space-y-6">
+      <div className="bg-white rounded-3xl shadow-soft border border-slate-200 p-4">
+        <div className="flex items-center gap-2 text-slate-900 font-semibold mb-3">
+          <span className="text-lg">🏷️</span>
+          <span>文章标签 / 主题</span>
+        </div>
+
+        {/* Topics row */}
+        <div className="flex flex-wrap gap-2 mb-3">
+          {topicsCount.slice(0, 12).map(([t, c]) => (
+            <button key={t} onClick={()=>onPickTopic(t)} className={btnClass('success', 'px-3 py-2')}>
+              {t}<span className={badgeClass()}>{c}</span>
+            </button>
+          ))}
+          {topicsCount.length > 12 ? (
+            <span className="text-xs text-slate-500 self-center ml-1">（更多请用筛选/搜索）</span>
+          ) : null}
+        </div>
+
+        {/* Tags row */}
+        <div className="flex flex-wrap gap-2">
+          {tagsCount.slice(0, 12).map(([t, c]) => (
+            <button key={t} onClick={()=>onPickTag(t)} className={btnClass('slate', 'px-3 py-2')}>
+              {t}<span className={badgeClass()}>{c}</span>
+            </button>
+          ))}
+          {tagsCount.length > 12 ? (
+            <span className="text-xs text-slate-500 self-center ml-1">（更多请用筛选/搜索）</span>
+          ) : null}
+        </div>
+
+        {/* Word cloud */}
+        <div className="mt-5">
+          <div className="text-sm font-semibold text-slate-700 mb-2">热点 Topic（词云）</div>
+          <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 overflow-hidden">
+            <div className="flex flex-wrap gap-x-4 gap-y-2 items-end">
+              {topTopics.map(([t,c]) => {
+                const scale = 0.9 + (c / maxCnt) * 1.3; // 0.9 - 2.2
+                return (
+                  <button
+                    key={t}
+                    onClick={()=>onPickTopic(t)}
+                    className="text-sky-700 hover:text-sky-900"
+                    style={{ fontSize: `${Math.round(12 * scale)}px`, lineHeight: 1.1 }}
+                    title={`${t}: ${c}`}
+                  >
+                    {t}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Heatmap */}
+      <div className="bg-white rounded-3xl shadow-soft border border-slate-200 p-4">
+        <div className="flex items-center gap-2 text-slate-900 font-semibold mb-3">
+          <span className="text-lg">🗓️</span>
+          <span>文章日历</span>
+          <span className="ml-auto text-xs text-slate-500">最近 1 年上传密度</span>
+        </div>
+
+        <Heatmap heat={heat} />
+      </div>
+    </section>
+  );
+}
+
+function Heatmap({ heat }) {
+  const monthNames = ["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"];
+  const cell = 14;
+  const gap = 4;
+  const marks = new Map(heat.monthMarks.map(m => [m.week, m]));
+  const rangeText = `${fmtDate(heat.rangeStart)} — ${fmtDate(heat.rangeEnd)}`;
+
+  return (
+    <div>
+      <div className="flex items-center justify-between gap-3 mb-3 text-xs text-slate-500 flex-wrap">
+        <span>周一 → 周日；每一列代表一个自然周</span>
+        <span>{rangeText}</span>
+      </div>
+      <div className="overflow-auto scrollbar-thin">
+        <div style={{ minWidth: 52 + heat.weeks.length * (cell + gap) }}>
+          {/* 月份标签：与下方周列共享完全相同的列宽与 gap。 */}
+          <div className="flex mb-2">
+            <div style={{ width: 44, flex: '0 0 44px' }}></div>
+            <div
+              className="grid text-xs text-slate-500"
+              style={{
+                gridTemplateColumns: `repeat(${heat.weeks.length}, ${cell}px)`,
+                columnGap: `${gap}px`,
+                height: 18,
+              }}
+            >
+              {heat.weeks.map((_, wi) => {
+                const mark = marks.get(wi);
+                return (
+                  <div key={wi} className="relative overflow-visible">
+                    {mark ? <span className="absolute left-0 top-0 whitespace-nowrap">{monthNames[mark.month]}</span> : null}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="flex items-start">
+            {/* 星期标签与热力图使用相同的 14px 行高 + 4px gap，不再靠 pt/空白 div 人工对齐。 */}
+            <div
+              className="grid text-xs text-slate-500 pr-2 text-right"
+              style={{
+                width: 44,
+                flex: '0 0 44px',
+                gridTemplateRows: `repeat(7, ${cell}px)`,
+                rowGap: `${gap}px`,
+              }}
+            >
+              {heat.weekdayLabels.map((label, i) => (
+                <div key={i} className="leading-[14px]">{label}</div>
+              ))}
+            </div>
+
+            <div
+              className="grid"
+              style={{
+                gridTemplateColumns: `repeat(${heat.weeks.length}, ${cell}px)`,
+                columnGap: `${gap}px`,
+              }}
+            >
+              {heat.weeks.map((week, wi) => (
+                <div
+                  key={wi}
+                  className="grid"
+                  style={{ gridTemplateRows: `repeat(7, ${cell}px)`, rowGap: `${gap}px` }}
+                >
+                  {week.map((c, ri) => {
+                    if (!c.inRange) {
+                      return <div key={ri} style={{ width: cell, height: cell }} aria-hidden="true" />;
+                    }
+                    return (
+                      <div
+                        key={ri}
+                        title={`${c.key}：${c.count} 篇`}
+                        className={cx("rounded-sm border", intensityClass(c.count))}
+                        style={{ width: cell, height: cell }}
+                      />
+                    );
+                  })}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 mt-3 text-xs text-slate-500 pl-11">
+            <span>少</span>
+            <div className="w-3.5 h-3.5 rounded-sm border bg-slate-100 border-slate-200"></div>
+            <div className="w-3.5 h-3.5 rounded-sm border bg-emerald-100 border-emerald-200"></div>
+            <div className="w-3.5 h-3.5 rounded-sm border bg-emerald-200 border-emerald-300"></div>
+            <div className="w-3.5 h-3.5 rounded-sm border bg-emerald-300 border-emerald-400"></div>
+            <div className="w-3.5 h-3.5 rounded-sm border bg-emerald-400 border-emerald-500"></div>
+            <span>多</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ============ Preview Panel ============ */
+function PreviewPanel({
+  loading, error, items, totalAll,
+  allTopics, allTags,
+  activeTopic, setActiveTopic,
+  activeTag, setActiveTag,
+  sortBy, setSortBy,
+  onOpen, cfg, mode,
+  onEdit, onDeleted, onRepair,
+  showFold, showAllHome, setShowAllHome
+}) {
+  function handleResetFilters() {
+    setActiveTopic('');
+    setActiveTag('');
+    setSortBy('time_desc');
+    setShowAllHome(false);
+  }
+
+  return (
+    <section className="bg-white rounded-3xl shadow-soft border border-slate-200 p-4">
+      <div className="flex flex-wrap items-center gap-3 mb-4">
+        <select value={activeTopic} onChange={(e) => setActiveTopic(e.target.value)} className="px-3 py-2 rounded-xl border border-slate-300 bg-white text-sm">
+          <option value="">全部 Topic</option>
+          {allTopics.map(t => <option key={t} value={t}>{t}</option>)}
+        </select>
+
+        <select value={activeTag} onChange={(e) => setActiveTag(e.target.value)} className="px-3 py-2 rounded-xl border border-slate-300 bg-white text-sm">
+          <option value="">全部标签</option>
+          {allTags.map(t => <option key={t} value={t}>{t}</option>)}
+        </select>
+
+        <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className="px-3 py-2 rounded-xl border border-slate-300 bg-white text-sm">
+          <option value="time_desc">按时间(新→旧)</option>
+          <option value="time_asc">按时间(旧→新)</option>
+          <option value="title_asc">标题(A→Z)</option>
+          <option value="title_desc">标题(Z→A)</option>
+          <option value="type">按类型</option>
+        </select>
+
+        <button type="button" onClick={handleResetFilters} className={btnClass('slate')}>
+          重置筛选
+        </button>
+
+        <span className="ml-auto text-sm text-slate-500">
+          显示 {items.length} / 共 {totalAll} 条
+        </span>
+      </div>
+
+      {loading ? <div className="text-slate-600">加载中…</div> : null}
+      {error ? <div className="text-rose-600">{error}</div> : null}
+
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {items.map(item => (
+          <Card
+            key={item.id}
+            cfg={cfg}
+            item={item}
+            canAdmin={mode === 'admin'}
+            onOpen={() => onOpen(item)}
+            onEdit={() => onEdit && onEdit(item)}
+            onDelete={() => onDeleted && onDeleted(item)}
+            onRepair={() => onRepair && onRepair(item)}
+          />
+        ))}
+      </div>
+
+      {/* 首页折叠按钮 */}
+      {showFold && totalAll > 6 ? (
+        <div className="mt-5 flex justify-center">
+          <button
+            onClick={() => setShowAllHome(!showAllHome)}
+            className={btnClass('subtle')}
+          >
+            {showAllHome ? '折叠（只看最近6条）' : `展开更多（还有 ${totalAll - 6} 条）`}
+          </button>
+        </div>
+      ) : null}
+
+      {!loading && !totalAll ? (
+        <div className="text-sm text-slate-500 mt-6">没有符合条件的条目。</div>
+      ) : null}
+    </section>
+  );
+}
+
+/* ============ Card ============ */
+function Card({ cfg, item, onOpen, onEdit, onDelete, onRepair, canAdmin }) {
+  const kindMeta = FILE_KINDS[item.kind] || FILE_KINDS.other;
+  const Icon = kindMeta.icon;
+
+  const topicsArr = getTopicsArr(item);
+  const status = uploadStatusMeta(item);
+
+  // raw：优先用 storage（新条目）以便能下载真实文件；否则沿用旧逻辑
+  const rawHref = (() => {
+    if (item.storage?.owner && item.storage?.repo && item.storage?.path) {
+      const branch = item.storage.branch || (cfg.pdf?.branch || 'main');
+      return ghRawUrl({ owner: item.storage.owner, repo: item.storage.repo, branch, path: item.storage.path });
+    }
+    return buildRawUrl(cfg, item.path);
+  })();
+
+  // 浏览器打开：PDF => Pages URL（新条目 path=绝对URL；旧条目走 /data/files/...）
+  const browserHref = (item.kind === 'pdf')
+    ? buildPdfBrowserUrl(item.path)
+    : rawHref;
+
+  const coverSrc = item.imagePath ? buildRawUrl(cfg, item.imagePath) : '';
+
+  return (
+    <div className="bg-white rounded-3xl border border-slate-200 shadow-soft p-4 flex flex-col h-full min-h-[340px]">
+      <div className="mb-3 w-full h-36 rounded-2xl overflow-hidden bg-slate-100 flex items-center justify-center">
+        {coverSrc ? (
+          <img src={coverSrc} alt="cover" className="w-full h-full object-cover" />
+        ) : (
+          <div className="text-slate-400 text-sm">无封面</div>
+        )}
+      </div>
+
+      <div className="flex items-start gap-3">
+        <div className="w-10 h-10 rounded-2xl flex items-center justify-center text-slate-700 bg-slate-50 border border-slate-200">
+          <Icon />
+        </div>
+
+        <div className="flex-1 min-w-0">
+          <div className="font-semibold text-slate-900 truncate">
+            {item.path ? (
+              <a href={browserHref} target="_blank" rel="noreferrer" className="hover:underline">
+                {item.title || item.filename}
+              </a>
+            ) : (
+              <span>{item.title || item.filename}</span>
+            )}
+          </div>
+          <div className="text-xs text-slate-500 mt-0.5">
+            {kindMeta.label} · {fmtDate(item.ts)}{topicsArr[0] ? ` · ${topicsArr[0]}` : ''}
+          </div>
+          {status ? (
+            <div className={cx("mt-1 inline-flex w-fit px-2 py-0.5 rounded-full border text-[11px]", status.cls)} title={item.uploadError || ''}>
+              {status.label}
+            </div>
+          ) : null}
+        </div>
+      </div>
+
+      {topicsArr.length ? (
+        <div className="mt-3 flex flex-wrap gap-2">
+          {topicsArr.map(t => (
+            <span key={t} className="text-xs px-2 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+              {t}
+            </span>
+          ))}
+        </div>
+      ) : null}
+
+      {item.tags && item.tags.length ? (
+        <div className="mt-3 flex flex-wrap gap-2">
+          {item.tags.map(t => (
+            <span key={t} className="text-xs px-2 py-1 rounded-full bg-slate-50 text-slate-700 border border-slate-200">
+              #{t}
+            </span>
+          ))}
+        </div>
+      ) : null}
+
+      {item.uploadError ? (
+        <div className="mt-3 text-xs text-rose-700 bg-rose-50 border border-rose-200 rounded-2xl p-2" title={item.uploadError}>
+          错误：{shortErr(item.uploadError)}
+        </div>
+      ) : null}
+
+      {item.imageUploadError ? (
+        <div className="mt-3 text-xs text-amber-800 bg-amber-50 border border-amber-200 rounded-2xl p-2" title={item.imageUploadError}>
+          封面未上传：{shortErr(item.imageUploadError)}
+        </div>
+      ) : null}
+
+      {item.desc ? (
+        <div className="mt-3 text-sm text-slate-600 line-clamp-3 whitespace-pre-wrap">
+          {item.desc}
+        </div>
+      ) : (
+        <div className="mt-3 text-sm text-slate-400">（无描述）</div>
+      )}
+
+      <div className="mt-auto pt-4 flex items-center gap-2 flex-wrap">
+        <button onClick={onOpen} className={btnClass('primary')}>预览</button>
+        {item.path ? (
+          <a href={rawHref} target="_blank" rel="noreferrer" className={btnClass('slate')}>Raw</a>
+        ) : (
+          <span className={btnClass('subtle', 'opacity-50 cursor-not-allowed')}>Raw</span>
+        )}
+        {item.kind === 'pdf' && item.path ? (
+          <a href={browserHref} target="_blank" rel="noreferrer" className={btnClass('success')}>浏览器打开</a>
+        ) : null}
+
+        {canAdmin ? (
+          <div className="ml-auto flex items-center gap-2 flex-wrap justify-end">
+            {isRepairablePdfItem(item) ? (
+              <button onClick={onRepair} className={btnClass('success')} title="只检查分仓中是否已有 PDF；若存在则补写索引，不会重复上传">
+                检查/修复
+              </button>
+            ) : null}
+            <button onClick={onEdit} className={btnClass('warn')}>编辑</button>
+            <button onClick={onDelete} className={btnClass('danger')}>删除</button>
+          </div>
+        ) : null}
+      </div>
+    </div>
+  );
+}
+
+/* ============ Viewer Modal ============ */
+function ViewerModal({ cfg, item, onClose, onReplace, mode }) {
+  const [tab, setTab] = useState(item.kind === 'pdf' ? 'pdf' : 'text'); // pdf|html|text
+  const [loading, setLoading] = useState(false);
+  const [err, setErr] = useState('');
+  const [text, setText] = useState('');
+  const scrollRef = useRef(null);
+
+  const topicsArr = getTopicsArr(item);
+
+  // raw for download
+  const rawHref = (() => {
+    if (item.storage?.owner && item.storage?.repo && item.storage?.path) {
+      const branch = item.storage.branch || (cfg.pdf?.branch || 'main');
+      return ghRawUrl({ owner: item.storage.owner, repo: item.storage.repo, branch, path: item.storage.path });
+    }
+    return buildRawUrl(cfg, item.path);
+  })();
+
+  // pdf direct open
+  const pdfHref = buildPdfBrowserUrl(item.path);
+
+  useEffect(() => {
+    async function load() {
+      setErr('');
+      setText('');
+
+      // PDF 直接 iframe，不需要拉 text
+      if (tab === 'pdf') return;
+      if (!item.path) {
+        setErr('文件尚未上传成功；当前只保留了条目文字信息。');
+        return;
+      }
+
+      setLoading(true);
+      try {
+        const url = rawHref;
+        const res = await fetch(url, { cache: 'no-store' });
+        if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+        const t = await res.text();
+        setText(t);
+        setTimeout(() => { try { window.hljs && window.hljs.highlightAll(); } catch {} }, 50);
+      } catch (e) {
+        setErr(e.message);
+      } finally {
+        setLoading(false);
+      }
+    }
+    load();
+  }, [tab, item.id]);
+
+  const language = guessHighlightLanguage(item.filename || '');
+
+  return (
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={onClose}>
+      <div className="bg-white rounded-3xl max-w-5xl w-full border border-slate-200 shadow-2xl overflow-hidden" onClick={e=>e.stopPropagation()}>
+        <div className="flex items-center justify-between px-4 py-3 border-b border-slate-200 gap-3 flex-wrap">
+          <div className="min-w-0">
+            <div className="font-semibold truncate">{item.title || item.filename}</div>
+            <div className="text-xs text-slate-500">
+              {FILE_KINDS[item.kind]?.label || 'FILE'} · {fmtDate(item.ts)}{topicsArr[0] ? ` · ${topicsArr[0]}` : ''}
+            </div>
+          </div>
+          <div className="flex items-center gap-2 flex-wrap justify-end">
+            {item.kind === 'pdf' ? (
+              <button className={btnClass(tab==='pdf' ? 'success' : 'slate')} onClick={()=>setTab('pdf')}>PDF</button>
+            ) : null}
+            <button className={btnClass(tab==='html' ? 'primary' : 'slate')} onClick={()=>setTab('html')}>
+              {item.kind === 'html' ? 'HTML' : 'Raw'}
+            </button>
+            <button className={btnClass(tab==='text' ? 'primary' : 'slate')} onClick={()=>setTab('text')}>
+              {item.kind === 'code' ? 'Code' : 'Text'}
+            </button>
+            <a className={btnClass('slate')} href={rawHref} target="_blank" rel="noreferrer">Raw</a>
+
+            {mode === 'admin' && item.kind === 'pdf' ? (
+              <button className={btnClass('warn')} onClick={onReplace} title="上传注释版并覆盖原文件（链接不变）">
+                替换PDF
+              </button>
+            ) : null}
+
+            <button className={btnClass('danger')} onClick={onClose}>关闭</button>
+          </div>
+        </div>
+
+        <div ref={scrollRef} className="p-0 max-h-[75vh] overflow-auto relative">
+          {tab === 'pdf' ? (
+            item.path ? (
+              <iframe
+                className="w-full h-[75vh] bg-white"
+                src={pdfHref}
+                title={item.title || item.filename}
+              />
+            ) : (
+              <div className="p-6 text-slate-700">
+                <div className="font-semibold mb-2">文件尚未上传成功</div>
+                <div className="text-sm text-slate-600">该条目的文字信息已经保留在 index.json 中，可在管理模式中使用“替换PDF”补传文件。</div>
+                {item.uploadError ? <div className="mt-3 text-xs text-rose-700 bg-rose-50 border border-rose-200 rounded-2xl p-3">{item.uploadError}</div> : null}
+              </div>
+            )
+          ) : loading ? (
+            <div className="p-6 text-slate-600">加载中…</div>
+          ) : err ? (
+            <div className="p-6 text-rose-600">{err}</div>
+          ) : tab === 'html' && item.kind === 'html' ? (
+            <iframe
+              className="w-full h-[75vh] bg-white"
+              srcDoc={text}
+              sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+              title={item.title || item.filename}
+            />
+          ) : (
+            <pre className="p-4 text-sm bg-[#0b1020] text-slate-50 overflow-auto">
+              <code className={language ? `language-${language}` : ''}>{text}</code>
+            </pre>
+          )}
+
+          {tab !== 'pdf' && !loading && !err ? (
+            <button
+              onClick={() => scrollRef.current && scrollRef.current.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="absolute right-4 bottom-4 px-3 py-1.5 rounded-full bg-slate-900 text-xs text-white shadow-lg hover:bg-slate-800"
+            >
+              回到顶部
+            </button>
+          ) : null}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ============ Edit Modal ============ */
+function EditItemModal({ item, onClose, onSave }) {
+  const initialTopicsArr = getTopicsArr(item);
+  const [title, setTitle] = useState(item.title || '');
+  const [topicsInput, setTopicsInput] = useState(initialTopicsArr.join(', '));
+  const [tagsInput, setTagsInput] = useState((item.tags || []).join(', '));
+  const [desc, setDesc] = useState(item.desc || '');
+  const [cover, setCover] = useState(null);
+
+  function handleSubmit() {
+    const topicsArr = topicsInput ? topicsInput.split(',').map(s => s.trim()).filter(Boolean) : [];
+    const tagsArr = tagsInput ? tagsInput.split(',').map(s => s.trim()).filter(Boolean) : [];
+
+    const updated = {
+      ...item,
+      title,
+      desc,
+      topics: topicsArr,
+      topic: topicsArr[0] || '',
+      tags: tagsArr
+    };
+    onSave && onSave(updated, cover);
+  }
+
+  return (
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={onClose}>
+      <div className="bg-white rounded-3xl max-w-3xl w-full border border-slate-200 shadow-2xl overflow-hidden" onClick={e=>e.stopPropagation()}>
+        <div className="flex items-center justify-between px-4 py-3 border-b border-slate-200">
+          <div className="font-semibold">编辑条目信息</div>
+          <button onClick={onClose} className={btnClass('danger')}>关闭</button>
+        </div>
+
+        <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="space-y-3">
+            <label className="text-sm block">
+              <div className="mb-1 text-slate-700">标题</div>
+              <input value={title} onChange={e=>setTitle(e.target.value)} className="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white text-sm" />
+            </label>
+
+            <label className="text-sm block">
+              <div className="mb-1 text-slate-700">Topics（逗号分隔）</div>
+              <input value={topicsInput} onChange={e=>setTopicsInput(e.target.value)} className="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white text-sm" />
+            </label>
+
+            <label className="text-sm block">
+              <div className="mb-1 text-slate-700">标签（逗号分隔）</div>
+              <input value={tagsInput} onChange={e=>setTagsInput(e.target.value)} className="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white text-sm" />
+            </label>
+          </div>
+
+          <div className="space-y-3">
+            <label className="text-sm block">
+              <div className="mb-1 text-slate-700">描述</div>
+              <textarea value={desc} onChange={e=>setDesc(e.target.value)} rows={6} className="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white text-sm" />
+            </label>
+
+            <label className="text-sm block">
+              <div className="mb-1 text-slate-700">替换封面（可选）</div>
+              <input type="file" accept="image/*" onChange={e=>setCover((e.target.files||[])[0]||null)} className="block w-full text-sm" />
+            </label>
+          </div>
+        </div>
+
+        <div className="px-4 py-3 border-t border-slate-200 flex items-center justify-end gap-2">
+          <button onClick={onClose} className={btnClass('slate')}>取消</button>
+          <button onClick={handleSubmit} className={btnClass('success')}>保存</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ============ Replace PDF Modal ============ */
+function ReplacePdfModal({ item, onClose, onReplace }) {
+  const [file, setFile] = useState(null);
+
+  return (
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={onClose}>
+      <div className="bg-white rounded-3xl max-w-xl w-full border border-slate-200 shadow-2xl overflow-hidden" onClick={e=>e.stopPropagation()}>
+        <div className="flex items-center justify-between px-4 py-3 border-b border-slate-200">
+          <div className="font-semibold">替换 PDF（覆盖原文件，链接不变）</div>
+          <button onClick={onClose} className={btnClass('danger')}>关闭</button>
+        </div>
+
+        <div className="p-4 space-y-3">
+          <div className="text-sm text-slate-700">
+            当前条目：<b>{item.title || item.filename}</b>
+          </div>
+          <div className="text-xs text-slate-500">
+            适用于你对 PDF 做注释后，用新版本覆盖原 PDF；网页链接保持不变。
+          </div>
+
+          <label className="text-sm block">
+            <div className="mb-1 text-slate-700">选择新的 PDF 文件</div>
+            <input type="file" accept="application/pdf" onChange={e=>setFile((e.target.files||[])[0]||null)} className="block w-full text-sm" />
+          </label>
+
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-3 text-xs text-slate-600">
+            <div className="font-semibold text-slate-700 mb-1">注意</div>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>若该条目是新上传 PDF（带 storage），会自动覆盖分仓内真实文件。</li>
+              <li>若是旧条目且 path 为相对路径，会在主仓库覆盖对应文件。</li>
+              <li>若是旧条目且 path 为绝对 URL 但没有 storage，系统无法定位仓库路径。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="px-4 py-3 border-t border-slate-200 flex items-center justify-end gap-2">
+          <button onClick={onClose} className={btnClass('slate')}>取消</button>
+          <button onClick={()=>onReplace(file)} disabled={!file} className={btnClass('warn', !file ? 'opacity-60 cursor-not-allowed' : '')}>
+            覆盖替换
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ============ Archive Sidebar (timeline style B) ============ */
+function ArchiveSidebar({ items, onOpen }) {
+  const sorted = useMemo(() => [...items].sort((a,b)=>(b.ts||0)-(a.ts||0)), [items]);
+  const recent3 = sorted.slice(0, 3);
+
+  // group by year->month
+  const groups = useMemo(() => {
+    const g = new Map(); // year -> Map(month -> items)
+    for (const it of sorted) {
+      const d = new Date(it.ts || 0);
+      if (isNaN(d)) continue;
+      const y = d.getFullYear();
+      const m = d.getMonth() + 1;
+      if (!g.has(y)) g.set(y, new Map());
+      const gm = g.get(y);
+      if (!gm.has(m)) gm.set(m, []);
+      gm.get(m).push(it);
+    }
+    // sort inside each month
+    for (const [y, gm] of g.entries()) {
+      for (const [m, arr] of gm.entries()) {
+        arr.sort((a,b)=>(b.ts||0)-(a.ts||0));
+      }
+    }
+    return g;
+  }, [sorted]);
+
+  const years = useMemo(() => Array.from(groups.keys()).sort((a,b)=>b-a), [groups]);
+
+  return (
+    <aside className="bg-white rounded-3xl shadow-soft border border-slate-200 p-4">
+      <div className="flex items-center justify-between mb-3">
+        <div className="font-semibold text-slate-900">📦 归档</div>
+        <div className="text-xs text-slate-500">最近 {items.length} 条</div>
+      </div>
+
+      {/* recent 3 */}
+      <div className="mb-4">
+        <div className="text-xs font-semibold text-slate-700 mb-2">最近 3 篇</div>
+        <div className="space-y-2">
+          {recent3.map(it => (
+            <button
+              key={it.id}
+              onClick={()=>onOpen(it)}
+              className="w-full text-left p-3 rounded-2xl border border-slate-200 hover:bg-slate-50"
+            >
+              <div className="text-sm font-semibold text-slate-900 line-clamp-1">{it.title || it.filename}</div>
+              <div className="text-xs text-slate-500 mt-0.5">{fmtDate(it.ts)} · {(getTopicsArr(it)[0] || '—')}</div>
+            </button>
+          ))}
+          {!recent3.length ? <div className="text-sm text-slate-500">暂无条目</div> : null}
+        </div>
+      </div>
+
+      <div className="border-t border-slate-200 pt-4">
+        <div className="text-xs font-semibold text-slate-700 mb-2">时间轴（下滑查看更多）</div>
+
+        <div className="max-h-[520px] overflow-auto scrollbar-thin pr-2">
+          <div className="tl">
+            {years.map(year => {
+              const monthsMap = groups.get(year);
+              const months = Array.from(monthsMap.keys()).sort((a,b)=>b-a);
+              return (
+                <div key={year} className="mb-5 relative">
+                  <div className="tl-dot" style={{ top: 2 }}></div>
+                  <div className="pl-4">
+                    <div className="text-base font-semibold text-slate-900">{year}</div>
+                    <div className="mt-2 space-y-3">
+                      {months.map(month => {
+                        const arr = monthsMap.get(month) || [];
+                        return (
+                          <div key={month} className="relative">
+                            <div className="tl-dot sm" style={{ top: 6 }}></div>
+                            <div className="pl-4">
+                              <div className="text-sm font-semibold text-slate-800">{String(month).padStart(2,'0')}</div>
+                              <div className="mt-1 space-y-1">
+                                {arr.slice(0, 6).map(it => (
+                                  <button
+                                    key={it.id}
+                                    onClick={()=>onOpen(it)}
+                                    className="w-full text-left text-sm text-slate-700 hover:text-slate-900 hover:underline line-clamp-1"
+                                    title={it.title || it.filename}
+                                  >
+                                    {String(new Date(it.ts||0).getDate()).padStart(2,'0')} · {it.title || it.filename}
+                                  </button>
+                                ))}
+                                {arr.length > 6 ? (
+                                  <div className="text-xs text-slate-400">… 还有 {arr.length - 6} 条</div>
+                                ) : null}
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </aside>
+  );
+}
+
+/* ============ Footer ============ */
+function Footer() {
+  return (
+    <footer className="mt-auto border-t border-slate-200 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 text-xs text-slate-500 flex flex-wrap gap-2 items-center">
+        <span>© Repo Library</span>
+        <span>·</span>
+        <span>单文件 HTML（React + Tailwind）</span>
+        <span>·</span>
+        <span>v3.2 · SHA 链 + Pages 主动构建/轮询 + pending PDF 修复 + 数据迁移 + 精确日历</span>
+      </div>
+    </footer>
+  );
+}
+
+/* ============ Mount ============ */
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+
+</script>
+</body>
+</html>
