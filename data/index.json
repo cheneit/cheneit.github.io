@@ -2510,7 +2510,7 @@
       "id": "etebtaa7gxemso99w9w",
       "title": "spin qubit altermagnet",
       "filename": "Vakili2026arXiv-gate-controlled spin qubits in confined altermagnets_markedref.pdf",
-      "path": "",
+      "path": "https://cheneit.github.io/cheneit-pdf-2026/data/files/2026/08/etebtaa7gxemso99w9w.pdf",
       "kind": "pdf",
       "topics": [
         "Altermagnet",
@@ -2520,13 +2520,18 @@
       "tags": [
         "refs_update"
       ],
-      "ts": 1786428282020,
+      "ts": 1786428306619,
       "createdTs": 1786428282020,
       "size": 1555512,
       "desc": "combine the concept of spin qubit and altermagnet, which is quiet interesting, the gate control make it looks more promising",
-      "imagePath": "",
-      "storage": null,
-      "uploadStatus": "pdf_pending",
+      "imagePath": "data/files/2026/08/images/btn6b3khrimso99zgq__Vakili2026arXiv.png",
+      "storage": {
+        "owner": "cheneit",
+        "repo": "cheneit-pdf-2026",
+        "branch": "main",
+        "path": "data/files/2026/08/etebtaa7gxemso99w9w.pdf"
+      },
+      "uploadStatus": "ready",
       "uploadError": "",
       "imageUploadError": ""
     }
