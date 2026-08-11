@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Repo Library — Admin + Preview (v3.1 SHA 稳定版)</title>
+  <title>Repo Library — Admin + Preview (v3 迁移与配置增强版)</title>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -54,7 +54,7 @@ const { useState, useEffect, useMemo, useRef } = React;
 
 /**
  * =========================
- * Repo Library — 单文件 SPA（v3.1 SHA 稳定上传版）
+ * Repo Library — 单文件 SPA（v2 稳定上传版）
  * - Preview：浏览 / 搜索 / 筛选 / Dashboard（统计、日历、归档）
  * - Admin：上传 / 编辑 / 删除 / 替换PDF（注释后覆盖）
  *
@@ -269,20 +269,15 @@ function buildPdfBrowserUrl(path) {
   }
 }
 
-function cacheBustUrl(url) {
-  const sep = String(url).includes('?') ? '&' : '?';
-  return `${url}${sep}_repoLibraryFresh=${Date.now()}_${Math.random().toString(36).slice(2)}`;
-}
-
 async function ghGetJSONRaw(owner, repo, branch, path) {
-  const url = cacheBustUrl(ghRawUrl({ owner, repo, branch, path }));
+  const url = ghRawUrl({ owner, repo, branch, path });
   const res = await fetch(url, { cache: 'no-store' });
   if (!res.ok) return null;
   return await res.json();
 }
 
 async function ghGetTextRaw(owner, repo, branch, path) {
-  const url = cacheBustUrl(ghRawUrl({ owner, repo, branch, path }));
+  const url = ghRawUrl({ owner, repo, branch, path });
   const res = await fetch(url, { cache: 'no-store' });
   if (!res.ok) return null;
   return await res.text();
@@ -298,22 +293,6 @@ function ghHeaders(token, extra={}) {
     ...(token ? { Authorization: `Bearer ${token}` } : {}),
     ...extra,
   };
-}
-
-// v3.1: 保存最近一次成功写入 index.json 后 GitHub 返回的最新 blob SHA。
-// 同一页面中的连续 metadata -> ready 更新直接沿用 SHA 链；若仓库被外部修改，409 后清空缓存并强制重新读取。
-const INDEX_WRITE_CACHE = new Map();
-
-function indexWriteCacheKey(cfg) {
-  return `${cfg.owner}/${cfg.repo}@${cfg.branch || 'main'}:${cfg.indexPath}`;
-}
-
-function cloneJson(obj) {
-  return JSON.parse(JSON.stringify(obj));
-}
-
-function invalidateIndexWriteCache(cfg) {
-  INDEX_WRITE_CACHE.delete(indexWriteCacheKey(cfg));
 }
 
 function b64DecodeToText(b64) {
@@ -507,12 +486,8 @@ function timestampForPath() {
 async function ghGetContentMeta(owner, repo, path, token, branch) {
   const p = encodeGitHubPath(path);
   const ref = branch ? `?ref=${encodeURIComponent(branch)}` : '';
-  // v3.1: GitHub Contents GET 必须是真正的 fresh read，否则连续 PUT 时可能拿到旧 SHA。
-  const url = cacheBustUrl(`https://api.github.com/repos/${owner}/${repo}/contents/${p}${ref}`);
-  const res = await fetch(url, {
-    headers: ghHeaders(token),
-    cache: 'no-store'
-  });
+  const url = `https://api.github.com/repos/${owner}/${repo}/contents/${p}${ref}`;
+  const res = await fetch(url, { headers: ghHeaders(token) });
 
   if (res.status === 404) return null;
   if (!res.ok) {
@@ -598,79 +573,38 @@ async function ghTryCreateRepo(repoName, token, opts={}) {
 }
 
 /* ============ Index update (主仓库 index.json) ============ */
-async function readIndexFresh(cfg, token) {
-  const meta = await ghGetContentMeta(cfg.owner, cfg.repo, cfg.indexPath, token, cfg.branch);
-  let data = null;
-  if (meta?.content) data = JSON.parse(b64DecodeToText(meta.content));
-  else data = await ghGetJSONRaw(cfg.owner, cfg.repo, cfg.branch, cfg.indexPath);
-  return { data: normalizeIndexData(data || { items: [] }), sha: meta?.sha || null };
-}
-
-function isGithubConflictError(e) {
-  const msg = String(e?.message || e || '').toLowerCase();
-  return msg.includes('409') || msg.includes('conflict') || msg.includes('does not match');
-}
-
 async function updateIndexMain(cfg, token, updater, message='Update index.json') {
-  const key = indexWriteCacheKey(cfg);
   let lastErr = null;
 
-  for (let attempt = 1; attempt <= 4; attempt += 1) {
+  for (let attempt = 1; attempt <= 3; attempt += 1) {
     try {
-      // v3.1 SHA chain: 第一次优先沿用前一次成功 PUT 返回的最新 SHA/data。
-      // 发生 409 后 cache 会被清空，下一轮一定 fresh GET + merge。
-      const cached = attempt === 1 ? INDEX_WRITE_CACHE.get(key) : null;
-      let indexData, baseSha;
-
-      if (cached?.sha && cached?.data) {
-        indexData = normalizeIndexData(cloneJson(cached.data));
-        baseSha = cached.sha;
-      } else {
-        const fresh = await readIndexFresh(cfg, token);
-        indexData = fresh.data;
-        baseSha = fresh.sha;
-      }
+      const meta = await ghGetContentMeta(cfg.owner, cfg.repo, cfg.indexPath, token, cfg.branch);
+      let indexData = null;
+      if (meta?.content) indexData = JSON.parse(b64DecodeToText(meta.content));
+      else indexData = await ghGetJSONRaw(cfg.owner, cfg.repo, cfg.branch, cfg.indexPath);
+      indexData = normalizeIndexData(indexData);
 
       const newData = normalizeIndexData(await updater(indexData));
       const enc = new TextEncoder().encode(JSON.stringify(newData, null, 2));
       const b64 = b64EncodeUint8(new Uint8Array(enc));
 
-      const result = await ghPutContent(
+      await ghPutContent(
         cfg.owner,
         cfg.repo,
         cfg.indexPath,
         b64,
         message,
         token,
-        baseSha,
+        meta?.sha,
         cfg.branch
       );
-
-      // GitHub Create/Update contents 成功响应包含 content.sha；直接作为下一次写入的 base SHA。
-      let newSha = result?.content?.sha || null;
-      if (!newSha) {
-        const verify = await ghGetContentMeta(cfg.owner, cfg.repo, cfg.indexPath, token, cfg.branch);
-        newSha = verify?.sha || null;
-      }
-
-      if (newSha) {
-        INDEX_WRITE_CACHE.set(key, {
-          sha: newSha,
-          data: cloneJson(newData),
-          updatedAt: Date.now()
-        });
-      } else {
-        INDEX_WRITE_CACHE.delete(key);
-      }
-
       return newData;
     } catch (e) {
       lastErr = e;
-      if (!isGithubConflictError(e) || attempt === 4) throw e;
-
-      // 真正的 409 recovery：丢弃旧 SHA/data，下一轮从 GitHub fresh GET 最新 index，再执行 updater merge。
-      INDEX_WRITE_CACHE.delete(key);
-      await new Promise(r => setTimeout(r, 300 * attempt));
+      const msg = String(e.message || e);
+      const isConflict = msg.includes('409') || msg.toLowerCase().includes('conflict');
+      if (!isConflict || attempt === 3) throw e;
+      await new Promise(r => setTimeout(r, 450 * attempt));
     }
   }
 
@@ -691,68 +625,6 @@ async function uploadCoverIfNeeded(cfg, token, coverFile, existingPath) {
   const meta = await ghGetContentMeta(cfg.owner, cfg.repo, imagePath, token, cfg.branch);
   await ghPutContent(cfg.owner, cfg.repo, imagePath, b64, `Upload cover ${coverFile.name}`, token, meta?.sha, cfg.branch);
   return imagePath;
-}
-
-/* ============ v3.1 pending PDF repair ============ */
-function isRepairablePdfItem(item) {
-  if (item?.kind !== 'pdf') return false;
-  const s = item.uploadStatus || '';
-  return ['pdf_pending', 'upload_failed', 'partial_ready', 'metadata_created'].includes(s) || (!item.path && !item.storage);
-}
-
-function expectedPdfStorageForItem(cfg, item) {
-  if (item?.storage?.owner && item?.storage?.repo && item?.storage?.path) {
-    const owner = item.storage.owner;
-    const repo = item.storage.repo;
-    const branch = item.storage.branch || (cfg.pdf?.branch || 'main');
-    const path = item.storage.path;
-    const pagesBase = resolvePagesBaseFromCfg(cfg, owner, repo);
-    return { owner, repo, branch, path, pagesUrl: item.path || `${pagesBase}/${path}` };
-  }
-
-  if (!item?.id) throw new Error('条目缺少 id，无法推导 PDF 分仓路径。');
-  const d = new Date(item.createdTs || item.ts || Date.now());
-  if (isNaN(d)) throw new Error('条目时间无效，无法推导 PDF 分仓路径。');
-  const yy = d.getFullYear();
-  const mm = String(d.getMonth() + 1).padStart(2, '0');
-  const owner = cfg.owner;
-  const repo = resolvePdfRepoNameFromCfg(cfg, yy);
-  const branch = cfg.pdf?.branch || 'main';
-  const baseDir = cfg.pdf?.dataDir || 'data/files';
-  const path = `${baseDir}/${yy}/${mm}/${item.id}.pdf`;
-  const pagesBase = resolvePagesBaseFromCfg(cfg, owner, repo);
-  return { owner, repo, branch, path, pagesUrl: `${pagesBase}/${path}` };
-}
-
-async function repairPendingPdfItem(cfg, token, item) {
-  if (!isRepairablePdfItem(item)) throw new Error('该条目当前不属于可自动修复的 pending/failed PDF。');
-  const target = expectedPdfStorageForItem(cfg, item);
-
-  // 只检查，不上传：只有远端文件真实存在时才修 index。
-  const meta = await ghGetContentMeta(target.owner, target.repo, target.path, token, target.branch);
-  if (!meta || meta.type !== 'file') {
-    throw new Error(`分仓中未找到已上传 PDF：${target.repo}/${target.path}。这说明文件本体尚未上传，需要使用“替换PDF”补传。`);
-  }
-
-  const newData = await updateIndexMain(cfg, token, data => ({
-    ...data,
-    items: (data.items || []).map(x => x.id === item.id ? {
-      ...x,
-      path: target.pagesUrl,
-      storage: {
-        owner: target.owner,
-        repo: target.repo,
-        branch: target.branch,
-        path: target.path
-      },
-      size: meta.size || x.size || 0,
-      uploadStatus: 'ready',
-      uploadError: '',
-      repairedAt: Date.now()
-    } : x)
-  }), `Repair PDF index: ${item.filename || item.id}`);
-
-  return { newData, target, meta };
 }
 
 /* ============ Local Storage helpers ============ */
@@ -920,8 +792,6 @@ function App() {
 
   async function refreshIndex() {
     setLoading(true); setError('');
-    // 显式刷新意味着希望以远端为准，避免沿用页面内旧的 SHA chain。
-    invalidateIndexWriteCache(cfg);
     try {
       let data = null;
       if (token) {
@@ -1081,7 +951,7 @@ function App() {
         targetPath = item.path;
         targetBranch = cfg.branch;
       } else if (item.kind === 'pdf') {
-        const d = new Date(item.createdTs || item.ts || Date.now());
+        const d = new Date(item.ts || Date.now());
         const yy = d.getFullYear();
         const mm = String(d.getMonth() + 1).padStart(2, '0');
         const pdfCfg = cfg.pdf || {};
@@ -1128,49 +998,6 @@ function App() {
     }
   }
 
-  async function handleRepairPendingPdf(item, quiet=false) {
-    if (!token) {
-      if (!quiet) alert('需要管理员令牌');
-      throw new Error('缺少管理员令牌');
-    }
-    try {
-      const result = await repairPendingPdfItem(cfg, token, item);
-      setIndex(result.newData);
-      if (!quiet) alert(`修复成功：已确认 PDF 存在于 ${result.target.repo}，并补写 storage/path/ready。`);
-      return result;
-    } catch (e) {
-      if (!quiet) alert('自动修复失败：' + e.message);
-      throw e;
-    }
-  }
-
-  async function handleRepairAllPendingPdfs() {
-    if (!token) return alert('需要管理员令牌');
-    const candidates = allItems.filter(isRepairablePdfItem);
-    if (!candidates.length) {
-      alert('当前没有需要检查的 pending/failed PDF 条目。');
-      return { repaired: 0, missing: 0, errors: [] };
-    }
-
-    let repaired = 0;
-    let missing = 0;
-    const errors = [];
-    for (const item of candidates) {
-      try {
-        await handleRepairPendingPdf(item, true);
-        repaired += 1;
-      } catch (e) {
-        missing += 1;
-        errors.push(`${item.title || item.filename}: ${e.message}`);
-      }
-    }
-
-    const extra = errors.length ? `\n\n未自动修复的条目：\n${errors.slice(0, 6).join('\n')}${errors.length > 6 ? `\n…另有 ${errors.length-6} 条` : ''}` : '';
-    alert(`pending PDF 检查完成：修复 ${repaired} 条；未找到远端 PDF/需要补传 ${missing} 条。${extra}`);
-    return { repaired, missing, errors };
-  }
-
-
   return (
     <div className="min-h-full flex flex-col">
       <Header
@@ -1188,10 +1015,6 @@ function App() {
       <main className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
         {mode === 'admin' ? (
           <>
-            <PendingRepairPanel
-              items={allItems}
-              onRepairAll={handleRepairAllPendingPdfs}
-            />
             <MigrationPanel
               cfg={cfg}
               token={token}
@@ -1236,7 +1059,6 @@ function App() {
               mode={mode}
               onEdit={setEditingItem}
               onDeleted={handleDeleteItem}
-              onRepair={handleRepairPendingPdf}
               showFold={isHomeState}
               showAllHome={showAllHome}
               setShowAllHome={setShowAllHome}
@@ -1285,7 +1107,7 @@ function Header({ mode, setMode, query, setQuery, onSaveCfg, token, setToken, on
             <div className="w-9 h-9 rounded-2xl bg-slate-800 flex items-center justify-center text-lg">📚</div>
             <div>
               <div className="text-lg font-semibold">Repo Library</div>
-              <div className="text-xs text-slate-300">v3.1 · SHA 稳定上传 + pending 自动修复 + 数据迁移 + 配置自检</div>
+              <div className="text-xs text-slate-300">v3 · 稳定上传 + 数据迁移 + GitHub 配置自检 + 精确日历</div>
             </div>
           </div>
           <div className="flex items-center gap-2 flex-wrap justify-end">
@@ -1379,7 +1201,7 @@ function GitHubConfigGuide({ cfg, token }) {
         setChecks(out); return;
       }
 
-      const userRes = await fetch(cacheBustUrl('https://api.github.com/user'), { headers: ghHeaders(token), cache: 'no-store' });
+      const userRes = await fetch('https://api.github.com/user', { headers: ghHeaders(token) });
       if (!userRes.ok) {
         const txt = await userRes.text();
         push('bad', 'PAT', `令牌无效或不可用：${userRes.status} ${userRes.statusText} ${shortErr(txt, 100)}`);
@@ -1388,7 +1210,7 @@ function GitHubConfigGuide({ cfg, token }) {
       const user = await userRes.json();
       push('ok', 'PAT', `认证成功：${user.login || 'authenticated user'}`);
 
-      const mainRes = await fetch(cacheBustUrl(`https://api.github.com/repos/${cfg.owner}/${cfg.repo}`), { headers: ghHeaders(token), cache: 'no-store' });
+      const mainRes = await fetch(`https://api.github.com/repos/${cfg.owner}/${cfg.repo}`, { headers: ghHeaders(token) });
       if (!mainRes.ok) {
         push('bad', '主仓库', `无法访问 ${cfg.owner}/${cfg.repo}：${mainRes.status} ${mainRes.statusText}`);
       } else {
@@ -1411,7 +1233,7 @@ function GitHubConfigGuide({ cfg, token }) {
       }
 
       if (cfg.pdf?.enabled !== false) {
-        const pdfRes = await fetch(cacheBustUrl(`https://api.github.com/repos/${cfg.owner}/${pdfRepo}`), { headers: ghHeaders(token), cache: 'no-store' });
+        const pdfRes = await fetch(`https://api.github.com/repos/${cfg.owner}/${pdfRepo}`, { headers: ghHeaders(token) });
         if (pdfRes.status === 404) {
           push('warn', 'PDF 仓库', `未找到 ${pdfRepo}。建议先手动创建，再把它加入 fine-grained PAT 的仓库授权。`);
         } else if (!pdfRes.ok) {
@@ -1479,7 +1301,7 @@ function GitHubConfigGuide({ cfg, token }) {
             <div><b>401</b>：PAT 无效、过期或粘贴错误。</div>
             <div><b>403</b>：通常是仓库未授权、Contents 没有 Write、组织策略限制，或 API 限制。</div>
             <div><b>404</b>：仓库/文件确实不存在，或 fine-grained PAT 看不到该仓库。</div>
-            <div><b>409</b>：index.json SHA 冲突；v3.1 会丢弃旧 SHA，fresh GET 最新索引、重新 merge，并最多重试 4 次。</div>
+            <div><b>409</b>：index.json SHA 冲突；v3 会自动重新读取并最多重试 3 次。</div>
             <div><b>422</b>：路径、SHA、分支或请求内容不符合 GitHub Contents API 要求。</div>
             <div><b>PDF 已上传但链接 404</b>：优先检查 PDF 仓库 Pages 是否启用、发布分支是否为 {pdfBranch}。</div>
           </div>
@@ -1589,41 +1411,6 @@ function ConfigPanel({ cfg, setCfg, token, setToken }) {
 }
 
 /* ============ Migration Panel ============ */
-function PendingRepairPanel({ items, onRepairAll }) {
-  const candidates = (items || []).filter(isRepairablePdfItem);
-  const [busy, setBusy] = useState(false);
-
-  async function run() {
-    if (busy) return;
-    setBusy(true);
-    try { await onRepairAll?.(); }
-    finally { setBusy(false); }
-  }
-
-  if (!candidates.length) return null;
-
-  return (
-    <section className="mb-6">
-      <div className="bg-amber-50 rounded-3xl border border-amber-200 p-4 shadow-soft">
-        <div className="flex items-center justify-between gap-3 flex-wrap">
-          <div>
-            <div className="font-semibold text-amber-950">🧰 v3.1 待完成 PDF 恢复</div>
-            <div className="text-sm text-amber-900/80 mt-1">
-              检测到 <b>{candidates.length}</b> 个 pending/failed PDF 条目。系统可先检查 PDF 分仓中是否已经存在对应 <code>条目ID.pdf</code>；存在则只修复 index.json，不重复上传 PDF。
-            </div>
-          </div>
-          <button onClick={run} disabled={busy} className={btnClass('success', busy ? 'opacity-60 cursor-not-allowed' : '')}>
-            {busy ? '检查修复中…' : `检查并修复 ${candidates.length} 条`}
-          </button>
-        </div>
-        <div className="mt-2 text-xs text-amber-900/70">
-          未在分仓找到文件的条目不会被修改；可之后进入该条目使用“替换PDF”补传。
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function MigrationPanel({ cfg, token, onMigrated }) {
   const [busy, setBusy] = useState(false);
   const [analysis, setAnalysis] = useState(null);
@@ -1804,9 +1591,8 @@ function AdminPanel({ cfg, token, onUploaded }) {
         ensuredPdfRepo = true;
         pdfRepoName = resolvePdfRepoName(y);
 
-        const test = await fetch(cacheBustUrl(`https://api.github.com/repos/${cfg.owner}/${pdfRepoName}`), {
-          headers: ghHeaders(token),
-          cache: 'no-store'
+        const test = await fetch(`https://api.github.com/repos/${cfg.owner}/${pdfRepoName}`, {
+          headers: ghHeaders(token)
         });
 
         if (test.status === 404) {
@@ -1854,7 +1640,6 @@ function AdminPanel({ cfg, token, onUploaded }) {
           topic: topicsArr[0] || '',
           tags: tagsArr,
           ts: Date.now(),
-          createdTs: Date.now(),
           size: file.size,
           desc: desc || '',
           imagePath: '',
@@ -2236,7 +2021,7 @@ function PreviewPanel({
   activeTag, setActiveTag,
   sortBy, setSortBy,
   onOpen, cfg, mode,
-  onEdit, onDeleted, onRepair,
+  onEdit, onDeleted,
   showFold, showAllHome, setShowAllHome
 }) {
   function handleResetFilters() {
@@ -2289,7 +2074,6 @@ function PreviewPanel({
             onOpen={() => onOpen(item)}
             onEdit={() => onEdit && onEdit(item)}
             onDelete={() => onDeleted && onDeleted(item)}
-            onRepair={() => onRepair && onRepair(item)}
           />
         ))}
       </div>
@@ -2314,7 +2098,7 @@ function PreviewPanel({
 }
 
 /* ============ Card ============ */
-function Card({ cfg, item, onOpen, onEdit, onDelete, onRepair, canAdmin }) {
+function Card({ cfg, item, onOpen, onEdit, onDelete, canAdmin }) {
   const kindMeta = FILE_KINDS[item.kind] || FILE_KINDS.other;
   const Icon = kindMeta.icon;
 
@@ -2425,12 +2209,7 @@ function Card({ cfg, item, onOpen, onEdit, onDelete, onRepair, canAdmin }) {
         ) : null}
 
         {canAdmin ? (
-          <div className="ml-auto flex items-center gap-2 flex-wrap justify-end">
-            {isRepairablePdfItem(item) ? (
-              <button onClick={onRepair} className={btnClass('success')} title="只检查分仓中是否已有 PDF；若存在则补写索引，不会重复上传">
-                检查/修复
-              </button>
-            ) : null}
+          <div className="ml-auto flex items-center gap-2">
             <button onClick={onEdit} className={btnClass('warn')}>编辑</button>
             <button onClick={onDelete} className={btnClass('danger')}>删除</button>
           </div>
@@ -2804,7 +2583,7 @@ function Footer() {
         <span>·</span>
         <span>单文件 HTML（React + Tailwind）</span>
         <span>·</span>
-        <span>v3.1 · SHA 链 + 409 真重试 + pending PDF 修复 + 数据迁移 + 精确日历</span>
+        <span>v3 · 数据迁移 + GitHub 配置自检 + metadata-first 上传 + 精确日历 + PDF 分仓</span>
       </div>
     </footer>
   );
