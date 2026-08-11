@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Repo Library — Admin + Preview (v3.1 SHA 稳定版)</title>
+  <title>Repo Library — Admin + Preview (v3.2 Pages 自动发布版)</title>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -54,7 +54,7 @@ const { useState, useEffect, useMemo, useRef } = React;
 
 /**
  * =========================
- * Repo Library — 单文件 SPA（v3.1 SHA 稳定上传版）
+ * Repo Library — 单文件 SPA（v3.2 Pages 自动发布版）
  * - Preview：浏览 / 搜索 / 筛选 / Dashboard（统计、日历、归档）
  * - Admin：上传 / 编辑 / 删除 / 替换PDF（注释后覆盖）
  *
@@ -295,6 +295,7 @@ function encodeGitHubPath(path) {
 function ghHeaders(token, extra={}) {
   return {
     'Accept': 'application/vnd.github+json',
+    'X-GitHub-Api-Version': '2026-03-10',
     ...(token ? { Authorization: `Bearer ${token}` } : {}),
     ...extra,
   };
@@ -567,6 +568,123 @@ async function ghDeleteContent(owner, repo, path, message, token, sha, branch) {
     throw new Error(`DELETE failed: ${res.status} ${res.statusText} - ${txt}`);
   }
   return res.json();
+}
+
+
+/* ============ v3.2 GitHub Pages build / deployment helpers ============ */
+function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
+
+async function ghGetPagesSite(owner, repo, token) {
+  const url = cacheBustUrl(`https://api.github.com/repos/${owner}/${repo}/pages`);
+  const res = await fetch(url, { headers: ghHeaders(token), cache: 'no-store' });
+  if (res.status === 404) return null;
+  if (!res.ok) {
+    const txt = await res.text();
+    throw new Error(`Pages site check failed: ${res.status} ${res.statusText} - ${txt}`);
+  }
+  return await res.json();
+}
+
+async function ghRequestPagesBuild(owner, repo, token) {
+  const url = `https://api.github.com/repos/${owner}/${repo}/pages/builds`;
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: ghHeaders(token, { 'Content-Type': 'application/json' }),
+    cache: 'no-store'
+  });
+  if (!res.ok) {
+    const txt = await res.text();
+    throw new Error(`Pages build request failed: ${res.status} ${res.statusText} - ${txt}`);
+  }
+  return await res.json();
+}
+
+async function ghGetLatestPagesBuild(owner, repo, token) {
+  const url = cacheBustUrl(`https://api.github.com/repos/${owner}/${repo}/pages/builds/latest`);
+  const res = await fetch(url, { headers: ghHeaders(token), cache: 'no-store' });
+  if (res.status === 404) return null;
+  if (!res.ok) {
+    const txt = await res.text();
+    throw new Error(`Latest Pages build check failed: ${res.status} ${res.statusText} - ${txt}`);
+  }
+  return await res.json();
+}
+
+async function ghGetBranchHeadSha(owner, repo, branch, token) {
+  const url = cacheBustUrl(`https://api.github.com/repos/${owner}/${repo}/branches/${encodeURIComponent(branch)}`);
+  const res = await fetch(url, { headers: ghHeaders(token), cache: 'no-store' });
+  if (!res.ok) {
+    const txt = await res.text();
+    throw new Error(`Branch HEAD check failed: ${res.status} ${res.statusText} - ${txt}`);
+  }
+  const data = await res.json();
+  return data?.commit?.sha || '';
+}
+
+function pagesBuildIsFailure(build) {
+  const status = String(build?.status || '').toLowerCase();
+  if (['errored', 'error', 'failed', 'failure', 'cancelled', 'canceled'].includes(status)) return true;
+  return !!build?.error?.message && !['queued', 'building', 'built'].includes(status);
+}
+
+/**
+ * 主动触发 branch-based GitHub Pages build，并等待“目标分支当前 HEAD”被构建。
+ * - POST /pages/builds 需要 fine-grained PAT: Pages(write)
+ * - GET /pages、/pages/builds/latest 需要 Pages(read)
+ * - 先校验 Pages source branch，避免“文件写在 main、Pages 实际发布其他分支”的假成功。
+ */
+async function publishPagesRepo({ owner, repo, branch, token, onUpdate, timeoutMs=180000, pollMs=3000 }) {
+  const emit = (status, detail, extra={}) => onUpdate && onUpdate({ status, detail, repo, branch, ...extra });
+  emit('checking', '正在检查 Pages 配置…');
+
+  const site = await ghGetPagesSite(owner, repo, token);
+  if (!site) throw new Error(`${owner}/${repo} 尚未启用 GitHub Pages。请先在 Settings → Pages 配置 Deploy from a branch。`);
+
+  const sourceBranch = site?.source?.branch || '';
+  const sourcePath = site?.source?.path || '/';
+  if (sourceBranch && branch && sourceBranch !== branch) {
+    throw new Error(`Pages 发布分支为 ${sourceBranch}，但 Repo Library 正在写入 ${branch}。请统一分支后再发布。`);
+  }
+  if (site?.build_type === 'workflow') {
+    throw new Error(`Pages 当前 build_type=workflow。v3.2 的主动 build API 面向 branch-based Pages；请在 Settings → Pages 改为 Deploy from a branch，或单独配置 workflow_dispatch。`);
+  }
+
+  const expectedCommit = await ghGetBranchHeadSha(owner, repo, branch, token);
+  emit('requesting', `请求 Pages 构建：${branch}${sourcePath}…`, { expectedCommit });
+  const request = await ghRequestPagesBuild(owner, repo, token);
+  emit(request?.status || 'queued', `Pages 已进入构建队列，等待 ${expectedCommit.slice(0, 8)}…`, { expectedCommit });
+
+  const startedAt = Date.now();
+  let lastBuild = null;
+  while (Date.now() - startedAt < timeoutMs) {
+    await sleep(pollMs);
+    lastBuild = await ghGetLatestPagesBuild(owner, repo, token);
+    if (!lastBuild) {
+      emit('waiting', '尚未读取到 Pages build，继续等待…', { expectedCommit });
+      continue;
+    }
+
+    const status = String(lastBuild.status || 'unknown').toLowerCase();
+    const buildCommit = String(lastBuild.commit || '');
+    const sameCommit = !expectedCommit || buildCommit === expectedCommit;
+    const errMsg = lastBuild?.error?.message || '';
+
+    if (status === 'built' && sameCommit) {
+      emit('built', `Pages 已发布目标 commit ${expectedCommit.slice(0, 8)}。`, { expectedCommit, build: lastBuild });
+      return { ok: true, status: 'built', site, build: lastBuild, expectedCommit };
+    }
+    if (pagesBuildIsFailure(lastBuild) && sameCommit) {
+      throw new Error(`Pages build 失败：${errMsg || status}`);
+    }
+
+    const detail = sameCommit
+      ? `Pages 状态：${status}${errMsg ? `；${errMsg}` : ''}`
+      : `等待目标 commit ${expectedCommit.slice(0, 8)}；当前 latest=${buildCommit ? buildCommit.slice(0,8) : 'unknown'} (${status})`;
+    emit(status === 'built' ? 'waiting' : status, detail, { expectedCommit, build: lastBuild });
+  }
+
+  emit('timeout', `等待 Pages 超时；文件和 index 已提交，可稍后手动检查 Actions/Pages。`, { expectedCommit, build: lastBuild });
+  return { ok: false, status: 'timeout', site, build: lastBuild, expectedCommit };
 }
 
 /**
@@ -894,6 +1012,12 @@ function App() {
       autoCreateRepo: false,       // v3：稳定性优先，推荐先手动建仓并显式授权 PAT
       pagesBase: '',               // 可选：强制 Pages base（留空则按 owner.github.io/repo 推断）
       note: ''
+    },
+    pages: {
+      autoBuild: true,             // v3.2：上传后主动请求 GitHub Pages build
+      waitForBuild: true,          // 等到 Pages built 后再报告“发布完成”
+      timeoutSec: 180,             // 单仓最长等待时间
+      pollSec: 3                   // Pages 状态轮询间隔
     }
   }));
   const [token, setToken] = useState(() => loadToken());
@@ -1285,7 +1409,7 @@ function Header({ mode, setMode, query, setQuery, onSaveCfg, token, setToken, on
             <div className="w-9 h-9 rounded-2xl bg-slate-800 flex items-center justify-center text-lg">📚</div>
             <div>
               <div className="text-lg font-semibold">Repo Library</div>
-              <div className="text-xs text-slate-300">v3.1 · SHA 稳定上传 + pending 自动修复 + 数据迁移 + 配置自检</div>
+              <div className="text-xs text-slate-300">v3.2 · SHA 稳定上传 + Pages 自动发布 + 构建状态追踪 + pending 修复</div>
             </div>
           </div>
           <div className="flex items-center gap-2 flex-wrap justify-end">
@@ -1410,6 +1534,23 @@ function GitHubConfigGuide({ cfg, token }) {
         push('bad', 'index.json', shortErr(e.message, 180));
       }
 
+      try {
+        const site = await ghGetPagesSite(cfg.owner, cfg.repo, token);
+        if (!site) {
+          push('bad', '主仓 Pages', '尚未启用 GitHub Pages。请在 Settings → Pages 配置 Deploy from a branch。');
+        } else {
+          const src = site.source || {};
+          const branchOk = !src.branch || src.branch === cfg.branch;
+          push(branchOk ? 'ok' : 'bad', '主仓 Pages', `可读取；source=${src.branch || '?'}${src.path || '/'}；build_type=${site.build_type || 'legacy'}。${branchOk ? '上传后可由 v3.2 主动触发 build。' : `当前写入分支为 ${cfg.branch}，需要统一。`}`);
+          try {
+            const latest = await ghGetLatestPagesBuild(cfg.owner, cfg.repo, token);
+            if (latest) push('ok', '主仓 Pages 最新构建', `${latest.status || 'unknown'} · commit ${(latest.commit || '').slice(0,8) || '—'}`);
+          } catch (e) { push('warn', '主仓 Pages 最新构建', shortErr(e.message, 160)); }
+        }
+      } catch (e) {
+        push('bad', '主仓 Pages', `${shortErr(e.message, 160)}；若为 403，请给 PAT 增加 Pages: Read and write。`);
+      }
+
       if (cfg.pdf?.enabled !== false) {
         const pdfRes = await fetch(cacheBustUrl(`https://api.github.com/repos/${cfg.owner}/${pdfRepo}`), { headers: ghHeaders(token), cache: 'no-store' });
         if (pdfRes.status === 404) {
@@ -1424,6 +1565,22 @@ function GitHubConfigGuide({ cfg, token }) {
             push('warn', 'PDF 分支', `配置为 ${pdfBranch}，仓库默认分支为 ${pdfData.default_branch}。`);
           } else {
             push('ok', 'PDF 分支', `使用 ${pdfBranch}`);
+          }
+          try {
+            const site = await ghGetPagesSite(cfg.owner, pdfRepo, token);
+            if (!site) {
+              push('bad', 'PDF Pages', '尚未启用 Pages。请使用 Deploy from a branch。');
+            } else {
+              const src = site.source || {};
+              const branchOk = !src.branch || src.branch === pdfBranch;
+              push(branchOk ? 'ok' : 'bad', 'PDF Pages', `可读取；source=${src.branch || '?'}${src.path || '/'}；build_type=${site.build_type || 'legacy'}。${branchOk ? '上传后可主动 build。' : `应改为 ${pdfBranch}。`}`);
+              try {
+                const latest = await ghGetLatestPagesBuild(cfg.owner, pdfRepo, token);
+                if (latest) push('ok', 'PDF Pages 最新构建', `${latest.status || 'unknown'} · commit ${(latest.commit || '').slice(0,8) || '—'}`);
+              } catch (e) { push('warn', 'PDF Pages 最新构建', shortErr(e.message, 160)); }
+            }
+          } catch (e) {
+            push('bad', 'PDF Pages', `${shortErr(e.message, 160)}；若为 403，请给 PAT 增加 Pages: Read and write。`);
           }
         }
       }
@@ -1447,7 +1604,7 @@ function GitHubConfigGuide({ cfg, token }) {
       <div className="flex items-center justify-between gap-3 flex-wrap mb-3">
         <div>
           <div className="font-semibold">GitHub 配置向导与自检</div>
-          <div className="text-xs text-white/60 mt-1">自检只执行读取请求，不创建文件、不产生 commit。</div>
+          <div className="text-xs text-white/60 mt-1">自检只执行读取请求，不创建文件、不触发 build；Pages 写权限会在上传发布或手动发布时实际验证。</div>
         </div>
         <button onClick={runChecks} disabled={checking} className={btnClass('primary', checking ? 'opacity-60' : '')}>
           {checking ? '检查中…' : '检查当前配置'}
@@ -1459,10 +1616,10 @@ function GitHubConfigGuide({ cfg, token }) {
           <div className="font-semibold mb-2">推荐配置步骤</div>
           <ol className="list-decimal pl-5 space-y-2 text-white/80 text-xs leading-5">
             <li>主仓库使用 <b>{cfg.owner}/{cfg.repo}</b>，分支设为 <b>{cfg.branch}</b>；确认 <code>{cfg.indexPath}</code> 所在路径正确。</li>
-            <li>创建 Fine-grained PAT。Repository access 至少包含主仓库和 PDF 仓库；Repository permissions → <b>Contents: Read and write</b>。</li>
+            <li>创建 Fine-grained PAT。Repository access 至少包含主仓库和 PDF 仓库；Repository permissions → <b>Contents: Read and write</b>，并设置 <b>Pages: Read and write</b>。</li>
             <li>PDF 分仓推荐先手动创建 <b>{pdfRepo}</b>。如果 PAT 只授权 Selected repositories，新建仓库后还要回到 token 设置把该仓库加入授权。</li>
             <li>PDF 仓库：Settings → Pages → Build and deployment → Source 选 <b>Deploy from a branch</b>，Branch 选 <b>{pdfBranch}</b>，目录选 <b>/(root)</b>。</li>
-            <li>回到本页保存 PAT 和配置，再运行“检查当前配置”。主仓库、index.json、PDF 仓库均无红色错误后再上传。</li>
+            <li>回到本页保存 PAT 和配置，再运行“检查当前配置”。主仓库、index.json、PDF 仓库、主仓 Pages、PDF Pages 均无红色错误后再上传。</li>
           </ol>
           <div className="flex gap-2 flex-wrap mt-3">
             <a href={tokenUrl} target="_blank" rel="noreferrer" className={btnClass('warn')}>创建 / 编辑 PAT</a>
@@ -1477,11 +1634,12 @@ function GitHubConfigGuide({ cfg, token }) {
           <div className="font-semibold mb-2">常见错误对应关系</div>
           <div className="space-y-2 text-xs text-white/75 leading-5">
             <div><b>401</b>：PAT 无效、过期或粘贴错误。</div>
-            <div><b>403</b>：通常是仓库未授权、Contents 没有 Write、组织策略限制，或 API 限制。</div>
+            <div><b>403</b>：仓库写入时通常是 Contents 无 Write；Pages build 请求时通常是 Pages 没有 Write。</div>
             <div><b>404</b>：仓库/文件确实不存在，或 fine-grained PAT 看不到该仓库。</div>
-            <div><b>409</b>：index.json SHA 冲突；v3.1 会丢弃旧 SHA，fresh GET 最新索引、重新 merge，并最多重试 4 次。</div>
+            <div><b>409</b>：index.json SHA 冲突；v3.2 继承 v3.1 机制：会丢弃旧 SHA，fresh GET 最新索引、重新 merge，并最多重试 4 次。</div>
             <div><b>422</b>：路径、SHA、分支或请求内容不符合 GitHub Contents API 要求。</div>
-            <div><b>PDF 已上传但链接 404</b>：优先检查 PDF 仓库 Pages 是否启用、发布分支是否为 {pdfBranch}。</div>
+            <div><b>Pages 没有 run / 页面不更新</b>：v3.2 会主动 POST Pages build；若返回 403，请给 PAT 增加 Pages: Read and write。</div>
+            <div><b>PDF 已上传但链接 404</b>：检查 PDF Pages 的 source branch 是否为 {pdfBranch}，并查看 v3.2 发布状态。</div>
           </div>
         </div>
       </div>
@@ -1506,6 +1664,8 @@ function ConfigPanel({ cfg, setCfg, token, setToken }) {
 
   const pdf = localCfg.pdf || {};
   const setPdf = (patch) => setLocalCfg({ ...localCfg, pdf: { ...(localCfg.pdf || {}), ...patch } });
+  const pages = localCfg.pages || {};
+  const setPages = (patch) => setLocalCfg({ ...localCfg, pages: { ...(localCfg.pages || {}), ...patch } });
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -1564,9 +1724,35 @@ function ConfigPanel({ cfg, setCfg, token, setToken }) {
       </div>
 
       <div className="bg-white/5 rounded-2xl p-4 border border-white/10 lg:col-span-2">
+        <div className="font-semibold mb-3">Pages 自动发布（v3.2）</div>
+        <div className="grid md:grid-cols-2 gap-3">
+          <LabeledToggle
+            label="上传结束后主动触发 GitHub Pages build"
+            checked={pages.autoBuild !== false}
+            onChange={(v)=>setPages({ autoBuild: v })}
+            hint="建议开启。需要 PAT 对主仓和 PDF 仓具有 Pages: Read and write。"
+          />
+          <LabeledToggle
+            label="等待 Pages 构建完成后再报告发布结果"
+            checked={pages.waitForBuild !== false}
+            onChange={(v)=>setPages({ waitForBuild: v })}
+            hint="建议开启；PDF Pages 会先完成，再发布主仓 Pages。"
+          />
+          <LabeledInput label="单仓等待超时（秒）" value={String(pages.timeoutSec || 180)} onChange={v => setPages({ timeoutSec: Math.max(30, Number(v) || 180) })} />
+          <LabeledInput label="轮询间隔（秒）" value={String(pages.pollSec || 3)} onChange={v => setPages({ pollSec: Math.max(2, Number(v) || 3) })} />
+        </div>
+        <div className="mt-3 text-xs text-white/65 leading-5">
+          发布顺序：文件与 index commit 全部完成 → PDF Pages built → 主仓 Pages built。这样主页面真正上线新条目时，对应 PDF 通常已经可访问。
+        </div>
+        <div className="mt-3">
+          <button onClick={() => setCfg(localCfg)} className={btnClass('success', 'text-sm')}>保存 Pages 配置</button>
+        </div>
+      </div>
+
+      <div className="bg-white/5 rounded-2xl p-4 border border-white/10 lg:col-span-2">
         <div className="font-semibold mb-3">管理员令牌 (Personal Access Token)</div>
         <p className="text-sm text-white/70 mb-2">
-          建议使用细粒度令牌：对 <b>主仓库</b> 授予 Contents: Read &amp; Write；对 <b>PDF 分仓仓库</b> 同样授予。
+          建议使用细粒度令牌：对 <b>主仓库</b> 和 <b>PDF 分仓仓库</b> 均授予 Contents: Read &amp; Write，并授予 <b>Pages: Read &amp; Write</b>，以便 v3.2 主动触发并检查 Pages 构建。
           若你希望“自动创建仓库”，token 还需要允许创建仓库（通常需要更高权限/Classic token）。
           令牌只保存在本机浏览器 LocalStorage。
         </p>
@@ -1733,6 +1919,41 @@ function AdminPanel({ cfg, token, onUploaded }) {
 
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState('');
+  const [publishStates, setPublishStates] = useState({});
+  const [publishingRepo, setPublishingRepo] = useState('');
+
+  function setPublishState(repo, patch) {
+    setPublishStates(prev => ({ ...prev, [repo]: { ...(prev[repo] || {}), ...patch, updatedAt: Date.now() } }));
+  }
+
+  async function runPagesPublish(owner, repo, branch, label) {
+    const key = repo;
+    setPublishingRepo(key);
+    setPublishState(key, { status: 'checking', label, detail: '准备发布…' });
+    try {
+      const pagesCfg = cfg.pages || {};
+      if (pagesCfg.waitForBuild === false) {
+        const site = await ghGetPagesSite(owner, repo, token);
+        if (!site) throw new Error(`${repo} 尚未启用 GitHub Pages。`);
+        if (site?.source?.branch && site.source.branch !== branch) throw new Error(`Pages source=${site.source.branch}，但写入分支=${branch}。`);
+        const head = await ghGetBranchHeadSha(owner, repo, branch, token);
+        const req = await ghRequestPagesBuild(owner, repo, token);
+        setPublishState(key, { status: req?.status || 'queued', label, detail: `已请求构建 ${head.slice(0,8)}；未等待完成。` });
+        return { ok: true, status: req?.status || 'queued' };
+      }
+      return await publishPagesRepo({
+        owner, repo, branch, token,
+        timeoutMs: Math.max(30, Number(pagesCfg.timeoutSec || 180)) * 1000,
+        pollMs: Math.max(2, Number(pagesCfg.pollSec || 3)) * 1000,
+        onUpdate: x => setPublishState(key, { ...x, label })
+      });
+    } catch (e) {
+      setPublishState(key, { status: 'failed', label, detail: e.message || String(e) });
+      throw e;
+    } finally {
+      setPublishingRepo('');
+    }
+  }
 
   function handleSelect(e) { setFiles(Array.from(e.target.files || [])); }
   function handleCover(e) { setCover((e.target.files || [])[0] || null); }
@@ -1764,6 +1985,8 @@ function AdminPanel({ cfg, token, onUploaded }) {
     let successCount = 0;
     let failCount = 0;
     let lastIndexData = null;
+    let mainTouched = false;
+    const touchedPdfRepos = new Map();
 
     try {
       const now = new Date();
@@ -1870,6 +2093,7 @@ function AdminPanel({ cfg, token, onUploaded }) {
           if (items.some(x => x.id === id)) return data;
           return { ...data, items: [...items, initialItem] };
         }, `Create metadata item: ${file.name}`);
+        mainTouched = true;
         onUploaded && onUploaded(lastIndexData);
 
         try {
@@ -1902,6 +2126,7 @@ function AdminPanel({ cfg, token, onUploaded }) {
             setMsg(`(${i}/${files.length}) 正在上传 PDF 到分仓 ${repoName}：${file.name}`);
             const meta = await ghGetContentMeta(cfg.owner, repoName, pathInPdfRepo, token, pdfBranch);
             await ghPutContent(cfg.owner, repoName, pathInPdfRepo, base64, `Upload ${file.name} via Repo Library (PDF storage)`, token, meta?.sha, pdfBranch);
+            touchedPdfRepos.set(repoName, pdfBranch);
 
             const pagesBase = resolvePagesBase(cfg.owner, repoName);
             const pagesUrl = `${pagesBase}/${pathInPdfRepo}`;
@@ -1957,7 +2182,33 @@ function AdminPanel({ cfg, token, onUploaded }) {
         }
       }
 
-      setMsg(`上传流程完成：成功 ${successCount} 个，失败 ${failCount} 个。失败条目已保留，可在管理模式中后续替换/补传 PDF。`);
+      const publishNotes = [];
+      if ((cfg.pages?.autoBuild !== false) && token) {
+        // 稳定发布顺序：先让 PDF Pages 上线，再发布主仓 Pages。
+        for (const [repoName, branchName] of touchedPdfRepos.entries()) {
+          try {
+            setMsg(`文件提交完成；正在发布 PDF Pages：${repoName}…`);
+            const result = await runPagesPublish(cfg.owner, repoName, branchName, 'PDF Pages');
+            publishNotes.push(`${repoName}: ${result.status}`);
+          } catch (e) {
+            publishNotes.push(`${repoName}: failed (${shortErr(e.message, 90)})`);
+          }
+        }
+        if (mainTouched) {
+          try {
+            setMsg('PDF 发布阶段完成；正在发布主仓 Pages…');
+            const result = await runPagesPublish(cfg.owner, cfg.repo, cfg.branch, '主仓 Pages');
+            publishNotes.push(`${cfg.repo}: ${result.status}`);
+          } catch (e) {
+            publishNotes.push(`${cfg.repo}: failed (${shortErr(e.message, 90)})`);
+          }
+        }
+      } else if (mainTouched) {
+        publishNotes.push('Pages 自动发布已关闭');
+      }
+
+      const publishText = publishNotes.length ? ` Pages：${publishNotes.join('；')}。` : '';
+      setMsg(`上传流程完成：成功 ${successCount} 个，失败 ${failCount} 个。${publishText}${failCount ? ' 失败条目已保留，可后续补传。' : ''}`);
       setFiles([]); setTitle(''); setTopicsInput(''); setTags(''); setDesc(''); setCover(null);
       onUploaded && onUploaded(lastIndexData);
 
@@ -1982,6 +2233,33 @@ function AdminPanel({ cfg, token, onUploaded }) {
 
   return (
     <section className="mb-6">
+      <div className="bg-white rounded-3xl shadow-soft border border-slate-200 p-4 mb-4">
+        <div className="flex items-center justify-between gap-3 flex-wrap mb-3">
+          <div>
+            <div className="font-semibold text-slate-900">🚀 Pages 发布控制（v3.2）</div>
+            <div className="text-xs text-slate-500 mt-1">可手动触发；正常上传完成后会自动按“PDF Pages → 主仓 Pages”的顺序发布。</div>
+          </div>
+          <div className="flex gap-2 flex-wrap">
+            <button disabled={busy || !!publishingRepo || !token} onClick={()=>runPagesPublish(cfg.owner, pdfRepoHint, cfg.pdf?.branch || 'main', 'PDF Pages').catch(()=>{})} className={btnClass('success', (busy || publishingRepo || !token) ? 'opacity-60' : '')}>发布 PDF Pages</button>
+            <button disabled={busy || !!publishingRepo || !token} onClick={()=>runPagesPublish(cfg.owner, cfg.repo, cfg.branch, '主仓 Pages').catch(()=>{})} className={btnClass('primary', (busy || publishingRepo || !token) ? 'opacity-60' : '')}>发布主仓 Pages</button>
+          </div>
+        </div>
+        <div className="grid md:grid-cols-2 gap-2">
+          {[{repo: pdfRepoHint, label:'PDF Pages'}, {repo: cfg.repo, label:'主仓 Pages'}].map(x => {
+            const st = publishStates[x.repo] || {};
+            const ok = st.status === 'built';
+            const bad = st.status === 'failed';
+            return (
+              <div key={x.repo} className={cx('rounded-xl border p-3 text-xs', ok ? 'bg-emerald-50 border-emerald-200 text-emerald-900' : bad ? 'bg-rose-50 border-rose-200 text-rose-900' : 'bg-slate-50 border-slate-200 text-slate-700')}>
+                <div className="font-semibold">{ok ? '✓' : bad ? '✕' : '•'} {x.label} · {x.repo}</div>
+                <div className="mt-1">状态：{st.status || '未触发'}{publishingRepo === x.repo ? '（进行中）' : ''}</div>
+                {st.detail ? <div className="mt-1 leading-5 break-words">{st.detail}</div> : null}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
       <div className="bg-white rounded-3xl shadow-soft border border-slate-200 p-4">
         <div className="flex items-center justify-between mb-3 gap-3 flex-wrap">
           <div className="font-semibold text-slate-900">上传新条目</div>
@@ -2029,7 +2307,8 @@ function AdminPanel({ cfg, token, onUploaded }) {
               <div className="font-semibold text-slate-700 mb-1">提示</div>
               <ul className="list-disc pl-5 space-y-1">
                 <li>新上传 PDF：会写入 <code>storage</code> 字段，方便“替换 PDF/删除”。旧条目不改动。</li>
-                <li>若自动建仓成功：请到该 PDF 仓库的 <b>Settings → Pages</b> 开启部署（首次一次即可）。</li>
+                <li>PDF 仓库 Pages 必须使用 <b>Deploy from a branch</b>；v3.2 上传后会主动触发 build 并等待发布。</li>
+                <li>PAT 除 Contents: Read &amp; Write 外，还需 <b>Pages: Read &amp; Write</b>；否则文件能上传，但主动发布会 403。</li>
                 <li>如果你想把 PDF 集中进固定仓库：在「仓库设置 → PDF 分仓」填 <b>手动覆盖仓库名</b>。</li>
               </ul>
             </div>
@@ -2804,7 +3083,7 @@ function Footer() {
         <span>·</span>
         <span>单文件 HTML（React + Tailwind）</span>
         <span>·</span>
-        <span>v3.1 · SHA 链 + 409 真重试 + pending PDF 修复 + 数据迁移 + 精确日历</span>
+        <span>v3.2 · SHA 链 + Pages 主动构建/轮询 + pending PDF 修复 + 数据迁移 + 精确日历</span>
       </div>
     </footer>
   );
