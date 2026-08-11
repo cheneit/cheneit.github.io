@@ -2481,7 +2481,7 @@
       "id": "sfvea1wgzqmso6xou8",
       "title": "Spin seebeck effect",
       "filename": "Blanter2026arXiv-Magnon polaron mediated spin seebeck effect in altermagnet.pdf",
-      "path": "",
+      "path": "https://cheneit.github.io/cheneit-pdf-2026/data/files/2026/08/sfvea1wgzqmso6xou8.pdf",
       "kind": "pdf",
       "topics": [
         "Spintronics; Altermagnet"
@@ -2490,13 +2490,18 @@
       "tags": [
         "refs_update"
       ],
-      "ts": 1786424353280,
+      "ts": 1786424365009,
       "createdTs": 1786424353280,
       "size": 2943187,
       "desc": "a new paper about spin seebeck effect in altermagnet",
-      "imagePath": "",
-      "storage": null,
-      "uploadStatus": "pdf_pending",
+      "imagePath": "data/files/2026/08/images/1d2it47o7y3mso6xqhk__Blanter2026arXiv.png",
+      "storage": {
+        "owner": "cheneit",
+        "repo": "cheneit-pdf-2026",
+        "branch": "main",
+        "path": "data/files/2026/08/sfvea1wgzqmso6xou8.pdf"
+      },
+      "uploadStatus": "ready",
       "uploadError": "",
       "imageUploadError": ""
     }
