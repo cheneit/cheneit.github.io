@@ -73,7 +73,7 @@ const { useState, useEffect, useMemo, useRef } = React;
 /* ============ v3.3 全站访问保护 ============ */
 // 重要：这是纯前端访问门槛，适合阻止普通访问者直接看到页面；它不是服务端身份认证。
 // 如果需要真正让仓库数据/PDF 在网络层不可公开，需要 private storage + 服务端/OAuth/Cloudflare Access 等方案。
-const PASSWORD_HASH = '4f40ff9d23ac703fcfd831af98492f6973662cc75248ec6b1bd8f37eaaf2b1e9';
+const PASSWORD_HASH = '6543cc38c0864d19a15351545d60e99307b9cef4d9c2c21c225735744ea00762';
 const AUTH_KEY = 'repoLibrary.authed';
 const AUTH_MARKER = `sha256:${PASSWORD_HASH}`;
 
