@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Repo Library — Literature Intelligence (v4.1)</title>
+  <title>Repo Library — Private Access (v3.3)</title>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -28,9 +28,6 @@
 
   <!-- Fuse.js (optional; keep for future) -->
   <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
-
-  <!-- PDF.js：仅在上传时读取 PDF 元数据和前几页文字，不会把论文发送给第三方。 -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
   <!-- highlight.js for code/text display -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" />
@@ -57,7 +54,7 @@ const { useState, useEffect, useMemo, useRef } = React;
 
 /**
  * =========================
- * Repo Library — 单文件 SPA（v4.1 历史文献回填版）
+ * Repo Library — 单文件 SPA（v3.3 全站私有访问版）
  * - Preview：浏览 / 搜索 / 筛选 / Dashboard（统计、日历、归档）
  * - Admin：上传 / 编辑 / 删除 / 替换PDF（注释后覆盖）
  *
@@ -70,10 +67,6 @@ const { useState, useEffect, useMemo, useRef } = React;
  * 6) 按钮统一：浅色背景 + 深色字体，不同功能不同背景色
  * 7) v2：metadata-first 上传、index 写回重试、branch 显式写入、错误状态保留
  * 8) v3.3：页面未认证时不挂载 App、不读取 index；浏览器认证持久化；PAT 保持浏览器本地隔离
- * 9) v4.0：上传时提取 DOI/arXiv/PDF 元数据，并用 OpenAlex/Crossref 补全作者、机构、期刊、主题和引用数
- * 10) v4.0：新增 Topic 趋势、作者/机构画像、引用排行、Topic 关联网络和元数据质量面板
- * 11) v4.0：兼容 v3 index.json；自动元数据使用 scholarly/citations 新字段，不覆盖人工 topics/tags
- * 12) v4.1：历史 PDF 批量扫描、分级置信度、人工复核、写入前自动备份与复核报告
  * =========================
  */
 
@@ -233,449 +226,6 @@ function humanSize(bytes) {
   let v = n, i = 0;
   while (v >= 1024 && i < units.length - 1) { v /= 1024; i += 1; }
   return `${v.toFixed(i === 0 ? 0 : 1)} ${units[i]}`;
-}
-
-/* ============ v4.1 scholarly metadata helpers ============ */
-function cleanDoi(value) {
-  return String(value || '')
-    .trim()
-    .replace(/^https?:\/\/(dx\.)?doi\.org\//i, '')
-    .replace(/^doi:\s*/i, '')
-    .replace(/[\s\]\[{}<>"']+$/g, '')
-    .replace(/[.,;:]+$/g, '');
-}
-
-function extractDoi(text) {
-  const m = String(text || '').match(/10\.\d{4,9}\/[-._;()/:A-Z0-9]+/i);
-  return m ? cleanDoi(m[0]) : '';
-}
-
-function extractArxivId(text) {
-  const s = String(text || '');
-  const modern = s.match(/(?:arXiv\s*[:/]?\s*)?(\d{4}\.\d{4,5})(?:v\d+)?/i);
-  if (modern) return modern[1];
-  const legacy = s.match(/(?:arXiv\s*[:/]?\s*)?([a-z-]+\/\d{7})(?:v\d+)?/i);
-  return legacy ? legacy[1] : '';
-}
-
-function normalizeTitleForMatch(value) {
-  return String(value || '').toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
-}
-
-function titleSimilarity(a, b) {
-  const aa = new Set(normalizeTitleForMatch(a).split(/\s+/).filter(x => x.length > 2));
-  const bb = new Set(normalizeTitleForMatch(b).split(/\s+/).filter(x => x.length > 2));
-  if (!aa.size || !bb.size) return 0;
-  let hit = 0;
-  aa.forEach(x => { if (bb.has(x)) hit += 1; });
-  return hit / Math.max(aa.size, bb.size);
-}
-
-function looksGenericPaperTitle(value) {
-  const s = String(value || '').trim();
-  if (!s || s.length < 8) return true;
-  if (/^(paper|article|document|untitled|manuscript|download|fulltext|main|supp|si|sm)[-_\s\d.]*$/i.test(s)) return true;
-  if (/^[a-f0-9_-]{12,}$/i.test(s)) return true;
-  if (/^\d+(?:[-_.]\d+)*$/.test(s)) return true;
-  return false;
-}
-
-function reconstructOpenAlexAbstract(index) {
-  if (!index || typeof index !== 'object') return '';
-  const out = [];
-  Object.entries(index).forEach(([word, positions]) => {
-    (positions || []).forEach(pos => { out[pos] = word; });
-  });
-  return out.filter(Boolean).join(' ');
-}
-
-function uniqueByName(list) {
-  const seen = new Set();
-  return (list || []).filter(x => {
-    const key = String(x?.name || x || '').trim().toLowerCase();
-    if (!key || seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  });
-}
-
-function parseAuthorString(value) {
-  const s = String(value || '').trim();
-  if (!s) return [];
-  const parts = s.includes(';') ? s.split(';') : s.split(/\s+and\s+/i);
-  return uniqueByName(parts.map(name => ({ name: name.trim() })).filter(x => x.name));
-}
-
-async function fetchJsonWithTimeout(url, timeoutMs=14000) {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), timeoutMs);
-  try {
-    const res = await fetch(url, { signal: controller.signal, cache: 'no-store' });
-    if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
-    return await res.json();
-  } finally {
-    clearTimeout(timer);
-  }
-}
-
-function normalizeOpenAlexWork(work, seed={}) {
-  if (!work) return null;
-  const authors = (work.authorships || []).map(a => ({
-    name: a?.author?.display_name || '',
-    openAlexId: a?.author?.id || '',
-    orcid: a?.author?.orcid || '',
-    position: a?.author_position || '',
-    corresponding: !!a?.is_corresponding,
-    institutions: (a?.institutions || []).map(i => ({
-      name: i?.display_name || '',
-      openAlexId: i?.id || '',
-      countryCode: i?.country_code || '',
-      type: i?.type || ''
-    })).filter(i => i.name)
-  })).filter(a => a.name);
-
-  const institutions = uniqueByName(authors.flatMap(a => a.institutions || []));
-  const automaticTopics = (work.topics || []).slice(0, 8).map(t => ({
-    name: t?.display_name || '',
-    id: t?.id || '',
-    score: Number(t?.score || 0),
-    subfield: t?.subfield?.display_name || '',
-    field: t?.field?.display_name || '',
-    domain: t?.domain?.display_name || ''
-  })).filter(t => t.name);
-  const location = work.primary_location || {};
-  const source = location.source || {};
-  const doi = cleanDoi(work.doi || seed.doi || '');
-
-  return {
-    title: work.title || work.display_name || seed.title || '',
-    doi,
-    arxivId: seed.arxivId || extractArxivId([work.title, location.landing_page_url].join(' ')),
-    openAlexId: work.id || '',
-    publicationDate: work.publication_date || '',
-    year: Number(work.publication_year || 0) || null,
-    venue: source.display_name || '',
-    venueId: source.id || '',
-    type: work.type || '',
-    authors,
-    institutions,
-    abstract: reconstructOpenAlexAbstract(work.abstract_inverted_index) || seed.abstract || '',
-    automaticTopics,
-    primaryTopic: work.primary_topic?.display_name || automaticTopics[0]?.name || '',
-    keywords: (work.keywords || []).slice(0, 12).map(k => k?.display_name || '').filter(Boolean),
-    relatedWorks: (work.related_works || []).slice(0, 30),
-    referencedWorks: (work.referenced_works || []).slice(0, 200),
-    openAccess: work.open_access || null,
-    landingPageUrl: location.landing_page_url || work.doi || '',
-    metadataSource: 'OpenAlex',
-    matchMethod: work.__repoLibraryMatch?.method || (seed.doi ? 'doi-exact' : 'title-search'),
-    matchConfidence: Number(work.__repoLibraryMatch?.confidence || (seed.doi ? 0.99 : 0)),
-    matchedFromPdf: !!seed.fromHistoricalPdf,
-    updatedAt: Date.now(),
-    citations: {
-      count: Number(work.cited_by_count || 0),
-      source: 'OpenAlex',
-      updatedAt: Date.now()
-    }
-  };
-}
-
-function normalizeCrossrefWork(message, seed={}) {
-  if (!message) return null;
-  const dateParts = message.published?.['date-parts']?.[0] || message.issued?.['date-parts']?.[0] || [];
-  const publicationDate = dateParts.length
-    ? `${dateParts[0]}-${String(dateParts[1] || 1).padStart(2,'0')}-${String(dateParts[2] || 1).padStart(2,'0')}`
-    : '';
-  const authors = (message.author || []).map(a => ({
-    name: [a.given, a.family].filter(Boolean).join(' '),
-    orcid: a.ORCID || '',
-    institutions: (a.affiliation || []).map(x => ({ name: x.name || '' })).filter(x => x.name)
-  })).filter(a => a.name);
-  return {
-    title: message.title?.[0] || seed.title || '',
-    doi: cleanDoi(message.DOI || seed.doi || ''),
-    arxivId: seed.arxivId || '',
-    publicationDate,
-    year: Number(dateParts[0] || 0) || null,
-    venue: message['container-title']?.[0] || '',
-    type: message.type || '',
-    authors,
-    institutions: uniqueByName(authors.flatMap(a => a.institutions || [])),
-    abstract: String(message.abstract || seed.abstract || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim(),
-    automaticTopics: [],
-    keywords: message.subject || [],
-    metadataSource: 'Crossref',
-    matchMethod: 'doi-crossref',
-    matchConfidence: 0.98,
-    matchedFromPdf: !!seed.fromHistoricalPdf,
-    updatedAt: Date.now(),
-    citations: {
-      count: Number(message['is-referenced-by-count'] || 0),
-      source: 'Crossref',
-      updatedAt: Date.now()
-    }
-  };
-}
-
-async function queryOpenAlex(seed) {
-  let url = '';
-  if (seed.doi) {
-    const value = `https://doi.org/${cleanDoi(seed.doi)}`;
-    url = `https://api.openalex.org/works?filter=doi:${encodeURIComponent(value)}&per_page=1`;
-  } else {
-    const query = seed.arxivId || seed.title;
-    if (!query) return null;
-    url = `https://api.openalex.org/works?search=${encodeURIComponent(query)}&per_page=5`;
-  }
-  const data = await fetchJsonWithTimeout(url);
-  const candidates = data?.results || [];
-  if (!candidates.length) return null;
-  if (seed.doi) return { ...candidates[0], __repoLibraryMatch: { method: 'doi-exact', confidence: 0.99 } };
-  const ranked = candidates
-    .map(w => ({ work: w, score: titleSimilarity(seed.title, w.title || w.display_name) }))
-    .sort((a,b) => b.score - a.score);
-  if (seed.title && ranked[0]?.score < 0.45 && !seed.arxivId) return null;
-  const confidence = seed.arxivId ? Math.max(0.93, ranked[0]?.score || 0) : (ranked[0]?.score || 0);
-  return ranked[0]?.work ? { ...ranked[0].work, __repoLibraryMatch: { method: seed.arxivId ? 'arxiv-search' : 'title-search', confidence } } : null;
-}
-
-async function queryCrossref(seed) {
-  if (!seed.doi) return null;
-  const url = `https://api.crossref.org/works/${encodeURIComponent(cleanDoi(seed.doi))}`;
-  const data = await fetchJsonWithTimeout(url);
-  return data?.message || null;
-}
-
-async function resolveScholarlyMetadata(seed) {
-  const cleanSeed = {
-    ...seed,
-    doi: cleanDoi(seed?.doi || ''),
-    arxivId: seed?.arxivId || extractArxivId([seed?.title, seed?.text].join(' '))
-  };
-  try {
-    const work = await queryOpenAlex(cleanSeed);
-    if (work) return normalizeOpenAlexWork(work, cleanSeed);
-  } catch (e) {
-    console.warn('OpenAlex metadata lookup failed', e);
-  }
-  try {
-    const work = await queryCrossref(cleanSeed);
-    if (work) return normalizeCrossrefWork(work, cleanSeed);
-  } catch (e) {
-    console.warn('Crossref metadata lookup failed', e);
-  }
-  return {
-    title: cleanSeed.title || '',
-    doi: cleanSeed.doi || '',
-    arxivId: cleanSeed.arxivId || '',
-    authors: cleanSeed.authors || [],
-    institutions: [],
-    venue: '',
-    year: null,
-    publicationDate: '',
-    abstract: cleanSeed.abstract || '',
-    automaticTopics: [],
-    keywords: cleanSeed.keywords || [],
-    metadataSource: 'PDF-local',
-    matchMethod: cleanSeed.fromHistoricalPdf ? 'pdf-local-only' : 'local-only',
-    matchConfidence: cleanSeed.fromHistoricalPdf ? 0.35 : 0,
-    matchedFromPdf: !!cleanSeed.fromHistoricalPdf,
-    updatedAt: Date.now(),
-    metadataError: '未在 OpenAlex/Crossref 中可靠匹配，请在编辑条目中补充 DOI 或题名。',
-    citations: { count: 0, source: '', updatedAt: 0 }
-  };
-}
-
-async function extractPdfSeedMetadata(file, maxPages=3) {
-  if (!file || extOf(file.name) !== 'pdf') return { title: file?.name?.replace(/\.[^/.]+$/, '') || '' };
-  const fallback = {
-    title: file.name.replace(/\.[^/.]+$/, ''),
-    doi: extractDoi(file.name),
-    arxivId: extractArxivId(file.name),
-    authors: [],
-    abstract: '',
-    keywords: [],
-    text: ''
-  };
-  if (!window.pdfjsLib) return fallback;
-  try {
-    window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-    const bytes = new Uint8Array(await file.arrayBuffer());
-    const doc = await window.pdfjsLib.getDocument({ data: bytes }).promise;
-    const meta = await doc.getMetadata().catch(() => ({ info: {}, metadata: null }));
-    const info = meta?.info || {};
-    const pageTexts = [];
-    const n = Math.min(doc.numPages || 1, maxPages);
-    for (let p=1; p<=n; p++) {
-      const page = await doc.getPage(p);
-      const tc = await page.getTextContent();
-      pageTexts.push((tc.items || []).map(x => x.str || '').join(' '));
-    }
-    const text = pageTexts.join('\n').replace(/\s+/g, ' ').trim();
-    const abstractMatch = text.match(/\bAbstract\b[\s:—-]*(.{80,2200}?)(?=\b(?:Keywords?|PACS|Introduction|I\.|1\.)\b)/i);
-    const infoTitle = String(info.Title || '').trim();
-    const titleLooksGeneric = !infoTitle || /^(untitled|article|document|microsoft word)/i.test(infoTitle);
-    return {
-      ...fallback,
-      title: titleLooksGeneric ? fallback.title : infoTitle,
-      doi: extractDoi([info.Subject, info.Keywords, text, file.name].join(' ')),
-      arxivId: extractArxivId([info.Subject, info.Keywords, text, file.name].join(' ')),
-      authors: parseAuthorString(info.Author),
-      abstract: abstractMatch ? abstractMatch[1].trim() : '',
-      keywords: splitLegacyList(info.Keywords || ''),
-      text: text.slice(0, 10000),
-      pdfPages: doc.numPages || null,
-      pdfMetadataTitle: infoTitle || '',
-      extractedAt: Date.now()
-    };
-  } catch (e) {
-    console.warn('PDF metadata extraction failed', e);
-    return { ...fallback, metadataError: e.message || String(e) };
-  }
-}
-
-async function buildMetadataForUpload(file) {
-  const seed = await extractPdfSeedMetadata(file);
-  const resolved = await resolveScholarlyMetadata(seed);
-  return {
-    scholarly: {
-      ...resolved,
-      pdfPages: seed.pdfPages || null,
-      localExtractedAt: seed.extractedAt || Date.now()
-    },
-    citations: resolved?.citations || { count: 0, source: '', updatedAt: 0 }
-  };
-}
-
-function needsHistoricalMetadata(item) {
-  if ((item?.kind || guessKind(item?.filename || item?.path)) !== 'pdf') return false;
-  const s = scholarlyOf(item);
-  if (String(s.metadataReview?.status || '').startsWith('accepted')) return false;
-  return !s.metadataSource || !!s.metadataError || !authorsOf(item).length || (!s.doi && !s.arxivId) || (!s.publicationDate && !s.year);
-}
-
-function historicalPdfUrl(cfg, item) {
-  if (item?.storage?.owner && item?.storage?.repo && item?.storage?.path) {
-    return ghRawUrl({
-      owner: item.storage.owner,
-      repo: item.storage.repo,
-      branch: item.storage.branch || cfg.pdf?.branch || 'main',
-      path: item.storage.path
-    });
-  }
-  if (item?.path && isAbsoluteUrl(item.path)) return item.path;
-  return buildRawUrl(cfg, item?.path || '');
-}
-
-async function downloadHistoricalPdf(cfg, item, token, maxMb=95) {
-  const url = historicalPdfUrl(cfg, item);
-  if (!url || url === '#') throw new Error('条目没有可读取的 PDF 路径');
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 60000);
-  try {
-    const headers = token && /(?:api\.github\.com|raw\.githubusercontent\.com)/.test(url)
-      ? { Authorization: `Bearer ${token}` }
-      : {};
-    const res = await fetch(cacheBustUrl(url), { cache: 'no-store', headers, signal: controller.signal });
-    if (!res.ok) throw new Error(`PDF 下载失败：${res.status} ${res.statusText}`);
-    const length = Number(res.headers.get('content-length') || 0);
-    if (length > maxMb * 1024 * 1024) throw new Error(`PDF 超过 ${maxMb} MB，跳过浏览器解析`);
-    const blob = await res.blob();
-    if (blob.size > maxMb * 1024 * 1024) throw new Error(`PDF 超过 ${maxMb} MB，跳过浏览器解析`);
-    if (!blob.size) throw new Error('下载到的 PDF 为空');
-    return new File([blob], item.filename || `${item.id || 'historical'}.pdf`, { type: 'application/pdf' });
-  } finally { clearTimeout(timer); }
-}
-
-function historicalIndexSeed(item) {
-  const s = scholarlyOf(item);
-  const rawTitle = s.title || item?.title || String(item?.filename || '').replace(/\.[^/.]+$/, '');
-  return {
-    title: looksGenericPaperTitle(rawTitle) ? '' : rawTitle,
-    doi: cleanDoi(s.doi || item?.doi || extractDoi([item?.title, item?.filename, item?.desc].join(' '))),
-    arxivId: s.arxivId || extractArxivId([item?.title, item?.filename, item?.desc].join(' ')),
-    authors: authorsOf(item),
-    abstract: s.abstract || item?.desc || '',
-    keywords: s.keywords || item?.tags || []
-  };
-}
-
-async function scanHistoricalItem(cfg, item, token, threshold=0.78) {
-  const startedAt = Date.now();
-  const base = { itemId: item.id, originalTitle: makePaperLabel(item), startedAt };
-  let first = null;
-  let pdfSeed = null;
-  let pdfError = '';
-  try {
-    const seed = historicalIndexSeed(item);
-    if (seed.doi || seed.arxivId || seed.title) first = await resolveScholarlyMetadata(seed);
-    if (first?.metadataSource !== 'PDF-local' && Number(first?.matchConfidence || 0) >= threshold) {
-      return { ...base, status: 'accepted', stage: 'index', confidence: Number(first.matchConfidence), method: first.matchMethod || 'index-match', suggested: first, pdfParsed: false, finishedAt: Date.now() };
-    }
-  } catch (e) {
-    console.warn('历史条目索引匹配失败，继续尝试 PDF', e);
-  }
-
-  try {
-    const file = await downloadHistoricalPdf(cfg, item, token);
-    pdfSeed = await extractPdfSeedMetadata(file, 3);
-    const baseSeed = historicalIndexSeed(item);
-    const resolved = await resolveScholarlyMetadata({
-      ...baseSeed,
-      ...pdfSeed,
-      title: (!looksGenericPaperTitle(pdfSeed.title) ? pdfSeed.title : baseSeed.title),
-      doi: pdfSeed.doi || baseSeed.doi,
-      arxivId: pdfSeed.arxivId || baseSeed.arxivId,
-      authors: pdfSeed.authors?.length ? pdfSeed.authors : baseSeed.authors,
-      abstract: pdfSeed.abstract || baseSeed.abstract,
-      fromHistoricalPdf: true
-    });
-    const confidence = Number(resolved.matchConfidence || 0);
-    const matched = resolved.metadataSource !== 'PDF-local';
-    return {
-      ...base,
-      status: matched && confidence >= threshold ? 'accepted' : 'review',
-      stage: 'pdf',
-      confidence,
-      method: resolved.matchMethod || 'pdf-local-only',
-      suggested: { ...resolved, pdfPages: pdfSeed.pdfPages || null, historicalExtractedAt: Date.now() },
-      pdfParsed: true,
-      extractedDoi: pdfSeed.doi || '',
-      extractedTitle: pdfSeed.title || '',
-      message: matched ? '' : '已解析 PDF，但尚未在 OpenAlex/Crossref 中可靠匹配。',
-      finishedAt: Date.now()
-    };
-  } catch (e) {
-    pdfError = e.message || String(e);
-  }
-
-  if (first && first.metadataSource !== 'PDF-local') {
-    const confidence = Number(first.matchConfidence || 0);
-    return { ...base, status: 'review', stage: 'index', confidence, method: first.matchMethod || 'title-search', suggested: first, pdfParsed: false, message: `PDF 解析失败，保留低置信度索引匹配：${pdfError}`, finishedAt: Date.now() };
-  }
-  return { ...base, status: 'unmatched', stage: 'pdf', confidence: 0, method: 'unmatched', suggested: pdfSeed || first || {}, pdfParsed: !!pdfSeed, message: pdfError || '没有可靠匹配', finishedAt: Date.now() };
-}
-
-function applyHistoricalSuggestion(item, result, acceptedManually=false) {
-  const suggested = result?.suggested || {};
-  const citations = suggested.citations || item.citations || { count: 0, source: '', updatedAt: 0 };
-  return {
-    ...item,
-    scholarly: {
-      ...scholarlyOf(item),
-      ...suggested,
-      metadataError: '',
-      metadataWarning: acceptedManually && result.confidence < 0.78 ? '该结果由管理员从低置信度候选中手工确认。' : '',
-      metadataReview: {
-        status: acceptedManually ? 'accepted-manually' : 'accepted-auto',
-        confidence: Number(result.confidence || 0),
-        method: result.method || '',
-        stage: result.stage || '',
-        reviewedAt: Date.now()
-      }
-    },
-    citations
-  };
 }
 
 
@@ -1004,9 +554,6 @@ function migrateLegacyItem(item, cfg, index=0) {
     uploadStatus,
     uploadError: src.uploadError || '',
     imageUploadError: src.imageUploadError || '',
-    groups: splitLegacyList(src.groups || src.group || []),
-    scholarly: (src.scholarly && typeof src.scholarly === 'object') ? src.scholarly : {},
-    citations: (src.citations && typeof src.citations === 'object') ? src.citations : (src.scholarly?.citations || { count: 0, source: '', updatedAt: 0 }),
   };
 
   return migrated;
@@ -1460,103 +1007,6 @@ function countBy(items, extractor) {
   return Array.from(map.entries()).sort((a,b)=> b[1]-a[1] || a[0].localeCompare(b[0]));
 }
 
-function scholarlyOf(item) { return item?.scholarly || {}; }
-function citationOf(item) {
-  const c = item?.citations || scholarlyOf(item).citations || {};
-  return { count: Number(c.count || 0), source: c.source || '', updatedAt: Number(c.updatedAt || 0) };
-}
-function publicationYearOf(item) {
-  const s = scholarlyOf(item);
-  const fromDate = Number(String(s.publicationDate || '').slice(0, 4));
-  return Number(s.year || fromDate || new Date(item?.ts || 0).getFullYear() || 0) || null;
-}
-function authorsOf(item) {
-  return (scholarlyOf(item).authors || []).map(a => typeof a === 'string' ? { name: a } : a).filter(a => a?.name);
-}
-function institutionsOf(item) {
-  const s = scholarlyOf(item);
-  const nested = authorsOf(item).flatMap(a => a.institutions || []);
-  const manualGroups = (item?.groups || []).map(name => ({ name, manualGroup: true }));
-  return uniqueByName([...(s.institutions || []), ...nested, ...manualGroups].map(x => typeof x === 'string' ? { name: x } : x));
-}
-function academicTimestamp(item) {
-  const d = scholarlyOf(item).publicationDate;
-  const parsed = d ? Date.parse(d) : NaN;
-  return Number.isFinite(parsed) ? parsed : Number(item?.ts || 0);
-}
-function isCitationStale(item, days=2) {
-  const ts = citationOf(item).updatedAt;
-  return !ts || (Date.now() - ts) > days * 86400000;
-}
-function makePaperLabel(item) { return item?.title || scholarlyOf(item).title || item?.filename || '未命名文献'; }
-
-function buildLiteratureStats(items) {
-  const topicMap = new Map();
-  const authorMap = new Map();
-  const institutionMap = new Map();
-  const linkMap = new Map();
-  const yearMap = new Map();
-
-  function touch(map, name, item) {
-    if (!name) return;
-    const key = String(name).trim();
-    if (!key) return;
-    if (!map.has(key)) map.set(key, { name: key, papers: [], citations: 0, topics: new Map(), latestYear: 0 });
-    const row = map.get(key);
-    if (!row.papers.some(x => x.id === item.id)) row.papers.push(item);
-    row.citations += citationOf(item).count;
-    row.latestYear = Math.max(row.latestYear, publicationYearOf(item) || 0);
-    getTopicsArr(item).forEach(t => row.topics.set(t, (row.topics.get(t) || 0) + 1));
-  }
-
-  for (const item of items || []) {
-    const topics = [...new Set(getTopicsArr(item))];
-    const year = publicationYearOf(item);
-    if (year) yearMap.set(year, (yearMap.get(year) || 0) + 1);
-    topics.forEach(t => touch(topicMap, t, item));
-    authorsOf(item).forEach(a => touch(authorMap, a.name, item));
-    institutionsOf(item).forEach(g => touch(institutionMap, g.name, item));
-    for (let i=0; i<topics.length; i++) {
-      for (let j=i+1; j<topics.length; j++) {
-        const pair = [topics[i], topics[j]].sort();
-        const key = pair.join('\u0000');
-        if (!linkMap.has(key)) linkMap.set(key, { source: pair[0], target: pair[1], count: 0, papers: [] });
-        const link = linkMap.get(key);
-        link.count += 1;
-        link.papers.push(item);
-      }
-    }
-  }
-
-  const finish = map => Array.from(map.values()).map(row => ({
-    ...row,
-    count: row.papers.length,
-    topTopics: Array.from(row.topics.entries()).sort((a,b)=>b[1]-a[1]).slice(0,4)
-  })).sort((a,b)=>b.count-a.count || b.citations-a.citations || a.name.localeCompare(b.name));
-  const topics = finish(topicMap).map(row => ({
-    ...row,
-    recent: [...row.papers].sort((a,b)=>academicTimestamp(b)-academicTimestamp(a)),
-    years: Array.from(row.papers.reduce((m,p)=>{
-      const y=publicationYearOf(p); if(y) m.set(y,(m.get(y)||0)+1); return m;
-    }, new Map()).entries()).sort((a,b)=>a[0]-b[0])
-  }));
-
-  return {
-    topics,
-    authors: finish(authorMap),
-    institutions: finish(institutionMap),
-    links: Array.from(linkMap.values()).sort((a,b)=>b.count-a.count),
-    years: Array.from(yearMap.entries()).sort((a,b)=>a[0]-b[0]),
-    citationRanking: [...(items || [])].sort((a,b)=>citationOf(b).count-citationOf(a).count),
-    coverage: {
-      scholarly: (items || []).filter(x => scholarlyOf(x).metadataSource).length,
-      doi: (items || []).filter(x => scholarlyOf(x).doi).length,
-      authors: (items || []).filter(x => authorsOf(x).length).length,
-      citations: (items || []).filter(x => citationOf(x).source).length,
-    }
-  };
-}
-
 function buildHeatmap(items, days=365) {
   const startOfDay = (d) => new Date(d.getFullYear(), d.getMonth(), d.getDate());
   const addDays = (d, n) => {
@@ -1730,17 +1180,9 @@ function App({ onLockPage }) {
     if (q) {
       arr = arr.filter(i => {
         const topicsArr = getTopicsArr(i);
-        const scholarly = scholarlyOf(i);
         const text = [
           i.title, i.filename, topicsArr.join(' '),
-          (i.tags||[]).join(' '), i.desc,
-          scholarly.title, scholarly.doi, scholarly.arxivId,
-          scholarly.venue, scholarly.abstract, scholarly.primaryTopic,
-          (scholarly.keywords || []).join(' '),
-          (scholarly.automaticTopics || []).map(t => t.name || t).join(' '),
-          authorsOf(i).map(a => a.name).join(' '),
-          institutionsOf(i).map(x => x.name).join(' '),
-          (i.groups || []).join(' ')
+          (i.tags||[]).join(' '), i.desc
         ].join(' ').toLowerCase();
         return text.includes(q);
       });
@@ -1754,8 +1196,6 @@ function App({ onLockPage }) {
       if (sortBy === 'title_asc') return (a.title||a.filename||'').localeCompare(b.title||b.filename||'');
       if (sortBy === 'title_desc')return (b.title||b.filename||'').localeCompare(a.title||a.filename||'');
       if (sortBy === 'type')      return (a.kind||'').localeCompare(b.kind||'');
-      if (sortBy === 'citations_desc') return citationOf(b).count - citationOf(a).count;
-      if (sortBy === 'publication_desc') return academicTimestamp(b) - academicTimestamp(a);
       return 0;
     });
 
@@ -1982,12 +1422,6 @@ function App({ onLockPage }) {
                 token={token}
                 onMigrated={(newData) => { if (newData) setIndex(newData); else refreshIndex(); }}
               />
-              <HistoricalMetadataPanel
-                cfg={cfg}
-                token={token}
-                items={allItems}
-                onCompleted={(newData) => { if (newData) setIndex(newData); else refreshIndex(); }}
-              />
               <AdminPanel
                 cfg={cfg}
                 token={token}
@@ -2082,7 +1516,7 @@ function Header({ mode, setMode, query, setQuery, onSaveCfg, token, setToken, on
             <div className="w-9 h-9 rounded-2xl bg-slate-800 flex items-center justify-center text-lg">📚</div>
             <div>
               <div className="text-lg font-semibold">Repo Library</div>
-              <div className="text-xs text-slate-300">v4.1 · 历史 PDF 批量补全 + 置信度复核 + 文献情报台</div>
+              <div className="text-xs text-slate-300">v3.3 · 全站私有访问 + SHA 稳定上传 + Pages 自动发布 + pending 修复</div>
             </div>
           </div>
           <div className="flex items-center gap-2 flex-wrap justify-end">
@@ -2123,7 +1557,7 @@ function Header({ mode, setMode, query, setQuery, onSaveCfg, token, setToken, on
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               className="w-full px-3 py-2 rounded-xl bg-slate-800 border border-slate-700 placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400"
-              placeholder="搜索题名 / DOI / 作者 / 机构 / Topic / 摘要..."
+              placeholder="搜索标题 / 文件名 / Topic / 标签 / 描述..."
             />
           </div>
         </div>
@@ -2644,159 +2078,6 @@ function MigrationPanel({ cfg, token, onMigrated }) {
   );
 }
 
-/* ============ v4.1 historical metadata backfill ============ */
-function HistoricalMetadataPanel({ cfg, token, items, onCompleted }) {
-  const candidates = useMemo(() => (items || []).filter(needsHistoricalMetadata), [items]);
-  const [limit, setLimit] = useState(25);
-  const [threshold, setThreshold] = useState(0.78);
-  const [running, setRunning] = useState(false);
-  const [writing, setWriting] = useState(false);
-  const [progress, setProgress] = useState({ done: 0, total: 0, title: '' });
-  const [results, setResults] = useState([]);
-  const [selected, setSelected] = useState(() => new Set());
-  const [scannedIds, setScannedIds] = useState(() => new Set());
-  const [msg, setMsg] = useState('');
-  const cancelRef = useRef(false);
-
-  function toggle(id) {
-    setSelected(prev => {
-      const next = new Set(prev);
-      if (next.has(id)) next.delete(id); else next.add(id);
-      return next;
-    });
-  }
-
-  async function runScan() {
-    if (running || !candidates.length) return;
-    const unscanned = candidates.filter(item => !scannedIds.has(item.id));
-    const source = unscanned.length ? unscanned : candidates;
-    const batch = source.slice(0, Math.max(1, Math.min(200, Number(limit || 25))));
-    setRunning(true); setResults([]); setSelected(new Set()); setMsg('');
-    cancelRef.current = false;
-    const collected = [];
-    const autoIds = new Set();
-    for (let i=0; i<batch.length; i++) {
-      if (cancelRef.current) break;
-      const item = batch[i];
-      setProgress({ done: i, total: batch.length, title: makePaperLabel(item) });
-      let result;
-      try { result = await scanHistoricalItem(cfg, item, token, Number(threshold || 0.78)); }
-      catch (e) { result = { itemId: item.id, originalTitle: makePaperLabel(item), status: 'error', confidence: 0, method: 'error', message: e.message || String(e), suggested: {} }; }
-      collected.push(result);
-      if (result.status === 'accepted') autoIds.add(result.itemId);
-      setResults([...collected]);
-      setSelected(new Set(autoIds));
-      setProgress({ done: i+1, total: batch.length, title: makePaperLabel(item) });
-      await new Promise(resolve => setTimeout(resolve, 220));
-    }
-    setRunning(false);
-    setScannedIds(prev => new Set([...prev, ...collected.map(row=>row.itemId)]));
-    const auto = collected.filter(x=>x.status==='accepted').length;
-    const review = collected.filter(x=>x.status==='review').length;
-    const failed = collected.length - auto - review;
-    setMsg(`扫描完成：高可信 ${auto} 条，待人工复核 ${review} 条，未匹配/错误 ${failed} 条。默认只勾选高可信结果。`);
-  }
-
-  function exportReport() {
-    const report = {
-      schemaVersion: 1,
-      generatedAt: new Date().toISOString(),
-      threshold: Number(threshold || 0.78),
-      total: results.length,
-      results: results.map(r => ({
-        itemId: r.itemId,
-        originalTitle: r.originalTitle,
-        status: r.status,
-        confidence: r.confidence,
-        method: r.method,
-        stage: r.stage,
-        matchedTitle: r.suggested?.title || '',
-        doi: r.suggested?.doi || '',
-        authors: (r.suggested?.authors || []).map(a=>a.name || a),
-        message: r.message || ''
-      }))
-    };
-    const blob = new Blob([JSON.stringify(report, null, 2)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url; a.download = `metadata-review-${timestampForPath()}.json`; a.click();
-    setTimeout(()=>URL.revokeObjectURL(url), 1000);
-  }
-
-  async function writeSelected() {
-    if (!selected.size) return alert('请至少勾选一个结果。');
-    if (!confirm(`将 ${selected.size} 条结果写入 index.json？写入前会自动备份当前索引，人工标题、Topics、标签、描述和团队字段不会被覆盖。`)) return;
-    setWriting(true); setMsg('正在备份当前索引…');
-    try {
-      const current = await ghGetJSONContent(cfg.owner, cfg.repo, cfg.indexPath, token, cfg.branch);
-      if (!current) throw new Error(`未读取到 ${cfg.indexPath}`);
-      const normalized = normalizeIndexData(current);
-      const dir = indexDirOf(cfg.indexPath);
-      const backupPath = `${dir ? dir + '/' : ''}backups/index-before-v4.1-backfill-${timestampForPath()}.json`;
-      const backupBytes = new TextEncoder().encode(JSON.stringify(normalized, null, 2));
-      await ghPutContent(cfg.owner, cfg.repo, backupPath, b64EncodeUint8(new Uint8Array(backupBytes)), 'Backup index before v4.1 metadata backfill', token, null, cfg.branch);
-
-      const resultMap = new Map(results.filter(r=>selected.has(r.itemId)).map(r=>[r.itemId,r]));
-      invalidateIndexWriteCache(cfg);
-      const newData = await updateIndexMain(cfg, token, latest => ({
-        ...latest,
-        schemaVersion: Math.max(4, Number(latest.schemaVersion || 0)),
-        appVersion: '4.1',
-        historicalMetadataUpdatedAt: Date.now(),
-        items: (latest.items || []).map(item => {
-          const result = resultMap.get(item.id);
-          return result ? applyHistoricalSuggestion(item, result, result.status !== 'accepted') : item;
-        })
-      }), `Backfill ${selected.size} historical literature metadata records`);
-      setMsg(`写入完成：${selected.size} 条。备份已保存到 ${backupPath}。低置信度条目只有在你手工勾选后才会写入。`);
-      onCompleted?.(newData);
-    } catch (e) {
-      console.error(e);
-      setMsg('写入失败：' + (e.message || String(e)));
-    } finally { setWriting(false); }
-  }
-
-  const statusMeta = {
-    accepted: ['高可信','bg-emerald-50 text-emerald-800 border-emerald-200'],
-    review: ['待复核','bg-amber-50 text-amber-800 border-amber-200'],
-    unmatched: ['未匹配','bg-slate-50 text-slate-700 border-slate-200'],
-    error: ['错误','bg-rose-50 text-rose-800 border-rose-200']
-  };
-
-  return (
-    <section className="mb-6">
-      <div className="rounded-3xl border border-sky-200 bg-white p-4 shadow-soft">
-        <div className="flex flex-wrap items-start justify-between gap-4">
-          <div>
-            <div className="font-semibold text-slate-900">🧭 v4.1 历史文献元数据补全</div>
-            <div className="mt-1 max-w-3xl text-xs leading-5 text-slate-500">检测到 <b>{candidates.length}</b> 篇 PDF 的元数据不完整。系统先用现有 DOI/arXiv/题名匹配；不足时下载旧 PDF、解析前 3 页，再次匹配。扫描本身不修改 GitHub，只有最后勾选并确认才写入。</div>
-          </div>
-          <div className="flex flex-wrap items-end gap-2">
-            <label className="text-xs text-slate-600">本批数量<input type="number" min="1" max="200" value={limit} onChange={e=>setLimit(e.target.value)} className="ml-2 w-20 rounded-xl border border-slate-300 px-2 py-2" /></label>
-            <label className="text-xs text-slate-600">自动接受阈值<input type="number" min="0.5" max="1" step="0.01" value={threshold} onChange={e=>setThreshold(e.target.value)} className="ml-2 w-20 rounded-xl border border-slate-300 px-2 py-2" /></label>
-            <button onClick={runScan} disabled={running || writing || !candidates.length} className={btnClass('primary', running||writing||!candidates.length?'opacity-60':'')}>{running?'扫描中…':`开始扫描（本轮剩余 ${Math.max(0,candidates.filter(x=>!scannedIds.has(x.id)).length)}）`}</button>
-            {scannedIds.size && !running ? <button onClick={()=>setScannedIds(new Set())} className={btnClass('subtle')}>重置本轮</button> : null}
-            {running ? <button onClick={()=>{cancelRef.current=true}} className={btnClass('danger')}>扫描完当前条后停止</button> : null}
-          </div>
-        </div>
-
-        {running ? <div className="mt-4"><div className="mb-1 flex justify-between text-xs text-slate-500"><span className="truncate pr-4">{progress.title}</span><span>{progress.done}/{progress.total}</span></div><div className="h-2 overflow-hidden rounded-full bg-slate-100"><div className="h-full bg-sky-500 transition-all" style={{width:`${progress.total?progress.done/progress.total*100:0}%`}}></div></div></div> : null}
-
-        {results.length ? (
-          <div className="mt-4">
-            <div className="mb-3 flex flex-wrap items-center gap-2"><button onClick={()=>setSelected(new Set(results.filter(r=>r.status==='accepted').map(r=>r.itemId)))} className={btnClass('success')}>只选高可信</button><button onClick={()=>setSelected(new Set(results.filter(r=>r.status==='accepted'||r.status==='review').map(r=>r.itemId)))} className={btnClass('warn')}>选择高可信 + 待复核</button><button onClick={exportReport} className={btnClass('slate')}>导出复核报告</button><button onClick={writeSelected} disabled={writing || running} className={btnClass('primary',writing||running?'opacity-60':'')}>{writing?'写入中…':`写入已选 ${selected.size} 条`}</button></div>
-            <div className="max-h-[430px] overflow-auto rounded-2xl border border-slate-200">
-              <table className="w-full min-w-[920px] text-left text-xs"><thead className="sticky top-0 bg-slate-100 text-slate-600"><tr><th className="p-3">写入</th><th className="p-3">状态</th><th className="p-3">原条目</th><th className="p-3">匹配结果</th><th className="p-3">方法 / 置信度</th><th className="p-3">识别信息</th></tr></thead><tbody className="divide-y divide-slate-200">{results.map(r=>{const meta=statusMeta[r.status]||statusMeta.error;return <tr key={r.itemId} className={selected.has(r.itemId)?'bg-sky-50/60':'bg-white'}><td className="p-3"><input type="checkbox" checked={selected.has(r.itemId)} disabled={r.status==='unmatched'||r.status==='error'} onChange={()=>toggle(r.itemId)} /></td><td className="p-3"><span className={cx('rounded-full border px-2 py-1',meta[1])}>{meta[0]}</span></td><td className="max-w-[240px] p-3"><div className="font-medium text-slate-900">{r.originalTitle}</div><div className="mt-1 text-slate-500">{r.stage==='pdf'?'已解析 PDF':'仅索引匹配'}</div></td><td className="max-w-[280px] p-3"><div className="font-medium text-slate-900">{r.suggested?.title||'—'}</div><div className="mt-1 text-slate-500">{r.suggested?.venue||''} {r.suggested?.year||''}</div></td><td className="p-3"><div>{r.method||'—'}</div><div className="mt-1 font-semibold text-sky-700">{Math.round(Number(r.confidence||0)*100)}%</div></td><td className="max-w-[260px] p-3"><div>{r.suggested?.doi?`DOI ${r.suggested.doi}`:'DOI 未识别'}</div><div className="mt-1 truncate text-slate-500">{(r.suggested?.authors||[]).slice(0,3).map(a=>a.name||a).join(', ')||r.message||'作者待补充'}</div></td></tr>})}</tbody></table>
-            </div>
-          </div>
-        ) : null}
-        {msg ? <div className="mt-3 whitespace-pre-wrap rounded-2xl bg-slate-50 p-3 text-sm text-slate-700">{msg}</div> : null}
-        <div className="mt-3 text-xs leading-5 text-slate-500">安全规则：不覆盖顶层人工标题、Topics、标签、描述和团队字段；写入前自动备份；低于阈值的候选默认不勾选。若跨域策略阻止浏览器下载旧 PDF，请使用升级包中的 GitHub Actions“backfill”模式。</div>
-      </div>
-    </section>
-  );
-}
-
 /* ============ Admin Panel ============ */
 function AdminPanel({ cfg, token, onUploaded }) {
   const [files, setFiles] = useState([]);
@@ -2805,7 +2086,6 @@ function AdminPanel({ cfg, token, onUploaded }) {
   const [tags, setTags] = useState('');
   const [desc, setDesc] = useState('');
   const [cover, setCover] = useState(null);
-  const [autoMetadata, setAutoMetadata] = useState(true);
 
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState('');
@@ -2952,20 +2232,10 @@ function AdminPanel({ cfg, token, onUploaded }) {
         i += 1;
 
         const id = uid();
+        const cleanTitle = title || file.name.replace(/\.[^/.]+$/, '');
         const kind = guessKind(file.name);
         const ext = extOf(file.name);
         const isPdf = (kind === 'pdf' || ext === 'pdf');
-        let metadataBundle = { scholarly: {}, citations: { count: 0, source: '', updatedAt: 0 } };
-        if (autoMetadata && isPdf) {
-          setMsg(`(${i}/${files.length}) 正在识别 PDF 元数据并匹配 OpenAlex：${file.name}`);
-          try {
-            metadataBundle = await buildMetadataForUpload(file);
-          } catch (e) {
-            console.warn('自动元数据识别失败，继续上传原文件', e);
-            metadataBundle.scholarly = { metadataSource: 'PDF-local', metadataError: e.message || String(e), updatedAt: Date.now() };
-          }
-        }
-        const cleanTitle = title || metadataBundle.scholarly?.title || file.name.replace(/\.[^/.]+$/, '');
 
         const initialItem = {
           id,
@@ -2979,15 +2249,12 @@ function AdminPanel({ cfg, token, onUploaded }) {
           ts: Date.now(),
           createdTs: Date.now(),
           size: file.size,
-          desc: desc || metadataBundle.scholarly?.abstract || '',
+          desc: desc || '',
           imagePath: '',
           storage: null,
           uploadStatus: isPdf ? 'pdf_pending' : 'file_pending',
           uploadError: '',
-          imageUploadError: '',
-          groups: [],
-          scholarly: metadataBundle.scholarly || {},
-          citations: metadataBundle.citations || { count: 0, source: '', updatedAt: 0 }
+          imageUploadError: ''
         };
 
         setMsg(`(${i}/${files.length}) 正在先创建条目：${file.name}`);
@@ -3206,18 +2473,10 @@ function AdminPanel({ cfg, token, onUploaded }) {
               <input type="file" accept="image/*" onChange={handleCover} className="block w-full text-sm" />
             </label>
 
-            <label className="flex items-start gap-3 rounded-2xl border border-sky-200 bg-sky-50 p-3 text-sm text-sky-950">
-              <input type="checkbox" checked={autoMetadata} onChange={e=>setAutoMetadata(e.target.checked)} className="mt-1" />
-              <span>
-                <b>上传时自动提取学术元数据</b>
-                <span className="block mt-1 text-xs text-sky-800">读取 PDF 前 3 页和内嵌信息，识别 DOI/arXiv，并从 OpenAlex（失败时 Crossref）补全作者、机构、期刊、发表日期、自动主题和引用数。识别失败不会阻断上传。</span>
-              </span>
-            </label>
-
             <div className="rounded-2xl border border-slate-200 bg-slate-50 p-3 text-xs text-slate-600">
               <div className="font-semibold text-slate-700 mb-1">提示</div>
               <ul className="list-disc pl-5 space-y-1">
-                <li>新上传 PDF：会写入 <code>storage</code> 与 <code>scholarly</code> 字段；手工 Topics 与自动主题分开保存。</li>
+                <li>新上传 PDF：会写入 <code>storage</code> 字段，方便“替换 PDF/删除”。旧条目不改动。</li>
                 <li>PDF 仓库 Pages 必须使用 <b>Deploy from a branch</b>；v3.2 上传后会主动触发 build 并等待发布。</li>
                 <li>PAT 除 Contents: Read &amp; Write 外，还需 <b>Pages: Read &amp; Write</b>；否则文件能上传，但主动发布会 403。</li>
                 <li>如果你想把 PDF 集中进固定仓库：在「仓库设置 → PDF 分仓」填 <b>手动覆盖仓库名</b>。</li>
@@ -3244,163 +2503,79 @@ function AdminPanel({ cfg, token, onUploaded }) {
 /* ============ Dashboard ============ */
 function Dashboard({ items, topicsCount, tagsCount, onPickTopic, onPickTag }) {
   const heat = useMemo(() => buildHeatmap(items, 365), [items]);
-  const stats = useMemo(() => buildLiteratureStats(items), [items]);
-  const [tab, setTab] = useState('overview');
-  const [selectedTopic, setSelectedTopic] = useState('');
-  const topicName = selectedTopic || stats.topics[0]?.name || '';
-  const topic = stats.topics.find(x => x.name === topicName) || null;
-  const topicStats = useMemo(() => buildLiteratureStats(topic?.papers || []), [topicName, items]);
-  const maxYearCount = Math.max(1, ...(topic?.years || stats.years).map(x => x[1]));
-  const citationList = (topic?.papers || items).slice().sort((a,b)=>citationOf(b).count-citationOf(a).count);
-  const coveragePct = items.length ? Math.round(stats.coverage.scholarly / items.length * 100) : 0;
-  const tabs = [
-    ['overview','总览'], ['topic','Topic 动态'], ['people','人物 / 团队'],
-    ['citations','引用排行'], ['relations','关联网络'], ['quality','数据质量']
-  ];
+
+  // 词云：取 topics 前 10
+  const topTopics = topicsCount.slice(0, 10);
+  const maxCnt = topTopics.length ? topTopics[0][1] : 1;
 
   return (
     <section className="space-y-6">
-      <div className="rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-950 via-slate-900 to-sky-950 p-5 text-white shadow-soft">
-        <div className="flex flex-wrap items-start justify-between gap-4">
-          <div>
-            <div className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-300">Literature intelligence</div>
-            <h2 className="mt-2 text-2xl font-bold">科研文献情报台</h2>
-            <p className="mt-1 max-w-2xl text-sm leading-6 text-slate-300">把手工 Topic、作者、机构、发表时间、引用与跨主题关系放进同一个视图。机构来自作者 affiliation，可用“团队”字段进一步校正到实验室层级。</p>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-right">
-            <div className="text-2xl font-bold">{coveragePct}%</div>
-            <div className="text-xs text-slate-300">学术元数据覆盖率</div>
-          </div>
-        </div>
-        <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-          {[
-            ['文献', items.length, '篇'], ['Topics', stats.topics.length, '个'],
-            ['作者', stats.authors.length, '人'], ['机构 / 团队', stats.institutions.length, '个'],
-            ['引用已同步', stats.coverage.citations, '篇']
-          ].map(([label,value,unit]) => (
-            <div key={label} className="rounded-2xl border border-white/10 bg-white/5 p-3">
-              <div className="text-xs text-slate-400">{label}</div>
-              <div className="mt-1 text-xl font-bold">{value}<span className="ml-1 text-xs font-normal text-slate-400">{unit}</span></div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="bg-white rounded-3xl shadow-soft border border-slate-200 overflow-hidden">
-        <div className="flex gap-1 overflow-x-auto border-b border-slate-200 p-2">
-          {tabs.map(([key,label]) => (
-            <button key={key} onClick={()=>setTab(key)} className={cx('whitespace-nowrap rounded-xl px-3 py-2 text-sm font-medium', tab===key ? 'bg-slate-900 text-white' : 'text-slate-600 hover:bg-slate-100')}>{label}</button>
-          ))}
-        </div>
-
-        <div className="p-4">
-          {tab === 'overview' ? (
-            <div className="grid gap-5 xl:grid-cols-[1.25fr_.75fr]">
-              <div>
-                <div className="mb-3 flex items-center justify-between"><h3 className="font-semibold">Topic 活跃度</h3><span className="text-xs text-slate-500">按库内文章数排序</span></div>
-                <div className="space-y-2">
-                  {stats.topics.slice(0,10).map((row,i) => (
-                    <button key={row.name} onClick={()=>{setSelectedTopic(row.name);setTab('topic')}} className="grid w-full grid-cols-[28px_1fr_auto] items-center gap-3 rounded-2xl border border-slate-200 p-3 text-left hover:border-sky-300 hover:bg-sky-50">
-                      <span className="text-xs font-bold text-slate-400">{String(i+1).padStart(2,'0')}</span>
-                      <span className="min-w-0"><span className="block truncate font-semibold text-slate-900">{row.name}</span><span className="block truncate text-xs text-slate-500">最近：{row.recent[0] ? makePaperLabel(row.recent[0]) : '—'}</span></span>
-                      <span className="text-right"><span className="block font-bold text-slate-900">{row.count}</span><span className="text-[11px] text-slate-500">{row.citations} 引用</span></span>
-                    </button>
-                  ))}
-                  {!stats.topics.length ? <div className="rounded-2xl bg-amber-50 p-4 text-sm text-amber-900">还没有手工 Topic。上传或编辑文献时至少添加一个 Topic，关联与趋势视图才会生效。</div> : null}
-                </div>
-              </div>
-              <div className="space-y-5">
-                <div>
-                  <h3 className="mb-3 font-semibold">库内发表趋势</h3>
-                  <MiniBarChart values={stats.years} maxValue={Math.max(1,...stats.years.map(x=>x[1]))} />
-                </div>
-                <div>
-                  <h3 className="mb-3 font-semibold">常用标签</h3>
-                  <div className="flex flex-wrap gap-2">{tagsCount.slice(0,12).map(([t,c])=><button key={t} onClick={()=>onPickTag(t)} className={btnClass('slate')}>#{t}<span className={badgeClass()}>{c}</span></button>)}</div>
-                </div>
-                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-xs leading-5 text-slate-600"><b className="text-slate-800">口径：</b>“最近在做什么”按发表日期而非上传日期；引用来自 OpenAlex/Crossref。团队默认按 affiliation 聚合，实验室级归属建议在编辑页手工补充。</div>
-              </div>
-            </div>
-          ) : null}
-
-          {tab === 'topic' ? (
-            <div>
-              <div className="mb-5 flex flex-wrap items-center gap-3">
-                <div><h3 className="font-semibold">Topic 近期动态</h3><p className="text-xs text-slate-500">看趋势、近期文章、活跃作者与机构</p></div>
-                <select value={topicName} onChange={e=>setSelectedTopic(e.target.value)} className="ml-auto rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm">{stats.topics.map(x=><option key={x.name}>{x.name}</option>)}</select>
-                {topicName ? <button onClick={()=>onPickTopic(topicName)} className={btnClass('primary')}>查看全部文章</button> : null}
-              </div>
-              {topic ? <div className="grid gap-5 lg:grid-cols-2">
-                <div className="rounded-2xl border border-slate-200 p-4"><div className="mb-3 text-sm font-semibold">年度发表趋势</div><MiniBarChart values={topic.years} maxValue={maxYearCount} /></div>
-                <div className="rounded-2xl border border-slate-200 p-4"><div className="mb-3 text-sm font-semibold">活跃作者 / 机构</div><RankRows rows={topicStats.authors.slice(0,5)} unit="篇" /><div className="my-3 border-t border-slate-200"></div><RankRows rows={topicStats.institutions.slice(0,5)} unit="篇" empty="暂无机构信息" /></div>
-                <div className="lg:col-span-2 rounded-2xl border border-slate-200 p-4"><div className="mb-3 text-sm font-semibold">近期文献</div><PaperRows items={topic.recent.slice(0,8)} /></div>
-              </div> : <div className="text-sm text-slate-500">请先为文献添加 Topic。</div>}
-            </div>
-          ) : null}
-
-          {tab === 'people' ? (
-            <div className="grid gap-5 lg:grid-cols-2">
-              <RankTable title="作者在做什么" rows={stats.authors.slice(0,15)} />
-              <RankTable title="机构 / 团队在做什么" rows={stats.institutions.slice(0,15)} empty="暂无 affiliation 数据" />
-            </div>
-          ) : null}
-
-          {tab === 'citations' ? (
-            <div>
-              <div className="mb-4 flex flex-wrap items-center gap-3"><div><h3 className="font-semibold">Topic 引用排行</h3><p className="text-xs text-slate-500">OpenAlex 为主；日更脚本默认每天刷新一次</p></div><select value={topicName} onChange={e=>setSelectedTopic(e.target.value)} className="ml-auto rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm"><option value="">全部 Topic</option>{stats.topics.map(x=><option key={x.name}>{x.name}</option>)}</select></div>
-              <div className="divide-y divide-slate-200 rounded-2xl border border-slate-200">{citationList.slice(0,30).map((p,i)=>{const c=citationOf(p);return <div key={p.id||i} className="grid grid-cols-[38px_1fr_auto] gap-3 p-3"><div className="text-center text-lg font-bold text-slate-300">{i+1}</div><div className="min-w-0"><div className="truncate font-medium text-slate-900">{makePaperLabel(p)}</div><div className="mt-1 text-xs text-slate-500">{authorsOf(p).slice(0,3).map(a=>a.name).join(', ') || '作者待补充'} · {publicationYearOf(p)||'年份待补充'} · {c.source||'未同步'}{isCitationStale(p)?' · 待更新':''}</div></div><div className="text-right"><div className="text-xl font-bold text-sky-700">{c.count}</div><div className="text-[11px] text-slate-500">引用</div></div></div>})}</div>
-            </div>
-          ) : null}
-
-          {tab === 'relations' ? (
-            <div className="grid gap-5 lg:grid-cols-[.8fr_1.2fr]">
-              <div><h3 className="mb-3 font-semibold">Topic 共现关系</h3><div className="space-y-2">{stats.links.slice(0,16).map(link=><button key={link.source+link.target} onClick={()=>{setSelectedTopic(link.source);setTab('topic')}} className="flex w-full items-center gap-2 rounded-2xl border border-slate-200 p-3 text-left hover:bg-slate-50"><span className="truncate text-sm font-medium">{link.source}</span><span className="text-slate-300">↔</span><span className="min-w-0 flex-1 truncate text-sm font-medium">{link.target}</span><span className={badgeClass()}>{link.count} 篇</span></button>)}</div>{!stats.links.length?<div className="text-sm text-slate-500">同一篇文献至少需要两个 Topic 才会形成关联。</div>:null}</div>
-              <div><h3 className="mb-3 font-semibold">高关联文献</h3><PaperRows items={Array.from(new Map(stats.links.flatMap(x=>x.papers).map(p=>[p.id,p])).values()).slice(0,20)} /></div>
-            </div>
-          ) : null}
-
-          {tab === 'quality' ? <DataQualityPanel items={items} coverage={stats.coverage} /> : null}
-        </div>
-      </div>
-
       <div className="bg-white rounded-3xl shadow-soft border border-slate-200 p-4">
-        <div className="flex items-center gap-2 text-slate-900 font-semibold mb-3"><span className="text-lg">🗓️</span><span>上传日历</span><span className="ml-auto text-xs text-slate-500">最近 1 年</span></div>
+        <div className="flex items-center gap-2 text-slate-900 font-semibold mb-3">
+          <span className="text-lg">🏷️</span>
+          <span>文章标签 / 主题</span>
+        </div>
+
+        {/* Topics row */}
+        <div className="flex flex-wrap gap-2 mb-3">
+          {topicsCount.slice(0, 12).map(([t, c]) => (
+            <button key={t} onClick={()=>onPickTopic(t)} className={btnClass('success', 'px-3 py-2')}>
+              {t}<span className={badgeClass()}>{c}</span>
+            </button>
+          ))}
+          {topicsCount.length > 12 ? (
+            <span className="text-xs text-slate-500 self-center ml-1">（更多请用筛选/搜索）</span>
+          ) : null}
+        </div>
+
+        {/* Tags row */}
+        <div className="flex flex-wrap gap-2">
+          {tagsCount.slice(0, 12).map(([t, c]) => (
+            <button key={t} onClick={()=>onPickTag(t)} className={btnClass('slate', 'px-3 py-2')}>
+              {t}<span className={badgeClass()}>{c}</span>
+            </button>
+          ))}
+          {tagsCount.length > 12 ? (
+            <span className="text-xs text-slate-500 self-center ml-1">（更多请用筛选/搜索）</span>
+          ) : null}
+        </div>
+
+        {/* Word cloud */}
+        <div className="mt-5">
+          <div className="text-sm font-semibold text-slate-700 mb-2">热点 Topic（词云）</div>
+          <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 overflow-hidden">
+            <div className="flex flex-wrap gap-x-4 gap-y-2 items-end">
+              {topTopics.map(([t,c]) => {
+                const scale = 0.9 + (c / maxCnt) * 1.3; // 0.9 - 2.2
+                return (
+                  <button
+                    key={t}
+                    onClick={()=>onPickTopic(t)}
+                    className="text-sky-700 hover:text-sky-900"
+                    style={{ fontSize: `${Math.round(12 * scale)}px`, lineHeight: 1.1 }}
+                    title={`${t}: ${c}`}
+                  >
+                    {t}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Heatmap */}
+      <div className="bg-white rounded-3xl shadow-soft border border-slate-200 p-4">
+        <div className="flex items-center gap-2 text-slate-900 font-semibold mb-3">
+          <span className="text-lg">🗓️</span>
+          <span>文章日历</span>
+          <span className="ml-auto text-xs text-slate-500">最近 1 年上传密度</span>
+        </div>
+
         <Heatmap heat={heat} />
       </div>
     </section>
   );
-}
-
-function MiniBarChart({ values, maxValue=1 }) {
-  if (!values?.length) return <div className="text-sm text-slate-500">暂无发表日期数据</div>;
-  return <div className="flex h-40 items-end gap-2 overflow-x-auto border-b border-slate-200 px-1 pt-4">{values.map(([label,value])=><div key={label} className="flex min-w-[34px] flex-1 flex-col items-center justify-end gap-1"><span className="text-[11px] font-semibold text-slate-600">{value}</span><div className="w-full max-w-10 rounded-t-lg bg-gradient-to-t from-sky-700 to-cyan-400" style={{height:`${Math.max(8,Math.round(value/maxValue*105))}px`}}></div><span className="text-[10px] text-slate-500">{label}</span></div>)}</div>;
-}
-
-function RankRows({ rows, unit='篇', empty='暂无数据' }) {
-  if (!rows?.length) return <div className="text-xs text-slate-500">{empty}</div>;
-  return <div className="space-y-2">{rows.map((r,i)=><div key={r.name} className="flex items-center gap-3 text-sm"><span className="w-5 text-xs font-bold text-slate-400">{i+1}</span><span className="min-w-0 flex-1 truncate">{r.name}</span><span className="font-semibold">{r.count} {unit}</span></div>)}</div>;
-}
-
-function RankTable({ title, rows, empty='暂无数据' }) {
-  return <div className="rounded-2xl border border-slate-200 p-4"><h3 className="mb-3 font-semibold">{title}</h3>{rows?.length?<div className="divide-y divide-slate-200">{rows.map((r,i)=><div key={r.name} className="py-3"><div className="flex gap-3"><span className="text-xs font-bold text-slate-400">{String(i+1).padStart(2,'0')}</span><span className="min-w-0 flex-1 truncate font-medium">{r.name}</span><span className="text-sm font-semibold">{r.count} 篇 · {r.citations} 引用</span></div><div className="ml-8 mt-1 truncate text-xs text-slate-500">{r.topTopics.map(([t,c])=>`${t} ${c}`).join(' · ') || 'Topic 待补充'}{r.latestYear?` · 最近 ${r.latestYear}`:''}</div></div>)}</div>:<div className="text-sm text-slate-500">{empty}</div>}</div>;
-}
-
-function PaperRows({ items }) {
-  if (!items?.length) return <div className="text-sm text-slate-500">暂无文献</div>;
-  return <div className="divide-y divide-slate-200">{items.map((p,i)=><div key={p.id||i} className="py-3"><div className="font-medium text-slate-900">{makePaperLabel(p)}</div><div className="mt-1 text-xs text-slate-500">{authorsOf(p).slice(0,4).map(a=>a.name).join(', ') || '作者待补充'} · {scholarlyOf(p).venue || '来源待补充'} · {publicationYearOf(p)||'年份待补充'} · {citationOf(p).count} 引用</div></div>)}</div>;
-}
-
-function DataQualityPanel({ items, coverage }) {
-  const checks = [
-    ['缺少 DOI', items.filter(x=>!scholarlyOf(x).doi)],
-    ['缺少作者', items.filter(x=>!authorsOf(x).length)],
-    ['缺少发表日期', items.filter(x=>!scholarlyOf(x).publicationDate && !scholarlyOf(x).year)],
-    ['缺少手工 Topic', items.filter(x=>!getTopicsArr(x).length)],
-    ['引用待同步 / 已过期', items.filter(x=>isCitationStale(x))],
-    ['元数据匹配需复核', items.filter(x=>scholarlyOf(x).metadataError || (scholarlyOf(x).matchConfidence && scholarlyOf(x).matchConfidence < 0.78 && !String(scholarlyOf(x).metadataReview?.status||'').startsWith('accepted')))],
-    ['历史 PDF 扫描失败', items.filter(x=>scholarlyOf(x).backfillScan?.status==='error')]
-  ];
-  return <div><div className="mb-4"><h3 className="font-semibold">数据质量检查</h3><p className="text-xs text-slate-500">优先补 DOI 与 Topic：前者改善自动匹配，后者决定你的知识组织口径。</p></div><div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{checks.map(([label,list])=><div key={label} className={cx('rounded-2xl border p-4',list.length?'border-amber-200 bg-amber-50':'border-emerald-200 bg-emerald-50')}><div className="text-2xl font-bold">{list.length}</div><div className="text-sm font-semibold">{label}</div><div className="mt-1 truncate text-xs text-slate-500">{list.slice(0,3).map(makePaperLabel).join('、') || '状态良好'}</div></div>)}</div><div className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-xs text-slate-600">元数据 {coverage.scholarly}/{items.length} · DOI {coverage.doi}/{items.length} · 作者 {coverage.authors}/{items.length} · 引用 {coverage.citations}/{items.length}</div></div>;
 }
 
 function Heatmap({ heat }) {
@@ -3539,8 +2714,6 @@ function PreviewPanel({
           <option value="title_asc">标题(A→Z)</option>
           <option value="title_desc">标题(Z→A)</option>
           <option value="type">按类型</option>
-          <option value="citations_desc">按引用数(高→低)</option>
-          <option value="publication_desc">按发表时间(新→旧)</option>
         </select>
 
         <button type="button" onClick={handleResetFilters} className={btnClass('slate')}>
@@ -3596,9 +2769,6 @@ function Card({ cfg, item, onOpen, onEdit, onDelete, onRepair, canAdmin }) {
 
   const topicsArr = getTopicsArr(item);
   const status = uploadStatusMeta(item);
-  const scholarly = scholarlyOf(item);
-  const authors = authorsOf(item);
-  const citation = citationOf(item);
 
   // raw：优先用 storage（新条目）以便能下载真实文件；否则沿用旧逻辑
   const rawHref = (() => {
@@ -3617,7 +2787,7 @@ function Card({ cfg, item, onOpen, onEdit, onDelete, onRepair, canAdmin }) {
   const coverSrc = item.imagePath ? buildRawUrl(cfg, item.imagePath) : '';
 
   return (
-    <div className="bg-white rounded-3xl border border-slate-200 shadow-soft p-4 flex flex-col h-full min-h-[390px]">
+    <div className="bg-white rounded-3xl border border-slate-200 shadow-soft p-4 flex flex-col h-full min-h-[340px]">
       <div className="mb-3 w-full h-36 rounded-2xl overflow-hidden bg-slate-100 flex items-center justify-center">
         {coverSrc ? (
           <img src={coverSrc} alt="cover" className="w-full h-full object-cover" />
@@ -3651,18 +2821,6 @@ function Card({ cfg, item, onOpen, onEdit, onDelete, onRepair, canAdmin }) {
           ) : null}
         </div>
       </div>
-
-      {(authors.length || scholarly.venue || scholarly.year || citation.source) ? (
-        <div className="mt-3 rounded-2xl border border-sky-100 bg-sky-50 p-3 text-xs text-sky-950">
-          <div className="truncate font-medium">{authors.slice(0,3).map(a=>a.name).join(', ') || '作者待补充'}{authors.length>3?` 等 ${authors.length} 人`:''}</div>
-          <div className="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-sky-800">
-            <span>{scholarly.venue || '来源待补充'}{publicationYearOf(item) ? ` · ${publicationYearOf(item)}` : ''}</span>
-            <span className="font-semibold">↗ {citation.count} 引用</span>
-            {isCitationStale(item) ? <span className="text-amber-700">待刷新</span> : null}
-          </div>
-          {(scholarly.doi || scholarly.arxivId) ? <div className="mt-1 truncate text-[11px] text-slate-500">{scholarly.doi ? `DOI ${scholarly.doi}` : `arXiv ${scholarly.arxivId}`}</div> : null}
-        </div>
-      ) : null}
 
       {topicsArr.length ? (
         <div className="mt-3 flex flex-wrap gap-2">
@@ -3793,7 +2951,6 @@ function ViewerModal({ cfg, item, onClose, onReplace, mode }) {
             <div className="text-xs text-slate-500">
               {FILE_KINDS[item.kind]?.label || 'FILE'} · {fmtDate(item.ts)}{topicsArr[0] ? ` · ${topicsArr[0]}` : ''}
             </div>
-            {authorsOf(item).length ? <div className="mt-1 max-w-2xl truncate text-xs text-sky-700">{authorsOf(item).map(a=>a.name).join(', ')} · {scholarlyOf(item).venue || '来源待补充'} · {publicationYearOf(item)||'年份待补充'} · {citationOf(item).count} 引用</div> : null}
           </div>
           <div className="flex items-center gap-2 flex-wrap justify-end">
             {item.kind === 'pdf' ? (
@@ -3869,40 +3026,12 @@ function EditItemModal({ item, onClose, onSave }) {
   const [title, setTitle] = useState(item.title || '');
   const [topicsInput, setTopicsInput] = useState(initialTopicsArr.join(', '));
   const [tagsInput, setTagsInput] = useState((item.tags || []).join(', '));
-  const [groupsInput, setGroupsInput] = useState((item.groups || []).join('; '));
   const [desc, setDesc] = useState(item.desc || '');
   const [cover, setCover] = useState(null);
-  const [scholarly, setScholarly] = useState(() => ({ ...scholarlyOf(item) }));
-  const [authorsInput, setAuthorsInput] = useState(authorsOf(item).map(a=>a.name).join('; '));
-  const [institutionsInput, setInstitutionsInput] = useState(institutionsOf(item).map(x=>x.name).join('; '));
-  const [citationCount, setCitationCount] = useState(String(citationOf(item).count || 0));
-  const [resolving, setResolving] = useState(false);
-  const [metadataMsg, setMetadataMsg] = useState('');
-
-  async function refreshMetadata() {
-    setResolving(true); setMetadataMsg('');
-    try {
-      const resolved = await resolveScholarlyMetadata({ title, doi: scholarly.doi, arxivId: scholarly.arxivId });
-      setScholarly(prev => ({ ...prev, ...resolved }));
-      if (resolved.title) setTitle(resolved.title);
-      if (resolved.abstract && !desc) setDesc(resolved.abstract);
-      setAuthorsInput((resolved.authors || []).map(a=>a.name).join('; '));
-      setInstitutionsInput((resolved.institutions || []).map(x=>x.name).join('; '));
-      setCitationCount(String(resolved.citations?.count || 0));
-      setMetadataMsg(resolved.metadataError ? resolved.metadataError : `已从 ${resolved.metadataSource || '学术数据库'} 刷新`);
-    } catch (e) { setMetadataMsg('刷新失败：' + (e.message || String(e))); }
-    finally { setResolving(false); }
-  }
 
   function handleSubmit() {
     const topicsArr = topicsInput ? topicsInput.split(',').map(s => s.trim()).filter(Boolean) : [];
     const tagsArr = tagsInput ? tagsInput.split(',').map(s => s.trim()).filter(Boolean) : [];
-    const groupsArr = groupsInput ? groupsInput.split(/[;；]/).map(s=>s.trim()).filter(Boolean) : [];
-    const authorNames = authorsInput ? authorsInput.split(/[;；\n]/).map(s=>s.trim()).filter(Boolean) : [];
-    const institutionNames = institutionsInput ? institutionsInput.split(/[;；\n]/).map(s=>s.trim()).filter(Boolean) : [];
-    const structuredAuthors = authorNames.map(name => scholarly.authors?.find(a=>a.name===name) || { name });
-    const structuredInstitutions = institutionNames.map(name => scholarly.institutions?.find(x=>x.name===name) || { name });
-    const citations = { ...citationOf(item), ...(scholarly.citations || {}), count: Math.max(0, Number(citationCount || 0)), updatedAt: scholarly.citations?.updatedAt || citationOf(item).updatedAt };
 
     const updated = {
       ...item,
@@ -3910,23 +3039,20 @@ function EditItemModal({ item, onClose, onSave }) {
       desc,
       topics: topicsArr,
       topic: topicsArr[0] || '',
-      tags: tagsArr,
-      groups: groupsArr,
-      scholarly: { ...scholarly, authors: structuredAuthors, institutions: structuredInstitutions, citations },
-      citations
+      tags: tagsArr
     };
     onSave && onSave(updated, cover);
   }
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={onClose}>
-      <div className="bg-white rounded-3xl max-w-5xl w-full border border-slate-200 shadow-2xl overflow-hidden" onClick={e=>e.stopPropagation()}>
+      <div className="bg-white rounded-3xl max-w-3xl w-full border border-slate-200 shadow-2xl overflow-hidden" onClick={e=>e.stopPropagation()}>
         <div className="flex items-center justify-between px-4 py-3 border-b border-slate-200">
           <div className="font-semibold">编辑条目信息</div>
           <button onClick={onClose} className={btnClass('danger')}>关闭</button>
         </div>
 
-        <div className="max-h-[75vh] overflow-auto p-4 grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-3">
             <label className="text-sm block">
               <div className="mb-1 text-slate-700">标题</div>
@@ -3942,11 +3068,6 @@ function EditItemModal({ item, onClose, onSave }) {
               <div className="mb-1 text-slate-700">标签（逗号分隔）</div>
               <input value={tagsInput} onChange={e=>setTagsInput(e.target.value)} className="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white text-sm" />
             </label>
-
-            <label className="text-sm block">
-              <div className="mb-1 text-slate-700">团队 / 实验室（分号分隔，手工校正）</div>
-              <input value={groupsInput} onChange={e=>setGroupsInput(e.target.value)} className="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white text-sm" placeholder="例如：A 教授课题组; Quantum Transport Lab" />
-            </label>
           </div>
 
           <div className="space-y-3">
@@ -3959,20 +3080,6 @@ function EditItemModal({ item, onClose, onSave }) {
               <div className="mb-1 text-slate-700">替换封面（可选）</div>
               <input type="file" accept="image/*" onChange={e=>setCover((e.target.files||[])[0]||null)} className="block w-full text-sm" />
             </label>
-          </div>
-
-          <div className="space-y-3 rounded-2xl border border-sky-200 bg-sky-50 p-3">
-            <div className="flex items-center justify-between gap-2"><div className="text-sm font-semibold text-sky-950">学术元数据</div><button type="button" disabled={resolving} onClick={refreshMetadata} className={btnClass('primary', resolving?'opacity-60':'')}>{resolving?'匹配中…':'自动刷新'}</button></div>
-            <label className="text-xs block"><div className="mb-1 text-slate-700">DOI</div><input value={scholarly.doi||''} onChange={e=>setScholarly({...scholarly,doi:cleanDoi(e.target.value)})} className="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white text-sm" /></label>
-            <label className="text-xs block"><div className="mb-1 text-slate-700">arXiv ID</div><input value={scholarly.arxivId||''} onChange={e=>setScholarly({...scholarly,arxivId:e.target.value})} className="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white text-sm" /></label>
-            <label className="text-xs block"><div className="mb-1 text-slate-700">作者（分号分隔）</div><textarea rows={2} value={authorsInput} onChange={e=>setAuthorsInput(e.target.value)} className="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white text-sm" /></label>
-            <label className="text-xs block"><div className="mb-1 text-slate-700">机构（分号分隔）</div><textarea rows={2} value={institutionsInput} onChange={e=>setInstitutionsInput(e.target.value)} className="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white text-sm" /></label>
-            <div className="grid grid-cols-2 gap-2">
-              <label className="text-xs block"><div className="mb-1 text-slate-700">期刊 / 来源</div><input value={scholarly.venue||''} onChange={e=>setScholarly({...scholarly,venue:e.target.value})} className="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white text-sm" /></label>
-              <label className="text-xs block"><div className="mb-1 text-slate-700">发表日期</div><input type="date" value={scholarly.publicationDate||''} onChange={e=>setScholarly({...scholarly,publicationDate:e.target.value,year:Number(e.target.value.slice(0,4))||null})} className="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white text-sm" /></label>
-            </div>
-            <label className="text-xs block"><div className="mb-1 text-slate-700">引用数</div><input type="number" min="0" value={citationCount} onChange={e=>setCitationCount(e.target.value)} className="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white text-sm" /></label>
-            {metadataMsg ? <div className="rounded-xl bg-white p-2 text-xs leading-5 text-slate-600">{metadataMsg}</div> : null}
           </div>
         </div>
 
@@ -4146,7 +3253,7 @@ function Footer() {
         <span>·</span>
         <span>单文件 HTML（React + Tailwind）</span>
         <span>·</span>
-        <span>v4.1 · 历史 PDF 回填 + 人工复核 + OpenAlex/Crossref 引用日更</span>
+        <span>v3.3 · 全站私有访问 + 浏览器持久授权 + PAT 浏览器隔离 + SHA 链 + Pages 发布</span>
       </div>
     </footer>
   );
