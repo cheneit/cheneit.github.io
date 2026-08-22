@@ -1,0 +1,462 @@
+{
+  "schemaVersion": 1,
+  "mode": "backfill",
+  "generatedAt": "2026-08-22T04:08:30.658934+00:00",
+  "acceptThreshold": 0.78,
+  "summary": {
+    "accepted": 17,
+    "review": 8,
+    "unmatched": 0,
+    "error": 0
+  },
+  "results": [
+    {
+      "itemId": "vt1d169ilrmilesd5h",
+      "originalTitle": "Krasnov2025arXiv-Planar Josephson junction-geometry effect-Sweden",
+      "status": "review",
+      "confidence": 0.0,
+      "method": "no-result",
+      "stage": "pdf",
+      "matchedTitle": "Planar Josephson junctions for sensors and electronics:Different geometry, new functionality",
+      "doi": "",
+      "authors": [
+        "Vladimir M. Krasnov"
+      ],
+      "message": "PDF parsed but database match was not reliable"
+    },
+    {
+      "itemId": "ldc66htfehmilgejyv",
+      "originalTitle": "Pal2025PRB-Floquet Majorana plus altermagnet-India",
+      "status": "accepted",
+      "confidence": 0.99,
+      "method": "doi-exact",
+      "stage": "pdf",
+      "matchedTitle": "Josephson current signature of Floquet Majorana and topological accidental zero modes in altermagnet heterostructures",
+      "doi": "10.1103/prnx-47mk",
+      "authors": [
+        "Amartya Pal",
+        "Debashish Mondal",
+        "Tanay Nag",
+        "Arijit Saha"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "z0556nycn8milgoy40",
+      "originalTitle": "Lopez2025PRB-Lieb-kagome interpolated lattices",
+      "status": "accepted",
+      "confidence": 0.99,
+      "method": "doi-exact",
+      "stage": "pdf",
+      "matchedTitle": "Programmable exploration of magnetic states in Lieb-kagome interpolated lattices",
+      "doi": "10.1103/nykx-1tsz",
+      "authors": [
+        "Alejandro López‐Bezanilla",
+        "Pavel A. Dub",
+        "Avadh Saxena"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "7rr5pefb84fmilh1erl",
+      "originalTitle": "Wu2025PRB-AI-InSb nanosheet Josephson junction-HQXu",
+      "status": "accepted",
+      "confidence": 0.99,
+      "method": "doi-exact",
+      "stage": "pdf",
+      "matchedTitle": "Ubiquitous missing first Shapiro step in Al-InSb nanosheet Josephson junctions",
+      "doi": "10.1103/3tvf-5v29",
+      "authors": [
+        "Xingjun Wu",
+        "Haitian Su",
+        "Chuanchang Zeng",
+        "Ji‐Yin Wang",
+        "Shili Yan",
+        "Dong Pan",
+        "Jianhua Zhao",
+        "Po Zhang",
+        "H. Q. Xu"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "0of7dc2g3m9lmimlgjfi",
+      "originalTitle": "Chirolli2025CP-Diode effect in the Fraunhofer pattern of disordered PJJ",
+      "status": "accepted",
+      "confidence": 0.99,
+      "method": "doi-exact",
+      "stage": "pdf",
+      "matchedTitle": "Diode effect in the Fraunhofer pattern of disordered planar Josephson junctions",
+      "doi": "10.1038/s42005-025-02364-y",
+      "authors": [
+        "Luca Chirolli",
+        "Angelo Greco",
+        "Alessandro Crippa",
+        "Elia Strambini",
+        "Mario Cuoco",
+        "Luigi Amico",
+        "Francesco Giazotto"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "nzlxfcpbozmimpighg",
+      "originalTitle": "Asenjo2025arXiv-Coherent subgap transport in spin-split Josephson junctions",
+      "status": "review",
+      "confidence": 0.0,
+      "method": "no-result",
+      "stage": "pdf",
+      "matchedTitle": "Coherent subgap transport in spin-split Josephson junctions",
+      "doi": "",
+      "authors": [
+        "David Caldevilla-Asenjo",
+        "Gorm Ole Steffensen",
+        "Sara Catalano",
+        "Alberto Hijano",
+        "Maxim Ilyn",
+        "Celia Rogero",
+        "Ramon Aguado",
+        "F. Sebastian Bergeret",
+        "Alfredo Levy Yeyati"
+      ],
+      "message": "PDF parsed but database match was not reliable"
+    },
+    {
+      "itemId": "suggiyzq7romimq7pox",
+      "originalTitle": "Hadji2025arXiv-Majorana with a twist",
+      "status": "accepted",
+      "confidence": 0.93,
+      "method": "arxiv-search",
+      "stage": "pdf",
+      "matchedTitle": "Gate engineering Fabry-Pérot resonance in altermagnetic junctions",
+      "doi": "10.1038/s41598-025-29607-w",
+      "authors": [
+        "Qianqian Lv",
+        "Yong Xu",
+        "Jun-Feng Liu",
+        "Pei-Hao Fu",
+        "Xiang‐Long Yu"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "whjh3kbrc3aminwe8wi",
+      "originalTitle": "Reinhardt2025PRB-Supercurrent phi_0 JJ arrays",
+      "status": "accepted",
+      "confidence": 0.99,
+      "method": "doi-exact",
+      "stage": "pdf",
+      "matchedTitle": "Spontaneous supercurrents and vortex depinning in two-dimensional arrays of φ 0 Josephson junctions",
+      "doi": "10.1103/31zv-84hw",
+      "authors": [
+        "Simon Reinhardt",
+        "Alexander-Georg Penner",
+        "Jorge Berger",
+        "Christian Baumgärtner",
+        "Sergei Gronin",
+        "G. C. Gardner",
+        "Tyler Lindemann",
+        "Michael J. Manfra",
+        "L. I. Glazman",
+        "Felix von Oppen",
+        "Nicola Paradiso",
+        "Christoph Strunk"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "xy8zo03nq4emio3z23q",
+      "originalTitle": "Bobkov2025arXiv-Theory of planar quasi-ballistic JJ",
+      "status": "review",
+      "confidence": 0.0,
+      "method": "no-result",
+      "stage": "pdf",
+      "matchedTitle": "Theory of planar quasi-ballistic Josephson junctions",
+      "doi": "",
+      "authors": [
+        "G. A. Bobkov",
+        "I. V. Bobkova",
+        "A. M. Bobkov",
+        "K. B. Polevoy",
+        "V. S. Stolyarov"
+      ],
+      "message": "PDF parsed but database match was not reliable"
+    },
+    {
+      "itemId": "dkh6j67ypz7mio4g9pa",
+      "originalTitle": "Cayao2025arXiv-Nonlocal JDE in minimal Kitaev chains",
+      "status": "accepted",
+      "confidence": 0.93,
+      "method": "arxiv-search",
+      "stage": "pdf",
+      "matchedTitle": "Spin-polarized Andreev molecules and anomalous nonlocal Josephson effects in altermagnetic junctions",
+      "doi": "",
+      "authors": [
+        "Sayan Mondal",
+        "Jorge Cayao"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "mj6arkv2as8miplh7d9",
+      "originalTitle": "Fracassi2025arXiv-Intrinsic and Tunable SDE in QSH system",
+      "status": "accepted",
+      "confidence": 0.93,
+      "method": "arxiv-search",
+      "stage": "pdf",
+      "matchedTitle": "Anisotropic Superconducting Diode Effect in Planar Josephson Junctions",
+      "doi": "",
+      "authors": [
+        "Abhishek Chilampankunnel Prasannan",
+        "Barış Pekerten",
+        "Nowar Alashkar",
+        "Alex Matos-Abiague"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "bdl7rbwwmqdmiplulqm",
+      "originalTitle": "Wang2025arXiv-Fermi surface dictates superconducting properties for a d-wave pairing state",
+      "status": "review",
+      "confidence": 0.0,
+      "method": "no-result",
+      "stage": "pdf",
+      "matchedTitle": "Intrinsic Second-Order Topological Superconductors with Tunable Majorana Zero Modes",
+      "doi": "",
+      "authors": [
+        "Xiao-Jiao Wang",
+        "Yijie Mo",
+        "Zhi Wang",
+        "Zhigang Wu",
+        "Zhongbo Yan"
+      ],
+      "message": "PDF parsed but database match was not reliable"
+    },
+    {
+      "itemId": "7493ys34ju9mipm9zj4",
+      "originalTitle": "Singer2025arXiv-Positional memory of skyrmions in magnetic bilayers",
+      "status": "review",
+      "confidence": 0.0,
+      "method": "no-result",
+      "stage": "pdf",
+      "matchedTitle": "Positional memory of skyrmions in magnetic bilayers",
+      "doi": "",
+      "authors": [
+        "Bruno Barton-Singer",
+        "Anusree Navallur",
+        "Stavros Komineas"
+      ],
+      "message": "PDF parsed but database match was not reliable"
+    },
+    {
+      "itemId": "nnqh6r3et4mipmmv4z",
+      "originalTitle": "Li2025arXiv-Quantum Coulomb drag signatures of MBS",
+      "status": "review",
+      "confidence": 0.0,
+      "method": "no-result",
+      "stage": "pdf",
+      "matchedTitle": "Quantum Coulomb drag signatures of Majorana bound states",
+      "doi": "",
+      "authors": [
+        "Zi-Wei Li",
+        "Jiaojiao Chen",
+        "Wei Xiong",
+        "Xiao Xue",
+        "Zeng-Zhao Li"
+      ],
+      "message": "PDF parsed but database match was not reliable"
+    },
+    {
+      "itemId": "zlngonh1azmipmtr3q",
+      "originalTitle": "Zhu2025arXiv-AMSFET",
+      "status": "accepted",
+      "confidence": 0.93,
+      "method": "arxiv-search",
+      "stage": "pdf",
+      "matchedTitle": "Altermagnetic Proximity Effect",
+      "doi": "10.1103/kqy8-myz1",
+      "authors": [
+        "Ziye Zhu",
+        "Richang Huang",
+        "Xianzhang Chen",
+        "Zhou Cui",
+        "Xunkai Duan",
+        "Jiayong Zhang",
+        "Igor Žutić",
+        "Zhou Tong"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "mmcoa42it6miqyrqtt",
+      "originalTitle": "Ouyang2025arXiv-Quantum geometric Planar Magnetotransport",
+      "status": "accepted",
+      "confidence": 0.93,
+      "method": "arxiv-search",
+      "stage": "pdf",
+      "matchedTitle": "Linear Magnetoresistance as a Probe of the Neel Vector in Altermagnets with Vanishing Anomalous Hall Effect",
+      "doi": "",
+      "authors": [
+        "Kamal Das",
+        "Binghai Yan"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "tcu90nuvi7amiqz72j8",
+      "originalTitle": "Sten2025arXiv-Spectral Bifurcation Anomalous supercurrent in dissipative topological insulator-based JJ",
+      "status": "accepted",
+      "confidence": 0.93,
+      "method": "arxiv-search",
+      "stage": "pdf",
+      "matchedTitle": "Anomalous supercurrents in the presence of particle losses",
+      "doi": "10.48550/arxiv.2505.21085",
+      "authors": [
+        "Risa Ogino",
+        "Shun Uchino"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "x4mksf8gjnamiqzrf92",
+      "originalTitle": "Bedow2025npjQI-Solving the Bernstein-Vazirani problem using Majorana-based topological quantum algorithms",
+      "status": "accepted",
+      "confidence": 0.99,
+      "method": "doi-exact",
+      "stage": "pdf",
+      "matchedTitle": "Solving the Bernstein-Vazirani problem using Majorana-based topological quantum algorithms",
+      "doi": "10.1038/s41534-025-01120-y",
+      "authors": [
+        "Jasmin Bedow",
+        "Dirk K. Morr"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "7asly6ycc9omiscli70",
+      "originalTitle": "Remez2025arXiv-Andreev Optoelectronics-JDSau",
+      "status": "review",
+      "confidence": 0.0,
+      "method": "no-result",
+      "stage": "pdf",
+      "matchedTitle": "Andreev Optoelectronics",
+      "doi": "",
+      "authors": [
+        "Benjamin Remez",
+        "Pouyan Ghaemi",
+        "Jay D. Sau",
+        "Mohammad Hafezi"
+      ],
+      "message": "PDF parsed but database match was not reliable"
+    },
+    {
+      "itemId": "1wm180u12zbmislx7wh",
+      "originalTitle": "Liu2025arXiv-Altermagnetism and superconductivity",
+      "status": "accepted",
+      "confidence": 0.93,
+      "method": "arxiv-search",
+      "stage": "pdf",
+      "matchedTitle": "Altermagnetism-driven FFLO superconductivity in finite-filling 2D lattices",
+      "doi": "10.1007/s43673-026-00187-9",
+      "authors": [
+        "Xia-Ji Liu",
+        "Hui Hu"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "7mi6gfm3tjbmiva9jq7",
+      "originalTitle": "Fu2025arXiv-Multiple Topological phases controlled via strain in Two-Dimensional Altermagnets",
+      "status": "accepted",
+      "confidence": 0.93,
+      "method": "arxiv-search",
+      "stage": "pdf",
+      "matchedTitle": "Classification and design of two-dimensional altermagnets",
+      "doi": "10.15302/frontphys.2026.095301",
+      "authors": [
+        "Sike Zeng",
+        "Dong Liu",
+        "Hongjie Peng",
+        "Changchun He",
+        "Xiao‐Bao Yang",
+        "Yu-Jun Zhao"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "4wthrl3zzutmivaqc5i",
+      "originalTitle": "Pandey2025arXiv-X gates braiding MZM",
+      "status": "review",
+      "confidence": 0.0,
+      "method": "no-result",
+      "stage": "pdf",
+      "matchedTitle": "Simulation of Topological $X$-Gates via Braiding of Majorana Zero Modes in an Interacting Quantum Dot System",
+      "doi": "",
+      "authors": [
+        "Bradraj Pandey",
+        "Satoshi Okamoto",
+        "Pontus Laurell",
+        "Stephan Rachel",
+        "Elbio Dagotto"
+      ],
+      "message": "PDF parsed but database match was not reliable"
+    },
+    {
+      "itemId": "deax90u8g7pmivax4gx",
+      "originalTitle": "Feng2025arXiv-Type-II quantum spin Hall insulator_Zhongyi_Lu",
+      "status": "accepted",
+      "confidence": 0.93,
+      "method": "arxiv-search",
+      "stage": "pdf",
+      "matchedTitle": "Type-II Mirror Chern Insulator in Altermagnets",
+      "doi": "",
+      "authors": [
+        "Amrita Mukherjee",
+        "Pritesh Srivastava",
+        "Rahul Verma",
+        "Bahadur Singh"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "fnkjwf2aqq5mivc1xx1",
+      "originalTitle": "TZ2021PRL-QSVHK-251207",
+      "status": "accepted",
+      "confidence": 0.99,
+      "method": "doi-exact",
+      "stage": "pdf",
+      "matchedTitle": "Quantum Spin-Valley Hall Kink States: From Concept to Materials Design",
+      "doi": "10.1103/physrevlett.127.116402",
+      "authors": [
+        "Tong Zhou",
+        "Shu-guang Cheng",
+        "Michael Schleenvoigt",
+        "Peter Schüffelgen",
+        "Hua Jiang",
+        "Zhongqin Yang",
+        "Igor Žutić"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "qg0ha2iin7emivcaku0",
+      "originalTitle": "TZ2020PRL-XJ-251207",
+      "status": "accepted",
+      "confidence": 0.99,
+      "method": "doi-exact",
+      "stage": "pdf",
+      "matchedTitle": "Phase Control of Majorana Bound States in a Topological X Junction",
+      "doi": "10.1103/physrevlett.124.137001",
+      "authors": [
+        "Tong Zhou",
+        "Matthieu Dartiailh",
+        "William Mayer",
+        "Jong E. Han",
+        "Alex Matos-Abiague",
+        "Javad Shabani",
+        "Igor Žutić"
+      ],
+      "message": ""
+    }
+  ]
+}

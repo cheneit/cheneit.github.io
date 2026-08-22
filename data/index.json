@@ -13,7 +13,17 @@
       "ts": 1764488323238,
       "size": 1727487,
       "desc": "a upload test",
-      "imagePath": "data/files/2025/11/images/3p3hy44271emilesbdn__Krasnov2025arXiv.png"
+      "imagePath": "data/files/2025/11/images/3p3hy44271emilesbdn__Krasnov2025arXiv.png",
+      "scholarly": {
+        "backfillScan": {
+          "status": "review",
+          "confidence": 0.0,
+          "method": "no-result",
+          "stage": "pdf",
+          "message": "PDF parsed but database match was not reliable",
+          "scannedAt": 1787371650188
+        }
+      }
     },
     {
       "id": "ldc66htfehmilgejyv",
@@ -32,7 +42,317 @@
       "ts": 1764491037735,
       "size": 1541447,
       "desc": "If there is any possible to use Floquet technique to prob the MZM fusion results?",
-      "imagePath": "data/files/2025/11/images/y4o68isn8vbmilgehjz__Pal2025PRB.png"
+      "imagePath": "data/files/2025/11/images/y4o68isn8vbmilgehjz__Pal2025PRB.png",
+      "scholarly": {
+        "title": "Josephson current signature of Floquet Majorana and topological accidental zero modes in altermagnet heterostructures",
+        "doi": "10.1103/prnx-47mk",
+        "arxivId": "",
+        "openAlexId": "https://openalex.org/W4416591143",
+        "publicationDate": "2025-11-08",
+        "year": 2025,
+        "venue": "Physical review. B./Physical review. B",
+        "venueId": "https://openalex.org/S4210237713",
+        "type": "article",
+        "authors": [
+          {
+            "name": "Amartya Pal",
+            "openAlexId": "https://openalex.org/A5102844659",
+            "orcid": "https://orcid.org/0009-0001-5224-2859",
+            "position": "first",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Homi Bhabha National Institute",
+                "openAlexId": "https://openalex.org/I200207707",
+                "countryCode": "IN",
+                "type": "education"
+              },
+              {
+                "name": "Institute of Physics, Bhubaneshwar",
+                "openAlexId": "https://openalex.org/I40912709",
+                "countryCode": "IN",
+                "type": "facility"
+              }
+            ]
+          },
+          {
+            "name": "Debashish Mondal",
+            "openAlexId": "https://openalex.org/A5074599824",
+            "orcid": "https://orcid.org/0000-0002-3040-7237",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Homi Bhabha National Institute",
+                "openAlexId": "https://openalex.org/I200207707",
+                "countryCode": "IN",
+                "type": "education"
+              },
+              {
+                "name": "Institute of Physics, Bhubaneshwar",
+                "openAlexId": "https://openalex.org/I40912709",
+                "countryCode": "IN",
+                "type": "facility"
+              }
+            ]
+          },
+          {
+            "name": "Tanay Nag",
+            "openAlexId": "https://openalex.org/A5024595871",
+            "orcid": "https://orcid.org/0000-0001-6052-7232",
+            "position": "middle",
+            "corresponding": true,
+            "institutions": [
+              {
+                "name": "Birla Institute of Technology and Science - Hyderabad Campus",
+                "openAlexId": "https://openalex.org/I4210101034",
+                "countryCode": "IN",
+                "type": "education"
+              },
+              {
+                "name": "Birla Institute of Technology and Science, Pilani",
+                "openAlexId": "https://openalex.org/I74796645",
+                "countryCode": "IN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Arijit Saha",
+            "openAlexId": "https://openalex.org/A5002499825",
+            "orcid": "https://orcid.org/0000-0002-6689-1657",
+            "position": "last",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Homi Bhabha National Institute",
+                "openAlexId": "https://openalex.org/I200207707",
+                "countryCode": "IN",
+                "type": "education"
+              },
+              {
+                "name": "Institute of Physics, Bhubaneshwar",
+                "openAlexId": "https://openalex.org/I40912709",
+                "countryCode": "IN",
+                "type": "facility"
+              }
+            ]
+          }
+        ],
+        "institutions": [
+          {
+            "name": "Homi Bhabha National Institute",
+            "openAlexId": "https://openalex.org/I200207707",
+            "countryCode": "IN",
+            "type": "education"
+          },
+          {
+            "name": "Institute of Physics, Bhubaneshwar",
+            "openAlexId": "https://openalex.org/I40912709",
+            "countryCode": "IN",
+            "type": "facility"
+          },
+          {
+            "name": "Birla Institute of Technology and Science - Hyderabad Campus",
+            "openAlexId": "https://openalex.org/I4210101034",
+            "countryCode": "IN",
+            "type": "education"
+          },
+          {
+            "name": "Birla Institute of Technology and Science, Pilani",
+            "openAlexId": "https://openalex.org/I74796645",
+            "countryCode": "IN",
+            "type": "education"
+          }
+        ],
+        "abstract": "We theoretically investigate the generation and Josephson current signatures of Floquet Majorana end modes (FMEMs) in a periodically driven altermagnet (AM) heterostructure. Considering a one-dimensional (1D) Rashba nanowire (RNW) proximitized to a regular $s$-wave superconductor (SC) and a $d$-wave AM, we generate both 0- and $\\ensuremath{\\pi}$-FMEMs by driving the nontopological phase of the static system. Interestingly, the static counterpart hosts both topological Majorana zero modes (MZMs) and inquisitive nontopological accidental zero modes (AZMs) not originating from any metal-SC interface but rather intrinsic to the bulk of the isolated system. The periodic drive can gap out the static AZMs and generate robust $\\ensuremath{\\pi}$-FMEMs, termed as topological AZMs. We topologically characterize the emergent FMEMs via dynamical winding numbers exploiting chiral symmetry of the system. Moreover, we consider a periodically driven Josephson junction comprising a RNW/AM-based 1D topological superconduting setup. We identify the signature of MZMs and FMEMs utilizing the $4\\ensuremath{\\pi}$-periodic Josephson effect, distinguishing them from trivial AZMs exhibiting $2\\ensuremath{\\pi}$ periodicity, in both static and driven platforms. This Josephson current signal due to Majorana modes survives even in the presence of finite disorder. Our Letter establishes a route to realize and identify FMEMs in AM-based platforms through Floquet engineering and Josephson current response.",
+        "automaticTopics": [
+          {
+            "name": "Topological Materials and Phenomena",
+            "id": "https://openalex.org/T10657",
+            "score": 0.991100013256073,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Magnetic properties of thin films",
+            "id": "https://openalex.org/T10049",
+            "score": 0.002400000113993883,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Advanced Condensed Matter Physics",
+            "id": "https://openalex.org/T11682",
+            "score": 0.0010999999940395355,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Topological Materials and Phenomena",
+        "keywords": [
+          "MAJORANA",
+          "Floquet theory",
+          "Josephson effect",
+          "Topology (electrical circuits)",
+          "Signature (topology)",
+          "Topological insulator",
+          "Symmetry (geometry)",
+          "Current (fluid)"
+        ],
+        "relatedWorks": [],
+        "referencedWorks": [
+          "https://openalex.org/W812712742",
+          "https://openalex.org/W1490191146",
+          "https://openalex.org/W1610443639",
+          "https://openalex.org/W1717027248",
+          "https://openalex.org/W1825643586",
+          "https://openalex.org/W1904914631",
+          "https://openalex.org/W1964690451",
+          "https://openalex.org/W1973871552",
+          "https://openalex.org/W1973972788",
+          "https://openalex.org/W1976456012",
+          "https://openalex.org/W1976533410",
+          "https://openalex.org/W1985552732",
+          "https://openalex.org/W1991741527",
+          "https://openalex.org/W2013500054",
+          "https://openalex.org/W2020332193",
+          "https://openalex.org/W2020581398",
+          "https://openalex.org/W2031671478",
+          "https://openalex.org/W2038772068",
+          "https://openalex.org/W2039150838",
+          "https://openalex.org/W2043647075",
+          "https://openalex.org/W2051065380",
+          "https://openalex.org/W2051299771",
+          "https://openalex.org/W2051832479",
+          "https://openalex.org/W2054647191",
+          "https://openalex.org/W2055424520",
+          "https://openalex.org/W2056902350",
+          "https://openalex.org/W2066535961",
+          "https://openalex.org/W2068196600",
+          "https://openalex.org/W2071340121",
+          "https://openalex.org/W2072947251",
+          "https://openalex.org/W2076277430",
+          "https://openalex.org/W2080712192",
+          "https://openalex.org/W2094158956",
+          "https://openalex.org/W2102030996",
+          "https://openalex.org/W2116325781",
+          "https://openalex.org/W2128650222",
+          "https://openalex.org/W2132747503",
+          "https://openalex.org/W2135273380",
+          "https://openalex.org/W2152240519",
+          "https://openalex.org/W2153852402",
+          "https://openalex.org/W2160084444",
+          "https://openalex.org/W2168606130",
+          "https://openalex.org/W2171831009",
+          "https://openalex.org/W2223404803",
+          "https://openalex.org/W2247235180",
+          "https://openalex.org/W2259466246",
+          "https://openalex.org/W2275437705",
+          "https://openalex.org/W2294496489",
+          "https://openalex.org/W2466426585",
+          "https://openalex.org/W2517915099",
+          "https://openalex.org/W2566467992",
+          "https://openalex.org/W2737341800",
+          "https://openalex.org/W2748722892",
+          "https://openalex.org/W2752081759",
+          "https://openalex.org/W2796870940",
+          "https://openalex.org/W2805523151",
+          "https://openalex.org/W2901022903",
+          "https://openalex.org/W2904979580",
+          "https://openalex.org/W2927253027",
+          "https://openalex.org/W2954079695",
+          "https://openalex.org/W2964269613",
+          "https://openalex.org/W3023102073",
+          "https://openalex.org/W3033468010",
+          "https://openalex.org/W3088337309",
+          "https://openalex.org/W3094403112",
+          "https://openalex.org/W3107883091",
+          "https://openalex.org/W4220769311",
+          "https://openalex.org/W4221146680",
+          "https://openalex.org/W4226038443",
+          "https://openalex.org/W4226426854",
+          "https://openalex.org/W4288715928",
+          "https://openalex.org/W4297014776",
+          "https://openalex.org/W4311892900",
+          "https://openalex.org/W4317838224",
+          "https://openalex.org/W4323539991",
+          "https://openalex.org/W4361000949",
+          "https://openalex.org/W4377237930",
+          "https://openalex.org/W4381613065",
+          "https://openalex.org/W4385577688",
+          "https://openalex.org/W4385949808",
+          "https://openalex.org/W4388289575",
+          "https://openalex.org/W4388540560",
+          "https://openalex.org/W4388817050",
+          "https://openalex.org/W4390985412",
+          "https://openalex.org/W4391313079",
+          "https://openalex.org/W4391839354",
+          "https://openalex.org/W4392188187",
+          "https://openalex.org/W4395443233",
+          "https://openalex.org/W4396709286",
+          "https://openalex.org/W4399323853",
+          "https://openalex.org/W4402271685",
+          "https://openalex.org/W4402678326",
+          "https://openalex.org/W4404105819",
+          "https://openalex.org/W4404356310",
+          "https://openalex.org/W4404749227",
+          "https://openalex.org/W4405498837",
+          "https://openalex.org/W4407770706",
+          "https://openalex.org/W4408150973",
+          "https://openalex.org/W4408552337",
+          "https://openalex.org/W4409094422",
+          "https://openalex.org/W4409218110",
+          "https://openalex.org/W4409570923",
+          "https://openalex.org/W4411179981",
+          "https://openalex.org/W4412521888",
+          "https://openalex.org/W4412567403",
+          "https://openalex.org/W4414038179"
+        ],
+        "openAccess": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "landingPageUrl": "https://doi.org/10.1103/prnx-47mk",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "doi-exact",
+        "matchConfidence": 0.99,
+        "matchedFromPdf": true,
+        "updatedAt": 1787371651013,
+        "metadataError": "",
+        "citations": {
+          "count": 5,
+          "source": "OpenAlex",
+          "updatedAt": 1787371651013
+        },
+        "pdfPages": 9,
+        "historicalExtractedAt": 1787371650741,
+        "metadataReview": {
+          "status": "accepted-auto",
+          "confidence": 0.99,
+          "method": "doi-exact",
+          "stage": "pdf",
+          "reviewedAt": 1787371651014
+        },
+        "backfillScan": {
+          "status": "accepted",
+          "confidence": 0.99,
+          "method": "doi-exact",
+          "stage": "pdf",
+          "message": "",
+          "scannedAt": 1787371651014
+        }
+      },
+      "citations": {
+        "count": 5,
+        "source": "OpenAlex",
+        "updatedAt": 1787371651013
+      }
     },
     {
       "id": "z0556nycn8milgoy40",
@@ -50,7 +370,185 @@
       "ts": 1764491523116,
       "size": 2325764,
       "desc": "How about to use the lattice transition to explore the Altermagnet phenomena? ",
-      "imagePath": "data/files/2025/11/images/25x18l1mawemilgowcs__Lopez2025PRB.png"
+      "imagePath": "data/files/2025/11/images/25x18l1mawemilgowcs__Lopez2025PRB.png",
+      "scholarly": {
+        "title": "Programmable exploration of magnetic states in Lieb-kagome interpolated lattices",
+        "doi": "10.1103/nykx-1tsz",
+        "arxivId": "",
+        "openAlexId": "https://openalex.org/W4416581524",
+        "publicationDate": "2025-11-24",
+        "year": 2025,
+        "venue": "Physical review. B./Physical review. B",
+        "venueId": "https://openalex.org/S4210237713",
+        "type": "article",
+        "authors": [
+          {
+            "name": "Alejandro López‐Bezanilla",
+            "openAlexId": "https://openalex.org/A5018526809",
+            "orcid": "https://orcid.org/0000-0002-4142-2360",
+            "position": "first",
+            "corresponding": true,
+            "institutions": [
+              {
+                "name": "Los Alamos National Laboratory",
+                "openAlexId": "https://openalex.org/I1343871089",
+                "countryCode": "US",
+                "type": "facility"
+              }
+            ]
+          },
+          {
+            "name": "Pavel A. Dub",
+            "openAlexId": "https://openalex.org/A5070272149",
+            "orcid": "https://orcid.org/0000-0001-9750-6603",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Los Alamos National Laboratory",
+                "openAlexId": "https://openalex.org/I1343871089",
+                "countryCode": "US",
+                "type": "facility"
+              }
+            ]
+          },
+          {
+            "name": "Avadh Saxena",
+            "openAlexId": "https://openalex.org/A5091910309",
+            "orcid": "https://orcid.org/0000-0002-3374-3236",
+            "position": "last",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Los Alamos National Laboratory",
+                "openAlexId": "https://openalex.org/I1343871089",
+                "countryCode": "US",
+                "type": "facility"
+              }
+            ]
+          }
+        ],
+        "institutions": [
+          {
+            "name": "Los Alamos National Laboratory",
+            "openAlexId": "https://openalex.org/I1343871089",
+            "countryCode": "US",
+            "type": "facility"
+          }
+        ],
+        "abstract": "We investigate a hybrid modeling framework in which a quantum annealer is used to simulate magnetic interactions in molecular qubit lattices inspired by experimentally realizable systems. Using phthalocyanine assemblies as a structurally constrained prototype, we model a continuous deformation from a Lieb to a kagome lattice, revealing frustration-driven disorder and magnetic field-induced reordering in the spin structure. The goal is to show how a quantum annealer can operate as a physically instantiated, programmable platform to emulate experimentally relevant lattice deformations and produce observables in a manner analogous to an experimental measurement, enabling the characterization of magnetic arrangements beyond the reach of current molecular architectures. This surrogate modeling approach offers a pathway to explore and iteratively design tunable magnetic states in synthetic materials. The synthetic design, structural characterization, and quantum simulation framework established here defines a modular and scalable paradigm for probing the limits of engineered matter across chemistry, condensed matter, and quantum information science.",
+        "automaticTopics": [
+          {
+            "name": "Topological Materials and Phenomena",
+            "id": "https://openalex.org/T10657",
+            "score": 0.7960000038146973,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Advanced Condensed Matter Physics",
+            "id": "https://openalex.org/T11682",
+            "score": 0.03669999912381172,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Quantum many-body systems",
+            "id": "https://openalex.org/T11804",
+            "score": 0.0210999995470047,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Topological Materials and Phenomena",
+        "keywords": [
+          "Quantum",
+          "Observable",
+          "Modular design",
+          "Qubit",
+          "Scalability",
+          "Quantum computer",
+          "Heisenberg model",
+          "Quantum state",
+          "Topology (electrical circuits)"
+        ],
+        "relatedWorks": [],
+        "referencedWorks": [
+          "https://openalex.org/W1989006895",
+          "https://openalex.org/W2007473024",
+          "https://openalex.org/W2029615889",
+          "https://openalex.org/W2043306598",
+          "https://openalex.org/W2058445230",
+          "https://openalex.org/W2061490112",
+          "https://openalex.org/W2079655356",
+          "https://openalex.org/W2093161857",
+          "https://openalex.org/W2516867654",
+          "https://openalex.org/W2547929098",
+          "https://openalex.org/W2762901402",
+          "https://openalex.org/W2793809673",
+          "https://openalex.org/W2886201753",
+          "https://openalex.org/W2897608574",
+          "https://openalex.org/W2901629900",
+          "https://openalex.org/W2912765449",
+          "https://openalex.org/W2924254540",
+          "https://openalex.org/W2941287559",
+          "https://openalex.org/W2982222559",
+          "https://openalex.org/W3006734377",
+          "https://openalex.org/W3120837659",
+          "https://openalex.org/W3183622795",
+          "https://openalex.org/W4322503544",
+          "https://openalex.org/W4390974616",
+          "https://openalex.org/W4396924384",
+          "https://openalex.org/W4401723613",
+          "https://openalex.org/W4405892816",
+          "https://openalex.org/W4407774840",
+          "https://openalex.org/W4409037331",
+          "https://openalex.org/W4413964496"
+        ],
+        "openAccess": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "landingPageUrl": "https://doi.org/10.1103/nykx-1tsz",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "doi-exact",
+        "matchConfidence": 0.99,
+        "matchedFromPdf": true,
+        "updatedAt": 1787371668726,
+        "metadataError": "",
+        "citations": {
+          "count": 0,
+          "source": "OpenAlex",
+          "updatedAt": 1787371668726
+        },
+        "pdfPages": 7,
+        "historicalExtractedAt": 1787371668438,
+        "metadataReview": {
+          "status": "accepted-auto",
+          "confidence": 0.99,
+          "method": "doi-exact",
+          "stage": "pdf",
+          "reviewedAt": 1787371668726
+        },
+        "backfillScan": {
+          "status": "accepted",
+          "confidence": 0.99,
+          "method": "doi-exact",
+          "stage": "pdf",
+          "message": "",
+          "scannedAt": 1787371668726
+        }
+      },
+      "citations": {
+        "count": 0,
+        "source": "OpenAlex",
+        "updatedAt": 1787371668726
+      }
     },
     {
       "id": "7rr5pefb84fmilh1erl",
@@ -70,7 +568,360 @@
       "topics": [
         "Majorana",
         "PJJ"
-      ]
+      ],
+      "scholarly": {
+        "title": "Ubiquitous missing first Shapiro step in Al-InSb nanosheet Josephson junctions",
+        "doi": "10.1103/3tvf-5v29",
+        "arxivId": "",
+        "openAlexId": "https://openalex.org/W4392780904",
+        "publicationDate": "2025-11-21",
+        "year": 2025,
+        "venue": "Physical review. B./Physical review. B",
+        "venueId": "https://openalex.org/S4210237713",
+        "type": "article",
+        "authors": [
+          {
+            "name": "Xingjun Wu",
+            "openAlexId": "https://openalex.org/A5031148697",
+            "orcid": "https://orcid.org/0000-0002-9286-8688",
+            "position": "first",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Beijing Academy of Quantum Information Sciences",
+                "openAlexId": "https://openalex.org/I4210150858",
+                "countryCode": "CN",
+                "type": "facility"
+              }
+            ]
+          },
+          {
+            "name": "Haitian Su",
+            "openAlexId": "https://openalex.org/A5072892971",
+            "orcid": "https://orcid.org/0000-0001-5400-0071",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Peking University",
+                "openAlexId": "https://openalex.org/I20231570",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Chuanchang Zeng",
+            "openAlexId": "https://openalex.org/A5043445217",
+            "orcid": "https://orcid.org/0000-0003-3550-2513",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Beijing Academy of Quantum Information Sciences",
+                "openAlexId": "https://openalex.org/I4210150858",
+                "countryCode": "CN",
+                "type": "facility"
+              }
+            ]
+          },
+          {
+            "name": "Ji‐Yin Wang",
+            "openAlexId": "https://openalex.org/A5079401955",
+            "orcid": "https://orcid.org/0000-0001-6783-7217",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Beijing Academy of Quantum Information Sciences",
+                "openAlexId": "https://openalex.org/I4210150858",
+                "countryCode": "CN",
+                "type": "facility"
+              }
+            ]
+          },
+          {
+            "name": "Shili Yan",
+            "openAlexId": "https://openalex.org/A5048121358",
+            "orcid": "https://orcid.org/0000-0002-9733-2137",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Beijing Academy of Quantum Information Sciences",
+                "openAlexId": "https://openalex.org/I4210150858",
+                "countryCode": "CN",
+                "type": "facility"
+              }
+            ]
+          },
+          {
+            "name": "Dong Pan",
+            "openAlexId": "",
+            "orcid": "https://orcid.org/0000-0003-2067-6983",
+            "position": "middle",
+            "corresponding": true,
+            "institutions": [
+              {
+                "name": "Chinese Academy of Sciences",
+                "openAlexId": "https://openalex.org/I19820366",
+                "countryCode": "CN",
+                "type": "government"
+              }
+            ]
+          },
+          {
+            "name": "Jianhua Zhao",
+            "openAlexId": "https://openalex.org/A5041072209",
+            "orcid": "https://orcid.org/0000-0003-2282-6826",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Chinese Academy of Sciences",
+                "openAlexId": "https://openalex.org/I19820366",
+                "countryCode": "CN",
+                "type": "government"
+              }
+            ]
+          },
+          {
+            "name": "Po Zhang",
+            "openAlexId": "https://openalex.org/A5101514416",
+            "orcid": "https://orcid.org/0000-0001-7847-9478",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Beijing Academy of Quantum Information Sciences",
+                "openAlexId": "https://openalex.org/I4210150858",
+                "countryCode": "CN",
+                "type": "facility"
+              }
+            ]
+          },
+          {
+            "name": "H. Q. Xu",
+            "openAlexId": "https://openalex.org/A5074148793",
+            "orcid": "https://orcid.org/0000-0001-6434-2569",
+            "position": "last",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Peking University",
+                "openAlexId": "https://openalex.org/I20231570",
+                "countryCode": "CN",
+                "type": "education"
+              },
+              {
+                "name": "Beijing Academy of Quantum Information Sciences",
+                "openAlexId": "https://openalex.org/I4210150858",
+                "countryCode": "CN",
+                "type": "facility"
+              }
+            ]
+          }
+        ],
+        "institutions": [
+          {
+            "name": "Beijing Academy of Quantum Information Sciences",
+            "openAlexId": "https://openalex.org/I4210150858",
+            "countryCode": "CN",
+            "type": "facility"
+          },
+          {
+            "name": "Peking University",
+            "openAlexId": "https://openalex.org/I20231570",
+            "countryCode": "CN",
+            "type": "education"
+          },
+          {
+            "name": "Chinese Academy of Sciences",
+            "openAlexId": "https://openalex.org/I19820366",
+            "countryCode": "CN",
+            "type": "government"
+          }
+        ],
+        "abstract": "Why is the first Shapiro step often missing in Josephson junction experiments---a hallmark which has long been associated with topological superconductivity? The authors solve this puzzle here using topologically trivial Al--InSb nanosheet junctions, showing the missing step comes from a measurement blind region caused by sharp superconducting switching jumps. Tuning temperature, magnetic field, microwave power, or frequency restores the step when jumps are softened or lowered, identifying that there exists a ubiquitous non-topological origin.",
+        "automaticTopics": [
+          {
+            "name": "Surface and Thin Film Phenomena",
+            "id": "https://openalex.org/T13531",
+            "score": 0.9984999895095825,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Quantum Information and Cryptography",
+            "id": "https://openalex.org/T10020",
+            "score": 0.9962000250816345,
+            "subfield": "Artificial Intelligence",
+            "field": "Computer Science",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Quantum and electron transport phenomena",
+            "id": "https://openalex.org/T10382",
+            "score": 0.9959999918937683,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Surface and Thin Film Phenomena",
+        "keywords": [
+          "Josephson effect",
+          "Jump",
+          "Superconductivity",
+          "Condensed matter physics",
+          "Nanosheet",
+          "Pi Josephson junction",
+          "Superconducting tunnel junction",
+          "Physics",
+          "Materials science",
+          "Nanotechnology",
+          "Quantum mechanics"
+        ],
+        "relatedWorks": [
+          "https://openalex.org/W2102470243",
+          "https://openalex.org/W1991073394",
+          "https://openalex.org/W2964780600",
+          "https://openalex.org/W2039321566",
+          "https://openalex.org/W2144504516",
+          "https://openalex.org/W2597018809",
+          "https://openalex.org/W2103366528",
+          "https://openalex.org/W4226376029",
+          "https://openalex.org/W2036333628",
+          "https://openalex.org/W2060752474"
+        ],
+        "referencedWorks": [
+          "https://openalex.org/W2037807652",
+          "https://openalex.org/W2093699506",
+          "https://openalex.org/W2174568001",
+          "https://openalex.org/W2168606130",
+          "https://openalex.org/W2088198211",
+          "https://openalex.org/W2117734893",
+          "https://openalex.org/W1983970619",
+          "https://openalex.org/W2055424520",
+          "https://openalex.org/W2067650803",
+          "https://openalex.org/W2061000251",
+          "https://openalex.org/W2006294391",
+          "https://openalex.org/W2043175787",
+          "https://openalex.org/W2025311334",
+          "https://openalex.org/W1970188810",
+          "https://openalex.org/W1905539406",
+          "https://openalex.org/W2112784946",
+          "https://openalex.org/W2950417131",
+          "https://openalex.org/W2971501892",
+          "https://openalex.org/W2997055716",
+          "https://openalex.org/W3016854441",
+          "https://openalex.org/W3023286726",
+          "https://openalex.org/W3092252743",
+          "https://openalex.org/W4311667375",
+          "https://openalex.org/W3210728580",
+          "https://openalex.org/W4221158123",
+          "https://openalex.org/W3022271612",
+          "https://openalex.org/W2135273380",
+          "https://openalex.org/W2152240519",
+          "https://openalex.org/W2168226651",
+          "https://openalex.org/W1973972788",
+          "https://openalex.org/W2115109350",
+          "https://openalex.org/W2116325781",
+          "https://openalex.org/W2160084444",
+          "https://openalex.org/W2089843538",
+          "https://openalex.org/W2566467992",
+          "https://openalex.org/W2296259435",
+          "https://openalex.org/W2256476973",
+          "https://openalex.org/W2887552177",
+          "https://openalex.org/W2735041728",
+          "https://openalex.org/W2903829043",
+          "https://openalex.org/W3201937991",
+          "https://openalex.org/W2566706182",
+          "https://openalex.org/W1985552732",
+          "https://openalex.org/W2051299771",
+          "https://openalex.org/W1975355857",
+          "https://openalex.org/W2083657029",
+          "https://openalex.org/W1996770621",
+          "https://openalex.org/W1500489173",
+          "https://openalex.org/W2070706333",
+          "https://openalex.org/W2584601086",
+          "https://openalex.org/W2756962530",
+          "https://openalex.org/W3146978846",
+          "https://openalex.org/W2142860500",
+          "https://openalex.org/W2264452342",
+          "https://openalex.org/W2810111006",
+          "https://openalex.org/W1825643586",
+          "https://openalex.org/W2784065302",
+          "https://openalex.org/W4280575071",
+          "https://openalex.org/W4411566688",
+          "https://openalex.org/W2948340606",
+          "https://openalex.org/W2284319333",
+          "https://openalex.org/W2904454213",
+          "https://openalex.org/W4407630429",
+          "https://openalex.org/W1985054360",
+          "https://openalex.org/W4384296668",
+          "https://openalex.org/W4207009908",
+          "https://openalex.org/W2231191750",
+          "https://openalex.org/W2013940834",
+          "https://openalex.org/W4309133647",
+          "https://openalex.org/W1981083331",
+          "https://openalex.org/W2793503146",
+          "https://openalex.org/W2614328225",
+          "https://openalex.org/W2106081122",
+          "https://openalex.org/W4225854637",
+          "https://openalex.org/W2502683567",
+          "https://openalex.org/W2014874211",
+          "https://openalex.org/W1995440712",
+          "https://openalex.org/W2170041629",
+          "https://openalex.org/W2015238504",
+          "https://openalex.org/W4399657419",
+          "https://openalex.org/W2068520802",
+          "https://openalex.org/W1976952431",
+          "https://openalex.org/W4399198619",
+          "https://openalex.org/W6930182580"
+        ],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2403.07370",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "https://doi.org/10.1103/3tvf-5v29",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "doi-exact",
+        "matchConfidence": 0.99,
+        "matchedFromPdf": true,
+        "updatedAt": 1787371669688,
+        "metadataError": "",
+        "citations": {
+          "count": 1,
+          "source": "OpenAlex",
+          "updatedAt": 1787371669688
+        },
+        "pdfPages": 9,
+        "historicalExtractedAt": 1787371669407,
+        "metadataReview": {
+          "status": "accepted-auto",
+          "confidence": 0.99,
+          "method": "doi-exact",
+          "stage": "pdf",
+          "reviewedAt": 1787371669688
+        },
+        "backfillScan": {
+          "status": "accepted",
+          "confidence": 0.99,
+          "method": "doi-exact",
+          "stage": "pdf",
+          "message": "",
+          "scannedAt": 1787371669688
+        }
+      },
+      "citations": {
+        "count": 1,
+        "source": "OpenAlex",
+        "updatedAt": 1787371669688
+      }
     },
     {
       "id": "0of7dc2g3m9lmimlgjfi",
@@ -91,7 +942,314 @@
       "ts": 1764559996536,
       "size": 1576820,
       "desc": "At least, you can learn a lot calculation method in the topological superconductor field.",
-      "imagePath": "data/files/2025/12/images/glcwcdmn29wmimlghfj__Chirolli2025CP.png"
+      "imagePath": "data/files/2025/12/images/glcwcdmn29wmimlghfj__Chirolli2025CP.png",
+      "scholarly": {
+        "title": "Diode effect in the Fraunhofer pattern of disordered planar Josephson junctions",
+        "doi": "10.1038/s42005-025-02364-y",
+        "arxivId": "",
+        "openAlexId": "https://openalex.org/W4416793689",
+        "publicationDate": "2025-11-28",
+        "year": 2025,
+        "venue": "Communications Physics",
+        "venueId": "https://openalex.org/S4210200995",
+        "type": "article",
+        "authors": [
+          {
+            "name": "Luca Chirolli",
+            "openAlexId": "https://openalex.org/A5015504301",
+            "orcid": "https://orcid.org/0000-0002-8439-9949",
+            "position": "first",
+            "corresponding": true,
+            "institutions": [
+              {
+                "name": "Technology Innovation Institute",
+                "openAlexId": "https://openalex.org/I4210087059",
+                "countryCode": "AE",
+                "type": "facility"
+              },
+              {
+                "name": "University of Florence",
+                "openAlexId": "https://openalex.org/I45084792",
+                "countryCode": "IT",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Angelo Greco",
+            "openAlexId": "https://openalex.org/A5068721538",
+            "orcid": "https://orcid.org/0000-0002-8082-7694",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Istituto Nanoscienze",
+                "openAlexId": "https://openalex.org/I4210087815",
+                "countryCode": "IT",
+                "type": "facility"
+              }
+            ]
+          },
+          {
+            "name": "Alessandro Crippa",
+            "openAlexId": "https://openalex.org/A5101563377",
+            "orcid": "https://orcid.org/0000-0002-2968-611X",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Istituto Nanoscienze",
+                "openAlexId": "https://openalex.org/I4210087815",
+                "countryCode": "IT",
+                "type": "facility"
+              }
+            ]
+          },
+          {
+            "name": "Elia Strambini",
+            "openAlexId": "https://openalex.org/A5035962895",
+            "orcid": "https://orcid.org/0000-0003-1135-2004",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Istituto Nanoscienze",
+                "openAlexId": "https://openalex.org/I4210087815",
+                "countryCode": "IT",
+                "type": "facility"
+              }
+            ]
+          },
+          {
+            "name": "Mario Cuoco",
+            "openAlexId": "https://openalex.org/A5017944793",
+            "orcid": "https://orcid.org/0000-0002-7325-8331",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Salerno",
+                "openAlexId": "https://openalex.org/I131729948",
+                "countryCode": "IT",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Luigi Amico",
+            "openAlexId": "https://openalex.org/A5073497618",
+            "orcid": "https://orcid.org/0000-0002-9024-5727",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Catania",
+                "openAlexId": "https://openalex.org/I39063666",
+                "countryCode": "IT",
+                "type": "education"
+              },
+              {
+                "name": "Technology Innovation Institute",
+                "openAlexId": "https://openalex.org/I4210087059",
+                "countryCode": "AE",
+                "type": "facility"
+              },
+              {
+                "name": "Istituto Nazionale di Fisica Nucleare, Sezione di Catania",
+                "openAlexId": "https://openalex.org/I4210116497",
+                "countryCode": "IT",
+                "type": "facility"
+              }
+            ]
+          },
+          {
+            "name": "Francesco Giazotto",
+            "openAlexId": "https://openalex.org/A5059450888",
+            "orcid": "https://orcid.org/0000-0002-1571-137X",
+            "position": "last",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Istituto Nanoscienze",
+                "openAlexId": "https://openalex.org/I4210087815",
+                "countryCode": "IT",
+                "type": "facility"
+              }
+            ]
+          }
+        ],
+        "institutions": [
+          {
+            "name": "Technology Innovation Institute",
+            "openAlexId": "https://openalex.org/I4210087059",
+            "countryCode": "AE",
+            "type": "facility"
+          },
+          {
+            "name": "University of Florence",
+            "openAlexId": "https://openalex.org/I45084792",
+            "countryCode": "IT",
+            "type": "education"
+          },
+          {
+            "name": "Istituto Nanoscienze",
+            "openAlexId": "https://openalex.org/I4210087815",
+            "countryCode": "IT",
+            "type": "facility"
+          },
+          {
+            "name": "University of Salerno",
+            "openAlexId": "https://openalex.org/I131729948",
+            "countryCode": "IT",
+            "type": "education"
+          },
+          {
+            "name": "University of Catania",
+            "openAlexId": "https://openalex.org/I39063666",
+            "countryCode": "IT",
+            "type": "education"
+          },
+          {
+            "name": "Istituto Nazionale di Fisica Nucleare, Sezione di Catania",
+            "openAlexId": "https://openalex.org/I4210116497",
+            "countryCode": "IT",
+            "type": "facility"
+          }
+        ],
+        "abstract": "Here, the authors consider the superconducting diode effect in the Fraunhofer pattern of planar Josephson junctions and focus on the role of spatial disorder of several kinds in the junction to yield the diode effect.",
+        "automaticTopics": [
+          {
+            "name": "Physics of Superconductivity and Magnetism",
+            "id": "https://openalex.org/T10037",
+            "score": 0.3122999966144562,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Quantum and electron transport phenomena",
+            "id": "https://openalex.org/T10382",
+            "score": 0.24660000205039978,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Quantum Information and Cryptography",
+            "id": "https://openalex.org/T10020",
+            "score": 0.07479999959468842,
+            "subfield": "Artificial Intelligence",
+            "field": "Computer Science",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Physics of Superconductivity and Magnetism",
+        "keywords": [
+          "Josephson effect",
+          "Planar",
+          "Pi Josephson junction",
+          "Diode",
+          "Josephson phase",
+          "Josephson energy",
+          "Tunnel diode"
+        ],
+        "relatedWorks": [],
+        "referencedWorks": [
+          "https://openalex.org/W1979612403",
+          "https://openalex.org/W2009956201",
+          "https://openalex.org/W2024646391",
+          "https://openalex.org/W2039150838",
+          "https://openalex.org/W2050953930",
+          "https://openalex.org/W2092583264",
+          "https://openalex.org/W2096328150",
+          "https://openalex.org/W2104864237",
+          "https://openalex.org/W2165401941",
+          "https://openalex.org/W2502245449",
+          "https://openalex.org/W2607389010",
+          "https://openalex.org/W3013558683",
+          "https://openalex.org/W3065296583",
+          "https://openalex.org/W3096704903",
+          "https://openalex.org/W3160614976",
+          "https://openalex.org/W3212800858",
+          "https://openalex.org/W4224019862",
+          "https://openalex.org/W4225397173",
+          "https://openalex.org/W4225962443",
+          "https://openalex.org/W4226144382",
+          "https://openalex.org/W4280546412",
+          "https://openalex.org/W4281560914",
+          "https://openalex.org/W4281706680",
+          "https://openalex.org/W4286750327",
+          "https://openalex.org/W4291624907",
+          "https://openalex.org/W4311015457",
+          "https://openalex.org/W4312191621",
+          "https://openalex.org/W4360608523",
+          "https://openalex.org/W4378715663",
+          "https://openalex.org/W4383868381",
+          "https://openalex.org/W4384154098",
+          "https://openalex.org/W4386168825",
+          "https://openalex.org/W4386223906",
+          "https://openalex.org/W4386769062",
+          "https://openalex.org/W4388970364",
+          "https://openalex.org/W4389048287",
+          "https://openalex.org/W4389429352",
+          "https://openalex.org/W4391051422",
+          "https://openalex.org/W4391376962",
+          "https://openalex.org/W4391506284",
+          "https://openalex.org/W4391567378",
+          "https://openalex.org/W4392121055",
+          "https://openalex.org/W4392599960",
+          "https://openalex.org/W4392864424",
+          "https://openalex.org/W4393386244",
+          "https://openalex.org/W4394009855",
+          "https://openalex.org/W4395022235",
+          "https://openalex.org/W4399121249",
+          "https://openalex.org/W4401585962",
+          "https://openalex.org/W4402534174",
+          "https://openalex.org/W4406258626",
+          "https://openalex.org/W4406497348",
+          "https://openalex.org/W4408285334"
+        ],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://doi.org/10.1038/s42005-025-02364-y",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "https://doi.org/10.1038/s42005-025-02364-y",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "doi-exact",
+        "matchConfidence": 0.99,
+        "matchedFromPdf": true,
+        "updatedAt": 1787371671318,
+        "metadataError": "",
+        "citations": {
+          "count": 2,
+          "source": "OpenAlex",
+          "updatedAt": 1787371671318
+        },
+        "pdfPages": 9,
+        "historicalExtractedAt": 1787371670525,
+        "metadataReview": {
+          "status": "accepted-auto",
+          "confidence": 0.99,
+          "method": "doi-exact",
+          "stage": "pdf",
+          "reviewedAt": 1787371671318
+        },
+        "backfillScan": {
+          "status": "accepted",
+          "confidence": 0.99,
+          "method": "doi-exact",
+          "stage": "pdf",
+          "message": "",
+          "scannedAt": 1787371671318
+        }
+      },
+      "citations": {
+        "count": 2,
+        "source": "OpenAlex",
+        "updatedAt": 1787371671318
+      }
     },
     {
       "id": "nzlxfcpbozmimpighg",
@@ -112,7 +1270,17 @@
       "ts": 1764566833798,
       "size": 14718209,
       "desc": "A transport experiments concerns about the subgap states",
-      "imagePath": "data/files/2025/12/images/p3xztp7d30imimpicp7__Asenjo2025arXiv.png"
+      "imagePath": "data/files/2025/12/images/p3xztp7d30imimpicp7__Asenjo2025arXiv.png",
+      "scholarly": {
+        "backfillScan": {
+          "status": "review",
+          "confidence": 0.0,
+          "method": "no-result",
+          "stage": "pdf",
+          "message": "PDF parsed but database match was not reliable",
+          "scannedAt": 1787371672268
+        }
+      }
     },
     {
       "id": "suggiyzq7romimq7pox",
@@ -131,7 +1299,308 @@
       "ts": 1764567987944,
       "size": 3171933,
       "desc": "Maybe altermagnet can be used as a tool for MZM fusion control",
-      "imagePath": "data/files/2025/12/images/nl83yygcae9mimqwqf5__Hadji2025arXiv.png"
+      "imagePath": "data/files/2025/12/images/nl83yygcae9mimqwqf5__Hadji2025arXiv.png",
+      "scholarly": {
+        "title": "Gate engineering Fabry-Pérot resonance in altermagnetic junctions",
+        "doi": "10.1038/s41598-025-29607-w",
+        "arxivId": "2507.00119",
+        "openAlexId": "https://openalex.org/W4416759099",
+        "publicationDate": "2025-11-27",
+        "year": 2025,
+        "venue": "Scientific Reports",
+        "venueId": "https://openalex.org/S196734849",
+        "type": "article",
+        "authors": [
+          {
+            "name": "Qianqian Lv",
+            "openAlexId": "https://openalex.org/A5034517125",
+            "orcid": "https://orcid.org/0000-0001-8873-4508",
+            "position": "first",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Shenzhen University",
+                "openAlexId": "https://openalex.org/I180726961",
+                "countryCode": "CN",
+                "type": "education"
+              },
+              {
+                "name": "University Town of Shenzhen",
+                "openAlexId": "https://openalex.org/I3131625388",
+                "countryCode": "CN",
+                "type": "education"
+              },
+              {
+                "name": "Shenzhen Technology University",
+                "openAlexId": "https://openalex.org/I4210152380",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Yong Xu",
+            "openAlexId": "https://openalex.org/A5014876751",
+            "orcid": "https://orcid.org/0000-0002-4844-2460",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Ningbo University of Technology",
+                "openAlexId": "https://openalex.org/I159389169",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Jun-Feng Liu",
+            "openAlexId": "https://openalex.org/A5100339308",
+            "orcid": "https://orcid.org/0000-0002-1253-1445",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Guangzhou University",
+                "openAlexId": "https://openalex.org/I37987034",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Pei-Hao Fu",
+            "openAlexId": "https://openalex.org/A5025376969",
+            "orcid": "https://orcid.org/0000-0002-7284-8356",
+            "position": "middle",
+            "corresponding": true,
+            "institutions": [
+              {
+                "name": "Sun Yat-sen University",
+                "openAlexId": "https://openalex.org/I157773358",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Xiang‐Long Yu",
+            "openAlexId": "https://openalex.org/A5074460032",
+            "orcid": "https://orcid.org/0000-0001-6342-3826",
+            "position": "last",
+            "corresponding": true,
+            "institutions": [
+              {
+                "name": "Sun Yat-sen University",
+                "openAlexId": "https://openalex.org/I157773358",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          }
+        ],
+        "institutions": [
+          {
+            "name": "Shenzhen University",
+            "openAlexId": "https://openalex.org/I180726961",
+            "countryCode": "CN",
+            "type": "education"
+          },
+          {
+            "name": "University Town of Shenzhen",
+            "openAlexId": "https://openalex.org/I3131625388",
+            "countryCode": "CN",
+            "type": "education"
+          },
+          {
+            "name": "Shenzhen Technology University",
+            "openAlexId": "https://openalex.org/I4210152380",
+            "countryCode": "CN",
+            "type": "education"
+          },
+          {
+            "name": "Ningbo University of Technology",
+            "openAlexId": "https://openalex.org/I159389169",
+            "countryCode": "CN",
+            "type": "education"
+          },
+          {
+            "name": "Guangzhou University",
+            "openAlexId": "https://openalex.org/I37987034",
+            "countryCode": "CN",
+            "type": "education"
+          },
+          {
+            "name": "Sun Yat-sen University",
+            "openAlexId": "https://openalex.org/I157773358",
+            "countryCode": "CN",
+            "type": "education"
+          }
+        ],
+        "abstract": "Electrically generating and controlling spin-polarized transport is a central objective in spintronics. Altermagnets, which exhibit compensated magnetic order and symmetry-protected spin splitting, offer a promising route toward this goal without requiring net magnetization, magnetic fields, or spin-orbit coupling. Here, we investigate coherent spin transport in a two-dimensional d-wave altermagnetic junction connected to normal metal leads. The anisotropic exchange field induces spin-dependent effective masses, resulting in distinct Fabry-Pérot resonance conditions for spin-up and spin-down electrons. When the junction length matches half-integer multiples of the spin-dependent wavelength, one spin channel is resonantly transmitted while the other is suppressed, yielding fully spin-polarized transport. Employing the quantum scattering formalism, we show that the spin polarization of the transmitted current can be controlled by tuning (i) the gate potential in the altermagnet, (ii) the interfacial barrier strength, and (iii) the orientation of the altermagnetic field. These control parameters enable electrically tunable spin filtering and provide a diagnostic to distinguish between distinct d-wave altermagnetic symmetries. In particular, we show that the [Formula: see text]-wave altermagnet supports robust gate-controlled spin-polarized current even in the high-barrier tunneling regime, a behavior absent in its [Formula: see text]-wave counterpart. Our results establish a field-free, gate-controlled mechanism for spintronic functionality rooted in the crystalline anisotropy of altermagnetic materials.",
+        "automaticTopics": [
+          {
+            "name": "Quantum and electron transport phenomena",
+            "id": "https://openalex.org/T10382",
+            "score": 0.5764999985694885,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Magnetic properties of thin films",
+            "id": "https://openalex.org/T10049",
+            "score": 0.12269999831914902,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Topological Materials and Phenomena",
+            "id": "https://openalex.org/T10657",
+            "score": 0.09309999644756317,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Quantum and electron transport phenomena",
+        "keywords": [
+          "Spintronics",
+          "Quantum tunnelling",
+          "Spin (aerodynamics)",
+          "Anisotropy",
+          "Polarization (electrochemistry)",
+          "Ferromagnetic resonance",
+          "Spin polarization",
+          "Scattering",
+          "Resonance (particle physics)"
+        ],
+        "relatedWorks": [],
+        "referencedWorks": [
+          "https://openalex.org/W1803879908",
+          "https://openalex.org/W1873194781",
+          "https://openalex.org/W1965245884",
+          "https://openalex.org/W2023212843",
+          "https://openalex.org/W2043072234",
+          "https://openalex.org/W2046424514",
+          "https://openalex.org/W2081380661",
+          "https://openalex.org/W2115949340",
+          "https://openalex.org/W2259466246",
+          "https://openalex.org/W2751496304",
+          "https://openalex.org/W2790585029",
+          "https://openalex.org/W2903563976",
+          "https://openalex.org/W2914976964",
+          "https://openalex.org/W2936853891",
+          "https://openalex.org/W3010394536",
+          "https://openalex.org/W3037962468",
+          "https://openalex.org/W3038018551",
+          "https://openalex.org/W3147650139",
+          "https://openalex.org/W3150683473",
+          "https://openalex.org/W3187106661",
+          "https://openalex.org/W3200828486",
+          "https://openalex.org/W3204351223",
+          "https://openalex.org/W3213006326",
+          "https://openalex.org/W4200225072",
+          "https://openalex.org/W4210971201",
+          "https://openalex.org/W4220917821",
+          "https://openalex.org/W4297014776",
+          "https://openalex.org/W4308469771",
+          "https://openalex.org/W4311892900",
+          "https://openalex.org/W4317543090",
+          "https://openalex.org/W4385949808",
+          "https://openalex.org/W4386069892",
+          "https://openalex.org/W4387250359",
+          "https://openalex.org/W4387743689",
+          "https://openalex.org/W4388289575",
+          "https://openalex.org/W4388393147",
+          "https://openalex.org/W4388540560",
+          "https://openalex.org/W4391027412",
+          "https://openalex.org/W4391506144",
+          "https://openalex.org/W4392120420",
+          "https://openalex.org/W4392188187",
+          "https://openalex.org/W4395036675",
+          "https://openalex.org/W4395443233",
+          "https://openalex.org/W4399323853",
+          "https://openalex.org/W4399362407",
+          "https://openalex.org/W4399548438",
+          "https://openalex.org/W4400083582",
+          "https://openalex.org/W4400248256",
+          "https://openalex.org/W4400978692",
+          "https://openalex.org/W4401944167",
+          "https://openalex.org/W4402271685",
+          "https://openalex.org/W4402807663",
+          "https://openalex.org/W4403385126",
+          "https://openalex.org/W4403706079",
+          "https://openalex.org/W4403783250",
+          "https://openalex.org/W4404304930",
+          "https://openalex.org/W4404356310",
+          "https://openalex.org/W4404749227",
+          "https://openalex.org/W4404919972",
+          "https://openalex.org/W4405705110",
+          "https://openalex.org/W4406497348",
+          "https://openalex.org/W4406994497",
+          "https://openalex.org/W4407639888",
+          "https://openalex.org/W4408150973",
+          "https://openalex.org/W4408360261",
+          "https://openalex.org/W4408558258",
+          "https://openalex.org/W4409094422",
+          "https://openalex.org/W4409218110",
+          "https://openalex.org/W4409378266",
+          "https://openalex.org/W4409570923",
+          "https://openalex.org/W4410737067",
+          "https://openalex.org/W4411364683",
+          "https://openalex.org/W4412073079",
+          "https://openalex.org/W4412521888",
+          "https://openalex.org/W4412567403",
+          "https://openalex.org/W4415232638",
+          "https://openalex.org/W4416506522",
+          "https://openalex.org/W6929269981",
+          "https://openalex.org/W6929335407",
+          "https://openalex.org/W6929502784",
+          "https://openalex.org/W7083436368"
+        ],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://www.nature.com/articles/s41598-025-29607-w_reference.pdf",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "https://doi.org/10.1038/s41598-025-29607-w",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "arxiv-search",
+        "matchConfidence": 0.93,
+        "matchedFromPdf": true,
+        "updatedAt": 1787371673231,
+        "metadataError": "",
+        "citations": {
+          "count": 2,
+          "source": "OpenAlex",
+          "updatedAt": 1787371673231
+        },
+        "pdfPages": 12,
+        "historicalExtractedAt": 1787371672779,
+        "metadataReview": {
+          "status": "accepted-auto",
+          "confidence": 0.93,
+          "method": "arxiv-search",
+          "stage": "pdf",
+          "reviewedAt": 1787371673231
+        },
+        "backfillScan": {
+          "status": "accepted",
+          "confidence": 0.93,
+          "method": "arxiv-search",
+          "stage": "pdf",
+          "message": "",
+          "scannedAt": 1787371673231
+        }
+      },
+      "citations": {
+        "count": 2,
+        "source": "OpenAlex",
+        "updatedAt": 1787371673231
+      }
     },
     {
       "id": "whjh3kbrc3aminwe8wi",
@@ -151,7 +1620,376 @@
       "ts": 1764638829491,
       "size": 1173566,
       "desc": "I like arrays, which looks like more fancy. The signatures of such JJ arrays is first studied to my knowledge.",
-      "imagePath": "data/files/2025/12/images/io8z8mmpkjjminwe6x7__Reinhardt2025PRB.png"
+      "imagePath": "data/files/2025/12/images/io8z8mmpkjjminwe6x7__Reinhardt2025PRB.png",
+      "scholarly": {
+        "title": "Spontaneous supercurrents and vortex depinning in two-dimensional arrays of φ 0 Josephson junctions",
+        "doi": "10.1103/31zv-84hw",
+        "arxivId": "",
+        "openAlexId": "https://openalex.org/W4416937984",
+        "publicationDate": "2025-11-04",
+        "year": 2025,
+        "venue": "Physical review. B./Physical review. B",
+        "venueId": "https://openalex.org/S4210237713",
+        "type": "article",
+        "authors": [
+          {
+            "name": "Simon Reinhardt",
+            "openAlexId": "https://openalex.org/A5012379758",
+            "orcid": "https://orcid.org/0000-0002-5266-7355",
+            "position": "first",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Cornell University",
+                "openAlexId": "https://openalex.org/I205783295",
+                "countryCode": "US",
+                "type": "education"
+              },
+              {
+                "name": "University of Regensburg",
+                "openAlexId": "https://openalex.org/I60668342",
+                "countryCode": "DE",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Alexander-Georg Penner",
+            "openAlexId": "https://openalex.org/A5039285461",
+            "orcid": "https://orcid.org/0000-0003-2868-6553",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Freie Universität Berlin",
+                "openAlexId": "https://openalex.org/I75951250",
+                "countryCode": "DE",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Jorge Berger",
+            "openAlexId": "https://openalex.org/A5079349407",
+            "orcid": "https://orcid.org/0000-0002-1900-6707",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Regensburg",
+                "openAlexId": "https://openalex.org/I60668342",
+                "countryCode": "DE",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Christian Baumgärtner",
+            "openAlexId": "https://openalex.org/A5038698111",
+            "orcid": "https://orcid.org/0000-0002-3763-5195",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Regensburg",
+                "openAlexId": "https://openalex.org/I60668342",
+                "countryCode": "DE",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Sergei Gronin",
+            "openAlexId": "https://openalex.org/A5016581245",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Purdue University West Lafayette",
+                "openAlexId": "https://openalex.org/I219193219",
+                "countryCode": "US",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "G. C. Gardner",
+            "openAlexId": "https://openalex.org/A5088038941",
+            "orcid": "https://orcid.org/0000-0001-5469-9257",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Purdue University West Lafayette",
+                "openAlexId": "https://openalex.org/I219193219",
+                "countryCode": "US",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Tyler Lindemann",
+            "openAlexId": "https://openalex.org/A5078493940",
+            "orcid": "https://orcid.org/0000-0002-2884-5502",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Purdue University West Lafayette",
+                "openAlexId": "https://openalex.org/I219193219",
+                "countryCode": "US",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Michael J. Manfra",
+            "openAlexId": "https://openalex.org/A5091695210",
+            "orcid": "https://orcid.org/0000-0002-2049-8438",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Purdue University West Lafayette",
+                "openAlexId": "https://openalex.org/I219193219",
+                "countryCode": "US",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "L. I. Glazman",
+            "openAlexId": "https://openalex.org/A5044026402",
+            "orcid": "https://orcid.org/0000-0002-2870-3387",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Yale University",
+                "openAlexId": "https://openalex.org/I32971472",
+                "countryCode": "US",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Felix von Oppen",
+            "openAlexId": "https://openalex.org/A5044079340",
+            "orcid": "https://orcid.org/0000-0002-2537-7256",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Freie Universität Berlin",
+                "openAlexId": "https://openalex.org/I75951250",
+                "countryCode": "DE",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Nicola Paradiso",
+            "openAlexId": "https://openalex.org/A5086480216",
+            "orcid": "https://orcid.org/0000-0002-1797-2901",
+            "position": "middle",
+            "corresponding": true,
+            "institutions": [
+              {
+                "name": "University of Regensburg",
+                "openAlexId": "https://openalex.org/I60668342",
+                "countryCode": "DE",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Christoph Strunk",
+            "openAlexId": "https://openalex.org/A5010354110",
+            "orcid": "https://orcid.org/0000-0001-9982-0022",
+            "position": "last",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Regensburg",
+                "openAlexId": "https://openalex.org/I60668342",
+                "countryCode": "DE",
+                "type": "education"
+              }
+            ]
+          }
+        ],
+        "institutions": [
+          {
+            "name": "Cornell University",
+            "openAlexId": "https://openalex.org/I205783295",
+            "countryCode": "US",
+            "type": "education"
+          },
+          {
+            "name": "University of Regensburg",
+            "openAlexId": "https://openalex.org/I60668342",
+            "countryCode": "DE",
+            "type": "education"
+          },
+          {
+            "name": "Freie Universität Berlin",
+            "openAlexId": "https://openalex.org/I75951250",
+            "countryCode": "DE",
+            "type": "education"
+          },
+          {
+            "name": "Purdue University West Lafayette",
+            "openAlexId": "https://openalex.org/I219193219",
+            "countryCode": "US",
+            "type": "education"
+          },
+          {
+            "name": "Yale University",
+            "openAlexId": "https://openalex.org/I32971472",
+            "countryCode": "US",
+            "type": "education"
+          }
+        ],
+        "abstract": "Two-dimensional arrays of ballistic Josephson junctions are important as model systems for synthetic quantum materials. Here, we investigate arrays of multiterminal junctions which exhibit a phase difference ${\\ensuremath{\\varphi}}_{0}$ at zero current. When applying an in-plane magnetic field, we observe nonreciprocal vortex depinning currents. We explain this effect in terms of a ratchetlike pinning potential, which is induced by spontaneous supercurrent loops. Supercurrent loops arise in multiterminal ${\\ensuremath{\\varphi}}_{0}$ junction arrays as a consequence of next-nearest-neighbor Josephson coupling. Tuning the density of vortices to commensurate values of the frustration parameter results in an enhancement of the ratchet effect. In addition, we find a surprising sign reversal of the ratchet effect near frustration 1/3. Our work calls for the search for novel magnetic structures in artificial crystals in the absence of time-reversal symmetry.",
+        "automaticTopics": [
+          {
+            "name": "Physics of Superconductivity and Magnetism",
+            "id": "https://openalex.org/T10037",
+            "score": 0.3953999876976013,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Topological Materials and Phenomena",
+            "id": "https://openalex.org/T10657",
+            "score": 0.1850000023841858,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Cold Atom Physics and Bose-Einstein Condensates",
+            "id": "https://openalex.org/T10425",
+            "score": 0.06469999998807907,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Physics of Superconductivity and Magnetism",
+        "keywords": [
+          "Supercurrent",
+          "Josephson effect",
+          "Ratchet",
+          "Vortex",
+          "Frustration",
+          "Pi Josephson junction",
+          "Superconductivity",
+          "Magnetic field",
+          "Sign (mathematics)"
+        ],
+        "relatedWorks": [],
+        "referencedWorks": [
+          "https://openalex.org/W24996880",
+          "https://openalex.org/W105595245",
+          "https://openalex.org/W1539089494",
+          "https://openalex.org/W1541668824",
+          "https://openalex.org/W1910985001",
+          "https://openalex.org/W1964413568",
+          "https://openalex.org/W1982800057",
+          "https://openalex.org/W1983577507",
+          "https://openalex.org/W2000427041",
+          "https://openalex.org/W2002698820",
+          "https://openalex.org/W2003908387",
+          "https://openalex.org/W2011875499",
+          "https://openalex.org/W2014381682",
+          "https://openalex.org/W2022988588",
+          "https://openalex.org/W2025826089",
+          "https://openalex.org/W2027399325",
+          "https://openalex.org/W2076064819",
+          "https://openalex.org/W2078701970",
+          "https://openalex.org/W2083589435",
+          "https://openalex.org/W2086091269",
+          "https://openalex.org/W2114134453",
+          "https://openalex.org/W2149542248",
+          "https://openalex.org/W2165669011",
+          "https://openalex.org/W2231191750",
+          "https://openalex.org/W2283917190",
+          "https://openalex.org/W2607389010",
+          "https://openalex.org/W2767913985",
+          "https://openalex.org/W2806543101",
+          "https://openalex.org/W2808703263",
+          "https://openalex.org/W2947380134",
+          "https://openalex.org/W2948340606",
+          "https://openalex.org/W3000909176",
+          "https://openalex.org/W3042539288",
+          "https://openalex.org/W3065296583",
+          "https://openalex.org/W3212800858",
+          "https://openalex.org/W4225729880",
+          "https://openalex.org/W4240827927",
+          "https://openalex.org/W4284691309",
+          "https://openalex.org/W4291624907",
+          "https://openalex.org/W4294719329",
+          "https://openalex.org/W4307343404",
+          "https://openalex.org/W4309758013",
+          "https://openalex.org/W4309761876",
+          "https://openalex.org/W4367294523",
+          "https://openalex.org/W4378715663",
+          "https://openalex.org/W4383868381",
+          "https://openalex.org/W4384154098",
+          "https://openalex.org/W4386275045",
+          "https://openalex.org/W4387971486",
+          "https://openalex.org/W4388540881",
+          "https://openalex.org/W4388667555",
+          "https://openalex.org/W4391100906",
+          "https://openalex.org/W4391567378",
+          "https://openalex.org/W4394009855",
+          "https://openalex.org/W4398267379",
+          "https://openalex.org/W4415692886"
+        ],
+        "openAccess": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "landingPageUrl": "https://doi.org/10.1103/31zv-84hw",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "doi-exact",
+        "matchConfidence": 0.99,
+        "matchedFromPdf": true,
+        "updatedAt": 1787371675635,
+        "metadataError": "",
+        "citations": {
+          "count": 1,
+          "source": "OpenAlex",
+          "updatedAt": 1787371675635
+        },
+        "pdfPages": 9,
+        "historicalExtractedAt": 1787371675353,
+        "metadataReview": {
+          "status": "accepted-auto",
+          "confidence": 0.99,
+          "method": "doi-exact",
+          "stage": "pdf",
+          "reviewedAt": 1787371675635
+        },
+        "backfillScan": {
+          "status": "accepted",
+          "confidence": 0.99,
+          "method": "doi-exact",
+          "stage": "pdf",
+          "message": "",
+          "scannedAt": 1787371675635
+        }
+      },
+      "citations": {
+        "count": 1,
+        "source": "OpenAlex",
+        "updatedAt": 1787371675635
+      }
     },
     {
       "id": "xy8zo03nq4emio3z23q",
@@ -171,7 +2009,17 @@
       "ts": 1764651557954,
       "size": 1646059,
       "desc": "A geometric related PJJ, especially its quasi-ballistic theory, there are something can be done. ",
-      "imagePath": "data/files/2025/12/images/odag2gcln7amio3z00q__Bobkov2025arXiv.png"
+      "imagePath": "data/files/2025/12/images/odag2gcln7amio3z00q__Bobkov2025arXiv.png",
+      "scholarly": {
+        "backfillScan": {
+          "status": "review",
+          "confidence": 0.0,
+          "method": "no-result",
+          "stage": "pdf",
+          "message": "PDF parsed but database match was not reliable",
+          "scannedAt": 1787371676306
+        }
+      }
     },
     {
       "id": "dkh6j67ypz7mio4g9pa",
@@ -190,7 +2038,137 @@
       "ts": 1764652367592,
       "size": 4356574,
       "desc": "Cayao's work, better and better",
-      "imagePath": "data/files/2025/12/images/wsoeyfk1w1mio4g7je__Cayao2025arXiv.png"
+      "imagePath": "data/files/2025/12/images/wsoeyfk1w1mio4g7je__Cayao2025arXiv.png",
+      "scholarly": {
+        "title": "Spin-polarized Andreev molecules and anomalous nonlocal Josephson effects in altermagnetic junctions",
+        "doi": "",
+        "arxivId": "2512.00664",
+        "openAlexId": "https://openalex.org/W7134094115",
+        "publicationDate": "2026-03-05",
+        "year": 2026,
+        "venue": "arXiv (Cornell University)",
+        "venueId": "https://openalex.org/S4306400194",
+        "type": "preprint",
+        "authors": [
+          {
+            "name": "Sayan Mondal",
+            "openAlexId": "https://openalex.org/A5128269508",
+            "orcid": "",
+            "position": "first",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Uppsala University",
+                "openAlexId": "https://openalex.org/I123387679",
+                "countryCode": "SE",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Jorge Cayao",
+            "openAlexId": "https://openalex.org/A5083270970",
+            "orcid": "https://orcid.org/0000-0001-6037-6243",
+            "position": "last",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Uppsala University",
+                "openAlexId": "https://openalex.org/I123387679",
+                "countryCode": "SE",
+                "type": "education"
+              }
+            ]
+          }
+        ],
+        "institutions": [
+          {
+            "name": "Uppsala University",
+            "openAlexId": "https://openalex.org/I123387679",
+            "countryCode": "SE",
+            "type": "education"
+          }
+        ],
+        "abstract": "Altermagnetism has emerged as a promising ingredient for realizing nontrivial Josephson phases, but so far explored in single Josephson junctions. In this work, we consider the coherent coupling of two Josephson junctions with spin-singlet $s$-wave superconductivity and demonstrate that $d$-wave altermagnetism gives rise to spin-polarized Andreev molecules due to the hybridization of Andreev bound states of each junction when the coupling is weak. Interestingly, these spin-polarized Andreev molecules induce an anomalous nonlocal Josephson effect, where the current flow across one Josephson junction due to phase changes across the other junction develops $0-π$ and $ϕ_{0}$ transitions originating from altermagnetism. Furthermore, the nonlocal Josephson current carried by spin-polarized Andreev molecules exhibits nonreciprocal critical currents, enabling a nonlocal Josephson diode effect whose polarity is tunable by the altermagnetic strength and right phase. Our findings put forward altermagnetism as a promising arena for designing nonlocal spin Josephson phenomena.",
+        "automaticTopics": [
+          {
+            "name": "Topological Materials and Phenomena",
+            "id": "https://openalex.org/T10657",
+            "score": 0.6146000027656555,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Cold Atom Physics and Bose-Einstein Condensates",
+            "id": "https://openalex.org/T10425",
+            "score": 0.05950000137090683,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Quantum optics and atomic interactions",
+            "id": "https://openalex.org/T11414",
+            "score": 0.04809999838471413,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Topological Materials and Phenomena",
+        "keywords": [
+          "Josephson effect",
+          "Pi Josephson junction",
+          "Superconductivity",
+          "Andreev reflection",
+          "Bound state",
+          "Coupling (piping)",
+          "Supercurrent"
+        ],
+        "relatedWorks": [],
+        "referencedWorks": [],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2603.04954",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "http://arxiv.org/abs/2603.04954",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "arxiv-search",
+        "matchConfidence": 0.93,
+        "matchedFromPdf": true,
+        "updatedAt": 1787371683215,
+        "metadataError": "",
+        "citations": {
+          "count": 0,
+          "source": "OpenAlex",
+          "updatedAt": 1787371683215
+        },
+        "pdfPages": 10,
+        "historicalExtractedAt": 1787371682935,
+        "metadataReview": {
+          "status": "accepted-auto",
+          "confidence": 0.93,
+          "method": "arxiv-search",
+          "stage": "pdf",
+          "reviewedAt": 1787371683215
+        },
+        "backfillScan": {
+          "status": "accepted",
+          "confidence": 0.93,
+          "method": "arxiv-search",
+          "stage": "pdf",
+          "message": "",
+          "scannedAt": 1787371683215
+        }
+      },
+      "citations": {
+        "count": 0,
+        "source": "OpenAlex",
+        "updatedAt": 1787371683215
+      }
     },
     {
       "id": "mj6arkv2as8miplh7d9",
@@ -209,7 +2187,174 @@
       "ts": 1764741424954,
       "size": 1093562,
       "desc": "emm, QSH and SDE, a lot of things can be done",
-      "imagePath": "data/files/2025/12/images/49otb7bjp19miplh5fq__Fracassi2025arXiv.png"
+      "imagePath": "data/files/2025/12/images/49otb7bjp19miplh5fq__Fracassi2025arXiv.png",
+      "scholarly": {
+        "title": "Anisotropic Superconducting Diode Effect in Planar Josephson Junctions",
+        "doi": "",
+        "arxivId": "2512.02575",
+        "openAlexId": "https://openalex.org/W7155245985",
+        "publicationDate": "2026-04-19",
+        "year": 2026,
+        "venue": "arXiv (Cornell University)",
+        "venueId": "https://openalex.org/S4306400194",
+        "type": "preprint",
+        "authors": [
+          {
+            "name": "Abhishek Chilampankunnel Prasannan",
+            "openAlexId": "https://openalex.org/A5134178777",
+            "orcid": "",
+            "position": "first",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Wayne State University",
+                "openAlexId": "https://openalex.org/I185443292",
+                "countryCode": "US",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Barış Pekerten",
+            "openAlexId": "https://openalex.org/A5016859159",
+            "orcid": "https://orcid.org/0000-0002-5794-9706",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University at Buffalo, State University of New York",
+                "openAlexId": "https://openalex.org/I63190737",
+                "countryCode": "US",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Nowar Alashkar",
+            "openAlexId": "https://openalex.org/A5134363169",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Wayne State University",
+                "openAlexId": "https://openalex.org/I185443292",
+                "countryCode": "US",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Alex Matos-Abiague",
+            "openAlexId": "https://openalex.org/A5134362285",
+            "orcid": "",
+            "position": "last",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Wayne State University",
+                "openAlexId": "https://openalex.org/I185443292",
+                "countryCode": "US",
+                "type": "education"
+              }
+            ]
+          }
+        ],
+        "institutions": [
+          {
+            "name": "Wayne State University",
+            "openAlexId": "https://openalex.org/I185443292",
+            "countryCode": "US",
+            "type": "education"
+          },
+          {
+            "name": "University at Buffalo, State University of New York",
+            "openAlexId": "https://openalex.org/I63190737",
+            "countryCode": "US",
+            "type": "education"
+          }
+        ],
+        "abstract": "We theoretically investigate the magnetic and crystalline anisotropies of the superconducting diode effect (SDE) in proximitized planar Josephson junctions (JJs) with coexisting Rashba and Dresselhaus spin-orbit couplings (SOCs) under an in-plane magnetic field. A symmetry analysis identifies geometric constraints on magnetic-field and crystallographic orientations for which the SDE is suppressed independently of field strength, providing experimentally testable signatures of the interplay between SOC and Zeeman interaction. We develop a phenomenological model showing that the diode efficiency depends on the relative alignment between spin-orbit and magnetic fields, and corroborate this behavior in the narrow-junction, low-field regime using an analytical approach that links the anisotropy of the diode response to SOC-induced Fermi surface distortions and anisotropic Cooper pair momentum. These findings are supported by tight-binding simulations of the Bogoliubov-de Gennes equation, which reproduce recent experimental trends. The simulations reveal that electrostatic gating can induce polarity reversals of the SDE in the low-field regime even with only Rashba SOC, consistent with recent experiments, and predict additional reversals for specific field orientations, junction geometries, and SOC ratios. Our results elucidate the origin of anisotropic nonreciprocal superconducting transport and provide guidance for experimentally probing the mechanisms underlying the SDE in semiconductor-based planar JJs.",
+        "automaticTopics": [
+          {
+            "name": "Topological Materials and Phenomena",
+            "id": "https://openalex.org/T10657",
+            "score": 0.5654000043869019,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Physics of Superconductivity and Magnetism",
+            "id": "https://openalex.org/T10037",
+            "score": 0.19140000641345978,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Quantum and electron transport phenomena",
+            "id": "https://openalex.org/T10382",
+            "score": 0.1615000069141388,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Topological Materials and Phenomena",
+        "keywords": [
+          "Josephson effect",
+          "Anisotropy",
+          "Planar",
+          "Superconductivity",
+          "Symmetry (geometry)",
+          "Magnetic field",
+          "Zeeman effect",
+          "Diode"
+        ],
+        "relatedWorks": [],
+        "referencedWorks": [],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2604.17594",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "https://arxiv.org/abs/2604.17594",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "arxiv-search",
+        "matchConfidence": 0.93,
+        "matchedFromPdf": true,
+        "updatedAt": 1787371685032,
+        "metadataError": "",
+        "citations": {
+          "count": 0,
+          "source": "OpenAlex",
+          "updatedAt": 1787371685032
+        },
+        "pdfPages": 23,
+        "historicalExtractedAt": 1787371683737,
+        "metadataReview": {
+          "status": "accepted-auto",
+          "confidence": 0.93,
+          "method": "arxiv-search",
+          "stage": "pdf",
+          "reviewedAt": 1787371685032
+        },
+        "backfillScan": {
+          "status": "accepted",
+          "confidence": 0.93,
+          "method": "arxiv-search",
+          "stage": "pdf",
+          "message": "",
+          "scannedAt": 1787371685032
+        }
+      },
+      "citations": {
+        "count": 0,
+        "source": "OpenAlex",
+        "updatedAt": 1787371685032
+      }
     },
     {
       "id": "bdl7rbwwmqdmiplulqm",
@@ -227,7 +2372,17 @@
       "ts": 1764742054785,
       "size": 6915507,
       "desc": "d-wave Fermi surface properties are more rich in Altermagnet, tunable MZM could be realized in d-wave Altermagnet.",
-      "imagePath": "data/files/2025/12/images/2lgygshrm3tmipluj3x__Wang2025arXiv.png"
+      "imagePath": "data/files/2025/12/images/2lgygshrm3tmipluj3x__Wang2025arXiv.png",
+      "scholarly": {
+        "backfillScan": {
+          "status": "review",
+          "confidence": 0.0,
+          "method": "no-result",
+          "stage": "pdf",
+          "message": "PDF parsed but database match was not reliable",
+          "scannedAt": 1787371687482
+        }
+      }
     },
     {
       "id": "7493ys34ju9mipm9zj4",
@@ -245,7 +2400,17 @@
       "ts": 1764742772558,
       "size": 1003201,
       "desc": "a very interesting work, i have no idea how to use the memory effect (induced by magnetic field gradient) of skyrmions",
-      "imagePath": "data/files/2025/12/images/6586xmeqr9umipm9wxv__Singer2025arXiv.png"
+      "imagePath": "data/files/2025/12/images/6586xmeqr9umipm9wxv__Singer2025arXiv.png",
+      "scholarly": {
+        "backfillScan": {
+          "status": "review",
+          "confidence": 0.0,
+          "method": "no-result",
+          "stage": "pdf",
+          "message": "PDF parsed but database match was not reliable",
+          "scannedAt": 1787371688225
+        }
+      }
     },
     {
       "id": "nnqh6r3et4mipmmv4z",
@@ -264,7 +2429,17 @@
       "ts": 1764743388491,
       "size": 4415052,
       "desc": "A new transport way to distinguish MBS and ABS.",
-      "imagePath": "data/files/2025/12/images/6ksohi7a3fmipmmsng__Li2025arXiv.png"
+      "imagePath": "data/files/2025/12/images/6ksohi7a3fmipmmsng__Li2025arXiv.png",
+      "scholarly": {
+        "backfillScan": {
+          "status": "review",
+          "confidence": 0.0,
+          "method": "no-result",
+          "stage": "pdf",
+          "message": "PDF parsed but database match was not reliable",
+          "scannedAt": 1787371688986
+        }
+      }
     },
     {
       "id": "zlngonh1azmipmtr3q",
@@ -283,7 +2458,229 @@
       "ts": 1764743694242,
       "size": 3664148,
       "desc": "as the name of the paper, we realize the SFET in altermagnet",
-      "imagePath": "data/files/2025/12/images/b4wkxo5xvblmipmtoxs__Zhu2025arXiv.png"
+      "imagePath": "data/files/2025/12/images/b4wkxo5xvblmipmtoxs__Zhu2025arXiv.png",
+      "scholarly": {
+        "title": "Altermagnetic Proximity Effect",
+        "doi": "10.1103/kqy8-myz1",
+        "arxivId": "2512.02974",
+        "openAlexId": "https://openalex.org/W4415057069",
+        "publicationDate": "2026-03-09",
+        "year": 2026,
+        "venue": "Physical Review Letters",
+        "venueId": "https://openalex.org/S24807848",
+        "type": "article",
+        "authors": [
+          {
+            "name": "Ziye Zhu",
+            "openAlexId": "",
+            "orcid": "https://orcid.org/0000-0002-2758-9615",
+            "position": "first",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Eastern Institute of Technology",
+                "openAlexId": "https://openalex.org/I127108677",
+                "countryCode": "NZ",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Richang Huang",
+            "openAlexId": "https://openalex.org/A5063877241",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Eastern Institute of Technology",
+                "openAlexId": "https://openalex.org/I127108677",
+                "countryCode": "NZ",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Xianzhang Chen",
+            "openAlexId": "https://openalex.org/A5030718577",
+            "orcid": "https://orcid.org/0000-0001-8987-377X",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Eastern Institute of Technology",
+                "openAlexId": "https://openalex.org/I127108677",
+                "countryCode": "NZ",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Zhou Cui",
+            "openAlexId": "",
+            "orcid": "https://orcid.org/0009-0009-7970-6826",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Eastern Institute of Technology",
+                "openAlexId": "https://openalex.org/I127108677",
+                "countryCode": "NZ",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Xunkai Duan",
+            "openAlexId": "https://openalex.org/A5011596292",
+            "orcid": "https://orcid.org/0000-0001-9843-869X",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Eastern Institute of Technology",
+                "openAlexId": "https://openalex.org/I127108677",
+                "countryCode": "NZ",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Jiayong Zhang",
+            "openAlexId": "https://openalex.org/A5048932309",
+            "orcid": "https://orcid.org/0000-0001-7463-1751",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Eastern Institute of Technology",
+                "openAlexId": "https://openalex.org/I127108677",
+                "countryCode": "NZ",
+                "type": "education"
+              },
+              {
+                "name": "Suzhou University of Science and Technology",
+                "openAlexId": "https://openalex.org/I308837",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Igor Žutić",
+            "openAlexId": "https://openalex.org/A5031487923",
+            "orcid": "https://orcid.org/0000-0003-2485-226X",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University at Buffalo, State University of New York",
+                "openAlexId": "https://openalex.org/I63190737",
+                "countryCode": "US",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Zhou Tong",
+            "openAlexId": "https://openalex.org/A5039920014",
+            "orcid": "https://orcid.org/0000-0002-9867-2838",
+            "position": "last",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Eastern Institute of Technology",
+                "openAlexId": "https://openalex.org/I127108677",
+                "countryCode": "NZ",
+                "type": "education"
+              }
+            ]
+          }
+        ],
+        "institutions": [
+          {
+            "name": "Eastern Institute of Technology",
+            "openAlexId": "https://openalex.org/I127108677",
+            "countryCode": "NZ",
+            "type": "education"
+          },
+          {
+            "name": "Suzhou University of Science and Technology",
+            "openAlexId": "https://openalex.org/I308837",
+            "countryCode": "CN",
+            "type": "education"
+          },
+          {
+            "name": "University at Buffalo, State University of New York",
+            "openAlexId": "https://openalex.org/I63190737",
+            "countryCode": "US",
+            "type": "education"
+          }
+        ],
+        "abstract": "Proximity effects complement conventional materials design by enabling interfacial properties absent in any constituent. Here, we uncover an altermagnetic proximity effect (AMPE), distinct from ferromagnetic and antiferromagnetic proximity, in which the hallmark momentum-alternating spin splitting of an altermagnet is transferred across an interface into an adjacent nonmagnetic layer-a process we term \"altermagnetization.\" Using first-principles calculations and model analysis, we identify the AMPE in heterostructures based on the prototypical van der Waals altermagnet V_{2}Se_{2}O, where a proximitized monolayer PbO acquires altermagnetic band splitting and real-space spin textures, with systematic tunability via interlayer spacing and magnetic configuration. We further demonstrate that the AMPE enables valley-dependent spin splitting in the semiconductor PbS and realizes topological superconductivity in the s-wave superconductor NbSe_{2}, both inheriting the altermagnetic spin texture. Finally, we validate the generality and experimental feasibility of the AMPE by realizing it in a broader class of established altermagnets, including V_{2}Se_{2}O derivatives, Ruddlesden-Popper perovskites, and the metallic CrSb. Our results identify the AMPE as a universal proximity mechanism and a versatile platform for engineering emergent quantum phenomena in heterostructures.",
+        "automaticTopics": [
+          {
+            "name": "Surface Roughness and Optical Measurements",
+            "id": "https://openalex.org/T13049",
+            "score": 0.14959999918937683,
+            "subfield": "Computational Mechanics",
+            "field": "Engineering",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Surface Roughness and Optical Measurements",
+        "keywords": [
+          "Proximity effect (electron beam lithography)",
+          "Monolayer",
+          "Ferromagnetism",
+          "van der Waals force",
+          "Antiferromagnetism",
+          "Spin (aerodynamics)",
+          "Heterojunction"
+        ],
+        "relatedWorks": [],
+        "referencedWorks": [],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2509.06790",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "https://doi.org/10.1103/kqy8-myz1",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "arxiv-search",
+        "matchConfidence": 0.93,
+        "matchedFromPdf": true,
+        "updatedAt": 1787371689877,
+        "metadataError": "",
+        "citations": {
+          "count": 14,
+          "source": "OpenAlex",
+          "updatedAt": 1787371689877
+        },
+        "pdfPages": 6,
+        "historicalExtractedAt": 1787371689469,
+        "metadataReview": {
+          "status": "accepted-auto",
+          "confidence": 0.93,
+          "method": "arxiv-search",
+          "stage": "pdf",
+          "reviewedAt": 1787371689878
+        },
+        "backfillScan": {
+          "status": "accepted",
+          "confidence": 0.93,
+          "method": "arxiv-search",
+          "stage": "pdf",
+          "message": "",
+          "scannedAt": 1787371689878
+        }
+      },
+      "citations": {
+        "count": 14,
+        "source": "OpenAlex",
+        "updatedAt": 1787371689877
+      }
     },
     {
       "id": "mmcoa42it6miqyrqtt",
@@ -302,7 +2699,117 @@
       "ts": 1764824247185,
       "size": 15091474,
       "desc": "A detailed study about the interaction among magnetic field, electric field and altermagnet",
-      "imagePath": "data/files/2025/12/images/cz3p22jlpddmiqyroeb__Ouyang2025arXiv.png"
+      "imagePath": "data/files/2025/12/images/cz3p22jlpddmiqyroeb__Ouyang2025arXiv.png",
+      "scholarly": {
+        "title": "Linear Magnetoresistance as a Probe of the Neel Vector in Altermagnets with Vanishing Anomalous Hall Effect",
+        "doi": "",
+        "arxivId": "2512.03814",
+        "openAlexId": "https://openalex.org/W7138824160",
+        "publicationDate": "2026-03-13",
+        "year": 2026,
+        "venue": "arXiv (Cornell University)",
+        "venueId": "https://openalex.org/S4306400194",
+        "type": "preprint",
+        "authors": [
+          {
+            "name": "Kamal Das",
+            "openAlexId": "https://openalex.org/A5129709419",
+            "orcid": "",
+            "position": "first",
+            "corresponding": false,
+            "institutions": []
+          },
+          {
+            "name": "Binghai Yan",
+            "openAlexId": "https://openalex.org/A5105933182",
+            "orcid": "",
+            "position": "last",
+            "corresponding": false,
+            "institutions": []
+          }
+        ],
+        "institutions": [],
+        "abstract": "Despite time-reversal breaking in momentum space, several altermagnets remain electrically silent to the primary characterization tool anomalous Hall effect, due to crystalline symmetries, jeopardizing their experimental identification. Here, we show that time-reversal odd magnetoresistance exhibiting butterfly-like hysteresis with linear magnetic field dependence near the zero field provides a robust transport signature of altermagnetism even when the anomalous Hall effect vanishes. Using semiclassical theory and symmetry analysis, we demonstrate that this effect is generic across altermagnets and validate it through first-principles calculations in CrSb. Our results establish linear magnetoresistance as an alternative detection of the Berry curvature and Neel order in unconventional antiferromagnets.",
+        "automaticTopics": [
+          {
+            "name": "Topological Materials and Phenomena",
+            "id": "https://openalex.org/T10657",
+            "score": 0.967199981212616,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "2D Materials and Applications",
+            "id": "https://openalex.org/T10275",
+            "score": 0.01080000028014183,
+            "subfield": "Materials Chemistry",
+            "field": "Materials Science",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Magnetic properties of thin films",
+            "id": "https://openalex.org/T10049",
+            "score": 0.0044999998062849045,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Topological Materials and Phenomena",
+        "keywords": [
+          "Magnetoresistance",
+          "Berry connection and curvature",
+          "Hall effect",
+          "Semiclassical physics",
+          "Magnetic field",
+          "Symmetry (geometry)",
+          "Field (mathematics)",
+          "Momentum (technical analysis)"
+        ],
+        "relatedWorks": [],
+        "referencedWorks": [],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2603.12692",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "http://arxiv.org/abs/2603.12692",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "arxiv-search",
+        "matchConfidence": 0.93,
+        "matchedFromPdf": true,
+        "updatedAt": 1787371690834,
+        "metadataError": "",
+        "citations": {
+          "count": 0,
+          "source": "OpenAlex",
+          "updatedAt": 1787371690834
+        },
+        "pdfPages": 7,
+        "historicalExtractedAt": 1787371690488,
+        "metadataReview": {
+          "status": "accepted-auto",
+          "confidence": 0.93,
+          "method": "arxiv-search",
+          "stage": "pdf",
+          "reviewedAt": 1787371690834
+        },
+        "backfillScan": {
+          "status": "accepted",
+          "confidence": 0.93,
+          "method": "arxiv-search",
+          "stage": "pdf",
+          "message": "",
+          "scannedAt": 1787371690834
+        }
+      },
+      "citations": {
+        "count": 0,
+        "source": "OpenAlex",
+        "updatedAt": 1787371690834
+      }
     },
     {
       "id": "tcu90nuvi7amiqz72j8",
@@ -322,7 +2829,117 @@
       "ts": 1764824982520,
       "size": 4687694,
       "desc": "maybe it is a quiet good reference to study the no-Hermitian physics in JJ",
-      "imagePath": "data/files/2025/12/images/y6fjyaqdoqfmiqz6zl1__Sten2025arXiv.png"
+      "imagePath": "data/files/2025/12/images/y6fjyaqdoqfmiqz6zl1__Sten2025arXiv.png",
+      "scholarly": {
+        "title": "Anomalous supercurrents in the presence of particle losses",
+        "doi": "10.48550/arxiv.2505.21085",
+        "arxivId": "2502.09397",
+        "openAlexId": "https://openalex.org/W4415036778",
+        "publicationDate": "2025-05-27",
+        "year": 2025,
+        "venue": "arXiv (Cornell University)",
+        "venueId": "https://openalex.org/S4306400194",
+        "type": "preprint",
+        "authors": [
+          {
+            "name": "Risa Ogino",
+            "openAlexId": "https://openalex.org/A5119938588",
+            "orcid": "",
+            "position": "first",
+            "corresponding": false,
+            "institutions": []
+          },
+          {
+            "name": "Shun Uchino",
+            "openAlexId": "https://openalex.org/A5038648935",
+            "orcid": "https://orcid.org/0000-0002-3007-1753",
+            "position": "last",
+            "corresponding": false,
+            "institutions": []
+          }
+        ],
+        "institutions": [],
+        "abstract": "We show that supercurrent properties in a superfluid or superconducting junction are significantly modified due to single-particle losses present in a conduction channel. In the presence of a spin-independent particle loss, we find regimes where the Josephson current $I_N(ϕ)$ takes zero at a position in between $ϕ= 0$ and $ϕ=π$, and the direction of the supercurrent is reversed. Although the region is narrow, we also find a regime in which the critical current is enhanced by dissipation. Such anomalous behaviors in the Josephson current are attributed to a subtle interplay between the contribution that is present regardless of dissipation and the unconventional one that is absent without dissipation. In the presence of a spin-selective particle loss, it is shown that a dissipation-induced spin supercurrent and its reversal occur. The proposed system is analyzed by means of the Keldysh field theory approach based on the Gorini-Kossakowski-Sudershan-Lindblad master equation and may be realized in ultracold atomic gases and solid-state systems.",
+        "automaticTopics": [
+          {
+            "name": "Quantum, superfluid, helium dynamics",
+            "id": "https://openalex.org/T11965",
+            "score": 0.9988999962806702,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Black Holes and Theoretical Physics",
+            "id": "https://openalex.org/T10025",
+            "score": 0.9968000054359436,
+            "subfield": "Nuclear and High Energy Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Cosmology and Gravitation Theories",
+            "id": "https://openalex.org/T10095",
+            "score": 0.9957000017166138,
+            "subfield": "Astronomy and Astrophysics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Quantum, superfluid, helium dynamics",
+        "keywords": [
+          "Supercurrent",
+          "Josephson effect",
+          "Dissipation",
+          "Superfluidity",
+          "Current (fluid)",
+          "Superconductivity",
+          "Pi Josephson junction",
+          "Particle (ecology)"
+        ],
+        "relatedWorks": [],
+        "referencedWorks": [],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2505.21085",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "http://arxiv.org/abs/2505.21085",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "arxiv-search",
+        "matchConfidence": 0.93,
+        "matchedFromPdf": true,
+        "updatedAt": 1787371697263,
+        "metadataError": "",
+        "citations": {
+          "count": 0,
+          "source": "OpenAlex",
+          "updatedAt": 1787371697263
+        },
+        "pdfPages": 9,
+        "historicalExtractedAt": 1787371696930,
+        "metadataReview": {
+          "status": "accepted-auto",
+          "confidence": 0.93,
+          "method": "arxiv-search",
+          "stage": "pdf",
+          "reviewedAt": 1787371697263
+        },
+        "backfillScan": {
+          "status": "accepted",
+          "confidence": 0.93,
+          "method": "arxiv-search",
+          "stage": "pdf",
+          "message": "",
+          "scannedAt": 1787371697263
+        }
+      },
+      "citations": {
+        "count": 0,
+        "source": "OpenAlex",
+        "updatedAt": 1787371697263
+      }
     },
     {
       "id": "x4mksf8gjnamiqzrf92",
@@ -342,7 +2959,194 @@
       "ts": 1764825900019,
       "size": 4294118,
       "desc": "for me, i think this paper is quiet important",
-      "imagePath": "data/files/2025/12/images/cfwiqr68n1omiqzrcl2__Bedow2025npjQI.png"
+      "imagePath": "data/files/2025/12/images/cfwiqr68n1omiqzrcl2__Bedow2025npjQI.png",
+      "scholarly": {
+        "title": "Solving the Bernstein-Vazirani problem using Majorana-based topological quantum algorithms",
+        "doi": "10.1038/s41534-025-01120-y",
+        "arxivId": "",
+        "openAlexId": "https://openalex.org/W4416389612",
+        "publicationDate": "2025-11-19",
+        "year": 2025,
+        "venue": "npj Quantum Information",
+        "venueId": "https://openalex.org/S2738600312",
+        "type": "article",
+        "authors": [
+          {
+            "name": "Jasmin Bedow",
+            "openAlexId": "https://openalex.org/A5049322001",
+            "orcid": "https://orcid.org/0000-0002-2010-8567",
+            "position": "first",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Illinois Chicago",
+                "openAlexId": "https://openalex.org/I39422238",
+                "countryCode": "US",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Dirk K. Morr",
+            "openAlexId": "https://openalex.org/A5055852468",
+            "orcid": "https://orcid.org/0000-0003-3692-2835",
+            "position": "last",
+            "corresponding": true,
+            "institutions": [
+              {
+                "name": "University of Illinois Chicago",
+                "openAlexId": "https://openalex.org/I39422238",
+                "countryCode": "US",
+                "type": "education"
+              }
+            ]
+          }
+        ],
+        "institutions": [
+          {
+            "name": "University of Illinois Chicago",
+            "openAlexId": "https://openalex.org/I39422238",
+            "countryCode": "US",
+            "type": "education"
+          }
+        ],
+        "abstract": "Executing quantum algorithms using Majorana zero modes—a major milestone for the field of topological quantum computing—requires a platform that can be scaled to large quantum registers, can be controlled in real time and space, and a braiding protocol that uses the unique properties of these exotic particles. Here, we demonstrate the first successful simulation of a Majorana-based, fault-tolerant quantum algorithm to solve the Bernstein-Vazirani problem in two-dimensional magnet-superconductor hybrid structures from initialization to read-out of the final many-body state. Utilizing the Majorana zero modes’ topological properties, we introduce an optimized braiding protocol for the algorithm and a scalable architecture for its implementation with an arbitrary number of qubits. We visualize the algorithm protocol in real time and space by computing the non-equilibrium density of states, which is proportional to the time-dependent differential conductance, and the non-equilibrium charge density, which assigns a unique signature to each final state of the algorithm.",
+        "automaticTopics": [
+          {
+            "name": "Topological Materials and Phenomena",
+            "id": "https://openalex.org/T10657",
+            "score": 0.9736999869346619,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Quantum many-body systems",
+            "id": "https://openalex.org/T11804",
+            "score": 0.003599999938160181,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Quantum and electron transport phenomena",
+            "id": "https://openalex.org/T10382",
+            "score": 0.003100000089034438,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Topological Materials and Phenomena",
+        "keywords": [
+          "Quantum algorithm",
+          "Quantum computer",
+          "Initialization",
+          "Topology (electrical circuits)",
+          "Scalability",
+          "Quantum phase estimation algorithm",
+          "Topological quantum number",
+          "Protocol (science)",
+          "One-way quantum computer",
+          "Quantum"
+        ],
+        "relatedWorks": [],
+        "referencedWorks": [
+          "https://openalex.org/W1487236218",
+          "https://openalex.org/W1511787065",
+          "https://openalex.org/W1571552325",
+          "https://openalex.org/W1716811706",
+          "https://openalex.org/W1823560645",
+          "https://openalex.org/W1966881201",
+          "https://openalex.org/W1967584385",
+          "https://openalex.org/W1992616687",
+          "https://openalex.org/W1997690832",
+          "https://openalex.org/W2009818732",
+          "https://openalex.org/W2010546414",
+          "https://openalex.org/W2026228827",
+          "https://openalex.org/W2033216491",
+          "https://openalex.org/W2038276174",
+          "https://openalex.org/W2044884775",
+          "https://openalex.org/W2056281570",
+          "https://openalex.org/W2056428799",
+          "https://openalex.org/W2077983766",
+          "https://openalex.org/W2079497276",
+          "https://openalex.org/W2084652510",
+          "https://openalex.org/W2089217310",
+          "https://openalex.org/W2089843538",
+          "https://openalex.org/W2098777808",
+          "https://openalex.org/W2137147061",
+          "https://openalex.org/W2152240519",
+          "https://openalex.org/W2153852402",
+          "https://openalex.org/W2158979840",
+          "https://openalex.org/W2415710521",
+          "https://openalex.org/W2498267554",
+          "https://openalex.org/W2499206006",
+          "https://openalex.org/W2534820175",
+          "https://openalex.org/W2609167442",
+          "https://openalex.org/W2613052065",
+          "https://openalex.org/W2800582642",
+          "https://openalex.org/W2899195828",
+          "https://openalex.org/W2924182316",
+          "https://openalex.org/W2948488731",
+          "https://openalex.org/W2953140106",
+          "https://openalex.org/W2956391690",
+          "https://openalex.org/W2964770140",
+          "https://openalex.org/W2981613454",
+          "https://openalex.org/W2982136011",
+          "https://openalex.org/W3005082596",
+          "https://openalex.org/W3048331963",
+          "https://openalex.org/W3122224748",
+          "https://openalex.org/W4309046667",
+          "https://openalex.org/W4319229826",
+          "https://openalex.org/W4377047122",
+          "https://openalex.org/W4384664755",
+          "https://openalex.org/W4387909030",
+          "https://openalex.org/W4405079552",
+          "https://openalex.org/W4408091086",
+          "https://openalex.org/W4408189793"
+        ],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://www.nature.com/articles/s41534-025-01120-y.pdf",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "https://doi.org/10.1038/s41534-025-01120-y",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "doi-exact",
+        "matchConfidence": 0.99,
+        "matchedFromPdf": true,
+        "updatedAt": 1787371698635,
+        "metadataError": "",
+        "citations": {
+          "count": 2,
+          "source": "OpenAlex",
+          "updatedAt": 1787371698635
+        },
+        "pdfPages": 11,
+        "historicalExtractedAt": 1787371697830,
+        "metadataReview": {
+          "status": "accepted-auto",
+          "confidence": 0.99,
+          "method": "doi-exact",
+          "stage": "pdf",
+          "reviewedAt": 1787371698635
+        },
+        "backfillScan": {
+          "status": "accepted",
+          "confidence": 0.99,
+          "method": "doi-exact",
+          "stage": "pdf",
+          "message": "",
+          "scannedAt": 1787371698635
+        }
+      },
+      "citations": {
+        "count": 2,
+        "source": "OpenAlex",
+        "updatedAt": 1787371698635
+      }
     },
     {
       "id": "7asly6ycc9omiscli70",
@@ -361,7 +3165,17 @@
       "ts": 1764907907379,
       "size": 1461004,
       "desc": "Maybe a new direction of ABS, also we can think if there can be used to vertify the 4pi period in Majorana",
-      "imagePath": "data/files/2025/12/images/eg1690d8k1fmisclg14__Remez2025arXiv.png"
+      "imagePath": "data/files/2025/12/images/eg1690d8k1fmisclg14__Remez2025arXiv.png",
+      "scholarly": {
+        "backfillScan": {
+          "status": "review",
+          "confidence": 0.0,
+          "method": "no-result",
+          "stage": "pdf",
+          "message": "PDF parsed but database match was not reliable",
+          "scannedAt": 1787371699428
+        }
+      }
     },
     {
       "id": "1wm180u12zbmislx7wh",
@@ -381,7 +3195,182 @@
       "ts": 1764923589248,
       "size": 2023494,
       "desc": "a good review about the interaction between altermagnet and superconductivity",
-      "imagePath": "data/files/2025/12/images/0tzfzi3uwhumislx5mn__Liu2025arXiv.png"
+      "imagePath": "data/files/2025/12/images/0tzfzi3uwhumislx5mn__Liu2025arXiv.png",
+      "scholarly": {
+        "title": "Altermagnetism-driven FFLO superconductivity in finite-filling 2D lattices",
+        "doi": "10.1007/s43673-026-00187-9",
+        "arxivId": "2510.09170",
+        "openAlexId": "https://openalex.org/W7160439739",
+        "publicationDate": "2026-05-06",
+        "year": 2026,
+        "venue": "AAPPS bulletin",
+        "venueId": "https://openalex.org/S4210175229",
+        "type": "article",
+        "authors": [
+          {
+            "name": "Xia-Ji Liu",
+            "openAlexId": "https://openalex.org/A5065851954",
+            "orcid": "https://orcid.org/0000-0003-4158-5474",
+            "position": "first",
+            "corresponding": true,
+            "institutions": [
+              {
+                "name": "Swinburne University of Technology",
+                "openAlexId": "https://openalex.org/I57093077",
+                "countryCode": "AU",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Hui Hu",
+            "openAlexId": "https://openalex.org/A5135445270",
+            "orcid": "",
+            "position": "last",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Swinburne University of Technology",
+                "openAlexId": "https://openalex.org/I57093077",
+                "countryCode": "AU",
+                "type": "education"
+              }
+            ]
+          }
+        ],
+        "institutions": [
+          {
+            "name": "Swinburne University of Technology",
+            "openAlexId": "https://openalex.org/I57093077",
+            "countryCode": "AU",
+            "type": "education"
+          }
+        ],
+        "abstract": "We systematically investigate the emergence of finite-momentum Fulde-Ferrell-Larkin-Ovchinnikov (FFLO) superconductivity in a square lattice Hubbard model with finite filling, driven by either $$d_{xy}$$ -wave or $$d_{x^{2}-y^{2}}$$ -wave altermagnetic order in the presence of on-site $$s$$ -wave attractive interactions. Our study combines mean-field calculation in the superconducting phase with pairing instability analysis of the normal state, incorporating the next-nearest-neighbor hopping in the single-particle dispersion relation. We demonstrate that the two types of altermagnetism have markedly different impacts on the stabilization of FFLO states. Specifically, $$d_{xy}$$ -wave altermagnetism supports FFLO superconductivity over a broad parameter regime at low fillings, whereas $$d_{x^{2}-y^{2}}$$ -wave altermagnetism only induces FFLO pairing in a narrow range at high fillings. Furthermore, we find that the presence of a Van Hove singularity in the density of states tends to suppress FFLO superconductivity. These findings may provide guidance for experimental exploration of altermagnetism-induced FFLO states in real materials with more complex electronic structures.",
+        "automaticTopics": [
+          {
+            "name": "Topological Materials and Phenomena",
+            "id": "https://openalex.org/T10657",
+            "score": 0.2231999933719635,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Electronic and Structural Properties of Oxides",
+            "id": "https://openalex.org/T12588",
+            "score": 0.1655000001192093,
+            "subfield": "Materials Chemistry",
+            "field": "Materials Science",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Physics of Superconductivity and Magnetism",
+            "id": "https://openalex.org/T10037",
+            "score": 0.1639000028371811,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Topological Materials and Phenomena",
+        "keywords": [
+          "Pairing",
+          "Superconductivity",
+          "Instability",
+          "Singularity",
+          "Square lattice",
+          "Hubbard model",
+          "Lattice (music)"
+        ],
+        "relatedWorks": [],
+        "referencedWorks": [
+          "https://openalex.org/W1507765399",
+          "https://openalex.org/W1976175889",
+          "https://openalex.org/W2021406342",
+          "https://openalex.org/W2028657235",
+          "https://openalex.org/W2039298551",
+          "https://openalex.org/W2053534378",
+          "https://openalex.org/W2061937598",
+          "https://openalex.org/W2064190991",
+          "https://openalex.org/W2067756838",
+          "https://openalex.org/W2072945636",
+          "https://openalex.org/W2079027357",
+          "https://openalex.org/W2084470984",
+          "https://openalex.org/W2087005137",
+          "https://openalex.org/W2142780562",
+          "https://openalex.org/W2162060834",
+          "https://openalex.org/W2342426827",
+          "https://openalex.org/W2914734359",
+          "https://openalex.org/W2945249641",
+          "https://openalex.org/W2969666960",
+          "https://openalex.org/W2974879710",
+          "https://openalex.org/W3033432659",
+          "https://openalex.org/W3033621405",
+          "https://openalex.org/W3081415336",
+          "https://openalex.org/W4311892900",
+          "https://openalex.org/W4361000949",
+          "https://openalex.org/W4377990110",
+          "https://openalex.org/W4386423724",
+          "https://openalex.org/W4389057952",
+          "https://openalex.org/W4392188187",
+          "https://openalex.org/W4400340509",
+          "https://openalex.org/W4401455722",
+          "https://openalex.org/W4404141416",
+          "https://openalex.org/W4405268505",
+          "https://openalex.org/W4405424062",
+          "https://openalex.org/W4407086134",
+          "https://openalex.org/W4410594460",
+          "https://openalex.org/W4410948631",
+          "https://openalex.org/W4412002158",
+          "https://openalex.org/W4412152521",
+          "https://openalex.org/W4412521888",
+          "https://openalex.org/W4415166573",
+          "https://openalex.org/W4415833898",
+          "https://openalex.org/W4416242901",
+          "https://openalex.org/W4416894005"
+        ],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://link.springer.com/content/pdf/10.1007/s43673-026-00187-9.pdf",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "https://doi.org/10.1007/s43673-026-00187-9",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "arxiv-search",
+        "matchConfidence": 0.93,
+        "matchedFromPdf": true,
+        "updatedAt": 1787371700704,
+        "metadataError": "",
+        "citations": {
+          "count": 1,
+          "source": "OpenAlex",
+          "updatedAt": 1787371700704
+        },
+        "pdfPages": 23,
+        "historicalExtractedAt": 1787371700305,
+        "metadataReview": {
+          "status": "accepted-auto",
+          "confidence": 0.93,
+          "method": "arxiv-search",
+          "stage": "pdf",
+          "reviewedAt": 1787371700704
+        },
+        "backfillScan": {
+          "status": "accepted",
+          "confidence": 0.93,
+          "method": "arxiv-search",
+          "stage": "pdf",
+          "message": "",
+          "scannedAt": 1787371700704
+        }
+      },
+      "citations": {
+        "count": 1,
+        "source": "OpenAlex",
+        "updatedAt": 1787371700704
+      }
     },
     {
       "id": "7mi6gfm3tjbmiva9jq7",
@@ -402,7 +3391,197 @@
       "ts": 1765085417267,
       "size": 1457267,
       "desc": "a important reference which quiet close to what we have done, the model used in this paper is quiet complicated, the transition from QSH to QAH is controlled though strain, which has been mentioned before.",
-      "imagePath": "data/files/2025/12/images/13bsb0d2sx8miva9hhx__Fu2025arXiv.png"
+      "imagePath": "data/files/2025/12/images/13bsb0d2sx8miva9hhx__Fu2025arXiv.png",
+      "scholarly": {
+        "title": "Classification and design of two-dimensional altermagnets",
+        "doi": "10.15302/frontphys.2026.095301",
+        "arxivId": "2507.22474",
+        "openAlexId": "https://openalex.org/W7140123312",
+        "publicationDate": "2026-01-01",
+        "year": 2026,
+        "venue": "Frontiers of Physics",
+        "venueId": "https://openalex.org/S118523878",
+        "type": "article",
+        "authors": [
+          {
+            "name": "Sike Zeng",
+            "openAlexId": "https://openalex.org/A5030398951",
+            "orcid": "https://orcid.org/0009-0003-0839-581X",
+            "position": "first",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "South China University of Technology",
+                "openAlexId": "https://openalex.org/I90610280",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Dong Liu",
+            "openAlexId": "https://openalex.org/A5130331236",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "South China University of Technology",
+                "openAlexId": "https://openalex.org/I90610280",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Hongjie Peng",
+            "openAlexId": "https://openalex.org/A5123222437",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "South China University of Technology",
+                "openAlexId": "https://openalex.org/I90610280",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Changchun He",
+            "openAlexId": "https://openalex.org/A5101979265",
+            "orcid": "https://orcid.org/0000-0002-7331-1999",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "South China University of Technology",
+                "openAlexId": "https://openalex.org/I90610280",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Xiao‐Bao Yang",
+            "openAlexId": "https://openalex.org/A5032440910",
+            "orcid": "https://orcid.org/0000-0001-8851-1988",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "South China University of Technology",
+                "openAlexId": "https://openalex.org/I90610280",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Yu-Jun Zhao",
+            "openAlexId": "https://openalex.org/A5130403718",
+            "orcid": "",
+            "position": "last",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "South China University of Technology",
+                "openAlexId": "https://openalex.org/I90610280",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          }
+        ],
+        "institutions": [
+          {
+            "name": "South China University of Technology",
+            "openAlexId": "https://openalex.org/I90610280",
+            "countryCode": "CN",
+            "type": "education"
+          }
+        ],
+        "abstract": "Altermagnets — newly identified collinear antiferromagnets — carry zero net magnetic moment with non-relativistic, spin-polarized bands, distilling the best of ferromagnets and antiferromagnets into a single spintronic platform. Shrunking to the two-dimensional limit, they inherit the tunability of two-dimensional crystals while adding symmetry-protected spin splitting, a combination now driving intense experimental interest. Here, we review the symmetry classification of two-dimensional altermagnets based on spin-group theory and survey the growing list of candidate materials, emphasizing those with large spin splitting for experimental realization. We then examine strategies for engineering two-dimensional altermagnetism. This review aims to consolidate theoretically proposed candidate materials and realization strategies for two-dimensional altermagnets, providing insights for future experimental efforts in this emerging field.",
+        "automaticTopics": [
+          {
+            "name": "Advanced Condensed Matter Physics",
+            "id": "https://openalex.org/T11682",
+            "score": 0.4047999978065491,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "2D Materials and Applications",
+            "id": "https://openalex.org/T10275",
+            "score": 0.22089999914169312,
+            "subfield": "Materials Chemistry",
+            "field": "Materials Science",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Topological Materials and Phenomena",
+            "id": "https://openalex.org/T10657",
+            "score": 0.11580000072717667,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Advanced Condensed Matter Physics",
+        "keywords": [
+          "Realization (probability)",
+          "Spintronics",
+          "Ferromagnetism",
+          "Spin (aerodynamics)",
+          "Symmetry (geometry)",
+          "Moment (physics)",
+          "Zero (linguistics)"
+        ],
+        "relatedWorks": [],
+        "referencedWorks": [],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "bronze",
+          "oa_url": "https://journal.hep.com.cn/fop/EN/PDF/10.15302/frontphys.2026.095301",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "https://doi.org/10.15302/frontphys.2026.095301",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "arxiv-search",
+        "matchConfidence": 0.93,
+        "matchedFromPdf": true,
+        "updatedAt": 1787371702121,
+        "metadataError": "",
+        "citations": {
+          "count": 2,
+          "source": "OpenAlex",
+          "updatedAt": 1787371702121
+        },
+        "pdfPages": 20,
+        "historicalExtractedAt": 1787371701670,
+        "metadataReview": {
+          "status": "accepted-auto",
+          "confidence": 0.93,
+          "method": "arxiv-search",
+          "stage": "pdf",
+          "reviewedAt": 1787371702121
+        },
+        "backfillScan": {
+          "status": "accepted",
+          "confidence": 0.93,
+          "method": "arxiv-search",
+          "stage": "pdf",
+          "message": "",
+          "scannedAt": 1787371702121
+        }
+      },
+      "citations": {
+        "count": 2,
+        "source": "OpenAlex",
+        "updatedAt": 1787371702121
+      }
     },
     {
       "id": "4wthrl3zzutmivaqc5i",
@@ -421,7 +3600,17 @@
       "ts": 1765086174593,
       "size": 1974937,
       "desc": "a braiding paper update regularly, this paper can be refered in our braiding paper",
-      "imagePath": "data/files/2025/12/images/cqvthzycxgmivaq8xg__Pandey2025arXiv.png"
+      "imagePath": "data/files/2025/12/images/cqvthzycxgmivaq8xg__Pandey2025arXiv.png",
+      "scholarly": {
+        "backfillScan": {
+          "status": "review",
+          "confidence": 0.0,
+          "method": "no-result",
+          "stage": "pdf",
+          "message": "PDF parsed but database match was not reliable",
+          "scannedAt": 1787371703537
+        }
+      }
     },
     {
       "id": "deax90u8g7pmivax4gx",
@@ -440,7 +3629,168 @@
       "ts": 1765086510517,
       "size": 3289822,
       "desc": "type-ii QSH which was found in Altermagnet",
-      "imagePath": "data/files/2025/12/images/fjq1syte1k8mivax281__Feng2025arXiv.png"
+      "imagePath": "data/files/2025/12/images/fjq1syte1k8mivax281__Feng2025arXiv.png",
+      "scholarly": {
+        "title": "Type-II Mirror Chern Insulator in Altermagnets",
+        "doi": "",
+        "arxivId": "2503.13397",
+        "openAlexId": "https://openalex.org/W7202231038",
+        "publicationDate": "2026-08-07",
+        "year": 2026,
+        "venue": "arXiv (Cornell University)",
+        "venueId": "https://openalex.org/S4306400194",
+        "type": "preprint",
+        "authors": [
+          {
+            "name": "Amrita Mukherjee",
+            "openAlexId": "https://openalex.org/A5059052334",
+            "orcid": "https://orcid.org/0000-0001-9504-1902",
+            "position": "first",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Tata Institute of Fundamental Research",
+                "openAlexId": "https://openalex.org/I11947397",
+                "countryCode": "IN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Pritesh Srivastava",
+            "openAlexId": "https://openalex.org/A5144010749",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Tata Institute of Fundamental Research",
+                "openAlexId": "https://openalex.org/I11947397",
+                "countryCode": "IN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Rahul Verma",
+            "openAlexId": "https://openalex.org/A5146554748",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Tata Institute of Fundamental Research",
+                "openAlexId": "https://openalex.org/I11947397",
+                "countryCode": "IN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Bahadur Singh",
+            "openAlexId": "https://openalex.org/A5015129357",
+            "orcid": "https://orcid.org/0000-0002-2013-1126",
+            "position": "last",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Tata Institute of Fundamental Research",
+                "openAlexId": "https://openalex.org/I11947397",
+                "countryCode": "IN",
+                "type": "education"
+              }
+            ]
+          }
+        ],
+        "institutions": [
+          {
+            "name": "Tata Institute of Fundamental Research",
+            "openAlexId": "https://openalex.org/I11947397",
+            "countryCode": "IN",
+            "type": "education"
+          }
+        ],
+        "abstract": "Altermagnets with momentum-dependent spin splitting despite zero net magnetization can support unique topological states under broken time-reversal symmetry. We predict a mirror-symmetry-protected topological crystalline insulator with momentum-separated edge modes in a two-dimensional altermagnet. Using a square-octagon lattice model, we show that altermagnetic order generates symmetry-related valley-polarized Dirac nodes, which are gapped by spin-orbit coupling to yield a mirror Chern insulator with $C_{\\mathcal{M}}=2$. In contrast to conventional mirror Chern insulators, where the two mirror-protected edge modes cross at the same momentum to form a Dirac cone, altermagnetic spin splitting and valley-selective band inversion separate these edge modes in momentum. We refer to this phase as a type-II mirror Chern insulator. We further propose a PbSe/$\\mathrm{V_2Se_2O}$ heterobilayer as a candidate material for realizing this phase through the altermagnetic proximity effect. Our results establish altermagnetism as a route to mirror-protected topological phases with momentum-separated edge modes.",
+        "automaticTopics": [
+          {
+            "name": "Topological Materials and Phenomena",
+            "id": "https://openalex.org/T10657",
+            "score": 0.9943000078201294,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Advanced Condensed Matter Physics",
+            "id": "https://openalex.org/T11682",
+            "score": 0.00139999995008111,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Chemical and Physical Properties of Materials",
+            "id": "https://openalex.org/T13104",
+            "score": 0.0008999999845400453,
+            "subfield": "Materials Chemistry",
+            "field": "Materials Science",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Topological Materials and Phenomena",
+        "keywords": [
+          "Topological insulator",
+          "Chern class",
+          "Insulator (electricity)",
+          "Topological order",
+          "Lattice (music)",
+          "Dirac (video compression format)",
+          "Dirac fermion",
+          "Topology (electrical circuits)"
+        ],
+        "relatedWorks": [],
+        "referencedWorks": [],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2608.07374",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "https://arxiv.org/abs/2608.07374",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "arxiv-search",
+        "matchConfidence": 0.93,
+        "matchedFromPdf": true,
+        "updatedAt": 1787371704519,
+        "metadataError": "",
+        "citations": {
+          "count": 0,
+          "source": "OpenAlex",
+          "updatedAt": 1787371704519
+        },
+        "pdfPages": 6,
+        "historicalExtractedAt": 1787371704063,
+        "metadataReview": {
+          "status": "accepted-auto",
+          "confidence": 0.93,
+          "method": "arxiv-search",
+          "stage": "pdf",
+          "reviewedAt": 1787371704519
+        },
+        "backfillScan": {
+          "status": "accepted",
+          "confidence": 0.93,
+          "method": "arxiv-search",
+          "stage": "pdf",
+          "message": "",
+          "scannedAt": 1787371704519
+        }
+      },
+      "citations": {
+        "count": 0,
+        "source": "OpenAlex",
+        "updatedAt": 1787371704519
+      }
     },
     {
       "id": "fnkjwf2aqq5mivc1xx1",
@@ -458,7 +3808,396 @@
       "ts": 1765088394058,
       "size": 3643511,
       "desc": "Quantum Spin-Valley Hall Kink States: From Concept to Materials Design",
-      "imagePath": "data/files/2025/12/images/c67qjbu32umivc1vku__TZ2021PRL.png"
+      "imagePath": "data/files/2025/12/images/c67qjbu32umivc1vku__TZ2021PRL.png",
+      "scholarly": {
+        "title": "Quantum Spin-Valley Hall Kink States: From Concept to Materials Design",
+        "doi": "10.1103/physrevlett.127.116402",
+        "arxivId": "",
+        "openAlexId": "https://openalex.org/W3198843094",
+        "publicationDate": "2021-09-09",
+        "year": 2021,
+        "venue": "Physical Review Letters",
+        "venueId": "https://openalex.org/S24807848",
+        "type": "article",
+        "authors": [
+          {
+            "name": "Tong Zhou",
+            "openAlexId": "https://openalex.org/A5019343752",
+            "orcid": "https://orcid.org/0000-0003-4588-5263",
+            "position": "first",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University at Buffalo, State University of New York",
+                "openAlexId": "https://openalex.org/I63190737",
+                "countryCode": "US",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Shu-guang Cheng",
+            "openAlexId": "https://openalex.org/A5028467187",
+            "orcid": "https://orcid.org/0000-0003-3823-4569",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Northwest University",
+                "openAlexId": "https://openalex.org/I37802460",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Michael Schleenvoigt",
+            "openAlexId": "https://openalex.org/A5014454876",
+            "orcid": "https://orcid.org/0000-0002-2384-0366",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Forschungszentrum Jülich",
+                "openAlexId": "https://openalex.org/I171892758",
+                "countryCode": "DE",
+                "type": "facility"
+              },
+              {
+                "name": "Jülich Aachen Research Alliance",
+                "openAlexId": "https://openalex.org/I4210133912",
+                "countryCode": "DE",
+                "type": "facility"
+              }
+            ]
+          },
+          {
+            "name": "Peter Schüffelgen",
+            "openAlexId": "https://openalex.org/A5045998160",
+            "orcid": "https://orcid.org/0000-0001-7977-7848",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Forschungszentrum Jülich",
+                "openAlexId": "https://openalex.org/I171892758",
+                "countryCode": "DE",
+                "type": "facility"
+              },
+              {
+                "name": "Jülich Aachen Research Alliance",
+                "openAlexId": "https://openalex.org/I4210133912",
+                "countryCode": "DE",
+                "type": "facility"
+              }
+            ]
+          },
+          {
+            "name": "Hua Jiang",
+            "openAlexId": "https://openalex.org/A5075046602",
+            "orcid": "https://orcid.org/0000-0002-8626-735X",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Soochow University",
+                "openAlexId": "https://openalex.org/I3923682",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Zhongqin Yang",
+            "openAlexId": "https://openalex.org/A5034462507",
+            "orcid": "https://orcid.org/0000-0002-4949-1555",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Fudan University",
+                "openAlexId": "https://openalex.org/I24943067",
+                "countryCode": "CN",
+                "type": "education"
+              },
+              {
+                "name": "Collaborative Innovation Center of Advanced Microstructures",
+                "openAlexId": "https://openalex.org/I4210140493",
+                "countryCode": "CN",
+                "type": "facility"
+              }
+            ]
+          },
+          {
+            "name": "Igor Žutić",
+            "openAlexId": "https://openalex.org/A5031487923",
+            "orcid": "https://orcid.org/0000-0003-2485-226X",
+            "position": "last",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University at Buffalo, State University of New York",
+                "openAlexId": "https://openalex.org/I63190737",
+                "countryCode": "US",
+                "type": "education"
+              }
+            ]
+          }
+        ],
+        "institutions": [
+          {
+            "name": "University at Buffalo, State University of New York",
+            "openAlexId": "https://openalex.org/I63190737",
+            "countryCode": "US",
+            "type": "education"
+          },
+          {
+            "name": "Northwest University",
+            "openAlexId": "https://openalex.org/I37802460",
+            "countryCode": "CN",
+            "type": "education"
+          },
+          {
+            "name": "Forschungszentrum Jülich",
+            "openAlexId": "https://openalex.org/I171892758",
+            "countryCode": "DE",
+            "type": "facility"
+          },
+          {
+            "name": "Jülich Aachen Research Alliance",
+            "openAlexId": "https://openalex.org/I4210133912",
+            "countryCode": "DE",
+            "type": "facility"
+          },
+          {
+            "name": "Soochow University",
+            "openAlexId": "https://openalex.org/I3923682",
+            "countryCode": "CN",
+            "type": "education"
+          },
+          {
+            "name": "Fudan University",
+            "openAlexId": "https://openalex.org/I24943067",
+            "countryCode": "CN",
+            "type": "education"
+          },
+          {
+            "name": "Collaborative Innovation Center of Advanced Microstructures",
+            "openAlexId": "https://openalex.org/I4210140493",
+            "countryCode": "CN",
+            "type": "facility"
+          }
+        ],
+        "abstract": "We propose a general and tunable platform to realize high-density arrays of quantum spin-valley Hall kink (QSVHK) states with spin-valley-momentum locking based on a two-dimensional hexagonal topological insulator. Through the analysis of Berry curvature and topological charge, the QSVHK states are found to be topologically protected by the valley-inversion and time-reversal symmetries. Remarkably, the conductance of QSVHK states remains quantized against both nonmagnetic short- and long-range and magnetic long-range disorder, verified by the Green-function calculations. Based on first-principles results and our fabricated samples, we show that QSVHK states, protected with a gap up to 287 meV, can be realized in bismuthene by alloy engineering, surface functionalization, or electric field, supporting nonvolatile applications of spin-valley filters, valves, and waveguides even at room temperature.",
+        "automaticTopics": [
+          {
+            "name": "Topological Materials and Phenomena",
+            "id": "https://openalex.org/T10657",
+            "score": 1.0,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Graphene research and applications",
+            "id": "https://openalex.org/T10083",
+            "score": 0.9998000264167786,
+            "subfield": "Materials Chemistry",
+            "field": "Materials Science",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "2D Materials and Applications",
+            "id": "https://openalex.org/T10275",
+            "score": 0.9993000030517578,
+            "subfield": "Materials Chemistry",
+            "field": "Materials Science",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Topological Materials and Phenomena",
+        "keywords": [
+          "Berry connection and curvature",
+          "Condensed matter physics",
+          "Topological insulator",
+          "Quantum spin Hall effect",
+          "Surface states",
+          "Physics",
+          "Insulator (electricity)",
+          "Spin (aerodynamics)",
+          "Magnetic field",
+          "Electric field",
+          "Curvature",
+          "Homogeneous space"
+        ],
+        "relatedWorks": [
+          "https://openalex.org/W2034701061",
+          "https://openalex.org/W2923661509",
+          "https://openalex.org/W3102265128",
+          "https://openalex.org/W3215658369",
+          "https://openalex.org/W4283213430",
+          "https://openalex.org/W3101803186",
+          "https://openalex.org/W2049646301",
+          "https://openalex.org/W2256344043",
+          "https://openalex.org/W2329284425",
+          "https://openalex.org/W4390779946"
+        ],
+        "referencedWorks": [
+          "https://openalex.org/W18901800",
+          "https://openalex.org/W625676454",
+          "https://openalex.org/W1544968860",
+          "https://openalex.org/W1564531901",
+          "https://openalex.org/W1905539406",
+          "https://openalex.org/W1957072410",
+          "https://openalex.org/W1963584872",
+          "https://openalex.org/W1966568121",
+          "https://openalex.org/W1969057621",
+          "https://openalex.org/W1973808410",
+          "https://openalex.org/W1976232510",
+          "https://openalex.org/W1978067438",
+          "https://openalex.org/W1981368803",
+          "https://openalex.org/W1985284024",
+          "https://openalex.org/W1992856317",
+          "https://openalex.org/W1996794882",
+          "https://openalex.org/W1999276332",
+          "https://openalex.org/W2000724528",
+          "https://openalex.org/W2009891179",
+          "https://openalex.org/W2018916052",
+          "https://openalex.org/W2020332193",
+          "https://openalex.org/W2029037907",
+          "https://openalex.org/W2034932701",
+          "https://openalex.org/W2042473487",
+          "https://openalex.org/W2043175787",
+          "https://openalex.org/W2043399112",
+          "https://openalex.org/W2050509137",
+          "https://openalex.org/W2055024637",
+          "https://openalex.org/W2056060237",
+          "https://openalex.org/W2057701641",
+          "https://openalex.org/W2057936436",
+          "https://openalex.org/W2059115869",
+          "https://openalex.org/W2072703702",
+          "https://openalex.org/W2074665638",
+          "https://openalex.org/W2080438333",
+          "https://openalex.org/W2083027811",
+          "https://openalex.org/W2083191451",
+          "https://openalex.org/W2083222334",
+          "https://openalex.org/W2084932260",
+          "https://openalex.org/W2087657943",
+          "https://openalex.org/W2088198211",
+          "https://openalex.org/W2093860422",
+          "https://openalex.org/W2096030192",
+          "https://openalex.org/W2101893110",
+          "https://openalex.org/W2118368638",
+          "https://openalex.org/W2143729162",
+          "https://openalex.org/W2143841618",
+          "https://openalex.org/W2154083514",
+          "https://openalex.org/W2155171871",
+          "https://openalex.org/W2162211877",
+          "https://openalex.org/W2168226651",
+          "https://openalex.org/W2168249637",
+          "https://openalex.org/W2174674412",
+          "https://openalex.org/W2186919604",
+          "https://openalex.org/W2215061879",
+          "https://openalex.org/W2264002775",
+          "https://openalex.org/W2291415953",
+          "https://openalex.org/W2305814644",
+          "https://openalex.org/W2318362323",
+          "https://openalex.org/W2321222530",
+          "https://openalex.org/W2493021935",
+          "https://openalex.org/W2508848855",
+          "https://openalex.org/W2519253546",
+          "https://openalex.org/W2538077787",
+          "https://openalex.org/W2550660184",
+          "https://openalex.org/W2554157955",
+          "https://openalex.org/W2561921530",
+          "https://openalex.org/W2580655056",
+          "https://openalex.org/W2598009386",
+          "https://openalex.org/W2612634611",
+          "https://openalex.org/W2734532599",
+          "https://openalex.org/W2740668335",
+          "https://openalex.org/W2755267944",
+          "https://openalex.org/W2769911575",
+          "https://openalex.org/W2775062543",
+          "https://openalex.org/W2789355024",
+          "https://openalex.org/W2800783314",
+          "https://openalex.org/W2806657798",
+          "https://openalex.org/W2875574901",
+          "https://openalex.org/W2884011820",
+          "https://openalex.org/W2884097437",
+          "https://openalex.org/W2889406081",
+          "https://openalex.org/W2899410593",
+          "https://openalex.org/W2902028332",
+          "https://openalex.org/W2902111670",
+          "https://openalex.org/W2951642120",
+          "https://openalex.org/W2963203454",
+          "https://openalex.org/W2963669035",
+          "https://openalex.org/W2964473112",
+          "https://openalex.org/W2964852614",
+          "https://openalex.org/W2982159819",
+          "https://openalex.org/W2990131249",
+          "https://openalex.org/W2990455438",
+          "https://openalex.org/W2994791014",
+          "https://openalex.org/W3009330609",
+          "https://openalex.org/W3012337196",
+          "https://openalex.org/W3098152251",
+          "https://openalex.org/W3101025532",
+          "https://openalex.org/W3101121098",
+          "https://openalex.org/W3102154997",
+          "https://openalex.org/W3102699503",
+          "https://openalex.org/W3103172730",
+          "https://openalex.org/W3103331487",
+          "https://openalex.org/W3103624198",
+          "https://openalex.org/W3106139547",
+          "https://openalex.org/W3106297855",
+          "https://openalex.org/W3149430403",
+          "https://openalex.org/W3164295237",
+          "https://openalex.org/W3174622197",
+          "https://openalex.org/W3187966102",
+          "https://openalex.org/W4211119140",
+          "https://openalex.org/W4249097170",
+          "https://openalex.org/W4252847330"
+        ],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2102.05806",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "https://doi.org/10.1103/physrevlett.127.116402",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "doi-exact",
+        "matchConfidence": 0.99,
+        "matchedFromPdf": true,
+        "updatedAt": 1787371705459,
+        "metadataError": "",
+        "citations": {
+          "count": 58,
+          "source": "OpenAlex",
+          "updatedAt": 1787371705459
+        },
+        "pdfPages": 22,
+        "historicalExtractedAt": 1787371705182,
+        "metadataReview": {
+          "status": "accepted-auto",
+          "confidence": 0.99,
+          "method": "doi-exact",
+          "stage": "pdf",
+          "reviewedAt": 1787371705459
+        },
+        "backfillScan": {
+          "status": "accepted",
+          "confidence": 0.99,
+          "method": "doi-exact",
+          "stage": "pdf",
+          "message": "",
+          "scannedAt": 1787371705459
+        }
+      },
+      "citations": {
+        "count": 58,
+        "source": "OpenAlex",
+        "updatedAt": 1787371705459
+      }
     },
     {
       "id": "qg0ha2iin7emivcaku0",
@@ -476,7 +4215,309 @@
       "ts": 1765088798379,
       "size": 5886953,
       "desc": "Phase Control of Majorana Bound States in a Topological X Junction",
-      "imagePath": "data/files/2025/12/images/8suhguw2hplmivcahvg__TZ2020PRL-XJ.png"
+      "imagePath": "data/files/2025/12/images/8suhguw2hplmivcahvg__TZ2020PRL-XJ.png",
+      "scholarly": {
+        "title": "Phase Control of Majorana Bound States in a Topological X Junction",
+        "doi": "10.1103/physrevlett.124.137001",
+        "arxivId": "",
+        "openAlexId": "https://openalex.org/W2972810264",
+        "publicationDate": "2020-04-01",
+        "year": 2020,
+        "venue": "Physical Review Letters",
+        "venueId": "https://openalex.org/S24807848",
+        "type": "article",
+        "authors": [
+          {
+            "name": "Tong Zhou",
+            "openAlexId": "https://openalex.org/A5019343752",
+            "orcid": "https://orcid.org/0000-0003-4588-5263",
+            "position": "first",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University at Buffalo, State University of New York",
+                "openAlexId": "https://openalex.org/I63190737",
+                "countryCode": "US",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Matthieu Dartiailh",
+            "openAlexId": "https://openalex.org/A5009685075",
+            "orcid": "https://orcid.org/0000-0001-6451-0577",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "New York University",
+                "openAlexId": "https://openalex.org/I57206974",
+                "countryCode": "US",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "William Mayer",
+            "openAlexId": "https://openalex.org/A5051492875",
+            "orcid": "https://orcid.org/0000-0002-0864-8704",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "New York University",
+                "openAlexId": "https://openalex.org/I57206974",
+                "countryCode": "US",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Jong E. Han",
+            "openAlexId": "https://openalex.org/A5042724368",
+            "orcid": "https://orcid.org/0000-0002-5518-2986",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University at Buffalo, State University of New York",
+                "openAlexId": "https://openalex.org/I63190737",
+                "countryCode": "US",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Alex Matos-Abiague",
+            "openAlexId": "https://openalex.org/A5062954358",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Wayne State University",
+                "openAlexId": "https://openalex.org/I185443292",
+                "countryCode": "US",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Javad Shabani",
+            "openAlexId": "https://openalex.org/A5018897071",
+            "orcid": "https://orcid.org/0000-0002-0812-2809",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "New York University",
+                "openAlexId": "https://openalex.org/I57206974",
+                "countryCode": "US",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Igor Žutić",
+            "openAlexId": "https://openalex.org/A5031487923",
+            "orcid": "https://orcid.org/0000-0003-2485-226X",
+            "position": "last",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University at Buffalo, State University of New York",
+                "openAlexId": "https://openalex.org/I63190737",
+                "countryCode": "US",
+                "type": "education"
+              }
+            ]
+          }
+        ],
+        "institutions": [
+          {
+            "name": "University at Buffalo, State University of New York",
+            "openAlexId": "https://openalex.org/I63190737",
+            "countryCode": "US",
+            "type": "education"
+          },
+          {
+            "name": "New York University",
+            "openAlexId": "https://openalex.org/I57206974",
+            "countryCode": "US",
+            "type": "education"
+          },
+          {
+            "name": "Wayne State University",
+            "openAlexId": "https://openalex.org/I185443292",
+            "countryCode": "US",
+            "type": "education"
+          }
+        ],
+        "abstract": "Topological superconductivity supports exotic Majorana bound states (MBS) which are chargeless zero-energy emergent quasiparticles. With their non-Abelian exchange statistics and fractionalization of a single electron stored nonlocally as a spatially separated MBS, they are particularly suitable for implementing fault-tolerant topological quantum computing. While realizing MBS has focused on one-dimensional systems, the onset of topological superconductivity requires delicate parameter tuning and geometric constraints pose significant challenges for their control and demonstration of non-Abelian statistics. To overcome these challenges, building on recent experiments in planar Josephson junctions (JJs), we propose a MBS platform of X-shaped JJs. This versatile implementation reveals how external flux control of the superconducting phase difference can generate and manipulate multiple MBS pairs to probe non-Abelian statistics. The underlying topological superconductivity exists over a large parameter space, consistent with materials used in our fabrication of such X junctions, as an important step towards scalable topological quantum computing.",
+        "automaticTopics": [
+          {
+            "name": "Topological Materials and Phenomena",
+            "id": "https://openalex.org/T10657",
+            "score": 1.0,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Graphene research and applications",
+            "id": "https://openalex.org/T10083",
+            "score": 0.9987999796867371,
+            "subfield": "Materials Chemistry",
+            "field": "Materials Science",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Advanced Condensed Matter Physics",
+            "id": "https://openalex.org/T11682",
+            "score": 0.9983999729156494,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Topological Materials and Phenomena",
+        "keywords": [
+          "Physics",
+          "Topology (electrical circuits)",
+          "MAJORANA",
+          "Superconductivity",
+          "Quasiparticle",
+          "Abelian group",
+          "Josephson effect",
+          "Quantum computer",
+          "Bound state",
+          "Quantum mechanics",
+          "Quantum",
+          "Combinatorics"
+        ],
+        "relatedWorks": [
+          "https://openalex.org/W2805315634",
+          "https://openalex.org/W1976848611",
+          "https://openalex.org/W3031572198",
+          "https://openalex.org/W3176732897",
+          "https://openalex.org/W1969939956",
+          "https://openalex.org/W2763191415",
+          "https://openalex.org/W3122347574",
+          "https://openalex.org/W2963127073",
+          "https://openalex.org/W4300051424",
+          "https://openalex.org/W3162681371"
+        ],
+        "referencedWorks": [
+          "https://openalex.org/W1495665604",
+          "https://openalex.org/W1516186574",
+          "https://openalex.org/W1617901392",
+          "https://openalex.org/W1784129591",
+          "https://openalex.org/W1973871552",
+          "https://openalex.org/W1973972788",
+          "https://openalex.org/W1993927487",
+          "https://openalex.org/W1995188016",
+          "https://openalex.org/W2006723320",
+          "https://openalex.org/W2010878960",
+          "https://openalex.org/W2016410460",
+          "https://openalex.org/W2041923345",
+          "https://openalex.org/W2055424520",
+          "https://openalex.org/W2067650803",
+          "https://openalex.org/W2084932260",
+          "https://openalex.org/W2084993040",
+          "https://openalex.org/W2091731343",
+          "https://openalex.org/W2104864237",
+          "https://openalex.org/W2115109350",
+          "https://openalex.org/W2152240519",
+          "https://openalex.org/W2153852402",
+          "https://openalex.org/W2160084444",
+          "https://openalex.org/W2168226651",
+          "https://openalex.org/W2168606130",
+          "https://openalex.org/W2199658299",
+          "https://openalex.org/W2231191750",
+          "https://openalex.org/W2245224556",
+          "https://openalex.org/W2257408022",
+          "https://openalex.org/W2293745760",
+          "https://openalex.org/W2508692617",
+          "https://openalex.org/W2509251185",
+          "https://openalex.org/W2527355360",
+          "https://openalex.org/W2580592926",
+          "https://openalex.org/W2607652792",
+          "https://openalex.org/W2610109908",
+          "https://openalex.org/W2763934404",
+          "https://openalex.org/W2775267825",
+          "https://openalex.org/W2804147665",
+          "https://openalex.org/W2890645940",
+          "https://openalex.org/W2894904477",
+          "https://openalex.org/W2894913658",
+          "https://openalex.org/W2897984238",
+          "https://openalex.org/W2917057729",
+          "https://openalex.org/W2929887372",
+          "https://openalex.org/W2947380134",
+          "https://openalex.org/W2948340606",
+          "https://openalex.org/W2949447938",
+          "https://openalex.org/W2950306946",
+          "https://openalex.org/W2951761024",
+          "https://openalex.org/W2952463091",
+          "https://openalex.org/W2955392493",
+          "https://openalex.org/W2955735997",
+          "https://openalex.org/W2964473112",
+          "https://openalex.org/W2964770140",
+          "https://openalex.org/W2969378008",
+          "https://openalex.org/W2975806377",
+          "https://openalex.org/W3098954371",
+          "https://openalex.org/W3099232011",
+          "https://openalex.org/W3099977047",
+          "https://openalex.org/W3100684483",
+          "https://openalex.org/W3102430641",
+          "https://openalex.org/W3102773194",
+          "https://openalex.org/W3103282552",
+          "https://openalex.org/W3103945362",
+          "https://openalex.org/W3104863487",
+          "https://openalex.org/W3104958707",
+          "https://openalex.org/W3125378746",
+          "https://openalex.org/W4211119140"
+        ],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/1909.05386",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "https://doi.org/10.1103/physrevlett.124.137001",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "doi-exact",
+        "matchConfidence": 0.99,
+        "matchedFromPdf": true,
+        "updatedAt": 1787371710531,
+        "metadataError": "",
+        "citations": {
+          "count": 52,
+          "source": "OpenAlex",
+          "updatedAt": 1787371710531
+        },
+        "pdfPages": 13,
+        "historicalExtractedAt": 1787371710245,
+        "metadataReview": {
+          "status": "accepted-auto",
+          "confidence": 0.99,
+          "method": "doi-exact",
+          "stage": "pdf",
+          "reviewedAt": 1787371710531
+        },
+        "backfillScan": {
+          "status": "accepted",
+          "confidence": 0.99,
+          "method": "doi-exact",
+          "stage": "pdf",
+          "message": "",
+          "scannedAt": 1787371710531
+        }
+      },
+      "citations": {
+        "count": 52,
+        "source": "OpenAlex",
+        "updatedAt": 1787371710531
+      }
     },
     {
       "id": "ypyle9l5t9pmivcgsm2",
@@ -2677,5 +6718,10 @@
       "uploadError": "",
       "imageUploadError": ""
     }
-  ]
+  ],
+  "historicalMetadataUpdatedAt": 1787371710651,
+  "schemaVersion": 4,
+  "appVersion": "4.1",
+  "metadataUpdatedAt": 1787371710651,
+  "metadataUpdatedAtIso": "2026-08-22T04:08:30.651755+00:00"
 }
