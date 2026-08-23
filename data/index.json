@@ -320,24 +320,24 @@
         },
         "landingPageUrl": "https://doi.org/10.1103/prnx-47mk",
         "metadataSource": "OpenAlex",
-        "matchMethod": "doi-exact",
-        "matchConfidence": 0.99,
-        "matchedFromPdf": true,
-        "updatedAt": 1787371651013,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452651720,
         "metadataError": "",
         "citations": {
           "count": 5,
           "source": "OpenAlex",
-          "updatedAt": 1787371651013
+          "updatedAt": 1787452651720
         },
         "pdfPages": 9,
         "historicalExtractedAt": 1787371650741,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.99,
-          "method": "doi-exact",
-          "stage": "pdf",
-          "reviewedAt": 1787371651014
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452651720
         },
         "backfillScan": {
           "status": "accepted",
@@ -351,7 +351,7 @@
       "citations": {
         "count": 5,
         "source": "OpenAlex",
-        "updatedAt": 1787371651013
+        "updatedAt": 1787452651720
       }
     },
     {
@@ -516,24 +516,24 @@
         },
         "landingPageUrl": "https://doi.org/10.1103/nykx-1tsz",
         "metadataSource": "OpenAlex",
-        "matchMethod": "doi-exact",
-        "matchConfidence": 0.99,
-        "matchedFromPdf": true,
-        "updatedAt": 1787371668726,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452652080,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1787371668726
+          "updatedAt": 1787452652080
         },
         "pdfPages": 7,
         "historicalExtractedAt": 1787371668438,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.99,
-          "method": "doi-exact",
-          "stage": "pdf",
-          "reviewedAt": 1787371668726
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452652080
         },
         "backfillScan": {
           "status": "accepted",
@@ -547,7 +547,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1787371668726
+        "updatedAt": 1787452652080
       }
     },
     {
@@ -889,24 +889,24 @@
         },
         "landingPageUrl": "https://doi.org/10.1103/3tvf-5v29",
         "metadataSource": "OpenAlex",
-        "matchMethod": "doi-exact",
-        "matchConfidence": 0.99,
-        "matchedFromPdf": true,
-        "updatedAt": 1787371669688,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452652448,
         "metadataError": "",
         "citations": {
           "count": 1,
           "source": "OpenAlex",
-          "updatedAt": 1787371669688
+          "updatedAt": 1787452652448
         },
         "pdfPages": 9,
         "historicalExtractedAt": 1787371669407,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.99,
-          "method": "doi-exact",
-          "stage": "pdf",
-          "reviewedAt": 1787371669688
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452652448
         },
         "backfillScan": {
           "status": "accepted",
@@ -920,7 +920,7 @@
       "citations": {
         "count": 1,
         "source": "OpenAlex",
-        "updatedAt": 1787371669688
+        "updatedAt": 1787452652448
       }
     },
     {
@@ -1217,24 +1217,24 @@
         },
         "landingPageUrl": "https://doi.org/10.1038/s42005-025-02364-y",
         "metadataSource": "OpenAlex",
-        "matchMethod": "doi-exact",
-        "matchConfidence": 0.99,
-        "matchedFromPdf": true,
-        "updatedAt": 1787371671318,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452652778,
         "metadataError": "",
         "citations": {
           "count": 2,
           "source": "OpenAlex",
-          "updatedAt": 1787371671318
+          "updatedAt": 1787452652778
         },
         "pdfPages": 9,
         "historicalExtractedAt": 1787371670525,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.99,
-          "method": "doi-exact",
-          "stage": "pdf",
-          "reviewedAt": 1787371671318
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452652778
         },
         "backfillScan": {
           "status": "accepted",
@@ -1248,7 +1248,7 @@
       "citations": {
         "count": 2,
         "source": "OpenAlex",
-        "updatedAt": 1787371671318
+        "updatedAt": 1787452652778
       }
     },
     {
@@ -1568,24 +1568,24 @@
         },
         "landingPageUrl": "https://doi.org/10.1038/s41598-025-29607-w",
         "metadataSource": "OpenAlex",
-        "matchMethod": "arxiv-search",
-        "matchConfidence": 0.93,
-        "matchedFromPdf": true,
-        "updatedAt": 1787371673231,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452653550,
         "metadataError": "",
         "citations": {
           "count": 2,
           "source": "OpenAlex",
-          "updatedAt": 1787371673231
+          "updatedAt": 1787452653550
         },
         "pdfPages": 12,
         "historicalExtractedAt": 1787371672779,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.93,
-          "method": "arxiv-search",
-          "stage": "pdf",
-          "reviewedAt": 1787371673231
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452653550
         },
         "backfillScan": {
           "status": "accepted",
@@ -1599,7 +1599,7 @@
       "citations": {
         "count": 2,
         "source": "OpenAlex",
-        "updatedAt": 1787371673231
+        "updatedAt": 1787452653550
       }
     },
     {
@@ -1957,24 +1957,24 @@
         },
         "landingPageUrl": "https://doi.org/10.1103/31zv-84hw",
         "metadataSource": "OpenAlex",
-        "matchMethod": "doi-exact",
-        "matchConfidence": 0.99,
-        "matchedFromPdf": true,
-        "updatedAt": 1787371675635,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452653920,
         "metadataError": "",
         "citations": {
           "count": 1,
           "source": "OpenAlex",
-          "updatedAt": 1787371675635
+          "updatedAt": 1787452653920
         },
         "pdfPages": 9,
         "historicalExtractedAt": 1787371675353,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.99,
-          "method": "doi-exact",
-          "stage": "pdf",
-          "reviewedAt": 1787371675635
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452653921
         },
         "backfillScan": {
           "status": "accepted",
@@ -1988,7 +1988,7 @@
       "citations": {
         "count": 1,
         "source": "OpenAlex",
-        "updatedAt": 1787371675635
+        "updatedAt": 1787452653920
       }
     },
     {
@@ -2136,24 +2136,24 @@
         },
         "landingPageUrl": "http://arxiv.org/abs/2603.04954",
         "metadataSource": "OpenAlex",
-        "matchMethod": "arxiv-search",
-        "matchConfidence": 0.93,
-        "matchedFromPdf": true,
-        "updatedAt": 1787371683215,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452654630,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1787371683215
+          "updatedAt": 1787452654630
         },
         "pdfPages": 10,
         "historicalExtractedAt": 1787371682935,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.93,
-          "method": "arxiv-search",
-          "stage": "pdf",
-          "reviewedAt": 1787371683215
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452654630
         },
         "backfillScan": {
           "status": "accepted",
@@ -2167,7 +2167,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1787371683215
+        "updatedAt": 1787452654630
       }
     },
     {
@@ -2322,24 +2322,24 @@
         },
         "landingPageUrl": "https://arxiv.org/abs/2604.17594",
         "metadataSource": "OpenAlex",
-        "matchMethod": "arxiv-search",
-        "matchConfidence": 0.93,
-        "matchedFromPdf": true,
-        "updatedAt": 1787371685032,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452654996,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1787371685032
+          "updatedAt": 1787452654996
         },
         "pdfPages": 23,
         "historicalExtractedAt": 1787371683737,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.93,
-          "method": "arxiv-search",
-          "stage": "pdf",
-          "reviewedAt": 1787371685032
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452654996
         },
         "backfillScan": {
           "status": "accepted",
@@ -2353,7 +2353,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1787371685032
+        "updatedAt": 1787452654996
       }
     },
     {
@@ -2648,24 +2648,24 @@
         },
         "landingPageUrl": "https://doi.org/10.1103/kqy8-myz1",
         "metadataSource": "OpenAlex",
-        "matchMethod": "arxiv-search",
-        "matchConfidence": 0.93,
-        "matchedFromPdf": true,
-        "updatedAt": 1787371689877,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452656564,
         "metadataError": "",
         "citations": {
-          "count": 14,
+          "count": 15,
           "source": "OpenAlex",
-          "updatedAt": 1787371689877
+          "updatedAt": 1787452656564
         },
         "pdfPages": 6,
         "historicalExtractedAt": 1787371689469,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.93,
-          "method": "arxiv-search",
-          "stage": "pdf",
-          "reviewedAt": 1787371689878
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452656564
         },
         "backfillScan": {
           "status": "accepted",
@@ -2677,9 +2677,9 @@
         }
       },
       "citations": {
-        "count": 14,
+        "count": 15,
         "source": "OpenAlex",
-        "updatedAt": 1787371689877
+        "updatedAt": 1787452656564
       }
     },
     {
@@ -2777,24 +2777,24 @@
         },
         "landingPageUrl": "http://arxiv.org/abs/2603.12692",
         "metadataSource": "OpenAlex",
-        "matchMethod": "arxiv-search",
-        "matchConfidence": 0.93,
-        "matchedFromPdf": true,
-        "updatedAt": 1787371690834,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452656838,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1787371690834
+          "updatedAt": 1787452656838
         },
         "pdfPages": 7,
         "historicalExtractedAt": 1787371690488,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.93,
-          "method": "arxiv-search",
-          "stage": "pdf",
-          "reviewedAt": 1787371690834
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452656838
         },
         "backfillScan": {
           "status": "accepted",
@@ -2808,7 +2808,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1787371690834
+        "updatedAt": 1787452656838
       }
     },
     {
@@ -2907,24 +2907,24 @@
         },
         "landingPageUrl": "http://arxiv.org/abs/2505.21085",
         "metadataSource": "OpenAlex",
-        "matchMethod": "arxiv-search",
-        "matchConfidence": 0.93,
-        "matchedFromPdf": true,
-        "updatedAt": 1787371697263,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452657121,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1787371697263
+          "updatedAt": 1787452657121
         },
         "pdfPages": 9,
         "historicalExtractedAt": 1787371696930,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.93,
-          "method": "arxiv-search",
-          "stage": "pdf",
-          "reviewedAt": 1787371697263
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452657121
         },
         "backfillScan": {
           "status": "accepted",
@@ -2938,7 +2938,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1787371697263
+        "updatedAt": 1787452657121
       }
     },
     {
@@ -3114,24 +3114,24 @@
         },
         "landingPageUrl": "https://doi.org/10.1038/s41534-025-01120-y",
         "metadataSource": "OpenAlex",
-        "matchMethod": "doi-exact",
-        "matchConfidence": 0.99,
-        "matchedFromPdf": true,
-        "updatedAt": 1787371698635,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452657826,
         "metadataError": "",
         "citations": {
           "count": 2,
           "source": "OpenAlex",
-          "updatedAt": 1787371698635
+          "updatedAt": 1787452657826
         },
         "pdfPages": 11,
         "historicalExtractedAt": 1787371697830,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.99,
-          "method": "doi-exact",
-          "stage": "pdf",
-          "reviewedAt": 1787371698635
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452657826
         },
         "backfillScan": {
           "status": "accepted",
@@ -3145,7 +3145,7 @@
       "citations": {
         "count": 2,
         "source": "OpenAlex",
-        "updatedAt": 1787371698635
+        "updatedAt": 1787452657826
       }
     },
     {
@@ -3338,24 +3338,24 @@
         },
         "landingPageUrl": "https://doi.org/10.1007/s43673-026-00187-9",
         "metadataSource": "OpenAlex",
-        "matchMethod": "arxiv-search",
-        "matchConfidence": 0.93,
-        "matchedFromPdf": true,
-        "updatedAt": 1787371700704,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452658749,
         "metadataError": "",
         "citations": {
           "count": 1,
           "source": "OpenAlex",
-          "updatedAt": 1787371700704
+          "updatedAt": 1787452658749
         },
         "pdfPages": 23,
         "historicalExtractedAt": 1787371700305,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.93,
-          "method": "arxiv-search",
-          "stage": "pdf",
-          "reviewedAt": 1787371700704
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452658749
         },
         "backfillScan": {
           "status": "accepted",
@@ -3369,7 +3369,7 @@
       "citations": {
         "count": 1,
         "source": "OpenAlex",
-        "updatedAt": 1787371700704
+        "updatedAt": 1787452658749
       }
     },
     {
@@ -3549,24 +3549,24 @@
         },
         "landingPageUrl": "https://doi.org/10.15302/frontphys.2026.095301",
         "metadataSource": "OpenAlex",
-        "matchMethod": "arxiv-search",
-        "matchConfidence": 0.93,
-        "matchedFromPdf": true,
-        "updatedAt": 1787371702121,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452659100,
         "metadataError": "",
         "citations": {
           "count": 2,
           "source": "OpenAlex",
-          "updatedAt": 1787371702121
+          "updatedAt": 1787452659100
         },
         "pdfPages": 20,
         "historicalExtractedAt": 1787371701670,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.93,
-          "method": "arxiv-search",
-          "stage": "pdf",
-          "reviewedAt": 1787371702121
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452659101
         },
         "backfillScan": {
           "status": "accepted",
@@ -3580,7 +3580,7 @@
       "citations": {
         "count": 2,
         "source": "OpenAlex",
-        "updatedAt": 1787371702121
+        "updatedAt": 1787452659100
       }
     },
     {
@@ -3758,24 +3758,24 @@
         },
         "landingPageUrl": "https://arxiv.org/abs/2608.07374",
         "metadataSource": "OpenAlex",
-        "matchMethod": "arxiv-search",
-        "matchConfidence": 0.93,
-        "matchedFromPdf": true,
-        "updatedAt": 1787371704519,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452659745,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1787371704519
+          "updatedAt": 1787452659745
         },
         "pdfPages": 6,
         "historicalExtractedAt": 1787371704063,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.93,
-          "method": "arxiv-search",
-          "stage": "pdf",
-          "reviewedAt": 1787371704519
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452659745
         },
         "backfillScan": {
           "status": "accepted",
@@ -3789,7 +3789,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1787371704519
+        "updatedAt": 1787452659745
       }
     },
     {
@@ -3993,7 +3993,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1,
+            "score": 1.0,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -4165,24 +4165,24 @@
         },
         "landingPageUrl": "https://doi.org/10.1103/physrevlett.127.116402",
         "metadataSource": "OpenAlex",
-        "matchMethod": "doi-exact",
-        "matchConfidence": 0.99,
-        "matchedFromPdf": true,
-        "updatedAt": 1787371705459,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452660062,
         "metadataError": "",
         "citations": {
           "count": 58,
           "source": "OpenAlex",
-          "updatedAt": 1787371705459
+          "updatedAt": 1787452660062
         },
         "pdfPages": 22,
         "historicalExtractedAt": 1787371705182,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.99,
-          "method": "doi-exact",
-          "stage": "pdf",
-          "reviewedAt": 1787371705459
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452660062
         },
         "backfillScan": {
           "status": "accepted",
@@ -4196,7 +4196,7 @@
       "citations": {
         "count": 58,
         "source": "OpenAlex",
-        "updatedAt": 1787371705459
+        "updatedAt": 1787452660062
       }
     },
     {
@@ -4358,7 +4358,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1,
+            "score": 1.0,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -4485,24 +4485,24 @@
         },
         "landingPageUrl": "https://doi.org/10.1103/physrevlett.124.137001",
         "metadataSource": "OpenAlex",
-        "matchMethod": "doi-exact",
-        "matchConfidence": 0.99,
-        "matchedFromPdf": true,
-        "updatedAt": 1787371710531,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452660378,
         "metadataError": "",
         "citations": {
           "count": 52,
           "source": "OpenAlex",
-          "updatedAt": 1787371710531
+          "updatedAt": 1787452660378
         },
         "pdfPages": 13,
         "historicalExtractedAt": 1787371710245,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.99,
-          "method": "doi-exact",
-          "stage": "pdf",
-          "reviewedAt": 1787371710531
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452660379
         },
         "backfillScan": {
           "status": "accepted",
@@ -4516,7 +4516,7 @@
       "citations": {
         "count": 52,
         "source": "OpenAlex",
-        "updatedAt": 1787371710531
+        "updatedAt": 1787452660378
       }
     },
     {
@@ -4690,7 +4690,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1,
+            "score": 1.0,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -4856,24 +4856,24 @@
         },
         "landingPageUrl": "https://doi.org/10.1038/s41467-022-29463-6",
         "metadataSource": "OpenAlex",
-        "matchMethod": "doi-exact",
-        "matchConfidence": 0.99,
-        "matchedFromPdf": true,
-        "updatedAt": 1787387742271,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452660762,
         "metadataError": "",
         "citations": {
           "count": 65,
           "source": "OpenAlex",
-          "updatedAt": 1787387742271
+          "updatedAt": 1787452660762
         },
         "pdfPages": 21,
         "historicalExtractedAt": 1787387742143,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.99,
-          "method": "doi-exact",
-          "stage": "pdf",
-          "reviewedAt": 1787387742272
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452660762
         },
         "backfillScan": {
           "status": "accepted",
@@ -4887,7 +4887,7 @@
       "citations": {
         "count": 65,
         "source": "OpenAlex",
-        "updatedAt": 1787387742271
+        "updatedAt": 1787452660762
       }
     },
     {
@@ -5227,24 +5227,24 @@
         },
         "landingPageUrl": "https://doi.org/10.1103/physrevlett.134.106801",
         "metadataSource": "OpenAlex",
-        "matchMethod": "doi-exact",
-        "matchConfidence": 0.99,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787451786789,
+        "updatedAt": 1787452661088,
         "metadataError": "",
         "citations": {
           "count": 167,
           "source": "OpenAlex",
-          "updatedAt": 1787451786789
+          "updatedAt": 1787452661088
         },
         "pdfPages": 19,
         "historicalExtractedAt": 1787387742645,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.99,
-          "method": "doi-exact",
-          "stage": "pdf",
-          "reviewedAt": 1787387742765
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452661088
         },
         "backfillScan": {
           "status": "accepted",
@@ -5262,7 +5262,7 @@
       "citations": {
         "count": 167,
         "source": "OpenAlex",
-        "updatedAt": 1787451786789
+        "updatedAt": 1787452661088
       },
       "groups": [],
       "paperCard": {
@@ -5580,24 +5580,24 @@
         },
         "landingPageUrl": "https://arxiv.org/abs/2601.22226",
         "metadataSource": "OpenAlex",
-        "matchMethod": "arxiv-search",
-        "matchConfidence": 0.93,
-        "matchedFromPdf": true,
-        "updatedAt": 1787387747265,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452663721,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1787387747265
+          "updatedAt": 1787452663721
         },
         "pdfPages": 12,
         "historicalExtractedAt": 1787387747138,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.93,
-          "method": "arxiv-search",
-          "stage": "pdf",
-          "reviewedAt": 1787387747265
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452663722
         },
         "backfillScan": {
           "status": "accepted",
@@ -5611,7 +5611,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1787387747265
+        "updatedAt": 1787452663721
       }
     },
     {
@@ -5910,24 +5910,24 @@
         },
         "landingPageUrl": "https://doi.org/10.1038/s41535-025-00835-7",
         "metadataSource": "OpenAlex",
-        "matchMethod": "arxiv-search",
-        "matchConfidence": 0.93,
-        "matchedFromPdf": true,
-        "updatedAt": 1787387747790,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452664098,
         "metadataError": "",
         "citations": {
           "count": 13,
           "source": "OpenAlex",
-          "updatedAt": 1787387747790
+          "updatedAt": 1787452664098
         },
         "pdfPages": 7,
         "historicalExtractedAt": 1787387747599,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.93,
-          "method": "arxiv-search",
-          "stage": "pdf",
-          "reviewedAt": 1787387747790
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452664099
         },
         "backfillScan": {
           "status": "accepted",
@@ -5941,7 +5941,7 @@
       "citations": {
         "count": 13,
         "source": "OpenAlex",
-        "updatedAt": 1787387747790
+        "updatedAt": 1787452664098
       }
     },
     {
@@ -6061,7 +6061,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1,
+            "score": 1.0,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -6175,24 +6175,24 @@
         },
         "landingPageUrl": "https://doi.org/10.1038/s41467-023-37725-0",
         "metadataSource": "OpenAlex",
-        "matchMethod": "doi-exact",
-        "matchConfidence": 0.99,
-        "matchedFromPdf": true,
-        "updatedAt": 1787387748544,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452664503,
         "metadataError": "",
         "citations": {
           "count": 24,
           "source": "OpenAlex",
-          "updatedAt": 1787387748544
+          "updatedAt": 1787452664503
         },
         "pdfPages": 8,
         "historicalExtractedAt": 1787387748371,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.99,
-          "method": "doi-exact",
-          "stage": "pdf",
-          "reviewedAt": 1787387748544
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452664503
         },
         "backfillScan": {
           "status": "accepted",
@@ -6206,7 +6206,7 @@
       "citations": {
         "count": 24,
         "source": "OpenAlex",
-        "updatedAt": 1787387748544
+        "updatedAt": 1787452664503
       }
     },
     {
@@ -6498,24 +6498,24 @@
         },
         "landingPageUrl": "https://doi.org/10.1038/s42005-024-01618-5",
         "metadataSource": "OpenAlex",
-        "matchMethod": "doi-exact",
-        "matchConfidence": 0.99,
-        "matchedFromPdf": true,
-        "updatedAt": 1787387749165,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452665191,
         "metadataError": "",
         "citations": {
           "count": 44,
           "source": "OpenAlex",
-          "updatedAt": 1787387749165
+          "updatedAt": 1787452665191
         },
         "pdfPages": 8,
         "historicalExtractedAt": 1787387749058,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.99,
-          "method": "doi-exact",
-          "stage": "pdf",
-          "reviewedAt": 1787387749165
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452665191
         },
         "backfillScan": {
           "status": "accepted",
@@ -6529,7 +6529,7 @@
       "citations": {
         "count": 44,
         "source": "OpenAlex",
-        "updatedAt": 1787387749165
+        "updatedAt": 1787452665191
       }
     },
     {
@@ -6719,24 +6719,24 @@
         },
         "landingPageUrl": "https://arxiv.org/abs/2607.14949",
         "metadataSource": "OpenAlex",
-        "matchMethod": "arxiv-search",
-        "matchConfidence": 0.93,
-        "matchedFromPdf": true,
-        "updatedAt": 1787387749786,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452665497,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1787387749786
+          "updatedAt": 1787452665497
         },
         "pdfPages": 10,
         "historicalExtractedAt": 1787387749599,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.93,
-          "method": "arxiv-search",
-          "stage": "pdf",
-          "reviewedAt": 1787387749786
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452665498
         },
         "backfillScan": {
           "status": "accepted",
@@ -6750,7 +6750,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1787387749786
+        "updatedAt": 1787452665497
       }
     },
     {
@@ -7133,24 +7133,24 @@
         },
         "landingPageUrl": "https://doi.org/10.1088/1367-2630/ab494b",
         "metadataSource": "OpenAlex",
-        "matchMethod": "arxiv-search",
-        "matchConfidence": 0.93,
-        "matchedFromPdf": true,
-        "updatedAt": 1787387752268,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452666826,
         "metadataError": "",
         "citations": {
           "count": 10,
           "source": "OpenAlex",
-          "updatedAt": 1787387752268
+          "updatedAt": 1787452666826
         },
         "pdfPages": 17,
         "historicalExtractedAt": 1787387752020,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.93,
-          "method": "arxiv-search",
-          "stage": "pdf",
-          "reviewedAt": 1787387752268
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452666826
         },
         "backfillScan": {
           "status": "accepted",
@@ -7164,7 +7164,7 @@
       "citations": {
         "count": 10,
         "source": "OpenAlex",
-        "updatedAt": 1787387752268
+        "updatedAt": 1787452666826
       }
     },
     {
@@ -7309,7 +7309,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1,
+            "score": 1.0,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -7445,24 +7445,24 @@
         },
         "landingPageUrl": "https://doi.org/10.1103/physrevb.102.085411",
         "metadataSource": "OpenAlex",
-        "matchMethod": "doi-exact",
-        "matchConfidence": 0.99,
-        "matchedFromPdf": true,
-        "updatedAt": 1787387753794,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452667609,
         "metadataError": "",
         "citations": {
           "count": 23,
           "source": "OpenAlex",
-          "updatedAt": 1787387753794
+          "updatedAt": 1787452667609
         },
         "pdfPages": 10,
         "historicalExtractedAt": 1787387753582,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.99,
-          "method": "doi-exact",
-          "stage": "pdf",
-          "reviewedAt": 1787387753794
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452667610
         },
         "backfillScan": {
           "status": "accepted",
@@ -7476,7 +7476,7 @@
       "citations": {
         "count": 23,
         "source": "OpenAlex",
-        "updatedAt": 1787387753794
+        "updatedAt": 1787452667609
       }
     },
     {
@@ -7841,24 +7841,24 @@
         },
         "landingPageUrl": "https://doi.org/10.1103/physrevresearch.6.023293",
         "metadataSource": "OpenAlex",
-        "matchMethod": "doi-exact",
-        "matchConfidence": 0.99,
-        "matchedFromPdf": true,
-        "updatedAt": 1787387754847,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452668015,
         "metadataError": "",
         "citations": {
           "count": 3,
           "source": "OpenAlex",
-          "updatedAt": 1787387754847
+          "updatedAt": 1787452668015
         },
         "pdfPages": 8,
         "historicalExtractedAt": 1787387754624,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.99,
-          "method": "doi-exact",
-          "stage": "pdf",
-          "reviewedAt": 1787387754847
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452668015
         },
         "backfillScan": {
           "status": "accepted",
@@ -7872,7 +7872,7 @@
       "citations": {
         "count": 3,
         "source": "OpenAlex",
-        "updatedAt": 1787387754847
+        "updatedAt": 1787452668015
       }
     },
     {
@@ -8127,24 +8127,24 @@
         },
         "landingPageUrl": "http://dx.doi.org/10.1103/physrevresearch.6.023304",
         "metadataSource": "OpenAlex",
-        "matchMethod": "doi-exact",
-        "matchConfidence": 0.99,
-        "matchedFromPdf": true,
-        "updatedAt": 1787387755551,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452668384,
         "metadataError": "",
         "citations": {
           "count": 7,
           "source": "OpenAlex",
-          "updatedAt": 1787387755551
+          "updatedAt": 1787452668384
         },
         "pdfPages": 17,
         "historicalExtractedAt": 1787387755346,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.99,
-          "method": "doi-exact",
-          "stage": "pdf",
-          "reviewedAt": 1787387755551
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452668384
         },
         "backfillScan": {
           "status": "accepted",
@@ -8158,7 +8158,7 @@
       "citations": {
         "count": 7,
         "source": "OpenAlex",
-        "updatedAt": 1787387755551
+        "updatedAt": 1787452668384
       }
     },
     {
@@ -8369,7 +8369,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1,
+            "score": 1.0,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -8473,24 +8473,24 @@
         },
         "landingPageUrl": "https://doi.org/10.1103/physrevb.93.195302",
         "metadataSource": "OpenAlex",
-        "matchMethod": "doi-exact",
-        "matchConfidence": 0.99,
-        "matchedFromPdf": true,
-        "updatedAt": 1787387756815,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452668796,
         "metadataError": "",
         "citations": {
           "count": 28,
           "source": "OpenAlex",
-          "updatedAt": 1787387756815
+          "updatedAt": 1787452668796
         },
         "pdfPages": 8,
         "historicalExtractedAt": 1787387756598,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.99,
-          "method": "doi-exact",
-          "stage": "pdf",
-          "reviewedAt": 1787387756815
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452668796
         },
         "backfillScan": {
           "status": "accepted",
@@ -8504,7 +8504,7 @@
       "citations": {
         "count": 28,
         "source": "OpenAlex",
-        "updatedAt": 1787387756815
+        "updatedAt": 1787452668796
       }
     },
     {
@@ -8602,7 +8602,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1,
+            "score": 1.0,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -8743,24 +8743,24 @@
         },
         "landingPageUrl": "https://doi.org/10.1016/j.matt.2024.05.028",
         "metadataSource": "OpenAlex",
-        "matchMethod": "doi-exact",
-        "matchConfidence": 0.99,
-        "matchedFromPdf": true,
-        "updatedAt": 1787387757604,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452669164,
         "metadataError": "",
         "citations": {
           "count": 8,
           "source": "OpenAlex",
-          "updatedAt": 1787387757604
+          "updatedAt": 1787452669164
         },
         "pdfPages": 15,
         "historicalExtractedAt": 1787387757375,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.99,
-          "method": "doi-exact",
-          "stage": "pdf",
-          "reviewedAt": 1787387757604
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452669164
         },
         "backfillScan": {
           "status": "accepted",
@@ -8774,7 +8774,7 @@
       "citations": {
         "count": 8,
         "source": "OpenAlex",
-        "updatedAt": 1787387757604
+        "updatedAt": 1787452669164
       }
     },
     {
@@ -8977,24 +8977,24 @@
         },
         "landingPageUrl": "https://arxiv.org/abs/2605.17649",
         "metadataSource": "OpenAlex",
-        "matchMethod": "arxiv-search",
-        "matchConfidence": 0.93,
-        "matchedFromPdf": true,
-        "updatedAt": 1787387760033,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452670690,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1787387760033
+          "updatedAt": 1787452670690
         },
         "pdfPages": 13,
         "historicalExtractedAt": 1787387759780,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.93,
-          "method": "arxiv-search",
-          "stage": "pdf",
-          "reviewedAt": 1787387760034
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452670690
         },
         "backfillScan": {
           "status": "accepted",
@@ -9008,7 +9008,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1787387760033
+        "updatedAt": 1787452670690
       }
     },
     {
@@ -11138,6 +11138,1728 @@
                 "type": "company"
               }
             ]
+          },
+          {
+            "name": "Ryan V. Mishmash",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Gopakumar Mohandas",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Christian Mollgaard",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Michiel de Moor",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Trevor Morgan",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "George Moussa",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Anirudh Narla",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Chetan Nayak",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Jens Hedegaard Nielsen",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "William Hvidtfelt Padkær Nielsen",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Frédéric Nolet",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Mike Nystrom",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Eoin O’Farrell",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Keita Otani",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Adam Paetznick",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Camille Papon",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Andres Paz",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Karl Petersson",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Luca Petit",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Dima Pikulin",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Diego Olivier Fernandez Pons",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Sam Quinn",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Mohana Rajpalke",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Alejandro Alcaraz Ramirez",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Katrine Rasmussen",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "David Razmadze",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Ben Reichardt",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Yuan Ren",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Ken Reneris",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Roy Riccomini",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Ivan Sadovskyy",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Lauri Sainiemi",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Juan Carlos Estrada Saldaña",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Irene Sanlorenzo",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Simon Schaal",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Emma Schmidgall",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Cristina Sfiligoj",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Marcus P. da Silva",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Shilpi Singh",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Sarat Sinha",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Mathias Soeken",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Patrick Sohr",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Tomas Stankevic",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Lieuwe Stek",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Patrick Strøm-Hansen",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Eric Stuppard",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Aarthi Sundaram",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Henri Suominen",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Judith Suter",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Satoshi Suzuki",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Krysta Svore",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Sam Teicher",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Nivetha Thiyagarajah",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Raj Tholapi",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Mason Thomas",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Dennis Tom",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Emily Toomey",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Josh Tracy",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Matthias Troyer",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Michelle Turley",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Matthew D. Turner",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Shivendra Upadhyay",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Ivan Urban",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Alexander Vaschillo",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Dmitrii Viazmitinov",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Dominik Vogel",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Zhenghan Wang",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "John Watson",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Alex Webster",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Joseph Weston",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Timothy Williamson",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Georg W. Winkler",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "David J. van Woerkom",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Brian Paquelet Wütz",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Chung Kai Yang",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Richard Yu",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Emrah Yucelen",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Jesús Herranz Zamorano",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Roland Zeisel",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Guoji Zheng",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Justin Zilke",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Andrew Zimmerman",
+            "openAlexId": "",
+            "orcid": "",
+            "position": "last",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Microsoft (United States)",
+                "openAlexId": "https://openalex.org/I1290206253",
+                "countryCode": "US",
+                "type": "company"
+              },
+              {
+                "name": "Microsoft Research (United Kingdom)",
+                "openAlexId": "https://openalex.org/I4210164937",
+                "countryCode": "GB",
+                "type": "company"
+              }
+            ]
           }
         ],
         "institutions": [
@@ -11370,24 +13092,24 @@
         },
         "landingPageUrl": "https://doi.org/10.1103/qx36-4rv1",
         "metadataSource": "OpenAlex",
-        "matchMethod": "doi-exact",
-        "matchConfidence": 0.99,
-        "matchedFromPdf": true,
-        "updatedAt": 1787387762224,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452671369,
         "metadataError": "",
         "citations": {
           "count": 10,
           "source": "OpenAlex",
-          "updatedAt": 1787387762224
+          "updatedAt": 1787452671369
         },
         "pdfPages": 24,
         "historicalExtractedAt": 1787387761914,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.99,
-          "method": "doi-exact",
-          "stage": "pdf",
-          "reviewedAt": 1787387762224
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452671369
         },
         "backfillScan": {
           "status": "accepted",
@@ -11401,7 +13123,7 @@
       "citations": {
         "count": 10,
         "source": "OpenAlex",
-        "updatedAt": 1787387762224
+        "updatedAt": 1787452671369
       }
     },
     {
@@ -11525,7 +13247,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1,
+            "score": 1.0,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -11659,24 +13381,24 @@
         },
         "landingPageUrl": "https://doi.org/10.1103/physrevb.111.205411",
         "metadataSource": "OpenAlex",
-        "matchMethod": "doi-exact",
-        "matchConfidence": 0.99,
-        "matchedFromPdf": true,
-        "updatedAt": 1787387763356,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452671829,
         "metadataError": "",
         "citations": {
           "count": 2,
           "source": "OpenAlex",
-          "updatedAt": 1787387763356
+          "updatedAt": 1787452671829
         },
         "pdfPages": 15,
         "historicalExtractedAt": 1787387763157,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.99,
-          "method": "doi-exact",
-          "stage": "pdf",
-          "reviewedAt": 1787387763356
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452671829
         },
         "backfillScan": {
           "status": "accepted",
@@ -11690,7 +13412,7 @@
       "citations": {
         "count": 2,
         "source": "OpenAlex",
-        "updatedAt": 1787387763356
+        "updatedAt": 1787452671829
       }
     },
     {
@@ -11932,24 +13654,24 @@
         },
         "landingPageUrl": "https://doi.org/10.1103/physrevb.110.144412",
         "metadataSource": "OpenAlex",
-        "matchMethod": "doi-exact",
-        "matchConfidence": 0.99,
-        "matchedFromPdf": true,
-        "updatedAt": 1787387764091,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452672225,
         "metadataError": "",
         "citations": {
-          "count": 104,
+          "count": 105,
           "source": "OpenAlex",
-          "updatedAt": 1787387764091
+          "updatedAt": 1787452672225
         },
         "pdfPages": 20,
         "historicalExtractedAt": 1787387763876,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.99,
-          "method": "doi-exact",
-          "stage": "pdf",
-          "reviewedAt": 1787387764091
+          "confidence": 1.0,
+          "method": "openalex-id",
+          "stage": "index",
+          "reviewedAt": 1787452672225
         },
         "backfillScan": {
           "status": "accepted",
@@ -11961,9 +13683,9 @@
         }
       },
       "citations": {
-        "count": 104,
+        "count": 105,
         "source": "OpenAlex",
-        "updatedAt": 1787387764091
+        "updatedAt": 1787452672225
       }
     },
     {
@@ -13174,6 +14896,130 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/04/4r1ugsf6ojqmnpjotkl.pdf"
+      },
+      "scholarly": {
+        "title": "Parity-Resolved Quantum Capacitance and Quantum Inductance in Topological, Trivial, and Normal Nanowire Interferometers",
+        "doi": "10.48550/arxiv.2608.09334",
+        "arxivId": "2603.12256",
+        "openAlexId": "https://openalex.org/W7202193061",
+        "publicationDate": "2026-08-10",
+        "year": 2026,
+        "venue": "arXiv (Cornell University)",
+        "venueId": "https://openalex.org/S4306400194",
+        "type": "preprint",
+        "authors": [
+          {
+            "name": "Viktoriia Pinchenkova",
+            "openAlexId": "https://openalex.org/A5133240966",
+            "orcid": "",
+            "position": "first",
+            "corresponding": false,
+            "institutions": []
+          },
+          {
+            "name": "Valerii K. Kozin",
+            "openAlexId": "https://openalex.org/A5146517818",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": []
+          },
+          {
+            "name": "Maximilian Hünenberger",
+            "openAlexId": "https://openalex.org/A5081863333",
+            "orcid": "https://orcid.org/0009-0007-3457-0633",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": []
+          },
+          {
+            "name": "Daniel Loss",
+            "openAlexId": "https://openalex.org/A5146484355",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": []
+          },
+          {
+            "name": "Jelena Klinovaja",
+            "openAlexId": "https://openalex.org/A5146477333",
+            "orcid": "",
+            "position": "last",
+            "corresponding": false,
+            "institutions": []
+          }
+        ],
+        "institutions": [],
+        "abstract": "Quantum-capacitance measurements convert the curvature of a quantum-dot energy in a flux-threaded nanowire loop into fast parity-sensitive signals and, therefore, have become a promising readout tool for Majorana devices. However, Majorana-like quantum-capacitance responses can also arise from topologically trivial Andreev bound states, making capacitance alone insufficient to identify a topological phase. To analyze this problem, we consider a quantum dot coupled to both ends of four nanowire realizations: a topological nanowire hosting Majorana bound states, non-topological superconducting nanowires hosting one or two Andreev bound states, and a fully normal nanowire. Motivated by proposals to use quantum inductance as an additional phase-sensitive probe, we compute both the parity-resolved quantum capacitance $C_\\mathrm{Q}$ and inverse quantum inductance $L_\\mathrm{Q}^{-1}$ as functions of the magnetic flux by exact diagonalization. We show that signatures associated with zero-energy Majorana bound states, such as $h/e$ periodicity and an $h/(2e)$ flux shift between even and odd parity sectors in $C_\\mathrm{Q}$ and $L_\\mathrm{Q}^{-1}$, are not sufficient indicators of topological superconductivity. In certain realistic parameter regimes, similar Majorana-like behavior can arise from a trivial Andreev bound state and even from a purely normal nanowire. By contrast, two nearly zero-energy Andreev bound states can generate a pronounced $h/(2 e)$-periodic component associated with charge-$2e$ transfer, providing a clear non-Majorana signature. A low-energy projection shows that the Majorana, single-Andreev-state, and normal cases can be mapped onto the same minimal low-energy model explaining their similar flux-dependent responses despite their different physical origins.",
+        "automaticTopics": [
+          {
+            "name": "Topological Materials and Phenomena",
+            "id": "https://openalex.org/T10657",
+            "score": 0.9922999739646912,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Quantum and electron transport phenomena",
+            "id": "https://openalex.org/T10382",
+            "score": 0.0017000000225380063,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Chemical and Physical Properties of Materials",
+            "id": "https://openalex.org/T13104",
+            "score": 0.0012000000569969416,
+            "subfield": "Materials Chemistry",
+            "field": "Materials Science",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Topological Materials and Phenomena",
+        "keywords": [
+          "MAJORANA",
+          "Bound state",
+          "Nanowire",
+          "Topology (electrical circuits)",
+          "Quantum",
+          "Upper and lower bounds",
+          "Andreev reflection",
+          "Inductance"
+        ],
+        "relatedWorks": [],
+        "referencedWorks": [],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2608.09334",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "https://arxiv.org/abs/2608.09334",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "arxiv-search",
+        "matchConfidence": 0.93,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452694218,
+        "metadataError": "",
+        "citations": {
+          "count": 0,
+          "source": "OpenAlex",
+          "updatedAt": 1787452694218
+        },
+        "metadataReview": {
+          "status": "accepted-auto",
+          "confidence": 0.93,
+          "method": "arxiv-search",
+          "stage": "index",
+          "reviewedAt": 1787452694218
+        }
+      },
+      "citations": {
+        "count": 0,
+        "source": "OpenAlex",
+        "updatedAt": 1787452694218
       }
     },
     {
@@ -13223,6 +15069,175 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/04/i7dzcavyfxmnqw2w1n.pdf"
+      },
+      "scholarly": {
+        "title": "Floquet-induced anisotropic magnetoresistance and anomalous Hall effect in 2D $d$-wave altermagnets with Rashba spin-orbit coupling",
+        "doi": "",
+        "arxivId": "2604.05322",
+        "openAlexId": "https://openalex.org/W7165817591",
+        "publicationDate": "2026-06-19",
+        "year": 2026,
+        "venue": "arXiv (Cornell University)",
+        "venueId": "https://openalex.org/S4306400194",
+        "type": "preprint",
+        "authors": [
+          {
+            "name": "Mohsen Yarmohammadi",
+            "openAlexId": "https://openalex.org/A5024499804",
+            "orcid": "https://orcid.org/0000-0002-5480-7569",
+            "position": "first",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Georgetown University",
+                "openAlexId": "https://openalex.org/I184565670",
+                "countryCode": "US",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Pieter M. Gunnink",
+            "openAlexId": "https://openalex.org/A5138981290",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Johannes Gutenberg University Mainz",
+                "openAlexId": "https://openalex.org/I197323543",
+                "countryCode": "DE",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Jairo Sinova",
+            "openAlexId": "https://openalex.org/A5139302917",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Johannes Gutenberg University Mainz",
+                "openAlexId": "https://openalex.org/I197323543",
+                "countryCode": "DE",
+                "type": "education"
+              },
+              {
+                "name": "Texas A&M University",
+                "openAlexId": "https://openalex.org/I91045830",
+                "countryCode": "US",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "J. K. Freericks",
+            "openAlexId": "https://openalex.org/A5051507672",
+            "orcid": "https://orcid.org/0000-0002-6232-9165",
+            "position": "last",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Georgetown University",
+                "openAlexId": "https://openalex.org/I184565670",
+                "countryCode": "US",
+                "type": "education"
+              }
+            ]
+          }
+        ],
+        "institutions": [
+          {
+            "name": "Georgetown University",
+            "openAlexId": "https://openalex.org/I184565670",
+            "countryCode": "US",
+            "type": "education"
+          },
+          {
+            "name": "Johannes Gutenberg University Mainz",
+            "openAlexId": "https://openalex.org/I197323543",
+            "countryCode": "DE",
+            "type": "education"
+          },
+          {
+            "name": "Texas A&M University",
+            "openAlexId": "https://openalex.org/I91045830",
+            "countryCode": "US",
+            "type": "education"
+          }
+        ],
+        "abstract": "Altermagnets (AMs) combine momentum-dependent spin splitting with zero net magnetization, making them promising for spintronics. Periodic driving enables dynamic symmetry engineering beyond static, material-specific control. We show that Floquet engineering in 2D $d$-wave AMs with out-of-plane Néel order and Rashba spin-orbit coupling unlocks equilibrium-forbidden transport responses. Monochromatic driving produces purely out-of-plane magnetization, yielding longitudinal anisotropic magnetoresistance (AMR) and an anomalous Hall effect, whereas bichromatic driving generates both in-plane and out-of-plane magnetizations and additionally activates transverse AMR via the second harmonic of the secondary beam. Comparable static magnetic fields would require hundreds of tesla, avoided in Floquet driving. These effects persist across linear, circular, and mixed light polarizations and are tunable via light parameters. Our results establish multi-color Floquet engineering for controlling magnetization and symmetry-protected transport in AMs.",
+        "automaticTopics": [
+          {
+            "name": "Topological Materials and Phenomena",
+            "id": "https://openalex.org/T10657",
+            "score": 0.9136999845504761,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Quantum and electron transport phenomena",
+            "id": "https://openalex.org/T10382",
+            "score": 0.039500001817941666,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Magnetic properties of thin films",
+            "id": "https://openalex.org/T10049",
+            "score": 0.011300000362098217,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Topological Materials and Phenomena",
+        "keywords": [
+          "Floquet theory",
+          "Magnetoresistance",
+          "Coupling (piping)",
+          "Anisotropy",
+          "Transverse plane",
+          "Magnetization",
+          "Magnetic field",
+          "Spin (aerodynamics)"
+        ],
+        "relatedWorks": [],
+        "referencedWorks": [],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2606.21281",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "https://arxiv.org/abs/2606.21281",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "arxiv-search",
+        "matchConfidence": 0.93,
+        "matchedFromPdf": false,
+        "updatedAt": 1787452694975,
+        "metadataError": "",
+        "citations": {
+          "count": 0,
+          "source": "OpenAlex",
+          "updatedAt": 1787452694975
+        },
+        "metadataReview": {
+          "status": "accepted-auto",
+          "confidence": 0.93,
+          "method": "arxiv-search",
+          "stage": "index",
+          "reviewedAt": 1787452694975
+        }
+      },
+      "citations": {
+        "count": 0,
+        "source": "OpenAlex",
+        "updatedAt": 1787452694975
       }
     },
     {
@@ -13679,6 +15694,6 @@
   "historicalMetadataUpdatedAt": 1787387764211,
   "schemaVersion": 4,
   "appVersion": "4.1",
-  "metadataUpdatedAt": 1787387764211,
-  "metadataUpdatedAtIso": "2026-08-22T08:36:04.211361+00:00"
+  "metadataUpdatedAt": 1787452705644,
+  "metadataUpdatedAtIso": "2026-08-23T02:38:25.644573+00:00"
 }
