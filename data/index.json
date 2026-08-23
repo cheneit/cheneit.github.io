@@ -23,6 +23,40 @@
           "message": "PDF parsed but database match was not reliable",
           "scannedAt": 1787371650188
         }
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447467,
+        "updatedAt": 1787460447467,
+        "source": "v5-migration",
+        "title": "Krasnov2025arXiv-Planar Josephson junction-geometry effect-Sweden",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2025krasnov2025arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -321,7 +355,7 @@
         "landingPageUrl": "https://doi.org/10.1103/prnx-47mk",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452651720,
         "metadataError": "",
@@ -334,7 +368,7 @@
         "historicalExtractedAt": 1787371650741,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452651720
@@ -352,6 +386,50 @@
         "count": 5,
         "source": "OpenAlex",
         "updatedAt": 1787452651720
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Josephson current signature of Floquet Majorana and topological accidental zero modes in altermagnet heterostructures",
+        "authors": [
+          "Amartya Pal",
+          "Debashish Mondal",
+          "Tanay Nag",
+          "Arijit Saha"
+        ],
+        "affiliations": [
+          "Homi Bhabha National Institute",
+          "Institute of Physics, Bhubaneshwar",
+          "Birla Institute of Technology and Science - Hyderabad Campus",
+          "Birla Institute of Technology and Science, Pilani"
+        ],
+        "publicationStatus": "published",
+        "journal": "Physical review. B./Physical review. B",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "10.1103/prnx-47mk",
+        "arxivId": "",
+        "citationKey": "Pal2025josephson",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.1103/prnx-47mk",
+          "arxiv": "",
+          "publisher": "https://doi.org/10.1103/prnx-47mk",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -517,7 +595,7 @@
         "landingPageUrl": "https://doi.org/10.1103/nykx-1tsz",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452652080,
         "metadataError": "",
@@ -530,7 +608,7 @@
         "historicalExtractedAt": 1787371668438,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452652080
@@ -548,6 +626,46 @@
         "count": 0,
         "source": "OpenAlex",
         "updatedAt": 1787452652080
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Programmable exploration of magnetic states in Lieb-kagome interpolated lattices",
+        "authors": [
+          "Alejandro López‐Bezanilla",
+          "Pavel A. Dub",
+          "Avadh Saxena"
+        ],
+        "affiliations": [
+          "Los Alamos National Laboratory"
+        ],
+        "publicationStatus": "published",
+        "journal": "Physical review. B./Physical review. B",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "10.1103/nykx-1tsz",
+        "arxivId": "",
+        "citationKey": "LpezBezanilla2025programmable",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.1103/nykx-1tsz",
+          "arxiv": "",
+          "publisher": "https://doi.org/10.1103/nykx-1tsz",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -890,7 +1008,7 @@
         "landingPageUrl": "https://doi.org/10.1103/3tvf-5v29",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452652448,
         "metadataError": "",
@@ -903,7 +1021,7 @@
         "historicalExtractedAt": 1787371669407,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452652448
@@ -921,6 +1039,54 @@
         "count": 1,
         "source": "OpenAlex",
         "updatedAt": 1787452652448
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Ubiquitous missing first Shapiro step in Al-InSb nanosheet Josephson junctions",
+        "authors": [
+          "Xingjun Wu",
+          "Haitian Su",
+          "Chuanchang Zeng",
+          "Ji‐Yin Wang",
+          "Shili Yan",
+          "Dong Pan",
+          "Jianhua Zhao",
+          "Po Zhang",
+          "H. Q. Xu"
+        ],
+        "affiliations": [
+          "Beijing Academy of Quantum Information Sciences",
+          "Peking University",
+          "Chinese Academy of Sciences"
+        ],
+        "publicationStatus": "published",
+        "journal": "Physical review. B./Physical review. B",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "10.1103/3tvf-5v29",
+        "arxivId": "",
+        "citationKey": "Wu2025ubiquitous",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.1103/3tvf-5v29",
+          "arxiv": "",
+          "publisher": "https://doi.org/10.1103/3tvf-5v29",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -1218,7 +1384,7 @@
         "landingPageUrl": "https://doi.org/10.1038/s42005-025-02364-y",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452652778,
         "metadataError": "",
@@ -1231,7 +1397,7 @@
         "historicalExtractedAt": 1787371670525,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452652778
@@ -1249,6 +1415,55 @@
         "count": 2,
         "source": "OpenAlex",
         "updatedAt": 1787452652778
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Diode effect in the Fraunhofer pattern of disordered planar Josephson junctions",
+        "authors": [
+          "Luca Chirolli",
+          "Angelo Greco",
+          "Alessandro Crippa",
+          "Elia Strambini",
+          "Mario Cuoco",
+          "Luigi Amico",
+          "Francesco Giazotto"
+        ],
+        "affiliations": [
+          "Technology Innovation Institute",
+          "University of Florence",
+          "Istituto Nanoscienze",
+          "University of Salerno",
+          "University of Catania",
+          "Istituto Nazionale di Fisica Nucleare, Sezione di Catania"
+        ],
+        "publicationStatus": "published",
+        "journal": "Communications Physics",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "10.1038/s42005-025-02364-y",
+        "arxivId": "",
+        "citationKey": "Chirolli2025diode",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.1038/s42005-025-02364-y",
+          "arxiv": "",
+          "publisher": "https://doi.org/10.1038/s42005-025-02364-y",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -1279,6 +1494,40 @@
           "stage": "pdf",
           "message": "PDF parsed but database match was not reliable",
           "scannedAt": 1787371672268
+        }
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Asenjo2025arXiv-Coherent subgap transport in spin-split Josephson junctions",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2025asenjo2025arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
         }
       }
     },
@@ -1569,7 +1818,7 @@
         "landingPageUrl": "https://doi.org/10.1038/s41598-025-29607-w",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452653550,
         "metadataError": "",
@@ -1582,7 +1831,7 @@
         "historicalExtractedAt": 1787371672779,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452653550
@@ -1600,6 +1849,53 @@
         "count": 2,
         "source": "OpenAlex",
         "updatedAt": 1787452653550
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Gate engineering Fabry-Pérot resonance in altermagnetic junctions",
+        "authors": [
+          "Qianqian Lv",
+          "Yong Xu",
+          "Jun-Feng Liu",
+          "Pei-Hao Fu",
+          "Xiang‐Long Yu"
+        ],
+        "affiliations": [
+          "Shenzhen University",
+          "University Town of Shenzhen",
+          "Shenzhen Technology University",
+          "Ningbo University of Technology",
+          "Guangzhou University",
+          "Sun Yat-sen University"
+        ],
+        "publicationStatus": "published",
+        "journal": "Scientific Reports",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "10.1038/s41598-025-29607-w",
+        "arxivId": "2507.00119",
+        "citationKey": "Lv2025gate",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.1038/s41598-025-29607-w",
+          "arxiv": "https://arxiv.org/abs/2507.00119",
+          "publisher": "https://doi.org/10.1038/s41598-025-29607-w",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -1958,7 +2254,7 @@
         "landingPageUrl": "https://doi.org/10.1103/31zv-84hw",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452653920,
         "metadataError": "",
@@ -1971,7 +2267,7 @@
         "historicalExtractedAt": 1787371675353,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452653921
@@ -1989,6 +2285,59 @@
         "count": 1,
         "source": "OpenAlex",
         "updatedAt": 1787452653920
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Spontaneous supercurrents and vortex depinning in two-dimensional arrays of φ 0 Josephson junctions",
+        "authors": [
+          "Simon Reinhardt",
+          "Alexander-Georg Penner",
+          "Jorge Berger",
+          "Christian Baumgärtner",
+          "Sergei Gronin",
+          "G. C. Gardner",
+          "Tyler Lindemann",
+          "Michael J. Manfra",
+          "L. I. Glazman",
+          "Felix von Oppen",
+          "Nicola Paradiso",
+          "Christoph Strunk"
+        ],
+        "affiliations": [
+          "Cornell University",
+          "University of Regensburg",
+          "Freie Universität Berlin",
+          "Purdue University West Lafayette",
+          "Yale University"
+        ],
+        "publicationStatus": "published",
+        "journal": "Physical review. B./Physical review. B",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "10.1103/31zv-84hw",
+        "arxivId": "",
+        "citationKey": "Reinhardt2025spontaneous",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.1103/31zv-84hw",
+          "arxiv": "",
+          "publisher": "https://doi.org/10.1103/31zv-84hw",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -2018,6 +2367,40 @@
           "stage": "pdf",
           "message": "PDF parsed but database match was not reliable",
           "scannedAt": 1787371676306
+        }
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Bobkov2025arXiv-Theory of planar quasi-ballistic JJ",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2025bobkov2025arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
         }
       }
     },
@@ -2137,7 +2520,7 @@
         "landingPageUrl": "http://arxiv.org/abs/2603.04954",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452654630,
         "metadataError": "",
@@ -2150,7 +2533,7 @@
         "historicalExtractedAt": 1787371682935,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452654630
@@ -2168,6 +2551,45 @@
         "count": 0,
         "source": "OpenAlex",
         "updatedAt": 1787452654630
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Spin-polarized Andreev molecules and anomalous nonlocal Josephson effects in altermagnetic junctions",
+        "authors": [
+          "Sayan Mondal",
+          "Jorge Cayao"
+        ],
+        "affiliations": [
+          "Uppsala University"
+        ],
+        "publicationStatus": "preprint",
+        "journal": "arXiv (Cornell University)",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "2512.00664",
+        "citationKey": "Mondal2026spin",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "https://arxiv.org/abs/2512.00664",
+          "publisher": "http://arxiv.org/abs/2603.04954",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -2323,7 +2745,7 @@
         "landingPageUrl": "https://arxiv.org/abs/2604.17594",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452654996,
         "metadataError": "",
@@ -2336,7 +2758,7 @@
         "historicalExtractedAt": 1787371683737,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452654996
@@ -2354,6 +2776,48 @@
         "count": 0,
         "source": "OpenAlex",
         "updatedAt": 1787452654996
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Anisotropic Superconducting Diode Effect in Planar Josephson Junctions",
+        "authors": [
+          "Abhishek Chilampankunnel Prasannan",
+          "Barış Pekerten",
+          "Nowar Alashkar",
+          "Alex Matos-Abiague"
+        ],
+        "affiliations": [
+          "Wayne State University",
+          "University at Buffalo, State University of New York"
+        ],
+        "publicationStatus": "preprint",
+        "journal": "arXiv (Cornell University)",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "2512.02575",
+        "citationKey": "Prasannan2026anisotropic",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "https://arxiv.org/abs/2512.02575",
+          "publisher": "https://arxiv.org/abs/2604.17594",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -2381,6 +2845,40 @@
           "stage": "pdf",
           "message": "PDF parsed but database match was not reliable",
           "scannedAt": 1787371687482
+        }
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Wang2025arXiv-Fermi surface dictates superconducting properties for a d-wave pairing state",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2025wang2025arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
         }
       }
     },
@@ -2410,6 +2908,40 @@
           "message": "PDF parsed but database match was not reliable",
           "scannedAt": 1787371688225
         }
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Singer2025arXiv-Positional memory of skyrmions in magnetic bilayers",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2025singer2025arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -2438,6 +2970,40 @@
           "stage": "pdf",
           "message": "PDF parsed but database match was not reliable",
           "scannedAt": 1787371688986
+        }
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Li2025arXiv-Quantum Coulomb drag signatures of MBS",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2025li2025arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
         }
       }
     },
@@ -2649,7 +3215,7 @@
         "landingPageUrl": "https://doi.org/10.1103/kqy8-myz1",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452656564,
         "metadataError": "",
@@ -2662,7 +3228,7 @@
         "historicalExtractedAt": 1787371689469,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452656564
@@ -2680,6 +3246,53 @@
         "count": 15,
         "source": "OpenAlex",
         "updatedAt": 1787452656564
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Altermagnetic Proximity Effect",
+        "authors": [
+          "Ziye Zhu",
+          "Richang Huang",
+          "Xianzhang Chen",
+          "Zhou Cui",
+          "Xunkai Duan",
+          "Jiayong Zhang",
+          "Igor Žutić",
+          "Zhou Tong"
+        ],
+        "affiliations": [
+          "Eastern Institute of Technology",
+          "Suzhou University of Science and Technology",
+          "University at Buffalo, State University of New York"
+        ],
+        "publicationStatus": "published",
+        "journal": "Physical Review Letters",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "10.1103/kqy8-myz1",
+        "arxivId": "2512.02974",
+        "citationKey": "Zhu2026altermagnetic",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.1103/kqy8-myz1",
+          "arxiv": "https://arxiv.org/abs/2512.02974",
+          "publisher": "https://doi.org/10.1103/kqy8-myz1",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -2778,7 +3391,7 @@
         "landingPageUrl": "http://arxiv.org/abs/2603.12692",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452656838,
         "metadataError": "",
@@ -2791,7 +3404,7 @@
         "historicalExtractedAt": 1787371690488,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452656838
@@ -2809,6 +3422,43 @@
         "count": 0,
         "source": "OpenAlex",
         "updatedAt": 1787452656838
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Linear Magnetoresistance as a Probe of the Neel Vector in Altermagnets with Vanishing Anomalous Hall Effect",
+        "authors": [
+          "Kamal Das",
+          "Binghai Yan"
+        ],
+        "affiliations": [],
+        "publicationStatus": "preprint",
+        "journal": "arXiv (Cornell University)",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "2512.03814",
+        "citationKey": "Das2026linear",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "https://arxiv.org/abs/2512.03814",
+          "publisher": "http://arxiv.org/abs/2603.12692",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -2908,7 +3558,7 @@
         "landingPageUrl": "http://arxiv.org/abs/2505.21085",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452657121,
         "metadataError": "",
@@ -2921,7 +3571,7 @@
         "historicalExtractedAt": 1787371696930,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452657121
@@ -2939,6 +3589,43 @@
         "count": 0,
         "source": "OpenAlex",
         "updatedAt": 1787452657121
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Anomalous supercurrents in the presence of particle losses",
+        "authors": [
+          "Risa Ogino",
+          "Shun Uchino"
+        ],
+        "affiliations": [],
+        "publicationStatus": "preprint",
+        "journal": "arXiv (Cornell University)",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "10.48550/arxiv.2505.21085",
+        "arxivId": "2502.09397",
+        "citationKey": "Ogino2025anomalous",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.48550/arxiv.2505.21085",
+          "arxiv": "https://arxiv.org/abs/2502.09397",
+          "publisher": "http://arxiv.org/abs/2505.21085",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -3115,7 +3802,7 @@
         "landingPageUrl": "https://doi.org/10.1038/s41534-025-01120-y",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452657826,
         "metadataError": "",
@@ -3128,7 +3815,7 @@
         "historicalExtractedAt": 1787371697830,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452657826
@@ -3146,6 +3833,45 @@
         "count": 2,
         "source": "OpenAlex",
         "updatedAt": 1787452657826
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Solving the Bernstein-Vazirani problem using Majorana-based topological quantum algorithms",
+        "authors": [
+          "Jasmin Bedow",
+          "Dirk K. Morr"
+        ],
+        "affiliations": [
+          "University of Illinois Chicago"
+        ],
+        "publicationStatus": "published",
+        "journal": "npj Quantum Information",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "10.1038/s41534-025-01120-y",
+        "arxivId": "",
+        "citationKey": "Bedow2025solving",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.1038/s41534-025-01120-y",
+          "arxiv": "",
+          "publisher": "https://doi.org/10.1038/s41534-025-01120-y",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -3174,6 +3900,40 @@
           "stage": "pdf",
           "message": "PDF parsed but database match was not reliable",
           "scannedAt": 1787371699428
+        }
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Remez2025arXiv-Andreev Optoelectronics-JDSau",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2025remez2025arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
         }
       }
     },
@@ -3339,7 +4099,7 @@
         "landingPageUrl": "https://doi.org/10.1007/s43673-026-00187-9",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452658749,
         "metadataError": "",
@@ -3352,7 +4112,7 @@
         "historicalExtractedAt": 1787371700305,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452658749
@@ -3370,6 +4130,45 @@
         "count": 1,
         "source": "OpenAlex",
         "updatedAt": 1787452658749
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Altermagnetism-driven FFLO superconductivity in finite-filling 2D lattices",
+        "authors": [
+          "Xia-Ji Liu",
+          "Hui Hu"
+        ],
+        "affiliations": [
+          "Swinburne University of Technology"
+        ],
+        "publicationStatus": "published",
+        "journal": "AAPPS bulletin",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "10.1007/s43673-026-00187-9",
+        "arxivId": "2510.09170",
+        "citationKey": "Liu2026altermagnetism",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.1007/s43673-026-00187-9",
+          "arxiv": "https://arxiv.org/abs/2510.09170",
+          "publisher": "https://doi.org/10.1007/s43673-026-00187-9",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -3550,7 +4349,7 @@
         "landingPageUrl": "https://doi.org/10.15302/frontphys.2026.095301",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452659100,
         "metadataError": "",
@@ -3563,7 +4362,7 @@
         "historicalExtractedAt": 1787371701670,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452659101
@@ -3581,6 +4380,49 @@
         "count": 2,
         "source": "OpenAlex",
         "updatedAt": 1787452659100
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Classification and design of two-dimensional altermagnets",
+        "authors": [
+          "Sike Zeng",
+          "Dong Liu",
+          "Hongjie Peng",
+          "Changchun He",
+          "Xiao‐Bao Yang",
+          "Yu-Jun Zhao"
+        ],
+        "affiliations": [
+          "South China University of Technology"
+        ],
+        "publicationStatus": "published",
+        "journal": "Frontiers of Physics",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "10.15302/frontphys.2026.095301",
+        "arxivId": "2507.22474",
+        "citationKey": "Zeng2026classification",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.15302/frontphys.2026.095301",
+          "arxiv": "https://arxiv.org/abs/2507.22474",
+          "publisher": "https://doi.org/10.15302/frontphys.2026.095301",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -3609,6 +4451,40 @@
           "stage": "pdf",
           "message": "PDF parsed but database match was not reliable",
           "scannedAt": 1787371703537
+        }
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Pandey2025arXiv-X gates braiding MZM",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2025pandey2025arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
         }
       }
     },
@@ -3759,7 +4635,7 @@
         "landingPageUrl": "https://arxiv.org/abs/2608.07374",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452659745,
         "metadataError": "",
@@ -3772,7 +4648,7 @@
         "historicalExtractedAt": 1787371704063,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452659745
@@ -3790,6 +4666,47 @@
         "count": 0,
         "source": "OpenAlex",
         "updatedAt": 1787452659745
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Type-II Mirror Chern Insulator in Altermagnets",
+        "authors": [
+          "Amrita Mukherjee",
+          "Pritesh Srivastava",
+          "Rahul Verma",
+          "Bahadur Singh"
+        ],
+        "affiliations": [
+          "Tata Institute of Fundamental Research"
+        ],
+        "publicationStatus": "preprint",
+        "journal": "arXiv (Cornell University)",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "2503.13397",
+        "citationKey": "Mukherjee2026type",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "https://arxiv.org/abs/2503.13397",
+          "publisher": "https://arxiv.org/abs/2608.07374",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -3993,7 +4910,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1.0,
+            "score": 1,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -4166,7 +5083,7 @@
         "landingPageUrl": "https://doi.org/10.1103/physrevlett.127.116402",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452660062,
         "metadataError": "",
@@ -4179,7 +5096,7 @@
         "historicalExtractedAt": 1787371705182,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452660062
@@ -4197,6 +5114,56 @@
         "count": 58,
         "source": "OpenAlex",
         "updatedAt": 1787452660062
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Quantum Spin-Valley Hall Kink States: From Concept to Materials Design",
+        "authors": [
+          "Tong Zhou",
+          "Shu-guang Cheng",
+          "Michael Schleenvoigt",
+          "Peter Schüffelgen",
+          "Hua Jiang",
+          "Zhongqin Yang",
+          "Igor Žutić"
+        ],
+        "affiliations": [
+          "University at Buffalo, State University of New York",
+          "Northwest University",
+          "Forschungszentrum Jülich",
+          "Jülich Aachen Research Alliance",
+          "Soochow University",
+          "Fudan University",
+          "Collaborative Innovation Center of Advanced Microstructures"
+        ],
+        "publicationStatus": "published",
+        "journal": "Physical Review Letters",
+        "year": 2021,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "10.1103/physrevlett.127.116402",
+        "arxivId": "",
+        "citationKey": "Zhou2021quantum",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.1103/physrevlett.127.116402",
+          "arxiv": "",
+          "publisher": "https://doi.org/10.1103/physrevlett.127.116402",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -4358,7 +5325,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1.0,
+            "score": 1,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -4486,7 +5453,7 @@
         "landingPageUrl": "https://doi.org/10.1103/physrevlett.124.137001",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452660378,
         "metadataError": "",
@@ -4499,7 +5466,7 @@
         "historicalExtractedAt": 1787371710245,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452660379
@@ -4517,6 +5484,52 @@
         "count": 52,
         "source": "OpenAlex",
         "updatedAt": 1787452660378
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Phase Control of Majorana Bound States in a Topological X Junction",
+        "authors": [
+          "Tong Zhou",
+          "Matthieu Dartiailh",
+          "William Mayer",
+          "Jong E. Han",
+          "Alex Matos-Abiague",
+          "Javad Shabani",
+          "Igor Žutić"
+        ],
+        "affiliations": [
+          "University at Buffalo, State University of New York",
+          "New York University",
+          "Wayne State University"
+        ],
+        "publicationStatus": "published",
+        "journal": "Physical Review Letters",
+        "year": 2020,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "10.1103/physrevlett.124.137001",
+        "arxivId": "",
+        "citationKey": "Zhou2020phase",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.1103/physrevlett.124.137001",
+          "arxiv": "",
+          "publisher": "https://doi.org/10.1103/physrevlett.124.137001",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -4690,7 +5703,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1.0,
+            "score": 1,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -4857,7 +5870,7 @@
         "landingPageUrl": "https://doi.org/10.1038/s41467-022-29463-6",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452660762,
         "metadataError": "",
@@ -4870,7 +5883,7 @@
         "historicalExtractedAt": 1787387742143,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452660762
@@ -4888,6 +5901,53 @@
         "count": 65,
         "source": "OpenAlex",
         "updatedAt": 1787452660762
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Fusion of Majorana bound states with mini-gate control in two-dimensional systems",
+        "authors": [
+          "Tong Zhou",
+          "Matthieu Dartiailh",
+          "Kasra Sardashti",
+          "Jong E. Han",
+          "Alex Matos-Abiague",
+          "Javad Shabani",
+          "Igor Žutić"
+        ],
+        "affiliations": [
+          "Buffalo State University",
+          "University at Buffalo, State University of New York",
+          "New York University",
+          "Wayne State University"
+        ],
+        "publicationStatus": "published",
+        "journal": "Nature Communications",
+        "year": 2022,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "10.1038/s41467-022-29463-6",
+        "arxivId": "",
+        "citationKey": "Zhou2022fusion",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.1038/s41467-022-29463-6",
+          "arxiv": "",
+          "publisher": "https://doi.org/10.1038/s41467-022-29463-6",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -5228,7 +6288,7 @@
         "landingPageUrl": "https://doi.org/10.1103/physrevlett.134.106801",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452661088,
         "metadataError": "",
@@ -5241,7 +6301,7 @@
         "historicalExtractedAt": 1787387742645,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452661088
@@ -5341,6 +6401,40 @@
           "message": "PDF parsed but database match was not reliable",
           "scannedAt": 1787387743730
         }
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Schoeppl2025arXiv-Anisotropic transport in ballistic bilayer graphene cavities",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2025schoeppl2025arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -5369,6 +6463,40 @@
           "stage": "pdf",
           "message": "PDF parsed but database match was not reliable",
           "scannedAt": 1787387744701
+        }
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Lin2025arXiv-Chaos in BLG cavities",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2025lin2025arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
         }
       }
     },
@@ -5399,6 +6527,40 @@
           "message": "PDF parsed but database match was not reliable",
           "scannedAt": 1787387745179
         }
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Zhang2025arXiv-Stable skyrmion bundles",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2025zhang2025arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -5428,6 +6590,40 @@
           "message": "PDF parsed but database match was not reliable",
           "scannedAt": 1787387745630
         }
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Wu2025arXiv-Current-controlled antiskyrmion change in nanostructured cells",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2025wu2025arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -5446,7 +6642,41 @@
       "ts": 1765698166402,
       "size": 11647,
       "desc": "2 figures for one column in APS style.",
-      "imagePath": "data/files/2025/12/images/g0uju7ua0tfmj5f3hm1__Pasted image.png"
+      "imagePath": "data/files/2025/12/images/g0uju7ua0tfmj5f3hm1__Pasted image.png",
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Template for 2-col figures",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2025template",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     },
     {
       "id": "kfv1fdstxhsmj6v61b8",
@@ -5581,7 +6811,7 @@
         "landingPageUrl": "https://arxiv.org/abs/2601.22226",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452663721,
         "metadataError": "",
@@ -5594,7 +6824,7 @@
         "historicalExtractedAt": 1787387747138,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452663722
@@ -5612,6 +6842,46 @@
         "count": 0,
         "source": "OpenAlex",
         "updatedAt": 1787452663721
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Andreev spin qubits based on the helical edge states of magnetically doped two-dimensional topological insulators",
+        "authors": [
+          "Edoardo Latini",
+          "Fausto Rossi",
+          "Fabrizio Dolcini"
+        ],
+        "affiliations": [
+          "Politecnico di Torino"
+        ],
+        "publicationStatus": "preprint",
+        "journal": "arXiv (Cornell University)",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "2512.11021",
+        "citationKey": "Latini2026andreev",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "https://arxiv.org/abs/2512.11021",
+          "publisher": "https://arxiv.org/abs/2601.22226",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -5911,7 +7181,7 @@
         "landingPageUrl": "https://doi.org/10.1038/s41535-025-00835-7",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452664098,
         "metadataError": "",
@@ -5924,7 +7194,7 @@
         "historicalExtractedAt": 1787387747599,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452664099
@@ -5942,6 +7212,55 @@
         "count": 13,
         "source": "OpenAlex",
         "updatedAt": 1787452664098
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Ferroelastic altermagnetism",
+        "authors": [
+          "Rui Peng",
+          "Shibo Fang",
+          "Pin Ho",
+          "Fanxin Liu",
+          "Tong Zhou",
+          "Junwei Liu",
+          "Yee Sin Ang"
+        ],
+        "affiliations": [
+          "Singapore University of Technology and Design",
+          "Zhejiang University of Technology",
+          "Agency for Science, Technology and Research",
+          "Institute of Materials Research and Engineering",
+          "Eastern Institute of Technology, Ningbo",
+          "Hong Kong University of Science and Technology"
+        ],
+        "publicationStatus": "published",
+        "journal": "npj Quantum Materials",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "10.1038/s41535-025-00835-7",
+        "arxivId": "2509.06790",
+        "citationKey": "Peng2025ferroelastic",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.1038/s41535-025-00835-7",
+          "arxiv": "https://arxiv.org/abs/2509.06790",
+          "publisher": "https://doi.org/10.1038/s41535-025-00835-7",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -6061,7 +7380,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1.0,
+            "score": 1,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -6176,7 +7495,7 @@
         "landingPageUrl": "https://doi.org/10.1038/s41467-023-37725-0",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452664503,
         "metadataError": "",
@@ -6189,7 +7508,7 @@
         "historicalExtractedAt": 1787387748371,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452664503
@@ -6207,6 +7526,49 @@
         "count": 24,
         "source": "OpenAlex",
         "updatedAt": 1787452664503
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Observing and braiding topological Majorana modes on programmable quantum simulators",
+        "authors": [
+          "Nikhil Harle",
+          "Oles Shtanko",
+          "Ramis Movassagh"
+        ],
+        "affiliations": [
+          "IBM (United States)",
+          "Yale University",
+          "IBM Research - Almaden",
+          "Google (United States)"
+        ],
+        "publicationStatus": "published",
+        "journal": "Nature Communications",
+        "year": 2023,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "10.1038/s41467-023-37725-0",
+        "arxivId": "",
+        "citationKey": "Harle2023observing",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.1038/s41467-023-37725-0",
+          "arxiv": "",
+          "publisher": "https://doi.org/10.1038/s41467-023-37725-0",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -6499,7 +7861,7 @@
         "landingPageUrl": "https://doi.org/10.1038/s42005-024-01618-5",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452665191,
         "metadataError": "",
@@ -6512,7 +7874,7 @@
         "historicalExtractedAt": 1787387749058,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452665191
@@ -6530,6 +7892,53 @@
         "count": 44,
         "source": "OpenAlex",
         "updatedAt": 1787452665191
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Superconducting diode effect sign change in epitaxial Al-InAs Josephson junctions",
+        "authors": [
+          "Neda Lotfizadeh",
+          "William F. Schiela",
+          "Barış Pekerten",
+          "Peng Yu",
+          "Bassel Heiba Elfeky",
+          "William M. Strickland",
+          "Alex Matos-Abiague",
+          "Javad Shabani"
+        ],
+        "affiliations": [
+          "New York University",
+          "Wayne State University",
+          "University at Buffalo, State University of New York"
+        ],
+        "publicationStatus": "published",
+        "journal": "Communications Physics",
+        "year": 2024,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "10.1038/s42005-024-01618-5",
+        "arxivId": "",
+        "citationKey": "Lotfizadeh2024superconducting",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.1038/s42005-024-01618-5",
+          "arxiv": "",
+          "publisher": "https://doi.org/10.1038/s42005-024-01618-5",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -6720,7 +8129,7 @@
         "landingPageUrl": "https://arxiv.org/abs/2607.14949",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452665497,
         "metadataError": "",
@@ -6733,7 +8142,7 @@
         "historicalExtractedAt": 1787387749599,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452665498
@@ -6751,6 +8160,50 @@
         "count": 0,
         "source": "OpenAlex",
         "updatedAt": 1787452665497
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Avoiding Dilution: Using Diffusion and Vision Transformers to resolve Majorana Features in Nanowires at High Temperature",
+        "authors": [
+          "Jacob R. Taylor",
+          "Haining Pan",
+          "Jay D. Sau",
+          "Sankar Das Sarma"
+        ],
+        "affiliations": [
+          "Joint Quantum Institute",
+          "University of Maryland, College Park",
+          "Rutgers, The State University of New Jersey",
+          "University of Florida"
+        ],
+        "publicationStatus": "preprint",
+        "journal": "arXiv (Cornell University)",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "2512.13825",
+        "citationKey": "Taylor2026avoiding",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "https://arxiv.org/abs/2512.13825",
+          "publisher": "https://arxiv.org/abs/2607.14949",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -6779,6 +8232,40 @@
           "stage": "pdf",
           "message": "PDF parsed but database match was not reliable",
           "scannedAt": 1787387750318
+        }
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Szpara2025arXiv-Dynamical scarring in 2D Topologial Materials",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2025szpara2025arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
         }
       }
     },
@@ -7134,7 +8621,7 @@
         "landingPageUrl": "https://doi.org/10.1088/1367-2630/ab494b",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452666826,
         "metadataError": "",
@@ -7147,7 +8634,7 @@
         "historicalExtractedAt": 1787387752020,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452666826
@@ -7165,6 +8652,54 @@
         "count": 10,
         "source": "OpenAlex",
         "updatedAt": 1787452666826
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Spectral properties of interacting helical channels driven by Lorentzian pulses",
+        "authors": [
+          "Matteo Acciai",
+          "Alessio Calzona",
+          "Matteo Carrega",
+          "Thierry Martin",
+          "Maura Sassetti"
+        ],
+        "affiliations": [
+          "Centre National de la Recherche Scientifique",
+          "Université de Toulon",
+          "Superconducting and other Innovative Materials and Devices Institute",
+          "University of Genoa",
+          "University of Würzburg",
+          "Scuola Normale Superiore",
+          "Istituto Nanoscienze"
+        ],
+        "publicationStatus": "published",
+        "journal": "New Journal of Physics",
+        "year": 2019,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "10.1088/1367-2630/ab494b",
+        "arxivId": "1901.06170",
+        "citationKey": "Acciai2019spectral",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.1088/1367-2630/ab494b",
+          "arxiv": "https://arxiv.org/abs/1901.06170",
+          "publisher": "https://doi.org/10.1088/1367-2630/ab494b",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -7193,6 +8728,40 @@
           "stage": "pdf",
           "message": "PDF parsed but database match was not reliable",
           "scannedAt": 1787387753086
+        }
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Leraand2025arXiv-Spin-dependent quasiparticle lifetimes in altermagnets",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2025leraand2025arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
         }
       }
     },
@@ -7309,7 +8878,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1.0,
+            "score": 1,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -7446,7 +9015,7 @@
         "landingPageUrl": "https://doi.org/10.1103/physrevb.102.085411",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452667609,
         "metadataError": "",
@@ -7459,7 +9028,7 @@
         "historicalExtractedAt": 1787387753582,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452667610
@@ -7477,6 +9046,47 @@
         "count": 23,
         "source": "OpenAlex",
         "updatedAt": 1787452667609
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "How to measure the Majorana polarization of a topological planar Josephson junction",
+        "authors": [
+          "Szczepan Głodzik",
+          "Nicholas Sedlmayr",
+          "T. Domański"
+        ],
+        "affiliations": [
+          "Maria Curie-Skłodowska University",
+          "Institute of Physics"
+        ],
+        "publicationStatus": "published",
+        "journal": "Physical review. B./Physical review. B",
+        "year": 2020,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "10.1103/physrevb.102.085411",
+        "arxivId": "",
+        "citationKey": "Godzik2020measure",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.1103/physrevb.102.085411",
+          "arxiv": "",
+          "publisher": "https://doi.org/10.1103/physrevb.102.085411",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -7842,7 +9452,7 @@
         "landingPageUrl": "https://doi.org/10.1103/physrevresearch.6.023293",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452668015,
         "metadataError": "",
@@ -7855,7 +9465,7 @@
         "historicalExtractedAt": 1787387754624,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452668015
@@ -7873,6 +9483,58 @@
         "count": 3,
         "source": "OpenAlex",
         "updatedAt": 1787452668015
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Anomalous Fraunhofer-like patterns in quantum anomalous Hall Josephson junctions",
+        "authors": [
+          "Junjie Qi",
+          "Haiwen Liu",
+          "Jie Liu",
+          "Hua Jiang",
+          "Dong E. Liu",
+          "Chui‐Zhen Chen",
+          "Ke He",
+          "X. C. Xie"
+        ],
+        "affiliations": [
+          "Beijing Academy of Quantum Information Sciences",
+          "Beijing Normal University",
+          "Xi'an Jiaotong University",
+          "Fudan University",
+          "Hefei University",
+          "Tsinghua University",
+          "Soochow University",
+          "Peking University"
+        ],
+        "publicationStatus": "published",
+        "journal": "Physical Review Research",
+        "year": 2024,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "10.1103/physrevresearch.6.023293",
+        "arxivId": "",
+        "citationKey": "Qi2024anomalous",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.1103/physrevresearch.6.023293",
+          "arxiv": "",
+          "publisher": "https://doi.org/10.1103/physrevresearch.6.023293",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -8128,7 +9790,7 @@
         "landingPageUrl": "http://dx.doi.org/10.1103/physrevresearch.6.023304",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452668384,
         "metadataError": "",
@@ -8141,7 +9803,7 @@
         "historicalExtractedAt": 1787387755346,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452668384
@@ -8159,6 +9821,47 @@
         "count": 7,
         "source": "OpenAlex",
         "updatedAt": 1787452668384
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Fraunhofer pattern in the presence of Majorana zero modes",
+        "authors": [
+          "Fernando Domínguez",
+          "E. G. Novik",
+          "Patrik Recher"
+        ],
+        "affiliations": [
+          "Technische Universität Braunschweig",
+          "Technische Universität Dresden"
+        ],
+        "publicationStatus": "published",
+        "journal": "Physical Review Research",
+        "year": 2024,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "10.1103/physrevresearch.6.023304",
+        "arxivId": "",
+        "citationKey": "Domnguez2024fraunhofer",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.1103/physrevresearch.6.023304",
+          "arxiv": "",
+          "publisher": "http://dx.doi.org/10.1103/physrevresearch.6.023304",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -8369,7 +10072,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1.0,
+            "score": 1,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -8474,7 +10177,7 @@
         "landingPageUrl": "https://doi.org/10.1103/physrevb.93.195302",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452668796,
         "metadataError": "",
@@ -8487,7 +10190,7 @@
         "historicalExtractedAt": 1787387756598,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452668796
@@ -8505,6 +10208,55 @@
         "count": 28,
         "source": "OpenAlex",
         "updatedAt": 1787452668796
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Quantum interference in topological insulator Josephson junctions",
+        "authors": [
+          "Juntao Song",
+          "Haiwen Liu",
+          "Jie Liu",
+          "Yu‐Xian Li",
+          "Robert Joynt",
+          "Qing‐Feng Sun",
+          "X. C. Xie"
+        ],
+        "affiliations": [
+          "Hebei Normal University",
+          "Peking University",
+          "Beijing Normal University",
+          "Collaborative Innovation Center of Quantum Matter",
+          "Xi'an Jiaotong University",
+          "University of Wisconsin–Madison"
+        ],
+        "publicationStatus": "published",
+        "journal": "Physical review. B./Physical review. B",
+        "year": 2016,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "10.1103/physrevb.93.195302",
+        "arxivId": "",
+        "citationKey": "Song2016quantum",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.1103/physrevb.93.195302",
+          "arxiv": "",
+          "publisher": "https://doi.org/10.1103/physrevb.93.195302",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -8602,7 +10354,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1.0,
+            "score": 1,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -8744,7 +10496,7 @@
         "landingPageUrl": "https://doi.org/10.1016/j.matt.2024.05.028",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452669164,
         "metadataError": "",
@@ -8757,7 +10509,7 @@
         "historicalExtractedAt": 1787387757375,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452669164
@@ -8775,6 +10527,48 @@
         "count": 8,
         "source": "OpenAlex",
         "updatedAt": 1787452669164
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Machine learning detection of Majorana zero modes from zero-bias peak measurements",
+        "authors": [
+          "Mouyang Cheng",
+          "Ryotaro Okabe",
+          "Abhijatmedhi Chotrattanapituk",
+          "Mingda Li"
+        ],
+        "affiliations": [
+          "Peking University",
+          "IIT@MIT"
+        ],
+        "publicationStatus": "published",
+        "journal": "Matter",
+        "year": 2024,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "10.1016/j.matt.2024.05.028",
+        "arxivId": "",
+        "citationKey": "Cheng2024machine",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.1016/j.matt.2024.05.028",
+          "arxiv": "",
+          "publisher": "https://doi.org/10.1016/j.matt.2024.05.028",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -8804,6 +10598,40 @@
           "message": "PDF parsed but database match was not reliable",
           "scannedAt": 1787387758316
         }
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Buss2025arXiv-Braiding of Majorana Zero Modes in Vortex Cores",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2025buss2025arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -8831,6 +10659,40 @@
           "stage": "pdf",
           "message": "PDF parsed but database match was not reliable",
           "scannedAt": 1787387759003
+        }
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "XC_PhD_thesis_basis",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2025thesis",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
         }
       }
     },
@@ -8978,7 +10840,7 @@
         "landingPageUrl": "https://arxiv.org/abs/2605.17649",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452670690,
         "metadataError": "",
@@ -8991,7 +10853,7 @@
         "historicalExtractedAt": 1787387759780,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452670690
@@ -9009,6 +10871,47 @@
         "count": 0,
         "source": "OpenAlex",
         "updatedAt": 1787452670690
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Competition and coexistence of superconducting symmetries in $p$-wave magnets",
+        "authors": [
+          "J. E. C. Carmelo",
+          "I. R. Pimentel",
+          "P. D. Sacramento"
+        ],
+        "affiliations": [
+          "Instituto de Engenharia de Sistemas e Computadores Investigação e Desenvolvimento",
+          "University of Lisbon"
+        ],
+        "publicationStatus": "preprint",
+        "journal": "arXiv (Cornell University)",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "2512.20049",
+        "citationKey": "Carmelo2026competition",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "https://arxiv.org/abs/2512.20049",
+          "publisher": "https://arxiv.org/abs/2605.17649",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -13093,7 +14996,7 @@
         "landingPageUrl": "https://doi.org/10.1103/qx36-4rv1",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452671369,
         "metadataError": "",
@@ -13106,7 +15009,7 @@
         "historicalExtractedAt": 1787387761914,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452671369
@@ -13124,6 +15027,226 @@
         "count": 10,
         "source": "OpenAlex",
         "updatedAt": 1787452671369
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Blueprint for fault-tolerant quantum computation with topological qubit arrays",
+        "authors": [
+          "David Aasen",
+          "Morteza Aghaee",
+          "Zulfi Alam",
+          "Mariusz Andrzejczuk",
+          "Andrey Antipov",
+          "Mikhail Astafev",
+          "Lukas Avilovas",
+          "Amin Barzegar",
+          "Bela Bauer",
+          "Jonathan Becker",
+          "Juan M. Bello-Rivas",
+          "Umesh Bhaskar",
+          "Alex Bocharov",
+          "Srini Boddapati",
+          "David Bohn",
+          "Jouri Bommer",
+          "Parsa Bonderson",
+          "Jan Borovsky",
+          "Leo Bourdet",
+          "Samuel Boutin",
+          "Tom Brown",
+          "Gary Campbell",
+          "Lucas Casparis",
+          "Srivatsa Chakravarthi",
+          "Rui Chao",
+          "Benjamin J. Chapman",
+          "Sohail Chatoor",
+          "Anna Wulff Christensen",
+          "Patrick Codd",
+          "William Cole",
+          "Paul Cooper",
+          "Fabiano Corsetti",
+          "Ajuan Cui",
+          "Wim van Dam",
+          "Tareq El Dandachi",
+          "Sahar Daraeizadeh",
+          "Adrian Dumitrascu",
+          "Andreas Ekefjärd",
+          "Saeed Fallahi",
+          "Luca Galletti",
+          "Geoff Gardner",
+          "Raghu Gatta",
+          "Haris Gavranovic",
+          "Michael Goulding",
+          "Deshan Govender",
+          "Flavio Griggio",
+          "Ruben Grigoryan",
+          "Sebastian Grijalva",
+          "Sergei Gronin",
+          "Jan Gukelberger",
+          "Jeongwan Haah",
+          "Marzie Hamdast",
+          "Esben Bork Hansen",
+          "Matthew Hastings",
+          "Sebastian Heedt",
+          "Samantha Ho",
+          "Justin Hogaboam",
+          "Laurens Holgaard",
+          "Kevin Van Hoogdalem",
+          "Jinnapat Indrapiromkul",
+          "Henrik Ingerslev",
+          "Lovro Ivancevic",
+          "Sarah Jablonski",
+          "Thomas Jensen",
+          "Jaspreet Jhoja",
+          "Jeffrey Jones",
+          "Kostya Kalashnikov",
+          "Ray Kallaher",
+          "Rachpon Kalra",
+          "Farhad Karimi",
+          "Torsten Karzig",
+          "Seth Kimes",
+          "Vadym Kliuchnikov",
+          "Maren Elisabeth Kloster",
+          "Christina Knapp",
+          "Derek Knee",
+          "Jonne Koski",
+          "Pasi Kostamo",
+          "Jamie Kuesel",
+          "Brad Lackey",
+          "Tom Laeven",
+          "Jeffrey Lai",
+          "Gijs de Lange",
+          "Thorvald Larsen",
+          "Jason Lee",
+          "Kyunghoon Lee",
+          "Grant Leum",
+          "Kongyi Li",
+          "Tyler Lindemann",
+          "Marijn Lucas",
+          "Roman Lutchyn",
+          "Morten Hannibal Madsen",
+          "Nash Madulid",
+          "Michael Manfra",
+          "Signe Brynold Markussen",
+          "Esteban Martinez",
+          "Marco Mattila",
+          "Jake Mattinson",
+          "Robert McNeil",
+          "Antonio Rodolph Mei",
+          "Ryan V. Mishmash",
+          "Gopakumar Mohandas",
+          "Christian Mollgaard",
+          "Michiel de Moor",
+          "Trevor Morgan",
+          "George Moussa",
+          "Anirudh Narla",
+          "Chetan Nayak",
+          "Jens Hedegaard Nielsen",
+          "William Hvidtfelt Padkær Nielsen",
+          "Frédéric Nolet",
+          "Mike Nystrom",
+          "Eoin O’Farrell",
+          "Keita Otani",
+          "Adam Paetznick",
+          "Camille Papon",
+          "Andres Paz",
+          "Karl Petersson",
+          "Luca Petit",
+          "Dima Pikulin",
+          "Diego Olivier Fernandez Pons",
+          "Sam Quinn",
+          "Mohana Rajpalke",
+          "Alejandro Alcaraz Ramirez",
+          "Katrine Rasmussen",
+          "David Razmadze",
+          "Ben Reichardt",
+          "Yuan Ren",
+          "Ken Reneris",
+          "Roy Riccomini",
+          "Ivan Sadovskyy",
+          "Lauri Sainiemi",
+          "Juan Carlos Estrada Saldaña",
+          "Irene Sanlorenzo",
+          "Simon Schaal",
+          "Emma Schmidgall",
+          "Cristina Sfiligoj",
+          "Marcus P. da Silva",
+          "Shilpi Singh",
+          "Sarat Sinha",
+          "Mathias Soeken",
+          "Patrick Sohr",
+          "Tomas Stankevic",
+          "Lieuwe Stek",
+          "Patrick Strøm-Hansen",
+          "Eric Stuppard",
+          "Aarthi Sundaram",
+          "Henri Suominen",
+          "Judith Suter",
+          "Satoshi Suzuki",
+          "Krysta Svore",
+          "Sam Teicher",
+          "Nivetha Thiyagarajah",
+          "Raj Tholapi",
+          "Mason Thomas",
+          "Dennis Tom",
+          "Emily Toomey",
+          "Josh Tracy",
+          "Matthias Troyer",
+          "Michelle Turley",
+          "Matthew D. Turner",
+          "Shivendra Upadhyay",
+          "Ivan Urban",
+          "Alexander Vaschillo",
+          "Dmitrii Viazmitinov",
+          "Dominik Vogel",
+          "Zhenghan Wang",
+          "John Watson",
+          "Alex Webster",
+          "Joseph Weston",
+          "Timothy Williamson",
+          "Georg W. Winkler",
+          "David J. van Woerkom",
+          "Brian Paquelet Wütz",
+          "Chung Kai Yang",
+          "Richard Yu",
+          "Emrah Yucelen",
+          "Jesús Herranz Zamorano",
+          "Roland Zeisel",
+          "Guoji Zheng",
+          "Justin Zilke",
+          "Andrew Zimmerman"
+        ],
+        "affiliations": [
+          "Microsoft (United States)",
+          "Microsoft Research (United Kingdom)"
+        ],
+        "publicationStatus": "published",
+        "journal": "Physical Review Research",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "10.1103/qx36-4rv1",
+        "arxivId": "",
+        "citationKey": "Aasen2025blueprint",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.1103/qx36-4rv1",
+          "arxiv": "",
+          "publisher": "https://doi.org/10.1103/qx36-4rv1",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -13247,7 +15370,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1.0,
+            "score": 1,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -13382,7 +15505,7 @@
         "landingPageUrl": "https://doi.org/10.1103/physrevb.111.205411",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452671829,
         "metadataError": "",
@@ -13395,7 +15518,7 @@
         "historicalExtractedAt": 1787387763157,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452671829
@@ -13413,6 +15536,49 @@
         "count": 2,
         "source": "OpenAlex",
         "updatedAt": 1787452671829
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Quantifying the non-Abelian property of Andreev bound states in inhomogeneous Majorana nanowires",
+        "authors": [
+          "Yu Zhang",
+          "Yijia Wu",
+          "Jie Liu",
+          "X. C. Xie"
+        ],
+        "affiliations": [
+          "Xi'an Jiaotong University",
+          "Fudan University",
+          "Peking University"
+        ],
+        "publicationStatus": "published",
+        "journal": "Physical review. B./Physical review. B",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "10.1103/physrevb.111.205411",
+        "arxivId": "",
+        "citationKey": "Zhang2025quantifying",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.1103/physrevb.111.205411",
+          "arxiv": "",
+          "publisher": "https://doi.org/10.1103/physrevb.111.205411",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -13655,7 +15821,7 @@
         "landingPageUrl": "https://doi.org/10.1103/physrevb.110.144412",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1.0,
+        "matchConfidence": 1,
         "matchedFromPdf": false,
         "updatedAt": 1787452672225,
         "metadataError": "",
@@ -13668,7 +15834,7 @@
         "historicalExtractedAt": 1787387763876,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 1,
           "method": "openalex-id",
           "stage": "index",
           "reviewedAt": 1787452672225
@@ -13686,6 +15852,49 @@
         "count": 105,
         "source": "OpenAlex",
         "updatedAt": 1787452672225
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Minimal models for altermagnetism",
+        "authors": [
+          "Mercè Roig",
+          "Andreas Kreisel",
+          "Yue Yu",
+          "Brian M. Andersen",
+          "D. F. Agterberg"
+        ],
+        "affiliations": [
+          "University of Copenhagen",
+          "University of Wisconsin–Milwaukee"
+        ],
+        "publicationStatus": "published",
+        "journal": "Physical review. B./Physical review. B",
+        "year": 2024,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "10.1103/physrevb.110.144412",
+        "arxivId": "",
+        "citationKey": "Roig2024minimal",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.1103/physrevb.110.144412",
+          "arxiv": "",
+          "publisher": "https://doi.org/10.1103/physrevb.110.144412",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -13705,7 +15914,41 @@
       "ts": 1766729392017,
       "size": 1390750,
       "desc": "Non spin resolved STM tip claim they can find the altermagnetic pattern through add impurity. Can be refed later.",
-      "imagePath": "data/files/2025/12/images/3tzt0rymcdwmjmh24x5__Petermann2025PRB.png"
+      "imagePath": "data/files/2025/12/images/3tzt0rymcdwmjmh24x5__Petermann2025PRB.png",
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447468,
+        "updatedAt": 1787460447468,
+        "source": "v5-migration",
+        "title": "Petermann2025PRB-Spin-resolved quasiparticle interference patterns on altermagnets via non-spin-resolved STM",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2025petermann2025prb",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     },
     {
       "id": "k62zgaemlcmjmowpdq",
@@ -13723,7 +15966,41 @@
       "ts": 1766742570042,
       "size": 980001,
       "desc": "it is quiet complete for many different types of Altermagnets",
-      "imagePath": "data/files/2025/12/images/bhkk65643vmjmowni8__Ezawa2025PRB.png"
+      "imagePath": "data/files/2025/12/images/bhkk65643vmjmowni8__Ezawa2025PRB.png",
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Ezawa2025PRB-spdgif-altermagnet",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2025ezawa2025prb",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     },
     {
       "id": "yaty75eq3ltmjqmv9n2",
@@ -13742,7 +16019,41 @@
       "ts": 1766981012053,
       "size": 553443,
       "desc": "a quiet good ref to explain the meaning of Josephson Effect and Josephson Diode Effect.",
-      "imagePath": "data/files/2025/12/images/68c5s6wqbsnmjqmv789__Nikolic2025arXiv.png"
+      "imagePath": "data/files/2025/12/images/68c5s6wqbsnmjqmv789__Nikolic2025arXiv.png",
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Nikolic2025arXiv-Necessary conditions for spin-resolved JDE across strongly spin-polarized magnetic materials",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2025nikolic2025arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     },
     {
       "id": "88k5o19p6himjqnt2sw",
@@ -13761,7 +16072,41 @@
       "ts": 1766982603638,
       "size": 3321052,
       "desc": "Photonic crystals as a platform to realize the transform between QSH and QAH.",
-      "imagePath": "data/files/2025/12/images/xb2edjikf1omjqnszeq__Chen2025PRL.png"
+      "imagePath": "data/files/2025/12/images/xb2edjikf1omjqnszeq__Chen2025PRL.png",
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Chen2025PRL-one-way valley-robust transport eage-engnering",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2025chen2025prl",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     },
     {
       "id": "c4raqfzji6jmjqo0wnu",
@@ -13779,7 +16124,41 @@
       "ts": 1766982958077,
       "size": 1339745,
       "desc": "The model used in the paper is quiet close to what we used in our paper, which construct from a Kane-mele model with SOC term.",
-      "imagePath": "data/files/2025/12/images/hl6skijbt3mjqo0udv__Li2025PRL.png"
+      "imagePath": "data/files/2025/12/images/hl6skijbt3mjqo0udv__Li2025PRL.png",
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Li2025PRL-Quantum metric-based optical selection rules",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2025li2025prl",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     },
     {
       "id": "bcnj6ivk1amjqt1htp",
@@ -13798,7 +16177,41 @@
       "ts": 1766991382416,
       "size": 1135561,
       "desc": "it can be regarded as a learning example to enter the field of time-dependent device-level simulation",
-      "imagePath": "data/files/2025/12/images/svtqmlnfekmjqt19i1__Abbout2018PRL .png"
+      "imagePath": "data/files/2025/12/images/svtqmlnfekmjqt19i1__Abbout2018PRL .png",
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Abbout2018PRL - Cooperative Charge Pumping and Enhanced Skyrmion Mobility",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2025abbout2018prl",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     },
     {
       "id": "bs7ee6mjqgmjrw41fw",
@@ -13817,7 +16230,41 @@
       "ts": 1767057046532,
       "size": 6262139,
       "desc": "a quiet important numerical calculation tool for solving time-dependent Schordinger Eq.",
-      "imagePath": "data/files/2025/12/images/nacnoheruumjrw3xvu__Kloss2021NJP.png"
+      "imagePath": "data/files/2025/12/images/nacnoheruumjrw3xvu__Kloss2021NJP.png",
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Kloss2021NJP - Tkwant a software package for time-dependent quantum transport",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2025kloss2021njp",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     },
     {
       "id": "lao60uxp3limjrwlq5k",
@@ -13835,7 +16282,41 @@
       "ts": 1767057825787,
       "size": 1934207,
       "desc": "a geometry confined behavior for skyrmion behavior, quiet interesting.",
-      "imagePath": "data/files/2025/12/images/fsr4ophc0dhmjrwlo4f__Gruber2025arXiv.png"
+      "imagePath": "data/files/2025/12/images/fsr4ophc0dhmjrwlo4f__Gruber2025arXiv.png",
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Gruber2025arXiv-Skyrmion Lattice Order Controlled by Confinement Geometry",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2025gruber2025arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     },
     {
       "id": "sm47l39fxfmk0ul1tp",
@@ -13854,7 +16335,41 @@
       "ts": 1767598630938,
       "size": 2309004,
       "desc": "a SGM technique has been employed in the study of topological superconductivity.",
-      "imagePath": "data/files/2026/01/images/f2i96i6rc29mk0ukzq9__ Lombardi2025CM.png"
+      "imagePath": "data/files/2026/01/images/f2i96i6rc29mk0ukzq9__ Lombardi2025CM.png",
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": " Lombardi2025CM-Supercurrent_modulation_in_InSb_nanoflag-based_Jos",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026lombardi2025cm",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     },
     {
       "id": "ljgscx9xydlmk1y8uyq",
@@ -13874,7 +16389,41 @@
       "ts": 1767665249996,
       "size": 5431790,
       "desc": "maybe the first experiment using the STM with a helical edge state, one of our work is quiet close to its setup",
-      "imagePath": "data/files/2026/01/images/r03jp5sd5gpmk1y8smy__Wang2025arXiv.png"
+      "imagePath": "data/files/2026/01/images/r03jp5sd5gpmk1y8smy__Wang2025arXiv.png",
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Wang2025arXiv-Atomic-scale spin sensing of a 2D d-wave altermagnet via helical tunneling",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026wang2025arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     },
     {
       "id": "lrh6f4vchamk1z34ig",
@@ -13893,7 +16442,41 @@
       "ts": 1767666693468,
       "size": 7780838,
       "desc": "also a STM experiment which use STM technique to detect d-wave altermagnet, will also be a quiet important progress in this field",
-      "imagePath": "data/files/2026/01/images/5go1hv6uf38mk1z30ue__Fu2025arXiv.png"
+      "imagePath": "data/files/2026/01/images/5go1hv6uf38mk1z30ue__Fu2025arXiv.png",
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Fu2025arXiv-Atomic-scale visualization of d-wave altermagnetism",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026fu2025arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     },
     {
       "id": "3i3fzscbuanmk1zsp79",
@@ -13912,7 +16495,41 @@
       "ts": 1767667854046,
       "size": 6094109,
       "desc": "it seems helical magnetic textures can generate DMI, it may be quiet interesting to remeber and check it when i have time.",
-      "imagePath": "data/files/2026/01/images/78smm1t16s2mk1zsmo9__Ga2026PRB.png"
+      "imagePath": "data/files/2026/01/images/78smm1t16s2mk1zsmo9__Ga2026PRB.png",
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Ga2026PRB-Chiral geometry driven chiral magnetism",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026ga2026prb",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     },
     {
       "id": "p9z9vcwn2vmk21n4pm",
@@ -13932,7 +16549,41 @@
       "ts": 1767670951030,
       "size": 1449741,
       "desc": "a potential work which may be used STM to detect the spin-resolved LDOS for different vortex with different angular momentum.",
-      "imagePath": "data/files/2026/01/images/f6ajny8y735mk21n35d__Venditti2026PRB.png"
+      "imagePath": "data/files/2026/01/images/f6ajny8y735mk21n35d__Venditti2026PRB.png",
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Venditti2026PRB-Angular momentum of vortex-core MZM",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026venditti2026prb",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     },
     {
       "id": "prxk7y85jkmk24ei3h",
@@ -13952,7 +16603,41 @@
       "ts": 1767675586653,
       "size": 412408,
       "desc": "a work of Jinfeng Jia, which gives an experimental signature for the existence of vortex MZM",
-      "imagePath": "data/files/2026/01/images/bn4bo1jq1xmk24ega5__Sun2016PRL.png"
+      "imagePath": "data/files/2026/01/images/bn4bo1jq1xmk24ega5__Sun2016PRL.png",
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Sun2016PRL-MZM detected with spin selective Andreev reflection in the vortex of a topological superconductor",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026sun2016prl",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     },
     {
       "id": "jiop6ogbb6mk3cy048",
@@ -13971,7 +16656,41 @@
       "ts": 1767750399979,
       "size": 701799,
       "desc": "the Fermi surface seems quiet interesting, maybe we can do some works with STM.",
-      "imagePath": "data/files/2026/01/images/i9dmdp9ih6lmk3cxy7u__Heinsdorf2026PRB.png"
+      "imagePath": "data/files/2026/01/images/i9dmdp9ih6lmk3cxy7u__Heinsdorf2026PRB.png",
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Heinsdorf2026PRB-Proximitizing altermagnets with conventional superconductors",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026heinsdorf2026prb",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     },
     {
       "id": "4yeuqj0y66hmk3derre",
@@ -13990,7 +16709,41 @@
       "ts": 1767751182529,
       "size": 1659827,
       "desc": "a quantized conductance plateaus (1, 1/2, 1/4) can be tuned through AM topological superconductor, seems quiet interesting in application.",
-      "imagePath": "data/files/2026/01/images/mwog8sfbqp9mk3deq4o__Wang2026PRB.png"
+      "imagePath": "data/files/2026/01/images/mwog8sfbqp9mk3deq4o__Wang2026PRB.png",
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Wang2026PRB-Quantized CAR in AM-AMTSC-AM heterojunction",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026wang2026prb",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     },
     {
       "id": "prpxlrqhn3lmk3eaqda",
@@ -14009,7 +16762,41 @@
       "ts": 1767752675474,
       "size": 1218301,
       "desc": "a study about the emergence of altermagnet in t-U-J Hubbard model. However, it seems boring to discuss the effect disorder in the Hubbard model.",
-      "imagePath": "data/files/2026/01/images/4oqi3gzpsjjmk3ean9b__Dong2025arXiv.png"
+      "imagePath": "data/files/2026/01/images/4oqi3gzpsjjmk3ean9b__Dong2025arXiv.png",
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Dong2025arXiv-Spontaneous emergence of altermagnetism in the single-orbital extended Hubbard model",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026dong2025arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     },
     {
       "id": "ziybt92uw1fmk4yc6i2",
@@ -14033,6 +16820,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/01/ziybt92uw1fmk4yc6i2.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Nowak2025PRB-sgm anistropy Fermi surface",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026nowak2025prb",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14058,6 +16879,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/01/hl8p5kalv2mk6k6fbi.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Cayao2026JPSJ-NH JJ with Four MZM",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026cayao2026jpsj",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14083,6 +16938,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/01/rrp2beqiznmkahm1m8.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Konschuh2011PhDthesis_SK系数",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026konschuh2011phdthesis",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14107,6 +16996,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/01/i4wqrvlwdfmkal98bq.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Cui2026arXiv-Symmetry driven unconventional magnetoelectric coupling in perovskite altermagnet",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026cui2026arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14132,6 +17055,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/01/2ojczs11kzamkc6987s.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Wang2026arXiv-Electric field switching of altermagnetic spin-splitting in multiferroic skyrmions",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026wang2026arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14156,6 +17113,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/01/o4ltf3tmflmkevoufj.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Zhu2026PRB-Wavefunction textures in twisted bilayer graphene from first principles",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026zhu2026prb",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14181,6 +17172,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/01/fkd7z9sovydmkevubm0.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Leask2026arXiv-Interactions of composite magnetic skyrmion-superconducting vortex pairs in ferromagnetic superconductors",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026leask2026arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14206,6 +17231,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/01/aribtkvdcanmkkkj5zd.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Qin2026arXiv-Revealing altermagnetic Fermi surfaces with two Kondo impurities",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026qin2026arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14231,6 +17290,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/01/q04wkm50yzemkmdqgvx.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Sardinero2024PRB-Topological superconductivity in a magnetic-texture coupled JJ",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026sardinero2024prb",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14255,6 +17348,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/01/qpx3y6c59rmknihedk.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Yang2026PRB-Engineering Hubbard models with gated two-dimensional moire systems",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026yang2026prb",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14279,6 +17406,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/01/npm8kc2g6lmknirrzt.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Cuozzo2026PRXQ-Buried Dirac Points in QSHI-Implications for Majorana Kramers Pair-Based Quantum Computing",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026cuozzo2026prxq",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14303,6 +17464,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/01/8104x4i5pcamkniver5.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Crawford2026PRB-Josephson anomalous vortices",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026crawford2026prb",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14328,6 +17523,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/01/2p6rw6pqr13mknmu813.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Nakazawa2026arXiv-Probing Fermi-surface spin-textures via the nonlinear SdH effect",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026nakazawa2026arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14353,6 +17582,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/01/d7kkjauaw0jmknn2aja.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Liu2026arXiv-Current-driven nonlinear skyrmion dynamics in altermagnet",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026liu2026arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14377,6 +17640,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/01/w74smnyowmmkqg4gq0.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Fu2025arXiv-Floquet engineering spin triplet states in unconventional magnets",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026fu2025arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14402,6 +17699,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/01/z2bps6snfocmkw73vxo.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Hu2026arXiv-RKKY-like interactions between two magnetic skyrmions",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026hu2026arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14426,6 +17757,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/01/0cs92set7gmlmkw7i14q.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Liu2026arXiv-Tunable two-dimensional Dirac-Weyl Semimetal Phase induced by Altermagnetism",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026liu2026arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14451,6 +17816,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/01/c6anomfv2dml1qi6ss.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Rog2026arXiv-Tapping-mode SQUID-on-tip Microscopy with Proximity Josephson Junction",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026rog2026arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14476,6 +17875,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/02/k1s5ebh99gjml3defb6.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Li2026arXiv-Manipulating anomalous transport vai crystal symmetry in 2D AM",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026li2026arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14500,6 +17933,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/02/jooa5vwu5nml7g42bo.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Wang2026arXiv-Visualizing the odd-parity superconducting order parameter and its quasiparticle surface band in UTe2",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026wang2026arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14524,6 +17991,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/02/btjqyemprrjml7gtivy.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Zhang2026PRB-Spin-polarized STM measurement scheme for determining the quantum geometric tensor",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026zhang2026prb",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14549,6 +18050,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/02/h0a1g1bac1ml7nvwos.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Masalaeva2026arXiv-Quantum vortex channels as JJ",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026masalaeva2026arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14575,6 +18110,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/02/45u1yaex7ssmlf5toed.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Shi2026arXiv-Charge 4e superconductor with parafermionic vortices",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026shi2026arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14600,6 +18169,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/03/7ex9vs64x2jmm96822h.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Caro2026NL-Phase rotated AM as Chern valves for topological transport",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026caro2026nl",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14627,6 +18230,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/03/p1swpuz8pfdmmiqklqm.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Mondal2026arXiv-Spin polarized Andreev molecules and anomalous nonlocal Josephson effects in altermagnetic junctions",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026mondal2026arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14651,6 +18288,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/03/srf8u03fsemmir2drj.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Yu2026arXiv-Coulomb interaction unlocks Majorana-mediated electron teleportation between quantum dots",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026yu2026arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14676,6 +18347,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/03/bj7yhf192vemmirb6m4.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "SZhang2025arXiv-Intrinsic antiferromagnetic half-metal and topological phases in the ferrovalley states of the sliding bilayer altermagnets",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026szhang2025arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14700,6 +18405,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/03/a9p0f80hyj5mmis3z7o.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Yue2026arXiv-Chirality breaking of Majorana edge modes induced by Chemical potential Shifts",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026yue2026arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14724,6 +18463,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/03/bph9ctqy0e9mmiskovm.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Chudnovsky2026arXiv-Skyrmion Cyclotron Resonance in Ferrimagnets",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026chudnovsky2026arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14749,6 +18522,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/03/60mqyckald5mmlep7fy.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "AM Giant MTJ",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026giant",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14774,6 +18581,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/03/ty33wuwbgglmmlfr5ln.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "AMTOP",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026amtop",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14798,6 +18639,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/03/35lxgvaxq9ommvq72ph.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Symmetry Criteria for Unconventional Magnetism",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026symmetry",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14822,6 +18697,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/03/9q5k8evebwmmwvjld3.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Mizoguchi2026arXiv-Orbital-Zeeman cross correlation in p- and d-wave altermagnets",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026mizoguchi2026arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14847,6 +18756,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/03/jok560qiusrmn2nrp26.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "XMZhao2026arXiv-Tailoring Corner States and Exceptional Points in Altermagnets",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026xmzhao2026arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -14871,6 +18814,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/04/xgdja6p33rrmnpjkq7i.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "MZM pinned by magnetic islands",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026pinned",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -15020,6 +18997,46 @@
         "count": 0,
         "source": "OpenAlex",
         "updatedAt": 1787452694218
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Parity-Resolved Quantum Capacitance and Quantum Inductance in Topological, Trivial, and Normal Nanowire Interferometers",
+        "authors": [
+          "Viktoriia Pinchenkova",
+          "Valerii K. Kozin",
+          "Maximilian Hünenberger",
+          "Daniel Loss",
+          "Jelena Klinovaja"
+        ],
+        "affiliations": [],
+        "publicationStatus": "preprint",
+        "journal": "arXiv (Cornell University)",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "10.48550/arxiv.2608.09334",
+        "arxivId": "2603.12256",
+        "citationKey": "Pinchenkova2026parity",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.48550/arxiv.2608.09334",
+          "arxiv": "https://arxiv.org/abs/2603.12256",
+          "publisher": "https://arxiv.org/abs/2608.09334",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -15045,6 +19062,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/04/6x5hmhawbjomnqvc7jt.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "STM Kagome",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026kagome",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -15238,6 +19289,49 @@
         "count": 0,
         "source": "OpenAlex",
         "updatedAt": 1787452694975
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Floquet-induced anisotropic magnetoresistance and anomalous Hall effect in 2D $d$-wave altermagnets with Rashba spin-orbit coupling",
+        "authors": [
+          "Mohsen Yarmohammadi",
+          "Pieter M. Gunnink",
+          "Jairo Sinova",
+          "J. K. Freericks"
+        ],
+        "affiliations": [
+          "Georgetown University",
+          "Johannes Gutenberg University Mainz",
+          "Texas A&M University"
+        ],
+        "publicationStatus": "preprint",
+        "journal": "arXiv (Cornell University)",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "2604.05322",
+        "citationKey": "Yarmohammadi2026floquet",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "https://arxiv.org/abs/2604.05322",
+          "publisher": "https://arxiv.org/abs/2606.21281",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -15263,6 +19357,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/04/qq70nzrc37emo29etro.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Lissajous trajectories induced by skyrmion oscillator",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026lissajous",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -15287,6 +19415,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/04/iyuqlul9ltomo29zanw.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Generalized Bloch theorem",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026generalized",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -15312,6 +19474,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/04/vzoh6c193yamo2ah49i.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Vadnais2026arXiv-d-wave pair density wave superconductivity in a two orbital model",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026vadnais2026arxiv",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -15337,6 +19533,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/04/t1n2iaw51mmo2de6hv.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Dirac Altermagent",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026dirac",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -15361,6 +19591,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/04/by7dcbo2xihmo7xgqd7.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "SM-SC Majorana",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026majorana",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -15386,6 +19650,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/04/2bby84txtztmo7xusvg.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Josephson phase shift and JDE due to the inverse spin Hall effect",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026josephson",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -15411,6 +19709,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/04/dweg76yjhf7mo83yi6x.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Non-Hermitian magnetic JJ",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026hermitian",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -15436,6 +19768,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/04/phkpbff9ecmo85ijo3.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Non-Hermitian Moire Valley Filter",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026hermitian",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -15460,6 +19826,40 @@
         "repo": "cheneit-pdf-2026",
         "branch": "main",
         "path": "data/files/2026/04/rgmipoij1lmo9clx1m.pdf"
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Stanescu2026PRB-Fermion parity and quantum capacitance oscillation with partially separated Majorana and quasi-Majorana modes",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026stanescu2026prb",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -15488,7 +19888,41 @@
       },
       "uploadStatus": "ready",
       "uploadError": "",
-      "imageUploadError": ""
+      "imageUploadError": "",
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Relativistic quantum antiscar",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026relativistic",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     },
     {
       "id": "sfvea1wgzqmso6xou8",
@@ -15517,7 +19951,41 @@
       },
       "uploadStatus": "ready",
       "uploadError": "",
-      "imageUploadError": ""
+      "imageUploadError": "",
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Spin seebeck effect",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026spin",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     },
     {
       "id": "etebtaa7gxemso99w9w",
@@ -15546,7 +20014,41 @@
       },
       "uploadStatus": "ready",
       "uploadError": "",
-      "imageUploadError": ""
+      "imageUploadError": "",
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "spin qubit altermagnet",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026spin",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     },
     {
       "id": "9tf4t9wqvc8mso9iiv7",
@@ -15575,7 +20077,41 @@
       },
       "uploadStatus": "ready",
       "uploadError": "",
-      "imageUploadError": ""
+      "imageUploadError": "",
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Controlling magnetic domain wall  through supercurrent",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026controlling",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     },
     {
       "id": "hoopv05buhgmsonm7iu",
@@ -15603,7 +20139,41 @@
       },
       "uploadStatus": "ready",
       "uploadError": "",
-      "imageUploadError": ""
+      "imageUploadError": "",
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "TPHE in Topological Insulator",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026tphe",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     },
     {
       "id": "j9p0oh08j68msqwadb8",
@@ -15632,7 +20202,41 @@
       },
       "uploadStatus": "ready",
       "uploadError": "",
-      "imageUploadError": ""
+      "imageUploadError": "",
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "SC-AM-SC",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026work",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     },
     {
       "id": "0dbyxgr47i1mt2c3ac3",
@@ -15660,7 +20264,41 @@
       },
       "uploadStatus": "ready",
       "uploadError": "",
-      "imageUploadError": ""
+      "imageUploadError": "",
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "Mirror Chern Insulator in AM",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026mirror",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     },
     {
       "id": "lo8lcwi35vmt2cdd70",
@@ -15688,12 +20326,47 @@
       },
       "uploadStatus": "ready",
       "uploadError": "",
-      "imageUploadError": ""
+      "imageUploadError": "",
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787460447469,
+        "updatedAt": 1787460447469,
+        "source": "v5-migration",
+        "title": "AM memcapacitor",
+        "authors": [],
+        "affiliations": [],
+        "publicationStatus": "unpublished",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "paper2026memcapacitor",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     }
   ],
   "historicalMetadataUpdatedAt": 1787387764211,
   "schemaVersion": 4,
-  "appVersion": "4.1",
+  "appVersion": "5.2",
   "metadataUpdatedAt": 1787452705644,
-  "metadataUpdatedAtIso": "2026-08-23T02:38:25.644573+00:00"
+  "metadataUpdatedAtIso": "2026-08-23T02:38:25.644573+00:00",
+  "paperCardSchemaVersion": 1
 }
