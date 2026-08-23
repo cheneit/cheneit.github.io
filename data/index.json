@@ -17,7 +17,7 @@
       "scholarly": {
         "backfillScan": {
           "status": "review",
-          "confidence": 0.0,
+          "confidence": 0,
           "method": "no-result",
           "stage": "pdf",
           "message": "PDF parsed but database match was not reliable",
@@ -1274,7 +1274,7 @@
       "scholarly": {
         "backfillScan": {
           "status": "review",
-          "confidence": 0.0,
+          "confidence": 0,
           "method": "no-result",
           "stage": "pdf",
           "message": "PDF parsed but database match was not reliable",
@@ -2013,7 +2013,7 @@
       "scholarly": {
         "backfillScan": {
           "status": "review",
-          "confidence": 0.0,
+          "confidence": 0,
           "method": "no-result",
           "stage": "pdf",
           "message": "PDF parsed but database match was not reliable",
@@ -2376,7 +2376,7 @@
       "scholarly": {
         "backfillScan": {
           "status": "review",
-          "confidence": 0.0,
+          "confidence": 0,
           "method": "no-result",
           "stage": "pdf",
           "message": "PDF parsed but database match was not reliable",
@@ -2404,7 +2404,7 @@
       "scholarly": {
         "backfillScan": {
           "status": "review",
-          "confidence": 0.0,
+          "confidence": 0,
           "method": "no-result",
           "stage": "pdf",
           "message": "PDF parsed but database match was not reliable",
@@ -2433,7 +2433,7 @@
       "scholarly": {
         "backfillScan": {
           "status": "review",
-          "confidence": 0.0,
+          "confidence": 0,
           "method": "no-result",
           "stage": "pdf",
           "message": "PDF parsed but database match was not reliable",
@@ -3169,7 +3169,7 @@
       "scholarly": {
         "backfillScan": {
           "status": "review",
-          "confidence": 0.0,
+          "confidence": 0,
           "method": "no-result",
           "stage": "pdf",
           "message": "PDF parsed but database match was not reliable",
@@ -3604,7 +3604,7 @@
       "scholarly": {
         "backfillScan": {
           "status": "review",
-          "confidence": 0.0,
+          "confidence": 0,
           "method": "no-result",
           "stage": "pdf",
           "message": "PDF parsed but database match was not reliable",
@@ -3993,7 +3993,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1.0,
+            "score": 1,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -4358,7 +4358,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1.0,
+            "score": 1,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -4690,7 +4690,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1.0,
+            "score": 1,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -4892,7 +4892,7 @@
     },
     {
       "id": "2batnl44lrkmivcs6vi",
-      "title": "Duan2025PRL-AFMAM-251207",
+      "title": "Antiferroelectric Altermagnets: Antiferroelectricity Alters Magnets",
       "filename": "Duan2025PRL-AFMAM-251207.pdf",
       "path": "data/files/2025/12/2batnl44lrkmivcs6vi.pdf",
       "kind": "pdf",
@@ -5229,13 +5229,13 @@
         "metadataSource": "OpenAlex",
         "matchMethod": "doi-exact",
         "matchConfidence": 0.99,
-        "matchedFromPdf": true,
-        "updatedAt": 1787387742765,
+        "matchedFromPdf": false,
+        "updatedAt": 1787451786789,
         "metadataError": "",
         "citations": {
           "count": 167,
           "source": "OpenAlex",
-          "updatedAt": 1787387742765
+          "updatedAt": 1787451786789
         },
         "pdfPages": 19,
         "historicalExtractedAt": 1787387742645,
@@ -5253,12 +5253,65 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787387742765
-        }
+        },
+        "volume": "134",
+        "issue": "10",
+        "pages": "106801-106801",
+        "publisher": "American Physical Society"
       },
       "citations": {
         "count": 167,
         "source": "OpenAlex",
-        "updatedAt": 1787387742765
+        "updatedAt": 1787451786789
+      },
+      "groups": [],
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787451773212,
+        "updatedAt": 1787451839543,
+        "source": "manual",
+        "title": "Antiferroelectric Altermagnets: Antiferroelectricity Alters Magnets",
+        "authors": [
+          "Xunkai Duan",
+          "Jiayong Zhang",
+          "Ziye Zhu",
+          "Yuntian Liu",
+          "Zhenyu Zhang",
+          "Igor Žutić",
+          "Tong Zhou"
+        ],
+        "affiliations": [
+          "Eastern Institute of Technology",
+          "Shanghai Jiao Tong University",
+          "University of Science and Technology of China",
+          "Suzhou University of Science and Technology",
+          "University at Buffalo, State University of New York"
+        ],
+        "publicationStatus": "published",
+        "journal": "Physical Review Letters",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "10.1103/physrevlett.134.106801",
+        "arxivId": "",
+        "citationKey": "Duan2025antiferroelectric",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.1103/physrevlett.134.106801",
+          "arxiv": "",
+          "publisher": "https://doi.org/10.1103/physrevlett.134.106801",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
       }
     },
     {
@@ -5282,7 +5335,7 @@
       "scholarly": {
         "backfillScan": {
           "status": "review",
-          "confidence": 0.0,
+          "confidence": 0,
           "method": "no-result",
           "stage": "pdf",
           "message": "PDF parsed but database match was not reliable",
@@ -5311,7 +5364,7 @@
       "scholarly": {
         "backfillScan": {
           "status": "review",
-          "confidence": 0.0,
+          "confidence": 0,
           "method": "no-result",
           "stage": "pdf",
           "message": "PDF parsed but database match was not reliable",
@@ -5340,7 +5393,7 @@
       "scholarly": {
         "backfillScan": {
           "status": "review",
-          "confidence": 0.0,
+          "confidence": 0,
           "method": "no-result",
           "stage": "pdf",
           "message": "PDF parsed but database match was not reliable",
@@ -5369,7 +5422,7 @@
       "scholarly": {
         "backfillScan": {
           "status": "review",
-          "confidence": 0.0,
+          "confidence": 0,
           "method": "no-result",
           "stage": "pdf",
           "message": "PDF parsed but database match was not reliable",
@@ -6008,7 +6061,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1.0,
+            "score": 1,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -6721,7 +6774,7 @@
       "scholarly": {
         "backfillScan": {
           "status": "review",
-          "confidence": 0.0,
+          "confidence": 0,
           "method": "no-result",
           "stage": "pdf",
           "message": "PDF parsed but database match was not reliable",
@@ -7135,7 +7188,7 @@
       "scholarly": {
         "backfillScan": {
           "status": "review",
-          "confidence": 0.0,
+          "confidence": 0,
           "method": "no-result",
           "stage": "pdf",
           "message": "PDF parsed but database match was not reliable",
@@ -7256,7 +7309,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1.0,
+            "score": 1,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -8316,7 +8369,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1.0,
+            "score": 1,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -8549,7 +8602,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1.0,
+            "score": 1,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -8745,7 +8798,7 @@
       "scholarly": {
         "backfillScan": {
           "status": "review",
-          "confidence": 0.0,
+          "confidence": 0,
           "method": "no-result",
           "stage": "pdf",
           "message": "PDF parsed but database match was not reliable",
@@ -8773,7 +8826,7 @@
       "scholarly": {
         "backfillScan": {
           "status": "review",
-          "confidence": 0.0,
+          "confidence": 0,
           "method": "no-result",
           "stage": "pdf",
           "message": "PDF parsed but database match was not reliable",
@@ -11472,7 +11525,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1.0,
+            "score": 1,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
