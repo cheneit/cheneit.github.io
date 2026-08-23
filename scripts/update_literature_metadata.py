@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
-"""Repo Library v4.1 metadata updater and historical PDF backfill.
+"""Research Library v5.2 metadata updater and historical PDF backfill.
 
 Daily mode refreshes already identifiable records without downloading PDFs.
 Backfill mode uses a conservative two-stage pipeline:
 1) DOI/arXiv/title matching from index.json;
 2) for unresolved records, download/read the first PDF pages and match again.
 
-Only scholarly/citations/review fields are updated. Manual top-level title,
-topics, tags, description and groups are never overwritten.
+Only scholarly/citations/review fields are refreshed. A missing v5 paperCard is
+initialized once from the first accepted match; an existing paperCard is never
+overwritten. Manual title, topics, tags, notes, links and evaluations are safe.
 """
 
 from __future__ import annotations
@@ -89,7 +90,7 @@ def request_json(url: str, retries: int = 3) -> dict:
     mailto = os.environ.get("OPENALEX_MAILTO", "").strip()
     if mailto and "api.openalex.org" in url:
         url += ("&" if "?" in url else "?") + "mailto=" + urllib.parse.quote(mailto)
-    headers = {"User-Agent": "Repo-Library-Metadata-Updater/4.1"}
+    headers = {"User-Agent": "Research-Library-Metadata-Updater/5.2"}
     last_error: Exception | None = None
     for attempt in range(retries):
         try:
@@ -213,6 +214,10 @@ def normalize_openalex(work: dict, previous: dict, seed: dict, match: dict) -> d
         "year": work.get("publication_year") or previous.get("year"),
         "venue": source.get("display_name") or previous.get("venue") or "",
         "venueId": source.get("id") or previous.get("venueId") or "",
+        "volume": (work.get("biblio") or {}).get("volume") or previous.get("volume") or "",
+        "issue": (work.get("biblio") or {}).get("issue") or previous.get("issue") or "",
+        "pages": "-".join(str(value) for value in [(work.get("biblio") or {}).get("first_page"), (work.get("biblio") or {}).get("last_page")] if value) or previous.get("pages") or "",
+        "publisher": source.get("host_organization_name") or previous.get("publisher") or "",
         "type": work.get("type") or previous.get("type") or "",
         "authors": authors or previous.get("authors") or seed.get("authors") or [],
         "institutions": list(institutions.values()) or previous.get("institutions") or [],
@@ -260,6 +265,10 @@ def normalize_crossref(message: dict, previous: dict, seed: dict, match: dict) -
         "publicationDate": publication_date or previous.get("publicationDate") or "",
         "year": year or previous.get("year"),
         "venue": (message.get("container-title") or [previous.get("venue") or ""])[0],
+        "volume": message.get("volume") or previous.get("volume") or "",
+        "issue": message.get("issue") or previous.get("issue") or "",
+        "pages": message.get("page") or message.get("article-number") or previous.get("pages") or "",
+        "publisher": message.get("publisher") or previous.get("publisher") or "",
         "type": message.get("type") or previous.get("type") or "",
         "authors": authors or previous.get("authors") or seed.get("authors") or [],
         "abstract": re.sub(r"<[^>]+>", " ", str(message.get("abstract") or previous.get("abstract") or seed.get("abstract") or "")).strip(),
@@ -285,16 +294,83 @@ def resolve(seed: dict, previous: dict) -> tuple[dict | None, dict]:
     return None, match
 
 
+def name_list(value: object) -> list[str]:
+    if not isinstance(value, list):
+        return []
+    result = []
+    for row in value:
+        name = row.get("name") if isinstance(row, dict) else row
+        name = str(name or "").strip()
+        if name and name.casefold() not in {x.casefold() for x in result}:
+            result.append(name)
+    return result
+
+
+def build_paper_card(item: dict, scholarly: dict, source: str) -> dict:
+    authors = name_list(scholarly.get("authors") or [])
+    affiliations = name_list(scholarly.get("institutions") or [])
+    for author in scholarly.get("authors") or []:
+        if isinstance(author, dict):
+            for name in name_list(author.get("institutions") or []):
+                if name.casefold() not in {x.casefold() for x in affiliations}:
+                    affiliations.append(name)
+    year = scholarly.get("year") or str(scholarly.get("publicationDate") or "")[:4] or None
+    try:
+        year = int(year) if year else None
+    except (TypeError, ValueError):
+        year = None
+    doi = clean_doi(scholarly.get("doi") or item.get("doi"))
+    arxiv_id = str(scholarly.get("arxivId") or item.get("arxivId") or "").strip()
+    venue = str(scholarly.get("venue") or "").strip()
+    status = "preprint" if arxiv_id and (not venue or re.search(r"arxiv|preprint", venue, re.I)) else ("published" if venue or doi else "unpublished")
+    title = str(scholarly.get("title") or item.get("title") or Path(str(item.get("filename") or "paper")).stem).strip()
+    surname = (authors[0].split()[-1] if authors else "paper")
+    keyword = next((word for word in re.findall(r"[A-Za-z0-9]+", title.lower()) if len(word) > 3), "work")
+    citation_key = re.sub(r"[^A-Za-z0-9_-]", "", f"{surname}{year or 'nd'}{keyword}") or f"paper{year or 'nd'}work"
+    stamp = now_ms()
+    return {
+        "schemaVersion": 1,
+        "frozenAt": stamp,
+        "updatedAt": stamp,
+        "source": source,
+        "title": title,
+        "authors": authors,
+        "affiliations": affiliations,
+        "publicationStatus": status,
+        "journal": venue,
+        "year": year,
+        "volume": scholarly.get("volume") or "",
+        "issue": scholarly.get("issue") or "",
+        "pages": scholarly.get("pages") or "",
+        "publisher": scholarly.get("publisher") or "",
+        "doi": doi,
+        "arxivId": arxiv_id,
+        "citationKey": citation_key,
+        "bibtexEntryType": "article" if status == "published" else "misc",
+        "links": {
+            "pdf": "",
+            "doi": f"https://doi.org/{doi}" if doi else "",
+            "arxiv": f"https://arxiv.org/abs/{arxiv_id}" if arxiv_id else "",
+            "publisher": scholarly.get("landingPageUrl") or "",
+            "code": "",
+            "project": "",
+        },
+        "evaluation": {"shortReview": "", "relevance": "", "readingStatus": "unread", "starred": False},
+    }
+
+
 def item_seed(item: dict) -> dict:
     scholarly = item.get("scholarly") or {}
-    raw_title = scholarly.get("title") or item.get("title") or Path(str(item.get("filename") or "")).stem
+    card = item.get("paperCard") if isinstance(item.get("paperCard"), dict) else {}
+    raw_title = card.get("title") or scholarly.get("title") or item.get("title") or Path(str(item.get("filename") or "")).stem
     combined = " ".join(str(item.get(key) or "") for key in ("title", "filename", "desc"))
+    card_authors = [{"name": name} for name in name_list(card.get("authors") or [])]
     return {
         "title": "" if generic_title(raw_title) else raw_title,
-        "doi": clean_doi(scholarly.get("doi") or item.get("doi") or extract_doi(combined)),
-        "arxivId": scholarly.get("arxivId") or extract_arxiv(combined),
+        "doi": clean_doi(card.get("doi") or scholarly.get("doi") or item.get("doi") or extract_doi(combined)),
+        "arxivId": card.get("arxivId") or scholarly.get("arxivId") or extract_arxiv(combined),
         "openAlexId": scholarly.get("openAlexId") or "",
-        "authors": scholarly.get("authors") or [],
+        "authors": card_authors or scholarly.get("authors") or [],
         "abstract": scholarly.get("abstract") or item.get("desc") or "",
         "keywords": scholarly.get("keywords") or item.get("tags") or [],
     }
@@ -326,7 +402,7 @@ def raw_storage_url(storage: dict) -> str:
 
 
 def read_remote_bytes(url: str, max_bytes: int, github_token: str = "") -> bytes:
-    headers = {"User-Agent": "Repo-Library-Metadata-Updater/4.1"}
+    headers = {"User-Agent": "Research-Library-Metadata-Updater/5.2"}
     if github_token and ("githubusercontent.com" in url or "api.github.com" in url):
         headers["Authorization"] = f"Bearer {github_token}"
     request = urllib.request.Request(url, headers=headers)
@@ -453,6 +529,9 @@ def apply_match(item: dict, resolved: dict, match: dict, stage: str) -> None:
     scholarly = {**resolved["scholarly"], "metadataReview": review}
     item["scholarly"] = scholarly
     item["citations"] = resolved["citations"]
+    # Core v5 invariant: initialize once, never refresh or overwrite a user card.
+    if not isinstance(item.get("paperCard"), dict):
+        item["paperCard"] = build_paper_card(item, scholarly, "backfill-auto" if stage == "pdf" else "metadata-first-match")
 
 
 def record_scan(item: dict, status: str, match: dict, stage: str, message: str = "") -> None:
@@ -638,8 +717,9 @@ def main() -> int:
     else:
         updated, report = run_daily(items, args.accept_threshold, args.max_items)
 
-    data["schemaVersion"] = max(4, int(data.get("schemaVersion") or 0))
-    data["appVersion"] = "4.1"
+    data["schemaVersion"] = max(5, int(data.get("schemaVersion") or 0))
+    data["appVersion"] = "5.2"
+    data["paperCardSchemaVersion"] = 1
     data["metadataUpdatedAt"] = now_ms()
     data["metadataUpdatedAtIso"] = iso_now()
 
@@ -649,7 +729,7 @@ def main() -> int:
             backup_dir = index_path.parent / "backups"
             backup_dir.mkdir(parents=True, exist_ok=True)
             stamp = dt.datetime.now().strftime("%Y%m%d-%H%M%S")
-            shutil.copy2(index_path, backup_dir / f"index-before-v4.1-backfill-{stamp}.json")
+            shutil.copy2(index_path, backup_dir / f"index-before-v5-backfill-{stamp}.json")
         index_path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         write_report(report_path, args.mode, args.accept_threshold, report)
 

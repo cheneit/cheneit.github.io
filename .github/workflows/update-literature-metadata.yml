@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "daily 只刷新；backfill 扫描历史 PDF"
+        description: "daily 立即刷新引用；backfill 解析剩余 PDF"
         required: true
         default: backfill
         type: choice
@@ -15,9 +15,9 @@ on:
           - backfill
           - daily
       max_items:
-        description: "本次最多处理多少篇；留空表示全部"
+        description: "最多处理多少篇；留空即处理全部剩余文献"
         required: false
-        default: "25"
+        default: ""
         type: string
       accept_threshold:
         description: "自动写入阈值，推荐 0.78"

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Research Library — Literature Intelligence (v5.2)</title>
+  <title>Repo Library — Literature Intelligence (v4.1)</title>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -13,8 +13,7 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Noto Sans", "Ubuntu", "Cantarell", "Helvetica Neue", "Arial", "\"Apple Color Emoji\"", "\"Segoe UI Emoji\"", "\"Segoe UI Symbol\""],
-            serif: ["Georgia", "Times New Roman", "Noto Serif SC", "Songti SC", "serif"]
+            sans: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Noto Sans", "Ubuntu", "Cantarell", "Helvetica Neue", "Arial", "\"Apple Color Emoji\"", "\"Segoe UI Emoji\"", "\"Segoe UI Symbol\""]
           },
           boxShadow: { soft: "0 10px 30px rgba(0,0,0,0.08)" },
         },
@@ -22,7 +21,7 @@
     };
   </script>
 
-<!-- React UMD + Babel (v5 single-file JSX) -->
+  <!-- React UMD + Babel (single-file JSX) -->
   <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -47,16 +46,10 @@
     .tl:before { content: ""; position: absolute; left: 7px; top: 0; bottom: 0; width: 2px; background: rgba(15,23,42,0.15); border-radius: 999px; }
     .tl-dot { position: absolute; left: 1px; width: 14px; height: 14px; border-radius: 999px; background: #fb923c; border: 3px solid white; box-shadow: 0 6px 16px rgba(0,0,0,0.12); }
     .tl-dot.sm { width: 10px; height: 10px; left: 3px; background: #fbbf24; border-width: 2px; }
-    .journal-rule { border-top: 4px solid #b3261e; }
-    .editorial-title { font-family: Georgia, "Times New Roman", "Noto Serif SC", "Songti SC", serif; letter-spacing: -0.025em; }
-    .smallcaps { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
-    .paper-card { box-shadow: 0 14px 36px rgba(28, 23, 18, 0.07); transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
-    .paper-card:hover { transform: translateY(-2px); border-color: #a9a39a; box-shadow: 0 20px 42px rgba(28, 23, 18, 0.11); }
-    .paper-grid { background-image: linear-gradient(rgba(20,20,20,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(20,20,20,.035) 1px, transparent 1px); background-size: 20px 20px; }
   </style>
 </head>
 
-<body class="bg-[#f6f3ec] text-[#171717]">
+<body class="bg-slate-50 text-slate-900">
   <div id="root" class="min-h-full"></div>
 
 <script type="text/babel">
@@ -64,7 +57,7 @@ const { useState, useEffect, useMemo, useRef } = React;
 
 /**
  * =========================
- * Research Library — 单文件 SPA（v5.2 B5 文献书导出版）
+ * Repo Library — 单文件 SPA（v4.1 历史文献回填版）
  * - Preview：浏览 / 搜索 / 筛选 / Dashboard（统计、日历、归档）
  * - Admin：上传 / 编辑 / 删除 / 替换PDF（注释后覆盖）
  *
@@ -81,10 +74,6 @@ const { useState, useEffect, useMemo, useRef } = React;
  * 10) v4.0：新增 Topic 趋势、作者/机构画像、引用排行、Topic 关联网络和元数据质量面板
  * 11) v4.0：兼容 v3 index.json；自动元数据使用 scholarly/citations 新字段，不覆盖人工 topics/tags
  * 12) v4.1：历史 PDF 批量扫描、分级置信度、人工复核、写入前自动备份与复核报告
- * 13) v5：上传时冻结 paperCard；后续自动任务只更新 scholarly/citations，不覆盖人工字段
- * 14) v5：可点击文献情报、文章信息面板、页面字段驱动的 BibTeX 与编辑式短评
- * 15) v5.1：站点标题作为 Home 链接；按 B5 书页导出文献卡片、Topic 分析与批注页
- * 16) v5.2：文献书示意图移至作者/单位之后，并以约 1/5 可打印页高的通栏画框展示
  * =========================
  */
 
@@ -148,8 +137,7 @@ function PrivateAccessGate({ onUnlocked }) {
     <div className="min-h-full bg-slate-950 text-white flex items-center justify-center px-4">
       <div className="w-full max-w-md rounded-3xl border border-white/10 bg-slate-900 shadow-2xl p-6 sm:p-8">
         <div className="w-12 h-12 rounded-2xl bg-slate-800 flex items-center justify-center text-2xl mb-5">🔒</div>
-        <div className="smallcaps text-[#b3261e]">Private research archive</div>
-        <div className="editorial-title mt-2 text-3xl font-semibold">Research Library</div>
+        <div className="text-xl font-semibold">Repo Library</div>
         <div className="mt-2 text-sm text-slate-400 leading-6">
           这是私有页面。此浏览器验证成功后会记住授权；新的浏览器或清除站点数据后需要重新验证。
         </div>
@@ -173,7 +161,7 @@ function PrivateAccessGate({ onUnlocked }) {
             disabled={!password || busy}
             className="w-full px-4 py-3 rounded-xl bg-white text-slate-950 font-medium hover:bg-slate-100 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {busy ? '验证中…' : '进入 Research Library'}
+            {busy ? '验证中…' : '进入 Repo Library'}
           </button>
         </form>
 
@@ -201,15 +189,16 @@ function PrivateRoot() {
 function cx(...arr){ return arr.filter(Boolean).join(' '); }
 
 function btnClass(variant='slate', extra='') {
-  const base = "inline-flex items-center justify-center gap-2 px-3 py-2 rounded-sm text-sm font-semibold border transition-colors";
+  // 统一“浅色背景 + 深色字体”，不同功能用不同浅色背景
+  const base = "inline-flex items-center justify-center gap-2 px-3 py-2 rounded-xl text-sm font-medium border shadow-sm transition-colors";
   const map = {
-    primary: "bg-[#b3261e] text-white border-[#b3261e] hover:bg-[#8f1f19]",
-    success: "bg-[#eef2e8] text-[#31543a] border-[#bdc9b8] hover:bg-[#e4eadc]",
+    primary: "bg-sky-50 text-sky-800 border-sky-200 hover:bg-sky-100",
+    success: "bg-emerald-50 text-emerald-800 border-emerald-200 hover:bg-emerald-100",
     warn:    "bg-amber-50 text-amber-900 border-amber-200 hover:bg-amber-100",
     danger:  "bg-rose-50 text-rose-800 border-rose-200 hover:bg-rose-100",
-    slate:   "bg-white text-[#24211d] border-[#cfc9bf] hover:bg-[#f2eee7]",
-    subtle:  "bg-[#f6f3ec] text-[#514c45] border-[#d8d1c7] hover:bg-[#ece7de]",
-    dark:    "bg-[#171717] text-white border-[#171717] hover:bg-[#333]",
+    slate:   "bg-white text-slate-800 border-slate-200 hover:bg-slate-50",
+    subtle:  "bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100",
+    dark:    "bg-slate-900 text-white border-slate-900 hover:bg-slate-800",
   };
   return cx(base, map[variant] || map.slate, extra);
 }
@@ -367,10 +356,6 @@ function normalizeOpenAlexWork(work, seed={}) {
     year: Number(work.publication_year || 0) || null,
     venue: source.display_name || '',
     venueId: source.id || '',
-    volume: work.biblio?.volume || '',
-    issue: work.biblio?.issue || '',
-    pages: work.biblio?.first_page ? [work.biblio.first_page, work.biblio.last_page].filter(Boolean).join('-') : '',
-    publisher: source.host_organization_name || '',
     type: work.type || '',
     authors,
     institutions,
@@ -413,10 +398,6 @@ function normalizeCrossrefWork(message, seed={}) {
     publicationDate,
     year: Number(dateParts[0] || 0) || null,
     venue: message['container-title']?.[0] || '',
-    volume: message.volume || '',
-    issue: message.issue || '',
-    pages: message.page || message.article_number || '',
-    publisher: message.publisher || '',
     type: message.type || '',
     authors,
     institutions: uniqueByName(authors.flatMap(a => a.institutions || [])),
@@ -566,270 +547,6 @@ async function buildMetadataForUpload(file) {
   };
 }
 
-/* ============ v5 user-maintained paper card ============ */
-function textList(value) {
-  if (Array.isArray(value)) return value.map(x => String(x?.name || x || '').trim()).filter(Boolean);
-  return String(value || '').split(/[;；\n]/).map(x => x.trim()).filter(Boolean);
-}
-
-function inferPublicationStatus(scholarly={}) {
-  const venue = String(scholarly.venue || '').trim();
-  if (scholarly.arxivId && (!venue || /arxiv|preprint/i.test(venue))) return 'preprint';
-  if (venue || scholarly.doi) return 'published';
-  return 'unpublished';
-}
-
-function paperCardStatusLabel(value) {
-  return ({ published: 'Published article', preprint: 'Preprint', accepted: 'Accepted manuscript', unpublished: 'Research record' })[value] || 'Research record';
-}
-
-function citationKeyFromCard(card={}) {
-  const first = String(card.authors?.[0] || 'paper').trim().split(/\s+/).pop() || 'paper';
-  const keyword = String(card.title || 'work').toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim().split(/\s+/).find(x => x.length > 3) || 'work';
-  return `${first}${card.year || 'nd'}${keyword}`.replace(/[^a-zA-Z0-9_-]/g, '');
-}
-
-function buildPaperCardSnapshot(item={}, scholarly=scholarlyOf(item), source='upload-auto') {
-  const s = scholarly || {};
-  const authors = textList(s.authors || []);
-  const affiliations = uniqueByName([
-    ...(s.institutions || []),
-    ...(s.authors || []).flatMap(a => a?.institutions || [])
-  ].map(x => typeof x === 'string' ? { name: x } : x)).map(x => x.name);
-  const year = Number(s.year || String(s.publicationDate || '').slice(0,4) || new Date(item.ts || Date.now()).getFullYear()) || null;
-  const doi = cleanDoi(s.doi || item.doi || '');
-  const arxivId = s.arxivId || item.arxivId || '';
-  const card = {
-    schemaVersion: 1,
-    frozenAt: Date.now(),
-    updatedAt: Date.now(),
-    source,
-    title: s.title || item.title || String(item.filename || '').replace(/\.[^/.]+$/, ''),
-    authors,
-    affiliations,
-    publicationStatus: inferPublicationStatus(s),
-    journal: s.venue || '',
-    year,
-    volume: s.volume || '',
-    issue: s.issue || '',
-    pages: s.pages || '',
-    publisher: s.publisher || '',
-    doi,
-    arxivId,
-    citationKey: '',
-    bibtexEntryType: inferPublicationStatus(s) === 'published' ? 'article' : 'misc',
-    links: {
-      pdf: '',
-      doi: doi ? `https://doi.org/${doi}` : '',
-      arxiv: arxivId ? `https://arxiv.org/abs/${arxivId}` : '',
-      publisher: s.landingPageUrl || '',
-      code: '',
-      project: ''
-    },
-    evaluation: { shortReview: '', relevance: '', readingStatus: 'unread', starred: false }
-  };
-  card.citationKey = citationKeyFromCard(card);
-  return card;
-}
-
-function paperCardOf(item={}) {
-  const fallback = buildPaperCardSnapshot(item, scholarlyOf(item), 'derived-display');
-  const saved = item?.paperCard;
-  if (!saved || typeof saved !== 'object') return fallback;
-  return {
-    ...fallback,
-    ...saved,
-    authors: Array.isArray(saved.authors) ? textList(saved.authors) : fallback.authors,
-    affiliations: Array.isArray(saved.affiliations) ? textList(saved.affiliations) : fallback.affiliations,
-    links: { ...fallback.links, ...(saved.links || {}) },
-    evaluation: { ...fallback.evaluation, ...(saved.evaluation || {}) }
-  };
-}
-
-function bibtexEscape(value) {
-  return String(value || '').replace(/\s+/g, ' ').trim().replace(/([%&#])/g, '\\$1');
-}
-
-function formatBibtex(item) {
-  const c = paperCardOf(item);
-  const entryType = c.bibtexEntryType || (c.publicationStatus === 'published' ? 'article' : 'misc');
-  const fields = [
-    ['title', c.title],
-    ['author', (c.authors || []).join(' and ')],
-    [entryType === 'article' ? 'journal' : 'howpublished', entryType === 'article' ? c.journal : (c.arxivId ? `arXiv:${c.arxivId}` : c.journal)],
-    ['year', c.year],
-    ['volume', c.volume],
-    ['number', c.issue],
-    ['pages', c.pages],
-    ['publisher', c.publisher],
-    ['doi', c.doi],
-    ['eprint', c.arxivId],
-    ['archivePrefix', c.arxivId ? 'arXiv' : ''],
-    ['url', c.links?.doi || c.links?.publisher || c.links?.arxiv || c.links?.pdf]
-  ].filter(([,value]) => value !== '' && value !== null && value !== undefined);
-  const key = c.citationKey || citationKeyFromCard(c) || 'paper';
-  return `@${entryType}{${key},\n${fields.map(([name,value]) => `  ${name} = {${bibtexEscape(value)}}`).join(',\n')}\n}`;
-}
-
-async function copyText(value) {
-  if (navigator.clipboard?.writeText) return navigator.clipboard.writeText(String(value || ''));
-  const area = document.createElement('textarea');
-  area.value = String(value || '');
-  area.style.position = 'fixed'; area.style.opacity = '0';
-  document.body.appendChild(area); area.select(); document.execCommand('copy'); area.remove();
-}
-
-function itemRawHref(cfg, item) {
-  if (item?.storage?.owner && item?.storage?.repo && item?.storage?.path) {
-    return ghRawUrl({ owner: item.storage.owner, repo: item.storage.repo, branch: item.storage.branch || cfg.pdf?.branch || 'main', path: item.storage.path });
-  }
-  return buildRawUrl(cfg, item?.path);
-}
-
-function itemPdfHref(cfg, item) {
-  const manual = paperCardOf(item).links?.pdf;
-  return manual || (item?.kind === 'pdf' ? buildPdfBrowserUrl(item.path) : itemRawHref(cfg, item));
-}
-
-/* ============ v5.2 B5 literature book ============ */
-function escapeBookHtml(value) {
-  return String(value ?? '').replace(/[&<>"']/g, ch => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' })[ch]);
-}
-
-function safeBookUrl(value) {
-  try {
-    const url = new URL(String(value || ''), window.location.href);
-    return ['http:', 'https:'].includes(url.protocol) ? url.href : '';
-  } catch { return ''; }
-}
-
-function bookFilename(value) {
-  const clean = String(value || 'Research-Library').trim().replace(/[^\p{L}\p{N}_-]+/gu, '-').replace(/^-+|-+$/g, '');
-  return `${clean || 'Research-Library'}-B5`;
-}
-
-function buildResearchBookHtml(items, options, cfg) {
-  const sourceItems = [...(items || [])];
-  const stats = buildLiteratureStats(sourceItems);
-  const title = options.title || 'Research Library';
-  const subtitle = options.subtitle || '文献阅读、研究批注与综述素材档案';
-  const generated = new Date().toLocaleString('zh-CN', { hour12: false });
-  const years = sourceItems.map(publicationYearOf).filter(Boolean);
-  const yearRange = years.length ? `${Math.min(...years)}–${Math.max(...years)}` : '年份待补充';
-  const totalCitations = sourceItems.reduce((sum,item)=>sum+citationOf(item).count,0);
-  const maxTopic = Math.max(1, ...stats.topics.map(x=>x.count));
-  const maxYear = Math.max(1, ...stats.years.map(x=>x[1]));
-
-  const groups = new Map();
-  sourceItems.forEach(item => {
-    const key = options.organization === 'year'
-      ? String(publicationYearOf(item) || '年份待补充')
-      : (getTopicsArr(item)[0] || '未分类文献');
-    if (!groups.has(key)) groups.set(key, []);
-    groups.get(key).push(item);
-  });
-  const groupEntries = Array.from(groups.entries()).sort((a,b) => {
-    if (options.organization === 'year') return Number(b[0]) - Number(a[0]) || a[0].localeCompare(b[0]);
-    return b[1].length - a[1].length || a[0].localeCompare(b[0]);
-  });
-  groupEntries.forEach(([,list]) => list.sort((a,b)=>academicTimestamp(b)-academicTimestamp(a)));
-
-  const topicRows = stats.topics.slice(0,24).map((row,i) => `
-    <tr><td>${String(i+1).padStart(2,'0')}</td><td><b>${escapeBookHtml(row.name)}</b></td><td>${row.count}</td><td>${row.citations}</td><td><span class="bar"><i style="width:${Math.max(4,Math.round(row.count/maxTopic*100))}%"></i></span></td></tr>`).join('');
-  const yearBars = stats.years.map(([year,count]) => `<div class="year-row"><span>${escapeBookHtml(year)}</span><i style="width:${Math.max(4,Math.round(count/maxYear*100))}%"></i><b>${count}</b></div>`).join('');
-  const relationRows = stats.links.slice(0,16).map(row=>`<li><span>${escapeBookHtml(row.source)}</span><b>↔</b><span>${escapeBookHtml(row.target)}</span><em>${row.count} 篇</em></li>`).join('');
-  const authorRows = stats.authors.slice(0,20).map((row,i)=>`<tr><td>${i+1}</td><td>${escapeBookHtml(row.name)}</td><td>${row.count}</td><td>${row.citations}</td><td>${escapeBookHtml(row.topTopics.map(([t,c])=>`${t} ${c}`).join(' · '))}</td></tr>`).join('');
-  const institutionRows = stats.institutions.slice(0,16).map((row,i)=>`<tr><td>${i+1}</td><td>${escapeBookHtml(row.name)}</td><td>${row.count}</td><td>${row.citations}</td><td>${escapeBookHtml(row.topTopics.map(([t,c])=>`${t} ${c}`).join(' · '))}</td></tr>`).join('');
-
-  const contents = groupEntries.map(([name,list],i)=>`<li><span>${String(i+1).padStart(2,'0')}</span><b>${escapeBookHtml(name)}</b><em>${list.length} 篇</em></li>`).join('');
-  let runningIndex = 0;
-  const chapters = groupEntries.map(([name,list],chapterIndex) => {
-    const records = list.map((item,paperIndex) => {
-      runningIndex += 1;
-      const card = paperCardOf(item);
-      const scholarly = scholarlyOf(item);
-      const citation = citationOf(item);
-      const topics = getTopicsArr(item);
-      const cover = options.includeCovers && item.imagePath ? safeBookUrl(buildRawUrl(cfg,item.imagePath)) : '';
-      const pdf = safeBookUrl(itemPdfHref(cfg,item));
-      const links = [
-        ['PDF',pdf], ['DOI',card.links?.doi || (card.doi ? `https://doi.org/${card.doi}` : '')],
-        ['arXiv',card.links?.arxiv || (card.arxivId ? `https://arxiv.org/abs/${card.arxivId}` : '')],
-        ['Publisher',card.links?.publisher], ['Code',card.links?.code], ['Project',card.links?.project]
-      ].map(([label,url])=>[label,safeBookUrl(url)]).filter(([,url])=>url);
-      const noteLines = Array.from({length:Math.max(0,Number(options.noteLines||0))},()=>'<div class="note-line"></div>').join('');
-      const abstract = item.desc || scholarly.abstract || '';
-      return `
-        <article class="paper-record">
-          <div class="paper-sequence">${chapterIndex+1}.${paperIndex+1} · Record ${runningIndex}</div>
-          <div class="status-line">${escapeBookHtml(paperCardStatusLabel(card.publicationStatus))}${card.year?` · ${escapeBookHtml(card.year)}`:''}${citation.source?` · ${citation.count} citations`:''}</div>
-          <h3>${escapeBookHtml(card.title || item.filename)}</h3>
-          <p class="authors">${escapeBookHtml((card.authors||[]).join(', ') || '作者待补充')}</p>
-          ${card.affiliations?.length ? `<ol class="affiliations">${card.affiliations.map(x=>`<li>${escapeBookHtml(x)}</li>`).join('')}</ol>` : ''}
-          ${cover ? `<figure class="paper-figure-frame"><img class="paper-figure" src="${escapeBookHtml(cover)}" alt="文章示意图" /></figure>` : ''}
-          <dl class="metadata">
-            <div><dt>Source</dt><dd>${escapeBookHtml(card.publicationStatus==='preprint' ? `Preprint${card.arxivId?` · arXiv ${card.arxivId}`:''}` : (card.journal || '来源待补充'))}</dd></div>
-            <div><dt>Bibliography</dt><dd>${escapeBookHtml([card.year,card.volume?`vol. ${card.volume}`:'',card.issue?`no. ${card.issue}`:'',card.pages?`pp. ${card.pages}`:''].filter(Boolean).join(' · ')) || '—'}</dd></div>
-            <div><dt>Topics</dt><dd>${escapeBookHtml(topics.join(' · ') || '未分类')}${item.tags?.length?` · ${escapeBookHtml(item.tags.map(x=>`#${x}`).join(' '))}`:''}</dd></div>
-            <div><dt>Identifiers</dt><dd>${escapeBookHtml(card.doi?`DOI ${card.doi}`:(card.arxivId?`arXiv ${card.arxivId}`:'—'))}</dd></div>
-          </dl>
-          ${card.evaluation?.shortReview ? `<section class="assessment"><h4>我的简短评价</h4><blockquote>${escapeBookHtml(card.evaluation.shortReview)}</blockquote></section>` : ''}
-          ${card.evaluation?.relevance ? `<section class="relevance"><h4>与当前课题的关系</h4><p>${escapeBookHtml(card.evaluation.relevance)}</p></section>` : ''}
-          ${options.includeAbstract && abstract ? `<section class="abstract"><h4>摘要 / 归档描述</h4><p>${escapeBookHtml(abstract)}</p></section>` : ''}
-          ${links.length ? `<section class="links"><h4>延伸链接</h4>${links.map(([label,url])=>`<a href="${escapeBookHtml(url)}">${escapeBookHtml(label)} · ${escapeBookHtml(url)}</a>`).join('')}</section>` : ''}
-          ${options.includeBibtex ? `<section class="bibtex"><h4>BibTeX（由页面字段生成）</h4><pre>${escapeBookHtml(formatBibtex(item))}</pre></section>` : ''}
-          ${noteLines ? `<section class="hand-notes"><h4>阅读记录 / 可打印批注区</h4>${noteLines}</section>` : ''}
-          <div class="record-end">RESEARCH LIBRARY · ${escapeBookHtml(card.evaluation?.readingStatus || 'unread')}${card.evaluation?.starred?' · STARRED':''}</div>
-        </article>`;
-    }).join('');
-    return `<section class="chapter-page"><div class="chapter-no">Chapter ${String(chapterIndex+1).padStart(2,'0')}</div><h2>${escapeBookHtml(name)}</h2><p>本章收录 ${list.length} 篇文献。文献仅按主 Topic / 主年份归档一次；其他 Topic 仍保留在每篇记录中。</p></section>${records}`;
-  }).join('');
-
-  const analysis = options.includeAnalysis ? `
-    <section class="section-page"><div class="section-kicker">Literature landscape</div><h2>文献库概览</h2>
-      <div class="metric-grid"><div><b>${sourceItems.length}</b><span>文献</span></div><div><b>${stats.topics.length}</b><span>Topics</span></div><div><b>${stats.authors.length}</b><span>作者</span></div><div><b>${totalCitations}</b><span>库内总引用</span></div></div>
-      <h3>发表年份分布</h3><div class="year-chart">${yearBars || '<p>暂无年份数据</p>'}</div>
-      <h3>Topic 活跃度与引用</h3><table><thead><tr><th>#</th><th>Topic</th><th>文献</th><th>引用</th><th>相对活跃度</th></tr></thead><tbody>${topicRows}</tbody></table>
-    </section>
-    <section class="section-page"><div class="section-kicker">People & relations</div><h2>人物、机构与主题关联</h2>
-      <h3>作者索引</h3><table class="dense"><thead><tr><th>#</th><th>作者</th><th>文献</th><th>引用</th><th>主要 Topic</th></tr></thead><tbody>${authorRows}</tbody></table>
-      <h3>机构 / 团队索引</h3><table class="dense"><thead><tr><th>#</th><th>机构</th><th>文献</th><th>引用</th><th>主要 Topic</th></tr></thead><tbody>${institutionRows}</tbody></table>
-      <h3>高频 Topic 关联</h3><ul class="relations">${relationRows || '<li>暂无共现关系</li>'}</ul>
-    </section>` : '';
-
-  return `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeBookHtml(bookFilename(title))}</title>
-  <style>
-    @page { size: B5 portrait; margin: 15mm 14mm 17mm; }
-    *{box-sizing:border-box} html{background:#e8e4dc} body{margin:0;color:#171717;background:#fffefa;font-family:Inter,"Noto Sans SC","Microsoft YaHei",Arial,sans-serif;font-size:9.2pt;line-height:1.58}
-    .toolbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px;padding:12px 18px;background:#171717;color:#fff;box-shadow:0 4px 18px #0004}.toolbar b{margin-right:auto}.toolbar button{border:1px solid #eee;background:#fff;color:#171717;padding:8px 13px;font-weight:700;cursor:pointer}.toolbar .primary{background:#b3261e;border-color:#b3261e;color:#fff}
-    .book{width:176mm;margin:18px auto;background:#fffefa;box-shadow:0 18px 45px #332a1d22}.cover-page,.section-page,.chapter-page{min-height:218mm;padding:10mm 8mm}.cover-page{display:flex;flex-direction:column;justify-content:space-between;border-top:4px solid #b3261e;break-after:page}.cover-kicker,.section-kicker,.chapter-no{color:#b3261e;font-size:8pt;font-weight:800;letter-spacing:.18em;text-transform:uppercase}.cover-page h1{font-family:Georgia,"Noto Serif SC",serif;font-size:34pt;line-height:1.05;margin:14mm 0 5mm;letter-spacing:-.03em}.cover-page .subtitle{font-family:Georgia,"Noto Serif SC",serif;font-size:16pt;line-height:1.5;max-width:120mm}.cover-meta{border-top:1px solid #171717;padding-top:5mm;display:grid;grid-template-columns:1fr 1fr;gap:4mm;color:#655f57}.cover-statement{margin-top:8mm;padding:5mm;border-left:3px solid #b3261e;background:#f5f1e9}
-    h2{font-family:Georgia,"Noto Serif SC",serif;font-size:24pt;line-height:1.2;margin:4mm 0 8mm} h3{font-family:Georgia,"Noto Serif SC",serif;font-size:14pt;margin:8mm 0 3mm;border-top:1px solid #bbb3a8;padding-top:3mm} h4{font-size:8pt;letter-spacing:.09em;text-transform:uppercase;margin:4mm 0 2mm;color:#5f574f}
-    .toc{list-style:none;padding:0;margin:8mm 0}.toc li{display:grid;grid-template-columns:12mm 1fr auto;gap:4mm;border-top:1px solid #d9d2c8;padding:3mm 0}.toc span{color:#b3261e;font-weight:800}.toc em{font-style:normal;color:#777067}.section-page,.chapter-page{break-before:page}.chapter-page{display:flex;flex-direction:column;justify-content:center;border-top:4px solid #b3261e}.chapter-page p{max-width:120mm;color:#655f57}
-    .metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin:6mm 0}.metric-grid div{border-top:2px solid #171717;padding:3mm}.metric-grid b{display:block;font-family:Georgia,serif;font-size:23pt}.metric-grid span{color:#777067;font-size:8pt}.year-row{display:grid;grid-template-columns:18mm 1fr 10mm;align-items:center;gap:3mm;margin:2mm 0}.year-row i{height:3mm;background:#b3261e}.year-row b{text-align:right}table{width:100%;border-collapse:collapse;font-size:8pt}th,td{text-align:left;border-bottom:1px solid #ddd6cc;padding:2mm 1.5mm;vertical-align:top}th{border-top:1px solid #171717;color:#5d554d}.dense{font-size:7.4pt}.bar{display:block;width:100%;height:2.4mm;background:#ece7de}.bar i{display:block;height:100%;background:#b3261e}.relations{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:2mm 5mm}.relations li{display:grid;grid-template-columns:1fr auto 1fr auto;gap:2mm;border-top:1px solid #ddd6cc;padding:2mm 0}.relations b{color:#b3261e}.relations em{font-style:normal;color:#777067}
-    .paper-record{position:relative;margin:0;padding:9mm 8mm 8mm;border-top:3px solid #171717;break-inside:auto}.reading .paper-record{break-before:page;min-height:214mm}.compact .paper-record{break-inside:avoid-page}.paper-sequence,.status-line{font-size:7.5pt;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#b3261e}.paper-record h3{border:0;padding:0;margin:3mm 0 3mm;font-size:17pt;line-height:1.24}.authors{font-size:10pt;margin:0 0 2mm}.affiliations{font-size:7.7pt;color:#655f57;margin:2mm 0 4mm;padding-left:5mm}.paper-figure-frame{width:100%;height:44mm;margin:4mm 0 5mm;padding:1.5mm;border:1px solid #d4cdc2;background:#fff;break-inside:avoid;overflow:hidden}.paper-figure{display:block;width:100%;height:100%;object-fit:contain;object-position:center}.metadata{border-top:1px solid #171717;border-bottom:1px solid #cfc8bd;margin:4mm 0}.metadata div{display:grid;grid-template-columns:28mm 1fr;border-top:1px solid #e1dbd2;padding:1.5mm 0}.metadata div:first-child{border-top:0}.metadata dt{font-weight:700;color:#655f57}.metadata dd{margin:0}.assessment{margin:5mm 0;border-left:3px solid #b3261e;padding:3mm 4mm;background:#f5f1e9}.assessment blockquote{font-family:Georgia,"Noto Serif SC",serif;font-size:12pt;font-style:italic;margin:0;line-height:1.65}.relevance p,.abstract p{margin:0;white-space:pre-wrap}.links a{display:block;color:#7f1c17;text-decoration:none;overflow-wrap:anywhere;font-size:7.5pt}.bibtex pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f3efe8;border:1px solid #d6cfc4;padding:3mm;font:6.8pt/1.45 "DejaVu Sans Mono",monospace}.hand-notes{clear:both;margin-top:6mm}.note-line{height:9mm;border-bottom:1px solid #cfc8bd}.record-end{clear:both;margin-top:6mm;border-top:1px solid #171717;padding-top:2mm;color:#777067;font-size:6.8pt;letter-spacing:.12em}
-    .print-help{padding:3mm 5mm;background:#fff3cd;color:#6b5200;border-bottom:1px solid #dfcf9b;text-align:center}
-    @media print{html,body{background:#fff}.toolbar,.print-help{display:none}.book{width:auto;margin:0;box-shadow:none}.cover-page,.section-page,.chapter-page{padding:0;min-height:216mm}.paper-record{padding:0 0 7mm}.reading .paper-record{min-height:212mm}a{color:#171717;text-decoration:none}}
-  </style></head><body class="${options.density==='compact'?'compact':'reading'}">
-    <div class="toolbar"><b>${escapeBookHtml(title)} · B5</b><button onclick="window.close()">关闭</button><button class="primary" onclick="window.print()">保存为 PDF / 打印</button></div>
-    <div class="print-help">打印窗口中选择“另存为 PDF”；纸张使用 B5、纵向、缩放 100%，建议关闭浏览器页眉页脚。</div>
-    <main class="book">
-      <section class="cover-page"><div><div class="cover-kicker">Research Library · B5 Literature Book</div><h1>${escapeBookHtml(title)}</h1><div class="subtitle">${escapeBookHtml(subtitle)}</div><div class="cover-statement">本书仅收录文献元数据、库内分析、个人评价与链接，不嵌入任何原始论文 PDF。页面内容以导出时的 Research Library 记录为准。</div></div><div class="cover-meta"><div><b>${sourceItems.length}</b> 篇文献 · ${stats.topics.length} 个 Topics<br>${escapeBookHtml(yearRange)}</div><div>生成时间<br>${escapeBookHtml(generated)}</div></div></section>
-      <section class="section-page"><div class="section-kicker">Contents</div><h2>目录</h2><ul class="toc">${contents || '<li>当前范围没有文献</li>'}</ul><h3>导出说明</h3><p>章节按${options.organization==='year'?'发表年份':'主 Topic'}组织。每篇文献只出现一次；其完整 Topics、标签、评价、摘要、链接及可选 BibTeX 保留在文献记录中。</p></section>
-      ${analysis}${chapters}
-    </main>
-  </body></html>`;
-}
-
-function openResearchBook(items, options, cfg) {
-  if (!items?.length) return alert('当前导出范围没有文献。');
-  const win = window.open('', '_blank');
-  if (!win) return alert('浏览器阻止了新窗口。请允许本站打开弹出窗口后重试。');
-  win.document.open();
-  win.document.write(buildResearchBookHtml(items, options, cfg));
-  win.document.close();
-  setTimeout(()=>win.focus(), 80);
-}
-
 function needsHistoricalMetadata(item) {
   if ((item?.kind || guessKind(item?.filename || item?.path)) !== 'pdf') return false;
   const s = scholarlyOf(item);
@@ -942,23 +659,21 @@ async function scanHistoricalItem(cfg, item, token, threshold=0.78) {
 function applyHistoricalSuggestion(item, result, acceptedManually=false) {
   const suggested = result?.suggested || {};
   const citations = suggested.citations || item.citations || { count: 0, source: '', updatedAt: 0 };
-  const mergedScholarly = {
-    ...scholarlyOf(item),
-    ...suggested,
-    metadataError: '',
-    metadataWarning: acceptedManually && result.confidence < 0.78 ? '该结果由管理员从低置信度候选中手工确认。' : '',
-    metadataReview: {
-      status: acceptedManually ? 'accepted-manually' : 'accepted-auto',
-      confidence: Number(result.confidence || 0),
-      method: result.method || '',
-      stage: result.stage || '',
-      reviewedAt: Date.now()
-    }
-  };
   return {
     ...item,
-    scholarly: mergedScholarly,
-    paperCard: item.paperCard || buildPaperCardSnapshot({ ...item, scholarly: mergedScholarly }, mergedScholarly, 'backfill-auto'),
+    scholarly: {
+      ...scholarlyOf(item),
+      ...suggested,
+      metadataError: '',
+      metadataWarning: acceptedManually && result.confidence < 0.78 ? '该结果由管理员从低置信度候选中手工确认。' : '',
+      metadataReview: {
+        status: acceptedManually ? 'accepted-manually' : 'accepted-auto',
+        confidence: Number(result.confidence || 0),
+        method: result.method || '',
+        stage: result.stage || '',
+        reviewedAt: Date.now()
+      }
+    },
     citations
   };
 }
@@ -1751,33 +1466,29 @@ function citationOf(item) {
   return { count: Number(c.count || 0), source: c.source || '', updatedAt: Number(c.updatedAt || 0) };
 }
 function publicationYearOf(item) {
-  if (item?.paperCard && Number(item.paperCard.year || 0)) return Number(item.paperCard.year);
   const s = scholarlyOf(item);
   const fromDate = Number(String(s.publicationDate || '').slice(0, 4));
   return Number(s.year || fromDate || new Date(item?.ts || 0).getFullYear() || 0) || null;
 }
 function authorsOf(item) {
-  if (item?.paperCard && Array.isArray(item.paperCard.authors)) return textList(item.paperCard.authors).map(name => ({ name }));
   return (scholarlyOf(item).authors || []).map(a => typeof a === 'string' ? { name: a } : a).filter(a => a?.name);
 }
 function institutionsOf(item) {
   const s = scholarlyOf(item);
   const nested = authorsOf(item).flatMap(a => a.institutions || []);
   const manualGroups = (item?.groups || []).map(name => ({ name, manualGroup: true }));
-  const cardAffiliations = item?.paperCard && Array.isArray(item.paperCard.affiliations) ? item.paperCard.affiliations : [];
-  return uniqueByName([...cardAffiliations, ...(s.institutions || []), ...nested, ...manualGroups].map(x => typeof x === 'string' ? { name: x } : x));
+  return uniqueByName([...(s.institutions || []), ...nested, ...manualGroups].map(x => typeof x === 'string' ? { name: x } : x));
 }
 function academicTimestamp(item) {
   const d = scholarlyOf(item).publicationDate;
   const parsed = d ? Date.parse(d) : NaN;
-  if (item?.paperCard?.year && !Number.isFinite(parsed)) return Date.UTC(Number(item.paperCard.year), 0, 1);
   return Number.isFinite(parsed) ? parsed : Number(item?.ts || 0);
 }
 function isCitationStale(item, days=2) {
   const ts = citationOf(item).updatedAt;
   return !ts || (Date.now() - ts) > days * 86400000;
 }
-function makePaperLabel(item) { return item?.paperCard?.title || item?.title || scholarlyOf(item).title || item?.filename || '未命名文献'; }
+function makePaperLabel(item) { return item?.title || scholarlyOf(item).title || item?.filename || '未命名文献'; }
 
 function buildLiteratureStats(items) {
   const topicMap = new Map();
@@ -1839,8 +1550,7 @@ function buildLiteratureStats(items) {
     citationRanking: [...(items || [])].sort((a,b)=>citationOf(b).count-citationOf(a).count),
     coverage: {
       scholarly: (items || []).filter(x => scholarlyOf(x).metadataSource).length,
-      paperCards: (items || []).filter(x => x.paperCard).length,
-      doi: (items || []).filter(x => paperCardOf(x).doi).length,
+      doi: (items || []).filter(x => scholarlyOf(x).doi).length,
       authors: (items || []).filter(x => authorsOf(x).length).length,
       citations: (items || []).filter(x => citationOf(x).source).length,
     }
@@ -1975,7 +1685,6 @@ function App({ onLockPage }) {
   const [selectedItem, setSelectedItem] = useState(null);
   const [editingItem, setEditingItem] = useState(null);
   const [replacingItem, setReplacingItem] = useState(null);
-  const [showBookExport, setShowBookExport] = useState(false);
 
   const [showAllHome, setShowAllHome] = useState(false);
 
@@ -2022,13 +1731,9 @@ function App({ onLockPage }) {
       arr = arr.filter(i => {
         const topicsArr = getTopicsArr(i);
         const scholarly = scholarlyOf(i);
-        const card = paperCardOf(i);
         const text = [
           i.title, i.filename, topicsArr.join(' '),
           (i.tags||[]).join(' '), i.desc,
-          card.title, (card.authors||[]).join(' '), (card.affiliations||[]).join(' '),
-          card.journal, card.year, card.doi, card.arxivId,
-          card.evaluation?.shortReview, card.evaluation?.relevance,
           scholarly.title, scholarly.doi, scholarly.arxivId,
           scholarly.venue, scholarly.abstract, scholarly.primaryTopic,
           (scholarly.keywords || []).join(' '),
@@ -2073,7 +1778,6 @@ function App({ onLockPage }) {
     setActiveTag('');
     setSortBy('time_desc');
     setShowAllHome(false);
-    requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'smooth' }));
   }
 
   async function handleDeleteItem(item) {
@@ -2251,7 +1955,7 @@ function App({ onLockPage }) {
 
 
   return (
-    <div id="home" className="min-h-full flex flex-col">
+    <div className="min-h-full flex flex-col">
       <Header
         mode={mode}
         setMode={setMode}
@@ -2263,7 +1967,6 @@ function App({ onLockPage }) {
         onHome={goHome}
         cfg={cfg}
         onLockPage={onLockPage}
-        onOpenBook={() => setShowBookExport(true)}
       />
 
       <main className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -2280,12 +1983,6 @@ function App({ onLockPage }) {
                 onMigrated={(newData) => { if (newData) setIndex(newData); else refreshIndex(); }}
               />
               <HistoricalMetadataPanel
-                cfg={cfg}
-                token={token}
-                items={allItems}
-                onCompleted={(newData) => { if (newData) setIndex(newData); else refreshIndex(); }}
-              />
-              <PaperCardMigrationPanel
                 cfg={cfg}
                 token={token}
                 items={allItems}
@@ -2315,8 +2012,6 @@ function App({ onLockPage }) {
                 tagsCount={tagsCount}
                 onPickTopic={(t)=>{ setActiveTopic(t); setShowAllHome(true); }}
                 onPickTag={(t)=>{ setActiveTag(t); setShowAllHome(true); }}
-                onOpen={setSelectedItem}
-                onSearch={(value)=>{ setQuery(value); setShowAllHome(true); }}
               />
             ) : null}
 
@@ -2357,7 +2052,7 @@ function App({ onLockPage }) {
       <Footer />
 
       {selectedItem ? (
-        <ViewerModal cfg={cfg} item={selectedItem} onClose={() => setSelectedItem(null)} onReplace={() => setReplacingItem(selectedItem)} onEdit={() => { setEditingItem(selectedItem); setSelectedItem(null); }} mode={mode} />
+        <ViewerModal cfg={cfg} item={selectedItem} onClose={() => setSelectedItem(null)} onReplace={() => setReplacingItem(selectedItem)} mode={mode} />
       ) : null}
 
       {editingItem ? (
@@ -2371,149 +2066,38 @@ function App({ onLockPage }) {
           onReplace={(file)=>handleReplacePdf(replacingItem, file)}
         />
       ) : null}
-
-      {showBookExport ? (
-        <BookExportModal
-          allItems={allItems}
-          filteredItems={filtered}
-          cfg={cfg}
-          onClose={() => setShowBookExport(false)}
-        />
-      ) : null}
-    </div>
-  );
-}
-
-/* ============ v5.2 B5 book export dialog ============ */
-function BookExportModal({ allItems, filteredItems, cfg, onClose }) {
-  const starredCount = (allItems || []).filter(item=>paperCardOf(item).evaluation?.starred).length;
-  const [scope, setScope] = useState(() => filteredItems.length !== allItems.length ? 'filtered' : 'all');
-  const [title, setTitle] = useState('Research Library');
-  const [subtitle, setSubtitle] = useState('文献阅读、研究批注与综述素材档案');
-  const [organization, setOrganization] = useState('topic');
-  const [density, setDensity] = useState('reading');
-  const [includeAnalysis, setIncludeAnalysis] = useState(true);
-  const [includeAbstract, setIncludeAbstract] = useState(true);
-  const [includeBibtex, setIncludeBibtex] = useState(true);
-  const [includeCovers, setIncludeCovers] = useState(true);
-  const [noteLines, setNoteLines] = useState(6);
-  const fieldCls = 'w-full border border-[#cfc9bf] bg-white px-3 py-2 text-sm focus:border-[#b3261e] focus:outline-none';
-  const selectedItems = scope === 'filtered'
-    ? filteredItems
-    : scope === 'starred'
-      ? allItems.filter(item=>paperCardOf(item).evaluation?.starred)
-      : allItems;
-  const estimatedPages = Math.max(1, (includeAnalysis ? 4 : 2) + (density === 'reading' ? selectedItems.length : Math.ceil(selectedItems.length / 2)));
-
-  function createBook() {
-    openResearchBook(selectedItems, {
-      title, subtitle, organization, density,
-      includeAnalysis, includeAbstract, includeBibtex, includeCovers,
-      noteLines: density === 'reading' ? Number(noteLines || 0) : 0
-    }, cfg);
-  }
-
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#171717]/75 p-3 backdrop-blur-sm" onClick={onClose}>
-      <div className="journal-rule w-full max-w-5xl overflow-hidden border-x border-b border-[#bdb6ab] bg-[#fffefa] shadow-2xl" onClick={e=>e.stopPropagation()}>
-        <div className="flex flex-wrap items-start justify-between gap-4 border-b border-[#d8d1c7] px-5 py-4">
-          <div><div className="smallcaps text-[#b3261e]">v5.2 · B5 literature book</div><h2 className="editorial-title mt-1 text-3xl">生成文献书</h2><p className="mt-1 max-w-2xl text-xs leading-5 text-[#69635b]">生成独立的 B5 排版页面，只收录文章信息、文献分析和个人批注，不复制或嵌入论文 PDF。</p></div>
-          <button onClick={onClose} className={btnClass('danger')}>关闭</button>
-        </div>
-
-        <div className="max-h-[78vh] overflow-auto p-5">
-          <div className="grid gap-5 lg:grid-cols-[1fr_.9fr]">
-            <div className="space-y-5">
-              <section className="border border-[#d8d1c7] bg-white p-4">
-                <div className="smallcaps mb-3 text-[#b3261e]">Book identity</div>
-                <label className="block text-sm"><span className="mb-1 block font-semibold text-[#514c45]">书名</span><input value={title} onChange={e=>setTitle(e.target.value)} className={fieldCls+' editorial-title text-lg'} /></label>
-                <label className="mt-3 block text-sm"><span className="mb-1 block font-semibold text-[#514c45]">副标题</span><input value={subtitle} onChange={e=>setSubtitle(e.target.value)} className={fieldCls} /></label>
-              </section>
-
-              <section className="border border-[#d8d1c7] bg-white p-4">
-                <div className="smallcaps mb-3 text-[#b3261e]">Export scope</div>
-                <div className="grid gap-2 sm:grid-cols-3">
-                  {[
-                    ['all',`全部文献`,allItems.length],
-                    ['filtered','当前筛选',filteredItems.length],
-                    ['starred','重点文献',starredCount]
-                  ].map(([key,label,count])=><button key={key} type="button" onClick={()=>setScope(key)} className={cx('border p-3 text-left',scope===key?'border-[#b3261e] bg-[#fff5f2]':'border-[#d8d1c7] bg-white hover:bg-[#f7f4ee]')}><span className="block text-sm font-semibold">{label}</span><span className="editorial-title mt-1 block text-2xl">{count}</span></button>)}
-                </div>
-                <p className="mt-2 text-[11px] leading-5 text-[#777067]">“当前筛选”会沿用页面上的搜索词、Topic 和标签条件，适合制作某个课题的专题册。</p>
-              </section>
-
-              <section className="border border-[#d8d1c7] bg-white p-4">
-                <div className="smallcaps mb-3 text-[#b3261e]">Book structure</div>
-                <div className="grid gap-3 sm:grid-cols-2">
-                  <label className="text-sm"><span className="mb-1 block font-semibold text-[#514c45]">章节组织</span><select value={organization} onChange={e=>setOrganization(e.target.value)} className={fieldCls}><option value="topic">按主 Topic 分章</option><option value="year">按发表年份分章</option></select></label>
-                  <label className="text-sm"><span className="mb-1 block font-semibold text-[#514c45]">页面密度</span><select value={density} onChange={e=>setDensity(e.target.value)} className={fieldCls}><option value="reading">阅读批注版：每篇从新页开始</option><option value="compact">紧凑综述版：连续排版</option></select></label>
-                </div>
-                {density === 'reading' ? <label className="mt-3 block text-sm"><span className="mb-1 block font-semibold text-[#514c45]">每篇预留手写横线</span><select value={noteLines} onChange={e=>setNoteLines(Number(e.target.value))} className={fieldCls}><option value="3">3 行</option><option value="6">6 行</option><option value="10">10 行</option><option value="0">不预留</option></select></label> : <div className="mt-3 border-l-2 border-[#b3261e] pl-3 text-xs leading-5 text-[#69635b]">紧凑版不会强制一篇一页，也不预留空白横线，更适合作为综述写作的检索手册。</div>}
-              </section>
-            </div>
-
-            <div className="space-y-5">
-              <section className="border border-[#d8d1c7] bg-[#f7f4ee] p-4">
-                <div className="smallcaps mb-3 text-[#b3261e]">Included content</div>
-                <div className="space-y-3 text-sm">
-                  {[
-                    [includeAnalysis,setIncludeAnalysis,'库内分析','Topic 活跃度、年份趋势、人物/机构及主题关联'],
-                    [includeAbstract,setIncludeAbstract,'摘要 / 归档描述','便于脱离网页快速回顾文章内容'],
-                    [includeBibtex,setIncludeBibtex,'BibTeX','始终由当前页面字段即时生成'],
-                    [includeCovers,setIncludeCovers,'示意图片','在作者与单位之后以约 1/5 可打印页高通栏展示；不会嵌入 PDF 页面']
-                  ].map(([checked,setter,label,hint])=><label key={label} className="flex items-start gap-3"><input type="checkbox" className="mt-1" checked={checked} onChange={e=>setter(e.target.checked)} /><span><b className="block text-[#302d29]">{label}</b><span className="text-xs leading-5 text-[#777067]">{hint}</span></span></label>)}
-                </div>
-              </section>
-
-              <section className="journal-rule border-x border-b border-[#d8d1c7] bg-white p-5">
-                <div className="smallcaps text-[#b3261e]">Export summary</div>
-                <div className="mt-3 grid grid-cols-2 gap-3"><div className="border-t border-[#171717] pt-2"><b className="editorial-title block text-3xl">{selectedItems.length}</b><span className="text-xs text-[#69635b]">待导出文献</span></div><div className="border-t border-[#171717] pt-2"><b className="editorial-title block text-3xl">≈ {estimatedPages}</b><span className="text-xs text-[#69635b]">预计最低页数</span></div></div>
-                <div className="mt-4 border-l-4 border-[#b3261e] bg-[#f7f4ee] p-3 text-xs leading-6 text-[#514c45]">
-                  点击生成后会打开书籍预览。再点击其中的“保存为 PDF / 打印”，目标选择“另存为 PDF”，纸张保持 B5、纵向、缩放 100%。最终页数会随摘要长度和示意图略有变化。
-                </div>
-                <button onClick={createBook} disabled={!selectedItems.length || !title.trim()} className={btnClass('primary',cx('mt-4 w-full py-3',(!selectedItems.length||!title.trim())&&'cursor-not-allowed opacity-50'))}>生成 B5 书籍预览</button>
-              </section>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
 
 /* ============ Header / Config ============ */
-function Header({ mode, setMode, query, setQuery, onSaveCfg, token, setToken, onHome, cfg, onLockPage, onOpenBook }) {
+function Header({ mode, setMode, query, setQuery, onSaveCfg, token, setToken, onHome, cfg, onLockPage }) {
   const [showCfg, setShowCfg] = useState(false);
 
   return (
-    <header className="journal-rule border-b border-[#d8d1c7] bg-[#fbfaf7] text-[#171717]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col gap-5">
+    <header className="bg-slate-900 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col gap-4">
         <div className="flex items-center justify-between gap-4">
           <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-2xl bg-slate-800 flex items-center justify-center text-lg">📚</div>
             <div>
-              <div className="smallcaps text-[#b3261e]">Research archive · v5.2</div>
-              <a href="#home" onClick={e=>{e.preventDefault();onHome?.();}} className="group block" title="返回首页顶部">
-                <div className="editorial-title mt-1 text-3xl font-semibold underline decoration-transparent decoration-1 underline-offset-4 transition group-hover:decoration-[#b3261e]">Research Library</div>
-                <div className="mt-1 text-xs text-[#69635b]">文献情报、文章卡片、研究批注与引用档案 · 点击返回 Home</div>
-              </a>
+              <div className="text-lg font-semibold">Repo Library</div>
+              <div className="text-xs text-slate-300">v4.1 · 历史 PDF 批量补全 + 置信度复核 + 文献情报台</div>
             </div>
           </div>
           <div className="flex items-center gap-2 flex-wrap justify-end">
-            <button onClick={onHome} className={btnClass('slate')}>
+            <button onClick={onHome} className={btnClass('subtle', 'bg-slate-800 text-white border-slate-700 hover:bg-slate-700')}>
               重置搜索
-            </button>
-            <button onClick={onOpenBook} className={btnClass('primary')} title="生成只包含文章信息、分析与批注的 B5 文献书">
-              生成 B5 文献书
             </button>
             <button
               onClick={() => setMode('preview')}
-              className={btnClass(mode==='preview' ? 'dark' : 'slate')}
+              className={btnClass('subtle', mode==='preview' ? 'bg-white text-slate-900 border-white' : 'bg-slate-800 text-slate-200 border-slate-700 hover:bg-slate-700')}
             >
               预览模式
             </button>
             <button
               onClick={() => setMode('admin')}
-              className={btnClass(mode==='admin' ? 'primary' : 'slate')}
+              className={btnClass('warn', mode==='admin' ? 'bg-amber-200 border-amber-200 text-amber-950' : 'bg-slate-800 text-slate-200 border-slate-700 hover:bg-slate-700')}
               title="需要 PAT 才能上传、删除、替换"
             >
               管理模式
@@ -2522,12 +2106,12 @@ function Header({ mode, setMode, query, setQuery, onSaveCfg, token, setToken, on
               onClick={() => {
                 if (confirm('锁定此页面？下次在这个浏览器打开时也需要重新输入访问密码。GitHub PAT 不会被清除。')) onLockPage?.();
               }}
-              className={btnClass('danger')}
+              className={btnClass('danger', 'bg-slate-800 text-rose-200 border-slate-700 hover:bg-slate-700')}
               title="移除此浏览器的页面访问授权；不会清除 PAT"
             >
               锁定页面
             </button>
-            <button onClick={() => setShowCfg(s => !s)} className={btnClass('slate')}>
+            <button onClick={() => setShowCfg(s => !s)} className={btnClass('subtle', 'bg-slate-800 text-white border-slate-700 hover:bg-slate-700')}>
               仓库设置
             </button>
           </div>
@@ -2538,14 +2122,14 @@ function Header({ mode, setMode, query, setQuery, onSaveCfg, token, setToken, on
             <input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              className="w-full border-0 border-b-2 border-[#171717] bg-transparent px-1 py-3 text-sm placeholder-[#8a837a] focus:border-[#b3261e] focus:outline-none"
+              className="w-full px-3 py-2 rounded-xl bg-slate-800 border border-slate-700 placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400"
               placeholder="搜索题名 / DOI / 作者 / 机构 / Topic / 摘要..."
             />
           </div>
         </div>
 
         {showCfg ? (
-          <div className="mt-2 border border-[#2d2d2d] bg-[#171717] p-4 text-white">
+          <div className="mt-2 border border-slate-700 rounded-2xl p-3">
             <ConfigPanel cfg={cfg} setCfg={onSaveCfg} token={token} setToken={setToken} />
           </div>
         ) : null}
@@ -3060,60 +2644,6 @@ function MigrationPanel({ cfg, token, onMigrated }) {
   );
 }
 
-/* ============ v5 one-time paper card migration ============ */
-function PaperCardMigrationPanel({ cfg, token, items, onCompleted }) {
-  const missing = (items || []).filter(item => !item?.paperCard);
-  const [busy, setBusy] = useState(false);
-  const [msg, setMsg] = useState('');
-
-  async function migrate() {
-    if (!missing.length || busy) return;
-    if (!confirm(`为 ${missing.length} 篇旧文献建立 v5 文章卡片？系统会先备份 index.json。卡片生成后，日常元数据与引用更新不会覆盖卡片字段。`)) return;
-    setBusy(true); setMsg('正在读取并备份最新索引…');
-    try {
-      const current = normalizeIndexData(await ghGetJSONContent(cfg.owner, cfg.repo, cfg.indexPath, token, cfg.branch));
-      const dir = indexDirOf(cfg.indexPath);
-      const backupPath = `${dir ? dir + '/' : ''}backups/index-before-v5-card-migration-${timestampForPath()}.json`;
-      const bytes = new TextEncoder().encode(JSON.stringify(current, null, 2));
-      await ghPutContent(cfg.owner, cfg.repo, backupPath, b64EncodeUint8(new Uint8Array(bytes)), 'Backup index before Repo Library v5 paper-card migration', token, null, cfg.branch);
-      setMsg('备份完成，正在冻结旧文献的首版文章卡片…');
-      const next = await updateIndexMain(cfg, token, latest => ({
-        ...latest,
-        appVersion: '5.2',
-        paperCardSchemaVersion: 1,
-        items: (latest.items || []).map(item => item.paperCard ? item : {
-          ...item,
-          paperCard: buildPaperCardSnapshot(item, scholarlyOf(item), 'v5-migration')
-        })
-      }), 'Initialize v5 paper cards without overwriting user fields');
-      setMsg(`完成：已建立 ${missing.length} 张文章卡片。备份位于 ${backupPath}。以后自动任务只更新 scholarly/citations。`);
-      onCompleted?.(next);
-    } catch (e) {
-      console.error(e);
-      setMsg('迁移失败：' + (e.message || String(e)));
-    } finally { setBusy(false); }
-  }
-
-  return (
-    <section className="mb-6 journal-rule bg-white border-x border-b border-[#d8d1c7] p-5">
-      <div className="flex flex-wrap items-start justify-between gap-4">
-        <div>
-          <div className="smallcaps text-[#b3261e]">v5 · Editorial record</div>
-          <h2 className="editorial-title mt-2 text-2xl">文章卡片初始化</h2>
-          <p className="mt-2 max-w-3xl text-sm leading-6 text-[#625c54]">
-            {missing.length ? `还有 ${missing.length} 篇旧文献没有固定文章卡片。` : '全部文献都已有固定文章卡片。'}
-            初始化只执行一次；之后题名、作者、单位、期刊、短评和链接均由你维护，自动刷新不会回写这些字段。
-          </p>
-        </div>
-        <button onClick={migrate} disabled={!missing.length || busy} className={btnClass('primary', (!missing.length || busy) ? 'opacity-50 cursor-not-allowed' : '')}>
-          {busy ? '迁移中…' : missing.length ? `备份并初始化 ${missing.length} 篇` : '已全部初始化'}
-        </button>
-      </div>
-      {msg ? <div className="mt-3 border-l-2 border-[#b3261e] pl-3 text-sm text-[#625c54]">{msg}</div> : null}
-    </section>
-  );
-}
-
 /* ============ v4.1 historical metadata backfill ============ */
 function HistoricalMetadataPanel({ cfg, token, items, onCompleted }) {
   const candidates = useMemo(() => (items || []).filter(needsHistoricalMetadata), [items]);
@@ -3195,24 +2725,23 @@ function HistoricalMetadataPanel({ cfg, token, items, onCompleted }) {
 
   async function writeSelected() {
     if (!selected.size) return alert('请至少勾选一个结果。');
-    if (!confirm(`将 ${selected.size} 条结果写入 index.json？写入前会自动备份。已有文章卡片不会被覆盖；缺少卡片的条目会从本次确认结果初始化一次。`)) return;
+    if (!confirm(`将 ${selected.size} 条结果写入 index.json？写入前会自动备份当前索引，人工标题、Topics、标签、描述和团队字段不会被覆盖。`)) return;
     setWriting(true); setMsg('正在备份当前索引…');
     try {
       const current = await ghGetJSONContent(cfg.owner, cfg.repo, cfg.indexPath, token, cfg.branch);
       if (!current) throw new Error(`未读取到 ${cfg.indexPath}`);
       const normalized = normalizeIndexData(current);
       const dir = indexDirOf(cfg.indexPath);
-      const backupPath = `${dir ? dir + '/' : ''}backups/index-before-v5-backfill-${timestampForPath()}.json`;
+      const backupPath = `${dir ? dir + '/' : ''}backups/index-before-v4.1-backfill-${timestampForPath()}.json`;
       const backupBytes = new TextEncoder().encode(JSON.stringify(normalized, null, 2));
-      await ghPutContent(cfg.owner, cfg.repo, backupPath, b64EncodeUint8(new Uint8Array(backupBytes)), 'Backup index before v5 metadata backfill', token, null, cfg.branch);
+      await ghPutContent(cfg.owner, cfg.repo, backupPath, b64EncodeUint8(new Uint8Array(backupBytes)), 'Backup index before v4.1 metadata backfill', token, null, cfg.branch);
 
       const resultMap = new Map(results.filter(r=>selected.has(r.itemId)).map(r=>[r.itemId,r]));
       invalidateIndexWriteCache(cfg);
       const newData = await updateIndexMain(cfg, token, latest => ({
         ...latest,
-        schemaVersion: Math.max(5, Number(latest.schemaVersion || 0)),
-        appVersion: '5.2',
-        paperCardSchemaVersion: 1,
+        schemaVersion: Math.max(4, Number(latest.schemaVersion || 0)),
+        appVersion: '4.1',
         historicalMetadataUpdatedAt: Date.now(),
         items: (latest.items || []).map(item => {
           const result = resultMap.get(item.id);
@@ -3460,14 +2989,12 @@ function AdminPanel({ cfg, token, onUploaded }) {
           scholarly: metadataBundle.scholarly || {},
           citations: metadataBundle.citations || { count: 0, source: '', updatedAt: 0 }
         };
-        initialItem.paperCard = buildPaperCardSnapshot(initialItem, initialItem.scholarly, 'upload-auto');
-        if (desc) initialItem.paperCard.evaluation.shortReview = desc;
 
         setMsg(`(${i}/${files.length}) 正在先创建条目：${file.name}`);
         lastIndexData = await updateIndexMain(cfg, token, data => {
           const items = data.items || [];
           if (items.some(x => x.id === id)) return data;
-          return { ...data, appVersion: '5.2', paperCardSchemaVersion: 1, items: [...items, initialItem] };
+          return { ...data, items: [...items, initialItem] };
         }, `Create metadata item: ${file.name}`);
         mainTouched = true;
         onUploaded && onUploaded(lastIndexData);
@@ -3715,7 +3242,7 @@ function AdminPanel({ cfg, token, onUploaded }) {
 }
 
 /* ============ Dashboard ============ */
-function Dashboard({ items, topicsCount, tagsCount, onPickTopic, onPickTag, onOpen, onSearch }) {
+function Dashboard({ items, topicsCount, tagsCount, onPickTopic, onPickTag }) {
   const heat = useMemo(() => buildHeatmap(items, 365), [items]);
   const stats = useMemo(() => buildLiteratureStats(items), [items]);
   const [tab, setTab] = useState('overview');
@@ -3733,16 +3260,16 @@ function Dashboard({ items, topicsCount, tagsCount, onPickTopic, onPickTag, onOp
 
   return (
     <section className="space-y-6">
-      <div className="journal-rule border-x border-b border-[#d8d1c7] bg-white p-6">
+      <div className="rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-950 via-slate-900 to-sky-950 p-5 text-white shadow-soft">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
-            <div className="smallcaps text-[#b3261e]">Literature intelligence</div>
-            <h2 className="editorial-title mt-2 text-3xl font-semibold">科研文献情报台</h2>
-            <p className="mt-2 max-w-2xl text-sm leading-6 text-[#625c54]">把 Topic、人物、机构、时间、引用与跨主题关系放入一份可追溯的研究档案。所有摘要行均可继续进入文章信息面板。</p>
+            <div className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-300">Literature intelligence</div>
+            <h2 className="mt-2 text-2xl font-bold">科研文献情报台</h2>
+            <p className="mt-1 max-w-2xl text-sm leading-6 text-slate-300">把手工 Topic、作者、机构、发表时间、引用与跨主题关系放进同一个视图。机构来自作者 affiliation，可用“团队”字段进一步校正到实验室层级。</p>
           </div>
-          <div className="border-l-2 border-[#b3261e] px-4 py-2 text-right">
-            <div className="editorial-title text-3xl font-bold">{coveragePct}%</div>
-            <div className="text-xs text-[#69635b]">学术元数据覆盖率</div>
+          <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-right">
+            <div className="text-2xl font-bold">{coveragePct}%</div>
+            <div className="text-xs text-slate-300">学术元数据覆盖率</div>
           </div>
         </div>
         <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
@@ -3751,18 +3278,18 @@ function Dashboard({ items, topicsCount, tagsCount, onPickTopic, onPickTag, onOp
             ['作者', stats.authors.length, '人'], ['机构 / 团队', stats.institutions.length, '个'],
             ['引用已同步', stats.coverage.citations, '篇']
           ].map(([label,value,unit]) => (
-            <div key={label} className="border-t border-[#d8d1c7] p-3">
-              <div className="smallcaps text-[#777067]">{label}</div>
-              <div className="editorial-title mt-1 text-2xl font-bold">{value}<span className="ml-1 font-sans text-xs font-normal text-[#777067]">{unit}</span></div>
+            <div key={label} className="rounded-2xl border border-white/10 bg-white/5 p-3">
+              <div className="text-xs text-slate-400">{label}</div>
+              <div className="mt-1 text-xl font-bold">{value}<span className="ml-1 text-xs font-normal text-slate-400">{unit}</span></div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="bg-white border border-[#d8d1c7] overflow-hidden">
-        <div className="flex gap-1 overflow-x-auto border-b border-[#d8d1c7] px-3 pt-2">
+      <div className="bg-white rounded-3xl shadow-soft border border-slate-200 overflow-hidden">
+        <div className="flex gap-1 overflow-x-auto border-b border-slate-200 p-2">
           {tabs.map(([key,label]) => (
-            <button key={key} onClick={()=>setTab(key)} className={cx('whitespace-nowrap border-b-2 px-3 py-3 text-sm font-semibold', tab===key ? 'border-[#b3261e] text-[#171717]' : 'border-transparent text-[#69635b] hover:text-[#171717]')}>{label}</button>
+            <button key={key} onClick={()=>setTab(key)} className={cx('whitespace-nowrap rounded-xl px-3 py-2 text-sm font-medium', tab===key ? 'bg-slate-900 text-white' : 'text-slate-600 hover:bg-slate-100')}>{label}</button>
           ))}
         </div>
 
@@ -3805,30 +3332,30 @@ function Dashboard({ items, topicsCount, tagsCount, onPickTopic, onPickTag, onOp
               </div>
               {topic ? <div className="grid gap-5 lg:grid-cols-2">
                 <div className="rounded-2xl border border-slate-200 p-4"><div className="mb-3 text-sm font-semibold">年度发表趋势</div><MiniBarChart values={topic.years} maxValue={maxYearCount} /></div>
-                <div className="rounded-2xl border border-slate-200 p-4"><div className="mb-3 text-sm font-semibold">活跃作者 / 机构</div><RankRows rows={topicStats.authors.slice(0,5)} unit="篇" onPick={onSearch} /><div className="my-3 border-t border-slate-200"></div><RankRows rows={topicStats.institutions.slice(0,5)} unit="篇" empty="暂无机构信息" onPick={onSearch} /></div>
-                <div className="lg:col-span-2 rounded-2xl border border-slate-200 p-4"><div className="mb-3 text-sm font-semibold">近期文献</div><PaperRows items={topic.recent.slice(0,8)} onOpen={onOpen} /></div>
+                <div className="rounded-2xl border border-slate-200 p-4"><div className="mb-3 text-sm font-semibold">活跃作者 / 机构</div><RankRows rows={topicStats.authors.slice(0,5)} unit="篇" /><div className="my-3 border-t border-slate-200"></div><RankRows rows={topicStats.institutions.slice(0,5)} unit="篇" empty="暂无机构信息" /></div>
+                <div className="lg:col-span-2 rounded-2xl border border-slate-200 p-4"><div className="mb-3 text-sm font-semibold">近期文献</div><PaperRows items={topic.recent.slice(0,8)} /></div>
               </div> : <div className="text-sm text-slate-500">请先为文献添加 Topic。</div>}
             </div>
           ) : null}
 
           {tab === 'people' ? (
             <div className="grid gap-5 lg:grid-cols-2">
-              <RankTable title="作者在做什么" rows={stats.authors.slice(0,15)} onPick={onSearch} />
-              <RankTable title="机构 / 团队在做什么" rows={stats.institutions.slice(0,15)} empty="暂无 affiliation 数据" onPick={onSearch} />
+              <RankTable title="作者在做什么" rows={stats.authors.slice(0,15)} />
+              <RankTable title="机构 / 团队在做什么" rows={stats.institutions.slice(0,15)} empty="暂无 affiliation 数据" />
             </div>
           ) : null}
 
           {tab === 'citations' ? (
             <div>
               <div className="mb-4 flex flex-wrap items-center gap-3"><div><h3 className="font-semibold">Topic 引用排行</h3><p className="text-xs text-slate-500">OpenAlex 为主；日更脚本默认每天刷新一次</p></div><select value={topicName} onChange={e=>setSelectedTopic(e.target.value)} className="ml-auto rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm"><option value="">全部 Topic</option>{stats.topics.map(x=><option key={x.name}>{x.name}</option>)}</select></div>
-              <div className="divide-y divide-[#ddd7ce] border border-[#d8d1c7]">{citationList.slice(0,30).map((p,i)=>{const c=citationOf(p);return <button type="button" onClick={()=>onOpen?.(p)} key={p.id||i} className="grid w-full grid-cols-[38px_1fr_auto] gap-3 p-3 text-left hover:bg-[#faf8f3]"><div className="text-center text-lg font-bold text-[#b7b0a6]">{i+1}</div><div className="min-w-0"><div className="truncate font-medium text-[#171717]">{makePaperLabel(p)}</div><div className="mt-1 text-xs text-[#69635b]">{authorsOf(p).slice(0,3).map(a=>a.name).join(', ') || '作者待补充'} · {publicationYearOf(p)||'年份待补充'} · {c.source||'未同步'}{isCitationStale(p)?' · 待更新':''}</div></div><div className="text-right"><div className="text-xl font-bold text-[#b3261e]">{c.count}</div><div className="text-[11px] text-[#69635b]">引用</div></div></button>})}</div>
+              <div className="divide-y divide-slate-200 rounded-2xl border border-slate-200">{citationList.slice(0,30).map((p,i)=>{const c=citationOf(p);return <div key={p.id||i} className="grid grid-cols-[38px_1fr_auto] gap-3 p-3"><div className="text-center text-lg font-bold text-slate-300">{i+1}</div><div className="min-w-0"><div className="truncate font-medium text-slate-900">{makePaperLabel(p)}</div><div className="mt-1 text-xs text-slate-500">{authorsOf(p).slice(0,3).map(a=>a.name).join(', ') || '作者待补充'} · {publicationYearOf(p)||'年份待补充'} · {c.source||'未同步'}{isCitationStale(p)?' · 待更新':''}</div></div><div className="text-right"><div className="text-xl font-bold text-sky-700">{c.count}</div><div className="text-[11px] text-slate-500">引用</div></div></div>})}</div>
             </div>
           ) : null}
 
           {tab === 'relations' ? (
             <div className="grid gap-5 lg:grid-cols-[.8fr_1.2fr]">
               <div><h3 className="mb-3 font-semibold">Topic 共现关系</h3><div className="space-y-2">{stats.links.slice(0,16).map(link=><button key={link.source+link.target} onClick={()=>{setSelectedTopic(link.source);setTab('topic')}} className="flex w-full items-center gap-2 rounded-2xl border border-slate-200 p-3 text-left hover:bg-slate-50"><span className="truncate text-sm font-medium">{link.source}</span><span className="text-slate-300">↔</span><span className="min-w-0 flex-1 truncate text-sm font-medium">{link.target}</span><span className={badgeClass()}>{link.count} 篇</span></button>)}</div>{!stats.links.length?<div className="text-sm text-slate-500">同一篇文献至少需要两个 Topic 才会形成关联。</div>:null}</div>
-              <div><h3 className="mb-3 font-semibold">高关联文献</h3><PaperRows items={Array.from(new Map(stats.links.flatMap(x=>x.papers).map(p=>[p.id,p])).values()).slice(0,20)} onOpen={onOpen} /></div>
+              <div><h3 className="mb-3 font-semibold">高关联文献</h3><PaperRows items={Array.from(new Map(stats.links.flatMap(x=>x.papers).map(p=>[p.id,p])).values()).slice(0,20)} /></div>
             </div>
           ) : null}
 
@@ -3849,33 +3376,31 @@ function MiniBarChart({ values, maxValue=1 }) {
   return <div className="flex h-40 items-end gap-2 overflow-x-auto border-b border-slate-200 px-1 pt-4">{values.map(([label,value])=><div key={label} className="flex min-w-[34px] flex-1 flex-col items-center justify-end gap-1"><span className="text-[11px] font-semibold text-slate-600">{value}</span><div className="w-full max-w-10 rounded-t-lg bg-gradient-to-t from-sky-700 to-cyan-400" style={{height:`${Math.max(8,Math.round(value/maxValue*105))}px`}}></div><span className="text-[10px] text-slate-500">{label}</span></div>)}</div>;
 }
 
-function RankRows({ rows, unit='篇', empty='暂无数据', onPick }) {
+function RankRows({ rows, unit='篇', empty='暂无数据' }) {
   if (!rows?.length) return <div className="text-xs text-slate-500">{empty}</div>;
-  return <div className="space-y-1">{rows.map((r,i)=><button type="button" onClick={()=>onPick?.(r.name)} key={r.name} className="flex w-full items-center gap-3 p-1.5 text-left text-sm hover:bg-[#f6f3ec]"><span className="w-5 text-xs font-bold text-slate-400">{i+1}</span><span className="min-w-0 flex-1 truncate">{r.name}</span><span className="font-semibold">{r.count} {unit}</span></button>)}</div>;
+  return <div className="space-y-2">{rows.map((r,i)=><div key={r.name} className="flex items-center gap-3 text-sm"><span className="w-5 text-xs font-bold text-slate-400">{i+1}</span><span className="min-w-0 flex-1 truncate">{r.name}</span><span className="font-semibold">{r.count} {unit}</span></div>)}</div>;
 }
 
-function RankTable({ title, rows, empty='暂无数据', onPick }) {
-  return <div className="border border-[#d8d1c7] bg-white p-4"><h3 className="editorial-title mb-3 text-xl">{title}</h3>{rows?.length?<div className="divide-y divide-[#ddd7ce]">{rows.map((r,i)=><button type="button" onClick={()=>onPick?.(r.name)} key={r.name} className="block w-full py-3 text-left hover:bg-[#faf8f3]"><div className="flex gap-3"><span className="text-xs font-bold text-[#aaa298]">{String(i+1).padStart(2,'0')}</span><span className="min-w-0 flex-1 truncate font-medium">{r.name}</span><span className="text-sm font-semibold">{r.count} 篇 · {r.citations} 引用</span></div><div className="ml-8 mt-1 truncate text-xs text-[#69635b]">{r.topTopics.map(([t,c])=>`${t} ${c}`).join(' · ') || 'Topic 待补充'}{r.latestYear?` · 最近 ${r.latestYear}`:''}</div></button>)}</div>:<div className="text-sm text-slate-500">{empty}</div>}</div>;
+function RankTable({ title, rows, empty='暂无数据' }) {
+  return <div className="rounded-2xl border border-slate-200 p-4"><h3 className="mb-3 font-semibold">{title}</h3>{rows?.length?<div className="divide-y divide-slate-200">{rows.map((r,i)=><div key={r.name} className="py-3"><div className="flex gap-3"><span className="text-xs font-bold text-slate-400">{String(i+1).padStart(2,'0')}</span><span className="min-w-0 flex-1 truncate font-medium">{r.name}</span><span className="text-sm font-semibold">{r.count} 篇 · {r.citations} 引用</span></div><div className="ml-8 mt-1 truncate text-xs text-slate-500">{r.topTopics.map(([t,c])=>`${t} ${c}`).join(' · ') || 'Topic 待补充'}{r.latestYear?` · 最近 ${r.latestYear}`:''}</div></div>)}</div>:<div className="text-sm text-slate-500">{empty}</div>}</div>;
 }
 
-function PaperRows({ items, onOpen }) {
+function PaperRows({ items }) {
   if (!items?.length) return <div className="text-sm text-slate-500">暂无文献</div>;
-  return <div className="divide-y divide-[#ddd7ce]">{items.map((p,i)=>{const card=paperCardOf(p);return <button type="button" onClick={()=>onOpen?.(p)} key={p.id||i} className="block w-full py-3 text-left hover:bg-[#faf8f3]"><div className="editorial-title text-[1.05rem] font-semibold text-[#171717]">{makePaperLabel(p)}</div><div className="mt-1 text-xs text-[#69635b]">{authorsOf(p).slice(0,4).map(a=>a.name).join(', ') || '作者待补充'} · {card.journal || paperCardStatusLabel(card.publicationStatus)} · {publicationYearOf(p)||'年份待补充'} · {citationOf(p).count} 引用</div><div className="mt-1 text-[11px] font-semibold text-[#b3261e]">打开文章面板 →</div></button>})}</div>;
+  return <div className="divide-y divide-slate-200">{items.map((p,i)=><div key={p.id||i} className="py-3"><div className="font-medium text-slate-900">{makePaperLabel(p)}</div><div className="mt-1 text-xs text-slate-500">{authorsOf(p).slice(0,4).map(a=>a.name).join(', ') || '作者待补充'} · {scholarlyOf(p).venue || '来源待补充'} · {publicationYearOf(p)||'年份待补充'} · {citationOf(p).count} 引用</div></div>)}</div>;
 }
 
 function DataQualityPanel({ items, coverage }) {
   const checks = [
-    ['尚未冻结文章卡片', items.filter(x=>!x.paperCard)],
-    ['页面缺少 DOI', items.filter(x=>!paperCardOf(x).doi)],
+    ['缺少 DOI', items.filter(x=>!scholarlyOf(x).doi)],
     ['缺少作者', items.filter(x=>!authorsOf(x).length)],
-    ['页面缺少年份', items.filter(x=>!paperCardOf(x).year)],
-    ['尚未填写简短评价', items.filter(x=>!paperCardOf(x).evaluation?.shortReview)],
+    ['缺少发表日期', items.filter(x=>!scholarlyOf(x).publicationDate && !scholarlyOf(x).year)],
     ['缺少手工 Topic', items.filter(x=>!getTopicsArr(x).length)],
     ['引用待同步 / 已过期', items.filter(x=>isCitationStale(x))],
     ['元数据匹配需复核', items.filter(x=>scholarlyOf(x).metadataError || (scholarlyOf(x).matchConfidence && scholarlyOf(x).matchConfidence < 0.78 && !String(scholarlyOf(x).metadataReview?.status||'').startsWith('accepted')))],
     ['历史 PDF 扫描失败', items.filter(x=>scholarlyOf(x).backfillScan?.status==='error')]
   ];
-  return <div><div className="mb-4"><h3 className="font-semibold">数据质量检查</h3><p className="text-xs text-slate-500">优先补文章卡片、DOI 与 Topic：它们分别决定页面可信度、自动匹配与知识组织口径。</p></div><div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{checks.map(([label,list])=><div key={label} className={cx('rounded-2xl border p-4',list.length?'border-amber-200 bg-amber-50':'border-emerald-200 bg-emerald-50')}><div className="text-2xl font-bold">{list.length}</div><div className="text-sm font-semibold">{label}</div><div className="mt-1 truncate text-xs text-slate-500">{list.slice(0,3).map(makePaperLabel).join('、') || '状态良好'}</div></div>)}</div><div className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-xs text-slate-600">文章卡片 {coverage.paperCards}/{items.length} · 外部元数据 {coverage.scholarly}/{items.length} · DOI {coverage.doi}/{items.length} · 作者 {coverage.authors}/{items.length} · 引用 {coverage.citations}/{items.length}</div></div>;
+  return <div><div className="mb-4"><h3 className="font-semibold">数据质量检查</h3><p className="text-xs text-slate-500">优先补 DOI 与 Topic：前者改善自动匹配，后者决定你的知识组织口径。</p></div><div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{checks.map(([label,list])=><div key={label} className={cx('rounded-2xl border p-4',list.length?'border-amber-200 bg-amber-50':'border-emerald-200 bg-emerald-50')}><div className="text-2xl font-bold">{list.length}</div><div className="text-sm font-semibold">{label}</div><div className="mt-1 truncate text-xs text-slate-500">{list.slice(0,3).map(makePaperLabel).join('、') || '状态良好'}</div></div>)}</div><div className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-xs text-slate-600">元数据 {coverage.scholarly}/{items.length} · DOI {coverage.doi}/{items.length} · 作者 {coverage.authors}/{items.length} · 引用 {coverage.citations}/{items.length}</div></div>;
 }
 
 function Heatmap({ heat }) {
@@ -3996,20 +3521,19 @@ function PreviewPanel({
   }
 
   return (
-    <section className="border border-[#d8d1c7] bg-white p-4">
-      <div className="mb-5 flex flex-wrap items-center gap-3 border-b border-[#d8d1c7] pb-4">
-        <div className="smallcaps mr-2 text-[#b3261e]">Article archive</div>
-        <select value={activeTopic} onChange={(e) => setActiveTopic(e.target.value)} className="border border-[#cfc9bf] bg-white px-3 py-2 text-sm">
+    <section className="bg-white rounded-3xl shadow-soft border border-slate-200 p-4">
+      <div className="flex flex-wrap items-center gap-3 mb-4">
+        <select value={activeTopic} onChange={(e) => setActiveTopic(e.target.value)} className="px-3 py-2 rounded-xl border border-slate-300 bg-white text-sm">
           <option value="">全部 Topic</option>
           {allTopics.map(t => <option key={t} value={t}>{t}</option>)}
         </select>
 
-        <select value={activeTag} onChange={(e) => setActiveTag(e.target.value)} className="border border-[#cfc9bf] bg-white px-3 py-2 text-sm">
+        <select value={activeTag} onChange={(e) => setActiveTag(e.target.value)} className="px-3 py-2 rounded-xl border border-slate-300 bg-white text-sm">
           <option value="">全部标签</option>
           {allTags.map(t => <option key={t} value={t}>{t}</option>)}
         </select>
 
-        <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className="border border-[#cfc9bf] bg-white px-3 py-2 text-sm">
+        <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className="px-3 py-2 rounded-xl border border-slate-300 bg-white text-sm">
           <option value="time_desc">按时间(新→旧)</option>
           <option value="time_asc">按时间(旧→新)</option>
           <option value="title_asc">标题(A→Z)</option>
@@ -4031,7 +3555,7 @@ function PreviewPanel({
       {loading ? <div className="text-slate-600">加载中…</div> : null}
       {error ? <div className="text-rose-600">{error}</div> : null}
 
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {items.map(item => (
           <Card
             key={item.id}
@@ -4067,98 +3591,148 @@ function PreviewPanel({
 
 /* ============ Card ============ */
 function Card({ cfg, item, onOpen, onEdit, onDelete, onRepair, canAdmin }) {
-  const [copied, setCopied] = useState(false);
-  const card = paperCardOf(item);
+  const kindMeta = FILE_KINDS[item.kind] || FILE_KINDS.other;
+  const Icon = kindMeta.icon;
+
   const topicsArr = getTopicsArr(item);
   const status = uploadStatusMeta(item);
+  const scholarly = scholarlyOf(item);
+  const authors = authorsOf(item);
   const citation = citationOf(item);
-  const rawHref = itemRawHref(cfg, item);
-  const pdfHref = itemPdfHref(cfg, item);
-  const coverSrc = item.imagePath ? buildRawUrl(cfg, item.imagePath) : '';
-  const authors = card.authors || [];
-  const affiliations = card.affiliations || [];
-  const evaluation = card.evaluation?.shortReview || '';
-  const sourceLine = card.publicationStatus === 'preprint'
-    ? `Preprint · arXiv${card.arxivId ? ` ${card.arxivId}` : ''}`
-    : [card.journal || paperCardStatusLabel(card.publicationStatus), card.year].filter(Boolean).join(' · ');
 
-  async function copyBib(e) {
-    e.stopPropagation();
-    await copyText(formatBibtex(item));
-    setCopied(true); setTimeout(()=>setCopied(false), 1600);
-  }
+  // raw：优先用 storage（新条目）以便能下载真实文件；否则沿用旧逻辑
+  const rawHref = (() => {
+    if (item.storage?.owner && item.storage?.repo && item.storage?.path) {
+      const branch = item.storage.branch || (cfg.pdf?.branch || 'main');
+      return ghRawUrl({ owner: item.storage.owner, repo: item.storage.repo, branch, path: item.storage.path });
+    }
+    return buildRawUrl(cfg, item.path);
+  })();
+
+  // 浏览器打开：PDF => Pages URL（新条目 path=绝对URL；旧条目走 /data/files/...）
+  const browserHref = (item.kind === 'pdf')
+    ? buildPdfBrowserUrl(item.path)
+    : rawHref;
+
+  const coverSrc = item.imagePath ? buildRawUrl(cfg, item.imagePath) : '';
 
   return (
-    <article onClick={onOpen} className="paper-card flex h-full min-h-[500px] cursor-pointer flex-col border border-[#d8d1c7] bg-[#fffefa]">
-      <div className="relative h-44 w-full overflow-hidden border-b border-[#d8d1c7] bg-[#ede8df]">
+    <div className="bg-white rounded-3xl border border-slate-200 shadow-soft p-4 flex flex-col h-full min-h-[390px]">
+      <div className="mb-3 w-full h-36 rounded-2xl overflow-hidden bg-slate-100 flex items-center justify-center">
         {coverSrc ? (
-          <img src={coverSrc} alt="文章示意图" className="h-full w-full object-cover" />
+          <img src={coverSrc} alt="cover" className="w-full h-full object-cover" />
         ) : (
-          <div className="paper-grid flex h-full flex-col justify-between p-5">
-            <div className="smallcaps text-[#b3261e]">Research figure</div>
-            <div>
-              <div className="editorial-title text-3xl text-[#9a9389]">{String(topicsArr[0] || 'R').slice(0,1).toUpperCase()}</div>
-              <div className="mt-1 max-w-[85%] text-xs leading-5 text-[#6f685f]">{topicsArr[0] || 'Illustration pending · 可在管理模式上传示意图片'}</div>
-            </div>
-          </div>
+          <div className="text-slate-400 text-sm">无封面</div>
         )}
-        <span className="absolute left-0 top-0 bg-[#b3261e] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[.15em] text-white">{paperCardStatusLabel(card.publicationStatus)}</span>
       </div>
 
-      <div className="flex flex-1 flex-col p-5">
-        <div className="smallcaps text-[#b3261e]">{sourceLine || 'Source pending'}</div>
-        <h3 className="editorial-title mt-2 line-clamp-3 text-[1.35rem] font-semibold leading-[1.18] text-[#171717]">{card.title || item.filename}</h3>
-        <div className="mt-3 text-sm leading-5 text-[#3e3a35]">{authors.slice(0,4).join(', ') || '作者待补充'}{authors.length > 4 ? ` et al.` : ''}</div>
-        {affiliations.length ? <div className="mt-1 line-clamp-2 text-xs leading-5 text-[#777067]">{affiliations.slice(0,3).join(' · ')}</div> : null}
-
-        <div className="mt-4 flex items-center gap-3 border-y border-[#ddd7ce] py-2 text-xs text-[#625c54]">
-          <span>{card.year || 'Year —'}</span>
-          <span className="h-3 border-l border-[#c6bfb5]"></span>
-          <span className="font-semibold text-[#b3261e]">{citation.count} citations</span>
-          {isCitationStale(item) ? <span className="ml-auto text-amber-700">待更新</span> : <span className="ml-auto text-[#777067]">已同步</span>}
+      <div className="flex items-start gap-3">
+        <div className="w-10 h-10 rounded-2xl flex items-center justify-center text-slate-700 bg-slate-50 border border-slate-200">
+          <Icon />
         </div>
 
-        {evaluation ? (
-          <blockquote className="mt-4 border-l-2 border-[#b3261e] pl-3 text-sm italic leading-6 text-[#514c45]">“{evaluation}”</blockquote>
-        ) : item.desc ? (
-          <div className="mt-4 line-clamp-3 text-sm leading-6 text-[#69635b]">{item.desc}</div>
-        ) : (
-          <div className="mt-4 text-sm text-[#91897f]">尚未填写简短评价。</div>
-        )}
-
-        {topicsArr.length ? (
-          <div className="mt-4 flex flex-wrap gap-x-3 gap-y-1">
-            {topicsArr.slice(0,4).map(t => <span key={t} className="text-xs font-semibold text-[#4d5945]">#{t}</span>)}
+        <div className="flex-1 min-w-0">
+          <div className="font-semibold text-slate-900 truncate">
+            {item.path ? (
+              <a href={browserHref} target="_blank" rel="noreferrer" className="hover:underline">
+                {item.title || item.filename}
+              </a>
+            ) : (
+              <span>{item.title || item.filename}</span>
+            )}
           </div>
-        ) : null}
-
-        {status ? (
-          <div className={cx("mt-3 inline-flex w-fit border px-2 py-1 text-[11px]", status.cls)} title={item.uploadError || ''}>{status.label}</div>
-        ) : null}
-
-        {item.uploadError || item.imageUploadError ? (
-          <div className="mt-3 border border-amber-200 bg-amber-50 p-2 text-xs text-amber-900">{shortErr(item.uploadError || item.imageUploadError)}</div>
-        ) : null}
-
-        <div className="mt-auto flex flex-wrap items-center gap-2 border-t border-[#171717] pt-4" onClick={e=>e.stopPropagation()}>
-          <button onClick={onOpen} className={btnClass('primary')}>文章面板</button>
-          {(item.path || card.links?.pdf) ? <a href={pdfHref} target="_blank" rel="noreferrer" className={btnClass('slate')}>PDF</a> : null}
-          <button onClick={copyBib} className={btnClass('slate')}>{copied ? '已复制' : 'BibTeX'}</button>
-          {canAdmin ? (
-            <div className="ml-auto flex flex-wrap items-center gap-2">
-              {isRepairablePdfItem(item) ? <button onClick={onRepair} className={btnClass('success')}>修复</button> : null}
-              <button onClick={onEdit} className={btnClass('warn')}>编辑</button>
-              <button onClick={onDelete} className={btnClass('danger')}>删除</button>
+          <div className="text-xs text-slate-500 mt-0.5">
+            {kindMeta.label} · {fmtDate(item.ts)}{topicsArr[0] ? ` · ${topicsArr[0]}` : ''}
+          </div>
+          {status ? (
+            <div className={cx("mt-1 inline-flex w-fit px-2 py-0.5 rounded-full border text-[11px]", status.cls)} title={item.uploadError || ''}>
+              {status.label}
             </div>
           ) : null}
         </div>
       </div>
-    </article>
+
+      {(authors.length || scholarly.venue || scholarly.year || citation.source) ? (
+        <div className="mt-3 rounded-2xl border border-sky-100 bg-sky-50 p-3 text-xs text-sky-950">
+          <div className="truncate font-medium">{authors.slice(0,3).map(a=>a.name).join(', ') || '作者待补充'}{authors.length>3?` 等 ${authors.length} 人`:''}</div>
+          <div className="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-sky-800">
+            <span>{scholarly.venue || '来源待补充'}{publicationYearOf(item) ? ` · ${publicationYearOf(item)}` : ''}</span>
+            <span className="font-semibold">↗ {citation.count} 引用</span>
+            {isCitationStale(item) ? <span className="text-amber-700">待刷新</span> : null}
+          </div>
+          {(scholarly.doi || scholarly.arxivId) ? <div className="mt-1 truncate text-[11px] text-slate-500">{scholarly.doi ? `DOI ${scholarly.doi}` : `arXiv ${scholarly.arxivId}`}</div> : null}
+        </div>
+      ) : null}
+
+      {topicsArr.length ? (
+        <div className="mt-3 flex flex-wrap gap-2">
+          {topicsArr.map(t => (
+            <span key={t} className="text-xs px-2 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+              {t}
+            </span>
+          ))}
+        </div>
+      ) : null}
+
+      {item.tags && item.tags.length ? (
+        <div className="mt-3 flex flex-wrap gap-2">
+          {item.tags.map(t => (
+            <span key={t} className="text-xs px-2 py-1 rounded-full bg-slate-50 text-slate-700 border border-slate-200">
+              #{t}
+            </span>
+          ))}
+        </div>
+      ) : null}
+
+      {item.uploadError ? (
+        <div className="mt-3 text-xs text-rose-700 bg-rose-50 border border-rose-200 rounded-2xl p-2" title={item.uploadError}>
+          错误：{shortErr(item.uploadError)}
+        </div>
+      ) : null}
+
+      {item.imageUploadError ? (
+        <div className="mt-3 text-xs text-amber-800 bg-amber-50 border border-amber-200 rounded-2xl p-2" title={item.imageUploadError}>
+          封面未上传：{shortErr(item.imageUploadError)}
+        </div>
+      ) : null}
+
+      {item.desc ? (
+        <div className="mt-3 text-sm text-slate-600 line-clamp-3 whitespace-pre-wrap">
+          {item.desc}
+        </div>
+      ) : (
+        <div className="mt-3 text-sm text-slate-400">（无描述）</div>
+      )}
+
+      <div className="mt-auto pt-4 flex items-center gap-2 flex-wrap">
+        <button onClick={onOpen} className={btnClass('primary')}>预览</button>
+        {item.path ? (
+          <a href={rawHref} target="_blank" rel="noreferrer" className={btnClass('slate')}>Raw</a>
+        ) : (
+          <span className={btnClass('subtle', 'opacity-50 cursor-not-allowed')}>Raw</span>
+        )}
+        {item.kind === 'pdf' && item.path ? (
+          <a href={browserHref} target="_blank" rel="noreferrer" className={btnClass('success')}>浏览器打开</a>
+        ) : null}
+
+        {canAdmin ? (
+          <div className="ml-auto flex items-center gap-2 flex-wrap justify-end">
+            {isRepairablePdfItem(item) ? (
+              <button onClick={onRepair} className={btnClass('success')} title="只检查分仓中是否已有 PDF；若存在则补写索引，不会重复上传">
+                检查/修复
+              </button>
+            ) : null}
+            <button onClick={onEdit} className={btnClass('warn')}>编辑</button>
+            <button onClick={onDelete} className={btnClass('danger')}>删除</button>
+          </div>
+        ) : null}
+      </div>
+    </div>
   );
 }
 
 /* ============ Viewer Modal ============ */
-function ViewerModalLegacy({ cfg, item, onClose, onReplace, mode }) {
+function ViewerModal({ cfg, item, onClose, onReplace, mode }) {
   const [tab, setTab] = useState(item.kind === 'pdf' ? 'pdf' : 'text'); // pdf|html|text
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState('');
@@ -4289,145 +3863,8 @@ function ViewerModalLegacy({ cfg, item, onClose, onReplace, mode }) {
   );
 }
 
-/* ============ v5 article information panel ============ */
-function ViewerModal({ cfg, item, onClose, onReplace, onEdit, mode }) {
-  const [tab, setTab] = useState('info');
-  const [loading, setLoading] = useState(false);
-  const [err, setErr] = useState('');
-  const [text, setText] = useState('');
-  const [copied, setCopied] = useState(false);
-  const scrollRef = useRef(null);
-  const card = paperCardOf(item);
-  const scholarly = scholarlyOf(item);
-  const citation = citationOf(item);
-  const topicsArr = getTopicsArr(item);
-  const rawHref = itemRawHref(cfg, item);
-  const pdfHref = itemPdfHref(cfg, item);
-  const coverSrc = item.imagePath ? buildRawUrl(cfg, item.imagePath) : '';
-  const bibtex = formatBibtex(item);
-  const language = guessHighlightLanguage(item.filename || '');
-  const links = [
-    ['PDF', pdfHref, item.path || card.links?.pdf],
-    ['DOI', card.links?.doi || (card.doi ? `https://doi.org/${card.doi}` : ''), card.doi],
-    ['arXiv', card.links?.arxiv || (card.arxivId ? `https://arxiv.org/abs/${card.arxivId}` : ''), card.arxivId],
-    ['Publisher', card.links?.publisher, card.links?.publisher],
-    ['Code', card.links?.code, card.links?.code],
-    ['Project', card.links?.project, card.links?.project]
-  ].filter(([,href,show]) => href && show);
-
-  useEffect(() => {
-    async function load() {
-      setErr(''); setText('');
-      if (tab === 'info' || tab === 'pdf') return;
-      if (!item.path) { setErr('文件尚未上传成功；当前只保留文章卡片。'); return; }
-      setLoading(true);
-      try {
-        const res = await fetch(rawHref, { cache: 'no-store' });
-        if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
-        setText(await res.text());
-        setTimeout(() => { try { window.hljs && window.hljs.highlightAll(); } catch {} }, 50);
-      } catch (e) { setErr(e.message || String(e)); }
-      finally { setLoading(false); }
-    }
-    load();
-  }, [tab, item.id]);
-
-  async function copyBib() {
-    await copyText(bibtex); setCopied(true); setTimeout(()=>setCopied(false), 1600);
-  }
-
-  const MetadataRow = ({ label, children }) => (
-    <div className="grid grid-cols-[108px_1fr] gap-3 border-t border-[#ddd7ce] py-2.5 text-sm">
-      <dt className="font-semibold text-[#69635b]">{label}</dt><dd className="min-w-0 break-words text-[#24211d]">{children || '—'}</dd>
-    </div>
-  );
-
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#171717]/75 p-3 backdrop-blur-sm" onClick={onClose}>
-      <div className="journal-rule w-full max-w-7xl overflow-hidden border-x border-b border-[#bdb6ab] bg-[#fffefa] shadow-2xl" onClick={e=>e.stopPropagation()}>
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#d8d1c7] bg-[#fbfaf7] px-5 py-3">
-          <div>
-            <div className="smallcaps text-[#b3261e]">Article information panel</div>
-            <div className="mt-1 text-xs text-[#777067]">页面字段是 BibTeX 与文章卡片的唯一准则 · 引用数仍可独立日更</div>
-          </div>
-          <div className="flex flex-wrap items-center gap-2">
-            <button className={btnClass(tab==='info'?'dark':'slate')} onClick={()=>setTab('info')}>信息面板</button>
-            {item.kind === 'pdf' ? <button className={btnClass(tab==='pdf'?'dark':'slate')} onClick={()=>setTab('pdf')}>PDF</button> : null}
-            <button className={btnClass(tab==='text'?'dark':'slate')} onClick={()=>setTab('text')}>{item.kind === 'code' ? 'Code' : 'Raw text'}</button>
-            {mode === 'admin' ? <button className={btnClass('warn')} onClick={onEdit}>编辑卡片</button> : null}
-            {mode === 'admin' && item.kind === 'pdf' ? <button className={btnClass('success')} onClick={onReplace}>替换 PDF</button> : null}
-            <button className={btnClass('danger')} onClick={onClose}>关闭</button>
-          </div>
-        </div>
-
-        <div ref={scrollRef} className="relative max-h-[82vh] overflow-auto">
-          {tab === 'info' ? (
-            <div className="grid lg:grid-cols-[minmax(0,1fr)_360px]">
-              <main className="border-b border-[#d8d1c7] p-6 sm:p-8 lg:border-b-0 lg:border-r">
-                <div className="grid gap-6 md:grid-cols-[190px_1fr]">
-                  <div className="h-56 overflow-hidden border border-[#d8d1c7] bg-[#ede8df]">
-                    {coverSrc ? <img src={coverSrc} alt="文章示意图" className="h-full w-full object-cover" /> : <div className="paper-grid flex h-full flex-col justify-between p-5"><div className="smallcaps text-[#b3261e]">Figure pending</div><div className="editorial-title text-5xl text-[#a59d92]">RL</div></div>}
-                  </div>
-                  <div>
-                    <div className="smallcaps text-[#b3261e]">{paperCardStatusLabel(card.publicationStatus)}{card.year ? ` · ${card.year}` : ''}</div>
-                    <h1 className="editorial-title mt-3 text-3xl font-semibold leading-[1.14] sm:text-4xl">{card.title || item.filename}</h1>
-                    <div className="mt-5 text-base leading-7 text-[#302d29]">{(card.authors || []).join(', ') || '作者待补充'}</div>
-                    {card.affiliations?.length ? <ol className="mt-2 list-decimal space-y-1 pl-5 text-xs leading-5 text-[#69635b]">{card.affiliations.map((x,i)=><li key={i}>{x}</li>)}</ol> : null}
-                    <div className="mt-5 flex flex-wrap gap-2">{links.map(([label,href])=><a key={label+href} href={href} target="_blank" rel="noreferrer" className={btnClass(label==='PDF'?'primary':'slate')}>{label} ↗</a>)}</div>
-                  </div>
-                </div>
-
-                <section className="mt-8 border-t-2 border-[#171717] pt-5">
-                  <div className="smallcaps text-[#777067]">Researcher's note</div>
-                  {card.evaluation?.shortReview ? <blockquote className="editorial-title mt-3 border-l-4 border-[#b3261e] pl-5 text-2xl italic leading-9 text-[#302d29]">“{card.evaluation.shortReview}”</blockquote> : <p className="mt-3 text-sm text-[#8a837a]">尚未填写对这篇文章的简短评价；可在管理模式维护。</p>}
-                  {card.evaluation?.relevance ? <p className="mt-4 text-sm leading-6 text-[#514c45]"><b>与当前课题的关系：</b>{card.evaluation.relevance}</p> : null}
-                </section>
-
-                {(item.desc || scholarly.abstract) ? <section className="mt-8 border-t border-[#d8d1c7] pt-5"><div className="smallcaps text-[#777067]">Abstract / archive note</div><p className="mt-3 whitespace-pre-wrap text-sm leading-7 text-[#514c45]">{item.desc || scholarly.abstract}</p></section> : null}
-
-                <section className="mt-8 border-t border-[#d8d1c7] pt-5">
-                  <div className="smallcaps text-[#777067]">Knowledge organization</div>
-                  <div className="mt-3 flex flex-wrap gap-2">{topicsArr.map(t=><span key={t} className="border border-[#bdc9b8] bg-[#eef2e8] px-2 py-1 text-xs font-semibold text-[#31543a]">Topic · {t}</span>)}{(item.tags||[]).map(t=><span key={t} className="border border-[#d8d1c7] px-2 py-1 text-xs text-[#625c54]">#{t}</span>)}</div>
-                </section>
-              </main>
-
-              <aside className="bg-[#f7f4ee] p-6">
-                <div className="smallcaps text-[#b3261e]">Bibliographic record</div>
-                <dl className="mt-3 border-b border-[#ddd7ce]">
-                  <MetadataRow label="Status">{paperCardStatusLabel(card.publicationStatus)}</MetadataRow>
-                  <MetadataRow label="Journal">{card.journal}</MetadataRow>
-                  <MetadataRow label="Year">{card.year}</MetadataRow>
-                  <MetadataRow label="Volume / Issue">{[card.volume,card.issue].filter(Boolean).join(' / ')}</MetadataRow>
-                  <MetadataRow label="Pages">{card.pages}</MetadataRow>
-                  <MetadataRow label="Publisher">{card.publisher}</MetadataRow>
-                  <MetadataRow label="DOI">{card.doi}</MetadataRow>
-                  <MetadataRow label="arXiv">{card.arxivId}</MetadataRow>
-                  <MetadataRow label="Citations"><span className="font-bold text-[#b3261e]">{citation.count}</span> <span className="text-xs text-[#777067]">{citation.source || 'not synced'}{isCitationStale(item)?' · stale':''}</span></MetadataRow>
-                  <MetadataRow label="Reading">{({unread:'未读',reading:'在读',read:'已读',revisit:'需重读'})[card.evaluation?.readingStatus] || card.evaluation?.readingStatus}</MetadataRow>
-                </dl>
-
-                <div className="mt-7 flex items-center justify-between gap-3"><div className="smallcaps text-[#b3261e]">BibTeX</div><button onClick={copyBib} className={btnClass('slate')}>{copied ? '已复制' : '复制 BibTeX'}</button></div>
-                <pre className="mt-3 max-h-72 overflow-auto whitespace-pre-wrap border border-[#cfc9bf] bg-white p-4 text-[11px] leading-5 text-[#302d29]">{bibtex}</pre>
-                <p className="mt-2 text-[11px] leading-5 text-[#777067]">BibTeX 每次由本页显示字段即时生成，不读取或覆盖一份独立的隐藏引用记录。</p>
-              </aside>
-            </div>
-          ) : tab === 'pdf' ? (
-            (item.path || card.links?.pdf) ? <iframe className="h-[78vh] w-full bg-white" src={pdfHref} title={card.title || item.filename} /> : <div className="p-8 text-[#625c54]">PDF 尚未上传或链接未填写。</div>
-          ) : loading ? (
-            <div className="p-8 text-[#625c54]">加载中…</div>
-          ) : err ? (
-            <div className="p-8 text-rose-700">{err}</div>
-          ) : (
-            <pre className="min-h-[60vh] overflow-auto bg-[#111] p-5 text-sm text-slate-50"><code className={language ? `language-${language}` : ''}>{text}</code></pre>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-}
-
 /* ============ Edit Modal ============ */
-function EditItemModalLegacy({ item, onClose, onSave }) {
+function EditItemModal({ item, onClose, onSave }) {
   const initialTopicsArr = getTopicsArr(item);
   const [title, setTitle] = useState(item.title || '');
   const [topicsInput, setTopicsInput] = useState(initialTopicsArr.join(', '));
@@ -4548,198 +3985,6 @@ function EditItemModalLegacy({ item, onClose, onSave }) {
   );
 }
 
-/* ============ v5 paper-card editor ============ */
-function EditItemModal({ item, onClose, onSave }) {
-  const initialCard = paperCardOf(item);
-  const [card, setCard] = useState(() => ({ ...initialCard, links: {...initialCard.links}, evaluation: {...initialCard.evaluation} }));
-  const [authorsInput, setAuthorsInput] = useState((initialCard.authors || []).join('; '));
-  const [affiliationsInput, setAffiliationsInput] = useState((initialCard.affiliations || []).join('; '));
-  const [topicsInput, setTopicsInput] = useState(getTopicsArr(item).join(', '));
-  const [tagsInput, setTagsInput] = useState((item.tags || []).join(', '));
-  const [groupsInput, setGroupsInput] = useState((item.groups || []).join('; '));
-  const [desc, setDesc] = useState(item.desc || '');
-  const [cover, setCover] = useState(null);
-  const [scholarly, setScholarly] = useState(() => ({ ...scholarlyOf(item) }));
-  const [citationCount, setCitationCount] = useState(String(citationOf(item).count || 0));
-  const [resolving, setResolving] = useState(false);
-  const [metadataMsg, setMetadataMsg] = useState('');
-
-  const inputCls = 'w-full border border-[#cfc9bf] bg-white px-3 py-2 text-sm focus:border-[#b3261e] focus:outline-none';
-  const Label = ({ title, hint, children }) => <label className="block text-sm"><div className="mb-1 font-semibold text-[#514c45]">{title}</div>{children}{hint ? <div className="mt-1 text-[11px] leading-5 text-[#777067]">{hint}</div> : null}</label>;
-  const setField = (name, value) => setCard(prev => ({ ...prev, [name]: value }));
-  const setLink = (name, value) => setCard(prev => ({ ...prev, links: { ...prev.links, [name]: value } }));
-  const setEvaluation = (name, value) => setCard(prev => ({ ...prev, evaluation: { ...prev.evaluation, [name]: value } }));
-
-  function normalizedCard() {
-    const authors = textList(authorsInput);
-    const affiliations = textList(affiliationsInput);
-    const doi = cleanDoi(card.doi);
-    const arxivId = String(card.arxivId || '').trim();
-    const next = {
-      ...card,
-      schemaVersion: 1,
-      frozenAt: card.frozenAt || Date.now(),
-      updatedAt: Date.now(),
-      source: 'manual',
-      title: String(card.title || '').trim(),
-      authors,
-      affiliations,
-      year: Number(card.year || 0) || null,
-      doi,
-      arxivId,
-      citationKey: String(card.citationKey || '').trim(),
-      links: {
-        ...card.links,
-        doi: doi ? `https://doi.org/${doi}` : '',
-        arxiv: arxivId ? `https://arxiv.org/abs/${arxivId}` : ''
-      },
-      evaluation: { ...card.evaluation }
-    };
-    if (!next.citationKey) next.citationKey = citationKeyFromCard(next);
-    return next;
-  }
-
-  async function refreshMetadata() {
-    setResolving(true); setMetadataMsg('');
-    try {
-      const resolved = await resolveScholarlyMetadata({ title: card.title, doi: scholarly.doi || card.doi, arxivId: scholarly.arxivId || card.arxivId });
-      setScholarly(prev => ({ ...prev, ...resolved }));
-      setCitationCount(String(resolved.citations?.count || citationCount || 0));
-      setMetadataMsg(resolved.metadataError || `外部参考已从 ${resolved.metadataSource || '学术数据库'} 更新；文章卡片没有被改动。`);
-    } catch (e) { setMetadataMsg('刷新失败：' + (e.message || String(e))); }
-    finally { setResolving(false); }
-  }
-
-  function copyFromScholarly() {
-    if (!confirm('把当前外部学术元数据复制到文章卡片？这一步是显式人工操作，会替换题名、作者、单位、来源和出版字段，但保留你的短评、阅读状态与自定义链接。')) return;
-    const snapshot = buildPaperCardSnapshot({ ...item, title: card.title }, scholarly, 'manual-sync');
-    const next = {
-      ...snapshot,
-      frozenAt: card.frozenAt || snapshot.frozenAt,
-      evaluation: { ...card.evaluation },
-      links: { ...snapshot.links, ...card.links, doi: snapshot.links.doi || card.links?.doi || '', arxiv: snapshot.links.arxiv || card.links?.arxiv || '', publisher: snapshot.links.publisher || card.links?.publisher || '' },
-      citationKey: card.citationKey || snapshot.citationKey,
-      source: 'manual-sync'
-    };
-    setCard(next); setAuthorsInput(next.authors.join('; ')); setAffiliationsInput(next.affiliations.join('; '));
-    setMetadataMsg('已复制到编辑表单；点击“保存文章卡片”后才会写入 GitHub。');
-  }
-
-  function handleSubmit() {
-    const finalCard = normalizedCard();
-    const topics = String(topicsInput || '').split(/[,，]/).map(x=>x.trim()).filter(Boolean);
-    const tags = String(tagsInput || '').split(/[,，]/).map(x=>x.trim()).filter(Boolean);
-    const groups = textList(groupsInput);
-    const citations = { ...citationOf(item), ...(scholarly.citations || {}), count: Math.max(0, Number(citationCount || 0)), updatedAt: scholarly.citations?.updatedAt || citationOf(item).updatedAt };
-    onSave?.({
-      ...item,
-      title: finalCard.title || item.title,
-      desc,
-      topics,
-      topic: topics[0] || '',
-      tags,
-      groups,
-      paperCard: finalCard,
-      scholarly: { ...scholarly, citations },
-      citations
-    }, cover);
-  }
-
-  const previewItem = { ...item, paperCard: { ...card, authors: textList(authorsInput), affiliations: textList(affiliationsInput), year: Number(card.year || 0) || null } };
-
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#171717]/75 p-3 backdrop-blur-sm" onClick={onClose}>
-      <div className="journal-rule w-full max-w-7xl overflow-hidden border-x border-b border-[#bdb6ab] bg-[#fffefa] shadow-2xl" onClick={e=>e.stopPropagation()}>
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#d8d1c7] px-5 py-4">
-          <div><div className="smallcaps text-[#b3261e]">Editorial maintenance</div><h2 className="editorial-title mt-1 text-2xl">编辑文章卡片</h2></div>
-          <div className="flex gap-2"><button onClick={onClose} className={btnClass('slate')}>取消</button><button onClick={handleSubmit} className={btnClass('primary')}>保存文章卡片</button></div>
-        </div>
-
-        <div className="max-h-[82vh] overflow-auto p-5 sm:p-6">
-          <div className="mb-6 border-l-4 border-[#b3261e] bg-[#f7f4ee] p-4 text-sm leading-6 text-[#514c45]">
-            这里的字段决定卡片、详情页与 BibTeX。保存后由你维护；“自动刷新”只更新右侧外部参考与引用数，不会覆盖本表单。只有点击“复制到卡片”才会显式采用外部结果。
-          </div>
-
-          <div className="grid gap-6 xl:grid-cols-[1.2fr_.8fr]">
-            <div className="space-y-6">
-              <section className="border border-[#d8d1c7] bg-white p-5">
-                <div className="smallcaps mb-4 text-[#b3261e]">Article identity</div>
-                <div className="grid gap-4">
-                  <Label title="页面题名"><textarea rows={3} value={card.title || ''} onChange={e=>setField('title',e.target.value)} className={inputCls+' editorial-title text-xl'} /></Label>
-                  <div className="grid gap-4 md:grid-cols-2">
-                    <Label title="作者" hint="每位作者用分号或换行分隔"><textarea rows={4} value={authorsInput} onChange={e=>setAuthorsInput(e.target.value)} className={inputCls} /></Label>
-                    <Label title="单位 / Affiliations" hint="每个单位用分号或换行分隔"><textarea rows={4} value={affiliationsInput} onChange={e=>setAffiliationsInput(e.target.value)} className={inputCls} /></Label>
-                  </div>
-                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                    <Label title="状态"><select value={card.publicationStatus || 'unpublished'} onChange={e=>setCard(prev=>({...prev,publicationStatus:e.target.value,bibtexEntryType:e.target.value==='published'?'article':'misc'}))} className={inputCls}><option value="published">已发表</option><option value="preprint">预印本</option><option value="accepted">已接收</option><option value="unpublished">研究记录</option></select></Label>
-                    <Label title="年份"><input type="number" value={card.year || ''} onChange={e=>setField('year',e.target.value)} className={inputCls} /></Label>
-                    <Label title="期刊 / 来源"><input value={card.journal || ''} onChange={e=>setField('journal',e.target.value)} className={inputCls} /></Label>
-                    <Label title="出版社"><input value={card.publisher || ''} onChange={e=>setField('publisher',e.target.value)} className={inputCls} /></Label>
-                  </div>
-                  <div className="grid gap-4 sm:grid-cols-3">
-                    <Label title="卷"><input value={card.volume || ''} onChange={e=>setField('volume',e.target.value)} className={inputCls} /></Label>
-                    <Label title="期"><input value={card.issue || ''} onChange={e=>setField('issue',e.target.value)} className={inputCls} /></Label>
-                    <Label title="页码 / 文章号"><input value={card.pages || ''} onChange={e=>setField('pages',e.target.value)} className={inputCls} /></Label>
-                  </div>
-                  <div className="grid gap-4 md:grid-cols-2">
-                    <Label title="DOI"><input value={card.doi || ''} onChange={e=>setField('doi',cleanDoi(e.target.value))} className={inputCls} /></Label>
-                    <Label title="arXiv ID"><input value={card.arxivId || ''} onChange={e=>setField('arxivId',e.target.value)} className={inputCls} /></Label>
-                  </div>
-                </div>
-              </section>
-
-              <section className="border border-[#d8d1c7] bg-white p-5">
-                <div className="smallcaps mb-4 text-[#b3261e]">Your assessment</div>
-                <div className="grid gap-4">
-                  <Label title="对这篇文章的简短评价"><textarea rows={4} value={card.evaluation?.shortReview || ''} onChange={e=>setEvaluation('shortReview',e.target.value)} className={inputCls+' editorial-title text-lg'} placeholder="例如：最有价值的是它把散射矩阵与拓扑不变量联系起来，但有限温度讨论较弱。" /></Label>
-                  <Label title="与当前课题的关系"><textarea rows={3} value={card.evaluation?.relevance || ''} onChange={e=>setEvaluation('relevance',e.target.value)} className={inputCls} /></Label>
-                  <div className="grid gap-4 sm:grid-cols-2"><Label title="阅读状态"><select value={card.evaluation?.readingStatus || 'unread'} onChange={e=>setEvaluation('readingStatus',e.target.value)} className={inputCls}><option value="unread">未读</option><option value="reading">在读</option><option value="read">已读</option><option value="revisit">需重读</option></select></Label><label className="mt-7 flex items-center gap-2 text-sm font-semibold"><input type="checkbox" checked={!!card.evaluation?.starred} onChange={e=>setEvaluation('starred',e.target.checked)} /> 标为重点文献</label></div>
-                </div>
-              </section>
-
-              <section className="border border-[#d8d1c7] bg-white p-5">
-                <div className="smallcaps mb-4 text-[#b3261e]">Links & organization</div>
-                <div className="grid gap-4 md:grid-cols-2">
-                  <Label title="PDF 链接" hint="留空时自动使用仓库中的 PDF"><input value={card.links?.pdf || ''} onChange={e=>setLink('pdf',e.target.value)} className={inputCls} /></Label>
-                  <Label title="出版社页面"><input value={card.links?.publisher || ''} onChange={e=>setLink('publisher',e.target.value)} className={inputCls} /></Label>
-                  <Label title="代码链接"><input value={card.links?.code || ''} onChange={e=>setLink('code',e.target.value)} className={inputCls} /></Label>
-                  <Label title="项目页面"><input value={card.links?.project || ''} onChange={e=>setLink('project',e.target.value)} className={inputCls} /></Label>
-                  <Label title="Topics（逗号分隔）"><input value={topicsInput} onChange={e=>setTopicsInput(e.target.value)} className={inputCls} /></Label>
-                  <Label title="标签（逗号分隔）"><input value={tagsInput} onChange={e=>setTagsInput(e.target.value)} className={inputCls} /></Label>
-                  <Label title="团队 / 实验室（分号分隔）"><input value={groupsInput} onChange={e=>setGroupsInput(e.target.value)} className={inputCls} /></Label>
-                  <Label title="替换示意图片"><input type="file" accept="image/*" onChange={e=>setCover((e.target.files||[])[0]||null)} className={inputCls} /></Label>
-                </div>
-                <div className="mt-4"><Label title="归档摘要 / 描述"><textarea rows={4} value={desc} onChange={e=>setDesc(e.target.value)} className={inputCls} /></Label></div>
-              </section>
-            </div>
-
-            <div className="space-y-6">
-              <section className="border border-[#d8d1c7] bg-[#f7f4ee] p-5">
-                <div className="flex flex-wrap items-start justify-between gap-3"><div><div className="smallcaps text-[#b3261e]">External scholarly reference</div><div className="mt-1 text-xs leading-5 text-[#69635b]">独立于文章卡片，仅供比对和引用数刷新。</div></div><button disabled={resolving} onClick={refreshMetadata} className={btnClass('slate',resolving?'opacity-50':'')}>{resolving?'匹配中…':'自动刷新参考'}</button></div>
-                <dl className="mt-4 space-y-2 text-xs text-[#514c45]"><div><b>识别题名：</b>{scholarly.title || '—'}</div><div><b>来源：</b>{scholarly.venue || '—'} · {scholarly.year || '—'}</div><div><b>DOI：</b>{scholarly.doi || '—'}</div><div><b>arXiv：</b>{scholarly.arxivId || '—'}</div><div><b>作者：</b>{textList(scholarly.authors || []).slice(0,5).join(', ') || '—'}</div></dl>
-                <div className="mt-4 grid grid-cols-[1fr_auto] gap-2"><input type="number" min="0" value={citationCount} onChange={e=>setCitationCount(e.target.value)} className={inputCls} aria-label="引用数" /><span className="self-center text-xs text-[#69635b]">引用数</span></div>
-                <button onClick={copyFromScholarly} className={btnClass('warn','mt-4 w-full')}>明确复制到文章卡片</button>
-                {metadataMsg ? <div className="mt-3 border-l-2 border-[#b3261e] pl-3 text-xs leading-5 text-[#625c54]">{metadataMsg}</div> : null}
-              </section>
-
-              <section className="border border-[#d8d1c7] bg-white p-5">
-                <div className="smallcaps text-[#b3261e]">BibTeX generated from page</div>
-                <div className="mt-4 grid gap-4 sm:grid-cols-2">
-                  <Label title="Citation key"><input value={card.citationKey || ''} onChange={e=>setField('citationKey',e.target.value)} className={inputCls} /></Label>
-                  <Label title="Entry type"><select value={card.bibtexEntryType || 'article'} onChange={e=>setField('bibtexEntryType',e.target.value)} className={inputCls}><option value="article">article</option><option value="misc">misc</option><option value="inproceedings">inproceedings</option><option value="book">book</option></select></Label>
-                </div>
-                <pre className="mt-4 max-h-80 overflow-auto whitespace-pre-wrap border border-[#cfc9bf] bg-[#f7f4ee] p-4 text-[11px] leading-5">{formatBibtex(previewItem)}</pre>
-              </section>
-            </div>
-          </div>
-
-          <div className="mt-6 flex justify-end gap-2 border-t border-[#d8d1c7] pt-5"><button onClick={onClose} className={btnClass('slate')}>取消</button><button onClick={handleSubmit} className={btnClass('primary')}>保存文章卡片</button></div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 /* ============ Replace PDF Modal ============ */
 function ReplacePdfModal({ item, onClose, onReplace }) {
   const [file, setFile] = useState(null);
@@ -4816,9 +4061,9 @@ function ArchiveSidebar({ items, onOpen }) {
   const years = useMemo(() => Array.from(groups.keys()).sort((a,b)=>b-a), [groups]);
 
   return (
-    <aside className="journal-rule border-x border-b border-[#d8d1c7] bg-[#fffefa] p-4">
+    <aside className="bg-white rounded-3xl shadow-soft border border-slate-200 p-4">
       <div className="flex items-center justify-between mb-3">
-        <div><div className="smallcaps text-[#b3261e]">Chronology</div><div className="editorial-title mt-1 text-xl font-semibold">时间归档</div></div>
+        <div className="font-semibold text-slate-900">📦 归档</div>
         <div className="text-xs text-slate-500">最近 {items.length} 条</div>
       </div>
 
@@ -4830,7 +4075,7 @@ function ArchiveSidebar({ items, onOpen }) {
             <button
               key={it.id}
               onClick={()=>onOpen(it)}
-              className="w-full border-t border-[#d8d1c7] p-3 text-left hover:bg-[#f7f4ee]"
+              className="w-full text-left p-3 rounded-2xl border border-slate-200 hover:bg-slate-50"
             >
               <div className="text-sm font-semibold text-slate-900 line-clamp-1">{it.title || it.filename}</div>
               <div className="text-xs text-slate-500 mt-0.5">{fmtDate(it.ts)} · {(getTopicsArr(it)[0] || '—')}</div>
@@ -4895,13 +4140,13 @@ function ArchiveSidebar({ items, onOpen }) {
 /* ============ Footer ============ */
 function Footer() {
   return (
-    <footer className="mt-auto border-t-4 border-[#b3261e] bg-[#171717] text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-xs text-[#bdb7ae] flex flex-wrap gap-2 items-center">
-        <span className="editorial-title text-sm text-white">Research Library</span>
+    <footer className="mt-auto border-t border-slate-200 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 text-xs text-slate-500 flex flex-wrap gap-2 items-center">
+        <span>© Repo Library</span>
         <span>·</span>
         <span>单文件 HTML（React + Tailwind）</span>
         <span>·</span>
-        <span>v5.2 · B5 文献书通栏示意图 + 文章卡片 + 页面字段驱动 BibTeX + 引用日更</span>
+        <span>v4.1 · 历史 PDF 回填 + 人工复核 + OpenAlex/Crossref 引用日更</span>
       </div>
     </footer>
   );
