@@ -20631,6 +20631,211 @@
           "starred": false
         }
       }
+    },
+    {
+      "id": "kqy0sth1ipnmt6uic2k",
+      "title": "Majorana flat bands in p-wave magnet-SC heterostructure",
+      "filename": "Patra2026arXiv-Majorana flat bands in p-wave magnet-SC heterostructure.pdf",
+      "path": "",
+      "kind": "pdf",
+      "topics": [
+        "Majorana"
+      ],
+      "topic": "Majorana",
+      "tags": [
+        "refs_update"
+      ],
+      "ts": 1787552345434,
+      "createdTs": 1787552345434,
+      "size": 2198921,
+      "desc": "p-wave magnet on s-wave SC, there will be some interesting phenomena.",
+      "imagePath": "",
+      "storage": null,
+      "uploadStatus": "pdf_pending",
+      "uploadError": "",
+      "imageUploadError": "",
+      "groups": [],
+      "scholarly": {
+        "title": "Pure Spin Bulk Photovoltaic Effect in an Altermagnetic Higher-Order Topological Insulator",
+        "doi": "",
+        "arxivId": "2606.31550",
+        "openAlexId": "https://openalex.org/W7170224498",
+        "publicationDate": "2026-07-21",
+        "year": 2026,
+        "venue": "arXiv (Cornell University)",
+        "venueId": "https://openalex.org/S4306400194",
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University",
+        "type": "preprint",
+        "authors": [
+          {
+            "name": "Sibgat Ulah",
+            "openAlexId": "https://openalex.org/A5143526495",
+            "orcid": "",
+            "position": "first",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Indian Institute of Technology Delhi",
+                "openAlexId": "https://openalex.org/I68891433",
+                "countryCode": "IN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Ankan Bhattacharyya",
+            "openAlexId": "https://openalex.org/A5143445316",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Indian Institute of Technology Hyderabad",
+                "openAlexId": "https://openalex.org/I65181880",
+                "countryCode": "IN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Manisha Thakurathi",
+            "openAlexId": "https://openalex.org/A5014009225",
+            "orcid": "https://orcid.org/0000-0003-2139-0792",
+            "position": "last",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Indian Institute of Technology Hyderabad",
+                "openAlexId": "https://openalex.org/I65181880",
+                "countryCode": "IN",
+                "type": "education"
+              }
+            ]
+          }
+        ],
+        "institutions": [
+          {
+            "name": "Indian Institute of Technology Delhi",
+            "openAlexId": "https://openalex.org/I68891433",
+            "countryCode": "IN",
+            "type": "education"
+          },
+          {
+            "name": "Indian Institute of Technology Hyderabad",
+            "openAlexId": "https://openalex.org/I65181880",
+            "countryCode": "IN",
+            "type": "education"
+          }
+        ],
+        "abstract": "We investigate the bulk photovoltaic effect (BPVE) in a $PT$-symmetric two-dimensional heterostructure consisting of a topological insulator coupled to a $d$-wave altermagnet. To describe the symmetry-enforced degenerate bands of this system, we develop a non-Abelian formulation of the spin BPVE, extending the conventional theory from isolated nondegenerate bands to $PT$-degenerate manifolds. We show that the orientation of the Néel vector controls both the topological phase and the character of the nonlinear optical response. When the Néel vector lies in the $xy$-plane, the heterostructure realizes a second-order topological insulator (SOTI) protected by $C_{4z}T$ symmetry. The system also retains $C_{2z}$ symmetry, which completely suppresses second-order charge photocurrents while allowing finite spin photocurrents. As a result, the BPVE becomes an intrinsically pure spin photovoltaic effect, generating a dc spin current without an accompanying charge current. We find that linearly polarized light drives a spin shift current, whereas circularly polarized light generates a spin injection current. Both responses undergo a sign reversal whenever the local Dirac mass changes sign. As the Néel vector is rotated toward the $z$-axis, the SOTI phase transforms into a first-order topological insulating phase, leading to the coexistence of charge and spin photocurrents. Our results establish $PT$-symmetric altermagnetic topological-insulator heterostructures as a versatile platform for generating and controlling pure spin photocurrents and reveal nonlinear spin transport as a sensitive probe of topology and magnetic symmetry.",
+        "automaticTopics": [
+          {
+            "name": "Topological Materials and Phenomena",
+            "id": "https://openalex.org/T10657",
+            "score": 0.923799991607666,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Quantum Mechanics and Non-Hermitian Physics",
+            "id": "https://openalex.org/T11262",
+            "score": 0.03889999911189079,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Chemical and Physical Properties of Materials",
+            "id": "https://openalex.org/T13104",
+            "score": 0.006899999920278788,
+            "subfield": "Materials Chemistry",
+            "field": "Materials Science",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Topological Materials and Phenomena",
+        "keywords": [
+          "Topological insulator",
+          "Anomalous photovoltaic effect",
+          "Topology (electrical circuits)",
+          "Spin (aerodynamics)",
+          "Heterojunction",
+          "Topological order",
+          "Degenerate energy levels",
+          "Photovoltaic effect"
+        ],
+        "relatedWorks": [],
+        "referencedWorks": [],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2607.19018",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "https://arxiv.org/abs/2607.19018",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "arxiv-search",
+        "matchConfidence": 0.93,
+        "matchedFromPdf": false,
+        "updatedAt": 1787552345434,
+        "citations": {
+          "count": 0,
+          "source": "OpenAlex",
+          "updatedAt": 1787552345434
+        },
+        "pdfPages": 18,
+        "localExtractedAt": 1787552339032
+      },
+      "citations": {
+        "count": 0,
+        "source": "OpenAlex",
+        "updatedAt": 1787552345434
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787552345435,
+        "updatedAt": 1787552345435,
+        "source": "upload-auto",
+        "title": "Pure Spin Bulk Photovoltaic Effect in an Altermagnetic Higher-Order Topological Insulator",
+        "authors": [
+          "Sibgat Ulah",
+          "Ankan Bhattacharyya",
+          "Manisha Thakurathi"
+        ],
+        "affiliations": [
+          "Indian Institute of Technology Delhi",
+          "Indian Institute of Technology Hyderabad"
+        ],
+        "publicationStatus": "preprint",
+        "journal": "arXiv (Cornell University)",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University",
+        "doi": "",
+        "arxivId": "2606.31550",
+        "citationKey": "Ulah2026pure",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "https://arxiv.org/abs/2606.31550",
+          "publisher": "https://arxiv.org/abs/2607.19018",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "p-wave magnet on s-wave SC, there will be some interesting phenomena.",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     }
   ],
   "historicalMetadataUpdatedAt": 1787387764211,
