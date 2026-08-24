@@ -20841,6 +20841,353 @@
           "starred": false
         }
       }
+    },
+    {
+      "id": "68gu6jw1bk6mt6uy8zn",
+      "title": "Spin-Polarized Josephson Supercurrent in Nodeless Altermagnets",
+      "filename": "zhangsongbo-hulunhui-2026PRL-spin polarized Josephson supercurrent in nodeless altermagnet.pdf",
+      "path": "",
+      "kind": "pdf",
+      "topics": [
+        "Altermagnet",
+        "Supercurrent"
+      ],
+      "topic": "Altermagnet",
+      "tags": [
+        "refs_update"
+      ],
+      "ts": 1787553088018,
+      "createdTs": 1787553088018,
+      "size": 1497035,
+      "desc": "a quiet good paper which connect the node/nodeless properties to topological superconductor.",
+      "imagePath": "",
+      "storage": null,
+      "uploadStatus": "pdf_pending",
+      "uploadError": "",
+      "imageUploadError": "",
+      "groups": [],
+      "scholarly": {
+        "title": "Spin-Polarized Josephson Supercurrent in Nodeless Altermagnets",
+        "doi": "10.1103/ds5z-fxy5",
+        "arxivId": "",
+        "openAlexId": "https://openalex.org/W4416255058",
+        "publicationDate": "2026-02-19",
+        "year": 2026,
+        "venue": "Physical Review Letters",
+        "venueId": "https://openalex.org/S24807848",
+        "volume": "136",
+        "issue": "11",
+        "pages": "116701-116701",
+        "publisher": "American Physical Society",
+        "type": "article",
+        "authors": [
+          {
+            "name": "Chuang Li",
+            "openAlexId": "",
+            "orcid": "https://orcid.org/0000-0003-1895-1771",
+            "position": "first",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Hefei University",
+                "openAlexId": "https://openalex.org/I39774598",
+                "countryCode": "CN",
+                "type": "education"
+              },
+              {
+                "name": "Zhejiang University",
+                "openAlexId": "https://openalex.org/I76130692",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Jincai Hou",
+            "openAlexId": "https://openalex.org/A5021820042",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Science and Technology of China",
+                "openAlexId": "https://openalex.org/I126520041",
+                "countryCode": "CN",
+                "type": "education"
+              },
+              {
+                "name": "Hefei University",
+                "openAlexId": "https://openalex.org/I39774598",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Fu‐Chun Zhang",
+            "openAlexId": "https://openalex.org/A5101858652",
+            "orcid": "https://orcid.org/0000-0003-3296-7219",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Chinese Academy of Sciences",
+                "openAlexId": "https://openalex.org/I4210165038",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Songbo Zhang",
+            "openAlexId": "https://openalex.org/A5114803000",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Science and Technology of China",
+                "openAlexId": "https://openalex.org/I126520041",
+                "countryCode": "CN",
+                "type": "education"
+              },
+              {
+                "name": "Hefei University",
+                "openAlexId": "https://openalex.org/I39774598",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Lun‐Hui Hu",
+            "openAlexId": "https://openalex.org/A5029889514",
+            "orcid": "https://orcid.org/0000-0002-0376-3367",
+            "position": "last",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Zhejiang University",
+                "openAlexId": "https://openalex.org/I76130692",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          }
+        ],
+        "institutions": [
+          {
+            "name": "Hefei University",
+            "openAlexId": "https://openalex.org/I39774598",
+            "countryCode": "CN",
+            "type": "education"
+          },
+          {
+            "name": "Zhejiang University",
+            "openAlexId": "https://openalex.org/I76130692",
+            "countryCode": "CN",
+            "type": "education"
+          },
+          {
+            "name": "University of Science and Technology of China",
+            "openAlexId": "https://openalex.org/I126520041",
+            "countryCode": "CN",
+            "type": "education"
+          },
+          {
+            "name": "University of Chinese Academy of Sciences",
+            "openAlexId": "https://openalex.org/I4210165038",
+            "countryCode": "CN",
+            "type": "education"
+          }
+        ],
+        "abstract": "Long-range propagation of equal-spin triplet Cooper pairs typically occurs in ferromagnet-s-wave superconductor junctions, where net magnetization plays a crucial role. Here, we propose a fundamentally different scenario in which Josephson supercurrents mediated exclusively by spin-triplet pairings emerge in systems with zero net magnetization. We identify collinear altermagnets, particularly a subclass termed nodeless altermagnets, as ideal platforms to realize this phenomenon. These materials host spin-split Fermi surfaces that do not intersect altermagnetic nodal lines and support maximal spin-valley polarization, yielding fully spin-polarized electronic states at each valley. Consequently, Josephson junctions based on nodeless altermagnets sustain supercurrents solely through spin-polarized triplet pairing correlations, simultaneously contributed by spin-up Cooper pairs from one valley and spin-down Cooper pairs from the other. Furthermore, controlling the relative local inversion-symmetry breaking at the two interfaces enables a robust 0-π transition without fine tuning, while adjusting the junction orientation allows a crossover between pure triplet and mixed singlet-triplet states. Our Letter thus establishes nodeless altermagnets as a unique platform for altermagnetic superconductors with magnetization-free spin-polarized supercurrents.",
+        "automaticTopics": [
+          {
+            "name": "Iron-based superconductors research",
+            "id": "https://openalex.org/T11766",
+            "score": 0.3068000078201294,
+            "subfield": "Electronic, Optical and Magnetic Materials",
+            "field": "Materials Science",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Advanced Condensed Matter Physics",
+            "id": "https://openalex.org/T11682",
+            "score": 0.3037000000476837,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Physics of Superconductivity and Magnetism",
+            "id": "https://openalex.org/T10037",
+            "score": 0.1550000011920929,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Iron-based superconductors research",
+        "keywords": [
+          "Josephson effect",
+          "Pairing",
+          "Supercurrent",
+          "Cooper pair",
+          "Superconductivity",
+          "Pi Josephson junction",
+          "Crossover"
+        ],
+        "relatedWorks": [],
+        "referencedWorks": [
+          "https://openalex.org/W3033432659",
+          "https://openalex.org/W2342426827",
+          "https://openalex.org/W2974879710",
+          "https://openalex.org/W2945249641",
+          "https://openalex.org/W2969666960",
+          "https://openalex.org/W3042218866",
+          "https://openalex.org/W3206508710",
+          "https://openalex.org/W3136985514",
+          "https://openalex.org/W4297014776",
+          "https://openalex.org/W4311892900",
+          "https://openalex.org/W4391809119",
+          "https://openalex.org/W4400235635",
+          "https://openalex.org/W4402807663",
+          "https://openalex.org/W4406198945",
+          "https://openalex.org/W4406994497",
+          "https://openalex.org/W4386861366",
+          "https://openalex.org/W4317941018",
+          "https://openalex.org/W4389727554",
+          "https://openalex.org/W4391839354",
+          "https://openalex.org/W4399283066",
+          "https://openalex.org/W4400033298",
+          "https://openalex.org/W4404465772",
+          "https://openalex.org/W4403204254",
+          "https://openalex.org/W4395082267",
+          "https://openalex.org/W4408407144",
+          "https://openalex.org/W4408406764",
+          "https://openalex.org/W4410714766",
+          "https://openalex.org/W4414059514",
+          "https://openalex.org/W4400374374",
+          "https://openalex.org/W4415378261",
+          "https://openalex.org/W4411236046",
+          "https://openalex.org/W3108797920",
+          "https://openalex.org/W3215082130",
+          "https://openalex.org/W4308469771",
+          "https://openalex.org/W4390545949",
+          "https://openalex.org/W4401216962",
+          "https://openalex.org/W4413781061",
+          "https://openalex.org/W4409094422",
+          "https://openalex.org/W4405957502",
+          "https://openalex.org/W4391418258",
+          "https://openalex.org/W4317543090",
+          "https://openalex.org/W4390985412",
+          "https://openalex.org/W4392358950",
+          "https://openalex.org/W4403204532",
+          "https://openalex.org/W4392591399",
+          "https://openalex.org/W4404304930",
+          "https://openalex.org/W4407252363",
+          "https://openalex.org/W4408552337",
+          "https://openalex.org/W4408996601",
+          "https://openalex.org/W2068369563",
+          "https://openalex.org/W1975446559",
+          "https://openalex.org/W2096884677",
+          "https://openalex.org/W1965187594",
+          "https://openalex.org/W4385949808",
+          "https://openalex.org/W4392188187",
+          "https://openalex.org/W4386069892",
+          "https://openalex.org/W4391385556",
+          "https://openalex.org/W4392120420",
+          "https://openalex.org/W4385806028",
+          "https://openalex.org/W4386216424",
+          "https://openalex.org/W4396871857",
+          "https://openalex.org/W4409218110",
+          "https://openalex.org/W4411364683",
+          "https://openalex.org/W4409570923",
+          "https://openalex.org/W4417256391",
+          "https://openalex.org/W4409763128",
+          "https://openalex.org/W3214267305",
+          "https://openalex.org/W4361270695",
+          "https://openalex.org/W2126803643",
+          "https://openalex.org/W2751239115",
+          "https://openalex.org/W2946813051",
+          "https://openalex.org/W4414905635",
+          "https://openalex.org/W4407853285",
+          "https://openalex.org/W4402048717",
+          "https://openalex.org/W2073732631",
+          "https://openalex.org/W4311815232",
+          "https://openalex.org/W4413926300"
+        ],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2509.13838",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "https://doi.org/10.1103/ds5z-fxy5",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "doi-exact",
+        "matchConfidence": 0.99,
+        "matchedFromPdf": false,
+        "updatedAt": 1787553088018,
+        "citations": {
+          "count": 4,
+          "source": "OpenAlex",
+          "updatedAt": 1787553088018
+        },
+        "pdfPages": 8,
+        "localExtractedAt": 1787553081655
+      },
+      "citations": {
+        "count": 4,
+        "source": "OpenAlex",
+        "updatedAt": 1787553088018
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787553088019,
+        "updatedAt": 1787553088019,
+        "source": "upload-auto",
+        "title": "Spin-Polarized Josephson Supercurrent in Nodeless Altermagnets",
+        "authors": [
+          "Chuang Li",
+          "Jincai Hou",
+          "Fu‐Chun Zhang",
+          "Songbo Zhang",
+          "Lun‐Hui Hu"
+        ],
+        "affiliations": [
+          "Hefei University",
+          "Zhejiang University",
+          "University of Science and Technology of China",
+          "University of Chinese Academy of Sciences"
+        ],
+        "publicationStatus": "published",
+        "journal": "Physical Review Letters",
+        "year": 2026,
+        "volume": "136",
+        "issue": "11",
+        "pages": "116701-116701",
+        "publisher": "American Physical Society",
+        "doi": "10.1103/ds5z-fxy5",
+        "arxivId": "",
+        "citationKey": "Li2026spin",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.1103/ds5z-fxy5",
+          "arxiv": "",
+          "publisher": "https://doi.org/10.1103/ds5z-fxy5",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "a quiet good paper which connect the node/nodeless properties to topological superconductor.",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     }
   ],
   "historicalMetadataUpdatedAt": 1787387764211,
