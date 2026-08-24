@@ -20636,7 +20636,7 @@
       "id": "kqy0sth1ipnmt6uic2k",
       "title": "Majorana flat bands in p-wave magnet-SC heterostructure",
       "filename": "Patra2026arXiv-Majorana flat bands in p-wave magnet-SC heterostructure.pdf",
-      "path": "",
+      "path": "https://cheneit.github.io/cheneit-pdf-2026/data/files/2026/08/kqy0sth1ipnmt6uic2k.pdf",
       "kind": "pdf",
       "topics": [
         "Majorana"
@@ -20645,13 +20645,18 @@
       "tags": [
         "refs_update"
       ],
-      "ts": 1787552345434,
+      "ts": 1787552357895,
       "createdTs": 1787552345434,
       "size": 2198921,
       "desc": "p-wave magnet on s-wave SC, there will be some interesting phenomena.",
       "imagePath": "",
-      "storage": null,
-      "uploadStatus": "pdf_pending",
+      "storage": {
+        "owner": "cheneit",
+        "repo": "cheneit-pdf-2026",
+        "branch": "main",
+        "path": "data/files/2026/08/kqy0sth1ipnmt6uic2k.pdf"
+      },
+      "uploadStatus": "ready",
       "uploadError": "",
       "imageUploadError": "",
       "groups": [],
