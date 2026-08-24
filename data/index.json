@@ -355,23 +355,23 @@
         "landingPageUrl": "https://doi.org/10.1103/prnx-47mk",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452651720,
+        "updatedAt": 1787539054725,
         "metadataError": "",
         "citations": {
           "count": 5,
           "source": "OpenAlex",
-          "updatedAt": 1787452651720
+          "updatedAt": 1787539054725
         },
         "pdfPages": 9,
         "historicalExtractedAt": 1787371650741,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452651720
+          "reviewedAt": 1787539054725
         },
         "backfillScan": {
           "status": "accepted",
@@ -380,12 +380,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787371651014
-        }
+        },
+        "volume": "112",
+        "issue": "20",
+        "pages": "",
+        "publisher": "American Physical Society"
       },
       "citations": {
         "count": 5,
         "source": "OpenAlex",
-        "updatedAt": 1787452651720
+        "updatedAt": 1787539054725
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -595,23 +599,23 @@
         "landingPageUrl": "https://doi.org/10.1103/nykx-1tsz",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452652080,
+        "updatedAt": 1787539054984,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1787452652080
+          "updatedAt": 1787539054984
         },
         "pdfPages": 7,
         "historicalExtractedAt": 1787371668438,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452652080
+          "reviewedAt": 1787539054984
         },
         "backfillScan": {
           "status": "accepted",
@@ -620,12 +624,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787371668726
-        }
+        },
+        "volume": "112",
+        "issue": "17",
+        "pages": "",
+        "publisher": "American Physical Society"
       },
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1787452652080
+        "updatedAt": 1787539054984
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -1008,23 +1016,23 @@
         "landingPageUrl": "https://doi.org/10.1103/3tvf-5v29",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452652448,
+        "updatedAt": 1787539055249,
         "metadataError": "",
         "citations": {
           "count": 1,
           "source": "OpenAlex",
-          "updatedAt": 1787452652448
+          "updatedAt": 1787539055249
         },
         "pdfPages": 9,
         "historicalExtractedAt": 1787371669407,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452652448
+          "reviewedAt": 1787539055249
         },
         "backfillScan": {
           "status": "accepted",
@@ -1033,12 +1041,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787371669688
-        }
+        },
+        "volume": "112",
+        "issue": "18",
+        "pages": "",
+        "publisher": "American Physical Society"
       },
       "citations": {
         "count": 1,
         "source": "OpenAlex",
-        "updatedAt": 1787452652448
+        "updatedAt": 1787539055249
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -1384,23 +1396,23 @@
         "landingPageUrl": "https://doi.org/10.1038/s42005-025-02364-y",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452652778,
+        "updatedAt": 1787539055582,
         "metadataError": "",
         "citations": {
           "count": 2,
           "source": "OpenAlex",
-          "updatedAt": 1787452652778
+          "updatedAt": 1787539055582
         },
         "pdfPages": 9,
         "historicalExtractedAt": 1787371670525,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452652778
+          "reviewedAt": 1787539055582
         },
         "backfillScan": {
           "status": "accepted",
@@ -1409,12 +1421,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787371671318
-        }
+        },
+        "volume": "8",
+        "issue": "1",
+        "pages": "",
+        "publisher": "Nature Portfolio"
       },
       "citations": {
         "count": 2,
         "source": "OpenAlex",
-        "updatedAt": 1787452652778
+        "updatedAt": 1787539055582
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -1818,23 +1834,23 @@
         "landingPageUrl": "https://doi.org/10.1038/s41598-025-29607-w",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452653550,
+        "updatedAt": 1787539056199,
         "metadataError": "",
         "citations": {
           "count": 2,
           "source": "OpenAlex",
-          "updatedAt": 1787452653550
+          "updatedAt": 1787539056199
         },
         "pdfPages": 12,
         "historicalExtractedAt": 1787371672779,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452653550
+          "reviewedAt": 1787539056199
         },
         "backfillScan": {
           "status": "accepted",
@@ -1843,12 +1859,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787371673231
-        }
+        },
+        "volume": "15",
+        "issue": "1",
+        "pages": "45508-45508",
+        "publisher": "Nature Portfolio"
       },
       "citations": {
         "count": 2,
         "source": "OpenAlex",
-        "updatedAt": 1787452653550
+        "updatedAt": 1787539056199
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -2254,23 +2274,23 @@
         "landingPageUrl": "https://doi.org/10.1103/31zv-84hw",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452653920,
+        "updatedAt": 1787539056459,
         "metadataError": "",
         "citations": {
           "count": 1,
           "source": "OpenAlex",
-          "updatedAt": 1787452653920
+          "updatedAt": 1787539056459
         },
         "pdfPages": 9,
         "historicalExtractedAt": 1787371675353,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452653921
+          "reviewedAt": 1787539056460
         },
         "backfillScan": {
           "status": "accepted",
@@ -2279,12 +2299,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787371675635
-        }
+        },
+        "volume": "112",
+        "issue": "22",
+        "pages": "",
+        "publisher": "American Physical Society"
       },
       "citations": {
         "count": 1,
         "source": "OpenAlex",
-        "updatedAt": 1787452653920
+        "updatedAt": 1787539056459
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -2520,23 +2544,23 @@
         "landingPageUrl": "http://arxiv.org/abs/2603.04954",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452654630,
+        "updatedAt": 1787539057002,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1787452654630
+          "updatedAt": 1787539057002
         },
         "pdfPages": 10,
         "historicalExtractedAt": 1787371682935,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452654630
+          "reviewedAt": 1787539057002
         },
         "backfillScan": {
           "status": "accepted",
@@ -2545,12 +2569,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787371683215
-        }
+        },
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University"
       },
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1787452654630
+        "updatedAt": 1787539057002
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -2745,23 +2773,23 @@
         "landingPageUrl": "https://arxiv.org/abs/2604.17594",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452654996,
+        "updatedAt": 1787539057254,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1787452654996
+          "updatedAt": 1787539057254
         },
         "pdfPages": 23,
         "historicalExtractedAt": 1787371683737,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452654996
+          "reviewedAt": 1787539057255
         },
         "backfillScan": {
           "status": "accepted",
@@ -2770,12 +2798,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787371685032
-        }
+        },
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University"
       },
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1787452654996
+        "updatedAt": 1787539057254
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -3215,23 +3247,23 @@
         "landingPageUrl": "https://doi.org/10.1103/kqy8-myz1",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452656564,
+        "updatedAt": 1787539058507,
         "metadataError": "",
         "citations": {
           "count": 15,
           "source": "OpenAlex",
-          "updatedAt": 1787452656564
+          "updatedAt": 1787539058507
         },
         "pdfPages": 6,
         "historicalExtractedAt": 1787371689469,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452656564
+          "reviewedAt": 1787539058507
         },
         "backfillScan": {
           "status": "accepted",
@@ -3240,12 +3272,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787371689878
-        }
+        },
+        "volume": "136",
+        "issue": "18",
+        "pages": "186702-186702",
+        "publisher": "American Physical Society"
       },
       "citations": {
         "count": 15,
         "source": "OpenAlex",
-        "updatedAt": 1787452656564
+        "updatedAt": 1787539058507
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -3330,7 +3366,14 @@
             "orcid": "",
             "position": "first",
             "corresponding": false,
-            "institutions": []
+            "institutions": [
+              {
+                "name": "Weizmann Institute of Science",
+                "openAlexId": "https://openalex.org/I53964585",
+                "countryCode": "IL",
+                "type": "education"
+              }
+            ]
           },
           {
             "name": "Binghai Yan",
@@ -3338,10 +3381,36 @@
             "orcid": "",
             "position": "last",
             "corresponding": false,
-            "institutions": []
+            "institutions": [
+              {
+                "name": "Pennsylvania State University",
+                "openAlexId": "https://openalex.org/I130769515",
+                "countryCode": "US",
+                "type": "education"
+              },
+              {
+                "name": "Weizmann Institute of Science",
+                "openAlexId": "https://openalex.org/I53964585",
+                "countryCode": "IL",
+                "type": "education"
+              }
+            ]
           }
         ],
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Weizmann Institute of Science",
+            "openAlexId": "https://openalex.org/I53964585",
+            "countryCode": "IL",
+            "type": "education"
+          },
+          {
+            "name": "Pennsylvania State University",
+            "openAlexId": "https://openalex.org/I130769515",
+            "countryCode": "US",
+            "type": "education"
+          }
+        ],
         "abstract": "Despite time-reversal breaking in momentum space, several altermagnets remain electrically silent to the primary characterization tool anomalous Hall effect, due to crystalline symmetries, jeopardizing their experimental identification. Here, we show that time-reversal odd magnetoresistance exhibiting butterfly-like hysteresis with linear magnetic field dependence near the zero field provides a robust transport signature of altermagnetism even when the anomalous Hall effect vanishes. Using semiclassical theory and symmetry analysis, we demonstrate that this effect is generic across altermagnets and validate it through first-principles calculations in CrSb. Our results establish linear magnetoresistance as an alternative detection of the Berry curvature and Neel order in unconventional antiferromagnets.",
         "automaticTopics": [
           {
@@ -3391,23 +3460,23 @@
         "landingPageUrl": "http://arxiv.org/abs/2603.12692",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452656838,
+        "updatedAt": 1787539058777,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1787452656838
+          "updatedAt": 1787539058777
         },
         "pdfPages": 7,
         "historicalExtractedAt": 1787371690488,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452656838
+          "reviewedAt": 1787539058777
         },
         "backfillScan": {
           "status": "accepted",
@@ -3416,12 +3485,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787371690834
-        }
+        },
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University"
       },
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1787452656838
+        "updatedAt": 1787539058777
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -3558,23 +3631,23 @@
         "landingPageUrl": "http://arxiv.org/abs/2505.21085",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452657121,
+        "updatedAt": 1787539059010,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1787452657121
+          "updatedAt": 1787539059010
         },
         "pdfPages": 9,
         "historicalExtractedAt": 1787371696930,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452657121
+          "reviewedAt": 1787539059010
         },
         "backfillScan": {
           "status": "accepted",
@@ -3583,12 +3656,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787371697263
-        }
+        },
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University"
       },
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1787452657121
+        "updatedAt": 1787539059010
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -3802,23 +3879,23 @@
         "landingPageUrl": "https://doi.org/10.1038/s41534-025-01120-y",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452657826,
+        "updatedAt": 1787539059258,
         "metadataError": "",
         "citations": {
           "count": 2,
           "source": "OpenAlex",
-          "updatedAt": 1787452657826
+          "updatedAt": 1787539059258
         },
         "pdfPages": 11,
         "historicalExtractedAt": 1787371697830,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452657826
+          "reviewedAt": 1787539059258
         },
         "backfillScan": {
           "status": "accepted",
@@ -3827,12 +3904,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787371698635
-        }
+        },
+        "volume": "11",
+        "issue": "1",
+        "pages": "",
+        "publisher": "Nature Portfolio"
       },
       "citations": {
         "count": 2,
         "source": "OpenAlex",
-        "updatedAt": 1787452657826
+        "updatedAt": 1787539059258
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -4099,23 +4180,23 @@
         "landingPageUrl": "https://doi.org/10.1007/s43673-026-00187-9",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452658749,
+        "updatedAt": 1787539059813,
         "metadataError": "",
         "citations": {
           "count": 1,
           "source": "OpenAlex",
-          "updatedAt": 1787452658749
+          "updatedAt": 1787539059813
         },
         "pdfPages": 23,
         "historicalExtractedAt": 1787371700305,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452658749
+          "reviewedAt": 1787539059813
         },
         "backfillScan": {
           "status": "accepted",
@@ -4124,12 +4205,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787371700704
-        }
+        },
+        "volume": "36",
+        "issue": "1",
+        "pages": "",
+        "publisher": "Springer Nature"
       },
       "citations": {
         "count": 1,
         "source": "OpenAlex",
-        "updatedAt": 1787452658749
+        "updatedAt": 1787539059813
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -4349,23 +4434,23 @@
         "landingPageUrl": "https://doi.org/10.15302/frontphys.2026.095301",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452659100,
+        "updatedAt": 1787539060066,
         "metadataError": "",
         "citations": {
           "count": 2,
           "source": "OpenAlex",
-          "updatedAt": 1787452659100
+          "updatedAt": 1787539060066
         },
         "pdfPages": 20,
         "historicalExtractedAt": 1787371701670,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452659101
+          "reviewedAt": 1787539060066
         },
         "backfillScan": {
           "status": "accepted",
@@ -4374,12 +4459,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787371702121
-        }
+        },
+        "volume": "21",
+        "issue": "9",
+        "pages": "095301-095301",
+        "publisher": "Higher Education Press"
       },
       "citations": {
         "count": 2,
         "source": "OpenAlex",
-        "updatedAt": 1787452659100
+        "updatedAt": 1787539060066
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -4635,23 +4724,23 @@
         "landingPageUrl": "https://arxiv.org/abs/2608.07374",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452659745,
+        "updatedAt": 1787539060591,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1787452659745
+          "updatedAt": 1787539060591
         },
         "pdfPages": 6,
         "historicalExtractedAt": 1787371704063,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452659745
+          "reviewedAt": 1787539060591
         },
         "backfillScan": {
           "status": "accepted",
@@ -4660,12 +4749,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787371704519
-        }
+        },
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University"
       },
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1787452659745
+        "updatedAt": 1787539060591
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -4910,7 +5003,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1,
+            "score": 1.0,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -5083,23 +5176,23 @@
         "landingPageUrl": "https://doi.org/10.1103/physrevlett.127.116402",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452660062,
+        "updatedAt": 1787539060851,
         "metadataError": "",
         "citations": {
           "count": 58,
           "source": "OpenAlex",
-          "updatedAt": 1787452660062
+          "updatedAt": 1787539060851
         },
         "pdfPages": 22,
         "historicalExtractedAt": 1787371705182,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452660062
+          "reviewedAt": 1787539060852
         },
         "backfillScan": {
           "status": "accepted",
@@ -5108,12 +5201,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787371705459
-        }
+        },
+        "volume": "127",
+        "issue": "11",
+        "pages": "116402-116402",
+        "publisher": "American Physical Society"
       },
       "citations": {
         "count": 58,
         "source": "OpenAlex",
-        "updatedAt": 1787452660062
+        "updatedAt": 1787539060851
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -5325,7 +5422,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1,
+            "score": 1.0,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -5453,23 +5550,23 @@
         "landingPageUrl": "https://doi.org/10.1103/physrevlett.124.137001",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452660378,
+        "updatedAt": 1787539061122,
         "metadataError": "",
         "citations": {
           "count": 52,
           "source": "OpenAlex",
-          "updatedAt": 1787452660378
+          "updatedAt": 1787539061122
         },
         "pdfPages": 13,
         "historicalExtractedAt": 1787371710245,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452660379
+          "reviewedAt": 1787539061122
         },
         "backfillScan": {
           "status": "accepted",
@@ -5478,12 +5575,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787371710531
-        }
+        },
+        "volume": "124",
+        "issue": "13",
+        "pages": "137001-137001",
+        "publisher": "American Physical Society"
       },
       "citations": {
         "count": 52,
         "source": "OpenAlex",
-        "updatedAt": 1787452660378
+        "updatedAt": 1787539061122
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -5703,7 +5804,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1,
+            "score": 1.0,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -5870,23 +5971,23 @@
         "landingPageUrl": "https://doi.org/10.1038/s41467-022-29463-6",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452660762,
+        "updatedAt": 1787539061369,
         "metadataError": "",
         "citations": {
           "count": 65,
           "source": "OpenAlex",
-          "updatedAt": 1787452660762
+          "updatedAt": 1787539061369
         },
         "pdfPages": 21,
         "historicalExtractedAt": 1787387742143,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452660762
+          "reviewedAt": 1787539061369
         },
         "backfillScan": {
           "status": "accepted",
@@ -5895,12 +5996,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787387742272
-        }
+        },
+        "volume": "13",
+        "issue": "1",
+        "pages": "1738-1738",
+        "publisher": "Nature Portfolio"
       },
       "citations": {
         "count": 65,
         "source": "OpenAlex",
-        "updatedAt": 1787452660762
+        "updatedAt": 1787539061369
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -6288,23 +6393,23 @@
         "landingPageUrl": "https://doi.org/10.1103/physrevlett.134.106801",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452661088,
+        "updatedAt": 1787539061639,
         "metadataError": "",
         "citations": {
           "count": 167,
           "source": "OpenAlex",
-          "updatedAt": 1787452661088
+          "updatedAt": 1787539061639
         },
         "pdfPages": 19,
         "historicalExtractedAt": 1787387742645,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452661088
+          "reviewedAt": 1787539061639
         },
         "backfillScan": {
           "status": "accepted",
@@ -6322,7 +6427,7 @@
       "citations": {
         "count": 167,
         "source": "OpenAlex",
-        "updatedAt": 1787452661088
+        "updatedAt": 1787539061639
       },
       "groups": [],
       "paperCard": {
@@ -6811,23 +6916,23 @@
         "landingPageUrl": "https://arxiv.org/abs/2601.22226",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452663721,
+        "updatedAt": 1787539064316,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1787452663721
+          "updatedAt": 1787539064316
         },
         "pdfPages": 12,
         "historicalExtractedAt": 1787387747138,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452663722
+          "reviewedAt": 1787539064316
         },
         "backfillScan": {
           "status": "accepted",
@@ -6836,12 +6941,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787387747265
-        }
+        },
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University"
       },
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1787452663721
+        "updatedAt": 1787539064316
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -7181,23 +7290,23 @@
         "landingPageUrl": "https://doi.org/10.1038/s41535-025-00835-7",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452664098,
+        "updatedAt": 1787539064655,
         "metadataError": "",
         "citations": {
           "count": 13,
           "source": "OpenAlex",
-          "updatedAt": 1787452664098
+          "updatedAt": 1787539064655
         },
         "pdfPages": 7,
         "historicalExtractedAt": 1787387747599,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452664099
+          "reviewedAt": 1787539064655
         },
         "backfillScan": {
           "status": "accepted",
@@ -7206,12 +7315,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787387747790
-        }
+        },
+        "volume": "11",
+        "issue": "1",
+        "pages": "",
+        "publisher": "Nature Portfolio"
       },
       "citations": {
         "count": 13,
         "source": "OpenAlex",
-        "updatedAt": 1787452664098
+        "updatedAt": 1787539064655
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -7380,7 +7493,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1,
+            "score": 1.0,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -7495,23 +7608,23 @@
         "landingPageUrl": "https://doi.org/10.1038/s41467-023-37725-0",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452664503,
+        "updatedAt": 1787539064937,
         "metadataError": "",
         "citations": {
           "count": 24,
           "source": "OpenAlex",
-          "updatedAt": 1787452664503
+          "updatedAt": 1787539064937
         },
         "pdfPages": 8,
         "historicalExtractedAt": 1787387748371,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452664503
+          "reviewedAt": 1787539064937
         },
         "backfillScan": {
           "status": "accepted",
@@ -7520,12 +7633,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787387748544
-        }
+        },
+        "volume": "14",
+        "issue": "1",
+        "pages": "2286-2286",
+        "publisher": "Nature Portfolio"
       },
       "citations": {
         "count": 24,
         "source": "OpenAlex",
-        "updatedAt": 1787452664503
+        "updatedAt": 1787539064937
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -7861,23 +7978,23 @@
         "landingPageUrl": "https://doi.org/10.1038/s42005-024-01618-5",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452665191,
+        "updatedAt": 1787539065228,
         "metadataError": "",
         "citations": {
           "count": 44,
           "source": "OpenAlex",
-          "updatedAt": 1787452665191
+          "updatedAt": 1787539065228
         },
         "pdfPages": 8,
         "historicalExtractedAt": 1787387749058,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452665191
+          "reviewedAt": 1787539065228
         },
         "backfillScan": {
           "status": "accepted",
@@ -7886,12 +8003,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787387749165
-        }
+        },
+        "volume": "7",
+        "issue": "1",
+        "pages": "",
+        "publisher": "Nature Portfolio"
       },
       "citations": {
         "count": 44,
         "source": "OpenAlex",
-        "updatedAt": 1787452665191
+        "updatedAt": 1787539065228
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -7982,12 +8103,6 @@
                 "openAlexId": "https://openalex.org/I4210151733",
                 "countryCode": "US",
                 "type": "facility"
-              },
-              {
-                "name": "University of Maryland, College Park",
-                "openAlexId": "https://openalex.org/I66946132",
-                "countryCode": "US",
-                "type": "education"
               }
             ]
           },
@@ -8045,12 +8160,6 @@
                 "openAlexId": "https://openalex.org/I4210151733",
                 "countryCode": "US",
                 "type": "facility"
-              },
-              {
-                "name": "University of Maryland, College Park",
-                "openAlexId": "https://openalex.org/I66946132",
-                "countryCode": "US",
-                "type": "education"
               }
             ]
           }
@@ -8063,12 +8172,6 @@
             "type": "facility"
           },
           {
-            "name": "University of Maryland, College Park",
-            "openAlexId": "https://openalex.org/I66946132",
-            "countryCode": "US",
-            "type": "education"
-          },
-          {
             "name": "Rutgers, The State University of New Jersey",
             "openAlexId": "https://openalex.org/I102322142",
             "countryCode": "US",
@@ -8077,6 +8180,12 @@
           {
             "name": "University of Florida",
             "openAlexId": "https://openalex.org/I33213144",
+            "countryCode": "US",
+            "type": "education"
+          },
+          {
+            "name": "University of Maryland, College Park",
+            "openAlexId": "https://openalex.org/I66946132",
             "countryCode": "US",
             "type": "education"
           }
@@ -8129,23 +8238,23 @@
         "landingPageUrl": "https://arxiv.org/abs/2607.14949",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452665497,
+        "updatedAt": 1787539065522,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1787452665497
+          "updatedAt": 1787539065522
         },
         "pdfPages": 10,
         "historicalExtractedAt": 1787387749599,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452665498
+          "reviewedAt": 1787539065522
         },
         "backfillScan": {
           "status": "accepted",
@@ -8154,12 +8263,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787387749786
-        }
+        },
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University"
       },
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1787452665497
+        "updatedAt": 1787539065522
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -8621,23 +8734,23 @@
         "landingPageUrl": "https://doi.org/10.1088/1367-2630/ab494b",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452666826,
+        "updatedAt": 1787539067406,
         "metadataError": "",
         "citations": {
           "count": 10,
           "source": "OpenAlex",
-          "updatedAt": 1787452666826
+          "updatedAt": 1787539067406
         },
         "pdfPages": 17,
         "historicalExtractedAt": 1787387752020,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452666826
+          "reviewedAt": 1787539067406
         },
         "backfillScan": {
           "status": "accepted",
@@ -8646,12 +8759,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787387752268
-        }
+        },
+        "volume": "21",
+        "issue": "10",
+        "pages": "103031-103031",
+        "publisher": "IOP Publishing"
       },
       "citations": {
         "count": 10,
         "source": "OpenAlex",
-        "updatedAt": 1787452666826
+        "updatedAt": 1787539067406
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -8878,7 +8995,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1,
+            "score": 1.0,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -9015,23 +9132,23 @@
         "landingPageUrl": "https://doi.org/10.1103/physrevb.102.085411",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452667609,
+        "updatedAt": 1787539068385,
         "metadataError": "",
         "citations": {
           "count": 23,
           "source": "OpenAlex",
-          "updatedAt": 1787452667609
+          "updatedAt": 1787539068385
         },
         "pdfPages": 10,
         "historicalExtractedAt": 1787387753582,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452667610
+          "reviewedAt": 1787539068385
         },
         "backfillScan": {
           "status": "accepted",
@@ -9040,12 +9157,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787387753794
-        }
+        },
+        "volume": "102",
+        "issue": "8",
+        "pages": "",
+        "publisher": "American Physical Society"
       },
       "citations": {
         "count": 23,
         "source": "OpenAlex",
-        "updatedAt": 1787452667609
+        "updatedAt": 1787539068385
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -9452,23 +9573,23 @@
         "landingPageUrl": "https://doi.org/10.1103/physrevresearch.6.023293",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452668015,
+        "updatedAt": 1787539068678,
         "metadataError": "",
         "citations": {
           "count": 3,
           "source": "OpenAlex",
-          "updatedAt": 1787452668015
+          "updatedAt": 1787539068678
         },
         "pdfPages": 8,
         "historicalExtractedAt": 1787387754624,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452668015
+          "reviewedAt": 1787539068679
         },
         "backfillScan": {
           "status": "accepted",
@@ -9477,12 +9598,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787387754847
-        }
+        },
+        "volume": "6",
+        "issue": "2",
+        "pages": "",
+        "publisher": "American Physical Society"
       },
       "citations": {
         "count": 3,
         "source": "OpenAlex",
-        "updatedAt": 1787452668015
+        "updatedAt": 1787539068678
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -9790,23 +9915,23 @@
         "landingPageUrl": "http://dx.doi.org/10.1103/physrevresearch.6.023304",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452668384,
+        "updatedAt": 1787539068962,
         "metadataError": "",
         "citations": {
           "count": 7,
           "source": "OpenAlex",
-          "updatedAt": 1787452668384
+          "updatedAt": 1787539068962
         },
         "pdfPages": 17,
         "historicalExtractedAt": 1787387755346,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452668384
+          "reviewedAt": 1787539068962
         },
         "backfillScan": {
           "status": "accepted",
@@ -9815,12 +9940,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787387755551
-        }
+        },
+        "volume": "6",
+        "issue": "2",
+        "pages": "",
+        "publisher": "American Physical Society"
       },
       "citations": {
         "count": 7,
         "source": "OpenAlex",
-        "updatedAt": 1787452668384
+        "updatedAt": 1787539068962
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -10072,7 +10201,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1,
+            "score": 1.0,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -10177,23 +10306,23 @@
         "landingPageUrl": "https://doi.org/10.1103/physrevb.93.195302",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452668796,
+        "updatedAt": 1787539069245,
         "metadataError": "",
         "citations": {
           "count": 28,
           "source": "OpenAlex",
-          "updatedAt": 1787452668796
+          "updatedAt": 1787539069245
         },
         "pdfPages": 8,
         "historicalExtractedAt": 1787387756598,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452668796
+          "reviewedAt": 1787539069246
         },
         "backfillScan": {
           "status": "accepted",
@@ -10202,12 +10331,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787387756815
-        }
+        },
+        "volume": "93",
+        "issue": "19",
+        "pages": "",
+        "publisher": "American Physical Society"
       },
       "citations": {
         "count": 28,
         "source": "OpenAlex",
-        "updatedAt": 1787452668796
+        "updatedAt": 1787539069245
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -10354,7 +10487,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1,
+            "score": 1.0,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -10496,23 +10629,23 @@
         "landingPageUrl": "https://doi.org/10.1016/j.matt.2024.05.028",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452669164,
+        "updatedAt": 1787539069536,
         "metadataError": "",
         "citations": {
           "count": 8,
           "source": "OpenAlex",
-          "updatedAt": 1787452669164
+          "updatedAt": 1787539069536
         },
         "pdfPages": 15,
         "historicalExtractedAt": 1787387757375,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452669164
+          "reviewedAt": 1787539069536
         },
         "backfillScan": {
           "status": "accepted",
@@ -10521,12 +10654,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787387757604
-        }
+        },
+        "volume": "7",
+        "issue": "7",
+        "pages": "2507-2520",
+        "publisher": "Elsevier BV"
       },
       "citations": {
         "count": 8,
         "source": "OpenAlex",
-        "updatedAt": 1787452669164
+        "updatedAt": 1787539069536
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -10840,23 +10977,23 @@
         "landingPageUrl": "https://arxiv.org/abs/2605.17649",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452670690,
+        "updatedAt": 1787539070446,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1787452670690
+          "updatedAt": 1787539070446
         },
         "pdfPages": 13,
         "historicalExtractedAt": 1787387759780,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452670690
+          "reviewedAt": 1787539070447
         },
         "backfillScan": {
           "status": "accepted",
@@ -10865,12 +11002,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787387760034
-        }
+        },
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University"
       },
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1787452670690
+        "updatedAt": 1787539070446
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -14996,23 +15137,23 @@
         "landingPageUrl": "https://doi.org/10.1103/qx36-4rv1",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452671369,
+        "updatedAt": 1787539070892,
         "metadataError": "",
         "citations": {
           "count": 10,
           "source": "OpenAlex",
-          "updatedAt": 1787452671369
+          "updatedAt": 1787539070892
         },
         "pdfPages": 24,
         "historicalExtractedAt": 1787387761914,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452671369
+          "reviewedAt": 1787539070892
         },
         "backfillScan": {
           "status": "accepted",
@@ -15021,12 +15162,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787387762224
-        }
+        },
+        "volume": "7",
+        "issue": "4",
+        "pages": "",
+        "publisher": "American Physical Society"
       },
       "citations": {
         "count": 10,
         "source": "OpenAlex",
-        "updatedAt": 1787452671369
+        "updatedAt": 1787539070892
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -15370,7 +15515,7 @@
           {
             "name": "Topological Materials and Phenomena",
             "id": "https://openalex.org/T10657",
-            "score": 1,
+            "score": 1.0,
             "subfield": "Atomic and Molecular Physics, and Optics",
             "field": "Physics and Astronomy",
             "domain": "Physical Sciences"
@@ -15505,23 +15650,23 @@
         "landingPageUrl": "https://doi.org/10.1103/physrevb.111.205411",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452671829,
+        "updatedAt": 1787539071172,
         "metadataError": "",
         "citations": {
           "count": 2,
           "source": "OpenAlex",
-          "updatedAt": 1787452671829
+          "updatedAt": 1787539071172
         },
         "pdfPages": 15,
         "historicalExtractedAt": 1787387763157,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452671829
+          "reviewedAt": 1787539071172
         },
         "backfillScan": {
           "status": "accepted",
@@ -15530,12 +15675,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787387763356
-        }
+        },
+        "volume": "111",
+        "issue": "20",
+        "pages": "",
+        "publisher": "American Physical Society"
       },
       "citations": {
         "count": 2,
         "source": "OpenAlex",
-        "updatedAt": 1787452671829
+        "updatedAt": 1787539071172
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -15821,23 +15970,23 @@
         "landingPageUrl": "https://doi.org/10.1103/physrevb.110.144412",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id",
-        "matchConfidence": 1,
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452672225,
+        "updatedAt": 1787539071434,
         "metadataError": "",
         "citations": {
           "count": 105,
           "source": "OpenAlex",
-          "updatedAt": 1787452672225
+          "updatedAt": 1787539071434
         },
         "pdfPages": 20,
         "historicalExtractedAt": 1787387763876,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1,
+          "confidence": 1.0,
           "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452672225
+          "reviewedAt": 1787539071434
         },
         "backfillScan": {
           "status": "accepted",
@@ -15846,12 +15995,16 @@
           "stage": "pdf",
           "message": "",
           "scannedAt": 1787387764091
-        }
+        },
+        "volume": "110",
+        "issue": "14",
+        "pages": "",
+        "publisher": "American Physical Society"
       },
       "citations": {
         "count": 105,
         "source": "OpenAlex",
-        "updatedAt": 1787452672225
+        "updatedAt": 1787539071434
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -18975,28 +19128,32 @@
         },
         "landingPageUrl": "https://arxiv.org/abs/2608.09334",
         "metadataSource": "OpenAlex",
-        "matchMethod": "arxiv-search",
-        "matchConfidence": 0.93,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452694218,
+        "updatedAt": 1787539093980,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1787452694218
+          "updatedAt": 1787539093980
         },
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.93,
-          "method": "arxiv-search",
+          "confidence": 1.0,
+          "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452694218
-        }
+          "reviewedAt": 1787539093980
+        },
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University"
       },
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1787452694218
+        "updatedAt": 1787539093980
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -19267,28 +19424,32 @@
         },
         "landingPageUrl": "https://arxiv.org/abs/2606.21281",
         "metadataSource": "OpenAlex",
-        "matchMethod": "arxiv-search",
-        "matchConfidence": 0.93,
+        "matchMethod": "openalex-id",
+        "matchConfidence": 1.0,
         "matchedFromPdf": false,
-        "updatedAt": 1787452694975,
+        "updatedAt": 1787539094625,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1787452694975
+          "updatedAt": 1787539094625
         },
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.93,
-          "method": "arxiv-search",
+          "confidence": 1.0,
+          "method": "openalex-id",
           "stage": "index",
-          "reviewedAt": 1787452694975
-        }
+          "reviewedAt": 1787539094625
+        },
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University"
       },
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1787452694975
+        "updatedAt": 1787539094625
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -20364,9 +20525,9 @@
     }
   ],
   "historicalMetadataUpdatedAt": 1787387764211,
-  "schemaVersion": 4,
+  "schemaVersion": 5,
   "appVersion": "5.2",
-  "metadataUpdatedAt": 1787452705644,
-  "metadataUpdatedAtIso": "2026-08-23T02:38:25.644573+00:00",
+  "metadataUpdatedAt": 1787539106628,
+  "metadataUpdatedAtIso": "2026-08-24T02:38:26.629079+00:00",
   "paperCardSchemaVersion": 1
 }
