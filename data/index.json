@@ -21330,6 +21330,102 @@
           "starred": false
         }
       }
+    },
+    {
+      "id": "9z7op8j3wxvmt6vv0tt",
+      "title": "Disorder-Induced Phase Transitions in Altermagnetic Josephson Junctions",
+      "filename": "ChangAnLi-2026arXiv-AM JJ Disorder.pdf",
+      "path": "",
+      "kind": "pdf",
+      "topics": [
+        "Altermagnet",
+        "JJ"
+      ],
+      "topic": "Altermagnet",
+      "tags": [
+        "refs_update"
+      ],
+      "ts": 1787554617125,
+      "createdTs": 1787554617125,
+      "size": 5278935,
+      "desc": "a work about AM JJ ",
+      "imagePath": "",
+      "storage": null,
+      "uploadStatus": "pdf_pending",
+      "uploadError": "",
+      "imageUploadError": "",
+      "groups": [],
+      "scholarly": {
+        "title": "Disorder-Induced Phase Transitions in Altermagnetic Josephson Junctions",
+        "doi": "",
+        "arxivId": "2605.23607",
+        "authors": [
+          {
+            "name": "Chang-An Li"
+          }
+        ],
+        "institutions": [],
+        "venue": "",
+        "year": null,
+        "publicationDate": "",
+        "abstract": "",
+        "automaticTopics": [],
+        "keywords": [],
+        "metadataSource": "PDF-local",
+        "matchMethod": "local-only",
+        "matchConfidence": 0,
+        "matchedFromPdf": false,
+        "updatedAt": 1787554617125,
+        "metadataError": "未在 OpenAlex/Crossref 中可靠匹配，请在编辑条目中补充 DOI 或题名。",
+        "citations": {
+          "count": 0,
+          "source": "",
+          "updatedAt": 0
+        },
+        "pdfPages": 10,
+        "localExtractedAt": 1787554610752
+      },
+      "citations": {
+        "count": 0,
+        "source": "",
+        "updatedAt": 0
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787554617125,
+        "updatedAt": 1787554617125,
+        "source": "upload-auto",
+        "title": "Disorder-Induced Phase Transitions in Altermagnetic Josephson Junctions",
+        "authors": [
+          "Chang-An Li"
+        ],
+        "affiliations": [],
+        "publicationStatus": "preprint",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "2605.23607",
+        "citationKey": "Li2026disorder",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "https://arxiv.org/abs/2605.23607",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "a work about AM JJ ",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     }
   ],
   "historicalMetadataUpdatedAt": 1787387764211,
