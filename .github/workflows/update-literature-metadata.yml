@@ -20,9 +20,14 @@ on:
         default: ""
         type: string
       accept_threshold:
-        description: "自动写入阈值，推荐 0.78"
+        description: "自动写入阈值（仍必须通过 DOI/arXiv 或复合证据核验）"
         required: false
         default: "0.78"
+        type: string
+      pdf_pages:
+        description: "backfill 读取每篇 PDF 的前几页"
+        required: false
+        default: "5"
         type: string
 
 permissions:
@@ -49,17 +54,21 @@ jobs:
           INPUT_MODE: ${{ inputs.mode }}
           INPUT_MAX_ITEMS: ${{ inputs.max_items }}
           INPUT_THRESHOLD: ${{ inputs.accept_threshold }}
+          INPUT_PDF_PAGES: ${{ inputs.pdf_pages }}
         run: |
           MODE="${INPUT_MODE:-daily}"
           THRESHOLD="${INPUT_THRESHOLD:-0.78}"
-          ARGS=(--index data/index.json --mode "$MODE" --accept-threshold "$THRESHOLD" --report data/metadata-review.json)
+          PDF_PAGES="${INPUT_PDF_PAGES:-5}"
+          case "$MODE" in daily|backfill) ;; *) echo "Invalid mode: $MODE" >&2; exit 2 ;; esac
+          echo "Research Library v5.3 updater: mode=$MODE threshold=$THRESHOLD pdf_pages=$PDF_PAGES max_items=${INPUT_MAX_ITEMS:-all}"
+          ARGS=(--index data/index.json --mode "$MODE" --accept-threshold "$THRESHOLD" --pdf-pages "$PDF_PAGES" --report data/metadata-review.json)
           if [ -n "$INPUT_MAX_ITEMS" ]; then ARGS+=(--max-items "$INPUT_MAX_ITEMS"); fi
           python scripts/update_literature_metadata.py "${ARGS[@]}"
       - name: Upload review report
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: metadata-review-${{ github.run_number }}
+          name: metadata-review-${{ inputs.mode || 'daily' }}-${{ github.run_number }}
           path: data/metadata-review.json
           if-no-files-found: ignore
           retention-days: 30
@@ -70,5 +79,5 @@ jobs:
           git add data/index.json
           if [ -f data/metadata-review.json ]; then git add data/metadata-review.json; fi
           if [ -d data/backups ]; then git add data/backups; fi
-          git diff --cached --quiet || git commit -m "chore: refresh literature metadata"
+          git diff --cached --quiet || git commit -m "chore: refresh literature metadata with v5.3 verifier"
           git push

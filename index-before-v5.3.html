@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Research Library — Literature Intelligence (v5.3)</title>
+  <title>Research Library — Literature Intelligence (v5.2)</title>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -64,7 +64,7 @@ const { useState, useEffect, useMemo, useRef } = React;
 
 /**
  * =========================
- * Research Library — 单文件 SPA（v5.3 元数据可信度修正版）
+ * Research Library — 单文件 SPA（v5.2 B5 文献书导出版）
  * - Preview：浏览 / 搜索 / 筛选 / Dashboard（统计、日历、归档）
  * - Admin：上传 / 编辑 / 删除 / 替换PDF（注释后覆盖）
  *
@@ -85,7 +85,6 @@ const { useState, useEffect, useMemo, useRef } = React;
  * 14) v5：可点击文献情报、文章信息面板、页面字段驱动的 BibTeX 与编辑式短评
  * 15) v5.1：站点标题作为 Home 链接；按 B5 书页导出文献卡片、Topic 分析与批注页
  * 16) v5.2：文献书示意图移至作者/单位之后，并以约 1/5 可打印页高的通栏画框展示
- * 17) v5.3：重新核验旧自动匹配；DOI/arXiv 精确或题名/作者/年份复合证据才自动写入
  * =========================
  */
 
@@ -247,7 +246,7 @@ function humanSize(bytes) {
   return `${v.toFixed(i === 0 ? 0 : 1)} ${units[i]}`;
 }
 
-/* ============ v5.3 trustworthy scholarly metadata helpers ============ */
+/* ============ v4.1 scholarly metadata helpers ============ */
 function cleanDoi(value) {
   return String(value || '')
     .trim()
@@ -281,90 +280,6 @@ function titleSimilarity(a, b) {
   let hit = 0;
   aa.forEach(x => { if (bb.has(x)) hit += 1; });
   return hit / Math.max(aa.size, bb.size);
-}
-
-function cleanArxivId(value) {
-  return String(extractArxivId(value) || value || '').trim().replace(/v\d+$/i, '').toLowerCase();
-}
-
-function cleanLibrarySearchTitle(value) {
-  let s = String(value || '').trim().replace(/\.(pdf|epub)$/i, '');
-  const m = s.match(/^([A-Z][A-Za-z'`-]{1,30})((?:19|20)\d{2})(?:[A-Za-z]{1,12})?[-_\s:]+(.+)$/);
-  if (m) s = m[3];
-  return s.replace(/[_|]+/g, ' ').replace(/\s*[-–—]\s*/g, ' ').replace(/\s+/g, ' ').trim();
-}
-
-function personNames(value) {
-  return (Array.isArray(value) ? value : []).map(x => String(x?.name || x || '').trim()).filter(Boolean);
-}
-
-function personSurname(value) {
-  const parts = String(value || '').toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim().split(/\s+/).filter(Boolean);
-  return parts[parts.length - 1] || '';
-}
-
-function authorEvidence(seedAuthors, candidateAuthors) {
-  const seeds = personNames(seedAuthors).slice(0, 6);
-  const candidates = personNames(candidateAuthors);
-  if (!seeds.length || !candidates.length) return { score: 0, available: false };
-  const scores = seeds.map(name => {
-    const family = personSurname(name);
-    if (family && candidates.some(x => personSurname(x) === family)) return 1;
-    return Math.max(0, ...candidates.map(x => titleSimilarity(name, x)));
-  });
-  return { score: scores.reduce((a,b)=>a+b,0) / scores.length, available: true };
-}
-
-function openAlexArxivIds(work={}) {
-  const locations = [work.primary_location, ...(work.locations || [])].filter(Boolean);
-  const values = [work.doi, work.id, ...locations.flatMap(x => [x.landing_page_url, x.pdf_url])];
-  return [...new Set(values.map(extractArxivId).filter(Boolean).map(cleanArxivId))];
-}
-
-function openAlexCandidateEvidence(seed, work, method) {
-  const seedDoi = cleanDoi(seed.doi || '').toLowerCase();
-  const candidateDoi = cleanDoi(work.doi || '').toLowerCase();
-  const seedArxivId = cleanArxivId(seed.arxivId || '');
-  const candidateArxivIds = openAlexArxivIds(work);
-  const doiExact = !!seedDoi && seedDoi === candidateDoi;
-  const arxivExact = !!seedArxivId && candidateArxivIds.includes(seedArxivId);
-  const titleScore = titleSimilarity(seed.title, work.title || work.display_name);
-  const candidateAuthors = (work.authorships || []).map(x=>x?.author?.display_name).filter(Boolean);
-  const ae = authorEvidence(seed.authors, candidateAuthors);
-  const seedYear = Number(seed.year || 0) || null;
-  const candidateYear = Number(work.publication_year || 0) || null;
-  const hasYearEvidence = !!seedYear && !!candidateYear;
-  const delta = hasYearEvidence ? Math.abs(seedYear - candidateYear) : null;
-  const yearScore = delta === 0 ? 1 : (delta === 1 ? .5 : 0);
-  const storedIdMatches = seed.openAlexId && String(seed.openAlexId).split('/').pop() === String(work.id || '').split('/').pop();
-  const warnings = [];
-  if (storedIdMatches && titleScore < .72) warnings.push('stored-openalex-id-title-conflict');
-  if (storedIdMatches && ae.available && ae.score < .30) warnings.push('stored-openalex-id-author-conflict');
-  if (storedIdMatches && hasYearEvidence && yearScore === 0) warnings.push('stored-openalex-id-year-conflict');
-  let verification = 'unverified';
-  let confidence = 0;
-  if (doiExact) { verification = 'exact-doi'; confidence = .995; }
-  else if (arxivExact) { verification = 'exact-arxiv'; confidence = .99; }
-  else {
-    confidence = .76 * titleScore + .16 * (ae.available ? ae.score : .5) + .08 * (hasYearEvidence ? yearScore : .5);
-    const support = (ae.available && ae.score >= .55) || (hasYearEvidence && yearScore >= .5);
-    if (titleScore >= .88 && (support || titleScore >= .96)) verification = 'composite';
-  }
-  if (warnings.length && !doiExact && !arxivExact) verification = 'conflict';
-  return {
-    method, confidence: Number(confidence.toFixed(4)), verification,
-    verified: ['exact-doi','exact-arxiv','composite'].includes(verification),
-    identifierMatch: doiExact ? 'doi' : (arxivExact ? 'arxiv' : ''),
-    titleScore: Number(titleScore.toFixed(4)), authorScore: Number(ae.score.toFixed(4)), yearScore,
-    seedTitle: seed.title || '', candidateTitle: work.title || work.display_name || '',
-    seedAuthors: personNames(seed.authors).slice(0,12), candidateAuthors: candidateAuthors.slice(0,12),
-    seedYear, candidateYear, seedDoi, candidateDoi, seedArxivId, candidateArxivIds,
-    candidateOpenAlexId: work.id || '', warnings
-  };
-}
-
-function metadataMatchAccepted(value, threshold=.78) {
-  return !!value?.matchVerified && Number(value?.matchConfidence || 0) >= threshold;
 }
 
 function looksGenericPaperTitle(value) {
@@ -443,7 +358,6 @@ function normalizeOpenAlexWork(work, seed={}) {
   const source = location.source || {};
   const doi = cleanDoi(work.doi || seed.doi || '');
 
-  const match = work.__repoLibraryMatch || {};
   return {
     title: work.title || work.display_name || seed.title || '',
     doi,
@@ -469,11 +383,8 @@ function normalizeOpenAlexWork(work, seed={}) {
     openAccess: work.open_access || null,
     landingPageUrl: location.landing_page_url || work.doi || '',
     metadataSource: 'OpenAlex',
-    matchMethod: match.method || (seed.doi ? 'doi-query' : 'title-search'),
-    matchConfidence: Number(match.confidence || 0),
-    matchVerification: match.verification || 'unverified',
-    matchVerified: !!match.verified,
-    matchEvidence: Object.fromEntries(Object.entries(match).filter(([key])=>!['method','confidence','verified'].includes(key))),
+    matchMethod: work.__repoLibraryMatch?.method || (seed.doi ? 'doi-exact' : 'title-search'),
+    matchConfidence: Number(work.__repoLibraryMatch?.confidence || (seed.doi ? 0.99 : 0)),
     matchedFromPdf: !!seed.fromHistoricalPdf,
     updatedAt: Date.now(),
     citations: {
@@ -495,7 +406,6 @@ function normalizeCrossrefWork(message, seed={}) {
     orcid: a.ORCID || '',
     institutions: (a.affiliation || []).map(x => ({ name: x.name || '' })).filter(x => x.name)
   })).filter(a => a.name);
-  const crossrefDoiExact = !!cleanDoi(seed.doi || '') && cleanDoi(message.DOI || '').toLowerCase() === cleanDoi(seed.doi || '').toLowerCase();
   return {
     title: message.title?.[0] || seed.title || '',
     doi: cleanDoi(message.DOI || seed.doi || ''),
@@ -515,9 +425,7 @@ function normalizeCrossrefWork(message, seed={}) {
     keywords: message.subject || [],
     metadataSource: 'Crossref',
     matchMethod: 'doi-crossref',
-    matchConfidence: crossrefDoiExact ? .995 : 0,
-    matchVerification: crossrefDoiExact ? 'exact-doi' : 'conflict',
-    matchVerified: crossrefDoiExact,
+    matchConfidence: 0.98,
     matchedFromPdf: !!seed.fromHistoricalPdf,
     updatedAt: Date.now(),
     citations: {
@@ -529,42 +437,25 @@ function normalizeCrossrefWork(message, seed={}) {
 }
 
 async function queryOpenAlex(seed) {
-  const candidates = new Map();
-  const add = (work, method) => {
-    if (!work) return;
-    const key = work.id || work.doi || work.title;
-    if (!candidates.has(key) || method === 'doi-query') candidates.set(key, { work, method });
-  };
-  if (seed.openAlexId) {
-    try {
-      const id = String(seed.openAlexId).split('/').pop();
-      add(await fetchJsonWithTimeout(`https://api.openalex.org/works/${encodeURIComponent(id)}`), 'openalex-id-revalidated');
-    } catch (e) { console.warn('Stored OpenAlex ID revalidation failed', e); }
-  }
+  let url = '';
   if (seed.doi) {
-    try {
-      const value = `https://doi.org/${cleanDoi(seed.doi)}`;
-      const data = await fetchJsonWithTimeout(`https://api.openalex.org/works?filter=doi:${encodeURIComponent(value)}&per_page=3`);
-      (data?.results || []).forEach(work=>add(work, 'doi-query'));
-    } catch (e) { console.warn('OpenAlex DOI query failed', e); }
+    const value = `https://doi.org/${cleanDoi(seed.doi)}`;
+    url = `https://api.openalex.org/works?filter=doi:${encodeURIComponent(value)}&per_page=1`;
+  } else {
+    const query = seed.arxivId || seed.title;
+    if (!query) return null;
+    url = `https://api.openalex.org/works?search=${encodeURIComponent(query)}&per_page=5`;
   }
-  const queries = [];
-  if (seed.arxivId) queries.push([cleanArxivId(seed.arxivId), 'arxiv-search']);
-  if (seed.title) queries.push([seed.title, 'title-search']);
-  const seen = new Set();
-  for (const [query, method] of queries) {
-    if (!query || seen.has(query.toLowerCase())) continue;
-    seen.add(query.toLowerCase());
-    try {
-      const data = await fetchJsonWithTimeout(`https://api.openalex.org/works?search=${encodeURIComponent(query)}&per_page=10`);
-      (data?.results || []).forEach(work=>add(work, method));
-    } catch (e) { console.warn(`OpenAlex ${method} failed`, e); }
-  }
-  const ranked = [...candidates.values()].map(({work,method}) => ({ work, match: openAlexCandidateEvidence(seed, work, method) }))
-    .sort((a,b) => Number(b.match.verified)-Number(a.match.verified)
-      || Number(['exact-doi','exact-arxiv'].includes(b.match.verification))-Number(['exact-doi','exact-arxiv'].includes(a.match.verification))
-      || b.match.confidence-a.match.confidence || b.match.titleScore-a.match.titleScore);
-  return ranked[0]?.work ? { ...ranked[0].work, __repoLibraryMatch: ranked[0].match } : null;
+  const data = await fetchJsonWithTimeout(url);
+  const candidates = data?.results || [];
+  if (!candidates.length) return null;
+  if (seed.doi) return { ...candidates[0], __repoLibraryMatch: { method: 'doi-exact', confidence: 0.99 } };
+  const ranked = candidates
+    .map(w => ({ work: w, score: titleSimilarity(seed.title, w.title || w.display_name) }))
+    .sort((a,b) => b.score - a.score);
+  if (seed.title && ranked[0]?.score < 0.45 && !seed.arxivId) return null;
+  const confidence = seed.arxivId ? Math.max(0.93, ranked[0]?.score || 0) : (ranked[0]?.score || 0);
+  return ranked[0]?.work ? { ...ranked[0].work, __repoLibraryMatch: { method: seed.arxivId ? 'arxiv-search' : 'title-search', confidence } } : null;
 }
 
 async function queryCrossref(seed) {
@@ -574,29 +465,21 @@ async function queryCrossref(seed) {
   return data?.message || null;
 }
 
-async function resolveScholarlyMetadata(seed, { allowUnverified=false }={}) {
+async function resolveScholarlyMetadata(seed) {
   const cleanSeed = {
     ...seed,
     doi: cleanDoi(seed?.doi || ''),
-    arxivId: seed?.arxivId || extractArxivId([seed?.title, seed?.text].join(' ')),
-    title: cleanLibrarySearchTitle(seed?.title || ''),
-    year: seed?.year || Number(String([seed?.title, seed?.text].join(' ')).match(/\b(19|20)\d{2}\b/)?.[0] || 0) || null
+    arxivId: seed?.arxivId || extractArxivId([seed?.title, seed?.text].join(' '))
   };
   try {
     const work = await queryOpenAlex(cleanSeed);
-    if (work) {
-      const normalized = normalizeOpenAlexWork(work, cleanSeed);
-      if (normalized.matchVerified || allowUnverified) return normalized;
-    }
+    if (work) return normalizeOpenAlexWork(work, cleanSeed);
   } catch (e) {
     console.warn('OpenAlex metadata lookup failed', e);
   }
   try {
     const work = await queryCrossref(cleanSeed);
-    if (work) {
-      const normalized = normalizeCrossrefWork(work, cleanSeed);
-      if (normalized.matchVerified || allowUnverified) return normalized;
-    }
+    if (work) return normalizeCrossrefWork(work, cleanSeed);
   } catch (e) {
     console.warn('Crossref metadata lookup failed', e);
   }
@@ -615,8 +498,6 @@ async function resolveScholarlyMetadata(seed, { allowUnverified=false }={}) {
     metadataSource: 'PDF-local',
     matchMethod: cleanSeed.fromHistoricalPdf ? 'pdf-local-only' : 'local-only',
     matchConfidence: cleanSeed.fromHistoricalPdf ? 0.35 : 0,
-    matchVerification: 'unverified',
-    matchVerified: false,
     matchedFromPdf: !!cleanSeed.fromHistoricalPdf,
     updatedAt: Date.now(),
     metadataError: '未在 OpenAlex/Crossref 中可靠匹配，请在编辑条目中补充 DOI 或题名。',
@@ -624,7 +505,7 @@ async function resolveScholarlyMetadata(seed, { allowUnverified=false }={}) {
   };
 }
 
-async function extractPdfSeedMetadata(file, maxPages=5) {
+async function extractPdfSeedMetadata(file, maxPages=3) {
   if (!file || extOf(file.name) !== 'pdf') return { title: file?.name?.replace(/\.[^/.]+$/, '') || '' };
   const fallback = {
     title: file.name.replace(/\.[^/.]+$/, ''),
@@ -659,7 +540,6 @@ async function extractPdfSeedMetadata(file, maxPages=5) {
       doi: extractDoi([info.Subject, info.Keywords, text, file.name].join(' ')),
       arxivId: extractArxivId([info.Subject, info.Keywords, text, file.name].join(' ')),
       authors: parseAuthorString(info.Author),
-      year: Number(text.match(/\b(19|20)\d{2}\b/)?.[0] || 0) || null,
       abstract: abstractMatch ? abstractMatch[1].trim() : '',
       keywords: splitLegacyList(info.Keywords || ''),
       text: text.slice(0, 10000),
@@ -676,25 +556,11 @@ async function extractPdfSeedMetadata(file, maxPages=5) {
 async function buildMetadataForUpload(file) {
   const seed = await extractPdfSeedMetadata(file);
   const resolved = await resolveScholarlyMetadata(seed);
-  const stamp = Date.now();
-  const verification = resolved?.matchVerified ? {
-    status: 'verified', reason: resolved.matchVerification, confidence: Number(resolved.matchConfidence || 0),
-    method: resolved.matchMethod || '', stage: 'upload', verifiedAt: stamp, warnings: resolved.matchEvidence?.warnings || []
-  } : {
-    status: 'unverified', reason: resolved?.matchVerification || 'unverified', confidence: Number(resolved?.matchConfidence || 0),
-    method: resolved?.matchMethod || '', stage: 'upload', checkedAt: stamp, warnings: resolved?.matchEvidence?.warnings || []
-  };
   return {
     scholarly: {
       ...resolved,
       pdfPages: seed.pdfPages || null,
-      localExtractedAt: seed.extractedAt || stamp,
-      metadataVerification: verification,
-      metadataReview: {
-        status: resolved?.matchVerified ? 'accepted-auto' : 'review-required',
-        confidence: Number(resolved?.matchConfidence || 0), method: resolved?.matchMethod || '',
-        stage: 'upload', verification: resolved?.matchVerification || 'unverified', evidence: resolved?.matchEvidence || {}, reviewedAt: stamp
-      }
+      localExtractedAt: seed.extractedAt || Date.now()
     },
     citations: resolved?.citations || { count: 0, source: '', updatedAt: 0 }
   };
@@ -825,7 +691,7 @@ function itemPdfHref(cfg, item) {
   return manual || (item?.kind === 'pdf' ? buildPdfBrowserUrl(item.path) : itemRawHref(cfg, item));
 }
 
-/* ============ v5.3 B5 literature book ============ */
+/* ============ v5.2 B5 literature book ============ */
 function escapeBookHtml(value) {
   return String(value ?? '').replace(/[&<>"']/g, ch => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' })[ch]);
 }
@@ -967,9 +833,8 @@ function openResearchBook(items, options, cfg) {
 function needsHistoricalMetadata(item) {
   if ((item?.kind || guessKind(item?.filename || item?.path)) !== 'pdf') return false;
   const s = scholarlyOf(item);
-  if (s.metadataReview?.status === 'accepted-manually') return false;
-  if (s.metadataVerification?.status === 'verified' && ['exact-doi','exact-arxiv','composite'].includes(s.metadataVerification?.reason)) return false;
-  return s.metadataReview?.status === 'accepted-auto' || !s.metadataSource || !!s.metadataError || !authorsOf(item).length || (!s.doi && !s.arxivId) || (!s.publicationDate && !s.year);
+  if (String(s.metadataReview?.status || '').startsWith('accepted')) return false;
+  return !s.metadataSource || !!s.metadataError || !authorsOf(item).length || (!s.doi && !s.arxivId) || (!s.publicationDate && !s.year);
 }
 
 function historicalPdfUrl(cfg, item) {
@@ -1007,18 +872,12 @@ async function downloadHistoricalPdf(cfg, item, token, maxMb=95) {
 
 function historicalIndexSeed(item) {
   const s = scholarlyOf(item);
-  const trusted = s.metadataReview?.status === 'accepted-manually' || s.metadataVerification?.status === 'verified';
-  const label = item?.title || String(item?.filename || '').replace(/\.[^/.]+$/, '') || s.title;
-  const m = String(item?.filename || item?.title || '').match(/^([A-Z][A-Za-z'`-]{1,30})((?:19|20)\d{2})/);
-  const rawTitle = cleanLibrarySearchTitle(label);
-  const combined = [item?.title, item?.filename, item?.desc].join(' ');
+  const rawTitle = s.title || item?.title || String(item?.filename || '').replace(/\.[^/.]+$/, '');
   return {
     title: looksGenericPaperTitle(rawTitle) ? '' : rawTitle,
-    doi: cleanDoi((trusted ? s.doi : '') || item?.doi || extractDoi(combined)),
-    arxivId: (trusted ? s.arxivId : '') || extractArxivId(combined),
-    openAlexId: s.openAlexId || '',
-    authors: trusted ? authorsOf(item) : (m?.[1] ? [{name:m[1]}] : []),
-    year: (trusted ? s.year : null) || Number(m?.[2] || 0) || null,
+    doi: cleanDoi(s.doi || item?.doi || extractDoi([item?.title, item?.filename, item?.desc].join(' '))),
+    arxivId: s.arxivId || extractArxivId([item?.title, item?.filename, item?.desc].join(' ')),
+    authors: authorsOf(item),
     abstract: s.abstract || item?.desc || '',
     keywords: s.keywords || item?.tags || []
   };
@@ -1032,9 +891,9 @@ async function scanHistoricalItem(cfg, item, token, threshold=0.78) {
   let pdfError = '';
   try {
     const seed = historicalIndexSeed(item);
-    if (seed.doi || seed.arxivId || seed.title || seed.openAlexId) first = await resolveScholarlyMetadata(seed, {allowUnverified:true});
-    if (first?.metadataSource !== 'PDF-local' && metadataMatchAccepted(first, threshold)) {
-      return { ...base, status: 'accepted', stage: 'index', confidence: Number(first.matchConfidence), method: first.matchMethod || 'index-match', verification: first.matchVerification, verified: true, evidence: first.matchEvidence || {}, suggested: first, pdfParsed: false, finishedAt: Date.now() };
+    if (seed.doi || seed.arxivId || seed.title) first = await resolveScholarlyMetadata(seed);
+    if (first?.metadataSource !== 'PDF-local' && Number(first?.matchConfidence || 0) >= threshold) {
+      return { ...base, status: 'accepted', stage: 'index', confidence: Number(first.matchConfidence), method: first.matchMethod || 'index-match', suggested: first, pdfParsed: false, finishedAt: Date.now() };
     }
   } catch (e) {
     console.warn('历史条目索引匹配失败，继续尝试 PDF', e);
@@ -1042,7 +901,7 @@ async function scanHistoricalItem(cfg, item, token, threshold=0.78) {
 
   try {
     const file = await downloadHistoricalPdf(cfg, item, token);
-    pdfSeed = await extractPdfSeedMetadata(file, 5);
+    pdfSeed = await extractPdfSeedMetadata(file, 3);
     const baseSeed = historicalIndexSeed(item);
     const resolved = await resolveScholarlyMetadata({
       ...baseSeed,
@@ -1052,21 +911,16 @@ async function scanHistoricalItem(cfg, item, token, threshold=0.78) {
       arxivId: pdfSeed.arxivId || baseSeed.arxivId,
       authors: pdfSeed.authors?.length ? pdfSeed.authors : baseSeed.authors,
       abstract: pdfSeed.abstract || baseSeed.abstract,
-      year: pdfSeed.year || baseSeed.year,
-      openAlexId: '',
       fromHistoricalPdf: true
-    }, {allowUnverified:true});
+    });
     const confidence = Number(resolved.matchConfidence || 0);
     const matched = resolved.metadataSource !== 'PDF-local';
     return {
       ...base,
-      status: matched && metadataMatchAccepted(resolved, threshold) ? 'accepted' : 'review',
+      status: matched && confidence >= threshold ? 'accepted' : 'review',
       stage: 'pdf',
       confidence,
       method: resolved.matchMethod || 'pdf-local-only',
-      verification: resolved.matchVerification || 'unverified',
-      verified: metadataMatchAccepted(resolved, threshold),
-      evidence: resolved.matchEvidence || {},
       suggested: { ...resolved, pdfPages: pdfSeed.pdfPages || null, historicalExtractedAt: Date.now() },
       pdfParsed: true,
       extractedDoi: pdfSeed.doi || '',
@@ -1080,7 +934,7 @@ async function scanHistoricalItem(cfg, item, token, threshold=0.78) {
 
   if (first && first.metadataSource !== 'PDF-local') {
     const confidence = Number(first.matchConfidence || 0);
-    return { ...base, status: 'review', stage: 'index', confidence, method: first.matchMethod || 'title-search', verification: first.matchVerification || 'unverified', verified: false, evidence: first.matchEvidence || {}, suggested: first, pdfParsed: false, message: `PDF 解析失败，保留未验证索引候选：${pdfError}`, finishedAt: Date.now() };
+    return { ...base, status: 'review', stage: 'index', confidence, method: first.matchMethod || 'title-search', suggested: first, pdfParsed: false, message: `PDF 解析失败，保留低置信度索引匹配：${pdfError}`, finishedAt: Date.now() };
   }
   return { ...base, status: 'unmatched', stage: 'pdf', confidence: 0, method: 'unmatched', suggested: pdfSeed || first || {}, pdfParsed: !!pdfSeed, message: pdfError || '没有可靠匹配', finishedAt: Date.now() };
 }
@@ -1098,18 +952,7 @@ function applyHistoricalSuggestion(item, result, acceptedManually=false) {
       confidence: Number(result.confidence || 0),
       method: result.method || '',
       stage: result.stage || '',
-      verification: acceptedManually ? 'manual' : (result.verification || 'unverified'),
-      evidence: result.evidence || {},
       reviewedAt: Date.now()
-    },
-    metadataVerification: {
-      status: 'verified',
-      reason: acceptedManually ? 'manual' : (result.verification || 'unverified'),
-      confidence: Number(result.confidence || 0),
-      method: result.method || '',
-      stage: result.stage || '',
-      verifiedAt: Date.now(),
-      warnings: result.evidence?.warnings || []
     }
   };
   return {
@@ -1934,12 +1777,6 @@ function isCitationStale(item, days=2) {
   const ts = citationOf(item).updatedAt;
   return !ts || (Date.now() - ts) > days * 86400000;
 }
-function isMetadataVerified(item) {
-  const s = scholarlyOf(item);
-  return s.metadataReview?.status === 'accepted-manually'
-    || (s.metadataVerification?.status === 'verified' && ['exact-doi','exact-arxiv','composite','manual'].includes(s.metadataVerification?.reason))
-    || (s.matchVerified === true && ['exact-doi','exact-arxiv','composite'].includes(s.matchVerification));
-}
 function makePaperLabel(item) { return item?.paperCard?.title || item?.title || scholarlyOf(item).title || item?.filename || '未命名文献'; }
 
 function buildLiteratureStats(items) {
@@ -2001,8 +1838,7 @@ function buildLiteratureStats(items) {
     years: Array.from(yearMap.entries()).sort((a,b)=>a[0]-b[0]),
     citationRanking: [...(items || [])].sort((a,b)=>citationOf(b).count-citationOf(a).count),
     coverage: {
-      scholarly: (items || []).filter(isMetadataVerified).length,
-      rawScholarly: (items || []).filter(x => scholarlyOf(x).metadataSource).length,
+      scholarly: (items || []).filter(x => scholarlyOf(x).metadataSource).length,
       paperCards: (items || []).filter(x => x.paperCard).length,
       doi: (items || []).filter(x => paperCardOf(x).doi).length,
       authors: (items || []).filter(x => authorsOf(x).length).length,
@@ -2548,7 +2384,7 @@ function App({ onLockPage }) {
   );
 }
 
-/* ============ v5.3 B5 book export dialog ============ */
+/* ============ v5.2 B5 book export dialog ============ */
 function BookExportModal({ allItems, filteredItems, cfg, onClose }) {
   const starredCount = (allItems || []).filter(item=>paperCardOf(item).evaluation?.starred).length;
   const [scope, setScope] = useState(() => filteredItems.length !== allItems.length ? 'filtered' : 'all');
@@ -2581,7 +2417,7 @@ function BookExportModal({ allItems, filteredItems, cfg, onClose }) {
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#171717]/75 p-3 backdrop-blur-sm" onClick={onClose}>
       <div className="journal-rule w-full max-w-5xl overflow-hidden border-x border-b border-[#bdb6ab] bg-[#fffefa] shadow-2xl" onClick={e=>e.stopPropagation()}>
         <div className="flex flex-wrap items-start justify-between gap-4 border-b border-[#d8d1c7] px-5 py-4">
-          <div><div className="smallcaps text-[#b3261e]">v5.3 · B5 literature book</div><h2 className="editorial-title mt-1 text-3xl">生成文献书</h2><p className="mt-1 max-w-2xl text-xs leading-5 text-[#69635b]">生成独立的 B5 排版页面，只收录文章信息、文献分析和个人批注，不复制或嵌入论文 PDF。</p></div>
+          <div><div className="smallcaps text-[#b3261e]">v5.2 · B5 literature book</div><h2 className="editorial-title mt-1 text-3xl">生成文献书</h2><p className="mt-1 max-w-2xl text-xs leading-5 text-[#69635b]">生成独立的 B5 排版页面，只收录文章信息、文献分析和个人批注，不复制或嵌入论文 PDF。</p></div>
           <button onClick={onClose} className={btnClass('danger')}>关闭</button>
         </div>
 
@@ -2655,7 +2491,7 @@ function Header({ mode, setMode, query, setQuery, onSaveCfg, token, setToken, on
         <div className="flex items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <div>
-              <div className="smallcaps text-[#b3261e]">Research archive · v5.3</div>
+              <div className="smallcaps text-[#b3261e]">Research archive · v5.2</div>
               <a href="#home" onClick={e=>{e.preventDefault();onHome?.();}} className="group block" title="返回首页顶部">
                 <div className="editorial-title mt-1 text-3xl font-semibold underline decoration-transparent decoration-1 underline-offset-4 transition group-hover:decoration-[#b3261e]">Research Library</div>
                 <div className="mt-1 text-xs text-[#69635b]">文献情报、文章卡片、研究批注与引用档案 · 点击返回 Home</div>
@@ -3243,7 +3079,7 @@ function PaperCardMigrationPanel({ cfg, token, items, onCompleted }) {
       setMsg('备份完成，正在冻结旧文献的首版文章卡片…');
       const next = await updateIndexMain(cfg, token, latest => ({
         ...latest,
-        appVersion: '5.3',
+        appVersion: '5.2',
         paperCardSchemaVersion: 1,
         items: (latest.items || []).map(item => item.paperCard ? item : {
           ...item,
@@ -3278,7 +3114,7 @@ function PaperCardMigrationPanel({ cfg, token, items, onCompleted }) {
   );
 }
 
-/* ============ v5.3 trustworthy historical metadata backfill ============ */
+/* ============ v4.1 historical metadata backfill ============ */
 function HistoricalMetadataPanel({ cfg, token, items, onCompleted }) {
   const candidates = useMemo(() => (items || []).filter(needsHistoricalMetadata), [items]);
   const [limit, setLimit] = useState(25);
@@ -3333,8 +3169,7 @@ function HistoricalMetadataPanel({ cfg, token, items, onCompleted }) {
 
   function exportReport() {
     const report = {
-      schemaVersion: 2,
-      updaterVersion: '5.3-browser',
+      schemaVersion: 1,
       generatedAt: new Date().toISOString(),
       threshold: Number(threshold || 0.78),
       total: results.length,
@@ -3345,14 +3180,9 @@ function HistoricalMetadataPanel({ cfg, token, items, onCompleted }) {
         confidence: r.confidence,
         method: r.method,
         stage: r.stage,
-        candidateTitle: r.suggested?.title || '',
-        currentTitle: scholarlyOf((items || []).find(x=>x.id===r.itemId) || {}).title || '',
+        matchedTitle: r.suggested?.title || '',
         doi: r.suggested?.doi || '',
-        openAlexId: r.suggested?.openAlexId || '',
         authors: (r.suggested?.authors || []).map(a=>a.name || a),
-        verification: r.verification || 'unverified',
-        verified: !!r.verified,
-        evidence: r.evidence || {},
         message: r.message || ''
       }))
     };
@@ -3372,7 +3202,7 @@ function HistoricalMetadataPanel({ cfg, token, items, onCompleted }) {
       if (!current) throw new Error(`未读取到 ${cfg.indexPath}`);
       const normalized = normalizeIndexData(current);
       const dir = indexDirOf(cfg.indexPath);
-      const backupPath = `${dir ? dir + '/' : ''}backups/index-before-v5.3-backfill-${timestampForPath()}.json`;
+      const backupPath = `${dir ? dir + '/' : ''}backups/index-before-v5-backfill-${timestampForPath()}.json`;
       const backupBytes = new TextEncoder().encode(JSON.stringify(normalized, null, 2));
       await ghPutContent(cfg.owner, cfg.repo, backupPath, b64EncodeUint8(new Uint8Array(backupBytes)), 'Backup index before v5 metadata backfill', token, null, cfg.branch);
 
@@ -3381,7 +3211,7 @@ function HistoricalMetadataPanel({ cfg, token, items, onCompleted }) {
       const newData = await updateIndexMain(cfg, token, latest => ({
         ...latest,
         schemaVersion: Math.max(5, Number(latest.schemaVersion || 0)),
-        appVersion: '5.3',
+        appVersion: '5.2',
         paperCardSchemaVersion: 1,
         historicalMetadataUpdatedAt: Date.now(),
         items: (latest.items || []).map(item => {
@@ -3409,8 +3239,8 @@ function HistoricalMetadataPanel({ cfg, token, items, onCompleted }) {
       <div className="rounded-3xl border border-sky-200 bg-white p-4 shadow-soft">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
-            <div className="font-semibold text-slate-900">🧭 v5.3 历史文献元数据可信度修复</div>
-            <div className="mt-1 max-w-3xl text-xs leading-5 text-slate-500">检测到 <b>{candidates.length}</b> 篇 PDF 尚未完成身份核验（旧 accepted-auto 也会重新检查）。系统只在 DOI/arXiv 精确一致，或题名、作者、年份复合证据充分时自动勾选；不足时下载旧 PDF、解析前 5 页再次匹配。扫描本身不修改 GitHub。</div>
+            <div className="font-semibold text-slate-900">🧭 v4.1 历史文献元数据补全</div>
+            <div className="mt-1 max-w-3xl text-xs leading-5 text-slate-500">检测到 <b>{candidates.length}</b> 篇 PDF 的元数据不完整。系统先用现有 DOI/arXiv/题名匹配；不足时下载旧 PDF、解析前 3 页，再次匹配。扫描本身不修改 GitHub，只有最后勾选并确认才写入。</div>
           </div>
           <div className="flex flex-wrap items-end gap-2">
             <label className="text-xs text-slate-600">本批数量<input type="number" min="1" max="200" value={limit} onChange={e=>setLimit(e.target.value)} className="ml-2 w-20 rounded-xl border border-slate-300 px-2 py-2" /></label>
@@ -3637,7 +3467,7 @@ function AdminPanel({ cfg, token, onUploaded }) {
         lastIndexData = await updateIndexMain(cfg, token, data => {
           const items = data.items || [];
           if (items.some(x => x.id === id)) return data;
-          return { ...data, appVersion: '5.3', paperCardSchemaVersion: 1, items: [...items, initialItem] };
+          return { ...data, appVersion: '5.2', paperCardSchemaVersion: 1, items: [...items, initialItem] };
         }, `Create metadata item: ${file.name}`);
         mainTouched = true;
         onUploaded && onUploaded(lastIndexData);
@@ -3853,7 +3683,7 @@ function AdminPanel({ cfg, token, onUploaded }) {
               <input type="checkbox" checked={autoMetadata} onChange={e=>setAutoMetadata(e.target.checked)} className="mt-1" />
               <span>
                 <b>上传时自动提取学术元数据</b>
-                <span className="block mt-1 text-xs text-sky-800">读取 PDF 前 5 页和内嵌信息，识别 DOI/arXiv，并从 OpenAlex（失败时 Crossref）补全作者、机构、期刊、发表日期、自动主题和引用数。只有身份核验通过的候选才会自动写入；识别失败不会阻断上传。</span>
+                <span className="block mt-1 text-xs text-sky-800">读取 PDF 前 3 页和内嵌信息，识别 DOI/arXiv，并从 OpenAlex（失败时 Crossref）补全作者、机构、期刊、发表日期、自动主题和引用数。识别失败不会阻断上传。</span>
               </span>
             </label>
 
@@ -3912,7 +3742,7 @@ function Dashboard({ items, topicsCount, tagsCount, onPickTopic, onPickTag, onOp
           </div>
           <div className="border-l-2 border-[#b3261e] px-4 py-2 text-right">
             <div className="editorial-title text-3xl font-bold">{coveragePct}%</div>
-            <div className="text-xs text-[#69635b]">已验证元数据覆盖率</div>
+            <div className="text-xs text-[#69635b]">学术元数据覆盖率</div>
           </div>
         </div>
         <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
@@ -4042,10 +3872,10 @@ function DataQualityPanel({ items, coverage }) {
     ['尚未填写简短评价', items.filter(x=>!paperCardOf(x).evaluation?.shortReview)],
     ['缺少手工 Topic', items.filter(x=>!getTopicsArr(x).length)],
     ['引用待同步 / 已过期', items.filter(x=>isCitationStale(x))],
-    ['元数据匹配需复核', items.filter(x=>!isMetadataVerified(x) || scholarlyOf(x).metadataError || scholarlyOf(x).metadataReview?.status==='review-required')],
+    ['元数据匹配需复核', items.filter(x=>scholarlyOf(x).metadataError || (scholarlyOf(x).matchConfidence && scholarlyOf(x).matchConfidence < 0.78 && !String(scholarlyOf(x).metadataReview?.status||'').startsWith('accepted')))],
     ['历史 PDF 扫描失败', items.filter(x=>scholarlyOf(x).backfillScan?.status==='error')]
   ];
-  return <div><div className="mb-4"><h3 className="font-semibold">数据质量检查</h3><p className="text-xs text-slate-500">优先补文章卡片、DOI 与 Topic：它们分别决定页面可信度、自动匹配与知识组织口径。</p></div><div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{checks.map(([label,list])=><div key={label} className={cx('rounded-2xl border p-4',list.length?'border-amber-200 bg-amber-50':'border-emerald-200 bg-emerald-50')}><div className="text-2xl font-bold">{list.length}</div><div className="text-sm font-semibold">{label}</div><div className="mt-1 truncate text-xs text-slate-500">{list.slice(0,3).map(makePaperLabel).join('、') || '状态良好'}</div></div>)}</div><div className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-xs text-slate-600">文章卡片 {coverage.paperCards}/{items.length} · 已验证元数据 {coverage.scholarly}/{items.length}（已抓取 {coverage.rawScholarly}/{items.length}） · DOI {coverage.doi}/{items.length} · 作者 {coverage.authors}/{items.length} · 引用 {coverage.citations}/{items.length}</div></div>;
+  return <div><div className="mb-4"><h3 className="font-semibold">数据质量检查</h3><p className="text-xs text-slate-500">优先补文章卡片、DOI 与 Topic：它们分别决定页面可信度、自动匹配与知识组织口径。</p></div><div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{checks.map(([label,list])=><div key={label} className={cx('rounded-2xl border p-4',list.length?'border-amber-200 bg-amber-50':'border-emerald-200 bg-emerald-50')}><div className="text-2xl font-bold">{list.length}</div><div className="text-sm font-semibold">{label}</div><div className="mt-1 truncate text-xs text-slate-500">{list.slice(0,3).map(makePaperLabel).join('、') || '状态良好'}</div></div>)}</div><div className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-xs text-slate-600">文章卡片 {coverage.paperCards}/{items.length} · 外部元数据 {coverage.scholarly}/{items.length} · DOI {coverage.doi}/{items.length} · 作者 {coverage.authors}/{items.length} · 引用 {coverage.citations}/{items.length}</div></div>;
 }
 
 function Heatmap({ heat }) {
@@ -5071,7 +4901,7 @@ function Footer() {
         <span>·</span>
         <span>单文件 HTML（React + Tailwind）</span>
         <span>·</span>
-        <span>v5.3 · 元数据身份核验 + 历史误配重查 + B5 文献书 + 引用日更</span>
+        <span>v5.2 · B5 文献书通栏示意图 + 文章卡片 + 页面字段驱动 BibTeX + 引用日更</span>
       </div>
     </footer>
   );

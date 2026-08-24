@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
-"""Research Library v5.2 metadata updater and historical PDF backfill.
+"""Research Library v5.3 trustworthy metadata updater and PDF backfill.
 
-Daily mode refreshes already identifiable records without downloading PDFs.
+Daily mode refreshes only identity-verified records without downloading PDFs.
 Backfill mode uses a conservative two-stage pipeline:
 1) DOI/arXiv/title matching from index.json;
 2) for unresolved records, download/read the first PDF pages and match again.
 
-Only scholarly/citations/review fields are refreshed. A missing v5 paperCard is
-initialized once from the first accepted match; an existing paperCard is never
-overwritten. Manual title, topics, tags, notes, links and evaluations are safe.
+Every candidate is verified by an exact DOI/arXiv identifier or by composite
+title/author/year evidence.  A stale OpenAlex ID is evidence to check, not a
+reason to trust a record. Only scholarly/citations/review fields are refreshed.
+A missing v5 paperCard is initialized once from the first accepted match; an
+existing paperCard is never overwritten. Manual title, topics, tags, notes,
+links, BibTeX and evaluations are safe.
 """
 
 from __future__ import annotations
@@ -38,6 +41,11 @@ GENERIC_TITLE_RE = re.compile(
     r"^(?:paper|article|document|untitled|manuscript|download|fulltext|main|supp|si|sm)[-_\s\d.]*$",
     re.I,
 )
+LIBRARY_LABEL_RE = re.compile(
+    r"^(?P<author>[A-Z][A-Za-z'`-]{1,30})(?P<year>(?:19|20)\d{2})(?:[A-Za-z]{1,12})?[-_\s:]+(?P<title>.+)$"
+)
+YEAR_RE = re.compile(r"\b((?:19|20)\d{2})\b")
+VERIFIED_REASONS = {"exact-doi", "exact-arxiv", "composite"}
 
 
 def now_ms() -> int:
@@ -65,6 +73,11 @@ def extract_arxiv(value: object) -> str:
     return match.group(1) if match else ""
 
 
+def clean_arxiv(value: object) -> str:
+    arxiv_id = extract_arxiv(value) or str(value or "").strip()
+    return re.sub(r"v\d+$", "", arxiv_id, flags=re.I).lower()
+
+
 def compact_title(value: object) -> str:
     return re.sub(r"[^\w]+", " ", str(value or "").lower(), flags=re.UNICODE).strip()
 
@@ -86,11 +99,159 @@ def similarity(a: object, b: object) -> float:
     return difflib.SequenceMatcher(None, aa, bb).ratio()
 
 
+def clean_library_title(value: object) -> str:
+    """Turn labels such as Author2025arXiv-Actual title into search text."""
+    text = re.sub(r"\.(?:pdf|epub)$", "", str(value or "").strip(), flags=re.I)
+    match = LIBRARY_LABEL_RE.match(text)
+    if match:
+        text = match.group("title")
+    text = re.sub(r"[_|]+", " ", text)
+    text = re.sub(r"\s*[-–—]\s*", " ", text)
+    return re.sub(r"\s+", " ", text).strip(" -_:;")
+
+
+def seed_year(value: object) -> int | None:
+    match = YEAR_RE.search(str(value or ""))
+    return int(match.group(1)) if match else None
+
+
+def author_names(value: object) -> list[str]:
+    if not isinstance(value, list):
+        return []
+    names: list[str] = []
+    for row in value:
+        name = row.get("name") if isinstance(row, dict) else row
+        name = re.sub(r"\s+", " ", str(name or "")).strip()
+        if name and name.casefold() not in {existing.casefold() for existing in names}:
+            names.append(name)
+    return names
+
+
+def filename_author_year(value: object) -> tuple[str, int | None]:
+    match = LIBRARY_LABEL_RE.match(Path(str(value or "")).stem)
+    return (match.group("author"), int(match.group("year"))) if match else ("", None)
+
+
+def normalized_person_name(value: object) -> str:
+    return re.sub(r"[^\w]+", " ", str(value or "").casefold(), flags=re.UNICODE).strip()
+
+
+def surname(value: object) -> str:
+    parts = normalized_person_name(value).split()
+    return parts[-1] if parts else ""
+
+
+def author_similarity(seed_authors: object, candidate_authors: object) -> tuple[float, bool]:
+    seeds, candidates = author_names(seed_authors), author_names(candidate_authors)
+    if not seeds or not candidates:
+        return 0.0, False
+    scores = []
+    for seed_name in seeds[:6]:
+        seed_surname = surname(seed_name)
+        best = 0.0
+        for candidate_name in candidates:
+            candidate_surname = surname(candidate_name)
+            if seed_surname and seed_surname == candidate_surname:
+                best = 1.0
+                break
+            best = max(best, similarity(seed_name, candidate_name))
+        scores.append(best)
+    return sum(scores) / len(scores), True
+
+
+def work_arxiv_ids(work: dict) -> set[str]:
+    values: list[object] = [work.get("doi"), work.get("id")]
+    for location in [work.get("primary_location"), *(work.get("locations") or [])]:
+        if isinstance(location, dict):
+            values.extend([location.get("landing_page_url"), location.get("pdf_url")])
+    result = {clean_arxiv(value) for value in values if extract_arxiv(value)}
+    return {value for value in result if value}
+
+
+def work_author_names(work: dict) -> list[str]:
+    return [
+        str((authorship.get("author") or {}).get("display_name") or "").strip()
+        for authorship in work.get("authorships") or []
+        if str((authorship.get("author") or {}).get("display_name") or "").strip()
+    ]
+
+
+def candidate_evidence(seed: dict, work: dict, method: str) -> dict:
+    seed_doi = clean_doi(seed.get("doi"))
+    candidate_doi = clean_doi(work.get("doi"))
+    seed_arxiv = clean_arxiv(seed.get("arxivId"))
+    candidate_arxiv = work_arxiv_ids(work)
+    doi_exact = bool(seed_doi and candidate_doi and seed_doi == candidate_doi)
+    arxiv_exact = bool(seed_arxiv and seed_arxiv in candidate_arxiv)
+    title_score = similarity(seed.get("title"), work.get("title"))
+    author_score, has_author_evidence = author_similarity(seed.get("authors"), work_author_names(work))
+    seed_year_value = seed.get("year")
+    candidate_year = work.get("publication_year")
+    has_year_evidence = bool(seed_year_value and candidate_year)
+    try:
+        year_delta = abs(int(seed_year_value) - int(candidate_year)) if has_year_evidence else None
+    except (TypeError, ValueError):
+        year_delta = None
+        has_year_evidence = False
+    year_score = 1.0 if year_delta == 0 else (0.5 if year_delta == 1 else 0.0)
+
+    warnings: list[str] = []
+    if seed.get("openAlexId") and str(seed.get("openAlexId")).rstrip("/").split("/")[-1] == str(work.get("id") or "").rstrip("/").split("/")[-1]:
+        if title_score < 0.72:
+            warnings.append("stored-openalex-id-title-conflict")
+        if has_author_evidence and author_score < 0.30:
+            warnings.append("stored-openalex-id-author-conflict")
+        if has_year_evidence and year_score == 0:
+            warnings.append("stored-openalex-id-year-conflict")
+
+    if doi_exact:
+        verification, confidence = "exact-doi", 0.995
+    elif arxiv_exact:
+        verification, confidence = "exact-arxiv", 0.99
+    else:
+        confidence = 0.76 * title_score
+        confidence += 0.16 * (author_score if has_author_evidence else 0.5)
+        confidence += 0.08 * (year_score if has_year_evidence else 0.5)
+        support = (has_author_evidence and author_score >= 0.55) or (has_year_evidence and year_score >= 0.5)
+        verification = "composite" if title_score >= 0.88 and (support or title_score >= 0.96) else "unverified"
+    if warnings and not (doi_exact or arxiv_exact):
+        verification = "conflict"
+
+    return {
+        "method": method,
+        "confidence": round(float(confidence), 4),
+        "verification": verification,
+        "verified": verification in VERIFIED_REASONS,
+        "identifierMatch": "doi" if doi_exact else ("arxiv" if arxiv_exact else ""),
+        "titleScore": round(title_score, 4),
+        "authorScore": round(author_score, 4),
+        "yearScore": round(year_score, 4),
+        "hasAuthorEvidence": has_author_evidence,
+        "hasYearEvidence": has_year_evidence,
+        "seedTitle": seed.get("title") or "",
+        "candidateTitle": work.get("title") or "",
+        "seedAuthors": author_names(seed.get("authors"))[:12],
+        "candidateAuthors": work_author_names(work)[:12],
+        "seedYear": seed_year_value,
+        "candidateYear": candidate_year,
+        "seedDoi": seed_doi,
+        "candidateDoi": candidate_doi,
+        "seedArxivId": seed_arxiv,
+        "candidateArxivIds": sorted(candidate_arxiv),
+        "candidateOpenAlexId": work.get("id") or "",
+        "warnings": warnings,
+    }
+
+
+def match_is_accepted(match: dict, threshold: float) -> bool:
+    return bool(match.get("verified")) and float(match.get("confidence") or 0) >= threshold
+
+
 def request_json(url: str, retries: int = 3) -> dict:
     mailto = os.environ.get("OPENALEX_MAILTO", "").strip()
     if mailto and "api.openalex.org" in url:
         url += ("&" if "?" in url else "?") + "mailto=" + urllib.parse.quote(mailto)
-    headers = {"User-Agent": "Research-Library-Metadata-Updater/5.2"}
+    headers = {"User-Agent": "Research-Library-Metadata-Updater/5.3"}
     last_error: Exception | None = None
     for attempt in range(retries):
         try:
@@ -105,36 +266,82 @@ def request_json(url: str, retries: int = 3) -> dict:
 
 
 def openalex_work(seed: dict) -> tuple[dict | None, dict]:
+    """Return the strongest candidate, but never trust a stored ID by itself."""
+    candidates: dict[str, tuple[dict, str]] = {}
+    errors: list[str] = []
+
+    def add(work: dict | None, method: str) -> None:
+        if not isinstance(work, dict):
+            return
+        key = str(work.get("id") or work.get("doi") or work.get("title") or len(candidates))
+        previous = candidates.get(key)
+        if previous is None or method.startswith("doi"):
+            candidates[key] = (work, method)
+
     openalex_id = str(seed.get("openAlexId") or "").strip()
     if openalex_id:
         work_id = openalex_id.rstrip("/").split("/")[-1]
-        return request_json(f"{OPENALEX}/works/{urllib.parse.quote(work_id)}"), {
-            "method": "openalex-id",
-            "confidence": 1.0,
-        }
+        try:
+            add(request_json(f"{OPENALEX}/works/{urllib.parse.quote(work_id)}"), "openalex-id-revalidated")
+        except Exception as exc:
+            errors.append(f"stored OpenAlex ID failed: {exc}")
 
     doi = clean_doi(seed.get("doi"))
     if doi:
-        encoded = urllib.parse.quote(f"https://doi.org/{doi}", safe="")
-        results = request_json(f"{OPENALEX}/works?filter=doi:{encoded}&per_page=1").get("results") or []
-        if results:
-            return results[0], {"method": "doi-exact", "confidence": 0.99}
+        try:
+            encoded = urllib.parse.quote(f"https://doi.org/{doi}", safe="")
+            results = request_json(f"{OPENALEX}/works?filter=doi:{encoded}&per_page=3").get("results") or []
+            for work in results:
+                add(work, "doi-query")
+        except Exception as exc:
+            errors.append(f"DOI query failed: {exc}")
 
-    arxiv_id = str(seed.get("arxivId") or "").strip()
+    arxiv_id = clean_arxiv(seed.get("arxivId"))
     title = str(seed.get("title") or "").strip()
-    query = arxiv_id or title
-    if not query:
-        return None, {"method": "no-query", "confidence": 0.0}
-    results = request_json(f"{OPENALEX}/works?search={urllib.parse.quote(query)}&per_page=5").get("results") or []
-    if not results:
-        return None, {"method": "no-result", "confidence": 0.0}
-    ranked = sorted(results, key=lambda work: similarity(title, work.get("title")), reverse=True)
-    score = similarity(title, ranked[0].get("title"))
+    queries = []
     if arxiv_id:
-        return ranked[0], {"method": "arxiv-search", "confidence": max(0.93, score)}
-    if score < 0.45:
-        return None, {"method": "title-search", "confidence": score}
-    return ranked[0], {"method": "title-search", "confidence": score}
+        queries.append((arxiv_id, "arxiv-search"))
+    if title:
+        queries.append((title, "title-search"))
+    seen_queries: set[str] = set()
+    for query, method in queries:
+        if query.casefold() in seen_queries:
+            continue
+        seen_queries.add(query.casefold())
+        try:
+            results = request_json(f"{OPENALEX}/works?search={urllib.parse.quote(query)}&per_page=10").get("results") or []
+            for work in results:
+                add(work, method)
+        except Exception as exc:
+            errors.append(f"{method} failed: {exc}")
+
+    if not candidates:
+        method = "no-query" if not (openalex_id or doi or arxiv_id or title) else "no-result"
+        return None, {
+            "method": method,
+            "confidence": 0.0,
+            "verification": "unverified",
+            "verified": False,
+            "warnings": errors,
+        }
+
+    ranked: list[tuple[dict, dict]] = []
+    for work, method in candidates.values():
+        evidence = candidate_evidence(seed, work, method)
+        ranked.append((work, evidence))
+    ranked.sort(
+        key=lambda row: (
+            bool(row[1].get("verified")),
+            row[1].get("verification") in {"exact-doi", "exact-arxiv"},
+            float(row[1].get("confidence") or 0),
+            float(row[1].get("titleScore") or 0),
+        ),
+        reverse=True,
+    )
+    work, match = ranked[0]
+    if errors:
+        match["warnings"] = [*(match.get("warnings") or []), *errors]
+    return work, match
 
 
 def crossref_work(seed: dict) -> tuple[dict | None, dict]:
@@ -143,7 +350,20 @@ def crossref_work(seed: dict) -> tuple[dict | None, dict]:
         return None, {"method": "no-doi", "confidence": 0.0}
     try:
         message = request_json(f"{CROSSREF}/works/{urllib.parse.quote(doi)}").get("message")
-        return message, {"method": "doi-crossref", "confidence": 0.98}
+        candidate_doi = clean_doi((message or {}).get("DOI"))
+        exact = bool(candidate_doi and candidate_doi == doi)
+        return message, {
+            "method": "doi-crossref",
+            "confidence": 0.995 if exact else 0.0,
+            "verification": "exact-doi" if exact else "conflict",
+            "verified": exact,
+            "identifierMatch": "doi" if exact else "",
+            "seedDoi": doi,
+            "candidateDoi": candidate_doi,
+            "seedTitle": seed.get("title") or "",
+            "candidateTitle": ((message or {}).get("title") or [""])[0],
+            "warnings": [] if exact else ["crossref-doi-conflict"],
+        }
     except Exception:
         return None, {"method": "crossref-failed", "confidence": 0.0}
 
@@ -232,6 +452,8 @@ def normalize_openalex(work: dict, previous: dict, seed: dict, match: dict) -> d
         "metadataSource": "OpenAlex",
         "matchMethod": match["method"],
         "matchConfidence": round(float(match["confidence"]), 4),
+        "matchVerification": match.get("verification") or "unverified",
+        "matchEvidence": {key: value for key, value in match.items() if key not in {"method", "confidence", "verified"}},
         "matchedFromPdf": bool(seed.get("fromHistoricalPdf")),
         "updatedAt": stamp,
         "metadataError": "",
@@ -276,6 +498,8 @@ def normalize_crossref(message: dict, previous: dict, seed: dict, match: dict) -
         "metadataSource": "Crossref",
         "matchMethod": match["method"],
         "matchConfidence": round(float(match["confidence"]), 4),
+        "matchVerification": match.get("verification") or "unverified",
+        "matchEvidence": {key: value for key, value in match.items() if key not in {"method", "confidence", "verified"}},
         "matchedFromPdf": bool(seed.get("fromHistoricalPdf")),
         "updatedAt": stamp,
         "metadataError": "",
@@ -286,12 +510,17 @@ def normalize_crossref(message: dict, previous: dict, seed: dict, match: dict) -
 
 def resolve(seed: dict, previous: dict) -> tuple[dict | None, dict]:
     work, match = openalex_work(seed)
-    if work:
+    if work and match.get("verified"):
         return normalize_openalex(work, previous, seed, match), match
     message, crossref_match = crossref_work(seed)
-    if message:
+    if message and crossref_match.get("verified"):
         return normalize_crossref(message, previous, seed, crossref_match), crossref_match
-    return None, match
+    # Keep the strongest unverified OpenAlex candidate for the review report,
+    # without merging it into the item.
+    if work:
+        candidate = normalize_openalex(work, {}, seed, match)
+        return candidate, match
+    return None, match if match.get("confidence", 0) >= crossref_match.get("confidence", 0) else crossref_match
 
 
 def name_list(value: object) -> list[str]:
@@ -362,15 +591,43 @@ def build_paper_card(item: dict, scholarly: dict, source: str) -> dict:
 def item_seed(item: dict) -> dict:
     scholarly = item.get("scholarly") or {}
     card = item.get("paperCard") if isinstance(item.get("paperCard"), dict) else {}
-    raw_title = card.get("title") or scholarly.get("title") or item.get("title") or Path(str(item.get("filename") or "")).stem
+    verification = scholarly.get("metadataVerification") or {}
+    review_status = str((scholarly.get("metadataReview") or {}).get("status") or "")
+    trusted_scholarly = review_status == "accepted-manually" or verification.get("status") == "verified"
+    frozen_at = int(card.get("frozenAt") or 0)
+    updated_at = int(card.get("updatedAt") or 0)
+    card_source = str(card.get("source") or "")
+    card_manually_maintained = bool(card) and (
+        review_status == "accepted-manually"
+        or (updated_at and frozen_at and updated_at > frozen_at)
+        or card_source not in {"backfill-auto", "metadata-first-match", "upload-metadata"}
+    )
+    source_label = (
+        card.get("title") if card_manually_maintained else None
+    ) or item.get("title") or Path(str(item.get("filename") or "")).stem or card.get("title") or scholarly.get("title")
+    raw_title = source_label or scholarly.get("title") or ""
+    title = clean_library_title(raw_title)
+    guessed_author, guessed_year = filename_author_year(item.get("filename") or item.get("title") or "")
     combined = " ".join(str(item.get(key) or "") for key in ("title", "filename", "desc"))
-    card_authors = [{"name": name} for name in name_list(card.get("authors") or [])]
+    card_authors = [{"name": name} for name in name_list(card.get("authors") or [])] if card_manually_maintained else []
+    known_authors = card_authors or (scholarly.get("authors") or [] if trusted_scholarly else [])
+    if not known_authors and guessed_author:
+        known_authors = [{"name": guessed_author}]
+    doi = clean_doi(card.get("doi")) if card_manually_maintained else ""
+    arxiv_id = str(card.get("arxivId") or "") if card_manually_maintained else ""
+    if trusted_scholarly:
+        doi = doi or clean_doi(scholarly.get("doi"))
+        arxiv_id = arxiv_id or str(scholarly.get("arxivId") or "")
     return {
-        "title": "" if generic_title(raw_title) else raw_title,
-        "doi": clean_doi(card.get("doi") or scholarly.get("doi") or item.get("doi") or extract_doi(combined)),
-        "arxivId": card.get("arxivId") or scholarly.get("arxivId") or extract_arxiv(combined),
+        "title": "" if generic_title(title) else title,
+        "doi": doi or clean_doi(item.get("doi") or extract_doi(combined)),
+        "arxivId": arxiv_id or extract_arxiv(combined),
         "openAlexId": scholarly.get("openAlexId") or "",
-        "authors": card_authors or scholarly.get("authors") or [],
+        "authors": known_authors,
+        "year": (card.get("year") if card_manually_maintained else None)
+        or (scholarly.get("year") if trusted_scholarly else None)
+        or guessed_year
+        or seed_year(combined),
         "abstract": scholarly.get("abstract") or item.get("desc") or "",
         "keywords": scholarly.get("keywords") or item.get("tags") or [],
     }
@@ -380,11 +637,16 @@ def incomplete(item: dict) -> bool:
     if str(item.get("kind") or "").lower() not in {"pdf", ""}:
         return False
     scholarly = item.get("scholarly") or {}
-    review_status = str((scholarly.get("metadataReview") or {}).get("status") or "")
-    if review_status.startswith("accepted"):
+    review = scholarly.get("metadataReview") or {}
+    review_status = str(review.get("status") or "")
+    verification = scholarly.get("metadataVerification") or {}
+    if review_status == "accepted-manually":
+        return False
+    if verification.get("status") == "verified" and verification.get("reason") in VERIFIED_REASONS:
         return False
     return bool(
-        not scholarly.get("metadataSource")
+        review_status == "accepted-auto"
+        or not scholarly.get("metadataSource")
         or scholarly.get("metadataError")
         or not scholarly.get("authors")
         or (not scholarly.get("doi") and not scholarly.get("arxivId"))
@@ -402,7 +664,7 @@ def raw_storage_url(storage: dict) -> str:
 
 
 def read_remote_bytes(url: str, max_bytes: int, github_token: str = "") -> bytes:
-    headers = {"User-Agent": "Research-Library-Metadata-Updater/5.2"}
+    headers = {"User-Agent": "Research-Library-Metadata-Updater/5.3"}
     if github_token and ("githubusercontent.com" in url or "api.github.com" in url):
         headers["Authorization"] = f"Bearer {github_token}"
     request = urllib.request.Request(url, headers=headers)
@@ -490,7 +752,8 @@ def extract_pdf_seed(item: dict, repo_root: Path, pages: int, max_pdf_mb: int, g
     text = "\n".join(page_texts)
     metadata_title = str(metadata.get("/Title") or "").strip()
     existing = item_seed(item)
-    title = metadata_title if not generic_title(metadata_title) else existing.get("title") or guess_first_page_title(page_texts[0] if page_texts else "")
+    first_page_title = guess_first_page_title(page_texts[0] if page_texts else "")
+    title = metadata_title if not generic_title(metadata_title) else first_page_title or existing.get("title")
     combined = " ".join(
         [
             text,
@@ -509,6 +772,7 @@ def extract_pdf_seed(item: dict, repo_root: Path, pages: int, max_pdf_mb: int, g
         "doi": extract_doi(combined) or existing.get("doi") or "",
         "arxivId": extract_arxiv(combined) or existing.get("arxivId") or "",
         "authors": parse_authors(metadata.get("/Author")) or existing.get("authors") or [],
+        "year": seed_year(text) or existing.get("year"),
         "abstract": abstract_match.group(1).strip() if abstract_match else existing.get("abstract") or "",
         "keywords": [part.strip() for part in re.split(r"[,;；]", str(metadata.get("/Keywords") or "")) if part.strip()],
         "fromHistoricalPdf": True,
@@ -519,19 +783,67 @@ def extract_pdf_seed(item: dict, repo_root: Path, pages: int, max_pdf_mb: int, g
 
 
 def apply_match(item: dict, resolved: dict, match: dict, stage: str) -> None:
+    stamp = now_ms()
+    previous_review = ((item.get("scholarly") or {}).get("metadataReview") or {})
+    manually_accepted = previous_review.get("status") == "accepted-manually"
     review = {
-        "status": "accepted-auto",
+        "status": "accepted-manually" if manually_accepted else "accepted-auto",
         "confidence": round(float(match.get("confidence") or 0), 4),
         "method": match.get("method") or "",
         "stage": stage,
-        "reviewedAt": now_ms(),
+        "verification": match.get("verification") or "unverified",
+        "evidence": {key: value for key, value in match.items() if key not in {"method", "confidence", "verified"}},
+        "reviewedAt": previous_review.get("reviewedAt") if manually_accepted else stamp,
+        "autoVerifiedAt": stamp,
     }
-    scholarly = {**resolved["scholarly"], "metadataReview": review}
+    verification = {
+        "status": "verified",
+        "reason": match.get("verification") or "",
+        "confidence": round(float(match.get("confidence") or 0), 4),
+        "method": match.get("method") or "",
+        "stage": stage,
+        "verifiedAt": stamp,
+        "warnings": match.get("warnings") or [],
+    }
+    scholarly = {**resolved["scholarly"], "metadataReview": review, "metadataVerification": verification}
     item["scholarly"] = scholarly
     item["citations"] = resolved["citations"]
     # Core v5 invariant: initialize once, never refresh or overwrite a user card.
     if not isinstance(item.get("paperCard"), dict):
         item["paperCard"] = build_paper_card(item, scholarly, "backfill-auto" if stage == "pdf" else "metadata-first-match")
+
+
+def mark_review_required(item: dict, match: dict, stage: str, resolved: dict | None, message: str) -> None:
+    """Record a conflict without merging the candidate or touching citations/card."""
+    scholarly = item.setdefault("scholarly", {})
+    previous_review = scholarly.get("metadataReview") or {}
+    candidate = (resolved or {}).get("scholarly") or {}
+    stamp = now_ms()
+    scholarly["metadataReview"] = {
+        "status": "review-required",
+        "previousStatus": previous_review.get("status") or "",
+        "confidence": round(float(match.get("confidence") or 0), 4),
+        "method": match.get("method") or "",
+        "stage": stage,
+        "verification": match.get("verification") or "unverified",
+        "message": message,
+        "candidate": {
+            "title": candidate.get("title") or match.get("candidateTitle") or "",
+            "doi": candidate.get("doi") or match.get("candidateDoi") or "",
+            "openAlexId": candidate.get("openAlexId") or match.get("candidateOpenAlexId") or "",
+            "authors": author_names(candidate.get("authors"))[:12],
+            "year": candidate.get("year") or match.get("candidateYear"),
+        },
+        "evidence": {key: value for key, value in match.items() if key not in {"method", "confidence", "verified"}},
+        "reviewedAt": stamp,
+    }
+    scholarly["metadataVerification"] = {
+        "status": "conflict" if match.get("verification") == "conflict" else "unverified",
+        "reason": match.get("verification") or "unverified",
+        "confidence": round(float(match.get("confidence") or 0), 4),
+        "checkedAt": stamp,
+        "warnings": match.get("warnings") or [],
+    }
 
 
 def record_scan(item: dict, status: str, match: dict, stage: str, message: str = "") -> None:
@@ -540,6 +852,7 @@ def record_scan(item: dict, status: str, match: dict, stage: str, message: str =
         "status": status,
         "confidence": round(float(match.get("confidence") or 0), 4),
         "method": match.get("method") or "",
+        "verification": match.get("verification") or "unverified",
         "stage": stage,
         "message": message,
         "scannedAt": now_ms(),
@@ -554,10 +867,20 @@ def report_row(item: dict, status: str, match: dict, stage: str, resolved: dict 
         "status": status,
         "confidence": round(float(match.get("confidence") or 0), 4),
         "method": match.get("method") or "",
+        "verification": match.get("verification") or "unverified",
+        "verified": bool(match.get("verified")),
         "stage": stage,
-        "matchedTitle": scholarly.get("title") or "",
+        "candidateTitle": scholarly.get("title") or match.get("candidateTitle") or "",
+        "currentTitle": ((item.get("scholarly") or {}).get("title") or ""),
         "doi": scholarly.get("doi") or "",
-        "authors": [author.get("name") or "" for author in scholarly.get("authors") or []][:12],
+        "openAlexId": scholarly.get("openAlexId") or match.get("candidateOpenAlexId") or "",
+        "authors": author_names(scholarly.get("authors"))[:12],
+        "year": scholarly.get("year") or match.get("candidateYear"),
+        "identifierMatch": match.get("identifierMatch") or "",
+        "titleScore": match.get("titleScore"),
+        "authorScore": match.get("authorScore"),
+        "yearScore": match.get("yearScore"),
+        "warnings": match.get("warnings") or [],
         "message": message,
     }
 
@@ -569,18 +892,25 @@ def run_daily(items: list[dict], threshold: float, max_items: int | None) -> tup
     for item in items:
         if str(item.get("kind") or "").lower() not in {"pdf", ""}:
             continue
+        if str((((item.get("scholarly") or {}).get("metadataReview") or {}).get("status") or "")) == "accepted-manually":
+            continue
         if max_items is not None and processed >= max_items:
             break
         processed += 1
         try:
             seed = item_seed(item)
             resolved, match = resolve(seed, item.get("scholarly") or {})
-            if resolved and float(match.get("confidence") or 0) >= threshold:
+            if resolved and match_is_accepted(match, threshold):
                 apply_match(item, resolved, match, "index")
                 updated += 1
                 report.append(report_row(item, "accepted", match, "index", resolved))
             else:
-                report.append(report_row(item, "unmatched", match, "index", resolved, "No reliable daily match"))
+                old_auto = str((((item.get("scholarly") or {}).get("metadataReview") or {}).get("status") or "")) == "accepted-auto"
+                status = "review" if resolved or old_auto or match.get("verification") == "conflict" else "unmatched"
+                message = "Existing automatic match could not be reverified" if old_auto else "No identity-verified daily match"
+                if status == "review":
+                    mark_review_required(item, match, "index", resolved, message)
+                report.append(report_row(item, status, match, "index", resolved, message))
         except Exception as exc:
             report.append(report_row(item, "error", {"method": "error", "confidence": 0}, "index", None, str(exc)))
         time.sleep(0.12)
@@ -607,7 +937,7 @@ def run_backfill(
         first_match = {"method": "no-query", "confidence": 0.0}
         try:
             first_resolved, first_match = resolve(item_seed(item), item.get("scholarly") or {})
-            if first_resolved and float(first_match.get("confidence") or 0) >= threshold:
+            if first_resolved and match_is_accepted(first_match, threshold):
                 apply_match(item, first_resolved, first_match, "index")
                 record_scan(item, "accepted", first_match, "index")
                 updated += 1
@@ -623,7 +953,7 @@ def run_backfill(
         try:
             pdf_seed = extract_pdf_seed(item, repo_root, pages, max_pdf_mb, github_token)
             resolved, match = resolve(pdf_seed, item.get("scholarly") or {})
-            if resolved and float(match.get("confidence") or 0) >= threshold:
+            if resolved and match_is_accepted(match, threshold):
                 resolved["scholarly"].update(
                     {
                         "pdfPages": pdf_seed.get("pdfPages"),
@@ -635,8 +965,10 @@ def run_backfill(
                 updated += 1
                 report.append(report_row(item, "accepted", match, "pdf", resolved))
             elif resolved:
-                record_scan(item, "review", match, "pdf", "Below automatic acceptance threshold")
-                report.append(report_row(item, "review", match, "pdf", resolved, "Below automatic acceptance threshold"))
+                message = "PDF candidate lacks sufficient identity evidence"
+                mark_review_required(item, match, "pdf", resolved, message)
+                record_scan(item, "review", match, "pdf", message)
+                report.append(report_row(item, "review", match, "pdf", resolved, message))
             else:
                 local_candidate = {
                     "scholarly": {
@@ -647,11 +979,13 @@ def run_backfill(
                     }
                 }
                 message = "PDF parsed but database match was not reliable"
+                mark_review_required(item, match, "pdf", local_candidate, message)
                 record_scan(item, "review", match, "pdf", message)
                 report.append(report_row(item, "review", match, "pdf", local_candidate, message))
         except Exception as exc:
             if first_resolved:
                 message = f"PDF fallback failed: {exc}"
+                mark_review_required(item, first_match, "index", first_resolved, message)
                 record_scan(item, "review", first_match, "index", message)
                 report.append(report_row(item, "review", first_match, "index", first_resolved, message))
             else:
@@ -668,9 +1002,14 @@ def write_report(path: Path, mode: str, threshold: float, report: list[dict]) ->
         "review": sum(row["status"] == "review" for row in report),
         "unmatched": sum(row["status"] == "unmatched" for row in report),
         "error": sum(row["status"] == "error" for row in report),
+        "conflicts": sum(row.get("verification") == "conflict" for row in report),
+        "pdfParsed": sum(row.get("stage") == "pdf" for row in report),
+        "exactVerified": sum(row.get("verification") in {"exact-doi", "exact-arxiv"} for row in report),
+        "compositeVerified": sum(row.get("verification") == "composite" and row.get("verified") for row in report),
     }
     payload = {
-        "schemaVersion": 1,
+        "schemaVersion": 2,
+        "updaterVersion": "5.3",
         "mode": mode,
         "generatedAt": iso_now(),
         "acceptThreshold": threshold,
@@ -688,7 +1027,7 @@ def main() -> int:
     parser.add_argument("--report", default="data/metadata-review.json")
     parser.add_argument("--accept-threshold", type=float, default=0.78)
     parser.add_argument("--max-items", type=int, default=None)
-    parser.add_argument("--pdf-pages", type=int, default=3)
+    parser.add_argument("--pdf-pages", type=int, default=5)
     parser.add_argument("--max-pdf-mb", type=int, default=95)
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
@@ -718,7 +1057,7 @@ def main() -> int:
         updated, report = run_daily(items, args.accept_threshold, args.max_items)
 
     data["schemaVersion"] = max(5, int(data.get("schemaVersion") or 0))
-    data["appVersion"] = "5.2"
+    data["appVersion"] = "5.3"
     data["paperCardSchemaVersion"] = 1
     data["metadataUpdatedAt"] = now_ms()
     data["metadataUpdatedAtIso"] = iso_now()
@@ -729,7 +1068,7 @@ def main() -> int:
             backup_dir = index_path.parent / "backups"
             backup_dir.mkdir(parents=True, exist_ok=True)
             stamp = dt.datetime.now().strftime("%Y%m%d-%H%M%S")
-            shutil.copy2(index_path, backup_dir / f"index-before-v5-backfill-{stamp}.json")
+            shutil.copy2(index_path, backup_dir / f"index-before-v5.3-backfill-{stamp}.json")
         index_path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         write_report(report_path, args.mode, args.accept_threshold, report)
 
@@ -740,6 +1079,8 @@ def main() -> int:
         "review": sum(row["status"] == "review" for row in report),
         "unmatched": sum(row["status"] == "unmatched" for row in report),
         "errors": sum(row["status"] == "error" for row in report),
+        "conflicts": sum(row.get("verification") == "conflict" for row in report),
+        "verified": sum(bool(row.get("verified")) for row in report),
         "dryRun": args.dry_run,
     }
     print(json.dumps(summary, ensure_ascii=False))
