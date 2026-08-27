@@ -2,16 +2,16 @@
   "schemaVersion": 2,
   "updaterVersion": "5.3",
   "mode": "daily",
-  "generatedAt": "2026-08-26T02:46:17.200932+00:00",
+  "generatedAt": "2026-08-27T11:17:52.381514+00:00",
   "acceptThreshold": 0.78,
   "summary": {
-    "accepted": 99,
+    "accepted": 100,
     "review": 12,
     "unmatched": 18,
     "error": 0,
     "conflicts": 0,
     "pdfParsed": 0,
-    "exactVerified": 83,
+    "exactVerified": 84,
     "compositeVerified": 16
   },
   "results": [
@@ -1491,7 +1491,7 @@
       "stage": "index",
       "candidateTitle": "Necessary conditions for spin-resolved Josephson diode effect across strongly spin-polarized magnetic materials",
       "currentTitle": "Necessary conditions for spin-resolved Josephson diode effect across strongly spin-polarized magnetic materials",
-      "doi": "",
+      "doi": "10.1007/s10909-026-03429-0",
       "openAlexId": "https://openalex.org/W7117631924",
       "authors": [
         "Danilo Nikolić",
@@ -2432,7 +2432,7 @@
       "originalTitle": "Rog2026arXiv-Tapping-mode SQUID-on-tip Microscopy with Proximity Josephson Junction",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2457,7 +2457,6 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -2527,7 +2526,7 @@
       "originalTitle": "Zhang2026PRB-Spin-polarized STM measurement scheme for determining the quantum geometric tensor",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2550,7 +2549,6 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -3692,6 +3690,33 @@
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": "No identity-verified daily match"
+    },
+    {
+      "itemId": "r0l1npdds3mtau77vn",
+      "originalTitle": "Spin triplet pairing by suppressing altermagnetism",
+      "status": "accepted",
+      "confidence": 0.995,
+      "method": "openalex-id-revalidated",
+      "verification": "exact-doi",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Spin triplet pairing by suppressing altermagnetism",
+      "currentTitle": "Spin triplet pairing by suppressing altermagnetism",
+      "doi": "10.1103/gkrn-pbjb",
+      "openAlexId": "https://openalex.org/W7202403141",
+      "authors": [
+        "Anonymous"
+      ],
+      "year": 2026,
+      "identifierMatch": "doi",
+      "titleScore": 1.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
+      "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
     }
   ]
 }
