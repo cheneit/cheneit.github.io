@@ -2,12 +2,12 @@
   "schemaVersion": 2,
   "updaterVersion": "5.3",
   "mode": "daily",
-  "generatedAt": "2026-08-27T11:17:52.381514+00:00",
+  "generatedAt": "2026-08-28T12:53:00.418748+00:00",
   "acceptThreshold": 0.78,
   "summary": {
     "accepted": 100,
     "review": 12,
-    "unmatched": 18,
+    "unmatched": 21,
     "error": 0,
     "conflicts": 0,
     "pdfParsed": 0,
@@ -1484,9 +1484,9 @@
       "itemId": "yaty75eq3ltmjqmv9n2",
       "originalTitle": "Nikolic2025arXiv-Necessary conditions for spin-resolved JDE across strongly spin-polarized magnetic materials",
       "status": "accepted",
-      "confidence": 0.99,
-      "method": "openalex-id-revalidated",
-      "verification": "exact-arxiv",
+      "confidence": 0.995,
+      "method": "doi-query",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Necessary conditions for spin-resolved Josephson diode effect across strongly spin-polarized magnetic materials",
@@ -1499,7 +1499,7 @@
         "Matthias Eschrig"
       ],
       "year": 2025,
-      "identifierMatch": "arxiv",
+      "identifierMatch": "doi",
       "titleScore": 0.9064,
       "authorScore": 1.0,
       "yearScore": 1.0,
@@ -2526,7 +2526,7 @@
       "originalTitle": "Zhang2026PRB-Spin-polarized STM measurement scheme for determining the quantum geometric tensor",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "doi-query",
+      "method": "openalex-id-revalidated",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2549,6 +2549,7 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -3717,6 +3718,81 @@
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
+    },
+    {
+      "itemId": "eb5d5id9v4tmtcjw5nz",
+      "originalTitle": "Supercurrent detection and manipulation",
+      "status": "unmatched",
+      "confidence": 0.0,
+      "method": "no-result",
+      "verification": "unverified",
+      "verified": false,
+      "stage": "index",
+      "candidateTitle": "",
+      "currentTitle": "Supercurrent detection and manipulation of topological phase transitions in Shiba Majorana hybrid systems",
+      "doi": "",
+      "openAlexId": "",
+      "authors": [],
+      "year": null,
+      "identifierMatch": "",
+      "titleScore": null,
+      "authorScore": null,
+      "yearScore": null,
+      "warnings": [
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": "No identity-verified daily match"
+    },
+    {
+      "itemId": "3hhubbwr9gcmtck7pqh",
+      "originalTitle": "Majorana signatures in an asymmetrically coupled quantum dot",
+      "status": "unmatched",
+      "confidence": 0.0,
+      "method": "no-result",
+      "verification": "unverified",
+      "verified": false,
+      "stage": "index",
+      "candidateTitle": "",
+      "currentTitle": "Majorana signatures in an asymmetrically coupled quantum dot topological superconducting nanowire junction",
+      "doi": "",
+      "openAlexId": "",
+      "authors": [],
+      "year": null,
+      "identifierMatch": "",
+      "titleScore": null,
+      "authorScore": null,
+      "yearScore": null,
+      "warnings": [
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": "No identity-verified daily match"
+    },
+    {
+      "itemId": "pot8das44wmtckjmdk",
+      "originalTitle": "Multi-orbital physics in inverse Lieb lattice altermagnets",
+      "status": "unmatched",
+      "confidence": 0.0,
+      "method": "no-result",
+      "verification": "unverified",
+      "verified": false,
+      "stage": "index",
+      "candidateTitle": "",
+      "currentTitle": "Multi orbital physics in inverse Lieb lattice altermagnets",
+      "doi": "",
+      "openAlexId": "",
+      "authors": [],
+      "year": null,
+      "identifierMatch": "",
+      "titleScore": null,
+      "authorScore": null,
+      "yearScore": null,
+      "warnings": [
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": "No identity-verified daily match"
     }
   ]
 }
