@@ -43954,6 +43954,137 @@
           "starred": false
         }
       }
+    },
+    {
+      "id": "pot8das44wmtckjmdk",
+      "title": "Multi-orbital physics in inverse Lieb lattice altermagnets",
+      "filename": "Roig2026-Multi-orbital physics in inverse Lieb lattice altermagnets.pdf",
+      "path": "",
+      "kind": "pdf",
+      "topics": [
+        "Altermagnet"
+      ],
+      "topic": "Altermagnet",
+      "tags": [
+        "refs_update"
+      ],
+      "ts": 1787898407459,
+      "createdTs": 1787898407459,
+      "size": 4261200,
+      "desc": "a detailed study on XV2Se2O, which could give some high attention to it.",
+      "imagePath": "",
+      "storage": null,
+      "uploadStatus": "pdf_pending",
+      "uploadError": "",
+      "imageUploadError": "",
+      "groups": [],
+      "scholarly": {
+        "title": "Multi orbital physics in inverse Lieb lattice altermagnets",
+        "doi": "",
+        "arxivId": "2608.27200",
+        "authors": [
+          {
+            "name": "Mercè Roig"
+          },
+          {
+            "name": "Jannik Gondolf"
+          },
+          {
+            "name": "Andreas Kreisel"
+          },
+          {
+            "name": "Brian M. Andersen"
+          },
+          {
+            "name": "Daniel F. Agterberg"
+          }
+        ],
+        "institutions": [],
+        "venue": "",
+        "year": null,
+        "publicationDate": "",
+        "abstract": "",
+        "automaticTopics": [],
+        "keywords": [],
+        "metadataSource": "PDF-local",
+        "matchMethod": "local-only",
+        "matchConfidence": 0,
+        "matchVerification": "unverified",
+        "matchVerified": false,
+        "matchedFromPdf": false,
+        "updatedAt": 1787898407459,
+        "metadataError": "未在 OpenAlex/Crossref 中可靠匹配，请在编辑条目中补充 DOI 或题名。",
+        "citations": {
+          "count": 0,
+          "source": "",
+          "updatedAt": 0
+        },
+        "pdfPages": 21,
+        "localExtractedAt": 1787898400184,
+        "metadataVerification": {
+          "status": "unverified",
+          "reason": "unverified",
+          "confidence": 0,
+          "method": "local-only",
+          "stage": "upload",
+          "checkedAt": 1787898407459,
+          "warnings": []
+        },
+        "metadataReview": {
+          "status": "review-required",
+          "confidence": 0,
+          "method": "local-only",
+          "stage": "upload",
+          "verification": "unverified",
+          "evidence": {},
+          "reviewedAt": 1787898407459
+        }
+      },
+      "citations": {
+        "count": 0,
+        "source": "",
+        "updatedAt": 0
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1787898407460,
+        "updatedAt": 1787898407460,
+        "source": "upload-auto",
+        "title": "Multi orbital physics in inverse Lieb lattice altermagnets",
+        "authors": [
+          "Mercè Roig",
+          "Jannik Gondolf",
+          "Andreas Kreisel",
+          "Brian M. Andersen",
+          "Daniel F. Agterberg"
+        ],
+        "affiliations": [],
+        "publicationStatus": "preprint",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "2608.27200",
+        "citationKey": "Roig2026multi",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "https://arxiv.org/abs/2608.27200",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "a detailed study on XV2Se2O, which could give some high attention to it.",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     }
   ],
   "historicalMetadataUpdatedAt": 1787560753289,
