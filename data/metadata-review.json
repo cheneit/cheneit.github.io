@@ -2,17 +2,17 @@
   "schemaVersion": 2,
   "updaterVersion": "5.3",
   "mode": "daily",
-  "generatedAt": "2026-08-30T06:45:25.182917+00:00",
+  "generatedAt": "2026-08-31T07:07:59.262250+00:00",
   "acceptThreshold": 0.78,
   "summary": {
     "accepted": 100,
     "review": 12,
-    "unmatched": 21,
+    "unmatched": 22,
     "error": 0,
     "conflicts": 0,
     "pdfParsed": 0,
-    "exactVerified": 84,
-    "compositeVerified": 16
+    "exactVerified": 86,
+    "compositeVerified": 14
   },
   "results": [
     {
@@ -285,9 +285,9 @@
       "itemId": "dkh6j67ypz7mio4g9pa",
       "originalTitle": "Cayao2025arXiv-Nonlocal JDE in minimal Kitaev chains",
       "status": "accepted",
-      "confidence": 1.0,
-      "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "confidence": 0.995,
+      "method": "doi-query",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Spin-polarized Andreev molecules and anomalous nonlocal Josephson effects in altermagnetic junctions",
@@ -299,7 +299,7 @@
         "Jorge Cayao"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
@@ -2350,7 +2350,7 @@
       "originalTitle": "Fu2025arXiv-Floquet engineering spin triplet states in unconventional magnets",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "doi-query",
+      "method": "openalex-id-revalidated",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2371,6 +2371,7 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -2404,7 +2405,7 @@
       "originalTitle": "Liu2026arXiv-Tunable two-dimensional Dirac-Weyl Semimetal Phase induced by Altermagnetism",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "doi-query",
+      "method": "openalex-id-revalidated",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2423,6 +2424,7 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -2432,7 +2434,7 @@
       "originalTitle": "Rog2026arXiv-Tapping-mode SQUID-on-tip Microscopy with Proximity Josephson Junction",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "doi-query",
+      "method": "openalex-id-revalidated",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2457,6 +2459,7 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -2644,9 +2647,9 @@
       "itemId": "p1swpuz8pfdmmiqklqm",
       "originalTitle": "Mondal2026arXiv-Spin polarized Andreev molecules and anomalous nonlocal Josephson effects in altermagnetic junctions",
       "status": "accepted",
-      "confidence": 1.0,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Spin-polarized Andreev molecules and anomalous nonlocal Josephson effects in altermagnetic junctions",
@@ -2658,11 +2661,12 @@
         "Jorge Cayao"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -3785,6 +3789,31 @@
       "stage": "index",
       "candidateTitle": "",
       "currentTitle": "Multi orbital physics in inverse Lieb lattice altermagnets",
+      "doi": "",
+      "openAlexId": "",
+      "authors": [],
+      "year": null,
+      "identifierMatch": "",
+      "titleScore": null,
+      "authorScore": null,
+      "yearScore": null,
+      "warnings": [
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": "No identity-verified daily match"
+    },
+    {
+      "itemId": "hz5vm8e0erbmtfh7ioa",
+      "originalTitle": "Switchable heavy hole/light hole spin qubit",
+      "status": "unmatched",
+      "confidence": 0.0,
+      "method": "no-result",
+      "verification": "unverified",
+      "verified": false,
+      "stage": "index",
+      "candidateTitle": "",
+      "currentTitle": "Switchable heavy hole/light hole spin qubit",
       "doi": "",
       "openAlexId": "",
       "authors": [],
