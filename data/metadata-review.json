@@ -2,16 +2,16 @@
   "schemaVersion": 2,
   "updaterVersion": "5.3",
   "mode": "daily",
-  "generatedAt": "2026-08-31T07:07:59.262250+00:00",
+  "generatedAt": "2026-09-01T06:23:32.541012+00:00",
   "acceptThreshold": 0.78,
   "summary": {
-    "accepted": 100,
+    "accepted": 102,
     "review": 12,
     "unmatched": 22,
     "error": 0,
     "conflicts": 0,
     "pdfParsed": 0,
-    "exactVerified": 86,
+    "exactVerified": 88,
     "compositeVerified": 14
   },
   "results": [
@@ -2350,7 +2350,7 @@
       "originalTitle": "Fu2025arXiv-Floquet engineering spin triplet states in unconventional magnets",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2371,7 +2371,6 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -2405,7 +2404,7 @@
       "originalTitle": "Liu2026arXiv-Tunable two-dimensional Dirac-Weyl Semimetal Phase induced by Altermagnetism",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2424,7 +2423,6 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -3827,6 +3825,64 @@
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": "No identity-verified daily match"
+    },
+    {
+      "itemId": "nihwhihdxxmthayhvh",
+      "originalTitle": "Unconventional Floquet Quantum Spin Hall Effect in TwoDimensional Altermagnets",
+      "status": "accepted",
+      "confidence": 0.995,
+      "method": "doi-crossref",
+      "verification": "exact-doi",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Unconventional\nFloquet Quantum Spin Hall Effect in\nTwo-Dimensional Altermagnets",
+      "currentTitle": "Unconventional\nFloquet Quantum Spin Hall Effect in\nTwo-Dimensional Altermagnets",
+      "doi": "10.1021/acs.nanolett.6c02856",
+      "openAlexId": "",
+      "authors": [
+        "Xiaoran Feng",
+        "Xiaohan Xie",
+        "Baibiao Huang",
+        "Ying Dai",
+        "Chengwang Niu"
+      ],
+      "year": 2026,
+      "identifierMatch": "doi",
+      "titleScore": null,
+      "authorScore": null,
+      "yearScore": null,
+      "warnings": [],
+      "message": ""
+    },
+    {
+      "itemId": "93lr4jgqtsmthbog5p",
+      "originalTitle": "Absence of quasi-Majorana False Positives in Full-Shell Hybrid Nanowires",
+      "status": "accepted",
+      "confidence": 0.995,
+      "method": "openalex-id-revalidated",
+      "verification": "exact-doi",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Absence of Quasi-Majorana False Positives in Full-Shell Hybrid Nanowires",
+      "currentTitle": "Absence of Quasi-Majorana False Positives in Full-Shell Hybrid Nanowires",
+      "doi": "10.1103/w9tp-3bbq",
+      "openAlexId": "https://openalex.org/W7196954032",
+      "authors": [
+        "Anonymous",
+        "Cesar Robles",
+        "Pablo San-José",
+        "Elsa Prada"
+      ],
+      "year": 2026,
+      "identifierMatch": "doi",
+      "titleScore": 1.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
+      "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
     }
   ]
 }
