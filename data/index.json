@@ -45198,6 +45198,309 @@
           "starred": false
         }
       }
+    },
+    {
+      "id": "0cy13b0yby3omtjk385h",
+      "title": "Inherent AM on regular hyperbolic lattices",
+      "filename": "Inherent AM on regular hyperbolic lattices.pdf",
+      "path": "",
+      "kind": "pdf",
+      "topics": [
+        "Altermagnet"
+      ],
+      "topic": "Altermagnet",
+      "tags": [
+        "refs_update"
+      ],
+      "ts": 1788320900898,
+      "createdTs": 1788320900898,
+      "size": 6890038,
+      "desc": "It seems they can give some quiet interesting model to describe the behavior of AM",
+      "imagePath": "",
+      "storage": null,
+      "uploadStatus": "pdf_pending",
+      "uploadError": "",
+      "imageUploadError": "",
+      "groups": [],
+      "scholarly": {
+        "title": "Inherent Altermagnetism on regular hyperbolic lattices",
+        "doi": "",
+        "arxivId": "2605.10602",
+        "openAlexId": "https://openalex.org/W7161091918",
+        "publicationDate": "2026-05-11",
+        "year": 2026,
+        "venue": "arXiv (Cornell University)",
+        "venueId": "https://openalex.org/S4306400194",
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University",
+        "type": "preprint",
+        "authors": [
+          {
+            "name": "Eric Petermann",
+            "openAlexId": "https://openalex.org/A5135989066",
+            "orcid": "",
+            "position": "first",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Complexity and Topology in Quantum Matter",
+                "openAlexId": "https://openalex.org/I4210095490",
+                "countryCode": "DE",
+                "type": "facility"
+              }
+            ]
+          },
+          {
+            "name": "Kristian Mæland",
+            "openAlexId": "https://openalex.org/A5068486201",
+            "orcid": "https://orcid.org/0000-0003-0904-8089",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Complexity and Topology in Quantum Matter",
+                "openAlexId": "https://openalex.org/I4210095490",
+                "countryCode": "DE",
+                "type": "facility"
+              }
+            ]
+          },
+          {
+            "name": "Haye Hinrichsen",
+            "openAlexId": "https://openalex.org/A5088336103",
+            "orcid": "https://orcid.org/0000-0003-4872-4502",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Würzburg",
+                "openAlexId": "https://openalex.org/I25974101",
+                "countryCode": "DE",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Björn Trauzettel",
+            "openAlexId": "https://openalex.org/A5136030606",
+            "orcid": "",
+            "position": "last",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Würzburg",
+                "openAlexId": "https://openalex.org/I25974101",
+                "countryCode": "DE",
+                "type": "education"
+              }
+            ]
+          }
+        ],
+        "institutions": [
+          {
+            "name": "Complexity and Topology in Quantum Matter",
+            "openAlexId": "https://openalex.org/I4210095490",
+            "countryCode": "DE",
+            "type": "facility"
+          },
+          {
+            "name": "University of Würzburg",
+            "openAlexId": "https://openalex.org/I25974101",
+            "countryCode": "DE",
+            "type": "education"
+          }
+        ],
+        "abstract": "Altermagnets are a novel class of magnetic systems characterized by their momentum-dependent spin splitting without net magnetization. In this work, we extend established Euclidean tight-binding models of altermagnets to regular hyperbolic lattices in two spatial dimensions defined on a discretized Poincaré disk. Using hyperbolic crystallography and hyperbolic band theory, we show that the inclusion of next-nearest neighbor hopping is sufficient to induce spin splitting in bipartite hyperbolic lattices. While certain families and special cases of hyperbolic lattices remain antiferromagnetic, we identify an entire family and a special case that show spin splitting in this framework. Hence, altermagnetism is inherent to certain hyperbolic lattices. Since hyperbolic band theory yields a momentum space that is at least four-dimensional, we classify the leading spin-splitting harmonics using four-dimensional atomic orbitals.",
+        "automaticTopics": [
+          {
+            "name": "Topological Materials and Phenomena",
+            "id": "https://openalex.org/T10657",
+            "score": 0.5336999893188477,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Advanced Condensed Matter Physics",
+            "id": "https://openalex.org/T11682",
+            "score": 0.14650000631809235,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Physics of Superconductivity and Magnetism",
+            "id": "https://openalex.org/T10037",
+            "score": 0.0625,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Topological Materials and Phenomena",
+        "keywords": [
+          "Hyperbolic space",
+          "Hyperbolic manifold",
+          "Relatively hyperbolic group",
+          "Hyperbolic set",
+          "Hyperbolic triangle",
+          "Spin (aerodynamics)",
+          "Hyperbolic function",
+          "Space (punctuation)",
+          "Euclidean geometry"
+        ],
+        "relatedWorks": [],
+        "referencedWorks": [],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2605.10602",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "https://arxiv.org/abs/2605.10602",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "title-search",
+        "matchConfidence": 0.99,
+        "matchVerification": "exact-arxiv",
+        "matchVerified": true,
+        "matchEvidence": {
+          "verification": "exact-arxiv",
+          "identifierMatch": "arxiv",
+          "titleScore": 1,
+          "authorScore": 1,
+          "yearScore": 1,
+          "seedTitle": "Inherent Altermagnetism on regular hyperbolic lattices",
+          "candidateTitle": "Inherent Altermagnetism on regular hyperbolic lattices",
+          "seedAuthors": [
+            "Eric Petermann",
+            "Kristian Mæland",
+            "Haye Hinrichsen",
+            "Björn Trauzettel"
+          ],
+          "candidateAuthors": [
+            "Eric Petermann",
+            "Kristian Mæland",
+            "Haye Hinrichsen",
+            "Björn Trauzettel"
+          ],
+          "seedYear": 2026,
+          "candidateYear": 2026,
+          "seedDoi": "",
+          "candidateDoi": "",
+          "seedArxivId": "2605.10602",
+          "candidateArxivIds": [
+            "2605.10602"
+          ],
+          "candidateOpenAlexId": "https://openalex.org/W7161091918",
+          "warnings": []
+        },
+        "matchedFromPdf": false,
+        "updatedAt": 1788320900898,
+        "citations": {
+          "count": 0,
+          "source": "OpenAlex",
+          "updatedAt": 1788320900898
+        },
+        "pdfPages": 13,
+        "localExtractedAt": 1788320898237,
+        "metadataVerification": {
+          "status": "verified",
+          "reason": "exact-arxiv",
+          "confidence": 0.99,
+          "method": "title-search",
+          "stage": "upload",
+          "verifiedAt": 1788320900898,
+          "warnings": []
+        },
+        "metadataReview": {
+          "status": "accepted-auto",
+          "confidence": 0.99,
+          "method": "title-search",
+          "stage": "upload",
+          "verification": "exact-arxiv",
+          "evidence": {
+            "verification": "exact-arxiv",
+            "identifierMatch": "arxiv",
+            "titleScore": 1,
+            "authorScore": 1,
+            "yearScore": 1,
+            "seedTitle": "Inherent Altermagnetism on regular hyperbolic lattices",
+            "candidateTitle": "Inherent Altermagnetism on regular hyperbolic lattices",
+            "seedAuthors": [
+              "Eric Petermann",
+              "Kristian Mæland",
+              "Haye Hinrichsen",
+              "Björn Trauzettel"
+            ],
+            "candidateAuthors": [
+              "Eric Petermann",
+              "Kristian Mæland",
+              "Haye Hinrichsen",
+              "Björn Trauzettel"
+            ],
+            "seedYear": 2026,
+            "candidateYear": 2026,
+            "seedDoi": "",
+            "candidateDoi": "",
+            "seedArxivId": "2605.10602",
+            "candidateArxivIds": [
+              "2605.10602"
+            ],
+            "candidateOpenAlexId": "https://openalex.org/W7161091918",
+            "warnings": []
+          },
+          "reviewedAt": 1788320900898
+        }
+      },
+      "citations": {
+        "count": 0,
+        "source": "OpenAlex",
+        "updatedAt": 1788320900898
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1788320900899,
+        "updatedAt": 1788320900899,
+        "source": "upload-auto",
+        "title": "Inherent Altermagnetism on regular hyperbolic lattices",
+        "authors": [
+          "Eric Petermann",
+          "Kristian Mæland",
+          "Haye Hinrichsen",
+          "Björn Trauzettel"
+        ],
+        "affiliations": [
+          "Complexity and Topology in Quantum Matter",
+          "University of Würzburg"
+        ],
+        "publicationStatus": "preprint",
+        "journal": "arXiv (Cornell University)",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University",
+        "doi": "",
+        "arxivId": "2605.10602",
+        "citationKey": "Petermann2026inherent",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "https://arxiv.org/abs/2605.10602",
+          "publisher": "https://arxiv.org/abs/2605.10602",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "It seems they can give some quiet interesting model to describe the behavior of AM",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     }
   ],
   "historicalMetadataUpdatedAt": 1787560753289,
