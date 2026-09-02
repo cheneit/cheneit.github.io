@@ -2,16 +2,16 @@
   "schemaVersion": 2,
   "updaterVersion": "5.3",
   "mode": "daily",
-  "generatedAt": "2026-09-01T06:23:32.541012+00:00",
+  "generatedAt": "2026-09-02T05:55:19.753711+00:00",
   "acceptThreshold": 0.78,
   "summary": {
-    "accepted": 102,
+    "accepted": 103,
     "review": 12,
-    "unmatched": 22,
+    "unmatched": 23,
     "error": 0,
     "conflicts": 0,
     "pdfParsed": 0,
-    "exactVerified": 88,
+    "exactVerified": 89,
     "compositeVerified": 14
   },
   "results": [
@@ -3880,6 +3880,61 @@
       "yearScore": 1.0,
       "warnings": [
         "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "gobmkshdbsqmtjimgyw",
+      "originalTitle": "Cavity-control of MBS in SC-SM heterostructures",
+      "status": "unmatched",
+      "confidence": 0.0,
+      "method": "no-result",
+      "verification": "unverified",
+      "verified": false,
+      "stage": "index",
+      "candidateTitle": "",
+      "currentTitle": "Cavity control of Majorana bound states in superconductor semiconductor heterostructures",
+      "doi": "",
+      "openAlexId": "",
+      "authors": [],
+      "year": null,
+      "identifierMatch": "",
+      "titleScore": null,
+      "authorScore": null,
+      "yearScore": null,
+      "warnings": [
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": "No identity-verified daily match"
+    },
+    {
+      "itemId": "0cy13b0yby3omtjk385h",
+      "originalTitle": "Inherent AM on regular hyperbolic lattices",
+      "status": "accepted",
+      "confidence": 0.99,
+      "method": "openalex-id-revalidated",
+      "verification": "exact-arxiv",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Inherent Altermagnetism on regular hyperbolic lattices",
+      "currentTitle": "Inherent Altermagnetism on regular hyperbolic lattices",
+      "doi": "",
+      "openAlexId": "https://openalex.org/W7161091918",
+      "authors": [
+        "Eric Petermann",
+        "Kristian Mæland",
+        "Haye Hinrichsen",
+        "Björn Trauzettel"
+      ],
+      "year": 2026,
+      "identifierMatch": "arxiv",
+      "titleScore": 1.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
+      "warnings": [
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
