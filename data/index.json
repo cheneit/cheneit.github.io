@@ -46090,6 +46090,130 @@
           "starred": false
         }
       }
+    },
+    {
+      "id": "hyclygk94aumu2nbthn",
+      "title": "Magnetic 2pi domain wall for tunable Majorana devices",
+      "filename": "Hauck-Rex-Garst2025-magnetic 2pi domain walls for tunable Majorana devices.pdf",
+      "path": "",
+      "kind": "pdf",
+      "topics": [
+        "Skyrmions",
+        "Majorana"
+      ],
+      "topic": "Skyrmions",
+      "tags": [
+        "refs_update"
+      ],
+      "ts": 1789475200965,
+      "createdTs": 1789475200965,
+      "size": 4242022,
+      "desc": "using magnetic domain wall to control Majorana behavior, which is quiet promising in the future.",
+      "imagePath": "",
+      "storage": null,
+      "uploadStatus": "pdf_pending",
+      "uploadError": "",
+      "imageUploadError": "",
+      "groups": [],
+      "scholarly": {
+        "title": "Magnetic $2\\pi$ domain walls for tunable Majorana devices",
+        "doi": "",
+        "arxivId": "2505.21779",
+        "authors": [
+          {
+            "name": "Daniel Hauck"
+          },
+          {
+            "name": "Stefan Rex"
+          },
+          {
+            "name": "Markus Garst"
+          }
+        ],
+        "institutions": [],
+        "venue": "",
+        "year": null,
+        "publicationDate": "",
+        "abstract": "",
+        "automaticTopics": [],
+        "keywords": [],
+        "metadataSource": "PDF-local",
+        "matchMethod": "local-only",
+        "matchConfidence": 0,
+        "matchVerification": "unverified",
+        "matchVerified": false,
+        "matchedFromPdf": false,
+        "updatedAt": 1789475200965,
+        "metadataError": "未在 OpenAlex/Crossref 中可靠匹配，请在编辑条目中补充 DOI 或题名。",
+        "citations": {
+          "count": 0,
+          "source": "",
+          "updatedAt": 0
+        },
+        "pdfPages": 11,
+        "localExtractedAt": 1789475195702,
+        "metadataVerification": {
+          "status": "unverified",
+          "reason": "unverified",
+          "confidence": 0,
+          "method": "local-only",
+          "stage": "upload",
+          "checkedAt": 1789475200965,
+          "warnings": []
+        },
+        "metadataReview": {
+          "status": "review-required",
+          "confidence": 0,
+          "method": "local-only",
+          "stage": "upload",
+          "verification": "unverified",
+          "evidence": {},
+          "reviewedAt": 1789475200965
+        }
+      },
+      "citations": {
+        "count": 0,
+        "source": "",
+        "updatedAt": 0
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1789475200965,
+        "updatedAt": 1789475200965,
+        "source": "upload-auto",
+        "title": "Magnetic $2\\pi$ domain walls for tunable Majorana devices",
+        "authors": [
+          "Daniel Hauck",
+          "Stefan Rex",
+          "Markus Garst"
+        ],
+        "affiliations": [],
+        "publicationStatus": "preprint",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "2505.21779",
+        "citationKey": "Hauck2026magnetic",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "https://arxiv.org/abs/2505.21779",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "using magnetic domain wall to control Majorana behavior, which is quiet promising in the future.",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     }
   ],
   "historicalMetadataUpdatedAt": 1787560753289,
