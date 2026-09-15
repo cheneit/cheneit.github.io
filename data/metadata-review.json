@@ -2,12 +2,12 @@
   "schemaVersion": 2,
   "updaterVersion": "5.3",
   "mode": "daily",
-  "generatedAt": "2026-09-14T06:25:12.746809+00:00",
+  "generatedAt": "2026-09-15T06:16:51.457514+00:00",
   "acceptThreshold": 0.78,
   "summary": {
     "accepted": 104,
     "review": 12,
-    "unmatched": 23,
+    "unmatched": 24,
     "error": 0,
     "conflicts": 0,
     "pdfParsed": 0,
@@ -3969,6 +3969,31 @@
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
+    },
+    {
+      "itemId": "jowglch74wrmu23j3bt",
+      "originalTitle": "Emergent Surface Altermagnetism",
+      "status": "unmatched",
+      "confidence": 0.0,
+      "method": "no-result",
+      "verification": "unverified",
+      "verified": false,
+      "stage": "index",
+      "candidateTitle": "",
+      "currentTitle": "Emergent Surface Altermagnetism",
+      "doi": "",
+      "openAlexId": "",
+      "authors": [],
+      "year": null,
+      "identifierMatch": "",
+      "titleScore": null,
+      "authorScore": null,
+      "yearScore": null,
+      "warnings": [
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": "No identity-verified daily match"
     }
   ]
 }
