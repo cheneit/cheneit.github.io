@@ -46219,6 +46219,454 @@
           "starred": false
         }
       }
+    },
+    {
+      "id": "gp68k1xc2jwmu3gieqg",
+      "title": "Orientation-dependent transport in junctions formed by d-wave AM and d-wave SC",
+      "filename": "Zhao-Cayao-BLu2025PRB-Orientation-dependent transport formed by d-wave altermagnets and d-wave superconductor.pdf",
+      "path": "",
+      "kind": "pdf",
+      "topics": [
+        "Altermagnet",
+        "Superconductor"
+      ],
+      "topic": "Altermagnet",
+      "tags": [
+        "refs_update"
+      ],
+      "ts": 1789524215160,
+      "createdTs": 1789524215160,
+      "size": 2580557,
+      "desc": "a discussion about the combination between the junction formed by AM and SC, which may be quiet helpful for the understanding of this kind of hybrid structures.",
+      "imagePath": "",
+      "storage": null,
+      "uploadStatus": "pdf_pending",
+      "uploadError": "",
+      "imageUploadError": "",
+      "groups": [],
+      "scholarly": {
+        "title": "Orientation-dependent transport in junctions formed by d -wave altermagnets and d -wave superconductors",
+        "doi": "10.1103/physrevb.111.184515",
+        "arxivId": "",
+        "openAlexId": "https://openalex.org/W4410432358",
+        "publicationDate": "2025-05-16",
+        "year": 2025,
+        "venue": "Physical review. B./Physical review. B",
+        "venueId": "https://openalex.org/S4210237713",
+        "volume": "111",
+        "issue": "18",
+        "pages": "",
+        "publisher": "American Physical Society",
+        "type": "article",
+        "authors": [
+          {
+            "name": "Wenjun Zhao",
+            "openAlexId": "",
+            "orcid": "https://orcid.org/0009-0000-1369-3078",
+            "position": "first",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Tianjin University",
+                "openAlexId": "https://openalex.org/I162868743",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Yuri Fukaya",
+            "openAlexId": "https://openalex.org/A5055962007",
+            "orcid": "https://orcid.org/0000-0002-8535-8233",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Okayama University",
+                "openAlexId": "https://openalex.org/I163770644",
+                "countryCode": "JP",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Pablo Burset",
+            "openAlexId": "https://openalex.org/A5056525137",
+            "orcid": "https://orcid.org/0000-0001-5726-0485",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Universidad Autónoma de Madrid",
+                "openAlexId": "https://openalex.org/I63634437",
+                "countryCode": "ES",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Jorge Cayao",
+            "openAlexId": "https://openalex.org/A5083270970",
+            "orcid": "https://orcid.org/0000-0001-6037-6243",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Uppsala University",
+                "openAlexId": "https://openalex.org/I123387679",
+                "countryCode": "SE",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Yukio Tanaka",
+            "openAlexId": "https://openalex.org/A5038918929",
+            "orcid": "https://orcid.org/0000-0003-1537-4788",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Nagoya University",
+                "openAlexId": "https://openalex.org/I60134161",
+                "countryCode": "JP",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Bo Lu",
+            "openAlexId": "https://openalex.org/A5036045927",
+            "orcid": "https://orcid.org/0000-0002-4753-809X",
+            "position": "last",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Tianjin University",
+                "openAlexId": "https://openalex.org/I162868743",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          }
+        ],
+        "institutions": [
+          {
+            "name": "Tianjin University",
+            "openAlexId": "https://openalex.org/I162868743",
+            "countryCode": "CN",
+            "type": "education"
+          },
+          {
+            "name": "Okayama University",
+            "openAlexId": "https://openalex.org/I163770644",
+            "countryCode": "JP",
+            "type": "education"
+          },
+          {
+            "name": "Universidad Autónoma de Madrid",
+            "openAlexId": "https://openalex.org/I63634437",
+            "countryCode": "ES",
+            "type": "education"
+          },
+          {
+            "name": "Uppsala University",
+            "openAlexId": "https://openalex.org/I123387679",
+            "countryCode": "SE",
+            "type": "education"
+          },
+          {
+            "name": "Nagoya University",
+            "openAlexId": "https://openalex.org/I60134161",
+            "countryCode": "JP",
+            "type": "education"
+          }
+        ],
+        "abstract": "We investigate de Gennes-Saint-James states and Josephson effect in hybrid junctions based on $d$-wave altermagnet and $d$-wave superconductor. Even though these states are associated to long junctions, we find that the ${d}_{{x}^{2}\\ensuremath{-}{y}^{2}}$ altermagnet in a normal $\\text{metal/altermagnet/}d$-wave superconductor junction forms de Gennes-Saint-James states in a short junction due to an enhanced mismatch between electron and hole wave vectors. As a result, the zero-bias conductance peak vanishes and pronounced resonance spikes emerge in the subgap conductance spectra. By contrast, the ${d}_{xy}$ altermagnet only features de Gennes-Saint-James states in the long junction. Moreover, the well-known features such as V-shape conductance for ${d}_{{x}^{2}\\ensuremath{-}{y}^{2}}$ pairings and zero-biased conductance peak for ${d}_{xy}$ pairings are not affected by the strength of ${d}_{xy}$ altermagnetism in the short junction. We also study the Josephson current-phase relation $I(\\ensuremath{\\varphi})$ of $d$-wave $\\text{superconductor/altermagnet/}d$-wave superconductor hybrids, where $\\ensuremath{\\varphi}$ is the macroscopic phase difference between two $d$-wave superconductors. In symmetric junctions, we obtain anomalous current phase relation such as a $0\\text{\\ensuremath{-}}\\ensuremath{\\pi}$ transition by changing either the orientation or the magnitude of the altermagnetic order parameter and dominant higher Josephson harmonics. Interestingly, we find the first-order Josephson coupling in an asymmetric ${d}_{{x}^{2}\\ensuremath{-}{y}^{2}}\\text{\\ensuremath{-}}\\text{superconductor/altermagnet/}{d}_{xy}$-superconductor junction when the symmetry of altermagnetic order parameter is neither ${d}_{{x}^{2}\\ensuremath{-}{y}^{2}}$ nor ${d}_{xy}$ wave. We present the symmetry analysis and conclude that the anomalous orientation-dependent current-phase relations are ascribed to the peculiar feature of the altermagnetic spin-splitting field.",
+        "automaticTopics": [
+          {
+            "name": "Physics of Superconductivity and Magnetism",
+            "id": "https://openalex.org/T10037",
+            "score": 1,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Quantum and electron transport phenomena",
+            "id": "https://openalex.org/T10382",
+            "score": 0.9995999932289124,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Advanced Condensed Matter Physics",
+            "id": "https://openalex.org/T11682",
+            "score": 0.9990000128746033,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Physics of Superconductivity and Magnetism",
+        "keywords": [
+          "Orientation (vector space)",
+          "Mathematics",
+          "Algorithm",
+          "Geometry"
+        ],
+        "relatedWorks": [
+          "https://openalex.org/W4391375266",
+          "https://openalex.org/W1979597421",
+          "https://openalex.org/W2007980826",
+          "https://openalex.org/W2051487156",
+          "https://openalex.org/W2061531152",
+          "https://openalex.org/W3002753104",
+          "https://openalex.org/W2077600819",
+          "https://openalex.org/W2142036596",
+          "https://openalex.org/W2072657027",
+          "https://openalex.org/W2962838298"
+        ],
+        "referencedWorks": [
+          "https://openalex.org/W1510935638",
+          "https://openalex.org/W1530553847",
+          "https://openalex.org/W1563251661",
+          "https://openalex.org/W1825989310",
+          "https://openalex.org/W1969005205",
+          "https://openalex.org/W1970126761",
+          "https://openalex.org/W1977124494",
+          "https://openalex.org/W1979688708",
+          "https://openalex.org/W1980961370",
+          "https://openalex.org/W1984518889",
+          "https://openalex.org/W1989116198",
+          "https://openalex.org/W1992879863",
+          "https://openalex.org/W1995240194",
+          "https://openalex.org/W2003311005",
+          "https://openalex.org/W2011184588",
+          "https://openalex.org/W2011970097",
+          "https://openalex.org/W2017883035",
+          "https://openalex.org/W2023260853",
+          "https://openalex.org/W2024570095",
+          "https://openalex.org/W2029653054",
+          "https://openalex.org/W2035399749",
+          "https://openalex.org/W2035759230",
+          "https://openalex.org/W2043148716",
+          "https://openalex.org/W2047290430",
+          "https://openalex.org/W2050644966",
+          "https://openalex.org/W2060655218",
+          "https://openalex.org/W2073096613",
+          "https://openalex.org/W2076220541",
+          "https://openalex.org/W2083710066",
+          "https://openalex.org/W2084899562",
+          "https://openalex.org/W2087397636",
+          "https://openalex.org/W2087890138",
+          "https://openalex.org/W2088610770",
+          "https://openalex.org/W2089925364",
+          "https://openalex.org/W2093819350",
+          "https://openalex.org/W2097028858",
+          "https://openalex.org/W2098309180",
+          "https://openalex.org/W2150277956",
+          "https://openalex.org/W2163740250",
+          "https://openalex.org/W2225213232",
+          "https://openalex.org/W2290163007",
+          "https://openalex.org/W2798986220",
+          "https://openalex.org/W2803714440",
+          "https://openalex.org/W2810284229",
+          "https://openalex.org/W2945249641",
+          "https://openalex.org/W2963078470",
+          "https://openalex.org/W2968237615",
+          "https://openalex.org/W2969666960",
+          "https://openalex.org/W2974879710",
+          "https://openalex.org/W2985980214",
+          "https://openalex.org/W2989520980",
+          "https://openalex.org/W3015786662",
+          "https://openalex.org/W3033432659",
+          "https://openalex.org/W3037308856",
+          "https://openalex.org/W3038878256",
+          "https://openalex.org/W3042218866",
+          "https://openalex.org/W3081415336",
+          "https://openalex.org/W3085365878",
+          "https://openalex.org/W3099379762",
+          "https://openalex.org/W3101369852",
+          "https://openalex.org/W3106120793",
+          "https://openalex.org/W3204351223",
+          "https://openalex.org/W3206508710",
+          "https://openalex.org/W4235220267",
+          "https://openalex.org/W4297014776",
+          "https://openalex.org/W4311892900",
+          "https://openalex.org/W4385806028",
+          "https://openalex.org/W4385949808",
+          "https://openalex.org/W4386069892",
+          "https://openalex.org/W4386216424",
+          "https://openalex.org/W4390985412",
+          "https://openalex.org/W4391101768",
+          "https://openalex.org/W4391385556",
+          "https://openalex.org/W4391506144",
+          "https://openalex.org/W4391809119",
+          "https://openalex.org/W4391839354",
+          "https://openalex.org/W4392188187",
+          "https://openalex.org/W4392358950",
+          "https://openalex.org/W4396603666",
+          "https://openalex.org/W4400066933",
+          "https://openalex.org/W4402807663",
+          "https://openalex.org/W4403626161",
+          "https://openalex.org/W4404356310",
+          "https://openalex.org/W4404749227",
+          "https://openalex.org/W4405375320",
+          "https://openalex.org/W4405431344",
+          "https://openalex.org/W4408150973",
+          "https://openalex.org/W4408892688",
+          "https://openalex.org/W4409218110",
+          "https://openalex.org/W4409570923"
+        ],
+        "openAccess": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "landingPageUrl": "https://doi.org/10.1103/physrevb.111.184515",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "doi-query",
+        "matchConfidence": 0.995,
+        "matchVerification": "exact-doi",
+        "matchVerified": true,
+        "matchEvidence": {
+          "verification": "exact-doi",
+          "identifierMatch": "doi",
+          "titleScore": 1,
+          "authorScore": 1,
+          "yearScore": 1,
+          "seedTitle": "Orientation dependent transport in junctions formed by $d$ wave altermagnets and $d$ wave superconductors",
+          "candidateTitle": "Orientation-dependent transport in junctions formed by d -wave altermagnets and d -wave superconductors",
+          "seedAuthors": [
+            "Wenjun Zhao"
+          ],
+          "candidateAuthors": [
+            "Wenjun Zhao",
+            "Yuri Fukaya",
+            "Pablo Burset",
+            "Jorge Cayao",
+            "Yukio Tanaka",
+            "Bo Lu"
+          ],
+          "seedYear": 2025,
+          "candidateYear": 2025,
+          "seedDoi": "10.1103/physrevb.111.184515",
+          "candidateDoi": "10.1103/physrevb.111.184515",
+          "seedArxivId": "",
+          "candidateArxivIds": [],
+          "candidateOpenAlexId": "https://openalex.org/W4410432358",
+          "warnings": []
+        },
+        "matchedFromPdf": false,
+        "updatedAt": 1789524215160,
+        "citations": {
+          "count": 22,
+          "source": "OpenAlex",
+          "updatedAt": 1789524215160
+        },
+        "pdfPages": 11,
+        "localExtractedAt": 1789524211634,
+        "metadataVerification": {
+          "status": "verified",
+          "reason": "exact-doi",
+          "confidence": 0.995,
+          "method": "doi-query",
+          "stage": "upload",
+          "verifiedAt": 1789524215160,
+          "warnings": []
+        },
+        "metadataReview": {
+          "status": "accepted-auto",
+          "confidence": 0.995,
+          "method": "doi-query",
+          "stage": "upload",
+          "verification": "exact-doi",
+          "evidence": {
+            "verification": "exact-doi",
+            "identifierMatch": "doi",
+            "titleScore": 1,
+            "authorScore": 1,
+            "yearScore": 1,
+            "seedTitle": "Orientation dependent transport in junctions formed by $d$ wave altermagnets and $d$ wave superconductors",
+            "candidateTitle": "Orientation-dependent transport in junctions formed by d -wave altermagnets and d -wave superconductors",
+            "seedAuthors": [
+              "Wenjun Zhao"
+            ],
+            "candidateAuthors": [
+              "Wenjun Zhao",
+              "Yuri Fukaya",
+              "Pablo Burset",
+              "Jorge Cayao",
+              "Yukio Tanaka",
+              "Bo Lu"
+            ],
+            "seedYear": 2025,
+            "candidateYear": 2025,
+            "seedDoi": "10.1103/physrevb.111.184515",
+            "candidateDoi": "10.1103/physrevb.111.184515",
+            "seedArxivId": "",
+            "candidateArxivIds": [],
+            "candidateOpenAlexId": "https://openalex.org/W4410432358",
+            "warnings": []
+          },
+          "reviewedAt": 1789524215160
+        }
+      },
+      "citations": {
+        "count": 22,
+        "source": "OpenAlex",
+        "updatedAt": 1789524215160
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1789524215161,
+        "updatedAt": 1789524215161,
+        "source": "upload-auto",
+        "title": "Orientation-dependent transport in junctions formed by d -wave altermagnets and d -wave superconductors",
+        "authors": [
+          "Wenjun Zhao",
+          "Yuri Fukaya",
+          "Pablo Burset",
+          "Jorge Cayao",
+          "Yukio Tanaka",
+          "Bo Lu"
+        ],
+        "affiliations": [
+          "Tianjin University",
+          "Okayama University",
+          "Universidad Autónoma de Madrid",
+          "Uppsala University",
+          "Nagoya University"
+        ],
+        "publicationStatus": "published",
+        "journal": "Physical review. B./Physical review. B",
+        "year": 2025,
+        "volume": "111",
+        "issue": "18",
+        "pages": "",
+        "publisher": "American Physical Society",
+        "doi": "10.1103/physrevb.111.184515",
+        "arxivId": "",
+        "citationKey": "Zhao2025orientation",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.1103/physrevb.111.184515",
+          "arxiv": "",
+          "publisher": "https://doi.org/10.1103/physrevb.111.184515",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "a discussion about the combination between the junction formed by AM and SC, which may be quiet helpful for the understanding of this kind of hybrid structures.",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     }
   ],
   "historicalMetadataUpdatedAt": 1787560753289,
