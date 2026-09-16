@@ -46672,6 +46672,122 @@
           "starred": false
         }
       }
+    },
+    {
+      "id": "3ojb97ze73bmu3ias7p",
+      "title": "Topological superconductor and Majorana fermions based on X-wave magnets",
+      "filename": "Ezawa2026-Topological superconductors and Majorana fermions based on X-wave magnets.pdf",
+      "path": "",
+      "kind": "pdf",
+      "topics": [
+        "Majorana",
+        "Altermagnet"
+      ],
+      "topic": "Majorana",
+      "tags": [
+        "refs_update"
+      ],
+      "ts": 1789527219204,
+      "createdTs": 1789527219204,
+      "size": 4117829,
+      "desc": "a discuaaison about the hubrid superconductor with altermagnets",
+      "imagePath": "",
+      "storage": null,
+      "uploadStatus": "pdf_pending",
+      "uploadError": "",
+      "imageUploadError": "",
+      "groups": [],
+      "scholarly": {
+        "title": "Topological superconductors and Majorana fermions based on X wave magnets with X=p,d,f,g,i",
+        "doi": "",
+        "arxivId": "2609.16084",
+        "authors": [
+          {
+            "name": "Motohiko Ezawa"
+          }
+        ],
+        "institutions": [],
+        "venue": "",
+        "year": null,
+        "publicationDate": "",
+        "abstract": "",
+        "automaticTopics": [],
+        "keywords": [],
+        "metadataSource": "PDF-local",
+        "matchMethod": "local-only",
+        "matchConfidence": 0,
+        "matchVerification": "unverified",
+        "matchVerified": false,
+        "matchedFromPdf": false,
+        "updatedAt": 1789527219204,
+        "metadataError": "未在 OpenAlex/Crossref 中可靠匹配，请在编辑条目中补充 DOI 或题名。",
+        "citations": {
+          "count": 0,
+          "source": "",
+          "updatedAt": 0
+        },
+        "pdfPages": 12,
+        "localExtractedAt": 1789527215093,
+        "metadataVerification": {
+          "status": "unverified",
+          "reason": "unverified",
+          "confidence": 0,
+          "method": "local-only",
+          "stage": "upload",
+          "checkedAt": 1789527219204,
+          "warnings": []
+        },
+        "metadataReview": {
+          "status": "review-required",
+          "confidence": 0,
+          "method": "local-only",
+          "stage": "upload",
+          "verification": "unverified",
+          "evidence": {},
+          "reviewedAt": 1789527219204
+        }
+      },
+      "citations": {
+        "count": 0,
+        "source": "",
+        "updatedAt": 0
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1789527219205,
+        "updatedAt": 1789527219205,
+        "source": "upload-auto",
+        "title": "Topological superconductors and Majorana fermions based on X wave magnets with X=p,d,f,g,i",
+        "authors": [
+          "Motohiko Ezawa"
+        ],
+        "affiliations": [],
+        "publicationStatus": "preprint",
+        "journal": "",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "doi": "",
+        "arxivId": "2609.16084",
+        "citationKey": "Ezawa2026topological",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "https://arxiv.org/abs/2609.16084",
+          "publisher": "",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "a discuaaison about the hubrid superconductor with altermagnets",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     }
   ],
   "historicalMetadataUpdatedAt": 1787560753289,
