@@ -2,16 +2,16 @@
   "schemaVersion": 2,
   "updaterVersion": "5.3",
   "mode": "daily",
-  "generatedAt": "2026-09-15T06:16:51.457514+00:00",
+  "generatedAt": "2026-09-16T06:09:01.484681+00:00",
   "acceptThreshold": 0.78,
   "summary": {
-    "accepted": 104,
+    "accepted": 105,
     "review": 12,
-    "unmatched": 24,
+    "unmatched": 27,
     "error": 0,
     "conflicts": 0,
     "pdfParsed": 0,
-    "exactVerified": 91,
+    "exactVerified": 92,
     "compositeVerified": 13
   },
   "results": [
@@ -2108,7 +2108,9 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 0.5,
-      "warnings": [],
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
@@ -2277,9 +2279,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 0.5,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -3981,6 +3981,113 @@
       "stage": "index",
       "candidateTitle": "",
       "currentTitle": "Emergent Surface Altermagnetism",
+      "doi": "",
+      "openAlexId": "",
+      "authors": [],
+      "year": null,
+      "identifierMatch": "",
+      "titleScore": null,
+      "authorScore": null,
+      "yearScore": null,
+      "warnings": [
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": "No identity-verified daily match"
+    },
+    {
+      "itemId": "0ywyxe7bkjedmu2n1nee",
+      "originalTitle": "Skyrmion Qubits",
+      "status": "unmatched",
+      "confidence": 0.0,
+      "method": "no-result",
+      "verification": "unverified",
+      "verified": false,
+      "stage": "index",
+      "candidateTitle": "",
+      "currentTitle": "Qubits2401.03773v1",
+      "doi": "",
+      "openAlexId": "",
+      "authors": [],
+      "year": null,
+      "identifierMatch": "",
+      "titleScore": null,
+      "authorScore": null,
+      "yearScore": null,
+      "warnings": [
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": "No identity-verified daily match"
+    },
+    {
+      "itemId": "hyclygk94aumu2nbthn",
+      "originalTitle": "Magnetic 2pi domain wall for tunable Majorana devices",
+      "status": "unmatched",
+      "confidence": 0.0,
+      "method": "no-result",
+      "verification": "unverified",
+      "verified": false,
+      "stage": "index",
+      "candidateTitle": "",
+      "currentTitle": "Magnetic $2\\pi$ domain walls for tunable Majorana devices",
+      "doi": "",
+      "openAlexId": "",
+      "authors": [],
+      "year": null,
+      "identifierMatch": "",
+      "titleScore": null,
+      "authorScore": null,
+      "yearScore": null,
+      "warnings": [
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": "No identity-verified daily match"
+    },
+    {
+      "itemId": "gp68k1xc2jwmu3gieqg",
+      "originalTitle": "Orientation-dependent transport in junctions formed by d-wave AM and d-wave SC",
+      "status": "accepted",
+      "confidence": 0.995,
+      "method": "openalex-id-revalidated",
+      "verification": "exact-doi",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Orientation-dependent transport in junctions formed by d -wave altermagnets and d -wave superconductors",
+      "currentTitle": "Orientation-dependent transport in junctions formed by d -wave altermagnets and d -wave superconductors",
+      "doi": "10.1103/physrevb.111.184515",
+      "openAlexId": "https://openalex.org/W4410432358",
+      "authors": [
+        "Wenjun Zhao",
+        "Yuri Fukaya",
+        "Pablo Burset",
+        "Jorge Cayao",
+        "Yukio Tanaka",
+        "Bo Lu"
+      ],
+      "year": 2025,
+      "identifierMatch": "doi",
+      "titleScore": 1.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
+      "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "3ojb97ze73bmu3ias7p",
+      "originalTitle": "Topological superconductor and Majorana fermions based on X-wave magnets",
+      "status": "unmatched",
+      "confidence": 0.0,
+      "method": "no-result",
+      "verification": "unverified",
+      "verified": false,
+      "stage": "index",
+      "candidateTitle": "",
+      "currentTitle": "Topological superconductors and Majorana fermions based on X wave magnets with X=p,d,f,g,i",
       "doi": "",
       "openAlexId": "",
       "authors": [],
