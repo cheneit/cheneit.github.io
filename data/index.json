@@ -47331,6 +47331,259 @@
           "starred": false
         }
       }
+    },
+    {
+      "id": "k1tk90ibc6x5m2mzz1a",
+      "title": "Chiral classical and quantum acoustics with hole-spin qubits",
+      "filename": "Chiral classical and quantum acoustics with hole-spin qubits_spin group.pdf",
+      "path": "https://cheneit.github.io/cheneit-pdf-2026/data/files/2026/09/k1tk90ibc6x5m2mzz1a.pdf",
+      "kind": "pdf",
+      "topics": [
+        "qubit",
+        "spin-orbit coupling"
+      ],
+      "topic": "qubit",
+      "tags": [
+        "refs_update"
+      ],
+      "ts": 1789797526100,
+      "createdTs": 1789797526100,
+      "size": 4508601,
+      "desc": "用自旋群对称性统一描述空穴自旋量子比特与手性声学，给出方向分辨的横向耦合与手性辅助的相干保护方案",
+      "imagePath": "data/files/2026/09/images/k1tk90ibc6x5m2mzz1a__wang2026acoustics.png",
+      "storage": {
+        "owner": "cheneit",
+        "repo": "cheneit-pdf-2026",
+        "branch": "main",
+        "path": "data/files/2026/09/k1tk90ibc6x5m2mzz1a.pdf"
+      },
+      "uploadStatus": "ready",
+      "uploadError": "",
+      "imageUploadError": "",
+      "groups": [],
+      "scholarly": {
+        "title": "Chiral classical and quantum acoustics with hole-spin qubits",
+        "doi": "10.48550/arxiv.2609.18485",
+        "arxivId": "",
+        "openAlexId": "https://openalex.org/W7213500816",
+        "publicationDate": "2026-09-16",
+        "year": 2026,
+        "venue": "arXiv (Cornell University)",
+        "venueId": "https://openalex.org/S4306400194",
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University",
+        "type": "preprint",
+        "authors": [
+          {
+            "name": "Zhanning Wang",
+            "openAlexId": "https://openalex.org/A5152034650",
+            "orcid": "",
+            "position": "first",
+            "corresponding": false,
+            "institutions": []
+          },
+          {
+            "name": "Yongtao Li",
+            "openAlexId": "https://openalex.org/A5152034308",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": []
+          },
+          {
+            "name": "Nelson E. Rivas",
+            "openAlexId": "https://openalex.org/A5152028904",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": []
+          },
+          {
+            "name": "Gonzalo García",
+            "openAlexId": "https://openalex.org/A5113688726",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": []
+          },
+          {
+            "name": "Irene Castro",
+            "openAlexId": "https://openalex.org/A5104315612",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": []
+          },
+          {
+            "name": "Rubén Seoane Souto",
+            "openAlexId": "https://openalex.org/A5074881571",
+            "orcid": "https://orcid.org/0000-0002-2978-3534",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": []
+          },
+          {
+            "name": "Daniel Ramos",
+            "openAlexId": "https://openalex.org/A5151997161",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": []
+          },
+          {
+            "name": "José C. Abadillo-Uriel",
+            "openAlexId": "https://openalex.org/A5152034864",
+            "orcid": "",
+            "position": "last",
+            "corresponding": false,
+            "institutions": []
+          }
+        ],
+        "institutions": [],
+        "abstract": "Gate-defined hole spins combine strong spin-orbit coupling with exceptional strain sensitivity, making surface acoustic waves a natural route to remote, phase-coherent control. We show that counterpropagating surface acoustic waves can differ in coupling strength and in whether they predominantly drive spin rotations or modulate the qubit frequency. We call the transverse transition-strength imbalance spin-acoustic chirality and show that it is tunable through gate-controlled reshaping of the dot confinement. Combining a multiband Luttinger-Kohn Hamiltonian with the Bir-Pikus description of strain and 3D piezoelectric finite-element simulations, we obtain the acoustic g-matrix modulation governing coherent SAW driving. Quantizing the same strain-mediated interaction yields the corresponding single-phonon coupling, and a generalized anisotropic Rabi interaction with co-rotating, counter-rotating, and longitudinal components, linking classical chirality to quantum anisotropy and directional one-phonon emission. Magnetic field orientation and dot shape tune the acoustic chirality and operator selectivity. We illustrate this framework through bichromatic coherence protection and phonon-mediated heralded Bell-state initialization.",
+        "automaticTopics": [
+          {
+            "name": "Topological Materials and Phenomena",
+            "id": "https://openalex.org/T10657",
+            "score": 0.7037000060081482,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Quantum and electron transport phenomena",
+            "id": "https://openalex.org/T10382",
+            "score": 0.07460000365972519,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Mechanical and Optical Resonators",
+            "id": "https://openalex.org/T11449",
+            "score": 0.04360000044107437,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Topological Materials and Phenomena",
+        "keywords": [
+          "Qubit",
+          "Hamiltonian (control theory)",
+          "Chirality (physics)",
+          "Spins",
+          "Anisotropy",
+          "Coherence (philosophical gambling strategy)",
+          "Quantum",
+          "Operator (biology)"
+        ],
+        "relatedWorks": [],
+        "referencedWorks": [],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2609.18485",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "https://arxiv.org/abs/2609.18485",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "title-search",
+        "matchConfidence": 1.0,
+        "matchVerification": "composite",
+        "matchEvidence": {
+          "verification": "composite",
+          "identifierMatch": "",
+          "titleScore": 1.0,
+          "authorScore": 1.0,
+          "yearScore": 1.0,
+          "hasAuthorEvidence": true,
+          "hasYearEvidence": true,
+          "seedTitle": "Chiral classical and quantum acoustics with hole-spin qubits",
+          "candidateTitle": "Chiral classical and quantum acoustics with hole-spin qubits",
+          "seedAuthors": [
+            "Zhanning Wang; Yongtao Li; Nelson E. Rivas; Gonzalo García; Irene Castro; Rubén Seoane Souto; Daniel Ramos; José C. Abadillo-Uriel"
+          ],
+          "candidateAuthors": [
+            "Zhanning Wang",
+            "Yongtao Li",
+            "Nelson E. Rivas",
+            "Gonzalo García",
+            "Irene Castro",
+            "Rubén Seoane Souto",
+            "Daniel Ramos",
+            "José C. Abadillo-Uriel"
+          ],
+          "seedYear": 2026,
+          "candidateYear": 2026,
+          "seedDoi": "",
+          "candidateDoi": "10.48550/arxiv.2609.18485",
+          "seedArxivId": "",
+          "candidateArxivIds": [
+            "2609.18485"
+          ],
+          "candidateOpenAlexId": "https://openalex.org/W7213500816",
+          "warnings": []
+        },
+        "matchedFromPdf": false,
+        "updatedAt": 1789797526095,
+        "metadataError": "",
+        "citations": {
+          "count": 0,
+          "source": "OpenAlex",
+          "updatedAt": 1789797526095
+        }
+      },
+      "citations": {
+        "count": 0,
+        "source": "OpenAlex",
+        "updatedAt": 1789797526095
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1789797526101,
+        "updatedAt": 1789797526101,
+        "source": "upload-metadata",
+        "title": "Chiral classical and quantum acoustics with hole-spin qubits",
+        "authors": [
+          "Zhanning Wang",
+          "Yongtao Li",
+          "Nelson E. Rivas",
+          "Gonzalo García",
+          "Irene Castro",
+          "Rubén Seoane Souto",
+          "Daniel Ramos",
+          "José C. Abadillo-Uriel"
+        ],
+        "affiliations": [],
+        "publicationStatus": "published",
+        "journal": "arXiv (Cornell University)",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University",
+        "doi": "10.48550/arxiv.2609.18485",
+        "arxivId": "",
+        "citationKey": "Wang2026chiral",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.48550/arxiv.2609.18485",
+          "arxiv": "",
+          "publisher": "https://arxiv.org/abs/2609.18485",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "用自旋群对称性统一描述空穴自旋量子比特与手性声学，给出方向分辨的横向耦合与手性辅助的相干保护方案",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     }
   ],
   "historicalMetadataUpdatedAt": 1787560753289,
