@@ -47886,6 +47886,207 @@
           "starred": false
         }
       }
+    },
+    {
+      "id": "clail2oktl7kgcxafqe",
+      "title": "Disorder-robust trivial Majorana-like states from smooth confinement in chiral superconducting nanowires",
+      "filename": "Cayao2026-Disorder-robust trivial Majorana-like states from smooth confinement in chiral superconducting nanowires.pdf",
+      "path": "https://cheneit.github.io/cheneit-pdf-2026/data/files/2026/09/clail2oktl7kgcxafqe.pdf",
+      "kind": "pdf",
+      "topics": [
+        "Majorana"
+      ],
+      "topic": "Majorana",
+      "tags": [
+        "refs_update"
+      ],
+      "ts": 1789797655280,
+      "createdTs": 1789797655280,
+      "size": 1820220,
+      "desc": "证明平滑限制势产生的平庸 Majorana 类态对无序鲁棒，提醒这类零能态不能作为拓扑超导的证据",
+      "imagePath": "data/files/2026/09/images/clail2oktl7kgcxafqe__cayao2026prb.png",
+      "storage": {
+        "owner": "cheneit",
+        "repo": "cheneit-pdf-2026",
+        "branch": "main",
+        "path": "data/files/2026/09/clail2oktl7kgcxafqe.pdf"
+      },
+      "uploadStatus": "ready",
+      "uploadError": "",
+      "imageUploadError": "",
+      "groups": [],
+      "scholarly": {
+        "title": "Disorder-robust trivial Majorana-like states from smooth confinement in chiral superconducting nanowires",
+        "doi": "10.48550/arxiv.2608.09758",
+        "arxivId": "",
+        "openAlexId": "https://openalex.org/W7202185186",
+        "publicationDate": "2026-08-10",
+        "year": 2026,
+        "venue": "arXiv (Cornell University)",
+        "venueId": "https://openalex.org/S4306400194",
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University",
+        "type": "preprint",
+        "authors": [
+          {
+            "name": "Eslam Ahmed",
+            "openAlexId": "https://openalex.org/A5113971060",
+            "orcid": "",
+            "position": "first",
+            "corresponding": false,
+            "institutions": []
+          },
+          {
+            "name": "Jorge Cayao",
+            "openAlexId": "https://openalex.org/A5083270970",
+            "orcid": "https://orcid.org/0000-0001-6037-6243",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": []
+          },
+          {
+            "name": "Yukio Tanaka",
+            "openAlexId": "https://openalex.org/A5146525770",
+            "orcid": "",
+            "position": "last",
+            "corresponding": false,
+            "institutions": []
+          }
+        ],
+        "institutions": [],
+        "abstract": "Near-zero-energy states in Majorana nanowires can arise from topologically trivial mechanisms such as smooth spatial inhomogeneity and disorder, making zero-energy pinning alone insufficient evidence of bulk topology. Here we identify a real-space mechanism governing their robustness to symmetry-preserving disorder. For a chiral-symmetric Bogoliubov-de Gennes Hamiltonian, we decompose a low-energy state into two normalized components of opposite chirality and show that disorder-induced splitting is bounded by their spatial overlap. We demonstrate this result in a finite Rashba nanowire with smooth chemical potential and pairing profiles. Below the bulk topological transition, smooth confinement produces partially separated chiral components with exponentially small overlap, yielding globally trivial Majorana-like Andreev bound states that remain near zero energy even under strong scalar, nonmagnetic disorder. The chiral overlap therefore provides a direct diagnostic of the protection of low-energy states against local perturbations, independent of the bulk topological invariant.",
+        "automaticTopics": [
+          {
+            "name": "Topological Materials and Phenomena",
+            "id": "https://openalex.org/T10657",
+            "score": 0.998199999332428,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Graphene research and applications",
+            "id": "https://openalex.org/T10083",
+            "score": 0.00019999999494757503,
+            "subfield": "Materials Chemistry",
+            "field": "Materials Science",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Chemical and Physical Properties of Materials",
+            "id": "https://openalex.org/T13104",
+            "score": 0.00019999999494757503,
+            "subfield": "Materials Chemistry",
+            "field": "Materials Science",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Topological Materials and Phenomena",
+        "keywords": [
+          "MAJORANA",
+          "Nanowire",
+          "Pairing",
+          "Bound state",
+          "Superconductivity",
+          "Chirality (physics)",
+          "Bounded function"
+        ],
+        "relatedWorks": [],
+        "referencedWorks": [],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2608.09758",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "https://arxiv.org/abs/2608.09758",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "title-search",
+        "matchConfidence": 1.0,
+        "matchVerification": "composite",
+        "matchEvidence": {
+          "verification": "composite",
+          "identifierMatch": "",
+          "titleScore": 1.0,
+          "authorScore": 1.0,
+          "yearScore": 1.0,
+          "hasAuthorEvidence": true,
+          "hasYearEvidence": true,
+          "seedTitle": "Disorder-robust trivial Majorana-like states from smooth confinement in chiral superconducting nanowires",
+          "candidateTitle": "Disorder-robust trivial Majorana-like states from smooth confinement in chiral superconducting nanowires",
+          "seedAuthors": [
+            "Eslam Ahmed; Jorge Cayao; Yukio Tanaka"
+          ],
+          "candidateAuthors": [
+            "Eslam Ahmed",
+            "Jorge Cayao",
+            "Yukio Tanaka"
+          ],
+          "seedYear": 2026,
+          "candidateYear": 2026,
+          "seedDoi": "",
+          "candidateDoi": "10.48550/arxiv.2608.09758",
+          "seedArxivId": "",
+          "candidateArxivIds": [
+            "2608.09758"
+          ],
+          "candidateOpenAlexId": "https://openalex.org/W7202185186",
+          "warnings": []
+        },
+        "matchedFromPdf": false,
+        "updatedAt": 1789797655278,
+        "metadataError": "",
+        "citations": {
+          "count": 0,
+          "source": "OpenAlex",
+          "updatedAt": 1789797655278
+        }
+      },
+      "citations": {
+        "count": 0,
+        "source": "OpenAlex",
+        "updatedAt": 1789797655278
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1789797655282,
+        "updatedAt": 1789797655282,
+        "source": "upload-metadata",
+        "title": "Disorder-robust trivial Majorana-like states from smooth confinement in chiral superconducting nanowires",
+        "authors": [
+          "Eslam Ahmed",
+          "Jorge Cayao",
+          "Yukio Tanaka"
+        ],
+        "affiliations": [],
+        "publicationStatus": "published",
+        "journal": "arXiv (Cornell University)",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University",
+        "doi": "10.48550/arxiv.2608.09758",
+        "arxivId": "",
+        "citationKey": "Ahmed2026disorder",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.48550/arxiv.2608.09758",
+          "arxiv": "",
+          "publisher": "https://arxiv.org/abs/2608.09758",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "证明平滑限制势产生的平庸 Majorana 类态对无序鲁棒，提醒这类零能态不能作为拓扑超导的证据",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     }
   ],
   "historicalMetadataUpdatedAt": 1787560753289,
