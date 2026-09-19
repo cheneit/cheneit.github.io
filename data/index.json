@@ -48295,6 +48295,389 @@
           "starred": false
         }
       }
+    },
+    {
+      "id": "8en4mmaziezq4cqkmef",
+      "title": "Type-II quantum spin Hall insulator without time-reversal symmetry",
+      "filename": "Type-II QSHinsulator without TRS.pdf",
+      "path": "https://cheneit.github.io/cheneit-pdf-2026/data/files/2026/09/8en4mmaziezq4cqkmef.pdf",
+      "kind": "pdf",
+      "topics": [
+        "Topological insulator",
+        "Altermagnet"
+      ],
+      "topic": "Topological insulator",
+      "tags": [
+        "refs_update"
+      ],
+      "ts": 1789797855684,
+      "createdTs": 1789797855684,
+      "size": 3077034,
+      "desc": "提出无需时间反演对称性的 II 型量子自旋霍尔绝缘体，以单层 Nb2SeTeO 为例给出自旋劈裂的能带实现",
+      "imagePath": "data/files/2026/09/images/8en4mmaziezq4cqkmef__feng2026qshi.png",
+      "storage": {
+        "owner": "cheneit",
+        "repo": "cheneit-pdf-2026",
+        "branch": "main",
+        "path": "data/files/2026/09/8en4mmaziezq4cqkmef.pdf"
+      },
+      "uploadStatus": "ready",
+      "uploadError": "",
+      "imageUploadError": "",
+      "groups": [],
+      "scholarly": {
+        "title": "Type-II quantum spin Hall insulator without time-reversal symmetry",
+        "doi": "10.1007/s11433-026-3097-y",
+        "arxivId": "",
+        "openAlexId": "https://openalex.org/W7212072061",
+        "publicationDate": "2026-09-04",
+        "year": 2026,
+        "venue": "Science China Physics Mechanics and Astronomy",
+        "venueId": "https://openalex.org/S4210185936",
+        "volume": "69",
+        "issue": "12",
+        "pages": "",
+        "publisher": "Springer Science+Business Media",
+        "type": "article",
+        "authors": [
+          {
+            "name": "Panjun Feng",
+            "openAlexId": "https://openalex.org/A5087979448",
+            "orcid": "",
+            "position": "first",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Beijing Normal University",
+                "openAlexId": "https://openalex.org/I25254941",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Chaoyang Tan",
+            "openAlexId": "https://openalex.org/A5069512695",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Renmin University of China",
+                "openAlexId": "https://openalex.org/I78988378",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Xun-Wang Yan",
+            "openAlexId": "https://openalex.org/A5151019000",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Qufu Normal University",
+                "openAlexId": "https://openalex.org/I202126657",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Miao Gao",
+            "openAlexId": "https://openalex.org/A5151063441",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Ningbo University",
+                "openAlexId": "https://openalex.org/I109935558",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Zheng-Xin Liu",
+            "openAlexId": "https://openalex.org/A5041849777",
+            "orcid": "https://orcid.org/0000-0002-8594-6350",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Renmin University of China",
+                "openAlexId": "https://openalex.org/I78988378",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Peng-Jie Guo",
+            "openAlexId": "https://openalex.org/A5151022381",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": true,
+            "institutions": [
+              {
+                "name": "Renmin University of China",
+                "openAlexId": "https://openalex.org/I78988378",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Fengjie Ma",
+            "openAlexId": "https://openalex.org/A5151057563",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": true,
+            "institutions": [
+              {
+                "name": "Beijing Normal University",
+                "openAlexId": "https://openalex.org/I25254941",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Zhong-Yi Lu",
+            "openAlexId": "https://openalex.org/A5150908862",
+            "orcid": "",
+            "position": "last",
+            "corresponding": true,
+            "institutions": [
+              {
+                "name": "Hefei University",
+                "openAlexId": "https://openalex.org/I39774598",
+                "countryCode": "CN",
+                "type": "education"
+              },
+              {
+                "name": "Renmin University of China",
+                "openAlexId": "https://openalex.org/I78988378",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          }
+        ],
+        "institutions": [
+          {
+            "name": "Beijing Normal University",
+            "openAlexId": "https://openalex.org/I25254941",
+            "countryCode": "CN",
+            "type": "education"
+          },
+          {
+            "name": "Renmin University of China",
+            "openAlexId": "https://openalex.org/I78988378",
+            "countryCode": "CN",
+            "type": "education"
+          },
+          {
+            "name": "Qufu Normal University",
+            "openAlexId": "https://openalex.org/I202126657",
+            "countryCode": "CN",
+            "type": "education"
+          },
+          {
+            "name": "Ningbo University",
+            "openAlexId": "https://openalex.org/I109935558",
+            "countryCode": "CN",
+            "type": "education"
+          },
+          {
+            "name": "Hefei University",
+            "openAlexId": "https://openalex.org/I39774598",
+            "countryCode": "CN",
+            "type": "education"
+          }
+        ],
+        "abstract": "",
+        "automaticTopics": [
+          {
+            "name": "Topological Materials and Phenomena",
+            "id": "https://openalex.org/T10657",
+            "score": 0.9668999910354614,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Quantum and electron transport phenomena",
+            "id": "https://openalex.org/T10382",
+            "score": 0.015599999576807022,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Graphene research and applications",
+            "id": "https://openalex.org/T10083",
+            "score": 0.00430000014603138,
+            "subfield": "Materials Chemistry",
+            "field": "Materials Science",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Topological Materials and Phenomena",
+        "keywords": [
+          "Brillouin zone",
+          "Topological insulator",
+          "Insulator (electricity)",
+          "Quantum spin Hall effect",
+          "Lattice (music)",
+          "Quantum anomalous Hall effect",
+          "Spin (aerodynamics)",
+          "Symmetry (geometry)"
+        ],
+        "relatedWorks": [],
+        "referencedWorks": [
+          "https://openalex.org/W1550186202",
+          "https://openalex.org/W2004327816",
+          "https://openalex.org/W2014430841",
+          "https://openalex.org/W2019128780",
+          "https://openalex.org/W2020332193",
+          "https://openalex.org/W2030164271",
+          "https://openalex.org/W2043175787",
+          "https://openalex.org/W2043691039",
+          "https://openalex.org/W2053672741",
+          "https://openalex.org/W2088198211",
+          "https://openalex.org/W2102074887",
+          "https://openalex.org/W2117734893",
+          "https://openalex.org/W2120145199",
+          "https://openalex.org/W2157058142",
+          "https://openalex.org/W2293673104",
+          "https://openalex.org/W2591549049",
+          "https://openalex.org/W2757803490",
+          "https://openalex.org/W2969666960",
+          "https://openalex.org/W3005860731",
+          "https://openalex.org/W3033432659",
+          "https://openalex.org/W3042218866",
+          "https://openalex.org/W3128947413",
+          "https://openalex.org/W3206508710",
+          "https://openalex.org/W4296001801",
+          "https://openalex.org/W4367626106",
+          "https://openalex.org/W4385950321",
+          "https://openalex.org/W4403204254",
+          "https://openalex.org/W4408149715",
+          "https://openalex.org/W4408225555",
+          "https://openalex.org/W4408538775",
+          "https://openalex.org/W4410817098",
+          "https://openalex.org/W4414768800",
+          "https://openalex.org/W4416186777",
+          "https://openalex.org/W7166879200"
+        ],
+        "openAccess": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "landingPageUrl": "https://doi.org/10.1007/s11433-026-3097-y",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "doi-query",
+        "matchConfidence": 0.995,
+        "matchVerification": "exact-doi",
+        "matchEvidence": {
+          "verification": "exact-doi",
+          "identifierMatch": "doi",
+          "titleScore": 1.0,
+          "authorScore": 0.0,
+          "yearScore": 1.0,
+          "hasAuthorEvidence": false,
+          "hasYearEvidence": true,
+          "seedTitle": "Type-II quantum spin Hall insulator without time-reversal symmetry",
+          "candidateTitle": "Type-II quantum spin Hall insulator without time-reversal symmetry",
+          "seedAuthors": [],
+          "candidateAuthors": [
+            "Panjun Feng",
+            "Chaoyang Tan",
+            "Xun-Wang Yan",
+            "Miao Gao",
+            "Zheng-Xin Liu",
+            "Peng-Jie Guo",
+            "Fengjie Ma",
+            "Zhong-Yi Lu"
+          ],
+          "seedYear": 2026,
+          "candidateYear": 2026,
+          "seedDoi": "10.1007/s11433-026-3097-y",
+          "candidateDoi": "10.1007/s11433-026-3097-y",
+          "seedArxivId": "",
+          "candidateArxivIds": [],
+          "candidateOpenAlexId": "https://openalex.org/W7212072061",
+          "warnings": []
+        },
+        "matchedFromPdf": false,
+        "updatedAt": 1789797855677,
+        "metadataError": "",
+        "citations": {
+          "count": 0,
+          "source": "OpenAlex",
+          "updatedAt": 1789797855677
+        }
+      },
+      "citations": {
+        "count": 0,
+        "source": "OpenAlex",
+        "updatedAt": 1789797855677
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1789797855685,
+        "updatedAt": 1789797855685,
+        "source": "upload-metadata",
+        "title": "Type-II quantum spin Hall insulator without time-reversal symmetry",
+        "authors": [
+          "Panjun Feng",
+          "Chaoyang Tan",
+          "Xun-Wang Yan",
+          "Miao Gao",
+          "Zheng-Xin Liu",
+          "Peng-Jie Guo",
+          "Fengjie Ma",
+          "Zhong-Yi Lu"
+        ],
+        "affiliations": [
+          "Beijing Normal University",
+          "Renmin University of China",
+          "Qufu Normal University",
+          "Ningbo University",
+          "Hefei University"
+        ],
+        "publicationStatus": "published",
+        "journal": "Science China Physics Mechanics and Astronomy",
+        "year": 2026,
+        "volume": "69",
+        "issue": "12",
+        "pages": "",
+        "publisher": "Springer Science+Business Media",
+        "doi": "10.1007/s11433-026-3097-y",
+        "arxivId": "",
+        "citationKey": "Feng2026type",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.1007/s11433-026-3097-y",
+          "arxiv": "",
+          "publisher": "https://doi.org/10.1007/s11433-026-3097-y",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "提出无需时间反演对称性的 II 型量子自旋霍尔绝缘体，以单层 Nb2SeTeO 为例给出自旋劈裂的能带实现",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     }
   ],
   "historicalMetadataUpdatedAt": 1787560753289,
