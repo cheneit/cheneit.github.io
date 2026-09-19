@@ -47584,6 +47584,308 @@
           "starred": false
         }
       }
+    },
+    {
+      "id": "5l316d3hnqvk916yrfe",
+      "title": "Classiﬁcation of magnetism and",
+      "filename": "s41524-026-02309-1_reference.pdf",
+      "path": "https://cheneit.github.io/cheneit-pdf-2026/data/files/2026/09/5l316d3hnqvk916yrfe.pdf",
+      "kind": "pdf",
+      "topics": [
+        "Altermagnet"
+      ],
+      "topic": "Altermagnet",
+      "tags": [
+        "refs_update"
+      ],
+      "ts": 1789797587250,
+      "createdTs": 1789797587250,
+      "size": 1206537,
+      "desc": "把 altermagnetism 的分类框架从晶体推广到准晶，指出同一 d 波不可约表示可对应不同磁类",
+      "imagePath": "data/files/2026/09/images/5l316d3hnqvk916yrfe__shao2026quasicrystal.png",
+      "storage": {
+        "owner": "cheneit",
+        "repo": "cheneit-pdf-2026",
+        "branch": "main",
+        "path": "data/files/2026/09/5l316d3hnqvk916yrfe.pdf"
+      },
+      "uploadStatus": "ready",
+      "uploadError": "",
+      "imageUploadError": "",
+      "groups": [],
+      "scholarly": {
+        "title": "Classification of magnetism and altermagnetism in quasicrystals",
+        "doi": "10.1038/s41524-026-02309-1",
+        "arxivId": "",
+        "openAlexId": "https://openalex.org/W4416256600",
+        "publicationDate": "2026-09-09",
+        "year": 2026,
+        "venue": "npj Computational Materials",
+        "venueId": "https://openalex.org/S4210232664",
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Nature Portfolio",
+        "type": "article",
+        "authors": [
+          {
+            "name": "Zhi-Yan Shao",
+            "openAlexId": "https://openalex.org/A5102543537",
+            "orcid": "",
+            "position": "first",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Beijing Institute of Technology",
+                "openAlexId": "https://openalex.org/I125839683",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Jia-Heng Ji",
+            "openAlexId": "https://openalex.org/A5114761432",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Beijing Institute of Technology",
+                "openAlexId": "https://openalex.org/I125839683",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Chen Lu",
+            "openAlexId": "https://openalex.org/A5151092500",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Hangzhou Normal University",
+                "openAlexId": "https://openalex.org/I163151501",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Zhiming Pan",
+            "openAlexId": "https://openalex.org/A5151023151",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Xiamen University",
+                "openAlexId": "https://openalex.org/I191208505",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Yubo Liu",
+            "openAlexId": "https://openalex.org/A5100747044",
+            "orcid": "https://orcid.org/0000-0002-2984-2573",
+            "position": "middle",
+            "corresponding": true,
+            "institutions": [
+              {
+                "name": "Institute of Theoretical Physics",
+                "openAlexId": "https://openalex.org/I4210125404",
+                "countryCode": "CN",
+                "type": "facility"
+              }
+            ]
+          },
+          {
+            "name": "Fan Yang",
+            "openAlexId": "https://openalex.org/A5115602259",
+            "orcid": "https://orcid.org/0000-0002-9693-4099",
+            "position": "last",
+            "corresponding": true,
+            "institutions": [
+              {
+                "name": "Beijing Institute of Technology",
+                "openAlexId": "https://openalex.org/I125839683",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          }
+        ],
+        "institutions": [
+          {
+            "name": "Beijing Institute of Technology",
+            "openAlexId": "https://openalex.org/I125839683",
+            "countryCode": "CN",
+            "type": "education"
+          },
+          {
+            "name": "Hangzhou Normal University",
+            "openAlexId": "https://openalex.org/I163151501",
+            "countryCode": "CN",
+            "type": "education"
+          },
+          {
+            "name": "Xiamen University",
+            "openAlexId": "https://openalex.org/I191208505",
+            "countryCode": "CN",
+            "type": "education"
+          },
+          {
+            "name": "Institute of Theoretical Physics",
+            "openAlexId": "https://openalex.org/I4210125404",
+            "countryCode": "CN",
+            "type": "facility"
+          }
+        ],
+        "abstract": "Altermagnetism (AM), an unconventional magnetic phase characterized by zero net magnetism protected by symmetry(s) other than parity-time ( \\({\\mathcal{P}}{\\mathcal{T}}\\) ) and a resulting spin-split band, has been studied exclusively in crystalline materials. Here, we extend the framework of AM to quasicrystals (QCs). We start from a comparison between the Néel state on the square lattice and that on a D 4 -symmetric Thue-Morse QC, with the latter obtained from solving a half-filled bipartite Hubbard model through the sign-problem-free projector quantum Monte Carlo algorithm. Consequently, although both Néel states belong to the same d -wave irreducible representation (IRRP) of the D 4 point group, they belong to different magnetic classes: The former Néel state is antiferromagnetism (AFM) protected by the combined \\({\\mathcal{P}}{\\mathcal{T}}\\) and translational symmetry, while the lack of translational symmetry in the latter Néel state breaks the \\({\\mathcal{P}}{\\mathcal{T}}\\) symmetry, and the additional mirror or rotation symmetry protects AM. This example suggests that AM is more common in QCs than in crystals and can be easily explored through a point-group symmetry-based classification. Therefore, we classify colinear magnetic phases in 2D D n -symmetric QCs without spin-orbit coupling, by using IRRPs of D n . Consequently, the identity IRRP represents ferromagnetism, the inversion-odd 1D IRRPs for twice-of-odd n represent AFM, and all the remaining 1D IRRPs represent AM, protected by either mirror or rotation symmetry. We further take the Hubbard model to verify this result in various QCs with different symmetries. Our work highlights the QC as a natural platform where AM is common among magnetic phases.",
+        "automaticTopics": [
+          {
+            "name": "Quasicrystal Structures and Properties",
+            "id": "https://openalex.org/T11887",
+            "score": 0.9941999912261963,
+            "subfield": "Materials Chemistry",
+            "field": "Materials Science",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Topological Materials and Phenomena",
+            "id": "https://openalex.org/T10657",
+            "score": 0.0024999999441206455,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Advanced Condensed Matter Physics",
+            "id": "https://openalex.org/T11682",
+            "score": 0.0007999999797903001,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Quasicrystal Structures and Properties",
+        "keywords": [
+          "Quasicrystal",
+          "Magnetism",
+          "Translational symmetry",
+          "Antiferromagnetism",
+          "Lattice (music)",
+          "Square lattice",
+          "Symmetry (geometry)",
+          "Rotation (mathematics)"
+        ],
+        "relatedWorks": [],
+        "referencedWorks": [],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://www.nature.com/articles/s41524-026-02309-1_reference.pdf",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "https://doi.org/10.1038/s41524-026-02309-1",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "doi-query",
+        "matchConfidence": 0.995,
+        "matchVerification": "exact-doi",
+        "matchEvidence": {
+          "verification": "exact-doi",
+          "identifierMatch": "doi",
+          "titleScore": 0.6237,
+          "authorScore": 0.0,
+          "yearScore": 1.0,
+          "hasAuthorEvidence": false,
+          "hasYearEvidence": true,
+          "seedTitle": "Classiﬁcation of magnetism and",
+          "candidateTitle": "Classification of magnetism and altermagnetism in quasicrystals",
+          "seedAuthors": [],
+          "candidateAuthors": [
+            "Zhi-Yan Shao",
+            "Jia-Heng Ji",
+            "Chen Lu",
+            "Zhiming Pan",
+            "Yubo Liu",
+            "Fan Yang"
+          ],
+          "seedYear": 2026,
+          "candidateYear": 2026,
+          "seedDoi": "10.1038/s41524-026-02309-1",
+          "candidateDoi": "10.1038/s41524-026-02309-1",
+          "seedArxivId": "",
+          "candidateArxivIds": [
+            "2508.15702"
+          ],
+          "candidateOpenAlexId": "https://openalex.org/W4416256600",
+          "warnings": []
+        },
+        "matchedFromPdf": false,
+        "updatedAt": 1789797587249,
+        "metadataError": "",
+        "citations": {
+          "count": 1,
+          "source": "OpenAlex",
+          "updatedAt": 1789797587249
+        }
+      },
+      "citations": {
+        "count": 1,
+        "source": "OpenAlex",
+        "updatedAt": 1789797587249
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1789797587252,
+        "updatedAt": 1789797587252,
+        "source": "upload-metadata",
+        "title": "Classification of magnetism and altermagnetism in quasicrystals",
+        "authors": [
+          "Zhi-Yan Shao",
+          "Jia-Heng Ji",
+          "Chen Lu",
+          "Zhiming Pan",
+          "Yubo Liu",
+          "Fan Yang"
+        ],
+        "affiliations": [
+          "Beijing Institute of Technology",
+          "Hangzhou Normal University",
+          "Xiamen University",
+          "Institute of Theoretical Physics"
+        ],
+        "publicationStatus": "published",
+        "journal": "npj Computational Materials",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Nature Portfolio",
+        "doi": "10.1038/s41524-026-02309-1",
+        "arxivId": "",
+        "citationKey": "Shao2026classification",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.1038/s41524-026-02309-1",
+          "arxiv": "",
+          "publisher": "https://doi.org/10.1038/s41524-026-02309-1",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "把 altermagnetism 的分类框架从晶体推广到准晶，指出同一 d 波不可约表示可对应不同磁类",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     }
   ],
   "historicalMetadataUpdatedAt": 1787560753289,
