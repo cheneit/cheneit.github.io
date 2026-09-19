@@ -47051,6 +47051,286 @@
           "starred": false
         }
       }
+    },
+    {
+      "id": "munv1v8rwl83eb6wfxa",
+      "title": "B-type quadratic planar Hall effect as a probe of altermagnetic order",
+      "filename": "B-type Quadratic Planar Hall Effect as a Probe of Altermagnetic Order.pdf",
+      "path": "https://cheneit.github.io/cheneit-pdf-2026/data/files/2026/09/munv1v8rwl83eb6wfxa.pdf",
+      "kind": "pdf",
+      "topics": [
+        "Altermagnet"
+      ],
+      "topic": "Altermagnet",
+      "tags": [
+        "refs_update"
+      ],
+      "ts": 1789797494544,
+      "createdTs": 1789797494544,
+      "size": 2142554,
+      "desc": "提出 B 型二次平面霍尔效应作为探测磁结构的灵敏手段，其平面霍尔电流随外场二次标度，可区分 AM 与 AFM 相",
+      "imagePath": "data/files/2026/09/images/munv1v8rwl83eb6wfxa__btype2026phe.png",
+      "storage": {
+        "owner": "cheneit",
+        "repo": "cheneit-pdf-2026",
+        "branch": "main",
+        "path": "data/files/2026/09/munv1v8rwl83eb6wfxa.pdf"
+      },
+      "uploadStatus": "ready",
+      "uploadError": "",
+      "imageUploadError": "",
+      "groups": [],
+      "scholarly": {
+        "title": "B-type Quadratic Planar Hall Effect as a Probe of Altermagnetic Order",
+        "doi": "",
+        "arxivId": "",
+        "openAlexId": "https://openalex.org/W7213373435",
+        "publicationDate": "2026-09-12",
+        "year": 2026,
+        "venue": "arXiv (Cornell University)",
+        "venueId": "https://openalex.org/S4306400194",
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University",
+        "type": "preprint",
+        "authors": [
+          {
+            "name": "Yiwei Zhao",
+            "openAlexId": "https://openalex.org/A5151750675",
+            "orcid": "",
+            "position": "first",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "City University of Hong Kong",
+                "openAlexId": "https://openalex.org/I168719708",
+                "countryCode": "HK",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Junwei Liu",
+            "openAlexId": "https://openalex.org/A5151864451",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Hong Kong University of Science and Technology",
+                "openAlexId": "https://openalex.org/I200769079",
+                "countryCode": "HK",
+                "type": "education"
+              },
+              {
+                "name": "University of Hong Kong",
+                "openAlexId": "https://openalex.org/I889458895",
+                "countryCode": "HK",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Jian Zhou",
+            "openAlexId": "https://openalex.org/A5151835181",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Xi'an Jiaotong University",
+                "openAlexId": "https://openalex.org/I87445476",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Haowei Xu",
+            "openAlexId": "https://openalex.org/A5151791002",
+            "orcid": "",
+            "position": "last",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "City University of Hong Kong",
+                "openAlexId": "https://openalex.org/I168719708",
+                "countryCode": "HK",
+                "type": "education"
+              }
+            ]
+          }
+        ],
+        "institutions": [
+          {
+            "name": "City University of Hong Kong",
+            "openAlexId": "https://openalex.org/I168719708",
+            "countryCode": "HK",
+            "type": "education"
+          },
+          {
+            "name": "Hong Kong University of Science and Technology",
+            "openAlexId": "https://openalex.org/I200769079",
+            "countryCode": "HK",
+            "type": "education"
+          },
+          {
+            "name": "University of Hong Kong",
+            "openAlexId": "https://openalex.org/I889458895",
+            "countryCode": "HK",
+            "type": "education"
+          },
+          {
+            "name": "Xi'an Jiaotong University",
+            "openAlexId": "https://openalex.org/I87445476",
+            "countryCode": "CN",
+            "type": "education"
+          }
+        ],
+        "abstract": "Conventional transport and optical responses, such as the Hall effect, can only distinguish material phases with substantially different symmetries. However, many quantum materials, such as candidate altermagnetic materials, host competing phases with similar structures, making it difficult to differentiate them using conventional transport or optical measurements. Here, guided by symmetry principles, we introduce a B-type quadratic planar Hall effect (B2-PHE) as a sensitive probe of magnetic structures. B2-PHE features a planar Hall current that scales quadratically with the applied magnetic field. This response originates from the interplay among external magnetic fields, intrinsic magnetic order, and quantum geometric properties of the electronic bands. We investigate B2-PHE in two altermagnetic candidates, KV2Se2O and RuO2, whose ground-state magnetic orders are under intense debate. Remarkably, B2-PHE emerges in their altermagnetic phases but is symmetry-forbidden in their antiferromagnetic (nonmagnetic) phases. We also show that B2-PHE should be detectable under a moderate magnetic field on the order of 1 Tesla. These findings establish B2-PHE as an experimentally convenient and potentially unambiguous probe of altermagnetic order, which is otherwise difficult to realize.",
+        "automaticTopics": [
+          {
+            "name": "Topological Materials and Phenomena",
+            "id": "https://openalex.org/T10657",
+            "score": 0.6730999946594238,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "2D Materials and Applications",
+            "id": "https://openalex.org/T10275",
+            "score": 0.14319999516010284,
+            "subfield": "Materials Chemistry",
+            "field": "Materials Science",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Advanced Condensed Matter Physics",
+            "id": "https://openalex.org/T11682",
+            "score": 0.05889999866485596,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Topological Materials and Phenomena",
+        "keywords": [
+          "Magnetic field",
+          "Quadratic growth",
+          "Planar",
+          "Hall effect",
+          "Symmetry (geometry)",
+          "Quantum Hall effect",
+          "Quadratic equation",
+          "Current (fluid)",
+          "Antiferromagnetism"
+        ],
+        "relatedWorks": [],
+        "referencedWorks": [],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2609.13826",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "https://arxiv.org/abs/2609.13826",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "title-search",
+        "matchConfidence": 1.0,
+        "matchVerification": "composite",
+        "matchEvidence": {
+          "verification": "composite",
+          "identifierMatch": "",
+          "titleScore": 1.0,
+          "authorScore": 1.0,
+          "yearScore": 1.0,
+          "hasAuthorEvidence": true,
+          "hasYearEvidence": true,
+          "seedTitle": "B-type quadratic planar Hall effect as a probe of altermagnetic order",
+          "candidateTitle": "B-type Quadratic Planar Hall Effect as a Probe of Altermagnetic Order",
+          "seedAuthors": [
+            "Yiwei Zhao",
+            "Junwei Liu",
+            "Jian Zhou",
+            "Haowei Xu"
+          ],
+          "candidateAuthors": [
+            "Yiwei Zhao",
+            "Junwei Liu",
+            "Jian Zhou",
+            "Haowei Xu"
+          ],
+          "seedYear": 2026,
+          "candidateYear": 2026,
+          "seedDoi": "",
+          "candidateDoi": "",
+          "seedArxivId": "",
+          "candidateArxivIds": [
+            "2609.13826"
+          ],
+          "candidateOpenAlexId": "https://openalex.org/W7213373435",
+          "warnings": []
+        },
+        "matchedFromPdf": false,
+        "updatedAt": 1789797494539,
+        "metadataError": "",
+        "citations": {
+          "count": 0,
+          "source": "OpenAlex",
+          "updatedAt": 1789797494539
+        }
+      },
+      "citations": {
+        "count": 0,
+        "source": "OpenAlex",
+        "updatedAt": 1789797494539
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1789797494545,
+        "updatedAt": 1789797494545,
+        "source": "upload-metadata",
+        "title": "B-type Quadratic Planar Hall Effect as a Probe of Altermagnetic Order",
+        "authors": [
+          "Yiwei Zhao",
+          "Junwei Liu",
+          "Jian Zhou",
+          "Haowei Xu"
+        ],
+        "affiliations": [
+          "City University of Hong Kong",
+          "Hong Kong University of Science and Technology",
+          "University of Hong Kong",
+          "Xi'an Jiaotong University"
+        ],
+        "publicationStatus": "published",
+        "journal": "arXiv (Cornell University)",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University",
+        "doi": "",
+        "arxivId": "",
+        "citationKey": "Zhao2026type",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "",
+          "arxiv": "",
+          "publisher": "https://arxiv.org/abs/2609.13826",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "提出 B 型二次平面霍尔效应作为探测磁结构的灵敏手段，其平面霍尔电流随外场二次标度，可区分 AM 与 AFM 相",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     }
   ],
   "historicalMetadataUpdatedAt": 1787560753289,
