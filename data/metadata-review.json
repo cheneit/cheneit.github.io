@@ -2,17 +2,17 @@
   "schemaVersion": 2,
   "updaterVersion": "5.3",
   "mode": "daily",
-  "generatedAt": "2026-09-18T06:01:34.000828+00:00",
+  "generatedAt": "2026-09-20T06:22:33.507071+00:00",
   "acceptThreshold": 0.78,
   "summary": {
-    "accepted": 105,
-    "review": 12,
-    "unmatched": 27,
+    "accepted": 110,
+    "review": 13,
+    "unmatched": 30,
     "error": 0,
-    "conflicts": 0,
+    "conflicts": 1,
     "pdfParsed": 0,
     "exactVerified": 92,
-    "compositeVerified": 13
+    "compositeVerified": 18
   },
   "results": [
     {
@@ -1288,22 +1288,25 @@
       "itemId": "bhiyz3nvczsmjjjv5ic",
       "originalTitle": "XC_PhD_thesis_basis",
       "status": "review",
-      "confidence": 0.308,
+      "confidence": 0.3412,
       "method": "title-search",
       "verification": "unverified",
       "verified": false,
       "stage": "index",
-      "candidateTitle": "Recent Developments in the Econometrics of Program Evaluation",
+      "candidateTitle": "XC- A language for embedded rule based systems",
       "currentTitle": "",
-      "doi": "10.1257/jel.47.1.5",
-      "openAlexId": "https://openalex.org/W3121385028",
+      "doi": "10.1145/32091.32095",
+      "openAlexId": "https://openalex.org/W2012848317",
       "authors": [
-        "Guido W. Imbens",
-        "Jeffrey M. Wooldridge"
+        "Esko Nuutila",
+        "Juha Kuusela",
+        "Manu Tamminen",
+        "J. Veilhti",
+        "Jari Arkko"
       ],
-      "year": 2009,
+      "year": 1987,
       "identifierMatch": "",
-      "titleScore": 0.3,
+      "titleScore": 0.3438,
       "authorScore": 0.0,
       "yearScore": 0.0,
       "warnings": [],
@@ -4101,6 +4104,261 @@
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": "No identity-verified daily match"
+    },
+    {
+      "itemId": "7d9aa5cveskc1ujmttb",
+      "originalTitle": "Altermagnetism and superconductivity: a short historical review",
+      "status": "accepted",
+      "confidence": 0.88,
+      "method": "openalex-id-revalidated",
+      "verification": "composite",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Altermagnetism and superconductivity: a short historical review",
+      "currentTitle": "Altermagnetism and superconductivity: a short historical review",
+      "doi": "10.1088/1361-6633/ae9e46",
+      "openAlexId": "https://openalex.org/W4415281282",
+      "authors": [
+        "Zhao Liu",
+        "Hui Hu",
+        "Xia-Ji Liu"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 1.0,
+      "authorScore": 0.0,
+      "yearScore": 0.0,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "munv1v8rwl83eb6wfxa",
+      "originalTitle": "B-type quadratic planar Hall effect as a probe of altermagnetic order",
+      "status": "accepted",
+      "confidence": 0.88,
+      "method": "openalex-id-revalidated",
+      "verification": "composite",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "B-type Quadratic Planar Hall Effect as a Probe of Altermagnetic Order",
+      "currentTitle": "B-type Quadratic Planar Hall Effect as a Probe of Altermagnetic Order",
+      "doi": "",
+      "openAlexId": "https://openalex.org/W7213373435",
+      "authors": [
+        "Yiwei Zhao",
+        "Junwei Liu",
+        "Jian Zhou",
+        "Haowei Xu"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 1.0,
+      "authorScore": 0.0,
+      "yearScore": 0.0,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "k1tk90ibc6x5m2mzz1a",
+      "originalTitle": "Chiral classical and quantum acoustics with hole-spin qubits",
+      "status": "accepted",
+      "confidence": 0.88,
+      "method": "openalex-id-revalidated",
+      "verification": "composite",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Chiral classical and quantum acoustics with hole-spin qubits",
+      "currentTitle": "Chiral classical and quantum acoustics with hole-spin qubits",
+      "doi": "10.48550/arxiv.2609.18485",
+      "openAlexId": "https://openalex.org/W7213500816",
+      "authors": [
+        "Zhanning Wang",
+        "Yongtao Li",
+        "Nelson E. Rivas",
+        "Gonzalo García",
+        "Irene Castro",
+        "Rubén Seoane Souto",
+        "Daniel Ramos",
+        "José C. Abadillo-Uriel"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 1.0,
+      "authorScore": 0.0,
+      "yearScore": 0.0,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "5l316d3hnqvk916yrfe",
+      "originalTitle": "Classiﬁcation of magnetism and",
+      "status": "review",
+      "confidence": 0.594,
+      "method": "openalex-id-revalidated",
+      "verification": "conflict",
+      "verified": false,
+      "stage": "index",
+      "candidateTitle": "Classification of magnetism and altermagnetism in quasicrystals",
+      "currentTitle": "Classification of magnetism and altermagnetism in quasicrystals",
+      "doi": "10.1038/s41524-026-02309-1",
+      "openAlexId": "https://openalex.org/W4416256600",
+      "authors": [
+        "Zhi-Yan Shao",
+        "Jia-Heng Ji",
+        "Chen Lu",
+        "Zhiming Pan",
+        "Yubo Liu",
+        "Fan Yang"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 0.6237,
+      "authorScore": 0.0,
+      "yearScore": 0.0,
+      "warnings": [
+        "stored-openalex-id-title-conflict",
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": "No identity-verified daily match"
+    },
+    {
+      "itemId": "clail2oktl7kgcxafqe",
+      "originalTitle": "Disorder-robust trivial Majorana-like states from smooth confinement in chiral superconducting nanowires",
+      "status": "accepted",
+      "confidence": 1.0,
+      "method": "openalex-id-revalidated",
+      "verification": "composite",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Disorder-robust trivial Majorana-like states from smooth confinement in chiral superconducting nanowires",
+      "currentTitle": "Disorder-robust trivial Majorana-like states from smooth confinement in chiral superconducting nanowires",
+      "doi": "10.48550/arxiv.2608.09758",
+      "openAlexId": "https://openalex.org/W7202185186",
+      "authors": [
+        "Eslam Ahmed",
+        "Jorge Cayao",
+        "Yukio Tanaka"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 1.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "uguiprx7bo2k64ai6nf",
+      "originalTitle": "Graphene nanoribbons as a Majorana platform",
+      "status": "unmatched",
+      "confidence": 0.0,
+      "method": "no-result",
+      "verification": "unverified",
+      "verified": false,
+      "stage": "index",
+      "candidateTitle": "",
+      "currentTitle": "",
+      "doi": "",
+      "openAlexId": "",
+      "authors": [],
+      "year": null,
+      "identifierMatch": "",
+      "titleScore": null,
+      "authorScore": null,
+      "yearScore": null,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": "No identity-verified daily match"
+    },
+    {
+      "itemId": "4mxnfzwapx6od18qjva",
+      "originalTitle": "Spacetime dynamics of altermagnetic magnons",
+      "status": "unmatched",
+      "confidence": 0.0,
+      "method": "no-result",
+      "verification": "unverified",
+      "verified": false,
+      "stage": "index",
+      "candidateTitle": "",
+      "currentTitle": "",
+      "doi": "",
+      "openAlexId": "",
+      "authors": [],
+      "year": null,
+      "identifierMatch": "",
+      "titleScore": null,
+      "authorScore": null,
+      "yearScore": null,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": "No identity-verified daily match"
+    },
+    {
+      "itemId": "tu72b2hemwby1jdjgvb",
+      "originalTitle": "Topological superconductivity in an altermagnet-superconductor heterostructure",
+      "status": "unmatched",
+      "confidence": 0.0,
+      "method": "no-result",
+      "verification": "unverified",
+      "verified": false,
+      "stage": "index",
+      "candidateTitle": "",
+      "currentTitle": "",
+      "doi": "",
+      "openAlexId": "",
+      "authors": [],
+      "year": null,
+      "identifierMatch": "",
+      "titleScore": null,
+      "authorScore": null,
+      "yearScore": null,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": "No identity-verified daily match"
+    },
+    {
+      "itemId": "8en4mmaziezq4cqkmef",
+      "originalTitle": "Type-II quantum spin Hall insulator without time-reversal symmetry",
+      "status": "accepted",
+      "confidence": 0.88,
+      "method": "openalex-id-revalidated",
+      "verification": "composite",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Type-II quantum spin Hall insulator without time-reversal symmetry",
+      "currentTitle": "Type-II quantum spin Hall insulator without time-reversal symmetry",
+      "doi": "10.1007/s11433-026-3097-y",
+      "openAlexId": "https://openalex.org/W7212072061",
+      "authors": [
+        "Panjun Feng",
+        "Chaoyang Tan",
+        "Xun-Wang Yan",
+        "Miao Gao",
+        "Zheng-Xin Liu",
+        "Peng-Jie Guo",
+        "Fengjie Ma",
+        "Zhong-Yi Lu"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 1.0,
+      "authorScore": 0.0,
+      "yearScore": 0.0,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
     }
   ]
 }
