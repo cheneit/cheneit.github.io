@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "updaterVersion": "5.3",
   "mode": "daily",
-  "generatedAt": "2026-09-20T06:22:33.507071+00:00",
+  "generatedAt": "2026-09-21T06:28:25.715642+00:00",
   "acceptThreshold": 0.78,
   "summary": {
     "accepted": 110,
@@ -11,8 +11,8 @@
     "error": 0,
     "conflicts": 1,
     "pdfParsed": 0,
-    "exactVerified": 92,
-    "compositeVerified": 18
+    "exactVerified": 96,
+    "compositeVerified": 14
   },
   "results": [
     {
@@ -4109,9 +4109,9 @@
       "itemId": "7d9aa5cveskc1ujmttb",
       "originalTitle": "Altermagnetism and superconductivity: a short historical review",
       "status": "accepted",
-      "confidence": 0.88,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Altermagnetism and superconductivity: a short historical review",
@@ -4124,11 +4124,12 @@
         "Xia-Ji Liu"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 0.0,
-      "yearScore": 0.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -4137,7 +4138,7 @@
       "itemId": "munv1v8rwl83eb6wfxa",
       "originalTitle": "B-type quadratic planar Hall effect as a probe of altermagnetic order",
       "status": "accepted",
-      "confidence": 0.88,
+      "confidence": 1.0,
       "method": "openalex-id-revalidated",
       "verification": "composite",
       "verified": true,
@@ -4155,8 +4156,8 @@
       "year": 2026,
       "identifierMatch": "",
       "titleScore": 1.0,
-      "authorScore": 0.0,
-      "yearScore": 0.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
       "warnings": [
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
@@ -4166,9 +4167,9 @@
       "itemId": "k1tk90ibc6x5m2mzz1a",
       "originalTitle": "Chiral classical and quantum acoustics with hole-spin qubits",
       "status": "accepted",
-      "confidence": 0.88,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Chiral classical and quantum acoustics with hole-spin qubits",
@@ -4186,11 +4187,12 @@
         "José C. Abadillo-Uriel"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 0.0,
-      "yearScore": 0.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -4231,9 +4233,9 @@
       "itemId": "clail2oktl7kgcxafqe",
       "originalTitle": "Disorder-robust trivial Majorana-like states from smooth confinement in chiral superconducting nanowires",
       "status": "accepted",
-      "confidence": 1.0,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Disorder-robust trivial Majorana-like states from smooth confinement in chiral superconducting nanowires",
@@ -4246,11 +4248,12 @@
         "Yukio Tanaka"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -4331,9 +4334,9 @@
       "itemId": "8en4mmaziezq4cqkmef",
       "originalTitle": "Type-II quantum spin Hall insulator without time-reversal symmetry",
       "status": "accepted",
-      "confidence": 0.88,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Type-II quantum spin Hall insulator without time-reversal symmetry",
@@ -4351,11 +4354,12 @@
         "Zhong-Yi Lu"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 0.0,
-      "yearScore": 0.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
