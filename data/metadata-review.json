@@ -2,17 +2,17 @@
   "schemaVersion": 2,
   "updaterVersion": "5.3",
   "mode": "daily",
-  "generatedAt": "2026-09-23T06:06:47.801933+00:00",
+  "generatedAt": "2026-09-24T06:20:40.652821+00:00",
   "acceptThreshold": 0.78,
   "summary": {
-    "accepted": 110,
-    "review": 13,
-    "unmatched": 30,
+    "accepted": 111,
+    "review": 10,
+    "unmatched": 32,
     "error": 0,
     "conflicts": 1,
     "pdfParsed": 0,
     "exactVerified": 96,
-    "compositeVerified": 14
+    "compositeVerified": 15
   },
   "results": [
     {
@@ -330,7 +330,9 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [],
+      "warnings": [
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
@@ -446,7 +448,9 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [],
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
@@ -580,7 +584,9 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [],
+      "warnings": [
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
@@ -820,86 +826,73 @@
     {
       "itemId": "hvnnigsp9somj2awhwn",
       "originalTitle": "Lin2025arXiv-Chaos in BLG cavities",
-      "status": "review",
-      "confidence": 0.7067,
-      "method": "title-search",
+      "status": "unmatched",
+      "confidence": 0.0,
+      "method": "no-result",
       "verification": "unverified",
       "verified": false,
       "stage": "index",
-      "candidateTitle": "Shaping chaos in bilayer graphene cavities",
+      "candidateTitle": "",
       "currentTitle": "",
-      "doi": "10.1073/pnas.2538081123",
-      "openAlexId": "https://openalex.org/W4417297094",
-      "authors": [
-        "Jucheng Lin",
-        "Ye Zhuang",
-        "Anton M. Graf",
-        "Eric J. Heller",
-        "Joonas Keski-Rahkonen"
-      ],
-      "year": 2026,
+      "doi": "",
+      "openAlexId": "",
+      "authors": [],
+      "year": null,
       "identifierMatch": "",
-      "titleScore": 0.6667,
-      "authorScore": 1.0,
-      "yearScore": 0.5,
-      "warnings": [],
+      "titleScore": null,
+      "authorScore": null,
+      "yearScore": null,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": "No identity-verified daily match"
     },
     {
       "itemId": "tzmf04p4nepmj2cr2o8",
       "originalTitle": "Zhang2025arXiv-Stable skyrmion bundles",
-      "status": "review",
-      "confidence": 0.5207,
-      "method": "title-search",
+      "status": "unmatched",
+      "confidence": 0.0,
+      "method": "no-result",
       "verification": "unverified",
       "verified": false,
       "stage": "index",
-      "candidateTitle": "Stable skyrmion bundles at room temperature and zero magnetic field in a chiral magnet",
+      "candidateTitle": "",
       "currentTitle": "",
-      "doi": "10.1038/s41467-024-47730-6",
-      "openAlexId": "https://openalex.org/W4395002440",
-      "authors": [
-        "Yongsen Zhang",
-        "Jin Tang",
-        "Yaodong Wu",
-        "Meng Zhu Shi",
-        "Xitong Xu",
-        "Shouguo Wang",
-        "Mingliang Tian",
-        "Haifeng Du"
-      ],
-      "year": 2024,
+      "doi": "",
+      "openAlexId": "",
+      "authors": [],
+      "year": null,
       "identifierMatch": "",
-      "titleScore": 0.422,
-      "authorScore": 1.0,
-      "yearScore": 0.5,
-      "warnings": [],
+      "titleScore": null,
+      "authorScore": null,
+      "yearScore": null,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": "No identity-verified daily match"
     },
     {
       "itemId": "90w0kuhh5jdmj2gt317",
       "originalTitle": "Wu2025arXiv-Current-controlled antiskyrmion change in nanostructured cells",
-      "status": "review",
-      "confidence": 0.4931,
-      "method": "title-search",
+      "status": "unmatched",
+      "confidence": 0.0,
+      "method": "no-result",
       "verification": "unverified",
       "verified": false,
       "stage": "index",
-      "candidateTitle": "Strain-mediated voltage-controlled switching of magnetic skyrmions in nanostructures",
+      "candidateTitle": "",
       "currentTitle": "",
-      "doi": "10.1038/s41524-018-0119-2",
-      "openAlexId": "https://openalex.org/W2901830839",
-      "authors": [
-        "Jia‐Mian Hu",
-        "Tiannan Yang",
-        "Long‐Qing Chen"
-      ],
-      "year": 2018,
+      "doi": "",
+      "openAlexId": "",
+      "authors": [],
+      "year": null,
       "identifierMatch": "",
-      "titleScore": 0.6164,
-      "authorScore": 0.1538,
-      "yearScore": 0.0,
-      "warnings": [],
+      "titleScore": null,
+      "authorScore": null,
+      "yearScore": null,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": "No identity-verified daily match"
     },
     {
@@ -1045,25 +1038,25 @@
     {
       "itemId": "0jvyvzip7bm5mjautg96",
       "originalTitle": "Szpara2025arXiv-Dynamical scarring in 2D Topologial Materials",
-      "status": "review",
-      "confidence": 0.2122,
-      "method": "title-search",
+      "status": "unmatched",
+      "confidence": 0.0,
+      "method": "no-result",
       "verification": "unverified",
       "verified": false,
       "stage": "index",
-      "candidateTitle": "A Rydberg tweezer platform with potassium atoms",
+      "candidateTitle": "",
       "currentTitle": "",
-      "doi": "10.5282/edoc.27891",
-      "openAlexId": "https://openalex.org/W3186117096",
-      "authors": [
-        "Nikolaus Lorenz"
-      ],
-      "year": 2021,
+      "doi": "",
+      "openAlexId": "",
+      "authors": [],
+      "year": null,
       "identifierMatch": "",
-      "titleScore": 0.2391,
-      "authorScore": 0.1905,
-      "yearScore": 0.0,
-      "warnings": [],
+      "titleScore": null,
+      "authorScore": null,
+      "yearScore": null,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": "No identity-verified daily match"
     },
     {
@@ -1335,7 +1328,9 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [],
+      "warnings": [
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
@@ -1397,7 +1392,9 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [],
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
@@ -1425,7 +1422,9 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [],
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
@@ -1451,7 +1450,9 @@
       "titleScore": 0.875,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [],
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
@@ -1503,7 +1504,9 @@
       "titleScore": 0.9064,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [],
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
@@ -1589,7 +1592,8 @@
       "authorScore": 1.0,
       "yearScore": 0.0,
       "warnings": [
-        "stored-openalex-id-year-conflict"
+        "stored-openalex-id-year-conflict",
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
     },
@@ -1964,7 +1968,7 @@
       "year": 2025,
       "identifierMatch": "doi",
       "titleScore": 0.246,
-      "authorScore": 0.9231,
+      "authorScore": 1.0,
       "yearScore": 0.5,
       "warnings": [
         "stored-openalex-id-title-conflict"
@@ -2253,7 +2257,9 @@
       "titleScore": 0.8824,
       "authorScore": 1.0,
       "yearScore": 0.5,
-      "warnings": [],
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
@@ -2280,9 +2286,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 0.5,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -2340,9 +2344,7 @@
       "titleScore": 0.9913,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -2370,33 +2372,34 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
       "itemId": "z2bps6snfocmkw73vxo",
       "originalTitle": "Hu2026arXiv-RKKY-like interactions between two magnetic skyrmions",
-      "status": "unmatched",
-      "confidence": 0.0,
-      "method": "no-result",
+      "status": "review",
+      "confidence": 0.3594,
+      "method": "title-search",
       "verification": "unverified",
       "verified": false,
       "stage": "index",
-      "candidateTitle": "",
+      "candidateTitle": "Formation and current-induced motion of synthetic antiferromagnetic skyrmion bubbles",
       "currentTitle": "",
-      "doi": "",
-      "openAlexId": "",
-      "authors": [],
-      "year": null,
-      "identifierMatch": "",
-      "titleScore": null,
-      "authorScore": null,
-      "yearScore": null,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      "doi": "10.1038/s41467-019-13182-6",
+      "openAlexId": "https://openalex.org/W2988564376",
+      "authors": [
+        "Takaaki Dohi",
+        "Samik DuttaGupta",
+        "Shunsuke Fukami",
+        "Hideo Ohno"
       ],
+      "year": 2019,
+      "identifierMatch": "",
+      "titleScore": 0.4234,
+      "authorScore": 0.2353,
+      "yearScore": 0.0,
+      "warnings": [],
       "message": "No identity-verified daily match"
     },
     {
@@ -2404,7 +2407,7 @@
       "originalTitle": "Liu2026arXiv-Tunable two-dimensional Dirac-Weyl Semimetal Phase induced by Altermagnetism",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2422,10 +2425,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -2433,7 +2433,7 @@
       "originalTitle": "Rog2026arXiv-Tapping-mode SQUID-on-tip Microscopy with Proximity Josephson Junction",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2457,10 +2457,7 @@
       "titleScore": 0.9929,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -2493,42 +2490,40 @@
       "titleScore": 0.9104,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
       "itemId": "jooa5vwu5nml7g42bo",
       "originalTitle": "Wang2026arXiv-Visualizing the odd-parity superconducting order parameter and its quasiparticle surface band in UTe2",
-      "status": "unmatched",
-      "confidence": 0.0,
-      "method": "no-result",
-      "verification": "unverified",
-      "verified": false,
+      "status": "accepted",
+      "confidence": 1.0,
+      "method": "title-search",
+      "verification": "composite",
+      "verified": true,
       "stage": "index",
-      "candidateTitle": "",
-      "currentTitle": "",
-      "doi": "",
-      "openAlexId": "",
-      "authors": [],
-      "year": null,
-      "identifierMatch": "",
-      "titleScore": null,
-      "authorScore": null,
-      "yearScore": null,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      "candidateTitle": "Visualizing the Odd-Parity Superconducting Order Parameter and Its Quasiparticle Surface Band in UTe2",
+      "currentTitle": "Visualizing the Odd-Parity Superconducting Order Parameter and Its Quasiparticle Surface Band in UTe2",
+      "doi": "10.1007/s10909-026-03384-w",
+      "openAlexId": "https://openalex.org/W7134129816",
+      "authors": [
+        "S. Wang",
+        "J. C. Séamus Davis"
       ],
-      "message": "No identity-verified daily match"
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 1.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
+      "warnings": [],
+      "message": ""
     },
     {
       "itemId": "btjqyemprrjml7gtivy",
       "originalTitle": "Zhang2026PRB-Spin-polarized STM measurement scheme for determining the quantum geometric tensor",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2550,10 +2545,7 @@
       "titleScore": 0.8632,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -2609,7 +2601,6 @@
       "yearScore": 1.0,
       "warnings": [
         "stored-openalex-id-title-conflict",
-        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -2619,7 +2610,7 @@
       "originalTitle": "Caro2026NL-Phase rotated AM as Chern valves for topological transport",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2637,7 +2628,6 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -2647,7 +2637,7 @@
       "originalTitle": "Mondal2026arXiv-Spin polarized Andreev molecules and anomalous nonlocal Josephson effects in altermagnetic junctions",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2665,7 +2655,6 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -2704,7 +2693,7 @@
       "originalTitle": "SZhang2025arXiv-Intrinsic antiferromagnetic half-metal and topological phases in the ferrovalley states of the sliding bilayer altermagnets",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2721,7 +2710,6 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
@@ -2892,7 +2880,7 @@
       "originalTitle": "XMZhao2026arXiv-Tailoring Corner States and Exceptional Points in Altermagnets",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2913,7 +2901,6 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -2923,7 +2910,7 @@
       "originalTitle": "MZM pinned by magnetic islands",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2942,7 +2929,6 @@
       "yearScore": 1.0,
       "warnings": [
         "stored-openalex-id-title-conflict",
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
@@ -2953,7 +2939,7 @@
       "originalTitle": "Phase-Sensitive Probe of Fermion Parity Switching",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2974,7 +2960,6 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
