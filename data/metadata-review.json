@@ -2,17 +2,17 @@
   "schemaVersion": 2,
   "updaterVersion": "5.3",
   "mode": "daily",
-  "generatedAt": "2026-09-24T06:20:40.652821+00:00",
+  "generatedAt": "2026-09-25T06:19:36.238223+00:00",
   "acceptThreshold": 0.78,
   "summary": {
     "accepted": 111,
-    "review": 10,
-    "unmatched": 32,
+    "review": 12,
+    "unmatched": 30,
     "error": 0,
     "conflicts": 1,
     "pdfParsed": 0,
-    "exactVerified": 96,
-    "compositeVerified": 15
+    "exactVerified": 97,
+    "compositeVerified": 14
   },
   "results": [
     {
@@ -68,7 +68,9 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [],
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
@@ -303,7 +305,9 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [],
+      "warnings": [
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
@@ -331,7 +335,7 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
-        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests"
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
     },
@@ -448,9 +452,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -475,7 +477,9 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [],
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
@@ -525,7 +529,9 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [],
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
@@ -584,9 +590,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -615,7 +619,10 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [],
+      "warnings": [
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
@@ -701,7 +708,9 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [],
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
@@ -761,7 +770,9 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [],
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
@@ -791,7 +802,9 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [],
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
@@ -850,49 +863,58 @@
     {
       "itemId": "tzmf04p4nepmj2cr2o8",
       "originalTitle": "Zhang2025arXiv-Stable skyrmion bundles",
-      "status": "unmatched",
-      "confidence": 0.0,
-      "method": "no-result",
+      "status": "review",
+      "confidence": 0.5207,
+      "method": "title-search",
       "verification": "unverified",
       "verified": false,
       "stage": "index",
-      "candidateTitle": "",
+      "candidateTitle": "Stable skyrmion bundles at room temperature and zero magnetic field in a chiral magnet",
       "currentTitle": "",
-      "doi": "",
-      "openAlexId": "",
-      "authors": [],
-      "year": null,
-      "identifierMatch": "",
-      "titleScore": null,
-      "authorScore": null,
-      "yearScore": null,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      "doi": "10.1038/s41467-024-47730-6",
+      "openAlexId": "https://openalex.org/W4395002440",
+      "authors": [
+        "Yongsen Zhang",
+        "Jin Tang",
+        "Yaodong Wu",
+        "Meng Zhu Shi",
+        "Xitong Xu",
+        "Shouguo Wang",
+        "Mingliang Tian",
+        "Haifeng Du"
       ],
+      "year": 2024,
+      "identifierMatch": "",
+      "titleScore": 0.422,
+      "authorScore": 1.0,
+      "yearScore": 0.5,
+      "warnings": [],
       "message": "No identity-verified daily match"
     },
     {
       "itemId": "90w0kuhh5jdmj2gt317",
       "originalTitle": "Wu2025arXiv-Current-controlled antiskyrmion change in nanostructured cells",
-      "status": "unmatched",
-      "confidence": 0.0,
-      "method": "no-result",
+      "status": "review",
+      "confidence": 0.4931,
+      "method": "title-search",
       "verification": "unverified",
       "verified": false,
       "stage": "index",
-      "candidateTitle": "",
+      "candidateTitle": "Strain-mediated voltage-controlled switching of magnetic skyrmions in nanostructures",
       "currentTitle": "",
-      "doi": "",
-      "openAlexId": "",
-      "authors": [],
-      "year": null,
-      "identifierMatch": "",
-      "titleScore": null,
-      "authorScore": null,
-      "yearScore": null,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      "doi": "10.1038/s41524-018-0119-2",
+      "openAlexId": "https://openalex.org/W2901830839",
+      "authors": [
+        "Jia‐Mian Hu",
+        "Tiannan Yang",
+        "Long‐Qing Chen"
       ],
+      "year": 2018,
+      "identifierMatch": "",
+      "titleScore": 0.6164,
+      "authorScore": 0.1538,
+      "yearScore": 0.0,
+      "warnings": [],
       "message": "No identity-verified daily match"
     },
     {
@@ -1084,7 +1106,9 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [],
+      "warnings": [
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
@@ -1110,7 +1134,9 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 0.5,
-      "warnings": [],
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
@@ -1136,7 +1162,9 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [],
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
@@ -1223,7 +1251,9 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [],
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
@@ -1280,29 +1310,25 @@
     {
       "itemId": "bhiyz3nvczsmjjjv5ic",
       "originalTitle": "XC_PhD_thesis_basis",
-      "status": "review",
-      "confidence": 0.3412,
-      "method": "title-search",
+      "status": "unmatched",
+      "confidence": 0.0,
+      "method": "no-result",
       "verification": "unverified",
       "verified": false,
       "stage": "index",
-      "candidateTitle": "XC- A language for embedded rule based systems",
+      "candidateTitle": "",
       "currentTitle": "",
-      "doi": "10.1145/32091.32095",
-      "openAlexId": "https://openalex.org/W2012848317",
-      "authors": [
-        "Esko Nuutila",
-        "Juha Kuusela",
-        "Manu V. Tamminen",
-        "J. Veilhti",
-        "Jari Arkko"
-      ],
-      "year": 1987,
+      "doi": "",
+      "openAlexId": "",
+      "authors": [],
+      "year": null,
       "identifierMatch": "",
-      "titleScore": 0.3438,
-      "authorScore": 0.0,
-      "yearScore": 0.0,
-      "warnings": [],
+      "titleScore": null,
+      "authorScore": null,
+      "yearScore": null,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": "No identity-verified daily match"
     },
     {
@@ -1328,9 +1354,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -1392,9 +1416,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -1422,9 +1444,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -1450,9 +1470,7 @@
       "titleScore": 0.875,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -1505,6 +1523,7 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -1563,7 +1582,8 @@
       "authorScore": 1.0,
       "yearScore": 0.5,
       "warnings": [
-        "stored-openalex-id-title-conflict"
+        "stored-openalex-id-title-conflict",
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
     },
@@ -1592,8 +1612,7 @@
       "authorScore": 1.0,
       "yearScore": 0.0,
       "warnings": [
-        "stored-openalex-id-year-conflict",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+        "stored-openalex-id-year-conflict"
       ],
       "message": ""
     },
@@ -1731,7 +1750,9 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 0.5,
-      "warnings": [],
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
@@ -1794,7 +1815,9 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 0.5,
-      "warnings": [],
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
@@ -1882,7 +1905,9 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 0.5,
-      "warnings": [],
+      "warnings": [
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
@@ -1971,7 +1996,8 @@
       "authorScore": 1.0,
       "yearScore": 0.5,
       "warnings": [
-        "stored-openalex-id-title-conflict"
+        "stored-openalex-id-title-conflict",
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
     },
@@ -2257,9 +2283,7 @@
       "titleScore": 0.8824,
       "authorScore": 1.0,
       "yearScore": 0.5,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -2314,10 +2338,7 @@
       "titleScore": 0.9014,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -2497,9 +2518,9 @@
       "itemId": "jooa5vwu5nml7g42bo",
       "originalTitle": "Wang2026arXiv-Visualizing the odd-parity superconducting order parameter and its quasiparticle surface band in UTe2",
       "status": "accepted",
-      "confidence": 1.0,
-      "method": "title-search",
-      "verification": "composite",
+      "confidence": 0.995,
+      "method": "doi-query",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Visualizing the Odd-Parity Superconducting Order Parameter and Its Quasiparticle Surface Band in UTe2",
@@ -2511,7 +2532,7 @@
         "J. C. Séamus Davis"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
@@ -2591,7 +2612,7 @@
       "authors": [
         "Zhengyan Darius Shi",
         "Zhaoyu Han",
-        "Srinivas Raghu",
+        "S. Raghu",
         "Ashvin Vishwanath"
       ],
       "year": 2026,
@@ -2600,8 +2621,7 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
-        "stored-openalex-id-title-conflict",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+        "stored-openalex-id-title-conflict"
       ],
       "message": ""
     },
@@ -2620,16 +2640,14 @@
       "openAlexId": "https://openalex.org/W7127574488",
       "authors": [
         "Carlos Caro",
-        "Francisco Gámez"
+        "Francisco Javier Martínez Gámez"
       ],
       "year": 2026,
       "identifierMatch": "doi",
       "titleScore": 0.9206,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -2654,9 +2672,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -2676,16 +2692,14 @@
         "Sirui Yu",
         "Mao Hong",
         "Jinshuang Jin",
-        "Chui-Ping Yang"
+        "Chui‐Ping Yang"
       ],
       "year": 2026,
       "identifierMatch": "",
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -2709,34 +2723,37 @@
       "titleScore": 0.9758,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
       "itemId": "a9p0f80hyj5mmis3z7o",
       "originalTitle": "Yue2026arXiv-Chirality breaking of Majorana edge modes induced by Chemical potential Shifts",
-      "status": "unmatched",
-      "confidence": 0.0,
-      "method": "no-result",
+      "status": "review",
+      "confidence": 0.3965,
+      "method": "title-search",
       "verification": "unverified",
       "verified": false,
       "stage": "index",
-      "candidateTitle": "",
+      "candidateTitle": "Atomic-scale interface engineering of Majorana edge modes in a 2D magnet-superconductor hybrid system",
       "currentTitle": "",
-      "doi": "",
-      "openAlexId": "",
-      "authors": [],
-      "year": null,
-      "identifierMatch": "",
-      "titleScore": null,
-      "authorScore": null,
-      "yearScore": null,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      "doi": "10.1126/sciadv.aav6600",
+      "openAlexId": "https://openalex.org/W2964770140",
+      "authors": [
+        "Alexandra Palacio-Morales",
+        "Eric Mascot",
+        "Sagen Cocklin",
+        "Howon Kim",
+        "Stephan Rachel",
+        "Dirk K. Morr",
+        "Roland Wiesendanger"
       ],
+      "year": 2019,
+      "identifierMatch": "",
+      "titleScore": 0.4916,
+      "authorScore": 0.1429,
+      "yearScore": 0.0,
+      "warnings": [],
       "message": "No identity-verified daily match"
     },
     {
@@ -2761,9 +2778,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -2920,7 +2935,7 @@
       "openAlexId": "https://openalex.org/W7171568461",
       "authors": [
         "Panagiotis Kotetes",
-        "Brian Andersen"
+        "Brian M. Andersen"
       ],
       "year": 2026,
       "identifierMatch": "doi",
@@ -2939,7 +2954,7 @@
       "originalTitle": "Phase-Sensitive Probe of Fermion Parity Switching",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "doi-query",
+      "method": "openalex-id-revalidated",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2960,6 +2975,7 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
@@ -4334,7 +4350,7 @@
         "Xun-Wang Yan",
         "Miao Gao",
         "Zheng-Xin Liu",
-        "Peng-Jie Guo",
+        "Peng‐Jie Guo",
         "Fengjie Ma",
         "Zhong-Yi Lu"
       ],
