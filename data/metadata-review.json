@@ -2,17 +2,17 @@
   "schemaVersion": 2,
   "updaterVersion": "5.3",
   "mode": "daily",
-  "generatedAt": "2026-09-26T06:20:08.710975+00:00",
+  "generatedAt": "2026-09-27T06:44:14.345169+00:00",
   "acceptThreshold": 0.78,
   "summary": {
     "accepted": 100,
-    "review": 24,
-    "unmatched": 29,
+    "review": 13,
+    "unmatched": 40,
     "error": 0,
     "conflicts": 1,
     "pdfParsed": 0,
-    "exactVerified": 90,
-    "compositeVerified": 10
+    "exactVerified": 97,
+    "compositeVerified": 3
   },
   "results": [
     {
@@ -173,7 +173,7 @@
       "doi": "10.1103/lt7q-6ff3",
       "openAlexId": "https://openalex.org/W7140550325",
       "authors": [
-        "David Caldevilla",
+        "David Caldevilla‐Asenjo",
         "Gorm O. Steffensen",
         "Sara Catalano",
         "Alberto Hijano",
@@ -186,7 +186,7 @@
       "year": 2026,
       "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 1.0,
+      "authorScore": 0.9701,
       "yearScore": 0.5,
       "warnings": [],
       "message": ""
@@ -310,9 +310,9 @@
       "itemId": "mj6arkv2as8miplh7d9",
       "originalTitle": "Fracassi2025arXiv-Intrinsic and Tunable SDE in QSH system",
       "status": "accepted",
-      "confidence": 1.0,
-      "method": "arxiv-search",
-      "verification": "composite",
+      "confidence": 0.995,
+      "method": "doi-query",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Anisotropic Superconducting Diode Effect in Planar Josephson Junctions",
@@ -326,13 +326,11 @@
         "Alex Matos-Abiague"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "stored OpenAlex ID failed: request failed: HTTP Error 404: Not Found"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -455,9 +453,9 @@
       "itemId": "mmcoa42it6miqyrqtt",
       "originalTitle": "Ouyang2025arXiv-Quantum geometric Planar Magnetotransport",
       "status": "accepted",
-      "confidence": 1.0,
-      "method": "arxiv-search",
-      "verification": "composite",
+      "confidence": 0.995,
+      "method": "doi-query",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Linear Magnetoresistance as a Probe of the Neel Vector in Altermagnets with Vanishing Anomalous Hall Effect",
@@ -469,13 +467,11 @@
         "Binghai Yan"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "stored OpenAlex ID failed: request failed: HTTP Error 404: Not Found"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -649,9 +645,9 @@
       "itemId": "deax90u8g7pmivax4gx",
       "originalTitle": "Feng2025arXiv-Type-II quantum spin Hall insulator_Zhongyi_Lu",
       "status": "accepted",
-      "confidence": 1.0,
-      "method": "arxiv-search",
-      "verification": "composite",
+      "confidence": 0.995,
+      "method": "doi-query",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Type-II Mirror Chern Insulator in Altermagnets",
@@ -665,13 +661,11 @@
         "Bahadur Singh"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "stored OpenAlex ID failed: request failed: HTTP Error 404: Not Found"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -1025,9 +1019,9 @@
       "itemId": "6chkw6lz7w4mj9lv17l",
       "originalTitle": "Taylor2025arXiv-Machine Learning in identifying Majorana topology",
       "status": "accepted",
-      "confidence": 1.0,
-      "method": "arxiv-search",
-      "verification": "composite",
+      "confidence": 0.995,
+      "method": "doi-query",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Avoiding Dilution: Using Diffusion and Vision Transformers to resolve Majorana Features in Nanowires at High Temperature",
@@ -1038,16 +1032,14 @@
         "Jacob R. Taylor",
         "Haining Pan",
         "Jay D. Sau",
-        "Sankar Das Sarma"
+        "S. Das Sarma"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "stored OpenAlex ID failed: request failed: HTTP Error 404: Not Found"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -1324,9 +1316,9 @@
       "itemId": "xjmbohgiyamjjka2t3",
       "originalTitle": "FuB2025arXiv-Altermagnetism Induced Bogoliubov Fermi Surface From Topological Superconductivity",
       "status": "accepted",
-      "confidence": 1.0,
-      "method": "arxiv-search",
-      "verification": "composite",
+      "confidence": 0.995,
+      "method": "doi-query",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Competition and coexistence of superconducting symmetries in $p$-wave magnets",
@@ -1339,13 +1331,11 @@
         "P. D. Sacramento"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "stored OpenAlex ID failed: request failed: HTTP Error 404: Not Found"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -2064,9 +2054,9 @@
       "itemId": "2ojczs11kzamkc6987s",
       "originalTitle": "Wang2026arXiv-Electric field switching of altermagnetic spin-splitting in multiferroic skyrmions",
       "status": "accepted",
-      "confidence": 1.0,
-      "method": "title-search",
-      "verification": "composite",
+      "confidence": 0.995,
+      "method": "doi-query",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Electric field switching of altermagnetic spin-splitting in multiferroic skyrmions",
@@ -2088,13 +2078,11 @@
         "Hongrui Zhang"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "stored OpenAlex ID failed: request failed: HTTP Error 404: Not Found"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -2157,9 +2145,9 @@
       "itemId": "aribtkvdcanmkkkj5zd",
       "originalTitle": "Qin2026arXiv-Revealing altermagnetic Fermi surfaces with two Kondo impurities",
       "status": "accepted",
-      "confidence": 1.0,
-      "method": "title-search",
-      "verification": "composite",
+      "confidence": 0.995,
+      "method": "doi-query",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Revealing altermagnetic Fermi surfaces with two Kondo impurities",
@@ -2175,13 +2163,11 @@
         "Fakher F. Assaad"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "stored OpenAlex ID failed: request failed: HTTP Error 404: Not Found"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -2267,7 +2253,9 @@
       "titleScore": 0.8824,
       "authorScore": 1.0,
       "yearScore": 0.5,
-      "warnings": [],
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
@@ -2302,7 +2290,7 @@
     {
       "itemId": "2p6rw6pqr13mknmu813",
       "originalTitle": "Nakazawa2026arXiv-Probing Fermi-surface spin-textures via the nonlinear SdH effect",
-      "status": "review",
+      "status": "unmatched",
       "confidence": 0.0,
       "method": "no-result",
       "verification": "unverified",
@@ -2320,15 +2308,14 @@
       "yearScore": null,
       "warnings": [
         "stored OpenAlex ID failed: request failed: HTTP Error 404: Not Found",
-        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
-      "message": "Existing automatic match could not be reverified"
+      "message": "No identity-verified daily match"
     },
     {
       "itemId": "d7kkjauaw0jmknn2aja",
       "originalTitle": "Liu2026arXiv-Current-driven nonlinear skyrmion dynamics in altermagnet",
-      "status": "review",
+      "status": "unmatched",
       "confidence": 0.0,
       "method": "no-result",
       "verification": "unverified",
@@ -2348,7 +2335,7 @@
         "stored OpenAlex ID failed: request failed: HTTP Error 404: Not Found",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
-      "message": "Existing automatic match could not be reverified"
+      "message": "No identity-verified daily match"
     },
     {
       "itemId": "w74smnyowmmkqg4gq0",
@@ -2409,7 +2396,7 @@
       "originalTitle": "Liu2026arXiv-Tunable two-dimensional Dirac-Weyl Semimetal Phase induced by Altermagnetism",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2428,7 +2415,6 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -2438,7 +2424,7 @@
       "originalTitle": "Rog2026arXiv-Tapping-mode SQUID-on-tip Microscopy with Proximity Josephson Junction",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2463,7 +2449,6 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -2471,7 +2456,7 @@
     {
       "itemId": "k1s5ebh99gjml3defb6",
       "originalTitle": "Li2026arXiv-Manipulating anomalous transport vai crystal symmetry in 2D AM",
-      "status": "review",
+      "status": "unmatched",
       "confidence": 0.0,
       "method": "no-result",
       "verification": "unverified",
@@ -2489,17 +2474,16 @@
       "yearScore": null,
       "warnings": [
         "stored OpenAlex ID failed: request failed: HTTP Error 404: Not Found",
-        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
-      "message": "Existing automatic match could not be reverified"
+      "message": "No identity-verified daily match"
     },
     {
       "itemId": "jooa5vwu5nml7g42bo",
       "originalTitle": "Wang2026arXiv-Visualizing the odd-parity superconducting order parameter and its quasiparticle surface band in UTe2",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2517,7 +2501,6 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -2585,7 +2568,7 @@
     {
       "itemId": "45u1yaex7ssmlf5toed",
       "originalTitle": "Shi2026arXiv-Charge 4e superconductor with parafermionic vortices",
-      "status": "review",
+      "status": "unmatched",
       "confidence": 0.0,
       "method": "no-result",
       "verification": "unverified",
@@ -2603,10 +2586,9 @@
       "yearScore": null,
       "warnings": [
         "stored OpenAlex ID failed: request failed: HTTP Error 404: Not Found",
-        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
-      "message": "Existing automatic match could not be reverified"
+      "message": "No identity-verified daily match"
     },
     {
       "itemId": "7ex9vs64x2jmm96822h",
@@ -2623,7 +2605,7 @@
       "openAlexId": "https://openalex.org/W7127574488",
       "authors": [
         "Carlos Caro",
-        "Francisco Javier Martínez Gámez"
+        "Francisco Gámez"
       ],
       "year": 2026,
       "identifierMatch": "doi",
@@ -2799,7 +2781,7 @@
     {
       "itemId": "ty33wuwbgglmmlfr5ln",
       "originalTitle": "AMTOP",
-      "status": "review",
+      "status": "unmatched",
       "confidence": 0.0,
       "method": "no-result",
       "verification": "unverified",
@@ -2816,10 +2798,9 @@
       "authorScore": null,
       "yearScore": null,
       "warnings": [
-        "stored OpenAlex ID failed: request failed: HTTP Error 404: Not Found",
-        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests"
+        "stored OpenAlex ID failed: request failed: HTTP Error 404: Not Found"
       ],
-      "message": "Existing automatic match could not be reverified"
+      "message": "No identity-verified daily match"
     },
     {
       "itemId": "35lxgvaxq9ommvq72ph",
@@ -2848,7 +2829,7 @@
     {
       "itemId": "9q5k8evebwmmwvjld3",
       "originalTitle": "Mizoguchi2026arXiv-Orbital-Zeeman cross correlation in p- and d-wave altermagnets",
-      "status": "review",
+      "status": "unmatched",
       "confidence": 0.0,
       "method": "no-result",
       "verification": "unverified",
@@ -2868,7 +2849,7 @@
         "stored OpenAlex ID failed: request failed: HTTP Error 404: Not Found",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
-      "message": "Existing automatic match could not be reverified"
+      "message": "No identity-verified daily match"
     },
     {
       "itemId": "jok560qiusrmn2nrp26",
@@ -2966,7 +2947,7 @@
     {
       "itemId": "6x5hmhawbjomnqvc7jt",
       "originalTitle": "STM Kagome",
-      "status": "review",
+      "status": "unmatched",
       "confidence": 0.0,
       "method": "no-result",
       "verification": "unverified",
@@ -2987,7 +2968,7 @@
         "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
-      "message": "Existing automatic match could not be reverified"
+      "message": "No identity-verified daily match"
     },
     {
       "itemId": "i7dzcavyfxmnqw2w1n",
@@ -3104,7 +3085,7 @@
     {
       "itemId": "t1n2iaw51mmo2de6hv",
       "originalTitle": "Dirac Altermagent",
-      "status": "review",
+      "status": "unmatched",
       "confidence": 0.0,
       "method": "no-result",
       "verification": "unverified",
@@ -3122,10 +3103,9 @@
       "yearScore": null,
       "warnings": [
         "stored OpenAlex ID failed: request failed: HTTP Error 404: Not Found",
-        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
-      "message": "Existing automatic match could not be reverified"
+      "message": "No identity-verified daily match"
     },
     {
       "itemId": "by7dcbo2xihmo7xgqd7",
@@ -3141,7 +3121,7 @@
       "doi": "10.1103/6qwr-4679",
       "openAlexId": "https://openalex.org/W4415183989",
       "authors": [
-        "Sankar Das Sarma",
+        "S. Das Sarma",
         "Katharina Laubscher",
         "Haining Pan",
         "Jay Deep Sau",
@@ -3500,7 +3480,7 @@
     {
       "itemId": "kqy0sth1ipnmt6uic2k",
       "originalTitle": "Pure Spin Bulk Photovoltaic Effect in an Altermagnetic Higher-Order Topological Insulator",
-      "status": "review",
+      "status": "unmatched",
       "confidence": 0.0,
       "method": "no-result",
       "verification": "unverified",
@@ -3521,7 +3501,7 @@
         "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
-      "message": "Existing automatic match could not be reverified"
+      "message": "No identity-verified daily match"
     },
     {
       "itemId": "68gu6jw1bk6mt6uy8zn",
@@ -3876,7 +3856,7 @@
     {
       "itemId": "0cy13b0yby3omtjk385h",
       "originalTitle": "Inherent AM on regular hyperbolic lattices",
-      "status": "review",
+      "status": "unmatched",
       "confidence": 0.0,
       "method": "no-result",
       "verification": "unverified",
@@ -3897,7 +3877,7 @@
         "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
-      "message": "Existing automatic match could not be reverified"
+      "message": "No identity-verified daily match"
     },
     {
       "itemId": "e7270qttqcumtkvcmz1",
@@ -4095,7 +4075,7 @@
     {
       "itemId": "munv1v8rwl83eb6wfxa",
       "originalTitle": "B-type quadratic planar Hall effect as a probe of altermagnetic order",
-      "status": "review",
+      "status": "unmatched",
       "confidence": 0.0,
       "method": "no-result",
       "verification": "unverified",
@@ -4115,7 +4095,7 @@
         "stored OpenAlex ID failed: request failed: HTTP Error 404: Not Found",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
-      "message": "Existing automatic match could not be reverified"
+      "message": "No identity-verified daily match"
     },
     {
       "itemId": "k1tk90ibc6x5m2mzz1a",
