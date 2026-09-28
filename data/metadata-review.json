@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "updaterVersion": "5.3",
   "mode": "daily",
-  "generatedAt": "2026-09-27T06:44:14.345169+00:00",
+  "generatedAt": "2026-09-28T07:01:18.201252+00:00",
   "acceptThreshold": 0.78,
   "summary": {
     "accepted": 100,
@@ -186,7 +186,7 @@
       "year": 2026,
       "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 0.9701,
+      "authorScore": 1.0,
       "yearScore": 0.5,
       "warnings": [],
       "message": ""
@@ -269,7 +269,7 @@
       "openAlexId": "https://openalex.org/W4400141580",
       "authors": [
         "Xiaokang Li",
-        "Xiaodong Guo",
+        "Guo, Xiaodong",
         "Zengwei Zhu",
         "Kamran Behnia"
       ],
@@ -347,7 +347,7 @@
       "doi": "10.1038/ncomms1946",
       "openAlexId": "https://openalex.org/W2036802942",
       "authors": [
-        "De-Zhu Li",
+        "Defa Liu",
         "Wenhao Zhang",
         "Daixiang Mou",
         "Jun-Feng He",
@@ -439,7 +439,7 @@
         "Xunkai Duan",
         "Jiayong Zhang",
         "Igor Žutić",
-        "Zhou Tong"
+        "Tong Zhou"
       ],
       "year": 2026,
       "identifierMatch": "doi",
@@ -832,7 +832,7 @@
       "openAlexId": "https://openalex.org/W4417297094",
       "authors": [
         "Jucheng Lin",
-        "Ye Zhuang",
+        "Yicheng Zhuang",
         "Anton M. Graf",
         "Eric J. Heller",
         "Joonas Keski-Rahkonen"
@@ -1288,25 +1288,22 @@
       "itemId": "bhiyz3nvczsmjjjv5ic",
       "originalTitle": "XC_PhD_thesis_basis",
       "status": "review",
-      "confidence": 0.3412,
+      "confidence": 0.308,
       "method": "title-search",
       "verification": "unverified",
       "verified": false,
       "stage": "index",
-      "candidateTitle": "XC- A language for embedded rule based systems",
+      "candidateTitle": "Recent Developments in the Econometrics of Program Evaluation",
       "currentTitle": "",
-      "doi": "10.1145/32091.32095",
-      "openAlexId": "https://openalex.org/W2012848317",
+      "doi": "10.1257/jel.47.1.5",
+      "openAlexId": "https://openalex.org/W3121385028",
       "authors": [
-        "Esko Nuutila",
-        "Juha Kuusela",
-        "Manu V. Tamminen",
-        "J. Veilhti",
-        "Jari Arkko"
+        "Guido W. Imbens",
+        "Jeffrey M. Wooldridge"
       ],
-      "year": 1987,
+      "year": 2009,
       "identifierMatch": "",
-      "titleScore": 0.3438,
+      "titleScore": 0.3,
       "authorScore": 0.0,
       "yearScore": 0.0,
       "warnings": [],
@@ -1672,7 +1669,7 @@
       "doi": "10.1038/s43246-025-01000-0",
       "openAlexId": "https://openalex.org/W4416758221",
       "authors": [
-        "Andrea Lombardi",
+        "Antonio Lombardi",
         "Gaurav Shukla",
         "Giada Bucci",
         "Sedighe Salimian",
@@ -1926,7 +1923,7 @@
       "authors": [
         "Jin-Wei Dong",
         "Y.-J. Lin",
-        "Ruigang Fu",
+        "Ruiqing Fu",
         "Xianxin Wu",
         "Gang Su",
         "Ziqiang Wang",
@@ -2155,7 +2152,7 @@
       "doi": "10.48550/arxiv.2601.07138",
       "openAlexId": "https://openalex.org/W7123493760",
       "authors": [
-        "Qiong Qin",
+        "Qin, Qiong",
         "Toshihiro Sato",
         "Marcin Raczkowski",
         "Jeroen van den Brink",
@@ -2165,7 +2162,7 @@
       "year": 2026,
       "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 1.0,
+      "authorScore": 0.9259,
       "yearScore": 1.0,
       "warnings": [],
       "message": ""
@@ -2439,7 +2436,7 @@
         "Jimi D. de Haan",
         "Remko Fermin",
         "Jiasen Niu",
-        "Y. C. Doedes",
+        "Yasmin C. Doedes",
         "Milan P. Allan",
         "Kaveh Lahabi"
       ],
