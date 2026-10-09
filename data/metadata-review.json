@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "updaterVersion": "5.3",
   "mode": "daily",
-  "generatedAt": "2026-10-08T07:31:00.730544+00:00",
+  "generatedAt": "2026-10-09T07:30:45.262899+00:00",
   "acceptThreshold": 0.78,
   "summary": {
     "accepted": 102,
@@ -11,8 +11,8 @@
     "error": 0,
     "conflicts": 1,
     "pdfParsed": 0,
-    "exactVerified": 99,
-    "compositeVerified": 3
+    "exactVerified": 97,
+    "compositeVerified": 5
   },
   "results": [
     {
@@ -384,24 +384,26 @@
       "itemId": "nnqh6r3et4mipmmv4z",
       "originalTitle": "Li2025arXiv-Quantum Coulomb drag signatures of MBS",
       "status": "accepted",
-      "confidence": 0.995,
-      "method": "doi-query",
-      "verification": "exact-doi",
+      "confidence": 0.8716,
+      "method": "title-search",
+      "verification": "composite",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Data for \"Quantum Coulomb drag signatures of MBSs\"",
       "currentTitle": "Data for \"Quantum Coulomb drag signatures of MBSs\"",
-      "doi": "10.5281/zenodo.19371248",
-      "openAlexId": "https://openalex.org/W7147318741",
+      "doi": "10.5281/zenodo.19371247",
+      "openAlexId": "https://openalex.org/W7147024411",
       "authors": [
         "Zengzhao Li"
       ],
       "year": 2026,
-      "identifierMatch": "doi",
+      "identifierMatch": "",
       "titleScore": 0.8837,
       "authorScore": 1.0,
       "yearScore": 0.5,
-      "warnings": [],
+      "warnings": [
+        "stored OpenAlex ID failed: request failed: HTTP Error 404: Not Found"
+      ],
       "message": ""
     },
     {
@@ -1243,24 +1245,29 @@
       "itemId": "1f2ym81ykt1mjhybuvp",
       "originalTitle": "Buss2025arXiv-Braiding of Majorana Zero Modes in Vortex Cores",
       "status": "accepted",
-      "confidence": 0.995,
-      "method": "doi-query",
-      "verification": "exact-doi",
+      "confidence": 1.0,
+      "method": "title-search",
+      "verification": "composite",
       "verified": true,
       "stage": "index",
-      "candidateTitle": "Braiding of Majorana Zero Modes in Vortex Cores",
-      "currentTitle": "Braiding of Majorana Zero Modes in Vortex Cores",
-      "doi": "10.5281/zenodo.18112044",
-      "openAlexId": "https://openalex.org/W7202262174",
+      "candidateTitle": "Braiding of Majorana zero modes in vortex cores",
+      "currentTitle": "Braiding of Majorana zero modes in vortex cores",
+      "doi": "10.1103/t264-dq2z",
+      "openAlexId": "https://openalex.org/W4417283798",
       "authors": [
-        "Dirk Morr"
+        "Maxwell Buss",
+        "Jasmin Bedow",
+        "Prashant Gupta",
+        "Dirk K. Morr"
       ],
-      "year": 2026,
-      "identifierMatch": "doi",
+      "year": 2025,
+      "identifierMatch": "",
       "titleScore": 1.0,
       "authorScore": 1.0,
-      "yearScore": 0.5,
-      "warnings": [],
+      "yearScore": 1.0,
+      "warnings": [
+        "stored OpenAlex ID failed: request failed: HTTP Error 404: Not Found"
+      ],
       "message": ""
     },
     {
