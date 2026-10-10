@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "updaterVersion": "5.3",
   "mode": "daily",
-  "generatedAt": "2026-10-09T07:30:45.262899+00:00",
+  "generatedAt": "2026-10-10T07:15:03.095922+00:00",
   "acceptThreshold": 0.78,
   "summary": {
     "accepted": 102,
@@ -11,8 +11,8 @@
     "error": 0,
     "conflicts": 1,
     "pdfParsed": 0,
-    "exactVerified": 97,
-    "compositeVerified": 5
+    "exactVerified": 99,
+    "compositeVerified": 3
   },
   "results": [
     {
@@ -384,9 +384,9 @@
       "itemId": "nnqh6r3et4mipmmv4z",
       "originalTitle": "Li2025arXiv-Quantum Coulomb drag signatures of MBS",
       "status": "accepted",
-      "confidence": 0.8716,
-      "method": "title-search",
-      "verification": "composite",
+      "confidence": 0.995,
+      "method": "doi-query",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Data for \"Quantum Coulomb drag signatures of MBSs\"",
@@ -397,13 +397,11 @@
         "Zengzhao Li"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 0.8837,
       "authorScore": 1.0,
       "yearScore": 0.5,
-      "warnings": [
-        "stored OpenAlex ID failed: request failed: HTTP Error 404: Not Found"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -1245,9 +1243,9 @@
       "itemId": "1f2ym81ykt1mjhybuvp",
       "originalTitle": "Buss2025arXiv-Braiding of Majorana Zero Modes in Vortex Cores",
       "status": "accepted",
-      "confidence": 1.0,
-      "method": "title-search",
-      "verification": "composite",
+      "confidence": 0.995,
+      "method": "doi-query",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Braiding of Majorana zero modes in vortex cores",
@@ -1261,13 +1259,11 @@
         "Dirk K. Morr"
       ],
       "year": 2025,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "stored OpenAlex ID failed: request failed: HTTP Error 404: Not Found"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
