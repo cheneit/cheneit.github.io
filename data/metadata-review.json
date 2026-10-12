@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "updaterVersion": "5.3",
   "mode": "daily",
-  "generatedAt": "2026-10-11T07:20:21.028394+00:00",
+  "generatedAt": "2026-10-12T07:28:25.835970+00:00",
   "acceptThreshold": 0.78,
   "summary": {
     "accepted": 102,
@@ -19,23 +19,25 @@
       "itemId": "vt1d169ilrmilesd5h",
       "originalTitle": "Krasnov2025arXiv-Planar Josephson junction-geometry effect-Sweden",
       "status": "review",
-      "confidence": 0.3766,
+      "confidence": 0.4163,
       "method": "title-search",
       "verification": "unverified",
       "verified": false,
       "stage": "index",
-      "candidateTitle": "Quantum phase dynamics of high-Tc Josephson junctions",
+      "candidateTitle": "10. Josephson and charging effect in mesoscopic superconducting devices",
       "currentTitle": "",
-      "doi": "10.1088/1742-6596/150/5/052159",
-      "openAlexId": "https://openalex.org/W1965597043",
+      "doi": "10.1515/9783110456806-011",
+      "openAlexId": "https://openalex.org/W2754017793",
       "authors": [
-        "Jens Michelsen",
-        "Vitaly S. Shumeiko"
+        "D. Massarotti",
+        "Thilo Bauch",
+        "Floriana Lombardi",
+        "Francesco Tafuri"
       ],
-      "year": 2009,
+      "year": 2017,
       "identifierMatch": "",
-      "titleScore": 0.4554,
-      "authorScore": 0.1905,
+      "titleScore": 0.4746,
+      "authorScore": 0.3478,
       "yearScore": 0.0,
       "warnings": [],
       "message": "No identity-verified daily match"
@@ -2238,19 +2240,19 @@
       "originalTitle": "Crawford2026PRB-Josephson anomalous vortices",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Josephson anomalous vortices",
       "currentTitle": "Josephson anomalous vortices",
       "doi": "10.1103/nsdg-sn1b",
-      "openAlexId": "https://openalex.org/W4417267752",
+      "openAlexId": "https://openalex.org/W4415064187",
       "authors": [
-        "Dan Crawford",
+        "Daniel Crawford",
         "Stefan Ilić",
         "Pauli Virtanen",
-        "Tero T. Heikkilä"
+        "Tero Tapio Heikkilä"
       ],
       "year": 2025,
       "identifierMatch": "doi",
@@ -2258,6 +2260,7 @@
       "authorScore": 1.0,
       "yearScore": 0.5,
       "warnings": [
+        "stored OpenAlex ID failed: request failed: HTTP Error 404: Not Found",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
