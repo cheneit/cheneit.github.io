@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "updaterVersion": "5.3",
   "mode": "daily",
-  "generatedAt": "2026-10-12T07:28:25.835970+00:00",
+  "generatedAt": "2026-10-13T07:51:00.506045+00:00",
   "acceptThreshold": 0.78,
   "summary": {
     "accepted": 102,
@@ -11,33 +11,31 @@
     "error": 0,
     "conflicts": 1,
     "pdfParsed": 0,
-    "exactVerified": 99,
-    "compositeVerified": 3
+    "exactVerified": 97,
+    "compositeVerified": 5
   },
   "results": [
     {
       "itemId": "vt1d169ilrmilesd5h",
       "originalTitle": "Krasnov2025arXiv-Planar Josephson junction-geometry effect-Sweden",
       "status": "review",
-      "confidence": 0.4163,
+      "confidence": 0.3766,
       "method": "title-search",
       "verification": "unverified",
       "verified": false,
       "stage": "index",
-      "candidateTitle": "10. Josephson and charging effect in mesoscopic superconducting devices",
+      "candidateTitle": "Quantum phase dynamics of high-Tc Josephson junctions",
       "currentTitle": "",
-      "doi": "10.1515/9783110456806-011",
-      "openAlexId": "https://openalex.org/W2754017793",
+      "doi": "10.1088/1742-6596/150/5/052159",
+      "openAlexId": "https://openalex.org/W1965597043",
       "authors": [
-        "D. Massarotti",
-        "Thilo Bauch",
-        "Floriana Lombardi",
-        "Francesco Tafuri"
+        "Jens Michelsen",
+        "Vitaly S. Shumeiko"
       ],
-      "year": 2017,
+      "year": 2009,
       "identifierMatch": "",
-      "titleScore": 0.4746,
-      "authorScore": 0.3478,
+      "titleScore": 0.4554,
+      "authorScore": 0.1905,
       "yearScore": 0.0,
       "warnings": [],
       "message": "No identity-verified daily match"
@@ -308,27 +306,29 @@
       "itemId": "mj6arkv2as8miplh7d9",
       "originalTitle": "Fracassi2025arXiv-Intrinsic and Tunable SDE in QSH system",
       "status": "accepted",
-      "confidence": 0.995,
+      "confidence": 1.0,
       "method": "doi-query",
-      "verification": "exact-doi",
+      "verification": "composite",
       "verified": true,
       "stage": "index",
-      "candidateTitle": "Anisotropic Superconducting Diode Effect in Planar Josephson Junctions",
-      "currentTitle": "Anisotropic Superconducting Diode Effect in Planar Josephson Junctions",
-      "doi": "10.48550/arxiv.2604.17594",
-      "openAlexId": "https://openalex.org/W7155052178",
+      "candidateTitle": "Anisotropic superconducting diode effect in planar Josephson junctions",
+      "currentTitle": "Anisotropic superconducting diode effect in planar Josephson junctions",
+      "doi": "10.1103/1ysg-82ks",
+      "openAlexId": "https://openalex.org/W7204961306",
       "authors": [
-        "Abhishek Chilampankunnel Prasannan",
+        "A. Chilampankunnel Prasannan",
         "Barış Pekerten",
         "Nowar Alashkar",
         "Alex Matos-Abiague"
       ],
       "year": 2026,
-      "identifierMatch": "doi",
+      "identifierMatch": "",
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [],
+      "warnings": [
+        "stored OpenAlex ID failed: request failed: HTTP Error 404: Not Found"
+      ],
       "message": ""
     },
     {
@@ -360,26 +360,28 @@
       "itemId": "7493ys34ju9mipm9zj4",
       "originalTitle": "Singer2025arXiv-Positional memory of skyrmions in magnetic bilayers",
       "status": "accepted",
-      "confidence": 0.995,
+      "confidence": 0.96,
       "method": "doi-query",
-      "verification": "exact-doi",
+      "verification": "composite",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Positional memory of skyrmions in magnetic bilayers",
       "currentTitle": "Positional memory of skyrmions in magnetic bilayers",
-      "doi": "10.48550/arxiv.2512.02877",
-      "openAlexId": "https://openalex.org/W4417010772",
+      "doi": "10.1103/wrrw-by3t",
+      "openAlexId": "https://openalex.org/W7138933015",
       "authors": [
         "Bruno Barton-Singer",
         "Anusree Navallur",
         "Stavros Komineas"
       ],
-      "year": 2025,
-      "identifierMatch": "doi",
+      "year": 2026,
+      "identifierMatch": "",
       "titleScore": 1.0,
       "authorScore": 1.0,
-      "yearScore": 1.0,
-      "warnings": [],
+      "yearScore": 0.5,
+      "warnings": [
+        "stored OpenAlex ID failed: request failed: HTTP Error 404: Not Found"
+      ],
       "message": ""
     },
     {
@@ -791,13 +793,13 @@
         "Mrenca-Kolasinska, Alina",
         "Liu, Ming-Hao",
         "Schwarzmaier, Korbinian",
-        "Richter, Klaus",
+        "Klaus Richter",
         "Knothe, Angelika"
       ],
       "year": 2025,
       "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 1.0,
+      "authorScore": 0.9231,
       "yearScore": 1.0,
       "warnings": [],
       "message": ""
@@ -1308,7 +1310,7 @@
       "authors": [
         "J. E. C. Carmelo",
         "I. R. Pimentel",
-        "P. D. Sacramento"
+        "Pedro D. Sacramento"
       ],
       "year": 2026,
       "identifierMatch": "doi",
@@ -2260,7 +2262,6 @@
       "authorScore": 1.0,
       "yearScore": 0.5,
       "warnings": [
-        "stored OpenAlex ID failed: request failed: HTTP Error 404: Not Found",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -2414,7 +2415,7 @@
       "authors": [
         "Matthijs Rog",
         "Tycho J. Blom",
-        "Daan B. Boltje",
+        "Daan B Boltje",
         "Jimi D. de Haan",
         "Remko Fermin",
         "Jiasen Niu",
