@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "updaterVersion": "5.3",
   "mode": "daily",
-  "generatedAt": "2026-10-14T06:17:03.920885+00:00",
+  "generatedAt": "2026-10-15T06:03:08.943417+00:00",
   "acceptThreshold": 0.78,
   "summary": {
     "accepted": 102,
@@ -11,8 +11,8 @@
     "error": 0,
     "conflicts": 1,
     "pdfParsed": 0,
-    "exactVerified": 99,
-    "compositeVerified": 3
+    "exactVerified": 98,
+    "compositeVerified": 4
   },
   "results": [
     {
@@ -144,13 +144,13 @@
         "Alessandro Crippa",
         "Elia Strambini",
         "Mario Cuoco",
-        "Luigi Amico",
+        "Luigi Amico A",
         "Francesco Giazotto"
       ],
       "year": 2025,
       "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 1.0,
+      "authorScore": 0.9861,
       "yearScore": 1.0,
       "warnings": [],
       "message": ""
@@ -202,7 +202,7 @@
       "openAlexId": "https://openalex.org/W4416759099",
       "authors": [
         "Qianqian Lv",
-        "Yong Mao Xu",
+        "Yong Xu",
         "Jun-Feng Liu",
         "Pei-Hao Fu",
         "Xiang‐Long Yu"
@@ -790,12 +790,12 @@
         "Liu, Ming-Hao",
         "Schwarzmaier, Korbinian",
         "Klaus Richter",
-        "Knothe, Angelika"
+        "Angelika Knothe"
       ],
       "year": 2025,
       "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 1.0,
+      "authorScore": 0.9222,
       "yearScore": 1.0,
       "warnings": [],
       "message": ""
@@ -1675,14 +1675,14 @@
       "itemId": "ljgscx9xydlmk1y8uyq",
       "originalTitle": "Wang2025arXiv-Atomic-scale spin sensing of a 2D d-wave altermagnet via helical tunneling",
       "status": "accepted",
-      "confidence": 0.995,
+      "confidence": 1.0,
       "method": "doi-query",
-      "verification": "exact-doi",
+      "verification": "composite",
       "verified": true,
       "stage": "index",
-      "candidateTitle": "Atomic-scale spin sensing of a 2D $d$-wave altermagnet via helical tunneling",
-      "currentTitle": "Atomic-scale spin sensing of a 2D $d$-wave altermagnet via helical tunneling",
-      "doi": "10.48550/arxiv.2512.23290",
+      "candidateTitle": "Atomic-scale spin sensing of a 2D d-wave altermagnet via helical tunneling",
+      "currentTitle": "Atomic-scale spin sensing of a 2D d-wave altermagnet via helical tunneling",
+      "doi": "10.1038/s41586-026-11257-1",
       "openAlexId": "https://openalex.org/W7117685911",
       "authors": [
         "Zhuying Wang",
@@ -1690,19 +1690,19 @@
         "Xingkai Cheng",
         "Xiaoyu Xiao",
         "Wanru Ma",
+        "Yitian Ma",
         "Feixiong Quan",
         "Hongxi Song",
-        "Kunming Zhang",
         "Yunmei Zhang",
-        "Yitian Ma",
         "Wenhao Liu",
-        "Priti Yadav"
+        "Priti Yadav",
+        "Haohao Sheng"
       ],
-      "year": 2025,
-      "identifierMatch": "doi",
+      "year": 2026,
+      "identifierMatch": "",
       "titleScore": 1.0,
       "authorScore": 1.0,
-      "yearScore": 0.5,
+      "yearScore": 1.0,
       "warnings": [],
       "message": ""
     },
