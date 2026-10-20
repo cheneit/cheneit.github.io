@@ -2,12 +2,12 @@
   "schemaVersion": 2,
   "updaterVersion": "5.3",
   "mode": "daily",
-  "generatedAt": "2026-10-19T06:21:56.208403+00:00",
+  "generatedAt": "2026-10-20T06:10:23.818237+00:00",
   "acceptThreshold": 0.78,
   "summary": {
     "accepted": 102,
-    "review": 11,
-    "unmatched": 40,
+    "review": 12,
+    "unmatched": 39,
     "error": 0,
     "conflicts": 1,
     "pdfParsed": 0,
@@ -1999,25 +1999,31 @@
     {
       "itemId": "i4wqrvlwdfmkal98bq",
       "originalTitle": "Cui2026arXiv-Symmetry driven unconventional magnetoelectric coupling in perovskite altermagnet",
-      "status": "unmatched",
-      "confidence": 0.0,
-      "method": "no-result",
+      "status": "review",
+      "confidence": 0.8495,
+      "method": "title-search",
       "verification": "unverified",
       "verified": false,
       "stage": "index",
-      "candidateTitle": "",
+      "candidateTitle": "Symmetry‐Driven Unconventional Magnetoelectric Coupling in Perovskite Altermagnets: From Bulk to the Two‐Dimensional Limit",
       "currentTitle": "",
-      "doi": "",
-      "openAlexId": "",
-      "authors": [],
-      "year": null,
-      "identifierMatch": "",
-      "titleScore": null,
-      "authorScore": null,
-      "yearScore": null,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      "doi": "10.1002/advs.202600004",
+      "openAlexId": "https://openalex.org/W7154484690",
+      "authors": [
+        "Zhou Cui",
+        "Z G Zhu",
+        "Xunkai Duan",
+        "Bowen Hao",
+        "Xianzhang Chen",
+        "Jiayong Zhang",
+        "Tong Zhou"
       ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 0.802,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
+      "warnings": [],
       "message": "No identity-verified daily match"
     },
     {
@@ -2052,9 +2058,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -2083,9 +2087,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 0.5,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -2111,9 +2113,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -2152,7 +2152,7 @@
       "originalTitle": "Sardinero2024PRB-Topological superconductivity in a magnetic-texture coupled JJ",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2172,7 +2172,6 @@
       "yearScore": 0.0,
       "warnings": [
         "stored-openalex-id-year-conflict",
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -2182,7 +2181,7 @@
       "originalTitle": "Yang2026PRB-Engineering Hubbard models with gated two-dimensional moire systems",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2202,7 +2201,6 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -2212,7 +2210,7 @@
       "originalTitle": "Cuozzo2026PRXQ-Buried Dirac Points in QSHI-Implications for Majorana Kramers Pair-Based Quantum Computing",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2236,7 +2234,6 @@
       "authorScore": 1.0,
       "yearScore": 0.5,
       "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -2246,7 +2243,7 @@
       "originalTitle": "Crawford2026PRB-Josephson anomalous vortices",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2266,7 +2263,6 @@
       "authorScore": 1.0,
       "yearScore": 0.5,
       "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -2301,7 +2297,7 @@
       "originalTitle": "Liu2026arXiv-Current-driven nonlinear skyrmion dynamics in altermagnet",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2321,7 +2317,6 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
