@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "updaterVersion": "5.3",
   "mode": "daily",
-  "generatedAt": "2026-10-25T06:15:09.808635+00:00",
+  "generatedAt": "2026-10-26T06:20:57.069848+00:00",
   "acceptThreshold": 0.78,
   "summary": {
     "accepted": 102,
@@ -2066,7 +2066,7 @@
       "originalTitle": "Zhu2026PRB-Wavefunction textures in twisted bilayer graphene from first principles",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2087,10 +2087,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 0.5,
-      "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -2098,7 +2095,7 @@
       "originalTitle": "Leask2026arXiv-Interactions of composite magnetic skyrmion-superconducting vortex pairs in ferromagnetic superconductors",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2116,10 +2113,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -2127,7 +2121,7 @@
       "originalTitle": "Qin2026arXiv-Revealing altermagnetic Fermi surfaces with two Kondo impurities",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2148,10 +2142,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -2159,7 +2150,7 @@
       "originalTitle": "Sardinero2024PRB-Topological superconductivity in a magnetic-texture coupled JJ",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2178,9 +2169,7 @@
       "authorScore": 1.0,
       "yearScore": 0.0,
       "warnings": [
-        "stored-openalex-id-year-conflict",
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+        "stored-openalex-id-year-conflict"
       ],
       "message": ""
     },
@@ -2189,7 +2178,7 @@
       "originalTitle": "Yang2026PRB-Engineering Hubbard models with gated two-dimensional moire systems",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2208,10 +2197,7 @@
       "titleScore": 0.9851,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -2219,7 +2205,7 @@
       "originalTitle": "Cuozzo2026PRXQ-Buried Dirac Points in QSHI-Implications for Majorana Kramers Pair-Based Quantum Computing",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2243,7 +2229,6 @@
       "authorScore": 1.0,
       "yearScore": 0.5,
       "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -2253,7 +2238,7 @@
       "originalTitle": "Crawford2026PRB-Josephson anomalous vortices",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2273,7 +2258,6 @@
       "authorScore": 1.0,
       "yearScore": 0.5,
       "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -2308,7 +2292,7 @@
       "originalTitle": "Liu2026arXiv-Current-driven nonlinear skyrmion dynamics in altermagnet",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2328,7 +2312,6 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -2338,7 +2321,7 @@
       "originalTitle": "Fu2025arXiv-Floquet engineering spin triplet states in unconventional magnets",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2359,7 +2342,6 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -2418,7 +2400,7 @@
       "originalTitle": "Rog2026arXiv-Tapping-mode SQUID-on-tip Microscopy with Proximity Josephson Junction",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2443,7 +2425,6 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
