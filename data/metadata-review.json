@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "updaterVersion": "5.3",
   "mode": "daily",
-  "generatedAt": "2026-10-28T06:58:54.731662+00:00",
+  "generatedAt": "2026-10-29T07:11:26.813395+00:00",
   "acceptThreshold": 0.78,
   "summary": {
     "accepted": 109,
@@ -11,8 +11,8 @@
     "error": 0,
     "conflicts": 1,
     "pdfParsed": 0,
-    "exactVerified": 101,
-    "compositeVerified": 8
+    "exactVerified": 106,
+    "compositeVerified": 3
   },
   "results": [
     {
@@ -2050,7 +2050,7 @@
         "Naifu Zheng",
         "Maosen Guo",
         "Aomei Tong",
-        "Bai, Hua",
+        "Hua Bai",
         "Hongrui Zhang"
       ],
       "year": 2026,
@@ -2266,9 +2266,9 @@
       "itemId": "2p6rw6pqr13mknmu813",
       "originalTitle": "Nakazawa2026arXiv-Probing Fermi-surface spin-textures via the nonlinear SdH effect",
       "status": "accepted",
-      "confidence": 0.9251,
-      "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "confidence": 0.995,
+      "method": "doi-query",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Probing Fermi-surface spin-textures via the nonlinear Shubnikov-de Haas effect",
@@ -2283,11 +2283,12 @@
         "Daniel Loss"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 0.9014,
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -2379,9 +2380,9 @@
       "itemId": "0cs92set7gmlmkw7i14q",
       "originalTitle": "Liu2026arXiv-Tunable two-dimensional Dirac-Weyl Semimetal Phase induced by Altermagnetism",
       "status": "accepted",
-      "confidence": 0.96,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Tunable two-dimensional Dirac-Weyl semimetal phase induced by altermagnetism",
@@ -2394,11 +2395,12 @@
         "Ying‐Tao Zhang"
       ],
       "year": 2025,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 0.5,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -2408,7 +2410,7 @@
       "originalTitle": "Rog2026arXiv-Tapping-mode SQUID-on-tip Microscopy with Proximity Josephson Junction",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "doi-query",
+      "method": "openalex-id-revalidated",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2433,6 +2435,7 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -2441,9 +2444,9 @@
       "itemId": "k1s5ebh99gjml3defb6",
       "originalTitle": "Li2026arXiv-Manipulating anomalous transport vai crystal symmetry in 2D AM",
       "status": "accepted",
-      "confidence": 0.9319,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Manipulating Anomalous Transport via Crystal Symmetry in 2D Altermagnets",
@@ -2463,11 +2466,13 @@
         "Xiaoping Li"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 0.9104,
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -2957,9 +2962,9 @@
       "itemId": "6x5hmhawbjomnqvc7jt",
       "originalTitle": "STM Kagome",
       "status": "accepted",
-      "confidence": 0.99,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "exact-arxiv",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Visualizing the interplay of dual electronic nematicities in kagome superconductors",
@@ -2968,7 +2973,7 @@
       "openAlexId": "https://openalex.org/W7151809469",
       "authors": [
         "Yunmei Zhang",
-        "Zhan, Jun",
+        "Jun Zhan",
         "Ping Wu",
         "Yun-Peng Huang",
         "Qixiao Yuan",
@@ -2981,11 +2986,13 @@
         "Deshu Chen"
       ],
       "year": 2026,
-      "identifierMatch": "arxiv",
+      "identifierMatch": "doi",
       "titleScore": 0.2151,
-      "authorScore": 0.0,
+      "authorScore": 0.9211,
       "yearScore": 1.0,
       "warnings": [
+        "stored-openalex-id-title-conflict",
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
@@ -3518,9 +3525,9 @@
       "itemId": "kqy0sth1ipnmt6uic2k",
       "originalTitle": "Pure Spin Bulk Photovoltaic Effect in an Altermagnetic Higher-Order Topological Insulator",
       "status": "accepted",
-      "confidence": 1.0,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Pure Spin Bulk Photovoltaic Effect in an Altermagnetic Higher-Order Topological Insulator",
@@ -3533,11 +3540,12 @@
         "Manisha Thakurathi"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
@@ -3905,9 +3913,9 @@
       "itemId": "0cy13b0yby3omtjk385h",
       "originalTitle": "Inherent AM on regular hyperbolic lattices",
       "status": "accepted",
-      "confidence": 0.99,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "exact-arxiv",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Inherent altermagnetism in minimal tight-binding models of regular hyperbolic lattices",
@@ -3921,11 +3929,12 @@
         "Björn Trauzettel"
       ],
       "year": 2026,
-      "identifierMatch": "arxiv",
+      "identifierMatch": "doi",
       "titleScore": 0.7571,
       "authorScore": 0.8378,
       "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
@@ -4128,9 +4137,9 @@
       "itemId": "munv1v8rwl83eb6wfxa",
       "originalTitle": "B-type quadratic planar Hall effect as a probe of altermagnetic order",
       "status": "accepted",
-      "confidence": 0.88,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "B-type Quadratic Planar Hall Effect as a Probe of Altermagnetic Order",
@@ -4144,11 +4153,12 @@
         "Haowei Xu"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 0.0,
-      "yearScore": 0.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -4332,7 +4342,7 @@
       "candidateTitle": "Type-II quantum spin Hall insulator without time-reversal symmetry",
       "currentTitle": "Type-II quantum spin Hall insulator without time-reversal symmetry",
       "doi": "10.1007/s11433-026-3097-y",
-      "openAlexId": "https://openalex.org/W7212072061",
+      "openAlexId": "https://openalex.org/W4417066011",
       "authors": [
         "Panjun Feng",
         "Chaoyang Tan",
