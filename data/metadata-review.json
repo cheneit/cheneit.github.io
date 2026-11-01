@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "updaterVersion": "5.3",
   "mode": "daily",
-  "generatedAt": "2026-10-31T07:07:33.653946+00:00",
+  "generatedAt": "2026-11-01T07:39:41.415041+00:00",
   "acceptThreshold": 0.78,
   "summary": {
     "accepted": 109,
@@ -289,15 +289,15 @@
       "candidateTitle": "Spin-polarized Andreev molecules and anomalous nonlocal Josephson effects in altermagnetic junctions",
       "currentTitle": "Spin-polarized Andreev molecules and anomalous nonlocal Josephson effects in altermagnetic junctions",
       "doi": "10.1103/l42w-8qrz",
-      "openAlexId": "https://openalex.org/W7134094115",
+      "openAlexId": "https://openalex.org/W7170198841",
       "authors": [
-        "Sayan Mondal",
+        "Anonymous",
         "Jorge Cayao"
       ],
       "year": 2026,
       "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 1.0,
+      "authorScore": 0.6905,
       "yearScore": 1.0,
       "warnings": [],
       "message": ""
@@ -893,16 +893,16 @@
       "candidateTitle": "Andreev spin qubits based on the helical edge states of magnetically doped two-dimensional topological insulators",
       "currentTitle": "Andreev spin qubits based on the helical edge states of magnetically doped two-dimensional topological insulators",
       "doi": "10.1103/jwtl-dz3v",
-      "openAlexId": "https://openalex.org/W7127203503",
+      "openAlexId": "https://openalex.org/W7169628954",
       "authors": [
-        "Edoardo Latini",
+        "Anonymous",
         "Fausto Rossi",
         "Fabrizio Dolcini"
       ],
       "year": 2026,
       "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 1.0,
+      "authorScore": 0.8,
       "yearScore": 1.0,
       "warnings": [],
       "message": ""
@@ -2634,15 +2634,15 @@
       "candidateTitle": "Spin-polarized Andreev molecules and anomalous nonlocal Josephson effects in altermagnetic junctions",
       "currentTitle": "Spin-polarized Andreev molecules and anomalous nonlocal Josephson effects in altermagnetic junctions",
       "doi": "10.1103/l42w-8qrz",
-      "openAlexId": "https://openalex.org/W7134094115",
+      "openAlexId": "https://openalex.org/W7170198841",
       "authors": [
-        "Sayan Mondal",
+        "Anonymous",
         "Jorge Cayao"
       ],
       "year": 2026,
       "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 1.0,
+      "authorScore": 0.6905,
       "yearScore": 1.0,
       "warnings": [
         "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
@@ -2661,8 +2661,8 @@
       "stage": "index",
       "candidateTitle": "Coulomb interaction unlocks Majorana-mediated electron teleportation between Quantum dots",
       "currentTitle": "Coulomb interaction unlocks Majorana-mediated electron teleportation between Quantum dots",
-      "doi": "",
-      "openAlexId": "https://openalex.org/W7134016424",
+      "doi": "10.48550/arxiv.2603.03699",
+      "openAlexId": "https://openalex.org/W7133733086",
       "authors": [
         "Sirui Yu",
         "Mao Hong",
@@ -2742,8 +2742,8 @@
       "stage": "index",
       "candidateTitle": "Skyrmion Cyclotron Resonance in Ferrimagnets",
       "currentTitle": "Skyrmion Cyclotron Resonance in Ferrimagnets",
-      "doi": "",
-      "openAlexId": "https://openalex.org/W7134291098",
+      "doi": "10.48550/arxiv.2603.06477",
+      "openAlexId": "https://openalex.org/W7134279820",
       "authors": [
         "Eugene M. Chudnovsky",
         "Dmitry A. Garanin"
@@ -3009,8 +3009,8 @@
       "stage": "index",
       "candidateTitle": "Floquet-induced anisotropic magnetoresistance and anomalous Hall effect in 2D $d$-wave altermagnets with Rashba spin-orbit coupling",
       "currentTitle": "Floquet-induced anisotropic magnetoresistance and anomalous Hall effect in 2D $d$-wave altermagnets with Rashba spin-orbit coupling",
-      "doi": "",
-      "openAlexId": "https://openalex.org/W7165817591",
+      "doi": "10.48550/arxiv.2606.21281",
+      "openAlexId": "https://openalex.org/W7165641915",
       "authors": [
         "Mohsen Yarmohammadi",
         "Pieter M. Gunnink",
@@ -3068,8 +3068,8 @@
       "stage": "index",
       "candidateTitle": "Odd-parity Magnetism from the Generalized Bloch Theorem",
       "currentTitle": "Odd-parity Magnetism from the Generalized Bloch Theorem",
-      "doi": "",
-      "openAlexId": "https://openalex.org/W7153670205",
+      "doi": "10.48550/arxiv.2604.08233",
+      "openAlexId": "https://openalex.org/W7153226233",
       "authors": [
         "Mikkel Christian Larsen",
         "Thomas Olsen"
@@ -3080,7 +3080,6 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
-        "stored-openalex-id-title-conflict",
         "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
