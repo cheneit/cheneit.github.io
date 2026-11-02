@@ -68,13 +68,13 @@
             "candidateOpenAlexId": "https://openalex.org/W1965597043",
             "warnings": []
           },
-          "reviewedAt": 1793518218382
+          "reviewedAt": 1793605207785
         },
         "metadataVerification": {
           "status": "unverified",
           "reason": "unverified",
           "confidence": 0.3766,
-          "checkedAt": 1793518218382,
+          "checkedAt": 1793605207785,
           "warnings": []
         }
       },
@@ -423,12 +423,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518219563,
+        "updatedAt": 1793605208305,
         "metadataError": "",
         "citations": {
           "count": 8,
           "source": "OpenAlex",
-          "updatedAt": 1793518219563
+          "updatedAt": 1793605208305
         },
         "pdfPages": 9,
         "historicalExtractedAt": 1787371650741,
@@ -471,8 +471,8 @@
             "candidateOpenAlexId": "https://openalex.org/W4416591143",
             "warnings": []
           },
-          "reviewedAt": 1793518219563,
-          "autoVerifiedAt": 1793518219563
+          "reviewedAt": 1793605208305,
+          "autoVerifiedAt": 1793605208305
         },
         "backfillScan": {
           "status": "accepted",
@@ -527,14 +527,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518219563,
+          "verifiedAt": 1793605208305,
           "warnings": []
         }
       },
       "citations": {
         "count": 8,
         "source": "OpenAlex",
-        "updatedAt": 1793518219563
+        "updatedAt": 1793605208305
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -752,12 +752,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518220739,
+        "updatedAt": 1793605208847,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518220739
+          "updatedAt": 1793605208847
         },
         "pdfPages": 7,
         "historicalExtractedAt": 1787371668438,
@@ -798,8 +798,8 @@
             "candidateOpenAlexId": "https://openalex.org/W4416581524",
             "warnings": []
           },
-          "reviewedAt": 1793518220739,
-          "autoVerifiedAt": 1793518220739
+          "reviewedAt": 1793605208847,
+          "autoVerifiedAt": 1793605208847
         },
         "backfillScan": {
           "status": "accepted",
@@ -852,14 +852,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518220739,
+          "verifiedAt": 1793605208847,
           "warnings": []
         }
       },
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518220739
+        "updatedAt": 1793605208847
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -1239,12 +1239,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518221855,
+        "updatedAt": 1793605209371,
         "metadataError": "",
         "citations": {
           "count": 1,
           "source": "OpenAlex",
-          "updatedAt": 1793518221855
+          "updatedAt": 1793605209371
         },
         "pdfPages": 9,
         "historicalExtractedAt": 1787371669407,
@@ -1297,8 +1297,8 @@
             "candidateOpenAlexId": "https://openalex.org/W4392780904",
             "warnings": []
           },
-          "reviewedAt": 1793518221855,
-          "autoVerifiedAt": 1793518221855
+          "reviewedAt": 1793605209371,
+          "autoVerifiedAt": 1793605209371
         },
         "backfillScan": {
           "status": "accepted",
@@ -1363,14 +1363,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518221855,
+          "verifiedAt": 1793605209371,
           "warnings": []
         }
       },
       "citations": {
         "count": 1,
         "source": "OpenAlex",
-        "updatedAt": 1793518221855
+        "updatedAt": 1793605209371
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -1787,12 +1787,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518223078,
+        "updatedAt": 1793605209908,
         "metadataError": "",
         "citations": {
           "count": 5,
           "source": "OpenAlex",
-          "updatedAt": 1793518223078
+          "updatedAt": 1793605209908
         },
         "pdfPages": 9,
         "historicalExtractedAt": 1787371670525,
@@ -1841,8 +1841,8 @@
             "candidateOpenAlexId": "https://openalex.org/W4416793689",
             "warnings": []
           },
-          "reviewedAt": 1793518223078,
-          "autoVerifiedAt": 1793518223078
+          "reviewedAt": 1793605209909,
+          "autoVerifiedAt": 1793605209909
         },
         "backfillScan": {
           "status": "accepted",
@@ -1903,14 +1903,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518223078,
+          "verifiedAt": 1793605209909,
           "warnings": []
         }
       },
       "citations": {
         "count": 5,
         "source": "OpenAlex",
-        "updatedAt": 1793518223078
+        "updatedAt": 1793605209908
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -2039,8 +2039,8 @@
             "candidateOpenAlexId": "https://openalex.org/W7140550325",
             "warnings": []
           },
-          "reviewedAt": 1793518224505,
-          "autoVerifiedAt": 1793518224505
+          "reviewedAt": 1793605210552,
+          "autoVerifiedAt": 1793605210552
         },
         "metadataVerification": {
           "status": "verified",
@@ -2048,7 +2048,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518224505,
+          "verifiedAt": 1793605210552,
           "warnings": []
         },
         "title": "Coherent Subgap Transport in Spin-Split Josephson Junctions",
@@ -2407,12 +2407,12 @@
           "warnings": []
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518224505,
+        "updatedAt": 1793605210552,
         "metadataError": "",
         "citations": {
           "count": 1,
           "source": "OpenAlex",
-          "updatedAt": 1793518224505
+          "updatedAt": 1793605210552
         }
       },
       "paperCard": {
@@ -2452,7 +2452,7 @@
       "citations": {
         "count": 1,
         "source": "OpenAlex",
-        "updatedAt": 1793518224505
+        "updatedAt": 1793605210552
       }
     },
     {
@@ -2717,12 +2717,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518226364,
+        "updatedAt": 1793605211325,
         "metadataError": "",
         "citations": {
           "count": 3,
           "source": "OpenAlex",
-          "updatedAt": 1793518226364
+          "updatedAt": 1793605211325
         },
         "pdfPages": 12,
         "historicalExtractedAt": 1787371672779,
@@ -2768,8 +2768,8 @@
             "candidateOpenAlexId": "https://openalex.org/W4416759099",
             "warnings": []
           },
-          "reviewedAt": 1793518226364,
-          "autoVerifiedAt": 1793518226364
+          "reviewedAt": 1793605211326,
+          "autoVerifiedAt": 1793605211326
         },
         "backfillScan": {
           "status": "accepted",
@@ -2827,14 +2827,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518226364,
+          "verifiedAt": 1793605211326,
           "warnings": []
         }
       },
       "citations": {
         "count": 3,
         "source": "OpenAlex",
-        "updatedAt": 1793518226364
+        "updatedAt": 1793605211325
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -3250,12 +3250,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518227650,
+        "updatedAt": 1793605212149,
         "metadataError": "",
         "citations": {
           "count": 3,
           "source": "OpenAlex",
-          "updatedAt": 1793518227650
+          "updatedAt": 1793605212149
         },
         "pdfPages": 9,
         "historicalExtractedAt": 1787371675353,
@@ -3314,8 +3314,8 @@
             "candidateOpenAlexId": "https://openalex.org/W4416937984",
             "warnings": []
           },
-          "reviewedAt": 1793518227651,
-          "autoVerifiedAt": 1793518227651
+          "reviewedAt": 1793605212149,
+          "autoVerifiedAt": 1793605212149
         },
         "backfillScan": {
           "status": "accepted",
@@ -3386,14 +3386,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518227651,
+          "verifiedAt": 1793605212149,
           "warnings": []
         }
       },
       "citations": {
         "count": 3,
         "source": "OpenAlex",
-        "updatedAt": 1793518227650
+        "updatedAt": 1793605212149
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -3529,13 +3529,13 @@
             "candidateOpenAlexId": "https://openalex.org/W4408963835",
             "warnings": []
           },
-          "reviewedAt": 1793518228492
+          "reviewedAt": 1793605212529
         },
         "metadataVerification": {
           "status": "unverified",
           "reason": "unverified",
           "confidence": 0.4241,
-          "checkedAt": 1793518228492,
+          "checkedAt": 1793605212529,
           "warnings": []
         }
       },
@@ -3812,12 +3812,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518230246,
+        "updatedAt": 1793605213370,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518230246
+          "updatedAt": 1793605213370
         },
         "pdfPages": 10,
         "historicalExtractedAt": 1787371682935,
@@ -3856,8 +3856,8 @@
             "candidateOpenAlexId": "https://openalex.org/W7170198841",
             "warnings": []
           },
-          "reviewedAt": 1793518230246,
-          "autoVerifiedAt": 1793518230246
+          "reviewedAt": 1793605213370,
+          "autoVerifiedAt": 1793605213370
         },
         "backfillScan": {
           "status": "accepted",
@@ -3908,14 +3908,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518230246,
+          "verifiedAt": 1793605213370,
           "warnings": []
         }
       },
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518230246
+        "updatedAt": 1793605213370
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -4179,12 +4179,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518232059,
+        "updatedAt": 1793605214084,
         "metadataError": "",
         "citations": {
           "count": 1,
           "source": "OpenAlex",
-          "updatedAt": 1793518232059
+          "updatedAt": 1793605214084
         },
         "pdfPages": 23,
         "historicalExtractedAt": 1787371683737,
@@ -4227,8 +4227,8 @@
             "candidateOpenAlexId": "https://openalex.org/W7204961306",
             "warnings": []
           },
-          "reviewedAt": 1793518232060,
-          "autoVerifiedAt": 1793518232060
+          "reviewedAt": 1793605214084,
+          "autoVerifiedAt": 1793605214084
         },
         "backfillScan": {
           "status": "accepted",
@@ -4283,14 +4283,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518232060,
+          "verifiedAt": 1793605214084,
           "warnings": []
         }
       },
       "citations": {
         "count": 1,
         "source": "OpenAlex",
-        "updatedAt": 1793518232059
+        "updatedAt": 1793605214084
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -4409,13 +4409,13 @@
             "candidateOpenAlexId": "https://openalex.org/W2158241459",
             "warnings": []
           },
-          "reviewedAt": 1793518232742
+          "reviewedAt": 1793605214726
         },
         "metadataVerification": {
           "status": "unverified",
           "reason": "unverified",
           "confidence": 0.4001,
-          "checkedAt": 1793518232742,
+          "checkedAt": 1793605214726,
           "warnings": []
         }
       },
@@ -4518,8 +4518,8 @@
             "candidateOpenAlexId": "https://openalex.org/W7138933015",
             "warnings": []
           },
-          "reviewedAt": 1793518233904,
-          "autoVerifiedAt": 1793518233904
+          "reviewedAt": 1793605215269,
+          "autoVerifiedAt": 1793605215269
         },
         "metadataVerification": {
           "status": "verified",
@@ -4527,7 +4527,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518233904,
+          "verifiedAt": 1793605215269,
           "warnings": []
         },
         "title": "Positional memory of skyrmions in magnetic bilayers",
@@ -4736,12 +4736,12 @@
           "warnings": []
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518233904,
+        "updatedAt": 1793605215269,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518233904
+          "updatedAt": 1793605215269
         }
       },
       "paperCard": {
@@ -4781,7 +4781,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518233904
+        "updatedAt": 1793605215269
       }
     },
     {
@@ -4845,8 +4845,8 @@
             "candidateOpenAlexId": "https://openalex.org/W7147024411",
             "warnings": []
           },
-          "reviewedAt": 1793518235137,
-          "autoVerifiedAt": 1793518235137
+          "reviewedAt": 1793605215767,
+          "autoVerifiedAt": 1793605215767
         },
         "metadataVerification": {
           "status": "verified",
@@ -4854,7 +4854,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518235137,
+          "verifiedAt": 1793605215767,
           "warnings": []
         },
         "title": "Data for \"Quantum Coulomb drag signatures of MBSs\"",
@@ -4981,12 +4981,12 @@
           "warnings": []
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518235137,
+        "updatedAt": 1793605215767,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518235137
+          "updatedAt": 1793605215767
         }
       },
       "paperCard": {
@@ -5026,7 +5026,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518235137
+        "updatedAt": 1793605215767
       }
     },
     {
@@ -5268,12 +5268,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518236697,
+        "updatedAt": 1793605216624,
         "metadataError": "",
         "citations": {
           "count": 27,
           "source": "OpenAlex",
-          "updatedAt": 1793518236697
+          "updatedAt": 1793605216624
         },
         "pdfPages": 6,
         "historicalExtractedAt": 1787371689469,
@@ -5325,8 +5325,8 @@
             "candidateOpenAlexId": "https://openalex.org/W4415057069",
             "warnings": []
           },
-          "reviewedAt": 1793518236697,
-          "autoVerifiedAt": 1793518236697
+          "reviewedAt": 1793605216624,
+          "autoVerifiedAt": 1793605216624
         },
         "backfillScan": {
           "status": "accepted",
@@ -5390,14 +5390,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518236697,
+          "verifiedAt": 1793605216624,
           "warnings": []
         }
       },
       "citations": {
         "count": 27,
         "source": "OpenAlex",
-        "updatedAt": 1793518236697
+        "updatedAt": 1793605216624
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -5592,12 +5592,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518238810,
+        "updatedAt": 1793605217470,
         "metadataError": "",
         "citations": {
           "count": 1,
           "source": "OpenAlex",
-          "updatedAt": 1793518238810
+          "updatedAt": 1793605217470
         },
         "pdfPages": 7,
         "historicalExtractedAt": 1787371690488,
@@ -5636,8 +5636,8 @@
             "candidateOpenAlexId": "https://openalex.org/W7136343484",
             "warnings": []
           },
-          "reviewedAt": 1793518238810,
-          "autoVerifiedAt": 1793518238810
+          "reviewedAt": 1793605217470,
+          "autoVerifiedAt": 1793605217470
         },
         "backfillScan": {
           "status": "accepted",
@@ -5688,14 +5688,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518238810,
+          "verifiedAt": 1793605217470,
           "warnings": []
         }
       },
       "citations": {
         "count": 1,
         "source": "OpenAlex",
-        "updatedAt": 1793518238810
+        "updatedAt": 1793605217470
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -5884,12 +5884,12 @@
         "matchMethod": "openalex-id-revalidated",
         "matchConfidence": 0.99,
         "matchedFromPdf": false,
-        "updatedAt": 1793518240496,
+        "updatedAt": 1793605218178,
         "metadataError": "",
         "citations": {
           "count": 1,
           "source": "OpenAlex",
-          "updatedAt": 1793518240496
+          "updatedAt": 1793605218178
         },
         "pdfPages": 9,
         "historicalExtractedAt": 1787371696930,
@@ -5932,8 +5932,8 @@
               "stored-openalex-id-author-conflict"
             ]
           },
-          "reviewedAt": 1793518240496,
-          "autoVerifiedAt": 1793518240496
+          "reviewedAt": 1793605218178,
+          "autoVerifiedAt": 1793605218178
         },
         "backfillScan": {
           "status": "accepted",
@@ -5988,7 +5988,7 @@
           "confidence": 0.99,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518240496,
+          "verifiedAt": 1793605218178,
           "warnings": [
             "stored-openalex-id-title-conflict",
             "stored-openalex-id-author-conflict"
@@ -5998,7 +5998,7 @@
       "citations": {
         "count": 1,
         "source": "OpenAlex",
-        "updatedAt": 1793518240496
+        "updatedAt": 1793605218178
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -6219,12 +6219,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518241727,
+        "updatedAt": 1793605218722,
         "metadataError": "",
         "citations": {
           "count": 2,
           "source": "OpenAlex",
-          "updatedAt": 1793518241727
+          "updatedAt": 1793605218722
         },
         "pdfPages": 11,
         "historicalExtractedAt": 1787371697830,
@@ -6261,8 +6261,8 @@
             "candidateOpenAlexId": "https://openalex.org/W4416389612",
             "warnings": []
           },
-          "reviewedAt": 1793518241727,
-          "autoVerifiedAt": 1793518241727
+          "reviewedAt": 1793605218722,
+          "autoVerifiedAt": 1793605218722
         },
         "backfillScan": {
           "status": "accepted",
@@ -6311,14 +6311,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518241727,
+          "verifiedAt": 1793605218722,
           "warnings": []
         }
       },
       "citations": {
         "count": 2,
         "source": "OpenAlex",
-        "updatedAt": 1793518241727
+        "updatedAt": 1793605218722
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -6438,13 +6438,13 @@
             "candidateOpenAlexId": "https://openalex.org/W4417086471",
             "warnings": []
           },
-          "reviewedAt": 1793518242414
+          "reviewedAt": 1793605219028
         },
         "metadataVerification": {
           "status": "unverified",
           "reason": "unverified",
           "confidence": 0.5257,
-          "checkedAt": 1793518242414,
+          "checkedAt": 1793605219028,
           "warnings": []
         }
       },
@@ -6658,12 +6658,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518244195,
+        "updatedAt": 1793605219764,
         "metadataError": "",
         "citations": {
           "count": 4,
           "source": "OpenAlex",
-          "updatedAt": 1793518244195
+          "updatedAt": 1793605219764
         },
         "pdfPages": 23,
         "historicalExtractedAt": 1787371700305,
@@ -6703,8 +6703,8 @@
             "candidateOpenAlexId": "https://openalex.org/W7160439739",
             "warnings": []
           },
-          "reviewedAt": 1793518244195,
-          "autoVerifiedAt": 1793518244195
+          "reviewedAt": 1793605219764,
+          "autoVerifiedAt": 1793605219764
         },
         "backfillScan": {
           "status": "accepted",
@@ -6756,14 +6756,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518244195,
+          "verifiedAt": 1793605219764,
           "warnings": []
         }
       },
       "citations": {
         "count": 4,
         "source": "OpenAlex",
-        "updatedAt": 1793518244195
+        "updatedAt": 1793605219764
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -6996,12 +6996,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518246017,
+        "updatedAt": 1793605220690,
         "metadataError": "",
         "citations": {
           "count": 7,
           "source": "OpenAlex",
-          "updatedAt": 1793518246017
+          "updatedAt": 1793605220690
         },
         "pdfPages": 20,
         "historicalExtractedAt": 1787371701670,
@@ -7049,8 +7049,8 @@
             "candidateOpenAlexId": "https://openalex.org/W7140123312",
             "warnings": []
           },
-          "reviewedAt": 1793518246017,
-          "autoVerifiedAt": 1793518246017
+          "reviewedAt": 1793605220690,
+          "autoVerifiedAt": 1793605220690
         },
         "backfillScan": {
           "status": "accepted",
@@ -7110,14 +7110,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518246017,
+          "verifiedAt": 1793605220690,
           "warnings": []
         }
       },
       "citations": {
         "count": 7,
         "source": "OpenAlex",
-        "updatedAt": 1793518246017
+        "updatedAt": 1793605220690
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -7245,13 +7245,13 @@
             "candidateOpenAlexId": "https://openalex.org/W4416065714",
             "warnings": []
           },
-          "reviewedAt": 1793518246730
+          "reviewedAt": 1793605221071
         },
         "metadataVerification": {
           "status": "unverified",
           "reason": "unverified",
           "confidence": 0.4413,
-          "checkedAt": 1793518246730,
+          "checkedAt": 1793605221071,
           "warnings": []
         }
       },
@@ -7448,12 +7448,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518248573,
+        "updatedAt": 1793605221689,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518248573
+          "updatedAt": 1793605221689
         },
         "pdfPages": 6,
         "historicalExtractedAt": 1787371704063,
@@ -7496,8 +7496,8 @@
             "candidateOpenAlexId": "https://openalex.org/W7202126296",
             "warnings": []
           },
-          "reviewedAt": 1793518248573,
-          "autoVerifiedAt": 1793518248573
+          "reviewedAt": 1793605221689,
+          "autoVerifiedAt": 1793605221689
         },
         "backfillScan": {
           "status": "accepted",
@@ -7552,14 +7552,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518248573,
+          "verifiedAt": 1793605221689,
           "warnings": []
         }
       },
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518248573
+        "updatedAt": 1793605221689
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -7979,12 +7979,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518250012,
+        "updatedAt": 1793605222359,
         "metadataError": "",
         "citations": {
           "count": 59,
           "source": "OpenAlex",
-          "updatedAt": 1793518250012
+          "updatedAt": 1793605222359
         },
         "pdfPages": 22,
         "historicalExtractedAt": 1787371705182,
@@ -8036,8 +8036,8 @@
             "candidateOpenAlexId": "https://openalex.org/W3198843094",
             "warnings": []
           },
-          "reviewedAt": 1793518250012,
-          "autoVerifiedAt": 1793518250012
+          "reviewedAt": 1793605222359,
+          "autoVerifiedAt": 1793605222359
         },
         "backfillScan": {
           "status": "accepted",
@@ -8101,14 +8101,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518250012,
+          "verifiedAt": 1793605222359,
           "warnings": []
         }
       },
       "citations": {
         "count": 59,
         "source": "OpenAlex",
-        "updatedAt": 1793518250012
+        "updatedAt": 1793605222359
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -8434,12 +8434,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518251562,
+        "updatedAt": 1793605222945,
         "metadataError": "",
         "citations": {
           "count": 47,
           "source": "OpenAlex",
-          "updatedAt": 1793518251562
+          "updatedAt": 1793605222945
         },
         "pdfPages": 13,
         "historicalExtractedAt": 1787371710245,
@@ -8489,8 +8489,8 @@
             "candidateOpenAlexId": "https://openalex.org/W2972810264",
             "warnings": []
           },
-          "reviewedAt": 1793518251562,
-          "autoVerifiedAt": 1793518251562
+          "reviewedAt": 1793605222946,
+          "autoVerifiedAt": 1793605222946
         },
         "backfillScan": {
           "status": "accepted",
@@ -8552,14 +8552,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518251562,
+          "verifiedAt": 1793605222946,
           "warnings": []
         }
       },
       "citations": {
         "count": 47,
         "source": "OpenAlex",
-        "updatedAt": 1793518251562
+        "updatedAt": 1793605222945
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -8918,12 +8918,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518253008,
+        "updatedAt": 1793605223481,
         "metadataError": "",
         "citations": {
           "count": 58,
           "source": "OpenAlex",
-          "updatedAt": 1793518253008
+          "updatedAt": 1793605223481
         },
         "pdfPages": 21,
         "historicalExtractedAt": 1787387742143,
@@ -8974,8 +8974,8 @@
             "candidateOpenAlexId": "https://openalex.org/W3122224748",
             "warnings": []
           },
-          "reviewedAt": 1793518253008,
-          "autoVerifiedAt": 1793518253008
+          "reviewedAt": 1793605223482,
+          "autoVerifiedAt": 1793605223482
         },
         "backfillScan": {
           "status": "accepted",
@@ -9038,14 +9038,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518253008,
+          "verifiedAt": 1793605223482,
           "warnings": []
         }
       },
       "citations": {
         "count": 58,
         "source": "OpenAlex",
-        "updatedAt": 1793518253008
+        "updatedAt": 1793605223481
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -9431,12 +9431,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518254308,
+        "updatedAt": 1793605224030,
         "metadataError": "",
         "citations": {
           "count": 201,
           "source": "OpenAlex",
-          "updatedAt": 1793518254308
+          "updatedAt": 1793605224030
         },
         "pdfPages": 19,
         "historicalExtractedAt": 1787387742645,
@@ -9486,8 +9486,8 @@
             "candidateOpenAlexId": "https://openalex.org/W4408407144",
             "warnings": []
           },
-          "reviewedAt": 1793518254309,
-          "autoVerifiedAt": 1793518254309
+          "reviewedAt": 1793605224030,
+          "autoVerifiedAt": 1793605224030
         },
         "backfillScan": {
           "status": "accepted",
@@ -9549,14 +9549,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518254309,
+          "verifiedAt": 1793605224030,
           "warnings": []
         }
       },
       "citations": {
         "count": 201,
         "source": "OpenAlex",
-        "updatedAt": 1793518254308
+        "updatedAt": 1793605224030
       },
       "groups": [],
       "paperCard": {
@@ -9679,8 +9679,8 @@
             "candidateOpenAlexId": "https://openalex.org/W7114789321",
             "warnings": []
           },
-          "reviewedAt": 1793518255762,
-          "autoVerifiedAt": 1793518255762
+          "reviewedAt": 1793605224573,
+          "autoVerifiedAt": 1793605224573
         },
         "metadataVerification": {
           "status": "verified",
@@ -9688,7 +9688,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518255762,
+          "verifiedAt": 1793605224573,
           "warnings": []
         },
         "title": "Anisotropic transport in ballistic bilayer graphene cavities",
@@ -9854,12 +9854,12 @@
           "warnings": []
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518255762,
+        "updatedAt": 1793605224573,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518255762
+          "updatedAt": 1793605224573
         }
       },
       "paperCard": {
@@ -9899,7 +9899,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518255762
+        "updatedAt": 1793605224573
       }
     },
     {
@@ -9983,13 +9983,13 @@
             "candidateOpenAlexId": "https://openalex.org/W4417297094",
             "warnings": []
           },
-          "reviewedAt": 1793518256417
+          "reviewedAt": 1793605224944
         },
         "metadataVerification": {
           "status": "unverified",
           "reason": "unverified",
           "confidence": 0.7067,
-          "checkedAt": 1793518256417,
+          "checkedAt": 1793605224944,
           "warnings": []
         }
       },
@@ -10098,13 +10098,13 @@
             "candidateOpenAlexId": "https://openalex.org/W1978887282",
             "warnings": []
           },
-          "reviewedAt": 1793518257136
+          "reviewedAt": 1793605225289
         },
         "metadataVerification": {
           "status": "unverified",
           "reason": "unverified",
           "confidence": 0.5988,
-          "checkedAt": 1793518257136,
+          "checkedAt": 1793605225289,
           "warnings": []
         }
       },
@@ -10225,13 +10225,13 @@
             "candidateOpenAlexId": "https://openalex.org/W4387252869",
             "warnings": []
           },
-          "reviewedAt": 1793518257837
+          "reviewedAt": 1793605225625
         },
         "metadataVerification": {
           "status": "unverified",
           "reason": "unverified",
           "confidence": 0.4105,
-          "checkedAt": 1793518257837,
+          "checkedAt": 1793605225625,
           "warnings": []
         }
       },
@@ -10567,12 +10567,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518259735,
+        "updatedAt": 1793605226267,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518259735
+          "updatedAt": 1793605226267
         },
         "pdfPages": 12,
         "historicalExtractedAt": 1787387747138,
@@ -10613,8 +10613,8 @@
             "candidateOpenAlexId": "https://openalex.org/W7169628954",
             "warnings": []
           },
-          "reviewedAt": 1793518259735,
-          "autoVerifiedAt": 1793518259735
+          "reviewedAt": 1793605226267,
+          "autoVerifiedAt": 1793605226267
         },
         "backfillScan": {
           "status": "accepted",
@@ -10667,14 +10667,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518259735,
+          "verifiedAt": 1793605226267,
           "warnings": []
         }
       },
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518259735
+        "updatedAt": 1793605226267
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -11025,12 +11025,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518262185,
+        "updatedAt": 1793605226863,
         "metadataError": "",
         "citations": {
           "count": 21,
           "source": "OpenAlex",
-          "updatedAt": 1793518262185
+          "updatedAt": 1793605226863
         },
         "pdfPages": 7,
         "historicalExtractedAt": 1787387747599,
@@ -11079,8 +11079,8 @@
             "candidateOpenAlexId": "https://openalex.org/W4417356745",
             "warnings": []
           },
-          "reviewedAt": 1793518262185,
-          "autoVerifiedAt": 1793518262185
+          "reviewedAt": 1793605226863,
+          "autoVerifiedAt": 1793605226863
         },
         "backfillScan": {
           "status": "accepted",
@@ -11141,14 +11141,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518262185,
+          "verifiedAt": 1793605226863,
           "warnings": []
         }
       },
       "citations": {
         "count": 21,
         "source": "OpenAlex",
-        "updatedAt": 1793518262185
+        "updatedAt": 1793605226863
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -11455,12 +11455,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518263842,
+        "updatedAt": 1793605227483,
         "metadataError": "",
         "citations": {
           "count": 22,
           "source": "OpenAlex",
-          "updatedAt": 1793518263842
+          "updatedAt": 1793605227483
         },
         "pdfPages": 8,
         "historicalExtractedAt": 1787387748371,
@@ -11503,8 +11503,8 @@
             "candidateOpenAlexId": "https://openalex.org/W4366742190",
             "warnings": []
           },
-          "reviewedAt": 1793518263842,
-          "autoVerifiedAt": 1793518263842
+          "reviewedAt": 1793605227483,
+          "autoVerifiedAt": 1793605227483
         },
         "backfillScan": {
           "status": "accepted",
@@ -11559,14 +11559,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518263842,
+          "verifiedAt": 1793605227483,
           "warnings": []
         }
       },
       "citations": {
         "count": 22,
         "source": "OpenAlex",
-        "updatedAt": 1793518263842
+        "updatedAt": 1793605227483
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -11896,12 +11896,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518265124,
+        "updatedAt": 1793605228199,
         "metadataError": "",
         "citations": {
           "count": 50,
           "source": "OpenAlex",
-          "updatedAt": 1793518265124
+          "updatedAt": 1793605228199
         },
         "pdfPages": 8,
         "historicalExtractedAt": 1787387749058,
@@ -11952,8 +11952,8 @@
             "candidateOpenAlexId": "https://openalex.org/W4394009855",
             "warnings": []
           },
-          "reviewedAt": 1793518265124,
-          "autoVerifiedAt": 1793518265124
+          "reviewedAt": 1793605228199,
+          "autoVerifiedAt": 1793605228199
         },
         "backfillScan": {
           "status": "accepted",
@@ -12016,14 +12016,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518265124,
+          "verifiedAt": 1793605228199,
           "warnings": []
         }
       },
       "citations": {
         "count": 50,
         "source": "OpenAlex",
-        "updatedAt": 1793518265124
+        "updatedAt": 1793605228199
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -12263,12 +12263,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518266320,
+        "updatedAt": 1793605228717,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518266320
+          "updatedAt": 1793605228717
         },
         "pdfPages": 10,
         "historicalExtractedAt": 1787387749599,
@@ -12311,8 +12311,8 @@
             "candidateOpenAlexId": "https://openalex.org/W7169550969",
             "warnings": []
           },
-          "reviewedAt": 1793518266320,
-          "autoVerifiedAt": 1793518266320
+          "reviewedAt": 1793605228717,
+          "autoVerifiedAt": 1793605228717
         },
         "backfillScan": {
           "status": "accepted",
@@ -12367,14 +12367,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518266320,
+          "verifiedAt": 1793605228717,
           "warnings": []
         }
       },
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518266320
+        "updatedAt": 1793605228717
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -12491,13 +12491,13 @@
             "candidateOpenAlexId": "https://openalex.org/W3186117096",
             "warnings": []
           },
-          "reviewedAt": 1793518266782
+          "reviewedAt": 1793605229060
         },
         "metadataVerification": {
           "status": "unverified",
           "reason": "unverified",
           "confidence": 0.2122,
-          "checkedAt": 1793518266782,
+          "checkedAt": 1793605229060,
           "warnings": []
         }
       },
@@ -12930,12 +12930,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518268624,
+        "updatedAt": 1793605229765,
         "metadataError": "",
         "citations": {
           "count": 11,
           "source": "OpenAlex",
-          "updatedAt": 1793518268624
+          "updatedAt": 1793605229765
         },
         "pdfPages": 17,
         "historicalExtractedAt": 1787387752020,
@@ -12980,8 +12980,8 @@
             "candidateOpenAlexId": "https://openalex.org/W2965139716",
             "warnings": []
           },
-          "reviewedAt": 1793518268624,
-          "autoVerifiedAt": 1793518268624
+          "reviewedAt": 1793605229765,
+          "autoVerifiedAt": 1793605229765
         },
         "backfillScan": {
           "status": "accepted",
@@ -13038,14 +13038,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518268624,
+          "verifiedAt": 1793605229765,
           "warnings": []
         }
       },
       "citations": {
         "count": 11,
         "source": "OpenAlex",
-        "updatedAt": 1793518268624
+        "updatedAt": 1793605229765
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -13161,8 +13161,8 @@
             "candidateOpenAlexId": "https://openalex.org/W4417534119",
             "warnings": []
           },
-          "reviewedAt": 1793518269791,
-          "autoVerifiedAt": 1793518269791
+          "reviewedAt": 1793605230223,
+          "autoVerifiedAt": 1793605230223
         },
         "metadataVerification": {
           "status": "verified",
@@ -13170,7 +13170,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518269791,
+          "verifiedAt": 1793605230223,
           "warnings": []
         },
         "title": "Spin-dependent quasiparticle lifetimes in altermagnets",
@@ -13414,12 +13414,12 @@
           "warnings": []
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518269791,
+        "updatedAt": 1793605230223,
         "metadataError": "",
         "citations": {
           "count": 3,
           "source": "OpenAlex",
-          "updatedAt": 1793518269791
+          "updatedAt": 1793605230223
         }
       },
       "paperCard": {
@@ -13459,7 +13459,7 @@
       "citations": {
         "count": 3,
         "source": "OpenAlex",
-        "updatedAt": 1793518269791
+        "updatedAt": 1793605230223
       }
     },
     {
@@ -13672,12 +13672,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518270918,
+        "updatedAt": 1793605230726,
         "metadataError": "",
         "citations": {
           "count": 21,
           "source": "OpenAlex",
-          "updatedAt": 1793518270918
+          "updatedAt": 1793605230726
         },
         "pdfPages": 10,
         "historicalExtractedAt": 1787387753582,
@@ -13718,8 +13718,8 @@
             "candidateOpenAlexId": "https://openalex.org/W3048335274",
             "warnings": []
           },
-          "reviewedAt": 1793518270918,
-          "autoVerifiedAt": 1793518270918
+          "reviewedAt": 1793605230726,
+          "autoVerifiedAt": 1793605230726
         },
         "backfillScan": {
           "status": "accepted",
@@ -13772,14 +13772,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518270918,
+          "verifiedAt": 1793605230726,
           "warnings": []
         }
       },
       "citations": {
         "count": 21,
         "source": "OpenAlex",
-        "updatedAt": 1793518270918
+        "updatedAt": 1793605230726
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -14197,12 +14197,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518272276,
+        "updatedAt": 1793605231530,
         "metadataError": "",
         "citations": {
           "count": 3,
           "source": "OpenAlex",
-          "updatedAt": 1793518272276
+          "updatedAt": 1793605231530
         },
         "pdfPages": 8,
         "historicalExtractedAt": 1787387754624,
@@ -14253,8 +14253,8 @@
             "candidateOpenAlexId": "https://openalex.org/W4399774432",
             "warnings": []
           },
-          "reviewedAt": 1793518272276,
-          "autoVerifiedAt": 1793518272276
+          "reviewedAt": 1793605231531,
+          "autoVerifiedAt": 1793605231531
         },
         "backfillScan": {
           "status": "accepted",
@@ -14317,14 +14317,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518272276,
+          "verifiedAt": 1793605231531,
           "warnings": []
         }
       },
       "citations": {
         "count": 3,
         "source": "OpenAlex",
-        "updatedAt": 1793518272276
+        "updatedAt": 1793605231530
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -14624,12 +14624,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518273268,
+        "updatedAt": 1793605232111,
         "metadataError": "",
         "citations": {
           "count": 8,
           "source": "OpenAlex",
-          "updatedAt": 1793518273268
+          "updatedAt": 1793605232111
         },
         "pdfPages": 17,
         "historicalExtractedAt": 1787387755346,
@@ -14670,8 +14670,8 @@
             "candidateOpenAlexId": "https://openalex.org/W4399853870",
             "warnings": []
           },
-          "reviewedAt": 1793518273268,
-          "autoVerifiedAt": 1793518273268
+          "reviewedAt": 1793605232111,
+          "autoVerifiedAt": 1793605232111
         },
         "backfillScan": {
           "status": "accepted",
@@ -14724,14 +14724,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518273268,
+          "verifiedAt": 1793605232111,
           "warnings": []
         }
       },
       "citations": {
         "count": 8,
         "source": "OpenAlex",
-        "updatedAt": 1793518273268
+        "updatedAt": 1793605232111
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -15085,12 +15085,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518274530,
+        "updatedAt": 1793605232639,
         "metadataError": "",
         "citations": {
           "count": 29,
           "source": "OpenAlex",
-          "updatedAt": 1793518274530
+          "updatedAt": 1793605232639
         },
         "pdfPages": 8,
         "historicalExtractedAt": 1787387756598,
@@ -15139,8 +15139,8 @@
             "candidateOpenAlexId": "https://openalex.org/W2339072574",
             "warnings": []
           },
-          "reviewedAt": 1793518274531,
-          "autoVerifiedAt": 1793518274531
+          "reviewedAt": 1793605232639,
+          "autoVerifiedAt": 1793605232639
         },
         "backfillScan": {
           "status": "accepted",
@@ -15201,14 +15201,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518274531,
+          "verifiedAt": 1793605232639,
           "warnings": []
         }
       },
       "citations": {
         "count": 29,
         "source": "OpenAlex",
-        "updatedAt": 1793518274530
+        "updatedAt": 1793605232639
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -15505,12 +15505,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518275720,
+        "updatedAt": 1793605233253,
         "metadataError": "",
         "citations": {
           "count": 9,
           "source": "OpenAlex",
-          "updatedAt": 1793518275720
+          "updatedAt": 1793605233253
         },
         "pdfPages": 15,
         "historicalExtractedAt": 1787387757375,
@@ -15553,8 +15553,8 @@
             "candidateOpenAlexId": "https://openalex.org/W4399735937",
             "warnings": []
           },
-          "reviewedAt": 1793518275720,
-          "autoVerifiedAt": 1793518275720
+          "reviewedAt": 1793605233253,
+          "autoVerifiedAt": 1793605233253
         },
         "backfillScan": {
           "status": "accepted",
@@ -15609,14 +15609,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518275720,
+          "verifiedAt": 1793605233253,
           "warnings": []
         }
       },
       "citations": {
         "count": 9,
         "source": "OpenAlex",
-        "updatedAt": 1793518275720
+        "updatedAt": 1793605233253
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -15728,8 +15728,8 @@
             "candidateOpenAlexId": "https://openalex.org/W4417283798",
             "warnings": []
           },
-          "reviewedAt": 1793518277002,
-          "autoVerifiedAt": 1793518277002
+          "reviewedAt": 1793605233756,
+          "autoVerifiedAt": 1793605233756
         },
         "metadataVerification": {
           "status": "verified",
@@ -15737,7 +15737,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518277002,
+          "verifiedAt": 1793605233756,
           "warnings": []
         },
         "title": "Braiding of Majorana zero modes in vortex cores",
@@ -15987,12 +15987,12 @@
           "warnings": []
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518277002,
+        "updatedAt": 1793605233755,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518277002
+          "updatedAt": 1793605233755
         }
       },
       "paperCard": {
@@ -16032,7 +16032,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518277002
+        "updatedAt": 1793605233755
       }
     },
     {
@@ -16102,13 +16102,13 @@
             "candidateOpenAlexId": "https://openalex.org/W589623120",
             "warnings": []
           },
-          "reviewedAt": 1793518277637
+          "reviewedAt": 1793605234133
         },
         "metadataVerification": {
           "status": "unverified",
           "reason": "unverified",
           "confidence": 0.4178,
-          "checkedAt": 1793518277637,
+          "checkedAt": 1793605234133,
           "warnings": []
         }
       },
@@ -16311,12 +16311,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518279453,
+        "updatedAt": 1793605234735,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518279453
+          "updatedAt": 1793605234735
         },
         "pdfPages": 13,
         "historicalExtractedAt": 1787387759780,
@@ -16357,8 +16357,8 @@
             "candidateOpenAlexId": "https://openalex.org/W7161743504",
             "warnings": []
           },
-          "reviewedAt": 1793518279453,
-          "autoVerifiedAt": 1793518279453
+          "reviewedAt": 1793605234735,
+          "autoVerifiedAt": 1793605234735
         },
         "backfillScan": {
           "status": "accepted",
@@ -16411,14 +16411,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518279453,
+          "verifiedAt": 1793605234735,
           "warnings": []
         }
       },
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518279453
+        "updatedAt": 1793605234735
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -17540,12 +17540,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518280958,
+        "updatedAt": 1793605235689,
         "metadataError": "",
         "citations": {
           "count": 17,
           "source": "OpenAlex",
-          "updatedAt": 1793518280958
+          "updatedAt": 1793605235689
         },
         "pdfPages": 24,
         "historicalExtractedAt": 1787387761914,
@@ -17604,8 +17604,8 @@
             "candidateOpenAlexId": "https://openalex.org/W4417200385",
             "warnings": []
           },
-          "reviewedAt": 1793518280958,
-          "autoVerifiedAt": 1793518280958
+          "reviewedAt": 1793605235689,
+          "autoVerifiedAt": 1793605235689
         },
         "backfillScan": {
           "status": "accepted",
@@ -17676,14 +17676,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518280958,
+          "verifiedAt": 1793605235689,
           "warnings": []
         }
       },
       "citations": {
         "count": 17,
         "source": "OpenAlex",
-        "updatedAt": 1793518280958
+        "updatedAt": 1793605235689
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -18156,12 +18156,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518282521,
+        "updatedAt": 1793605236305,
         "metadataError": "",
         "citations": {
           "count": 2,
           "source": "OpenAlex",
-          "updatedAt": 1793518282521
+          "updatedAt": 1793605236305
         },
         "pdfPages": 15,
         "historicalExtractedAt": 1787387763157,
@@ -18204,8 +18204,8 @@
             "candidateOpenAlexId": "https://openalex.org/W4410234027",
             "warnings": []
           },
-          "reviewedAt": 1793518282521,
-          "autoVerifiedAt": 1793518282521
+          "reviewedAt": 1793605236305,
+          "autoVerifiedAt": 1793605236305
         },
         "backfillScan": {
           "status": "accepted",
@@ -18260,14 +18260,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518282521,
+          "verifiedAt": 1793605236305,
           "warnings": []
         }
       },
       "citations": {
         "count": 2,
         "source": "OpenAlex",
-        "updatedAt": 1793518282521
+        "updatedAt": 1793605236305
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -18540,7 +18540,7 @@
         "openAccess": {
           "is_oa": true,
           "oa_status": "green",
-          "oa_url": "https://researchprofiles.ku.dk/da/publications/b123776d-381b-4629-a727-f00416ed3ab1",
+          "oa_url": "https://arxiv.org/pdf/2402.15616",
           "any_repository_has_fulltext": true
         },
         "landingPageUrl": "https://doi.org/10.1103/physrevb.110.144412",
@@ -18548,12 +18548,12 @@
         "matchMethod": "doi-query",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518283844,
+        "updatedAt": 1793605237010,
         "metadataError": "",
         "citations": {
           "count": 126,
           "source": "OpenAlex",
-          "updatedAt": 1793518283844
+          "updatedAt": 1793605237010
         },
         "pdfPages": 20,
         "historicalExtractedAt": 1787387763876,
@@ -18593,13 +18593,14 @@
             "candidateDoi": "10.1103/physrevb.110.144412",
             "seedArxivId": "",
             "candidateArxivIds": [
-              "2402.15616"
+              "2402.15616",
+              "files/4103610"
             ],
             "candidateOpenAlexId": "https://openalex.org/W4403204254",
             "warnings": []
           },
-          "reviewedAt": 1793518283844,
-          "autoVerifiedAt": 1793518283844
+          "reviewedAt": 1793605237010,
+          "autoVerifiedAt": 1793605237010
         },
         "backfillScan": {
           "status": "accepted",
@@ -18645,7 +18646,8 @@
           "candidateDoi": "10.1103/physrevb.110.144412",
           "seedArxivId": "",
           "candidateArxivIds": [
-            "2402.15616"
+            "2402.15616",
+            "files/4103610"
           ],
           "candidateOpenAlexId": "https://openalex.org/W4403204254",
           "warnings": []
@@ -18656,14 +18658,14 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518283844,
+          "verifiedAt": 1793605237010,
           "warnings": []
         }
       },
       "citations": {
         "count": 126,
         "source": "OpenAlex",
-        "updatedAt": 1793518283844
+        "updatedAt": 1793605237010
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -18995,12 +18997,12 @@
           "warnings": []
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518285094,
+        "updatedAt": 1793605237826,
         "metadataError": "",
         "citations": {
           "count": 4,
           "source": "OpenAlex",
-          "updatedAt": 1793518285094
+          "updatedAt": 1793605237826
         },
         "pdfPages": 9,
         "historicalExtractedAt": 1787559892507,
@@ -19041,8 +19043,8 @@
             "candidateOpenAlexId": "https://openalex.org/W4417210531",
             "warnings": []
           },
-          "reviewedAt": 1793518285095,
-          "autoVerifiedAt": 1793518285095
+          "reviewedAt": 1793605237826,
+          "autoVerifiedAt": 1793605237826
         },
         "metadataVerification": {
           "status": "verified",
@@ -19050,7 +19052,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518285095,
+          "verifiedAt": 1793605237826,
           "warnings": []
         },
         "backfillScan": {
@@ -19066,7 +19068,7 @@
       "citations": {
         "count": 4,
         "source": "OpenAlex",
-        "updatedAt": 1793518285094
+        "updatedAt": 1793605237826
       }
     },
     {
@@ -19302,12 +19304,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518286007,
+        "updatedAt": 1793605238314,
         "metadataError": "",
         "citations": {
           "count": 52,
           "source": "OpenAlex",
-          "updatedAt": 1793518286007
+          "updatedAt": 1793605238314
         },
         "pdfPages": 13,
         "historicalExtractedAt": 1787559896201,
@@ -19346,8 +19348,8 @@
               "stored-openalex-id-title-conflict"
             ]
           },
-          "reviewedAt": 1793518286008,
-          "autoVerifiedAt": 1793518286008
+          "reviewedAt": 1793605238314,
+          "autoVerifiedAt": 1793605238314
         },
         "metadataVerification": {
           "status": "verified",
@@ -19355,7 +19357,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518286008,
+          "verifiedAt": 1793605238314,
           "warnings": [
             "stored-openalex-id-title-conflict"
           ]
@@ -19373,7 +19375,7 @@
       "citations": {
         "count": 52,
         "source": "OpenAlex",
-        "updatedAt": 1793518286007
+        "updatedAt": 1793605238314
       }
     },
     {
@@ -19589,12 +19591,12 @@
           "warnings": []
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518287467,
+        "updatedAt": 1793605239013,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518287467
+          "updatedAt": 1793605239013
         },
         "pdfPages": 17,
         "historicalExtractedAt": 1787559902572,
@@ -19635,8 +19637,8 @@
             "candidateOpenAlexId": "https://openalex.org/W7117631924",
             "warnings": []
           },
-          "reviewedAt": 1793518287467,
-          "autoVerifiedAt": 1793518287467
+          "reviewedAt": 1793605239013,
+          "autoVerifiedAt": 1793605239013
         },
         "metadataVerification": {
           "status": "verified",
@@ -19644,7 +19646,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518287467,
+          "verifiedAt": 1793605239013,
           "warnings": []
         },
         "backfillScan": {
@@ -19660,7 +19662,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518287467
+        "updatedAt": 1793605239013
       }
     },
     {
@@ -19991,12 +19993,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518288521,
+        "updatedAt": 1793605239495,
         "metadataError": "",
         "citations": {
           "count": 14,
           "source": "OpenAlex",
-          "updatedAt": 1793518288521
+          "updatedAt": 1793605239495
         },
         "pdfPages": 7,
         "historicalExtractedAt": 1787559908812,
@@ -20045,8 +20047,8 @@
               "stored-openalex-id-title-conflict"
             ]
           },
-          "reviewedAt": 1793518288521,
-          "autoVerifiedAt": 1793518288521
+          "reviewedAt": 1793605239495,
+          "autoVerifiedAt": 1793605239495
         },
         "metadataVerification": {
           "status": "verified",
@@ -20054,7 +20056,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518288521,
+          "verifiedAt": 1793605239495,
           "warnings": [
             "stored-openalex-id-title-conflict"
           ]
@@ -20072,7 +20074,7 @@
       "citations": {
         "count": 14,
         "source": "OpenAlex",
-        "updatedAt": 1793518288521
+        "updatedAt": 1793605239495
       }
     },
     {
@@ -20274,12 +20276,12 @@
           "warnings": []
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518290204,
+        "updatedAt": 1793605240177,
         "metadataError": "",
         "citations": {
           "count": 7,
           "source": "OpenAlex",
-          "updatedAt": 1793518290204
+          "updatedAt": 1793605240177
         },
         "pdfPages": 13,
         "historicalExtractedAt": 1787559917855,
@@ -20319,8 +20321,8 @@
             "candidateOpenAlexId": "https://openalex.org/W4414691610",
             "warnings": []
           },
-          "reviewedAt": 1793518290205,
-          "autoVerifiedAt": 1793518290205
+          "reviewedAt": 1793605240178,
+          "autoVerifiedAt": 1793605240178
         },
         "metadataVerification": {
           "status": "verified",
@@ -20328,7 +20330,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518290205,
+          "verifiedAt": 1793605240178,
           "warnings": []
         },
         "backfillScan": {
@@ -20344,7 +20346,7 @@
       "citations": {
         "count": 7,
         "source": "OpenAlex",
-        "updatedAt": 1793518290204
+        "updatedAt": 1793605240177
       }
     },
     {
@@ -20685,12 +20687,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518291520,
+        "updatedAt": 1793605240695,
         "metadataError": "",
         "citations": {
           "count": 12,
           "source": "OpenAlex",
-          "updatedAt": 1793518291520
+          "updatedAt": 1793605240695
         },
         "metadataReview": {
           "status": "accepted-auto",
@@ -20734,8 +20736,8 @@
               "stored-openalex-id-year-conflict"
             ]
           },
-          "reviewedAt": 1793518291520,
-          "autoVerifiedAt": 1793518291520
+          "reviewedAt": 1793605240695,
+          "autoVerifiedAt": 1793605240695
         },
         "metadataVerification": {
           "status": "verified",
@@ -20743,7 +20745,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518291520,
+          "verifiedAt": 1793605240695,
           "warnings": [
             "stored-openalex-id-year-conflict"
           ]
@@ -20761,7 +20763,7 @@
       "citations": {
         "count": 12,
         "source": "OpenAlex",
-        "updatedAt": 1793518291520
+        "updatedAt": 1793605240695
       }
     },
     {
@@ -21310,12 +21312,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518292580,
+        "updatedAt": 1793605241258,
         "metadataError": "",
         "citations": {
           "count": 39,
           "source": "OpenAlex",
-          "updatedAt": 1793518292580
+          "updatedAt": 1793605241258
         },
         "metadataReview": {
           "status": "accepted-auto",
@@ -21362,8 +21364,8 @@
               "stored-openalex-id-year-conflict"
             ]
           },
-          "reviewedAt": 1793518292580,
-          "autoVerifiedAt": 1793518292580
+          "reviewedAt": 1793605241259,
+          "autoVerifiedAt": 1793605241259
         },
         "metadataVerification": {
           "status": "verified",
@@ -21371,7 +21373,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518292580,
+          "verifiedAt": 1793605241259,
           "warnings": [
             "stored-openalex-id-year-conflict"
           ]
@@ -21389,7 +21391,7 @@
       "citations": {
         "count": 39,
         "source": "OpenAlex",
-        "updatedAt": 1793518292580
+        "updatedAt": 1793605241258
       }
     },
     {
@@ -21497,8 +21499,8 @@
             "candidateOpenAlexId": "https://openalex.org/W4416594353",
             "warnings": []
           },
-          "reviewedAt": 1793518293947,
-          "autoVerifiedAt": 1793518293947
+          "reviewedAt": 1793605241924,
+          "autoVerifiedAt": 1793605241924
         },
         "metadataVerification": {
           "status": "verified",
@@ -21506,7 +21508,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518293947,
+          "verifiedAt": 1793605241924,
           "warnings": []
         },
         "backfillScan": {
@@ -21872,18 +21874,18 @@
           "warnings": []
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518293946,
+        "updatedAt": 1793605241923,
         "metadataError": "",
         "citations": {
           "count": 2,
           "source": "OpenAlex",
-          "updatedAt": 1793518293946
+          "updatedAt": 1793605241923
         }
       },
       "citations": {
         "count": 2,
         "source": "OpenAlex",
-        "updatedAt": 1793518293946
+        "updatedAt": 1793605241923
       }
     },
     {
@@ -22476,12 +22478,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518294864,
+        "updatedAt": 1793605242462,
         "metadataError": "",
         "citations": {
           "count": 3,
           "source": "OpenAlex",
-          "updatedAt": 1793518294864
+          "updatedAt": 1793605242462
         },
         "pdfPages": 10,
         "historicalExtractedAt": 1787559932830,
@@ -22542,8 +22544,8 @@
               "stored-openalex-id-title-conflict"
             ]
           },
-          "reviewedAt": 1793518294864,
-          "autoVerifiedAt": 1793518294864
+          "reviewedAt": 1793605242462,
+          "autoVerifiedAt": 1793605242462
         },
         "metadataVerification": {
           "status": "verified",
@@ -22551,7 +22553,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518294864,
+          "verifiedAt": 1793605242462,
           "warnings": [
             "stored-openalex-id-title-conflict"
           ]
@@ -22569,7 +22571,7 @@
       "citations": {
         "count": 3,
         "source": "OpenAlex",
-        "updatedAt": 1793518294864
+        "updatedAt": 1793605242462
       }
     },
     {
@@ -22682,8 +22684,8 @@
             "candidateOpenAlexId": "https://openalex.org/W7117685911",
             "warnings": []
           },
-          "reviewedAt": 1793518296401,
-          "autoVerifiedAt": 1793518296401
+          "reviewedAt": 1793605243302,
+          "autoVerifiedAt": 1793605243302
         },
         "metadataVerification": {
           "status": "verified",
@@ -22691,7 +22693,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518296401,
+          "verifiedAt": 1793605243302,
           "warnings": []
         },
         "backfillScan": {
@@ -23238,18 +23240,18 @@
           "warnings": []
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518296401,
+        "updatedAt": 1793605243302,
         "metadataError": "",
         "citations": {
           "count": 1,
           "source": "OpenAlex",
-          "updatedAt": 1793518296401
+          "updatedAt": 1793605243302
         }
       },
       "citations": {
         "count": 1,
         "source": "OpenAlex",
-        "updatedAt": 1793518296401
+        "updatedAt": 1793605243302
       }
     },
     {
@@ -23356,8 +23358,8 @@
             "candidateOpenAlexId": "https://openalex.org/W7117973832",
             "warnings": []
           },
-          "reviewedAt": 1793518297605,
-          "autoVerifiedAt": 1793518297605
+          "reviewedAt": 1793605243837,
+          "autoVerifiedAt": 1793605243837
         },
         "metadataVerification": {
           "status": "verified",
@@ -23365,7 +23367,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518297605,
+          "verifiedAt": 1793605243837,
           "warnings": []
         },
         "backfillScan": {
@@ -23692,18 +23694,18 @@
           "warnings": []
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518297605,
+        "updatedAt": 1793605243837,
         "metadataError": "",
         "citations": {
           "count": 1,
           "source": "OpenAlex",
-          "updatedAt": 1793518297605
+          "updatedAt": 1793605243837
         }
       },
       "citations": {
         "count": 1,
         "source": "OpenAlex",
-        "updatedAt": 1793518297605
+        "updatedAt": 1793605243837
       }
     },
     {
@@ -24075,12 +24077,12 @@
           "warnings": []
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518299060,
+        "updatedAt": 1793605244394,
         "metadataError": "",
         "citations": {
           "count": 1,
           "source": "OpenAlex",
-          "updatedAt": 1793518299060
+          "updatedAt": 1793605244394
         },
         "pdfPages": 11,
         "historicalExtractedAt": 1787559954067,
@@ -24127,8 +24129,8 @@
             "candidateOpenAlexId": "https://openalex.org/W4417212300",
             "warnings": []
           },
-          "reviewedAt": 1793518299060,
-          "autoVerifiedAt": 1793518299060
+          "reviewedAt": 1793605244394,
+          "autoVerifiedAt": 1793605244394
         },
         "metadataVerification": {
           "status": "verified",
@@ -24136,7 +24138,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518299060,
+          "verifiedAt": 1793605244394,
           "warnings": []
         },
         "backfillScan": {
@@ -24152,7 +24154,7 @@
       "citations": {
         "count": 1,
         "source": "OpenAlex",
-        "updatedAt": 1793518299060
+        "updatedAt": 1793605244394
       }
     },
     {
@@ -24459,12 +24461,12 @@
           "warnings": []
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518300603,
+        "updatedAt": 1793605245104,
         "metadataError": "",
         "citations": {
           "count": 2,
           "source": "OpenAlex",
-          "updatedAt": 1793518300603
+          "updatedAt": 1793605245104
         },
         "pdfPages": 15,
         "historicalExtractedAt": 1787559957277,
@@ -24503,8 +24505,8 @@
             "candidateOpenAlexId": "https://openalex.org/W4417328042",
             "warnings": []
           },
-          "reviewedAt": 1793518300603,
-          "autoVerifiedAt": 1793518300603
+          "reviewedAt": 1793605245104,
+          "autoVerifiedAt": 1793605245104
         },
         "metadataVerification": {
           "status": "verified",
@@ -24512,7 +24514,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518300603,
+          "verifiedAt": 1793605245104,
           "warnings": []
         },
         "backfillScan": {
@@ -24528,7 +24530,7 @@
       "citations": {
         "count": 2,
         "source": "OpenAlex",
-        "updatedAt": 1793518300603
+        "updatedAt": 1793605245104
       }
     },
     {
@@ -25121,12 +25123,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518301923,
+        "updatedAt": 1793605245737,
         "metadataError": "",
         "citations": {
           "count": 609,
           "source": "OpenAlex",
-          "updatedAt": 1793518301923
+          "updatedAt": 1793605245737
         },
         "pdfPages": 5,
         "historicalExtractedAt": 1787559965250,
@@ -25188,8 +25190,8 @@
               "stored-openalex-id-year-conflict"
             ]
           },
-          "reviewedAt": 1793518301924,
-          "autoVerifiedAt": 1793518301924
+          "reviewedAt": 1793605245737,
+          "autoVerifiedAt": 1793605245737
         },
         "metadataVerification": {
           "status": "verified",
@@ -25197,7 +25199,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518301924,
+          "verifiedAt": 1793605245737,
           "warnings": [
             "stored-openalex-id-year-conflict"
           ]
@@ -25215,7 +25217,7 @@
       "citations": {
         "count": 609,
         "source": "OpenAlex",
-        "updatedAt": 1793518301923
+        "updatedAt": 1793605245737
       }
     },
     {
@@ -25459,12 +25461,12 @@
           "warnings": []
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518303480,
+        "updatedAt": 1793605246321,
         "metadataError": "",
         "citations": {
           "count": 12,
           "source": "OpenAlex",
-          "updatedAt": 1793518303480
+          "updatedAt": 1793605246321
         },
         "pdfPages": 6,
         "historicalExtractedAt": 1787559970286,
@@ -25503,8 +25505,8 @@
             "candidateOpenAlexId": "https://openalex.org/W4417256391",
             "warnings": []
           },
-          "reviewedAt": 1793518303481,
-          "autoVerifiedAt": 1793518303481
+          "reviewedAt": 1793605246321,
+          "autoVerifiedAt": 1793605246321
         },
         "metadataVerification": {
           "status": "verified",
@@ -25512,7 +25514,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518303481,
+          "verifiedAt": 1793605246321,
           "warnings": []
         },
         "backfillScan": {
@@ -25528,7 +25530,7 @@
       "citations": {
         "count": 12,
         "source": "OpenAlex",
-        "updatedAt": 1793518303480
+        "updatedAt": 1793605246321
       }
     },
     {
@@ -25832,12 +25834,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518304600,
+        "updatedAt": 1793605246767,
         "metadataError": "",
         "citations": {
           "count": 1,
           "source": "OpenAlex",
-          "updatedAt": 1793518304600
+          "updatedAt": 1793605246767
         },
         "pdfPages": 7,
         "historicalExtractedAt": 1787559976493,
@@ -25880,8 +25882,8 @@
               "stored-openalex-id-title-conflict"
             ]
           },
-          "reviewedAt": 1793518304600,
-          "autoVerifiedAt": 1793518304600
+          "reviewedAt": 1793605246767,
+          "autoVerifiedAt": 1793605246767
         },
         "metadataVerification": {
           "status": "verified",
@@ -25889,7 +25891,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518304600,
+          "verifiedAt": 1793605246767,
           "warnings": [
             "stored-openalex-id-title-conflict"
           ]
@@ -25907,7 +25909,7 @@
       "citations": {
         "count": 1,
         "source": "OpenAlex",
-        "updatedAt": 1793518304600
+        "updatedAt": 1793605246767
       }
     },
     {
@@ -26359,12 +26361,12 @@
           "warnings": []
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518305831,
+        "updatedAt": 1793605247286,
         "metadataError": "",
         "citations": {
           "count": 1,
           "source": "OpenAlex",
-          "updatedAt": 1793518305831
+          "updatedAt": 1793605247286
         },
         "metadataReview": {
           "status": "accepted-auto",
@@ -26411,8 +26413,8 @@
             "candidateOpenAlexId": "https://openalex.org/W4416888649",
             "warnings": []
           },
-          "reviewedAt": 1793518305831,
-          "autoVerifiedAt": 1793518305831
+          "reviewedAt": 1793605247286,
+          "autoVerifiedAt": 1793605247286
         },
         "metadataVerification": {
           "status": "verified",
@@ -26420,7 +26422,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518305831,
+          "verifiedAt": 1793605247286,
           "warnings": []
         },
         "backfillScan": {
@@ -26436,7 +26438,7 @@
       "citations": {
         "count": 1,
         "source": "OpenAlex",
-        "updatedAt": 1793518305831
+        "updatedAt": 1793605247286
       }
     },
     {
@@ -26776,12 +26778,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518306780,
+        "updatedAt": 1793605247794,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518306780
+          "updatedAt": 1793605247794
         },
         "pdfPages": 11,
         "historicalExtractedAt": 1787559988636,
@@ -26830,8 +26832,8 @@
               "stored-openalex-id-title-conflict"
             ]
           },
-          "reviewedAt": 1793518306781,
-          "autoVerifiedAt": 1793518306781
+          "reviewedAt": 1793605247795,
+          "autoVerifiedAt": 1793605247795
         },
         "metadataVerification": {
           "status": "verified",
@@ -26839,7 +26841,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518306781,
+          "verifiedAt": 1793605247795,
           "warnings": [
             "stored-openalex-id-title-conflict"
           ]
@@ -26857,7 +26859,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518306780
+        "updatedAt": 1793605247794
       }
     },
     {
@@ -27135,12 +27137,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518307955,
+        "updatedAt": 1793605248503,
         "metadataError": "",
         "citations": {
           "count": 3,
           "source": "OpenAlex",
-          "updatedAt": 1793518307955
+          "updatedAt": 1793605248503
         },
         "pdfPages": 9,
         "historicalExtractedAt": 1787559995823,
@@ -27181,8 +27183,8 @@
               "stored-openalex-id-title-conflict"
             ]
           },
-          "reviewedAt": 1793518307955,
-          "autoVerifiedAt": 1793518307955
+          "reviewedAt": 1793605248503,
+          "autoVerifiedAt": 1793605248503
         },
         "metadataVerification": {
           "status": "verified",
@@ -27190,7 +27192,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518307955,
+          "verifiedAt": 1793605248503,
           "warnings": [
             "stored-openalex-id-title-conflict"
           ]
@@ -27208,7 +27210,7 @@
       "citations": {
         "count": 3,
         "source": "OpenAlex",
-        "updatedAt": 1793518307955
+        "updatedAt": 1793605248503
       }
     },
     {
@@ -27429,13 +27431,13 @@
             "candidateOpenAlexId": "https://openalex.org/W7154484690",
             "warnings": []
           },
-          "reviewedAt": 1793518308812
+          "reviewedAt": 1793605249082
         },
         "metadataVerification": {
           "status": "unverified",
           "reason": "unverified",
           "confidence": 0.8495,
-          "checkedAt": 1793518308812,
+          "checkedAt": 1793605249082,
           "warnings": []
         },
         "backfillScan": {
@@ -27869,12 +27871,12 @@
           "warnings": []
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518310069,
+        "updatedAt": 1793605249648,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518310069
+          "updatedAt": 1793605249648
         },
         "metadataReview": {
           "status": "accepted-auto",
@@ -27931,8 +27933,8 @@
             "candidateOpenAlexId": "https://openalex.org/W7123796216",
             "warnings": []
           },
-          "reviewedAt": 1793518310069,
-          "autoVerifiedAt": 1793518310069
+          "reviewedAt": 1793605249648,
+          "autoVerifiedAt": 1793605249648
         },
         "metadataVerification": {
           "status": "verified",
@@ -27940,7 +27942,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518310069,
+          "verifiedAt": 1793605249648,
           "warnings": []
         },
         "backfillScan": {
@@ -27956,7 +27958,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518310069
+        "updatedAt": 1793605249648
       }
     },
     {
@@ -28319,12 +28321,12 @@
           "warnings": []
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518311392,
+        "updatedAt": 1793605250163,
         "metadataError": "",
         "citations": {
           "count": 3,
           "source": "OpenAlex",
-          "updatedAt": 1793518311392
+          "updatedAt": 1793605250163
         },
         "metadataReview": {
           "status": "accepted-auto",
@@ -28369,8 +28371,8 @@
             "candidateOpenAlexId": "https://openalex.org/W4415344862",
             "warnings": []
           },
-          "reviewedAt": 1793518311392,
-          "autoVerifiedAt": 1793518311392
+          "reviewedAt": 1793605250163,
+          "autoVerifiedAt": 1793605250163
         },
         "metadataVerification": {
           "status": "verified",
@@ -28378,7 +28380,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518311392,
+          "verifiedAt": 1793605250163,
           "warnings": []
         },
         "backfillScan": {
@@ -28394,7 +28396,7 @@
       "citations": {
         "count": 3,
         "source": "OpenAlex",
-        "updatedAt": 1793518311392
+        "updatedAt": 1793605250163
       }
     },
     {
@@ -28493,8 +28495,8 @@
             "candidateOpenAlexId": "https://openalex.org/W7167599879",
             "warnings": []
           },
-          "reviewedAt": 1793518313125,
-          "autoVerifiedAt": 1793518313125
+          "reviewedAt": 1793605250740,
+          "autoVerifiedAt": 1793605250740
         },
         "metadataVerification": {
           "status": "verified",
@@ -28502,7 +28504,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518313125,
+          "verifiedAt": 1793605250740,
           "warnings": []
         },
         "backfillScan": {
@@ -28695,18 +28697,18 @@
           "warnings": []
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518313125,
+        "updatedAt": 1793605250740,
         "metadataError": "",
         "citations": {
           "count": 1,
           "source": "OpenAlex",
-          "updatedAt": 1793518313125
+          "updatedAt": 1793605250740
         }
       },
       "citations": {
         "count": 1,
         "source": "OpenAlex",
-        "updatedAt": 1793518313125
+        "updatedAt": 1793605250740
       }
     },
     {
@@ -28993,12 +28995,12 @@
           "warnings": []
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518314396,
+        "updatedAt": 1793605251495,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518314396
+          "updatedAt": 1793605251495
         },
         "metadataReview": {
           "status": "accepted-auto",
@@ -29043,8 +29045,8 @@
             "candidateOpenAlexId": "https://openalex.org/W7123493760",
             "warnings": []
           },
-          "reviewedAt": 1793518314396,
-          "autoVerifiedAt": 1793518314396
+          "reviewedAt": 1793605251495,
+          "autoVerifiedAt": 1793605251495
         },
         "metadataVerification": {
           "status": "verified",
@@ -29052,7 +29054,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518314396,
+          "verifiedAt": 1793605251495,
           "warnings": []
         },
         "backfillScan": {
@@ -29068,7 +29070,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518314396
+        "updatedAt": 1793605251495
       }
     },
     {
@@ -29463,12 +29465,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518315622,
+        "updatedAt": 1793605252043,
         "metadataError": "",
         "citations": {
           "count": 10,
           "source": "OpenAlex",
-          "updatedAt": 1793518315622
+          "updatedAt": 1793605252043
         },
         "metadataReview": {
           "status": "accepted-auto",
@@ -29510,8 +29512,8 @@
               "stored-openalex-id-year-conflict"
             ]
           },
-          "reviewedAt": 1793518315622,
-          "autoVerifiedAt": 1793518315622
+          "reviewedAt": 1793605252043,
+          "autoVerifiedAt": 1793605252043
         },
         "metadataVerification": {
           "status": "verified",
@@ -29519,7 +29521,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518315622,
+          "verifiedAt": 1793605252043,
           "warnings": [
             "stored-openalex-id-year-conflict"
           ]
@@ -29537,7 +29539,7 @@
       "citations": {
         "count": 10,
         "source": "OpenAlex",
-        "updatedAt": 1793518315622
+        "updatedAt": 1793605252043
       }
     },
     {
@@ -29852,12 +29854,12 @@
           "warnings": []
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518316844,
+        "updatedAt": 1793605252679,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518316844
+          "updatedAt": 1793605252679
         },
         "pdfPages": 11,
         "historicalExtractedAt": 1787560034509,
@@ -29900,8 +29902,8 @@
             "candidateOpenAlexId": "https://openalex.org/W4414991368",
             "warnings": []
           },
-          "reviewedAt": 1793518316844,
-          "autoVerifiedAt": 1793518316844
+          "reviewedAt": 1793605252679,
+          "autoVerifiedAt": 1793605252679
         },
         "metadataVerification": {
           "status": "verified",
@@ -29909,7 +29911,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518316844,
+          "verifiedAt": 1793605252679,
           "warnings": []
         },
         "backfillScan": {
@@ -29925,7 +29927,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518316844
+        "updatedAt": 1793605252679
       }
     },
     {
@@ -30376,12 +30378,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518320562,
+        "updatedAt": 1793605256065,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518320562
+          "updatedAt": 1793605256065
         },
         "metadataReview": {
           "status": "accepted-auto",
@@ -30432,8 +30434,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518320562,
-          "autoVerifiedAt": 1793518320562
+          "reviewedAt": 1793605256065,
+          "autoVerifiedAt": 1793605256065
         },
         "metadataVerification": {
           "status": "verified",
@@ -30441,7 +30443,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518320562,
+          "verifiedAt": 1793605256065,
           "warnings": [
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
           ]
@@ -30459,7 +30461,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518320562
+        "updatedAt": 1793605256065
       }
     },
     {
@@ -30741,12 +30743,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518324386,
+        "updatedAt": 1793605259407,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518324386
+          "updatedAt": 1793605259407
         },
         "pdfPages": 7,
         "historicalExtractedAt": 1787560039897,
@@ -30791,8 +30793,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518324386,
-          "autoVerifiedAt": 1793518324386
+          "reviewedAt": 1793605259407,
+          "autoVerifiedAt": 1793605259407
         },
         "metadataVerification": {
           "status": "verified",
@@ -30800,7 +30802,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518324386,
+          "verifiedAt": 1793605259407,
           "warnings": [
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
           ]
@@ -30818,7 +30820,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518324386
+        "updatedAt": 1793605259407
       }
     },
     {
@@ -31089,12 +31091,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518331195,
+        "updatedAt": 1793605265874,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518331195
+          "updatedAt": 1793605265874
         },
         "pdfPages": 12,
         "historicalExtractedAt": 1787560043066,
@@ -31142,8 +31144,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518331195,
-          "autoVerifiedAt": 1793518331195
+          "reviewedAt": 1793605265874,
+          "autoVerifiedAt": 1793605265874
         },
         "metadataVerification": {
           "status": "verified",
@@ -31151,7 +31153,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518331195,
+          "verifiedAt": 1793605265874,
           "warnings": [
             "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
@@ -31170,7 +31172,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518331195
+        "updatedAt": 1793605265874
       }
     },
     {
@@ -31443,12 +31445,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518334956,
+        "updatedAt": 1793605269952,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518334956
+          "updatedAt": 1793605269952
         },
         "metadataReview": {
           "status": "accepted-auto",
@@ -31491,8 +31493,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518334956,
-          "autoVerifiedAt": 1793518334956
+          "reviewedAt": 1793605269952,
+          "autoVerifiedAt": 1793605269952
         },
         "metadataVerification": {
           "status": "verified",
@@ -31500,7 +31502,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518334956,
+          "verifiedAt": 1793605269952,
           "warnings": [
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
           ]
@@ -31518,7 +31520,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518334956
+        "updatedAt": 1793605269952
       }
     },
     {
@@ -31905,12 +31907,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518338670,
+        "updatedAt": 1793605273425,
         "metadataError": "",
         "citations": {
           "count": 18,
           "source": "OpenAlex",
-          "updatedAt": 1793518338670
+          "updatedAt": 1793605273425
         },
         "metadataReview": {
           "status": "accepted-auto",
@@ -31956,8 +31958,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518338671,
-          "autoVerifiedAt": 1793518338671
+          "reviewedAt": 1793605273425,
+          "autoVerifiedAt": 1793605273425
         },
         "metadataVerification": {
           "status": "verified",
@@ -31965,7 +31967,7 @@
           "confidence": 0.995,
           "method": "doi-query",
           "stage": "index",
-          "verifiedAt": 1793518338671,
+          "verifiedAt": 1793605273425,
           "warnings": [
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
           ]
@@ -31983,7 +31985,7 @@
       "citations": {
         "count": 18,
         "source": "OpenAlex",
-        "updatedAt": 1793518338670
+        "updatedAt": 1793605273425
       }
     },
     {
@@ -32407,12 +32409,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518348809,
+        "updatedAt": 1793605283033,
         "metadataError": "",
         "citations": {
           "count": 4,
           "source": "OpenAlex",
-          "updatedAt": 1793518348809
+          "updatedAt": 1793605283033
         },
         "metadataReview": {
           "status": "accepted-auto",
@@ -32454,8 +32456,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518348809,
-          "autoVerifiedAt": 1793518348809
+          "reviewedAt": 1793605283033,
+          "autoVerifiedAt": 1793605283033
         },
         "metadataVerification": {
           "status": "verified",
@@ -32463,7 +32465,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518348809,
+          "verifiedAt": 1793605283033,
           "warnings": [
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
@@ -32482,7 +32484,7 @@
       "citations": {
         "count": 4,
         "source": "OpenAlex",
-        "updatedAt": 1793518348809
+        "updatedAt": 1793605283033
       }
     },
     {
@@ -32897,12 +32899,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518355470,
+        "updatedAt": 1793605289479,
         "metadataError": "",
         "citations": {
           "count": 3,
           "source": "OpenAlex",
-          "updatedAt": 1793518355470
+          "updatedAt": 1793605289479
         },
         "metadataReview": {
           "status": "accepted-auto",
@@ -32957,8 +32959,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518355470,
-          "autoVerifiedAt": 1793518355470
+          "reviewedAt": 1793605289479,
+          "autoVerifiedAt": 1793605289479
         },
         "metadataVerification": {
           "status": "verified",
@@ -32966,7 +32968,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518355470,
+          "verifiedAt": 1793605289479,
           "warnings": [
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
@@ -32985,7 +32987,7 @@
       "citations": {
         "count": 3,
         "source": "OpenAlex",
-        "updatedAt": 1793518355470
+        "updatedAt": 1793605289479
       }
     },
     {
@@ -33256,12 +33258,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518365294,
+        "updatedAt": 1793605298955,
         "metadataError": "",
         "citations": {
           "count": 2,
           "source": "OpenAlex",
-          "updatedAt": 1793518365294
+          "updatedAt": 1793605298955
         },
         "pdfPages": 12,
         "historicalExtractedAt": 1787560070628,
@@ -33320,8 +33322,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518365294,
-          "autoVerifiedAt": 1793518365294
+          "reviewedAt": 1793605298955,
+          "autoVerifiedAt": 1793605298955
         },
         "metadataVerification": {
           "status": "verified",
@@ -33329,7 +33331,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518365294,
+          "verifiedAt": 1793605298955,
           "warnings": [
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
@@ -33349,7 +33351,7 @@
       "citations": {
         "count": 2,
         "source": "OpenAlex",
-        "updatedAt": 1793518365294
+        "updatedAt": 1793605298955
       }
     },
     {
@@ -33449,8 +33451,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518372011,
-          "autoVerifiedAt": 1793518372011
+          "reviewedAt": 1793605305344,
+          "autoVerifiedAt": 1793605305344
         },
         "metadataVerification": {
           "status": "verified",
@@ -33458,7 +33460,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518372011,
+          "verifiedAt": 1793605305344,
           "warnings": [
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
@@ -33712,18 +33714,18 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518372010,
+        "updatedAt": 1793605305344,
         "metadataError": "",
         "citations": {
           "count": 1,
           "source": "OpenAlex",
-          "updatedAt": 1793518372010
+          "updatedAt": 1793605305344
         }
       },
       "citations": {
         "count": 1,
         "source": "OpenAlex",
-        "updatedAt": 1793518372010
+        "updatedAt": 1793605305344
       }
     },
     {
@@ -34145,12 +34147,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518378696,
+        "updatedAt": 1793605311704,
         "metadataError": "",
         "citations": {
           "count": 2,
           "source": "OpenAlex",
-          "updatedAt": 1793518378696
+          "updatedAt": 1793605311704
         },
         "pdfPages": 10,
         "historicalExtractedAt": 1787560083907,
@@ -34202,8 +34204,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518378696,
-          "autoVerifiedAt": 1793518378696
+          "reviewedAt": 1793605311704,
+          "autoVerifiedAt": 1793605311704
         },
         "metadataVerification": {
           "status": "verified",
@@ -34211,7 +34213,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518378696,
+          "verifiedAt": 1793605311704,
           "warnings": [
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
@@ -34230,7 +34232,7 @@
       "citations": {
         "count": 2,
         "source": "OpenAlex",
-        "updatedAt": 1793518378696
+        "updatedAt": 1793605311704
       }
     },
     {
@@ -34333,12 +34335,12 @@
           "warnings": []
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518388635,
+        "updatedAt": 1793605321165,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "Crossref",
-          "updatedAt": 1793518388635
+          "updatedAt": 1793605321165
         },
         "pdfPages": 9,
         "historicalExtractedAt": 1787560089051,
@@ -34357,8 +34359,8 @@
             "candidateTitle": "",
             "warnings": []
           },
-          "reviewedAt": 1793518388635,
-          "autoVerifiedAt": 1793518388635
+          "reviewedAt": 1793605321166,
+          "autoVerifiedAt": 1793605321166
         },
         "metadataVerification": {
           "status": "verified",
@@ -34366,7 +34368,7 @@
           "confidence": 0.995,
           "method": "doi-crossref",
           "stage": "index",
-          "verifiedAt": 1793518388635,
+          "verifiedAt": 1793605321166,
           "warnings": []
         },
         "backfillScan": {
@@ -34382,7 +34384,7 @@
       "citations": {
         "count": 0,
         "source": "Crossref",
-        "updatedAt": 1793518388635
+        "updatedAt": 1793605321165
       }
     },
     {
@@ -34684,13 +34686,13 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518392246
+          "reviewedAt": 1793605324643
         },
         "metadataVerification": {
           "status": "unverified",
           "reason": "unverified",
           "confidence": 0.7467,
-          "checkedAt": 1793518392246,
+          "checkedAt": 1793605324643,
           "warnings": [
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
           ]
@@ -34952,12 +34954,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518398894,
+        "updatedAt": 1793605331002,
         "metadataError": "",
         "citations": {
           "count": 2,
           "source": "OpenAlex",
-          "updatedAt": 1793518398894
+          "updatedAt": 1793605331002
         },
         "metadataReview": {
           "status": "accepted-auto",
@@ -34998,8 +35000,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518398894,
-          "autoVerifiedAt": 1793518398894
+          "reviewedAt": 1793605331002,
+          "autoVerifiedAt": 1793605331002
         },
         "metadataVerification": {
           "status": "verified",
@@ -35007,7 +35009,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518398894,
+          "verifiedAt": 1793605331002,
           "warnings": [
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
@@ -35026,7 +35028,7 @@
       "citations": {
         "count": 2,
         "source": "OpenAlex",
-        "updatedAt": 1793518398894
+        "updatedAt": 1793605331002
       }
     },
     {
@@ -35317,14 +35319,14 @@
           "verification": "exact-doi",
           "identifierMatch": "doi",
           "titleScore": 1.0,
-          "authorScore": 0.6905,
+          "authorScore": 1.0,
           "yearScore": 1.0,
           "hasAuthorEvidence": true,
           "hasYearEvidence": true,
           "seedTitle": "Spin polarized Andreev molecules and anomalous nonlocal Josephson effects in altermagnetic junctions",
           "candidateTitle": "Spin-polarized Andreev molecules and anomalous nonlocal Josephson effects in altermagnetic junctions",
           "seedAuthors": [
-            "Sayan Mondal",
+            "Anonymous",
             "Jorge Cayao"
           ],
           "candidateAuthors": [
@@ -35346,12 +35348,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518405588,
+        "updatedAt": 1793605337336,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518405588
+          "updatedAt": 1793605337336
         },
         "metadataReview": {
           "status": "accepted-auto",
@@ -35363,14 +35365,14 @@
             "verification": "exact-doi",
             "identifierMatch": "doi",
             "titleScore": 1.0,
-            "authorScore": 0.6905,
+            "authorScore": 1.0,
             "yearScore": 1.0,
             "hasAuthorEvidence": true,
             "hasYearEvidence": true,
             "seedTitle": "Spin polarized Andreev molecules and anomalous nonlocal Josephson effects in altermagnetic junctions",
             "candidateTitle": "Spin-polarized Andreev molecules and anomalous nonlocal Josephson effects in altermagnetic junctions",
             "seedAuthors": [
-              "Sayan Mondal",
+              "Anonymous",
               "Jorge Cayao"
             ],
             "candidateAuthors": [
@@ -35391,8 +35393,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518405589,
-          "autoVerifiedAt": 1793518405589
+          "reviewedAt": 1793605337336,
+          "autoVerifiedAt": 1793605337336
         },
         "metadataVerification": {
           "status": "verified",
@@ -35400,7 +35402,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518405589,
+          "verifiedAt": 1793605337336,
           "warnings": [
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
@@ -35419,7 +35421,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518405588
+        "updatedAt": 1793605337336
       }
     },
     {
@@ -35620,11 +35622,11 @@
         "landingPageUrl": "http://arxiv.org/abs/2603.03699",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id-revalidated",
-        "matchConfidence": 1.0,
-        "matchVerification": "composite",
+        "matchConfidence": 0.995,
+        "matchVerification": "exact-doi",
         "matchEvidence": {
-          "verification": "composite",
-          "identifierMatch": "",
+          "verification": "exact-doi",
+          "identifierMatch": "doi",
           "titleScore": 1.0,
           "authorScore": 1.0,
           "yearScore": 1.0,
@@ -35646,7 +35648,7 @@
           ],
           "seedYear": 2026,
           "candidateYear": 2026,
-          "seedDoi": "",
+          "seedDoi": "10.48550/arxiv.2603.03699",
           "candidateDoi": "10.48550/arxiv.2603.03699",
           "seedArxivId": "",
           "candidateArxivIds": [
@@ -35654,26 +35656,27 @@
           ],
           "candidateOpenAlexId": "https://openalex.org/W7133733086",
           "warnings": [
+            "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518409194,
+        "updatedAt": 1793605343767,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518409194
+          "updatedAt": 1793605343767
         },
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verification": "composite",
+          "verification": "exact-doi",
           "evidence": {
-            "verification": "composite",
-            "identifierMatch": "",
+            "verification": "exact-doi",
+            "identifierMatch": "doi",
             "titleScore": 1.0,
             "authorScore": 1.0,
             "yearScore": 1.0,
@@ -35695,7 +35698,7 @@
             ],
             "seedYear": 2026,
             "candidateYear": 2026,
-            "seedDoi": "",
+            "seedDoi": "10.48550/arxiv.2603.03699",
             "candidateDoi": "10.48550/arxiv.2603.03699",
             "seedArxivId": "",
             "candidateArxivIds": [
@@ -35703,20 +35706,22 @@
             ],
             "candidateOpenAlexId": "https://openalex.org/W7133733086",
             "warnings": [
+              "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518409195,
-          "autoVerifiedAt": 1793518409195
+          "reviewedAt": 1793605343767,
+          "autoVerifiedAt": 1793605343767
         },
         "metadataVerification": {
           "status": "verified",
-          "reason": "composite",
-          "confidence": 1.0,
+          "reason": "exact-doi",
+          "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518409195,
+          "verifiedAt": 1793605343767,
           "warnings": [
+            "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
           ]
         },
@@ -35733,7 +35738,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518409194
+        "updatedAt": 1793605343767
       }
     },
     {
@@ -35925,12 +35930,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518419086,
+        "updatedAt": 1793605353232,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518419086
+          "updatedAt": 1793605353232
         },
         "pdfPages": 6,
         "historicalExtractedAt": 1787560109958,
@@ -35971,8 +35976,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518419086,
-          "autoVerifiedAt": 1793518419086
+          "reviewedAt": 1793605353232,
+          "autoVerifiedAt": 1793605353232
         },
         "metadataVerification": {
           "status": "verified",
@@ -35980,7 +35985,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518419086,
+          "verifiedAt": 1793605353232,
           "warnings": [
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
@@ -36000,7 +36005,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518419086
+        "updatedAt": 1793605353232
       }
     },
     {
@@ -36330,11 +36335,11 @@
         "landingPageUrl": "http://arxiv.org/abs/2603.06477",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id-revalidated",
-        "matchConfidence": 1.0,
-        "matchVerification": "composite",
+        "matchConfidence": 0.995,
+        "matchVerification": "exact-doi",
         "matchEvidence": {
-          "verification": "composite",
-          "identifierMatch": "",
+          "verification": "exact-doi",
+          "identifierMatch": "doi",
           "titleScore": 1.0,
           "authorScore": 1.0,
           "yearScore": 1.0,
@@ -36352,7 +36357,7 @@
           ],
           "seedYear": 2026,
           "candidateYear": 2026,
-          "seedDoi": "",
+          "seedDoi": "10.48550/arxiv.2603.06477",
           "candidateDoi": "10.48550/arxiv.2603.06477",
           "seedArxivId": "",
           "candidateArxivIds": [
@@ -36360,26 +36365,27 @@
           ],
           "candidateOpenAlexId": "https://openalex.org/W7134279820",
           "warnings": [
+            "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518425954,
+        "updatedAt": 1793605362949,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518425954
+          "updatedAt": 1793605362949
         },
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verification": "composite",
+          "verification": "exact-doi",
           "evidence": {
-            "verification": "composite",
-            "identifierMatch": "",
+            "verification": "exact-doi",
+            "identifierMatch": "doi",
             "titleScore": 1.0,
             "authorScore": 1.0,
             "yearScore": 1.0,
@@ -36397,7 +36403,7 @@
             ],
             "seedYear": 2026,
             "candidateYear": 2026,
-            "seedDoi": "",
+            "seedDoi": "10.48550/arxiv.2603.06477",
             "candidateDoi": "10.48550/arxiv.2603.06477",
             "seedArxivId": "",
             "candidateArxivIds": [
@@ -36405,20 +36411,22 @@
             ],
             "candidateOpenAlexId": "https://openalex.org/W7134279820",
             "warnings": [
+              "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518425955,
-          "autoVerifiedAt": 1793518425955
+          "reviewedAt": 1793605362949,
+          "autoVerifiedAt": 1793605362949
         },
         "metadataVerification": {
           "status": "verified",
-          "reason": "composite",
-          "confidence": 1.0,
+          "reason": "exact-doi",
+          "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518425955,
+          "verifiedAt": 1793605362949,
           "warnings": [
+            "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
           ]
         },
@@ -36435,7 +36443,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518425954
+        "updatedAt": 1793605362949
       }
     },
     {
@@ -36915,13 +36923,13 @@
             "candidateOpenAlexId": "https://openalex.org/W7134264735",
             "warnings": []
           },
-          "reviewedAt": 1793518429666
+          "reviewedAt": 1793605366406
         },
         "metadataVerification": {
           "status": "unverified",
           "reason": "unverified",
           "confidence": 0.1365,
-          "checkedAt": 1793518429666,
+          "checkedAt": 1793605366406,
           "warnings": []
         },
         "backfillScan": {
@@ -37283,12 +37291,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518439493,
+        "updatedAt": 1793605376072,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518439493
+          "updatedAt": 1793605376072
         },
         "metadataReview": {
           "status": "accepted-auto",
@@ -37328,8 +37336,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518439493,
-          "autoVerifiedAt": 1793518439493
+          "reviewedAt": 1793605376072,
+          "autoVerifiedAt": 1793605376072
         },
         "metadataVerification": {
           "status": "verified",
@@ -37337,7 +37345,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518439493,
+          "verifiedAt": 1793605376072,
           "warnings": [
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
@@ -37356,7 +37364,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518439493
+        "updatedAt": 1793605376072
       }
     },
     {
@@ -37735,12 +37743,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518446314,
+        "updatedAt": 1793605382528,
         "metadataError": "",
         "citations": {
           "count": 1,
           "source": "OpenAlex",
-          "updatedAt": 1793518446314
+          "updatedAt": 1793605382528
         },
         "metadataReview": {
           "status": "accepted-auto",
@@ -37786,8 +37794,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518446314,
-          "autoVerifiedAt": 1793518446314
+          "reviewedAt": 1793605382528,
+          "autoVerifiedAt": 1793605382528
         },
         "metadataVerification": {
           "status": "verified",
@@ -37795,7 +37803,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518446314,
+          "verifiedAt": 1793605382528,
           "warnings": [
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
@@ -37814,7 +37822,7 @@
       "citations": {
         "count": 1,
         "source": "OpenAlex",
-        "updatedAt": 1793518446314
+        "updatedAt": 1793605382528
       }
     },
     {
@@ -38031,12 +38039,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518456562,
+        "updatedAt": 1793605392042,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518456562
+          "updatedAt": 1793605392042
         },
         "pdfPages": 27,
         "historicalExtractedAt": 1787560144997,
@@ -38081,8 +38089,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518456562,
-          "autoVerifiedAt": 1793518456562
+          "reviewedAt": 1793605392042,
+          "autoVerifiedAt": 1793605392042
         },
         "metadataVerification": {
           "status": "verified",
@@ -38090,7 +38098,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518456562,
+          "verifiedAt": 1793605392042,
           "warnings": [
             "stored-openalex-id-title-conflict",
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
@@ -38111,7 +38119,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518456562
+        "updatedAt": 1793605392042
       }
     },
     {
@@ -38287,12 +38295,12 @@
         "matchMethod": "openalex-id-revalidated",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518466294,
+        "updatedAt": 1793605401624,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518466294
+          "updatedAt": 1793605401624
         },
         "metadataReview": {
           "status": "accepted-auto",
@@ -38339,8 +38347,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518466294,
-          "autoVerifiedAt": 1793518466294
+          "reviewedAt": 1793605401624,
+          "autoVerifiedAt": 1793605401624
         },
         "volume": "",
         "issue": "",
@@ -38392,7 +38400,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518466294,
+          "verifiedAt": 1793605401624,
           "warnings": [
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
@@ -38412,7 +38420,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518466294
+        "updatedAt": 1793605401624
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -38952,12 +38960,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518476155,
+        "updatedAt": 1793605411136,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518476155
+          "updatedAt": 1793605411136
         },
         "pdfPages": 14,
         "historicalExtractedAt": 1787560153449,
@@ -39021,8 +39029,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518476155,
-          "autoVerifiedAt": 1793518476155
+          "reviewedAt": 1793605411137,
+          "autoVerifiedAt": 1793605411137
         },
         "metadataVerification": {
           "status": "verified",
@@ -39030,7 +39038,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518476155,
+          "verifiedAt": 1793605411137,
           "warnings": [
             "stored-openalex-id-title-conflict",
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
@@ -39051,7 +39059,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518476155
+        "updatedAt": 1793605411136
       }
     },
     {
@@ -39239,24 +39247,24 @@
         "landingPageUrl": "https://arxiv.org/abs/2606.21281",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id-revalidated",
-        "matchConfidence": 1.0,
+        "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518483143,
+        "updatedAt": 1793605420554,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518483143
+          "updatedAt": 1793605420554
         },
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 1.0,
+          "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verification": "composite",
+          "verification": "exact-doi",
           "evidence": {
-            "verification": "composite",
-            "identifierMatch": "",
+            "verification": "exact-doi",
+            "identifierMatch": "doi",
             "titleScore": 1.0,
             "authorScore": 1.0,
             "yearScore": 1.0,
@@ -39278,7 +39286,7 @@
             ],
             "seedYear": 2026,
             "candidateYear": 2026,
-            "seedDoi": "",
+            "seedDoi": "10.48550/arxiv.2606.21281",
             "candidateDoi": "10.48550/arxiv.2606.21281",
             "seedArxivId": "2604.05322",
             "candidateArxivIds": [
@@ -39286,21 +39294,22 @@
             ],
             "candidateOpenAlexId": "https://openalex.org/W7165641915",
             "warnings": [
+              "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
               "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518483143,
-          "autoVerifiedAt": 1793518483143
+          "reviewedAt": 1793605420554,
+          "autoVerifiedAt": 1793605420554
         },
         "volume": "",
         "issue": "",
         "pages": "",
         "publisher": "Cornell University",
-        "matchVerification": "composite",
+        "matchVerification": "exact-doi",
         "matchEvidence": {
-          "verification": "composite",
-          "identifierMatch": "",
+          "verification": "exact-doi",
+          "identifierMatch": "doi",
           "titleScore": 1.0,
           "authorScore": 1.0,
           "yearScore": 1.0,
@@ -39322,7 +39331,7 @@
           ],
           "seedYear": 2026,
           "candidateYear": 2026,
-          "seedDoi": "",
+          "seedDoi": "10.48550/arxiv.2606.21281",
           "candidateDoi": "10.48550/arxiv.2606.21281",
           "seedArxivId": "2604.05322",
           "candidateArxivIds": [
@@ -39330,18 +39339,20 @@
           ],
           "candidateOpenAlexId": "https://openalex.org/W7165641915",
           "warnings": [
+            "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
           ]
         },
         "metadataVerification": {
           "status": "verified",
-          "reason": "composite",
-          "confidence": 1.0,
+          "reason": "exact-doi",
+          "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518483143,
+          "verifiedAt": 1793605420554,
           "warnings": [
+            "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
           ]
@@ -39359,7 +39370,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518483143
+        "updatedAt": 1793605420554
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -39595,12 +39606,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518492860,
+        "updatedAt": 1793605430080,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518492860
+          "updatedAt": 1793605430080
         },
         "pdfPages": 10,
         "historicalExtractedAt": 1787560157848,
@@ -39643,8 +39654,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518492860,
-          "autoVerifiedAt": 1793518492860
+          "reviewedAt": 1793605430080,
+          "autoVerifiedAt": 1793605430080
         },
         "metadataVerification": {
           "status": "verified",
@@ -39652,7 +39663,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518492860,
+          "verifiedAt": 1793605430080,
           "warnings": [
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
@@ -39672,7 +39683,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518492860
+        "updatedAt": 1793605430080
       }
     },
     {
@@ -39845,11 +39856,11 @@
         "landingPageUrl": "http://arxiv.org/abs/2604.08233",
         "metadataSource": "OpenAlex",
         "matchMethod": "openalex-id-revalidated",
-        "matchConfidence": 0.99,
-        "matchVerification": "exact-arxiv",
+        "matchConfidence": 0.995,
+        "matchVerification": "exact-doi",
         "matchEvidence": {
-          "verification": "exact-arxiv",
-          "identifierMatch": "arxiv",
+          "verification": "exact-doi",
+          "identifierMatch": "doi",
           "titleScore": 0.625,
           "authorScore": 1.0,
           "yearScore": 1.0,
@@ -39867,7 +39878,7 @@
           ],
           "seedYear": 2026,
           "candidateYear": 2026,
-          "seedDoi": "",
+          "seedDoi": "10.48550/arxiv.2604.08233",
           "candidateDoi": "10.48550/arxiv.2604.08233",
           "seedArxivId": "2604.08233",
           "candidateArxivIds": [
@@ -39875,29 +39886,31 @@
           ],
           "candidateOpenAlexId": "https://openalex.org/W7153226233",
           "warnings": [
+            "stored-openalex-id-title-conflict",
+            "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518499859,
+        "updatedAt": 1793605439553,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518499859
+          "updatedAt": 1793605439553
         },
         "pdfPages": 5,
         "historicalExtractedAt": 1787560160622,
         "metadataReview": {
           "status": "accepted-auto",
-          "confidence": 0.99,
+          "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verification": "exact-arxiv",
+          "verification": "exact-doi",
           "evidence": {
-            "verification": "exact-arxiv",
-            "identifierMatch": "arxiv",
+            "verification": "exact-doi",
+            "identifierMatch": "doi",
             "titleScore": 0.625,
             "authorScore": 1.0,
             "yearScore": 1.0,
@@ -39915,7 +39928,7 @@
             ],
             "seedYear": 2026,
             "candidateYear": 2026,
-            "seedDoi": "",
+            "seedDoi": "10.48550/arxiv.2604.08233",
             "candidateDoi": "10.48550/arxiv.2604.08233",
             "seedArxivId": "2604.08233",
             "candidateArxivIds": [
@@ -39923,21 +39936,25 @@
             ],
             "candidateOpenAlexId": "https://openalex.org/W7153226233",
             "warnings": [
+              "stored-openalex-id-title-conflict",
+              "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
               "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518499859,
-          "autoVerifiedAt": 1793518499859
+          "reviewedAt": 1793605439553,
+          "autoVerifiedAt": 1793605439553
         },
         "metadataVerification": {
           "status": "verified",
-          "reason": "exact-arxiv",
-          "confidence": 0.99,
+          "reason": "exact-doi",
+          "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518499859,
+          "verifiedAt": 1793605439553,
           "warnings": [
+            "stored-openalex-id-title-conflict",
+            "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
           ]
@@ -39955,7 +39972,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518499859
+        "updatedAt": 1793605439553
       }
     },
     {
@@ -40427,13 +40444,13 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518507539
+          "reviewedAt": 1793605446814
         },
         "metadataVerification": {
           "status": "unverified",
           "reason": "unverified",
           "confidence": 0.512,
-          "checkedAt": 1793518507539,
+          "checkedAt": 1793605446814,
           "warnings": [
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
           ]
@@ -40864,12 +40881,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518514289,
+        "updatedAt": 1793605453203,
         "metadataError": "",
         "citations": {
           "count": 2,
           "source": "OpenAlex",
-          "updatedAt": 1793518514289
+          "updatedAt": 1793605453203
         },
         "pdfPages": 22,
         "historicalExtractedAt": 1787560169256,
@@ -40918,8 +40935,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518514289,
-          "autoVerifiedAt": 1793518514289
+          "reviewedAt": 1793605453203,
+          "autoVerifiedAt": 1793605453203
         },
         "metadataVerification": {
           "status": "verified",
@@ -40927,7 +40944,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518514289,
+          "verifiedAt": 1793605453203,
           "warnings": [
             "stored-openalex-id-title-conflict",
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
@@ -40947,7 +40964,7 @@
       "citations": {
         "count": 2,
         "source": "OpenAlex",
-        "updatedAt": 1793518514289
+        "updatedAt": 1793605453203
       }
     },
     {
@@ -41200,12 +41217,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518524128,
+        "updatedAt": 1793605462769,
         "metadataError": "",
         "citations": {
           "count": 538,
           "source": "OpenAlex",
-          "updatedAt": 1793518524128
+          "updatedAt": 1793605462769
         },
         "pdfPages": 6,
         "historicalExtractedAt": 1787560171977,
@@ -41252,8 +41269,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518524128,
-          "autoVerifiedAt": 1793518524128
+          "reviewedAt": 1793605462770,
+          "autoVerifiedAt": 1793605462770
         },
         "metadataVerification": {
           "status": "verified",
@@ -41261,7 +41278,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518524128,
+          "verifiedAt": 1793605462770,
           "warnings": [
             "stored-openalex-id-title-conflict",
             "stored-openalex-id-year-conflict",
@@ -41283,7 +41300,7 @@
       "citations": {
         "count": 538,
         "source": "OpenAlex",
-        "updatedAt": 1793518524128
+        "updatedAt": 1793605462769
       }
     },
     {
@@ -41845,12 +41862,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518537151,
+        "updatedAt": 1793605475449,
         "metadataError": "",
         "citations": {
           "count": 28,
           "source": "OpenAlex",
-          "updatedAt": 1793518537151
+          "updatedAt": 1793605475449
         },
         "pdfPages": 7,
         "historicalExtractedAt": 1787560188234,
@@ -41902,8 +41919,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518537151,
-          "autoVerifiedAt": 1793518537151
+          "reviewedAt": 1793605475450,
+          "autoVerifiedAt": 1793605475450
         },
         "metadataVerification": {
           "status": "verified",
@@ -41911,7 +41928,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518537151,
+          "verifiedAt": 1793605475450,
           "warnings": [
             "stored-openalex-id-year-conflict",
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
@@ -41931,7 +41948,7 @@
       "citations": {
         "count": 28,
         "source": "OpenAlex",
-        "updatedAt": 1793518537151
+        "updatedAt": 1793605475449
       }
     },
     {
@@ -42077,12 +42094,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518543979,
+        "updatedAt": 1793605481871,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518543979
+          "updatedAt": 1793605481871
         },
         "pdfPages": 10,
         "historicalExtractedAt": 1787560195772,
@@ -42122,8 +42139,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518543979,
-          "autoVerifiedAt": 1793518543979
+          "reviewedAt": 1793605481871,
+          "autoVerifiedAt": 1793605481871
         },
         "metadataVerification": {
           "status": "verified",
@@ -42131,7 +42148,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518543979,
+          "verifiedAt": 1793605481871,
           "warnings": [
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
@@ -42274,7 +42291,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518543979
+        "updatedAt": 1793605481871
       }
     },
     {
@@ -42443,12 +42460,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518550621,
+        "updatedAt": 1793605488322,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518550621
+          "updatedAt": 1793605488322
         },
         "pdfPages": 7,
         "historicalExtractedAt": 1787560206193,
@@ -42491,8 +42508,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518550621,
-          "autoVerifiedAt": 1793518550621
+          "reviewedAt": 1793605488322,
+          "autoVerifiedAt": 1793605488322
         },
         "metadataVerification": {
           "status": "verified",
@@ -42500,7 +42517,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518550621,
+          "verifiedAt": 1793605488322,
           "warnings": [
             "stored-openalex-id-title-conflict",
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
@@ -42645,7 +42662,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518550621
+        "updatedAt": 1793605488322
       }
     },
     {
@@ -43193,12 +43210,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518567274,
+        "updatedAt": 1793605504388,
         "metadataError": "",
         "citations": {
           "count": 47,
           "source": "OpenAlex",
-          "updatedAt": 1793518567274
+          "updatedAt": 1793605504388
         },
         "pdfPages": 6,
         "historicalExtractedAt": 1787560249931,
@@ -43252,8 +43269,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518567274,
-          "autoVerifiedAt": 1793518567274
+          "reviewedAt": 1793605504388,
+          "autoVerifiedAt": 1793605504388
         },
         "metadataVerification": {
           "status": "verified",
@@ -43261,7 +43278,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518567274,
+          "verifiedAt": 1793605504388,
           "warnings": [
             "stored-openalex-id-title-conflict",
             "stored-openalex-id-year-conflict",
@@ -43407,7 +43424,7 @@
       "citations": {
         "count": 47,
         "source": "OpenAlex",
-        "updatedAt": 1793518567274
+        "updatedAt": 1793605504388
       }
     },
     {
@@ -44065,11 +44082,11 @@
         "matchMethod": "openalex-id-revalidated",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518593178,
+        "updatedAt": 1793605530116,
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518593178
+          "updatedAt": 1793605530116
         },
         "pdfPages": 18,
         "localExtractedAt": 1787552339032,
@@ -44151,8 +44168,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518593178,
-          "autoVerifiedAt": 1793518593178
+          "reviewedAt": 1793605530116,
+          "autoVerifiedAt": 1793605530116
         },
         "metadataVerification": {
           "status": "verified",
@@ -44160,7 +44177,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518593178,
+          "verifiedAt": 1793605530116,
           "warnings": [
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
@@ -44171,7 +44188,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518593178
+        "updatedAt": 1793605530116
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -44493,11 +44510,11 @@
         "matchMethod": "openalex-id-revalidated",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518599843,
+        "updatedAt": 1793605536561,
         "citations": {
           "count": 7,
           "source": "OpenAlex",
-          "updatedAt": 1793518599843
+          "updatedAt": 1793605536561
         },
         "pdfPages": 8,
         "localExtractedAt": 1787553081655,
@@ -44587,8 +44604,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518599843,
-          "autoVerifiedAt": 1793518599843
+          "reviewedAt": 1793605536562,
+          "autoVerifiedAt": 1793605536562
         },
         "metadataVerification": {
           "status": "verified",
@@ -44596,7 +44613,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518599843,
+          "verifiedAt": 1793605536562,
           "warnings": [
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
@@ -44606,7 +44623,7 @@
       "citations": {
         "count": 7,
         "source": "OpenAlex",
-        "updatedAt": 1793518599843
+        "updatedAt": 1793605536561
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -45121,12 +45138,12 @@
         "matchMethod": "openalex-id-revalidated",
         "matchConfidence": 0.995,
         "matchedFromPdf": false,
-        "updatedAt": 1793518616036,
+        "updatedAt": 1793605552389,
         "metadataError": "",
         "citations": {
           "count": 60,
           "source": "OpenAlex",
-          "updatedAt": 1793518616036
+          "updatedAt": 1793605552389
         },
         "pdfPages": 10,
         "localExtractedAt": 1787554610752,
@@ -45219,8 +45236,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518616037,
-          "autoVerifiedAt": 1793518616037
+          "reviewedAt": 1793605552389,
+          "autoVerifiedAt": 1793605552389
         },
         "metadataVerification": {
           "status": "verified",
@@ -45228,7 +45245,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518616037,
+          "verifiedAt": 1793605552389,
           "warnings": [
             "stored-openalex-id-title-conflict",
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
@@ -45408,7 +45425,7 @@
       "citations": {
         "count": 60,
         "source": "OpenAlex",
-        "updatedAt": 1793518616036
+        "updatedAt": 1793605552389
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -46071,11 +46088,11 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518635600,
+        "updatedAt": 1793605571653,
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518635600
+          "updatedAt": 1793605571653
         },
         "pdfPages": 7,
         "localExtractedAt": 1787793685157,
@@ -46085,7 +46102,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518635600,
+          "verifiedAt": 1793605571653,
           "warnings": [
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
@@ -46132,15 +46149,15 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518635600,
-          "autoVerifiedAt": 1793518635600
+          "reviewedAt": 1793605571653,
+          "autoVerifiedAt": 1793605571653
         },
         "metadataError": ""
       },
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518635600
+        "updatedAt": 1793605571653
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -46879,12 +46896,12 @@
         "matchVerification": "exact-doi",
         "matchVerified": false,
         "matchedFromPdf": false,
-        "updatedAt": 1793518668344,
+        "updatedAt": 1793605603515,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518668344
+          "updatedAt": 1793605603515
         },
         "pdfPages": 6,
         "localExtractedAt": 1788184628815,
@@ -46894,7 +46911,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518668344,
+          "verifiedAt": 1793605603515,
           "warnings": [
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
@@ -46944,8 +46961,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518668344,
-          "autoVerifiedAt": 1793518668344
+          "reviewedAt": 1793605603515,
+          "autoVerifiedAt": 1793605603515
         },
         "volume": "26",
         "issue": "35",
@@ -47086,7 +47103,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518668344
+        "updatedAt": 1793605603515
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -47416,11 +47433,11 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518675221,
+        "updatedAt": 1793605609966,
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518675221
+          "updatedAt": 1793605609966
         },
         "pdfPages": 9,
         "localExtractedAt": 1788185839561,
@@ -47430,7 +47447,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518675221,
+          "verifiedAt": 1793605609966,
           "warnings": [
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
@@ -47479,15 +47496,15 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518675221,
-          "autoVerifiedAt": 1793518675221
+          "reviewedAt": 1793605609966,
+          "autoVerifiedAt": 1793605609966
         },
         "metadataError": ""
       },
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518675221
+        "updatedAt": 1793605609966
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -47951,11 +47968,11 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518691856,
+        "updatedAt": 1793605625839,
         "citations": {
           "count": 1,
           "source": "OpenAlex",
-          "updatedAt": 1793518691856
+          "updatedAt": 1793605625839
         },
         "pdfPages": 13,
         "localExtractedAt": 1788320898237,
@@ -47965,7 +47982,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518691856,
+          "verifiedAt": 1793605625839,
           "warnings": [
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
@@ -48015,15 +48032,15 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518691856,
-          "autoVerifiedAt": 1793518691856
+          "reviewedAt": 1793605625839,
+          "autoVerifiedAt": 1793605625839
         },
         "metadataError": ""
       },
       "citations": {
         "count": 1,
         "source": "OpenAlex",
-        "updatedAt": 1793518691856
+        "updatedAt": 1793605625839
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -48290,11 +48307,11 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518701543,
+        "updatedAt": 1793605635304,
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518701543
+          "updatedAt": 1793605635304
         },
         "pdfPages": 16,
         "localExtractedAt": 1788400279493,
@@ -48304,7 +48321,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518701543,
+          "verifiedAt": 1793605635304,
           "warnings": [
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
@@ -48356,15 +48373,15 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518701543,
-          "autoVerifiedAt": 1793518701543
+          "reviewedAt": 1793605635304,
+          "autoVerifiedAt": 1793605635304
         },
         "metadataError": ""
       },
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518701543
+        "updatedAt": 1793605635304
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -49147,11 +49164,11 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518728058,
+        "updatedAt": 1793605660805,
         "citations": {
           "count": 25,
           "source": "OpenAlex",
-          "updatedAt": 1793518728058
+          "updatedAt": 1793605660805
         },
         "pdfPages": 11,
         "localExtractedAt": 1789524211634,
@@ -49161,7 +49178,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518728058,
+          "verifiedAt": 1793605660805,
           "warnings": [
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
@@ -49215,15 +49232,15 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518728058,
-          "autoVerifiedAt": 1793518728058
+          "reviewedAt": 1793605660805,
+          "autoVerifiedAt": 1793605660805
         },
         "metadataError": ""
       },
       "citations": {
         "count": 25,
         "source": "OpenAlex",
-        "updatedAt": 1793518728058
+        "updatedAt": 1793605660805
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -49590,12 +49607,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518741019,
+        "updatedAt": 1793605673526,
         "metadataError": "",
         "citations": {
           "count": 4,
           "source": "OpenAlex",
-          "updatedAt": 1793518741019
+          "updatedAt": 1793605673526
         },
         "metadataReview": {
           "status": "accepted-auto",
@@ -49638,8 +49655,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518741019,
-          "autoVerifiedAt": 1793518741019
+          "reviewedAt": 1793605673527,
+          "autoVerifiedAt": 1793605673527
         },
         "metadataVerification": {
           "status": "verified",
@@ -49647,7 +49664,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518741019,
+          "verifiedAt": 1793605673527,
           "warnings": [
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
@@ -49657,7 +49674,7 @@
       "citations": {
         "count": 4,
         "source": "OpenAlex",
-        "updatedAt": 1793518741019
+        "updatedAt": 1793605673526
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -49919,12 +49936,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518747720,
+        "updatedAt": 1793605679948,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518747720
+          "updatedAt": 1793605679948
         },
         "metadataReview": {
           "status": "accepted-auto",
@@ -49968,8 +49985,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518747720,
-          "autoVerifiedAt": 1793518747720
+          "reviewedAt": 1793605679948,
+          "autoVerifiedAt": 1793605679948
         },
         "metadataVerification": {
           "status": "verified",
@@ -49977,7 +49994,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518747720,
+          "verifiedAt": 1793605679948,
           "warnings": [
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
@@ -49987,7 +50004,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518747720
+        "updatedAt": 1793605679948
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -50366,12 +50383,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518754307,
+        "updatedAt": 1793605686373,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518754307
+          "updatedAt": 1793605686373
         },
         "metadataReview": {
           "status": "accepted-auto",
@@ -50423,8 +50440,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518754307,
-          "autoVerifiedAt": 1793518754307
+          "reviewedAt": 1793605686373,
+          "autoVerifiedAt": 1793605686373
         },
         "metadataVerification": {
           "status": "verified",
@@ -50432,7 +50449,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518754307,
+          "verifiedAt": 1793605686373,
           "warnings": [
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
@@ -50442,7 +50459,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518754307
+        "updatedAt": 1793605686373
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -50792,13 +50809,13 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518757823
+          "reviewedAt": 1793605689695
         },
         "metadataVerification": {
           "status": "conflict",
           "reason": "conflict",
           "confidence": 0.594,
-          "checkedAt": 1793518757823,
+          "checkedAt": 1793605689695,
           "warnings": [
             "stored-openalex-id-title-conflict",
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
@@ -51063,12 +51080,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518764382,
+        "updatedAt": 1793605696077,
         "metadataError": "",
         "citations": {
           "count": 0,
           "source": "OpenAlex",
-          "updatedAt": 1793518764382
+          "updatedAt": 1793605696077
         },
         "metadataReview": {
           "status": "accepted-auto",
@@ -51110,8 +51127,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518764382,
-          "autoVerifiedAt": 1793518764382
+          "reviewedAt": 1793605696077,
+          "autoVerifiedAt": 1793605696077
         },
         "metadataVerification": {
           "status": "verified",
@@ -51119,7 +51136,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518764382,
+          "verifiedAt": 1793605696077,
           "warnings": [
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
@@ -51129,7 +51146,7 @@
       "citations": {
         "count": 0,
         "source": "OpenAlex",
-        "updatedAt": 1793518764382
+        "updatedAt": 1793605696077
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -51709,12 +51726,12 @@
           ]
         },
         "matchedFromPdf": false,
-        "updatedAt": 1793518781243,
+        "updatedAt": 1793605712268,
         "metadataError": "",
         "citations": {
           "count": 3,
           "source": "OpenAlex",
-          "updatedAt": 1793518781243
+          "updatedAt": 1793605712268
         },
         "metadataReview": {
           "status": "accepted-auto",
@@ -51766,8 +51783,8 @@
               "title-search failed: request failed: HTTP Error 429: Too Many Requests"
             ]
           },
-          "reviewedAt": 1793518781243,
-          "autoVerifiedAt": 1793518781243
+          "reviewedAt": 1793605712268,
+          "autoVerifiedAt": 1793605712268
         },
         "metadataVerification": {
           "status": "verified",
@@ -51775,7 +51792,7 @@
           "confidence": 0.995,
           "method": "openalex-id-revalidated",
           "stage": "index",
-          "verifiedAt": 1793518781243,
+          "verifiedAt": 1793605712268,
           "warnings": [
             "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
             "title-search failed: request failed: HTTP Error 429: Too Many Requests"
@@ -51785,7 +51802,7 @@
       "citations": {
         "count": 3,
         "source": "OpenAlex",
-        "updatedAt": 1793518781243
+        "updatedAt": 1793605712268
       },
       "paperCard": {
         "schemaVersion": 1,
@@ -51841,7 +51858,7 @@
   "historicalMetadataUpdatedAt": 1787560753289,
   "schemaVersion": 5,
   "appVersion": "5.3",
-  "metadataUpdatedAt": 1793518781363,
-  "metadataUpdatedAtIso": "2026-11-01T07:39:41.363564+00:00",
+  "metadataUpdatedAt": 1793605712389,
+  "metadataUpdatedAtIso": "2026-11-02T07:48:32.389018+00:00",
   "paperCardSchemaVersion": 1
 }

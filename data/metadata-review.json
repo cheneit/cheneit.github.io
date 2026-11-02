@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "updaterVersion": "5.3",
   "mode": "daily",
-  "generatedAt": "2026-11-01T07:39:41.415041+00:00",
+  "generatedAt": "2026-11-02T07:48:32.439762+00:00",
   "acceptThreshold": 0.78,
   "summary": {
     "accepted": 109,
@@ -11,8 +11,8 @@
     "error": 0,
     "conflicts": 1,
     "pdfParsed": 0,
-    "exactVerified": 106,
-    "compositeVerified": 3
+    "exactVerified": 109,
+    "compositeVerified": 0
   },
   "results": [
     {
@@ -2642,7 +2642,7 @@
       "year": 2026,
       "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 0.6905,
+      "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
         "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
@@ -2654,9 +2654,9 @@
       "itemId": "srf8u03fsemmir2drj",
       "originalTitle": "Yu2026arXiv-Coulomb interaction unlocks Majorana-mediated electron teleportation between quantum dots",
       "status": "accepted",
-      "confidence": 1.0,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Coulomb interaction unlocks Majorana-mediated electron teleportation between Quantum dots",
@@ -2670,11 +2670,12 @@
         "Chui‐Ping Yang"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -2735,9 +2736,9 @@
       "itemId": "bph9ctqy0e9mmiskovm",
       "originalTitle": "Chudnovsky2026arXiv-Skyrmion Cyclotron Resonance in Ferrimagnets",
       "status": "accepted",
-      "confidence": 1.0,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Skyrmion Cyclotron Resonance in Ferrimagnets",
@@ -2749,11 +2750,12 @@
         "Dmitry A. Garanin"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -3002,9 +3004,9 @@
       "itemId": "i7dzcavyfxmnqw2w1n",
       "originalTitle": "Orbital driven AM transport",
       "status": "accepted",
-      "confidence": 1.0,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Floquet-induced anisotropic magnetoresistance and anomalous Hall effect in 2D $d$-wave altermagnets with Rashba spin-orbit coupling",
@@ -3018,11 +3020,12 @@
         "James K. Freericks"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
@@ -3061,9 +3064,9 @@
       "itemId": "iyuqlul9ltomo29zanw",
       "originalTitle": "Generalized Bloch theorem",
       "status": "accepted",
-      "confidence": 0.99,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "exact-arxiv",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Odd-parity Magnetism from the Generalized Bloch Theorem",
@@ -3075,11 +3078,13 @@
         "Thomas Olsen"
       ],
       "year": 2026,
-      "identifierMatch": "arxiv",
+      "identifierMatch": "doi",
       "titleScore": 0.625,
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
+        "stored-openalex-id-title-conflict",
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
