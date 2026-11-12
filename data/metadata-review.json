@@ -2,17 +2,17 @@
   "schemaVersion": 2,
   "updaterVersion": "5.3",
   "mode": "daily",
-  "generatedAt": "2026-11-11T07:52:28.155750+00:00",
+  "generatedAt": "2026-11-12T08:28:58.729370+00:00",
   "acceptThreshold": 0.78,
   "summary": {
-    "accepted": 112,
-    "review": 16,
+    "accepted": 140,
+    "review": 18,
     "unmatched": 25,
     "error": 0,
     "conflicts": 1,
     "pdfParsed": 0,
-    "exactVerified": 112,
-    "compositeVerified": 0
+    "exactVerified": 115,
+    "compositeVerified": 25
   },
   "results": [
     {
@@ -1284,21 +1284,22 @@
       "itemId": "bhiyz3nvczsmjjjv5ic",
       "originalTitle": "XC_PhD_thesis_basis",
       "status": "review",
-      "confidence": 0.4178,
+      "confidence": 0.384,
       "method": "title-search",
       "verification": "unverified",
       "verified": false,
       "stage": "index",
-      "candidateTitle": "Bimonadicity and the Explicit Basis Property",
+      "candidateTitle": "Self-Index based on LZ77 (thesis)",
       "currentTitle": "",
-      "doi": "10.70930/tac/mhnxxdtd",
-      "openAlexId": "https://openalex.org/W589623120",
+      "doi": "10.48550/arxiv.1112.4578",
+      "openAlexId": "https://openalex.org/W2399752528",
       "authors": [
-        "Matías Menni"
+        "Sebastian Kreft",
+        "Gonzalo Navarro"
       ],
-      "year": 2012,
+      "year": 2011,
       "identifierMatch": "",
-      "titleScore": 0.4444,
+      "titleScore": 0.4,
       "authorScore": 0.0,
       "yearScore": 0.0,
       "warnings": [],
@@ -4400,6 +4401,912 @@
       "yearScore": 1.0,
       "warnings": [
         "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "aelfomgq33x82es7s7f",
+      "originalTitle": "Coexistence and Interconversion of Multiple-Order Majorana Modes in Topological Superconductor Films with Varying Thickness",
+      "status": "accepted",
+      "confidence": 0.88,
+      "method": "openalex-id-revalidated",
+      "verification": "composite",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Coexistence and Interconversion of Multiple-Order Majorana Modes in Topological Superconductor Films with Varying Thickness",
+      "currentTitle": "Coexistence and Interconversion of Multiple-Order Majorana Modes in Topological Superconductor Films with Varying Thickness",
+      "doi": "10.48550/arxiv.2609.24311",
+      "openAlexId": "https://openalex.org/W7214005288",
+      "authors": [
+        "Zhizhong Ding",
+        "Chuanbao Zhang",
+        "Shunhong Zhang",
+        "Xiaoyu Zhu",
+        "Wei Qin",
+        "Ping Cui",
+        "Zhenyu Zhang"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 1.0,
+      "authorScore": 0.0,
+      "yearScore": 0.0,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "gemc43zltxtpw4mrjlh",
+      "originalTitle": "Interface engineering of spin triplet Cooper pairs for spin-valve implementation",
+      "status": "accepted",
+      "confidence": 0.88,
+      "method": "openalex-id-revalidated",
+      "verification": "composite",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Interface engineering of spin triplet Cooper pairs for spin-valve implementation",
+      "currentTitle": "Interface engineering of spin triplet Cooper pairs for spin-valve implementation",
+      "doi": "10.48550/arxiv.2609.24803",
+      "openAlexId": "https://openalex.org/W7214041861",
+      "authors": [
+        "Debashree Nayak",
+        "Abhisek Sahoo",
+        "Pratap Kumar Sahoo",
+        "Kartik Senapati"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 1.0,
+      "authorScore": 0.0,
+      "yearScore": 0.0,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "t43iux1e9npo51l7hna",
+      "originalTitle": "Parallel Simulation of Josephson Junctions With Multiplicative Noise",
+      "status": "accepted",
+      "confidence": 0.88,
+      "method": "openalex-id-revalidated",
+      "verification": "composite",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Parallel Simulation of Josephson Junctions With Multiplicative Noise",
+      "currentTitle": "Parallel Simulation of Josephson Junctions With Multiplicative Noise",
+      "doi": "10.1109/tasc.2018.2841922",
+      "openAlexId": "https://openalex.org/W2806908788",
+      "authors": [
+        "Vincenzo Claudio Pierro",
+        "Luigi Troiano",
+        "E. Mejuto-Villa",
+        "S. Pagano",
+        "Giovanni Filatrella"
+      ],
+      "year": 2018,
+      "identifierMatch": "",
+      "titleScore": 1.0,
+      "authorScore": 0.0,
+      "yearScore": 0.0,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "w8w5plmeioyxa54l57e",
+      "originalTitle": "Scaling of qubit coherence in quantum dot based Majorana chains: Rabi and Ramsey oscillations of Majorana qubits formed by four and six quantum dots",
+      "status": "accepted",
+      "confidence": 0.88,
+      "method": "openalex-id-revalidated",
+      "verification": "composite",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Scaling of qubit coherence in quantum dot based Majorana chains: Rabi and Ramsey oscillations of Majorana qubits formed by four and six quantum dots",
+      "currentTitle": "Scaling of qubit coherence in quantum dot based Majorana chains: Rabi and Ramsey oscillations of Majorana qubits formed by four and six quantum dots",
+      "doi": "10.48550/arxiv.2609.25223",
+      "openAlexId": "https://openalex.org/W7214084627",
+      "authors": [
+        "Haining Pan",
+        "S. Das Sarma"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 1.0,
+      "authorScore": 0.0,
+      "yearScore": 0.0,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "hhzl6mk8vi94cov50zg",
+      "originalTitle": "The Superconducting Talbot Effect in Phased-Array Josephson Junctions",
+      "status": "accepted",
+      "confidence": 0.88,
+      "method": "openalex-id-revalidated",
+      "verification": "composite",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "The Superconducting Talbot Effect in Phased-Array Josephson Junctions",
+      "currentTitle": "The Superconducting Talbot Effect in Phased-Array Josephson Junctions",
+      "doi": "10.48550/arxiv.2609.24572",
+      "openAlexId": "https://openalex.org/W7213998074",
+      "authors": [
+        "Hechen Ren",
+        "Ziying Li"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 1.0,
+      "authorScore": 0.0,
+      "yearScore": 0.0,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "q1yh0yuxsqaq4fgcg1c",
+      "originalTitle": "Altermagnetism in Folded Iron Chain Systems",
+      "status": "accepted",
+      "confidence": 0.88,
+      "method": "openalex-id-revalidated",
+      "verification": "composite",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Altermagnetism in Folded Iron Chain Systems",
+      "currentTitle": "Altermagnetism in Folded Iron Chain Systems",
+      "doi": "10.1103/6327-7256",
+      "openAlexId": "https://openalex.org/W7214093268",
+      "authors": [
+        "Anonymous",
+        "Yang Zhang",
+        "Satoshi Okamoto",
+        "Adriana Moreo",
+        "Lun‐Hui Hu",
+        "Elbio R. Dagotto"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 1.0,
+      "authorScore": 0.0,
+      "yearScore": 0.0,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "z5z2hrx1hdlpkyzinse",
+      "originalTitle": "Hidden Staggered Superconducting Order in V2Se2O-Family Altermagnets",
+      "status": "accepted",
+      "confidence": 0.88,
+      "method": "openalex-id-revalidated",
+      "verification": "composite",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Hidden Staggered Superconducting Order in V2Se2O-Family Altermagnets",
+      "currentTitle": "Hidden Staggered Superconducting Order in V2Se2O-Family Altermagnets",
+      "doi": "10.48550/arxiv.2610.22935",
+      "openAlexId": "https://openalex.org/W7222955130",
+      "authors": [
+        "Chun Yu Wan",
+        "Xiangxi Zhang",
+        "Fei Yang",
+        "Junwei Liu"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 1.0,
+      "authorScore": 0.0,
+      "yearScore": 0.0,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "97frh8r97eqjctjk2ub",
+      "originalTitle": "Third-order intrinsic anomalous Hall effect as a transport fingerprint of altermagnets",
+      "status": "review",
+      "confidence": 0.7385,
+      "method": "openalex-id-revalidated",
+      "verification": "unverified",
+      "verified": false,
+      "stage": "index",
+      "candidateTitle": "Third-order intrinsic anomalous Hall effect in altermagnets",
+      "currentTitle": "Third-order intrinsic anomalous Hall effect in altermagnets",
+      "doi": "10.1103/8nkd-ksnd",
+      "openAlexId": "https://openalex.org/W7222955575",
+      "authors": [
+        "XIANG Longjun",
+        "Hao Jin",
+        "Jian Wang"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 0.8138,
+      "authorScore": 0.0,
+      "yearScore": 0.0,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": "No identity-verified daily match"
+    },
+    {
+      "itemId": "d817f6ri9lq1rf0fyoh",
+      "originalTitle": "Majorana Edge-to-bound State Transition in Interferometric Superconductor Rings",
+      "status": "accepted",
+      "confidence": 0.88,
+      "method": "openalex-id-revalidated",
+      "verification": "composite",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Majorana Edge-to-bound State Transition in Interferometric Superconductor Rings",
+      "currentTitle": "Majorana Edge-to-bound State Transition in Interferometric Superconductor Rings",
+      "doi": "10.48550/arxiv.2610.32767",
+      "openAlexId": "https://openalex.org/W7223674119",
+      "authors": [
+        "Xiangyu Bi",
+        "Aoshen Yang",
+        "Hongzi Cao",
+        "Ganyu Chen",
+        "Yuqiang Fang",
+        "Zeya Li",
+        "Qizheng Sun",
+        "Junwei Huang",
+        "Da Wang",
+        "Fuqiang Huang",
+        "Toshiya Ideue",
+        "Qianghua Wang"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 1.0,
+      "authorScore": 0.0,
+      "yearScore": 0.0,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "ir2dzq5cycfeh7zwknd",
+      "originalTitle": "Majorana Zero Modes in Fractional Vortices",
+      "status": "accepted",
+      "confidence": 0.88,
+      "method": "openalex-id-revalidated",
+      "verification": "composite",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Majorana Zero Modes in Fractional Vortices",
+      "currentTitle": "Majorana Zero Modes in Fractional Vortices",
+      "doi": "10.48550/arxiv.2610.39942",
+      "openAlexId": "https://openalex.org/W7224745002",
+      "authors": [
+        "Lecheng Fang",
+        "Haotian Li",
+        "Haijiao Ji",
+        "Quanxin Hu",
+        "Hong Ding",
+        "Noah F. Q. Yuan"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 1.0,
+      "authorScore": 0.0,
+      "yearScore": 0.0,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "1dlj9kebwudbbu5vufd",
+      "originalTitle": "Strain-tunable van Hove singularity and superconducting dome in monolayer kagome metal CsTi3Bi5",
+      "status": "accepted",
+      "confidence": 0.9721,
+      "method": "openalex-id-revalidated",
+      "verification": "composite",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Strain-tunable van Hove singularity and superconducting dome in monolayer kagome metal CsTi$_3$Bi$_5$",
+      "currentTitle": "Strain-tunable van Hove singularity and superconducting dome in monolayer kagome metal CsTi$_3$Bi$_5$",
+      "doi": "10.48550/arxiv.2610.32359",
+      "openAlexId": "https://openalex.org/W7223660210",
+      "authors": [
+        "Run Lv",
+        "Wenqian Tu",
+        "Ding‐Fu Shao",
+        "Yuping Sun",
+        "Wenjian Lu"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 0.9744,
+      "authorScore": 0.9474,
+      "yearScore": 1.0,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "rpnlfp2qopmongn74of",
+      "originalTitle": "Berry curvature quadrupole induced third-order anomalous Hall effect in altermagnetic KV2Se2O",
+      "status": "review",
+      "confidence": 0.8449,
+      "method": "openalex-id-revalidated",
+      "verification": "unverified",
+      "verified": false,
+      "stage": "index",
+      "candidateTitle": "Berry curvature quadrupole induced third-order anomalous Hall effect in altermagnetic $\\mathrm{KV_2Se_2O}$",
+      "currentTitle": "Berry curvature quadrupole induced third-order anomalous Hall effect in altermagnetic $\\mathrm{KV_2Se_2O}$",
+      "doi": "10.48550/arxiv.2610.41274",
+      "openAlexId": "https://openalex.org/W7225092542",
+      "authors": [
+        "Jiacheng Yao",
+        "Zhuocheng Lu",
+        "Zhichao Guo",
+        "Hua Wang"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 0.9538,
+      "authorScore": 0.0,
+      "yearScore": 0.0,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": "No identity-verified daily match"
+    },
+    {
+      "itemId": "jrcwuxwzgkk55obp1rc",
+      "originalTitle": "Dynamics of Majorana tetron qubits under quasiparticle poisoning",
+      "status": "accepted",
+      "confidence": 1.0,
+      "method": "openalex-id-revalidated",
+      "verification": "composite",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Dynamics of Majorana tetron qubits under quasiparticle poisoning",
+      "currentTitle": "Dynamics of Majorana tetron qubits under quasiparticle poisoning",
+      "doi": "10.1103/1d2y-fpbl",
+      "openAlexId": "https://openalex.org/W7203785643",
+      "authors": [
+        "Sauri Bhattacharyya",
+        "Bernard van Heck"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 1.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "qxqqlz3n2tl0cyfqdrg",
+      "originalTitle": "Electrical injection and control of vector spin flow in altermagnets",
+      "status": "accepted",
+      "confidence": 0.9855,
+      "method": "openalex-id-revalidated",
+      "verification": "composite",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Electrical injection and control of vector spin flow in altermagnets",
+      "currentTitle": "Electrical injection and control of vector spin flow in altermagnets",
+      "doi": "10.1103/4mcl-jtty",
+      "openAlexId": "https://openalex.org/W7223096937",
+      "authors": [
+        "Yanmeng Lei",
+        "Rui-Chun Xiao",
+        "Weiwei Lin",
+        "Tao Yu"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 1.0,
+      "authorScore": 0.9091,
+      "yearScore": 1.0,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "242dubo2tjz9uvpep7e",
+      "originalTitle": "Gate-tunable superconductor-semiconductor coupling and its impact on zero-energy modes in PbTe-Pb nanowires",
+      "status": "accepted",
+      "confidence": 0.88,
+      "method": "openalex-id-revalidated",
+      "verification": "composite",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Gate-tunable superconductor-semiconductor coupling and its impact on zero-energy modes in PbTe-Pb nanowires",
+      "currentTitle": "Gate-tunable superconductor-semiconductor coupling and its impact on zero-energy modes in PbTe-Pb nanowires",
+      "doi": "10.1103/93jd-gbsb",
+      "openAlexId": "https://openalex.org/W7148328325",
+      "authors": [
+        "Ruidong Li",
+        "Shuai Yang",
+        "Wenyu Song",
+        "Zeyu Yan",
+        "Yuhao Wang",
+        "Zehao Yu",
+        "Li Chen",
+        "Zixun Xia",
+        "Zonglin Li",
+        "Shan Zhang",
+        "Jiaye Xu",
+        "Lining Yang"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 1.0,
+      "authorScore": 0.0,
+      "yearScore": 0.0,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "nsm9p9ziughwmjvghnf",
+      "originalTitle": "Higher-order topological quantum battery",
+      "status": "accepted",
+      "confidence": 0.88,
+      "method": "openalex-id-revalidated",
+      "verification": "composite",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Higher-order topological quantum battery",
+      "currentTitle": "Higher-order topological quantum battery",
+      "doi": "10.48550/arxiv.2611.07401",
+      "openAlexId": "https://openalex.org/W7225429479",
+      "authors": [
+        "Motohiko Ezawa"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 1.0,
+      "authorScore": 0.0,
+      "yearScore": 0.0,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "vm7r9oqormrps7afgja",
+      "originalTitle": "Mirror-symmetry engineering of altermagnetism based on monolayer hexagonal lattices",
+      "status": "accepted",
+      "confidence": 0.99,
+      "method": "openalex-id-revalidated",
+      "verification": "exact-arxiv",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Mirror-symmetry engineering of altermagnetism based on monolayer hexagonal lattices",
+      "currentTitle": "Mirror-symmetry engineering of altermagnetism based on monolayer hexagonal lattices",
+      "doi": "10.48550/arxiv.2610.41589",
+      "openAlexId": "https://openalex.org/W7225090520",
+      "authors": [
+        "Han-Bing Li",
+        "Zhi-Gang Shao"
+      ],
+      "year": 2026,
+      "identifierMatch": "arxiv",
+      "titleScore": 1.0,
+      "authorScore": 0.0,
+      "yearScore": 0.0,
+      "warnings": [
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "ck0xpu247hcafi7nv8d",
+      "originalTitle": "Parity-Selective Quantum Interference in Unconventional Magnets",
+      "status": "accepted",
+      "confidence": 0.88,
+      "method": "openalex-id-revalidated",
+      "verification": "composite",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Parity-Selective Quantum Interference in Unconventional Magnets",
+      "currentTitle": "Parity-Selective Quantum Interference in Unconventional Magnets",
+      "doi": "10.48550/arxiv.2611.07330",
+      "openAlexId": "https://openalex.org/W7225411914",
+      "authors": [
+        "Yiyuan Chen",
+        "Xiao‐Bin Qiang",
+        "LU Hai-zhou",
+        "Congjun Wu",
+        "X. C. Xie"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 1.0,
+      "authorScore": 0.0,
+      "yearScore": 0.0,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "eu50p9gg3fyu3rrjlgd",
+      "originalTitle": "Quantized conductance at the Majorana phase transition in a disordered superconducting wire",
+      "status": "accepted",
+      "confidence": 0.96,
+      "method": "openalex-id-revalidated",
+      "verification": "composite",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Quantized Conductance at the Majorana Phase Transition in a Disordered Superconducting Wire",
+      "currentTitle": "Quantized Conductance at the Majorana Phase Transition in a Disordered Superconducting Wire",
+      "doi": "10.1103/physrevlett.106.057001",
+      "openAlexId": "https://openalex.org/W2075600832",
+      "authors": [
+        "Anton Akhmerov",
+        "Jan P. Dahlhaus",
+        "Fabian Hassler",
+        "Michael Wimmer",
+        "C. W. J. Beenakker"
+      ],
+      "year": 2011,
+      "identifierMatch": "",
+      "titleScore": 1.0,
+      "authorScore": 1.0,
+      "yearScore": 0.5,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "y7jtwv7l7bdbf1w2zug",
+      "originalTitle": "Quantum Monte-Carlo study of spin-valley ferromagnetism in rhombohedral graphene",
+      "status": "accepted",
+      "confidence": 0.99,
+      "method": "openalex-id-revalidated",
+      "verification": "exact-arxiv",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Quantum Monte-Carlo study of spin-valley ferromagnetism in rhombohedral graphene",
+      "currentTitle": "Quantum Monte-Carlo study of spin-valley ferromagnetism in rhombohedral graphene",
+      "doi": "10.48550/arxiv.2610.40864",
+      "openAlexId": "https://openalex.org/W7225098212",
+      "authors": [
+        "Michael Demos",
+        "李东麒",
+        "Mainak Das",
+        "Tobias Wolf",
+        "Chunli Huang"
+      ],
+      "year": 2026,
+      "identifierMatch": "arxiv",
+      "titleScore": 1.0,
+      "authorScore": 0.0,
+      "yearScore": 0.0,
+      "warnings": [
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "j98oq626z1cda2f10vh",
+      "originalTitle": "Spin-conserving and spin-flip magnetic scattering in the altermagnetic spin-splitter effect",
+      "status": "accepted",
+      "confidence": 0.99,
+      "method": "openalex-id-revalidated",
+      "verification": "exact-arxiv",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Spin-conserving and spin-flip magnetic scattering in the altermagnetic spin-splitter effect",
+      "currentTitle": "Spin-conserving and spin-flip magnetic scattering in the altermagnetic spin-splitter effect",
+      "doi": "10.48550/arxiv.2610.41414",
+      "openAlexId": "https://openalex.org/W7225125794",
+      "authors": [
+        "Yunxi Jiang",
+        "Hao Yu"
+      ],
+      "year": 2026,
+      "identifierMatch": "arxiv",
+      "titleScore": 1.0,
+      "authorScore": 0.0,
+      "yearScore": 0.0,
+      "warnings": [
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "dmxq47osbkf942x29pb",
+      "originalTitle": "Topological Transitions of Evanescent Waves",
+      "status": "accepted",
+      "confidence": 1.0,
+      "method": "openalex-id-revalidated",
+      "verification": "composite",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Topological Transitions of Evanescent Waves",
+      "currentTitle": "Topological Transitions of Evanescent Waves",
+      "doi": "10.48550/arxiv.2611.07038",
+      "openAlexId": "https://openalex.org/W7225398628",
+      "authors": [
+        "Ignacio Pavez",
+        "Tom Sheppard",
+        "Yoonseok Hwang",
+        "Hannah M. Price",
+        "Frank Schindler"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 1.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "h5nebi30cn4m6dgmfod",
+      "originalTitle": "Superconducting qubit based on altermagnets",
+      "status": "accepted",
+      "confidence": 0.92,
+      "method": "openalex-id-revalidated",
+      "verification": "composite",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Superconducting qubit based on altermagnets",
+      "currentTitle": "Superconducting qubit based on altermagnets",
+      "doi": "10.48550/arxiv.2609.24759",
+      "openAlexId": "https://openalex.org/W7214050824",
+      "authors": [
+        "Xue-Feng Pan",
+        "Xin‐Lei Hei",
+        "Franco Nori",
+        "Peng-Bo Li"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 1.0,
+      "authorScore": 0.0,
+      "yearScore": 1.0,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "oschj2z1x1gy4tycpva",
+      "originalTitle": "Time-reversal-odd Transport in Odd-Parity Magnets",
+      "status": "accepted",
+      "confidence": 0.88,
+      "method": "openalex-id-revalidated",
+      "verification": "composite",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Time-reversal-odd Transport in Odd-Parity Magnets",
+      "currentTitle": "Time-reversal-odd Transport in Odd-Parity Magnets",
+      "doi": "10.48550/arxiv.2609.25919",
+      "openAlexId": "https://openalex.org/W7214123226",
+      "authors": [
+        "Ling Bai",
+        "Si Li",
+        "Libor Šmejkal",
+        "Yugui Yao",
+        "Wanxiang Feng"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 1.0,
+      "authorScore": 0.0,
+      "yearScore": 0.0,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "pneafjy3799of4l8gua",
+      "originalTitle": "Heat current and noise in a point-like junction between normal metal and fractional quantum Hall edge state with ν= 1/3",
+      "status": "accepted",
+      "confidence": 1.0,
+      "method": "openalex-id-revalidated",
+      "verification": "composite",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Heat current and noise in a point-like junction between normal metal and fractional quantum hall edge state with $ν= 1/3$",
+      "currentTitle": "Heat current and noise in a point-like junction between normal metal and fractional quantum hall edge state with $ν= 1/3$",
+      "doi": "10.48550/arxiv.2610.31893",
+      "openAlexId": "https://openalex.org/W7223672086",
+      "authors": [
+        "Redouane Zamoum",
+        "Houssam Eddine Farhi",
+        "Abdellah Touati",
+        "Adeline Crépieux"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 1.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "y49ct04t8ivun72nknd",
+      "originalTitle": "Heterogeneous superconductivity emerging from a charge-stripe state in kagome lattices",
+      "status": "accepted",
+      "confidence": 0.88,
+      "method": "openalex-id-revalidated",
+      "verification": "composite",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Heterogeneous superconductivity emerging from a charge-stripe state in kagome lattices",
+      "currentTitle": "Heterogeneous superconductivity emerging from a charge-stripe state in kagome lattices",
+      "doi": "10.48550/arxiv.2610.32097",
+      "openAlexId": "https://openalex.org/W7223658779",
+      "authors": [
+        "Hongyu Li",
+        "Shuikang Yu",
+        "Huachen Rao",
+        "Zhuying Wang",
+        "Xingchen Zhou",
+        "Houpu Li",
+        "Yunmei Zhang",
+        "Zhao Gong",
+        "Xin Yu",
+        "Rui Wu",
+        "Tao Wu",
+        "Zhenyu Wang"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 1.0,
+      "authorScore": 0.0,
+      "yearScore": 0.0,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "ubemtnj1tu0gxnlugkb",
+      "originalTitle": "Intrinsic Raman Modes and Crystal Symmetry of Altermagnetic alpha-MnTe",
+      "status": "accepted",
+      "confidence": 0.9571,
+      "method": "openalex-id-revalidated",
+      "verification": "composite",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Intrinsic Raman Modes and Crystal Symmetry of Altermagnetic $α$-MnTe",
+      "currentTitle": "Intrinsic Raman Modes and Crystal Symmetry of Altermagnetic $α$-MnTe",
+      "doi": "10.48550/arxiv.2610.32261",
+      "openAlexId": "https://openalex.org/W7223669000",
+      "authors": [
+        "Yunpeng Cui",
+        "Shuai Zhang",
+        "Jia‐Liang Xie",
+        "Jinxuan Liang",
+        "Hao Lin",
+        "Qin Miao",
+        "Jiawei Shao",
+        "Gongling Chen",
+        "Yidian Li",
+        "Yixuan Luo",
+        "Deng Hu",
+        "卢炳儒"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 0.9559,
+      "authorScore": 0.9412,
+      "yearScore": 1.0,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "6ppb046lxaycyq2rnlf",
+      "originalTitle": "Altermagnetism-induced higher-order topological Dirac semimetals in two-dimensional nonsymmorphic systems",
+      "status": "accepted",
+      "confidence": 0.88,
+      "method": "openalex-id-revalidated",
+      "verification": "composite",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Altermagnetism-induced higher-order topological Dirac semimetals in two-dimensional nonsymmorphic systems",
+      "currentTitle": "Altermagnetism-induced higher-order topological Dirac semimetals in two-dimensional nonsymmorphic systems",
+      "doi": "10.1103/7dmx-h9h3",
+      "openAlexId": "https://openalex.org/W7221056100",
+      "authors": [
+        "Lizhou Liu",
+        "Cheng-Ming Miao",
+        "Ying-Tao Zhang",
+        "Qing-Feng Sun"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 1.0,
+      "authorScore": 0.0,
+      "yearScore": 0.0,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "ziek5eccwh47xd6lbla",
+      "originalTitle": "Majorana corner modes and tunable braiding in an altermagnet-superconductor heterostructure",
+      "status": "accepted",
+      "confidence": 0.88,
+      "method": "openalex-id-revalidated",
+      "verification": "composite",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Majorana corner modes and tunable braiding in an altermagnet-superconductor heterostructure",
+      "currentTitle": "Majorana corner modes and tunable braiding in an altermagnet-superconductor heterostructure",
+      "doi": "10.48550/arxiv.2611.07645",
+      "openAlexId": "https://openalex.org/W7225397581",
+      "authors": [
+        "Yingli Gao",
+        "Kai Zhang",
+        "Ling-Zheng Meng",
+        "Junpeng Hou",
+        "Ning Li",
+        "Yajie Wu"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 1.0,
+      "authorScore": 0.0,
+      "yearScore": 0.0,
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
+      "message": ""
+    },
+    {
+      "itemId": "hws3iip5x2amw3eji0f",
+      "originalTitle": "Nonlinear Interaction and Topological Selection Rules in two Skyrmion Merging: Emergence of Skyrmionium Textures",
+      "status": "accepted",
+      "confidence": 0.88,
+      "method": "openalex-id-revalidated",
+      "verification": "composite",
+      "verified": true,
+      "stage": "index",
+      "candidateTitle": "Nonlinear Interaction and Topological Selection Rules in two Skyrmion Merging: Emergence of Skyrmionium Textures",
+      "currentTitle": "Nonlinear Interaction and Topological Selection Rules in two Skyrmion Merging: Emergence of Skyrmionium Textures",
+      "doi": "10.48550/arxiv.2611.07807",
+      "openAlexId": "https://openalex.org/W7225412660",
+      "authors": [
+        "M. Al Busaidi",
+        "T. Hakioglu",
+        "R. Sbiaa"
+      ],
+      "year": 2026,
+      "identifierMatch": "",
+      "titleScore": 1.0,
+      "authorScore": 0.0,
+      "yearScore": 0.0,
+      "warnings": [
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
