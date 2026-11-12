@@ -61203,6 +61203,2987 @@
           "starred": false
         }
       }
+    },
+    {
+      "id": "h5nebi30cn4m6dgmfod",
+      "title": "Superconducting qubit based on altermagnets",
+      "filename": "Pan et al. - 2026 - Superconducting qubit based on altermagnets.pdf",
+      "path": "https://cheneit.github.io/cheneit-pdf-2026/data/files/2026/11/h5nebi30cn4m6dgmfod.pdf",
+      "kind": "pdf",
+      "topics": [
+        "Altermagnet",
+        "qubit"
+      ],
+      "topic": "Altermagnet",
+      "tags": [
+        "refs_update"
+      ],
+      "ts": 1794450444585,
+      "createdTs": 1794450444585,
+      "size": 10225244,
+      "desc": "利用 altermagnet 的动量相关自旋劈裂设计可编程 Josephson 电流-相位关系，并据此提出一类 transmon 型超导量子比特",
+      "imagePath": "data/files/2026/11/images/h5nebi30cn4m6dgmfod__li2026_superconducting-qubit-based-on-altermagn.png",
+      "storage": {
+        "owner": "cheneit",
+        "repo": "cheneit-pdf-2026",
+        "branch": "main",
+        "path": "data/files/2026/11/h5nebi30cn4m6dgmfod.pdf"
+      },
+      "uploadStatus": "ready",
+      "uploadError": "",
+      "imageUploadError": "",
+      "groups": [],
+      "scholarly": {
+        "title": "Superconducting qubit based on altermagnets",
+        "doi": "10.48550/arxiv.2609.24759",
+        "arxivId": "2609.24759",
+        "openAlexId": "https://openalex.org/W7214050824",
+        "publicationDate": "2026-09-21",
+        "year": 2026,
+        "venue": "arXiv (Cornell University)",
+        "venueId": "https://openalex.org/S4306400194",
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University",
+        "type": "preprint",
+        "authors": [
+          {
+            "name": "Xue-Feng Pan",
+            "openAlexId": "https://openalex.org/A5152457643",
+            "orcid": "",
+            "position": "first",
+            "corresponding": false,
+            "institutions": []
+          },
+          {
+            "name": "Xin‐Lei Hei",
+            "openAlexId": "https://openalex.org/A5054181952",
+            "orcid": "https://orcid.org/0009-0000-1333-9001",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": []
+          },
+          {
+            "name": "Franco Nori",
+            "openAlexId": "https://openalex.org/A5129682591",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "RIKEN",
+                "openAlexId": "https://openalex.org/I4210110652",
+                "countryCode": "JP",
+                "type": "facility"
+              },
+              {
+                "name": "RIKEN Center for Quantum Computing",
+                "openAlexId": "https://openalex.org/I4387156398",
+                "countryCode": "JP",
+                "type": "facility"
+              },
+              {
+                "name": "Xi'an Jiaotong University",
+                "openAlexId": "https://openalex.org/I87445476",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Peng-Bo Li",
+            "openAlexId": "https://openalex.org/A5152492530",
+            "orcid": "",
+            "position": "last",
+            "corresponding": false,
+            "institutions": []
+          }
+        ],
+        "institutions": [
+          {
+            "name": "RIKEN",
+            "openAlexId": "https://openalex.org/I4210110652",
+            "countryCode": "JP",
+            "type": "facility"
+          },
+          {
+            "name": "RIKEN Center for Quantum Computing",
+            "openAlexId": "https://openalex.org/I4387156398",
+            "countryCode": "JP",
+            "type": "facility"
+          },
+          {
+            "name": "Xi'an Jiaotong University",
+            "openAlexId": "https://openalex.org/I87445476",
+            "countryCode": "CN",
+            "type": "education"
+          }
+        ],
+        "abstract": "Altermagnets, characterized by vanishing net magnetization and momentum-dependent spin splitting, provide a promising platform for next-generation Josephson devices. Here, we exploit the Josephson effect in superconductor-altermagnet-superconductor junctions and show how to engineer prescribed current-phase relations by device design. Based on these programmable Josephson potentials utilizing altermagnetism, we propose a new class of superconducting qubits that combine large anharmonicity with enhanced robustness against decoherence via coherent two-Cooper-pair tunneling. We show that in the $2ϕ$-junction regime, this kind of qubit is intrinsically protected against both charge and flux noise due to parity protection. Magnetic flux can be used to precisely control the qubit and, under appropriate bias, this architecture further suppresses charge and flux noise. Our results establish altermagnets as a versatile platform for Josephson-potential engineering and open a new route toward high-performance superconducting qubits combining high coherence, large anharmonicity, and broad tunability.",
+        "automaticTopics": [
+          {
+            "name": "Quantum Information and Cryptography",
+            "id": "https://openalex.org/T10020",
+            "score": 0.8252000212669373,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Physics of Superconductivity and Magnetism",
+            "id": "https://openalex.org/T10037",
+            "score": 0.0835999995470047,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Superconducting and THz Device Technology",
+            "id": "https://openalex.org/T11803",
+            "score": 0.01600000075995922,
+            "subfield": "Electrical and Electronic Engineering",
+            "field": "Engineering",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Quantum Information and Cryptography",
+        "keywords": [
+          "altermagnets",
+          "superconducting qubits",
+          "Josephson junctions",
+          "parity protection",
+          "anharmonicity",
+          "decoherence",
+          "momentum-dependent spin splitting"
+        ],
+        "relatedWorks": [
+          "https://openalex.org/W7163406589",
+          "https://openalex.org/W7167600448",
+          "https://openalex.org/W4416055173",
+          "https://openalex.org/W2143784259",
+          "https://openalex.org/W4311791742",
+          "https://openalex.org/W4214794835",
+          "https://openalex.org/W4404749227",
+          "https://openalex.org/W4390616940",
+          "https://openalex.org/W4416150769",
+          "https://openalex.org/W4410846771"
+        ],
+        "referencedWorks": [
+          "https://openalex.org/W4383176592",
+          "https://openalex.org/W7163406589",
+          "https://openalex.org/W7167600448"
+        ],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2609.24759",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "https://arxiv.org/abs/2609.24759",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "title-search",
+        "matchConfidence": 0.99,
+        "matchVerification": "exact-arxiv",
+        "matchEvidence": {
+          "verification": "exact-arxiv",
+          "identifierMatch": "arxiv",
+          "titleScore": 1.0,
+          "authorScore": 1.0,
+          "yearScore": 1.0,
+          "hasAuthorEvidence": true,
+          "hasYearEvidence": true,
+          "seedTitle": "Superconducting qubit based on altermagnets",
+          "candidateTitle": "Superconducting qubit based on altermagnets",
+          "seedAuthors": [
+            "Xue-Feng Pan; Xin-Lei Hei; Franco Nori; Peng-Bo Li"
+          ],
+          "candidateAuthors": [
+            "Xue-Feng Pan",
+            "Xin‐Lei Hei",
+            "Franco Nori",
+            "Peng-Bo Li"
+          ],
+          "seedYear": 2026,
+          "candidateYear": 2026,
+          "seedDoi": "",
+          "candidateDoi": "10.48550/arxiv.2609.24759",
+          "seedArxivId": "2609.24759",
+          "candidateArxivIds": [
+            "2609.24759"
+          ],
+          "candidateOpenAlexId": "https://openalex.org/W7214050824",
+          "warnings": []
+        },
+        "matchedFromPdf": false,
+        "updatedAt": 1794450444561,
+        "metadataError": "",
+        "citations": {
+          "count": 1,
+          "source": "OpenAlex",
+          "updatedAt": 1794450444561
+        }
+      },
+      "citations": {
+        "count": 1,
+        "source": "OpenAlex",
+        "updatedAt": 1794450444561
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1794450444586,
+        "updatedAt": 1794450444586,
+        "source": "upload-metadata",
+        "title": "Superconducting qubit based on altermagnets",
+        "authors": [
+          "Xue-Feng Pan",
+          "Xin‐Lei Hei",
+          "Franco Nori",
+          "Peng-Bo Li"
+        ],
+        "affiliations": [
+          "RIKEN",
+          "RIKEN Center for Quantum Computing",
+          "Xi'an Jiaotong University"
+        ],
+        "publicationStatus": "preprint",
+        "journal": "arXiv (Cornell University)",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University",
+        "doi": "10.48550/arxiv.2609.24759",
+        "arxivId": "2609.24759",
+        "citationKey": "Pan2026superconducting",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.48550/arxiv.2609.24759",
+          "arxiv": "https://arxiv.org/abs/2609.24759",
+          "publisher": "https://arxiv.org/abs/2609.24759",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "利用 altermagnet 的动量相关自旋劈裂设计可编程 Josephson 电流-相位关系，并据此提出一类 transmon 型超导量子比特",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
+    },
+    {
+      "id": "oschj2z1x1gy4tycpva",
+      "title": "Time-reversal-odd Transport in Odd-Parity Magnets",
+      "filename": "Time-reversal-odd transport in odd-parity Magnets_yugui yao.pdf",
+      "path": "https://cheneit.github.io/cheneit-pdf-2026/data/files/2026/11/oschj2z1x1gy4tycpva.pdf",
+      "kind": "pdf",
+      "topics": [
+        "Altermagnet",
+        "spintronics"
+      ],
+      "topic": "Altermagnet",
+      "tags": [
+        "refs_update"
+      ],
+      "ts": 1794450454532,
+      "createdTs": 1794450454532,
+      "size": 13228374,
+      "desc": "用自旋群对称性分析导出共面非共线反铁磁体中奇宇称自旋劈裂与时间反演奇输运的一般条件",
+      "imagePath": "data/files/2026/11/images/oschj2z1x1gy4tycpva__feng2026_time-reversal-odd-transport-in-odd-parit.png",
+      "storage": {
+        "owner": "cheneit",
+        "repo": "cheneit-pdf-2026",
+        "branch": "main",
+        "path": "data/files/2026/11/oschj2z1x1gy4tycpva.pdf"
+      },
+      "uploadStatus": "ready",
+      "uploadError": "",
+      "imageUploadError": "",
+      "groups": [],
+      "scholarly": {
+        "title": "Time-reversal-odd Transport in Odd-Parity Magnets",
+        "doi": "10.48550/arxiv.2609.25919",
+        "arxivId": "2609.25919",
+        "openAlexId": "https://openalex.org/W7214123226",
+        "publicationDate": "2026-09-22",
+        "year": 2026,
+        "venue": "arXiv (Cornell University)",
+        "venueId": "https://openalex.org/S4306400194",
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University",
+        "type": "preprint",
+        "authors": [
+          {
+            "name": "Ling Bai",
+            "openAlexId": "https://openalex.org/A5101374053",
+            "orcid": "",
+            "position": "first",
+            "corresponding": false,
+            "institutions": []
+          },
+          {
+            "name": "Si Li",
+            "openAlexId": "https://openalex.org/A5152555206",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": []
+          },
+          {
+            "name": "Libor Šmejkal",
+            "openAlexId": "https://openalex.org/A5136390829",
+            "orcid": "https://orcid.org/0000-0003-1193-1372",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Johannes Gutenberg University Mainz",
+                "openAlexId": "https://openalex.org/I197323543",
+                "countryCode": "DE",
+                "type": "education"
+              },
+              {
+                "name": "Czech Academy of Sciences",
+                "openAlexId": "https://openalex.org/I202391551",
+                "countryCode": "CZ",
+                "type": "government"
+              },
+              {
+                "name": "FZU - Institute of Physics of the Czech Academy of Sciences",
+                "openAlexId": "https://openalex.org/I4210122644",
+                "countryCode": "CZ",
+                "type": "facility"
+              }
+            ]
+          },
+          {
+            "name": "Yugui Yao",
+            "openAlexId": "https://openalex.org/A5152557967",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Beijing Institute of Technology",
+                "openAlexId": "https://openalex.org/I125839683",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Wanxiang Feng",
+            "openAlexId": "https://openalex.org/A5100655401",
+            "orcid": "https://orcid.org/0000-0001-8488-1949",
+            "position": "last",
+            "corresponding": false,
+            "institutions": []
+          }
+        ],
+        "institutions": [
+          {
+            "name": "Johannes Gutenberg University Mainz",
+            "openAlexId": "https://openalex.org/I197323543",
+            "countryCode": "DE",
+            "type": "education"
+          },
+          {
+            "name": "Czech Academy of Sciences",
+            "openAlexId": "https://openalex.org/I202391551",
+            "countryCode": "CZ",
+            "type": "government"
+          },
+          {
+            "name": "FZU - Institute of Physics of the Czech Academy of Sciences",
+            "openAlexId": "https://openalex.org/I4210122644",
+            "countryCode": "CZ",
+            "type": "facility"
+          },
+          {
+            "name": "Beijing Institute of Technology",
+            "openAlexId": "https://openalex.org/I125839683",
+            "countryCode": "CN",
+            "type": "education"
+          }
+        ],
+        "abstract": "Unconventional magnets combining vanishing net magnetization with spin-split electronic structures and anomalous transport have attracted considerable attention. Using spin-group symmetry analysis, we derive general conditions for odd-parity spin splitting in two- and three-dimensional coplanar noncollinear antiferromagnets. We identify a key spin-group symmetry whose relativistic counterpart forbids time-reversal-odd transport and show that breaking it allows such transport in the presence of spin-orbit coupling. Tight-binding calculations validate these symmetry arguments and demonstrate an anomalous Hall effect in a fully compensated odd-parity magnetic state without an external field. By screening a three-dimensional magnetic materials database and constructing two-dimensional heterostructures, we further identify realistic platforms exhibiting pronounced spin-orientation-dependent anomalous Hall and magneto-optical effects. Our results establish a general symmetry framework for time-reversal-odd responses in odd-parity magnets and highlight fully compensated odd-parity magnets as a promising platform for controlling anomalous transport.",
+        "automaticTopics": [
+          {
+            "name": "Magnetic properties of thin films",
+            "id": "https://openalex.org/T10049",
+            "score": 0.7896000146865845,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Advanced Condensed Matter Physics",
+            "id": "https://openalex.org/T11682",
+            "score": 0.1316000074148178,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Topological Materials and Phenomena",
+            "id": "https://openalex.org/T10657",
+            "score": 0.04749999940395355,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Magnetic properties of thin films",
+        "keywords": [
+          "spin-orbit coupling",
+          "noncollinear antiferromagnets",
+          "anomalous Hall effect",
+          "magneto-optical effect",
+          "2D heterostructures"
+        ],
+        "relatedWorks": [
+          "https://openalex.org/W7221748329",
+          "https://openalex.org/W4414757480",
+          "https://openalex.org/W4411675835",
+          "https://openalex.org/W3212054660",
+          "https://openalex.org/W4410092223",
+          "https://openalex.org/W7146966662",
+          "https://openalex.org/W7164850510",
+          "https://openalex.org/W7162073861",
+          "https://openalex.org/W7081183924",
+          "https://openalex.org/W7170753616"
+        ],
+        "referencedWorks": [
+          "https://openalex.org/W4386556830",
+          "https://openalex.org/W4414977051",
+          "https://openalex.org/W4415098794",
+          "https://openalex.org/W4417466271",
+          "https://openalex.org/W7134058578",
+          "https://openalex.org/W7134946116",
+          "https://openalex.org/W7139925608",
+          "https://openalex.org/W7155517514",
+          "https://openalex.org/W7162697942",
+          "https://openalex.org/W7169111354",
+          "https://openalex.org/W7203936814",
+          "https://openalex.org/W7204234366"
+        ],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2609.25919",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "https://arxiv.org/abs/2609.25919",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "title-search",
+        "matchConfidence": 0.99,
+        "matchVerification": "exact-arxiv",
+        "matchEvidence": {
+          "verification": "exact-arxiv",
+          "identifierMatch": "arxiv",
+          "titleScore": 1.0,
+          "authorScore": 1.0,
+          "yearScore": 1.0,
+          "hasAuthorEvidence": true,
+          "hasYearEvidence": true,
+          "seedTitle": "Time-reversal-odd Transport in Odd-Parity Magnets",
+          "candidateTitle": "Time-reversal-odd Transport in Odd-Parity Magnets",
+          "seedAuthors": [
+            "Ling Bai; Si Li; Libor Šmejkal; Yugui Yao; Wanxiang Feng"
+          ],
+          "candidateAuthors": [
+            "Ling Bai",
+            "Si Li",
+            "Libor Šmejkal",
+            "Yugui Yao",
+            "Wanxiang Feng"
+          ],
+          "seedYear": 2026,
+          "candidateYear": 2026,
+          "seedDoi": "",
+          "candidateDoi": "10.48550/arxiv.2609.25919",
+          "seedArxivId": "2609.25919",
+          "candidateArxivIds": [
+            "2609.25919"
+          ],
+          "candidateOpenAlexId": "https://openalex.org/W7214123226",
+          "warnings": []
+        },
+        "matchedFromPdf": false,
+        "updatedAt": 1794450454523,
+        "metadataError": "",
+        "citations": {
+          "count": 2,
+          "source": "OpenAlex",
+          "updatedAt": 1794450454523
+        }
+      },
+      "citations": {
+        "count": 2,
+        "source": "OpenAlex",
+        "updatedAt": 1794450454523
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1794450454533,
+        "updatedAt": 1794450454533,
+        "source": "upload-metadata",
+        "title": "Time-reversal-odd Transport in Odd-Parity Magnets",
+        "authors": [
+          "Ling Bai",
+          "Si Li",
+          "Libor Šmejkal",
+          "Yugui Yao",
+          "Wanxiang Feng"
+        ],
+        "affiliations": [
+          "Johannes Gutenberg University Mainz",
+          "Czech Academy of Sciences",
+          "FZU - Institute of Physics of the Czech Academy of Sciences",
+          "Beijing Institute of Technology"
+        ],
+        "publicationStatus": "preprint",
+        "journal": "arXiv (Cornell University)",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University",
+        "doi": "10.48550/arxiv.2609.25919",
+        "arxivId": "2609.25919",
+        "citationKey": "Bai2026time",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.48550/arxiv.2609.25919",
+          "arxiv": "https://arxiv.org/abs/2609.25919",
+          "publisher": "https://arxiv.org/abs/2609.25919",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "用自旋群对称性分析导出共面非共线反铁磁体中奇宇称自旋劈裂与时间反演奇输运的一般条件",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
+    },
+    {
+      "id": "pneafjy3799of4l8gua",
+      "title": "Heat current and noise in a point-like junction between normal metal and fractional quantum Hall edge state with ν= 1/3",
+      "filename": "Zamoum2026arxiv-Heat current and noise in a point-like junction between normal metal and fractional quantum hall edge with v=1:3.pdf",
+      "path": "https://cheneit.github.io/cheneit-pdf-2026/data/files/2026/11/pneafjy3799of4l8gua.pdf",
+      "kind": "pdf",
+      "topics": [
+        "FQH",
+        "TD"
+      ],
+      "topic": "FQH",
+      "tags": [
+        "refs_update"
+      ],
+      "ts": 1794452834661,
+      "createdTs": 1794452834661,
+      "size": 1018876,
+      "desc": "研究 ν=1/3 分数量子霍尔边缘经点接触耦合时的热流关联，用参考费米化方法给出热导与噪声的精确结果",
+      "imagePath": "data/files/2026/11/images/pneafjy3799of4l8gua__zamoum2026_heat-current-and-noise.png",
+      "storage": {
+        "owner": "cheneit",
+        "repo": "cheneit-pdf-2026",
+        "branch": "main",
+        "path": "data/files/2026/11/pneafjy3799of4l8gua.pdf"
+      },
+      "uploadStatus": "ready",
+      "uploadError": "",
+      "imageUploadError": "",
+      "groups": [],
+      "scholarly": {
+        "title": "Heat current and noise in a point-like junction between normal metal and fractional quantum hall edge state with $ν= 1/3$",
+        "doi": "10.48550/arxiv.2610.31893",
+        "arxivId": "2610.31893",
+        "openAlexId": "https://openalex.org/W7223672086",
+        "publicationDate": "2026-10-22",
+        "year": 2026,
+        "venue": "arXiv (Cornell University)",
+        "venueId": "https://openalex.org/S4306400194",
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University",
+        "type": "preprint",
+        "authors": [
+          {
+            "name": "Redouane Zamoum",
+            "openAlexId": "https://openalex.org/A5072461542",
+            "orcid": "https://orcid.org/0009-0002-5818-2989",
+            "position": "first",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Bouira",
+                "openAlexId": "https://openalex.org/I3129390127",
+                "countryCode": "DZ",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Houssam Eddine Farhi",
+            "openAlexId": "https://openalex.org/A5159656475",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Bouira",
+                "openAlexId": "https://openalex.org/I3129390127",
+                "countryCode": "DZ",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Abdellah Touati",
+            "openAlexId": "https://openalex.org/A5079022568",
+            "orcid": "https://orcid.org/0000-0003-4478-2529",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Bouira",
+                "openAlexId": "https://openalex.org/I3129390127",
+                "countryCode": "DZ",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Adeline Crépieux",
+            "openAlexId": "https://openalex.org/A5159689230",
+            "orcid": "",
+            "position": "last",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Centre National de la Recherche Scientifique",
+                "openAlexId": "https://openalex.org/I1294671590",
+                "countryCode": "FR",
+                "type": "government"
+              },
+              {
+                "name": "Université de Toulon",
+                "openAlexId": "https://openalex.org/I143002897",
+                "countryCode": "FR",
+                "type": "education"
+              },
+              {
+                "name": "Aix-Marseille Université",
+                "openAlexId": "https://openalex.org/I21491767",
+                "countryCode": "FR",
+                "type": "education"
+              },
+              {
+                "name": "Centre de Physique Théorique",
+                "openAlexId": "https://openalex.org/I4210160215",
+                "countryCode": "FR",
+                "type": "facility"
+              }
+            ]
+          }
+        ],
+        "institutions": [
+          {
+            "name": "University of Bouira",
+            "openAlexId": "https://openalex.org/I3129390127",
+            "countryCode": "DZ",
+            "type": "education"
+          },
+          {
+            "name": "Centre National de la Recherche Scientifique",
+            "openAlexId": "https://openalex.org/I1294671590",
+            "countryCode": "FR",
+            "type": "government"
+          },
+          {
+            "name": "Université de Toulon",
+            "openAlexId": "https://openalex.org/I143002897",
+            "countryCode": "FR",
+            "type": "education"
+          },
+          {
+            "name": "Aix-Marseille Université",
+            "openAlexId": "https://openalex.org/I21491767",
+            "countryCode": "FR",
+            "type": "education"
+          },
+          {
+            "name": "Centre de Physique Théorique",
+            "openAlexId": "https://openalex.org/I4210160215",
+            "countryCode": "FR",
+            "type": "facility"
+          }
+        ],
+        "abstract": "In this study, we investigate heat current correlations between two edge states coupled through a constriction in the fractional quantum Hall regime at filling factor $ν= 1/3$. This configuration allows us to map the system onto an interacting Tomonaga-Luttinger liquid with a local impurity, where the interaction parameter takes the value $κ= 1/2$. This specific parameter value enables the application of the refermionization method. By solving the refermionized Hamiltonian, we compute the heat current and evaluate the finite-frequency heat auto- and cross-correlation functions. Our results reveal asymmetric behavior with frequency, corresponding to absorption and emission noise, respectively. Furthermore, we examine several limiting cases, including low- and high-temperature limits as well as strong- and weak-backscattering regimes. In the weak backscattering regime, the Lorenz number approaches $4L_0$ at high voltage, suggesting a rescaling of the Wiedemann-Franz law due to interactions. A detailed study of the heat current fluctuations has made it possible to identify and derive expressions for the dominant contribution in the various regimes of interest, and to reveal the predominance of partition noise.",
+        "automaticTopics": [
+          {
+            "name": "Quantum and electron transport phenomena",
+            "id": "https://openalex.org/T10382",
+            "score": 0.9994999766349792,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Topological Materials and Phenomena",
+            "id": "https://openalex.org/T10657",
+            "score": 9.999999747378752e-05,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Quantum many-body systems",
+            "id": "https://openalex.org/T11804",
+            "score": 9.999999747378752e-05,
+            "subfield": "Atomic and Molecular Physics, and Optics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Quantum and electron transport phenomena",
+        "keywords": [
+          "filling factor 1/3",
+          "Luttinger liquid",
+          "Lorenz number",
+          "Wiedemann-Franz law",
+          "partition noise",
+          "backscattering"
+        ],
+        "relatedWorks": [
+          "https://openalex.org/W2040922245",
+          "https://openalex.org/W2895849069",
+          "https://openalex.org/W1965591830",
+          "https://openalex.org/W4400416472",
+          "https://openalex.org/W4389379401",
+          "https://openalex.org/W2086999135",
+          "https://openalex.org/W1998500959",
+          "https://openalex.org/W2085445377",
+          "https://openalex.org/W2023307914",
+          "https://openalex.org/W2044118500"
+        ],
+        "referencedWorks": [
+          "https://openalex.org/W7212286373"
+        ],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2610.31893",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "https://arxiv.org/abs/2610.31893",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "title-search",
+        "matchConfidence": 0.99,
+        "matchVerification": "exact-arxiv",
+        "matchEvidence": {
+          "verification": "exact-arxiv",
+          "identifierMatch": "arxiv",
+          "titleScore": 1.0,
+          "authorScore": 1.0,
+          "yearScore": 1.0,
+          "hasAuthorEvidence": true,
+          "hasYearEvidence": true,
+          "seedTitle": "Heat current and noise in a point-like junction between normal metal and fractional quantum Hall edge state with ν= 1/3",
+          "candidateTitle": "Heat current and noise in a point-like junction between normal metal and fractional quantum hall edge state with $ν= 1/3$",
+          "seedAuthors": [
+            "Redouane Zamoum; Houssam Eddine Farhi; Abdellah Touati; Adeline Crépieux"
+          ],
+          "candidateAuthors": [
+            "Redouane Zamoum",
+            "Houssam Eddine Farhi",
+            "Abdellah Touati",
+            "Adeline Crépieux"
+          ],
+          "seedYear": 2026,
+          "candidateYear": 2026,
+          "seedDoi": "",
+          "candidateDoi": "10.48550/arxiv.2610.31893",
+          "seedArxivId": "2610.31893",
+          "candidateArxivIds": [
+            "2610.31893"
+          ],
+          "candidateOpenAlexId": "https://openalex.org/W7223672086",
+          "warnings": []
+        },
+        "matchedFromPdf": false,
+        "updatedAt": 1794452834660,
+        "metadataError": "",
+        "citations": {
+          "count": 0,
+          "source": "OpenAlex",
+          "updatedAt": 1794452834660
+        }
+      },
+      "citations": {
+        "count": 0,
+        "source": "OpenAlex",
+        "updatedAt": 1794452834660
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1794452834662,
+        "updatedAt": 1794452834662,
+        "source": "upload-metadata",
+        "title": "Heat current and noise in a point-like junction between normal metal and fractional quantum hall edge state with $ν= 1/3$",
+        "authors": [
+          "Redouane Zamoum",
+          "Houssam Eddine Farhi",
+          "Abdellah Touati",
+          "Adeline Crépieux"
+        ],
+        "affiliations": [
+          "University of Bouira",
+          "Centre National de la Recherche Scientifique",
+          "Université de Toulon",
+          "Aix-Marseille Université",
+          "Centre de Physique Théorique"
+        ],
+        "publicationStatus": "preprint",
+        "journal": "arXiv (Cornell University)",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University",
+        "doi": "10.48550/arxiv.2610.31893",
+        "arxivId": "2610.31893",
+        "citationKey": "Zamoum2026heat",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.48550/arxiv.2610.31893",
+          "arxiv": "https://arxiv.org/abs/2610.31893",
+          "publisher": "https://arxiv.org/abs/2610.31893",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "研究 ν=1/3 分数量子霍尔边缘经点接触耦合时的热流关联，用参考费米化方法给出热导与噪声的精确结果",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
+    },
+    {
+      "id": "y49ct04t8ivun72nknd",
+      "title": "Heterogeneous superconductivity emerging from a charge-stripe state in kagome lattices",
+      "filename": "XianhuiChen2_group2026-Heterogeneous superconductivity emerging from a charge-stripe state in kagome lattices.pdf",
+      "path": "https://cheneit.github.io/cheneit-pdf-2026/data/files/2026/11/y49ct04t8ivun72nknd.pdf",
+      "kind": "pdf",
+      "topics": [
+        "Superconductor",
+        "kagome"
+      ],
+      "topic": "Superconductor",
+      "tags": [
+        "refs_update"
+      ],
+      "ts": 1794450484836,
+      "createdTs": 1794450484836,
+      "size": 16185632,
+      "desc": "在 CsV3Sb5-xSnx 中揭示电荷条纹态如何导致非均匀超导，说明 CDW 与超导既竞争又合作",
+      "imagePath": "data/files/2026/11/images/y49ct04t8ivun72nknd__li2026_heterogeneous-superconductivity-emerging.png",
+      "storage": {
+        "owner": "cheneit",
+        "repo": "cheneit-pdf-2026",
+        "branch": "main",
+        "path": "data/files/2026/11/y49ct04t8ivun72nknd.pdf"
+      },
+      "uploadStatus": "ready",
+      "uploadError": "",
+      "imageUploadError": "",
+      "groups": [],
+      "scholarly": {
+        "title": "Heterogeneous superconductivity emerging from a charge-stripe state in kagome lattices",
+        "doi": "10.48550/arxiv.2610.32097",
+        "arxivId": "",
+        "openAlexId": "https://openalex.org/W7223658779",
+        "publicationDate": "2026-10-23",
+        "year": 2026,
+        "venue": "arXiv (Cornell University)",
+        "venueId": "https://openalex.org/S4306400194",
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University",
+        "type": "preprint",
+        "authors": [
+          {
+            "name": "Hongyu Li",
+            "openAlexId": "https://openalex.org/A5159641131",
+            "orcid": "",
+            "position": "first",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Science and Technology of China",
+                "openAlexId": "https://openalex.org/I126520041",
+                "countryCode": "CN",
+                "type": "education"
+              },
+              {
+                "name": "Chinese Academy of Sciences",
+                "openAlexId": "https://openalex.org/I19820366",
+                "countryCode": "CN",
+                "type": "government"
+              },
+              {
+                "name": "Institute of Physics",
+                "openAlexId": "https://openalex.org/I4210159876",
+                "countryCode": "CN",
+                "type": "facility"
+              }
+            ]
+          },
+          {
+            "name": "Shuikang Yu",
+            "openAlexId": "https://openalex.org/A5014706571",
+            "orcid": "https://orcid.org/0009-0008-5040-8975",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Science and Technology of China",
+                "openAlexId": "https://openalex.org/I126520041",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Huachen Rao",
+            "openAlexId": "https://openalex.org/A5104254770",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Science and Technology of China",
+                "openAlexId": "https://openalex.org/I126520041",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Zhuying Wang",
+            "openAlexId": "https://openalex.org/A5159578257",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Science and Technology of China",
+                "openAlexId": "https://openalex.org/I126520041",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Xingchen Zhou",
+            "openAlexId": "https://openalex.org/A5157903323",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Science and Technology of China",
+                "openAlexId": "https://openalex.org/I126520041",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Houpu Li",
+            "openAlexId": "https://openalex.org/A5157965251",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Science and Technology of China",
+                "openAlexId": "https://openalex.org/I126520041",
+                "countryCode": "CN",
+                "type": "education"
+              },
+              {
+                "name": "Chinese Academy of Sciences",
+                "openAlexId": "https://openalex.org/I19820366",
+                "countryCode": "CN",
+                "type": "government"
+              },
+              {
+                "name": "Institute of Physics",
+                "openAlexId": "https://openalex.org/I4210159876",
+                "countryCode": "CN",
+                "type": "facility"
+              }
+            ]
+          },
+          {
+            "name": "Yunmei Zhang",
+            "openAlexId": "https://openalex.org/A5159703119",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Science and Technology of China",
+                "openAlexId": "https://openalex.org/I126520041",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Zhao Gong",
+            "openAlexId": "https://openalex.org/A5102101210",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Science and Technology of China",
+                "openAlexId": "https://openalex.org/I126520041",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Xin Yu",
+            "openAlexId": "https://openalex.org/A5159689044",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": []
+          },
+          {
+            "name": "Rui Wu",
+            "openAlexId": "https://openalex.org/A5159684163",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": []
+          },
+          {
+            "name": "Tao Wu",
+            "openAlexId": "https://openalex.org/A5159732130",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Science and Technology of China",
+                "openAlexId": "https://openalex.org/I126520041",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Zhenyu Wang",
+            "openAlexId": "https://openalex.org/A5159699981",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Science and Technology of China",
+                "openAlexId": "https://openalex.org/I126520041",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Ziji Xiang",
+            "openAlexId": "https://openalex.org/A5085404408",
+            "orcid": "https://orcid.org/0000-0001-7132-6591",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Science and Technology of China",
+                "openAlexId": "https://openalex.org/I126520041",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Xianhui Chen",
+            "openAlexId": "https://openalex.org/A5159694160",
+            "orcid": "",
+            "position": "last",
+            "corresponding": false,
+            "institutions": []
+          }
+        ],
+        "institutions": [
+          {
+            "name": "University of Science and Technology of China",
+            "openAlexId": "https://openalex.org/I126520041",
+            "countryCode": "CN",
+            "type": "education"
+          },
+          {
+            "name": "Chinese Academy of Sciences",
+            "openAlexId": "https://openalex.org/I19820366",
+            "countryCode": "CN",
+            "type": "government"
+          },
+          {
+            "name": "Institute of Physics",
+            "openAlexId": "https://openalex.org/I4210159876",
+            "countryCode": "CN",
+            "type": "facility"
+          }
+        ],
+        "abstract": "Charge density wave (CDW) and superconductivity have long been recognized as competing orders. However, recent achievements establish that the interplay between these two collective electronic phenomena can be more perplexing, with emergent phenomena arising from their cooperation. Here we report a distinctive case of the kagome superconductors CsV3Sb5-xSnx, in which the characteristics of superconductivity evolve in accordance with the form of CDW order. As the triple-Q CDW in CsV3Sb5 transforms to a short-range stripelike CDW at xc = 0.07, a sudden change in superconducting properties occurs concomitantly. A combination of thermodynamic, electrical transport and scanning tunneling microscopy experiments reveals a heterogeneous superconducting state beyond xc: the superconducting gap exhibits pronounced spatial variation, in conformity with a distribution of critical temperature and the resulted superconducting precursor effects. Moreover, abundant normal fluid persists deep into the superconducting state, as evidenced by remnants of electronic specific heat and zero-energy quasiparticle interference. These observations are unrelated to the chemical inhomogeneity and residual strain effect introduced by Sn substitution. Instead, they emulate the phenomenology that a sign-changing superconducting order parameter is subject to strong pair-breaking scattering with the short-range charge stripes and hence reflect the unconventional nature of superconductivity developing inside the charge-stripe state.",
+        "automaticTopics": [
+          {
+            "name": "Physics of Superconductivity and Magnetism",
+            "id": "https://openalex.org/T10037",
+            "score": 0.9603999853134155,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Advanced Condensed Matter Physics",
+            "id": "https://openalex.org/T11682",
+            "score": 0.02669999934732914,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Organic and Molecular Conductors Research",
+            "id": "https://openalex.org/T11758",
+            "score": 0.004399999976158142,
+            "subfield": "Electronic, Optical and Magnetic Materials",
+            "field": "Materials Science",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Physics of Superconductivity and Magnetism",
+        "keywords": [
+          "kagome lattice",
+          "CsV3Sb5",
+          "charge density wave",
+          "unconventional superconductivity",
+          "tin substitution"
+        ],
+        "relatedWorks": [
+          "https://openalex.org/W7220944532",
+          "https://openalex.org/W4286750682",
+          "https://openalex.org/W4416888697",
+          "https://openalex.org/W4415262462",
+          "https://openalex.org/W4399855618",
+          "https://openalex.org/W4416337859",
+          "https://openalex.org/W3161624456",
+          "https://openalex.org/W4288708847",
+          "https://openalex.org/W4383222767",
+          "https://openalex.org/W4226126622"
+        ],
+        "referencedWorks": [
+          "https://openalex.org/W2766345607",
+          "https://openalex.org/W7171778267",
+          "https://openalex.org/W7221445375"
+        ],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2610.32097",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "https://arxiv.org/abs/2610.32097",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "title-search",
+        "matchConfidence": 1.0,
+        "matchVerification": "composite",
+        "matchEvidence": {
+          "verification": "composite",
+          "identifierMatch": "",
+          "titleScore": 1.0,
+          "authorScore": 1.0,
+          "yearScore": 1.0,
+          "hasAuthorEvidence": true,
+          "hasYearEvidence": true,
+          "seedTitle": "Heterogeneous superconductivity emerging from a charge-stripe state in kagome lattices",
+          "candidateTitle": "Heterogeneous superconductivity emerging from a charge-stripe state in kagome lattices",
+          "seedAuthors": [
+            "hongyu li"
+          ],
+          "candidateAuthors": [
+            "Hongyu Li",
+            "Shuikang Yu",
+            "Huachen Rao",
+            "Zhuying Wang",
+            "Xingchen Zhou",
+            "Houpu Li",
+            "Yunmei Zhang",
+            "Zhao Gong",
+            "Xin Yu",
+            "Rui Wu",
+            "Tao Wu",
+            "Zhenyu Wang"
+          ],
+          "seedYear": 2026,
+          "candidateYear": 2026,
+          "seedDoi": "",
+          "candidateDoi": "10.48550/arxiv.2610.32097",
+          "seedArxivId": "",
+          "candidateArxivIds": [
+            "2610.32097"
+          ],
+          "candidateOpenAlexId": "https://openalex.org/W7223658779",
+          "warnings": []
+        },
+        "matchedFromPdf": false,
+        "updatedAt": 1794450484821,
+        "metadataError": "",
+        "citations": {
+          "count": 0,
+          "source": "OpenAlex",
+          "updatedAt": 1794450484821
+        }
+      },
+      "citations": {
+        "count": 0,
+        "source": "OpenAlex",
+        "updatedAt": 1794450484821
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1794450484837,
+        "updatedAt": 1794450484837,
+        "source": "upload-metadata",
+        "title": "Heterogeneous superconductivity emerging from a charge-stripe state in kagome lattices",
+        "authors": [
+          "Hongyu Li",
+          "Shuikang Yu",
+          "Huachen Rao",
+          "Zhuying Wang",
+          "Xingchen Zhou",
+          "Houpu Li",
+          "Yunmei Zhang",
+          "Zhao Gong",
+          "Xin Yu",
+          "Rui Wu",
+          "Tao Wu",
+          "Zhenyu Wang",
+          "Ziji Xiang",
+          "Xianhui Chen"
+        ],
+        "affiliations": [
+          "University of Science and Technology of China",
+          "Chinese Academy of Sciences",
+          "Institute of Physics"
+        ],
+        "publicationStatus": "published",
+        "journal": "arXiv (Cornell University)",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University",
+        "doi": "10.48550/arxiv.2610.32097",
+        "arxivId": "",
+        "citationKey": "Li2026heterogeneous",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.48550/arxiv.2610.32097",
+          "arxiv": "",
+          "publisher": "https://arxiv.org/abs/2610.32097",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "在 CsV3Sb5-xSnx 中揭示电荷条纹态如何导致非均匀超导，说明 CDW 与超导既竞争又合作",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
+    },
+    {
+      "id": "ubemtnj1tu0gxnlugkb",
+      "title": "Intrinsic Raman Modes and Crystal Symmetry of Altermagnetic alpha-MnTe",
+      "filename": "LuyiYang2026-Intrinsic Raman Modes and crystal symmetry of altermagnetic alpha-MnTe.pdf",
+      "path": "https://cheneit.github.io/cheneit-pdf-2026/data/files/2026/11/ubemtnj1tu0gxnlugkb.pdf",
+      "kind": "pdf",
+      "topics": [
+        "Altermagnet"
+      ],
+      "topic": "Altermagnet",
+      "tags": [
+        "refs_update"
+      ],
+      "ts": 1794450489231,
+      "createdTs": 1794450489231,
+      "size": 3352414,
+      "desc": "结合高分辨拉曼、SHG 与第一性原理澄清 α-MnTe 的晶格对称性与本征声子模式，排除 Te 相关杂散谱线的干扰",
+      "imagePath": "data/files/2026/11/images/ubemtnj1tu0gxnlugkb__cui2026_raman-modes-alpha-mnte.png",
+      "storage": {
+        "owner": "cheneit",
+        "repo": "cheneit-pdf-2026",
+        "branch": "main",
+        "path": "data/files/2026/11/ubemtnj1tu0gxnlugkb.pdf"
+      },
+      "uploadStatus": "ready",
+      "uploadError": "",
+      "imageUploadError": "",
+      "groups": [],
+      "scholarly": {
+        "title": "Intrinsic Raman Modes and Crystal Symmetry of Altermagnetic $α$-MnTe",
+        "doi": "10.48550/arxiv.2610.32261",
+        "arxivId": "",
+        "openAlexId": "https://openalex.org/W7223669000",
+        "publicationDate": "2026-10-23",
+        "year": 2026,
+        "venue": "arXiv (Cornell University)",
+        "venueId": "https://openalex.org/S4306400194",
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University",
+        "type": "preprint",
+        "authors": [
+          {
+            "name": "Yunpeng Cui",
+            "openAlexId": "https://openalex.org/A5159719350",
+            "orcid": "",
+            "position": "first",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "State Key Laboratory of Low-Dimensional Quantum Physics",
+                "openAlexId": "https://openalex.org/I4391767819",
+                "countryCode": "CN",
+                "type": "facility"
+              },
+              {
+                "name": "Tsinghua University",
+                "openAlexId": "https://openalex.org/I99065089",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Shuai Zhang",
+            "openAlexId": "https://openalex.org/A5159600757",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Chinese Academy of Sciences",
+                "openAlexId": "https://openalex.org/I19820366",
+                "countryCode": "CN",
+                "type": "government"
+              },
+              {
+                "name": "Institute of Theoretical Physics",
+                "openAlexId": "https://openalex.org/I4210125404",
+                "countryCode": "CN",
+                "type": "facility"
+              }
+            ]
+          },
+          {
+            "name": "Jia‐Liang Xie",
+            "openAlexId": "https://openalex.org/A5101323891",
+            "orcid": "https://orcid.org/0009-0009-1154-8614",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Chinese Academy of Sciences",
+                "openAlexId": "https://openalex.org/I19820366",
+                "countryCode": "CN",
+                "type": "government"
+              },
+              {
+                "name": "Institute of Semiconductors",
+                "openAlexId": "https://openalex.org/I4210149211",
+                "countryCode": "CN",
+                "type": "facility"
+              }
+            ]
+          },
+          {
+            "name": "Jinxuan Liang",
+            "openAlexId": "https://openalex.org/A5122814561",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "State Key Laboratory of Low-Dimensional Quantum Physics",
+                "openAlexId": "https://openalex.org/I4391767819",
+                "countryCode": "CN",
+                "type": "facility"
+              },
+              {
+                "name": "Tsinghua University",
+                "openAlexId": "https://openalex.org/I99065089",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Hao Lin",
+            "openAlexId": "https://openalex.org/A5159671920",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "State Key Laboratory of Low-Dimensional Quantum Physics",
+                "openAlexId": "https://openalex.org/I4391767819",
+                "countryCode": "CN",
+                "type": "facility"
+              },
+              {
+                "name": "Tsinghua University",
+                "openAlexId": "https://openalex.org/I99065089",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Qin Miao",
+            "openAlexId": "https://openalex.org/A5053535803",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "State Key Laboratory of Low-Dimensional Quantum Physics",
+                "openAlexId": "https://openalex.org/I4391767819",
+                "countryCode": "CN",
+                "type": "facility"
+              },
+              {
+                "name": "Tsinghua University",
+                "openAlexId": "https://openalex.org/I99065089",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Jiawei Shao",
+            "openAlexId": "https://openalex.org/A5124996836",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "State Key Laboratory of Low-Dimensional Quantum Physics",
+                "openAlexId": "https://openalex.org/I4391767819",
+                "countryCode": "CN",
+                "type": "facility"
+              },
+              {
+                "name": "Tsinghua University",
+                "openAlexId": "https://openalex.org/I99065089",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Gongling Chen",
+            "openAlexId": "https://openalex.org/A5153288621",
+            "orcid": "https://orcid.org/0009-0008-0528-5953",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "State Key Laboratory of Low-Dimensional Quantum Physics",
+                "openAlexId": "https://openalex.org/I4391767819",
+                "countryCode": "CN",
+                "type": "facility"
+              },
+              {
+                "name": "Tsinghua University",
+                "openAlexId": "https://openalex.org/I99065089",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Yidian Li",
+            "openAlexId": "https://openalex.org/A5159627735",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "State Key Laboratory of Low-Dimensional Quantum Physics",
+                "openAlexId": "https://openalex.org/I4391767819",
+                "countryCode": "CN",
+                "type": "facility"
+              },
+              {
+                "name": "Tsinghua University",
+                "openAlexId": "https://openalex.org/I99065089",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Yixuan Luo",
+            "openAlexId": "https://openalex.org/A5159688079",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "ShanghaiTech University",
+                "openAlexId": "https://openalex.org/I30809798",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Deng Hu",
+            "openAlexId": "https://openalex.org/A5159599668",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Beijing Institute of Technology",
+                "openAlexId": "https://openalex.org/I125839683",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "卢炳儒",
+            "openAlexId": "https://openalex.org/A5148078802",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Lanzhou University",
+                "openAlexId": "https://openalex.org/I76214153",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Hao Li",
+            "openAlexId": "https://openalex.org/A5159729429",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Lanzhou University",
+                "openAlexId": "https://openalex.org/I76214153",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Xiang Li",
+            "openAlexId": "https://openalex.org/A5159663250",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Lanzhou University",
+                "openAlexId": "https://openalex.org/I76214153",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Tiantian Liu",
+            "openAlexId": "https://openalex.org/A5159664913",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Lanzhou University",
+                "openAlexId": "https://openalex.org/I76214153",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Haodong Yu",
+            "openAlexId": "https://openalex.org/A5013528067",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "State Key Laboratory of Low-Dimensional Quantum Physics",
+                "openAlexId": "https://openalex.org/I4391767819",
+                "countryCode": "CN",
+                "type": "facility"
+              },
+              {
+                "name": "Tsinghua University",
+                "openAlexId": "https://openalex.org/I99065089",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Hongyun Zhang",
+            "openAlexId": "https://openalex.org/A5159643451",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "State Key Laboratory of Low-Dimensional Quantum Physics",
+                "openAlexId": "https://openalex.org/I4391767819",
+                "countryCode": "CN",
+                "type": "facility"
+              },
+              {
+                "name": "Tsinghua University",
+                "openAlexId": "https://openalex.org/I99065089",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Shuyun Zhou",
+            "openAlexId": "https://openalex.org/A5159653192",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "State Key Laboratory of Low-Dimensional Quantum Physics",
+                "openAlexId": "https://openalex.org/I4391767819",
+                "countryCode": "CN",
+                "type": "facility"
+              },
+              {
+                "name": "Frontier Science Center for Quantum Information of the Ministry of Education of China",
+                "openAlexId": "https://openalex.org/I4405272266",
+                "countryCode": "CN",
+                "type": "facility"
+              },
+              {
+                "name": "Tsinghua University",
+                "openAlexId": "https://openalex.org/I99065089",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Zhiwei Wang",
+            "openAlexId": "https://openalex.org/A5159677539",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": []
+          },
+          {
+            "name": "Yanfeng Guo",
+            "openAlexId": "https://openalex.org/A5159595822",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "ShanghaiTech University",
+                "openAlexId": "https://openalex.org/I30809798",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Tiantian Zhang",
+            "openAlexId": "https://openalex.org/A5159708212",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Chinese Academy of Sciences",
+                "openAlexId": "https://openalex.org/I19820366",
+                "countryCode": "CN",
+                "type": "government"
+              },
+              {
+                "name": "Institute of Theoretical Physics",
+                "openAlexId": "https://openalex.org/I4210125404",
+                "countryCode": "CN",
+                "type": "facility"
+              }
+            ]
+          },
+          {
+            "name": "Miao‐Ling Lin",
+            "openAlexId": "https://openalex.org/A5037697874",
+            "orcid": "https://orcid.org/0000-0001-5838-8237",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Chinese Academy of Sciences",
+                "openAlexId": "https://openalex.org/I19820366",
+                "countryCode": "CN",
+                "type": "government"
+              },
+              {
+                "name": "Institute of Semiconductors",
+                "openAlexId": "https://openalex.org/I4210149211",
+                "countryCode": "CN",
+                "type": "facility"
+              }
+            ]
+          },
+          {
+            "name": "Pingheng Tan",
+            "openAlexId": "https://openalex.org/A5069269202",
+            "orcid": "https://orcid.org/0000-0001-6575-1516",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Chinese Academy of Sciences",
+                "openAlexId": "https://openalex.org/I19820366",
+                "countryCode": "CN",
+                "type": "government"
+              },
+              {
+                "name": "Institute of Semiconductors",
+                "openAlexId": "https://openalex.org/I4210149211",
+                "countryCode": "CN",
+                "type": "facility"
+              }
+            ]
+          },
+          {
+            "name": "Feng Jin",
+            "openAlexId": "https://openalex.org/A5159667625",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Chinese Academy of Sciences",
+                "openAlexId": "https://openalex.org/I19820366",
+                "countryCode": "CN",
+                "type": "government"
+              },
+              {
+                "name": "Institute of Physics",
+                "openAlexId": "https://openalex.org/I4210159876",
+                "countryCode": "CN",
+                "type": "facility"
+              }
+            ]
+          },
+          {
+            "name": "Luyi Yang",
+            "openAlexId": "https://openalex.org/A5159728605",
+            "orcid": "",
+            "position": "last",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "State Key Laboratory of Low-Dimensional Quantum Physics",
+                "openAlexId": "https://openalex.org/I4391767819",
+                "countryCode": "CN",
+                "type": "facility"
+              },
+              {
+                "name": "Frontier Science Center for Quantum Information of the Ministry of Education of China",
+                "openAlexId": "https://openalex.org/I4405272266",
+                "countryCode": "CN",
+                "type": "facility"
+              },
+              {
+                "name": "Tsinghua University",
+                "openAlexId": "https://openalex.org/I99065089",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          }
+        ],
+        "institutions": [
+          {
+            "name": "State Key Laboratory of Low-Dimensional Quantum Physics",
+            "openAlexId": "https://openalex.org/I4391767819",
+            "countryCode": "CN",
+            "type": "facility"
+          },
+          {
+            "name": "Tsinghua University",
+            "openAlexId": "https://openalex.org/I99065089",
+            "countryCode": "CN",
+            "type": "education"
+          },
+          {
+            "name": "Chinese Academy of Sciences",
+            "openAlexId": "https://openalex.org/I19820366",
+            "countryCode": "CN",
+            "type": "government"
+          },
+          {
+            "name": "Institute of Theoretical Physics",
+            "openAlexId": "https://openalex.org/I4210125404",
+            "countryCode": "CN",
+            "type": "facility"
+          },
+          {
+            "name": "Institute of Semiconductors",
+            "openAlexId": "https://openalex.org/I4210149211",
+            "countryCode": "CN",
+            "type": "facility"
+          },
+          {
+            "name": "ShanghaiTech University",
+            "openAlexId": "https://openalex.org/I30809798",
+            "countryCode": "CN",
+            "type": "education"
+          },
+          {
+            "name": "Beijing Institute of Technology",
+            "openAlexId": "https://openalex.org/I125839683",
+            "countryCode": "CN",
+            "type": "education"
+          },
+          {
+            "name": "Lanzhou University",
+            "openAlexId": "https://openalex.org/I76214153",
+            "countryCode": "CN",
+            "type": "education"
+          },
+          {
+            "name": "Frontier Science Center for Quantum Information of the Ministry of Education of China",
+            "openAlexId": "https://openalex.org/I4405272266",
+            "countryCode": "CN",
+            "type": "facility"
+          },
+          {
+            "name": "Institute of Physics",
+            "openAlexId": "https://openalex.org/I4210159876",
+            "countryCode": "CN",
+            "type": "facility"
+          }
+        ],
+        "abstract": "Crystal symmetry governs the physical properties of materials and provides the framework for interpreting their microscopic excitations and macroscopic responses. In altermagnets, the crystal symmetries that relate opposite-spin sublattices give rise to momentum-dependent spin splitting despite compensated magnetization. Determining the real crystal symmetry is therefore essential for understanding the intrinsic electronic and magnetic properties. For the altermagnetic semiconductor $α$-MnTe, conflicting Raman assignments have left both its intrinsic lattice excitations and its crystal symmetry unresolved. Here we combine high-resolution Raman and second-harmonic generation (SHG) spectroscopy with first-principles calculations to distinguish intrinsic lattice excitations from Te-derived spectral contributions and to examine bulk inversion symmetry of $α$-MnTe. We show that several prominent Raman features previously assigned to $α$-MnTe instead originate from segregated Te clusters or precipitates. The remaining intrinsic Raman response consists of a single Raman-active mode assigned to the calculated $E_{2g}$ phonon, consistent with the centrosymmetric $D_{6h}$ symmetry. The SHG response agrees with surface electric-dipole and bulk electric-quadrupole contributions expected for a centrosymmetric $D_{6h}$ crystal, supporting the preservation of bulk inversion symmetry in $α$-MnTe. Our findings revise the Raman assignments in $α$-MnTe and provide a basis for interpreting its altermagnetic properties within the appropriate crystal-symmetry framework.",
+        "automaticTopics": [
+          {
+            "name": "Topological Materials and Phenomena",
+            "id": "https://openalex.org/T10657",
+            "score": 0.4381999969482422,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Magnetic properties of thin films",
+            "id": "https://openalex.org/T10049",
+            "score": 0.18930000066757202,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Advanced Condensed Matter Physics",
+            "id": "https://openalex.org/T11682",
+            "score": 0.10130000114440918,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Topological Materials and Phenomena",
+        "keywords": [
+          "α-MnTe",
+          "altermagnets",
+          "crystal symmetry",
+          "Raman modes",
+          "second harmonic generation",
+          "D6h symmetry",
+          "E2g phonon",
+          "spin splitting"
+        ],
+        "relatedWorks": [
+          "https://openalex.org/W7162108047",
+          "https://openalex.org/W4417173797",
+          "https://openalex.org/W7168427522",
+          "https://openalex.org/W7215030873",
+          "https://openalex.org/W7165682015",
+          "https://openalex.org/W7128990932",
+          "https://openalex.org/W4415024474",
+          "https://openalex.org/W4389057621",
+          "https://openalex.org/W7201848130",
+          "https://openalex.org/W7167228411"
+        ],
+        "referencedWorks": [
+          "https://openalex.org/W7153273634",
+          "https://openalex.org/W7162437778",
+          "https://openalex.org/W7213607901",
+          "https://openalex.org/W7215030873"
+        ],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2610.32261",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "https://arxiv.org/abs/2610.32261",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "title-search",
+        "matchConfidence": 0.8865,
+        "matchVerification": "composite",
+        "matchEvidence": {
+          "verification": "composite",
+          "identifierMatch": "",
+          "titleScore": 0.9559,
+          "authorScore": 0.0,
+          "yearScore": 1.0,
+          "hasAuthorEvidence": false,
+          "hasYearEvidence": true,
+          "seedTitle": "Intrinsic Raman Modes and Crystal Symmetry of Altermagnetic alpha-MnTe",
+          "candidateTitle": "Intrinsic Raman Modes and Crystal Symmetry of Altermagnetic $α$-MnTe",
+          "seedAuthors": [],
+          "candidateAuthors": [
+            "Yunpeng Cui",
+            "Shuai Zhang",
+            "Jia‐Liang Xie",
+            "Jinxuan Liang",
+            "Hao Lin",
+            "Qin Miao",
+            "Jiawei Shao",
+            "Gongling Chen",
+            "Yidian Li",
+            "Yixuan Luo",
+            "Deng Hu",
+            "卢炳儒"
+          ],
+          "seedYear": 2026,
+          "candidateYear": 2026,
+          "seedDoi": "",
+          "candidateDoi": "10.48550/arxiv.2610.32261",
+          "seedArxivId": "",
+          "candidateArxivIds": [
+            "2610.32261"
+          ],
+          "candidateOpenAlexId": "https://openalex.org/W7223669000",
+          "warnings": []
+        },
+        "matchedFromPdf": false,
+        "updatedAt": 1794450489228,
+        "metadataError": "",
+        "citations": {
+          "count": 0,
+          "source": "OpenAlex",
+          "updatedAt": 1794450489228
+        }
+      },
+      "citations": {
+        "count": 0,
+        "source": "OpenAlex",
+        "updatedAt": 1794450489228
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1794450489232,
+        "updatedAt": 1794450489232,
+        "source": "upload-metadata",
+        "title": "Intrinsic Raman Modes and Crystal Symmetry of Altermagnetic $α$-MnTe",
+        "authors": [
+          "Yunpeng Cui",
+          "Shuai Zhang",
+          "Jia‐Liang Xie",
+          "Jinxuan Liang",
+          "Hao Lin",
+          "Qin Miao",
+          "Jiawei Shao",
+          "Gongling Chen",
+          "Yidian Li",
+          "Yixuan Luo",
+          "Deng Hu",
+          "卢炳儒",
+          "Hao Li",
+          "Xiang Li",
+          "Tiantian Liu",
+          "Haodong Yu",
+          "Hongyun Zhang",
+          "Shuyun Zhou",
+          "Zhiwei Wang",
+          "Yanfeng Guo",
+          "Tiantian Zhang",
+          "Miao‐Ling Lin",
+          "Pingheng Tan",
+          "Feng Jin",
+          "Luyi Yang"
+        ],
+        "affiliations": [
+          "State Key Laboratory of Low-Dimensional Quantum Physics",
+          "Tsinghua University",
+          "Chinese Academy of Sciences",
+          "Institute of Theoretical Physics",
+          "Institute of Semiconductors",
+          "ShanghaiTech University",
+          "Beijing Institute of Technology",
+          "Lanzhou University",
+          "Frontier Science Center for Quantum Information of the Ministry of Education of China",
+          "Institute of Physics"
+        ],
+        "publicationStatus": "published",
+        "journal": "arXiv (Cornell University)",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University",
+        "doi": "10.48550/arxiv.2610.32261",
+        "arxivId": "",
+        "citationKey": "Cui2026intrinsic",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.48550/arxiv.2610.32261",
+          "arxiv": "",
+          "publisher": "https://arxiv.org/abs/2610.32261",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "结合高分辨拉曼、SHG 与第一性原理澄清 α-MnTe 的晶格对称性与本征声子模式，排除 Te 相关杂散谱线的干扰",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
+    },
+    {
+      "id": "6ppb046lxaycyq2rnlf",
+      "title": "Altermagnetism-induced higher-order topological Dirac semimetals in two-dimensional nonsymmorphic systems",
+      "filename": "QFSun-Altermagnetism-induced higher-order topological Dirac semimetals in 2D nonsymmorphic systems.pdf",
+      "path": "https://cheneit.github.io/cheneit-pdf-2026/data/files/2026/11/6ppb046lxaycyq2rnlf.pdf",
+      "kind": "pdf",
+      "topics": [
+        "Altermagnet",
+        "Topological"
+      ],
+      "topic": "Altermagnet",
+      "tags": [
+        "refs_update"
+      ],
+      "ts": 1794450514971,
+      "createdTs": 1794450514971,
+      "size": 23842390,
+      "desc": "在二维非简单对称三层 Dirac 体系中用 altermagnetic 序诱导高阶拓扑 Dirac 半金属，实现受对称性保护的体能 Dirac 点与带隙边缘态共存",
+      "imagePath": "data/files/2026/11/images/6ppb046lxaycyq2rnlf__sun2026_altermagnetism-induced-higher-order-topo.png",
+      "storage": {
+        "owner": "cheneit",
+        "repo": "cheneit-pdf-2026",
+        "branch": "main",
+        "path": "data/files/2026/11/6ppb046lxaycyq2rnlf.pdf"
+      },
+      "uploadStatus": "ready",
+      "uploadError": "",
+      "imageUploadError": "",
+      "groups": [],
+      "scholarly": {
+        "title": "Altermagnetism-induced higher-order topological Dirac semimetals in two-dimensional nonsymmorphic systems",
+        "doi": "10.1103/7dmx-h9h3",
+        "arxivId": "2611.04347",
+        "openAlexId": "https://openalex.org/W7221056100",
+        "publicationDate": "2026-10-08",
+        "year": 2026,
+        "venue": "Physical review. B./Physical review. B",
+        "venueId": "https://openalex.org/S4210237713",
+        "volume": "114",
+        "issue": "28",
+        "pages": "",
+        "publisher": "American Physical Society",
+        "type": "article",
+        "authors": [
+          {
+            "name": "Lizhou Liu",
+            "openAlexId": "https://openalex.org/A5140917787",
+            "orcid": "",
+            "position": "first",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Peking University",
+                "openAlexId": "https://openalex.org/I20231570",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Cheng-Ming Miao",
+            "openAlexId": "https://openalex.org/A5071921757",
+            "orcid": "https://orcid.org/0000-0002-8095-8053",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Peking University",
+                "openAlexId": "https://openalex.org/I20231570",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Ying-Tao Zhang",
+            "openAlexId": "https://openalex.org/A5160102348",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Hebei Normal University",
+                "openAlexId": "https://openalex.org/I94611258",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Qing-Feng Sun",
+            "openAlexId": "https://openalex.org/A5160114305",
+            "orcid": "https://orcid.org/0000-0002-5512-9608",
+            "position": "last",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Peking University",
+                "openAlexId": "https://openalex.org/I20231570",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          }
+        ],
+        "institutions": [
+          {
+            "name": "Peking University",
+            "openAlexId": "https://openalex.org/I20231570",
+            "countryCode": "CN",
+            "type": "education"
+          },
+          {
+            "name": "Hebei Normal University",
+            "openAlexId": "https://openalex.org/I94611258",
+            "countryCode": "CN",
+            "type": "education"
+          }
+        ],
+        "abstract": "We propose an altermagnetism-induced route to a two-dimensional higher-order topological Dirac semimetal in a trilayer nonsymmorphic Dirac system. Interlayer hybridization preserves the nonsymmorphic bulk Dirac crossings and generates helical edge states in the trilayer phase. Introducing outer-layer $d$-wave altermagnetic order gaps the helical edge states, while only the symmetry-protected Dirac crossing at high-symmetry point $M$ remains gapless. The resulting phase hosts a surviving bulk Dirac point, gapped edge spectra, and corner states. An exact layer-space decomposition further reveals that these features arise from the coexistence of a gapless Dirac sector and a gapped $\\mathbb{Z}_2$ topological sector. Our results establish altermagnetism as an effective mechanism for engineering higher-order topological Dirac semimetals in two-dimensional nonsymmorphic systems.",
+        "automaticTopics": [
+          {
+            "name": "Topological Materials and Phenomena",
+            "id": "https://openalex.org/T10657",
+            "score": 0.9994999766349792,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Advanced Condensed Matter Physics",
+            "id": "https://openalex.org/T11682",
+            "score": 9.999999747378752e-05,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Magnetic properties of thin films",
+            "id": "https://openalex.org/T10049",
+            "score": 0.0,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Topological Materials and Phenomena",
+        "keywords": [
+          "altermagnetism",
+          "higher-order topological insulators",
+          "Dirac semimetal",
+          "nonsymmorphic symmetry",
+          "two-dimensional systems",
+          "interlayer hybridization",
+          "helical edge states",
+          "corner states",
+          "Z2 topological phase",
+          "Dirac point"
+        ],
+        "relatedWorks": [
+          "https://openalex.org/W7221873323",
+          "https://openalex.org/W4417330700",
+          "https://openalex.org/W3010855121",
+          "https://openalex.org/W2610059647",
+          "https://openalex.org/W3034462586",
+          "https://openalex.org/W2782793715",
+          "https://openalex.org/W7145736363",
+          "https://openalex.org/W7160838978",
+          "https://openalex.org/W4415775792",
+          "https://openalex.org/W2282445296"
+        ],
+        "referencedWorks": [
+          "https://openalex.org/W1538825449",
+          "https://openalex.org/W1552981254",
+          "https://openalex.org/W1761159302",
+          "https://openalex.org/W1858384429",
+          "https://openalex.org/W1964076534",
+          "https://openalex.org/W1992846108",
+          "https://openalex.org/W2001532204",
+          "https://openalex.org/W2020332193",
+          "https://openalex.org/W2031028572",
+          "https://openalex.org/W2046590964",
+          "https://openalex.org/W2051724499",
+          "https://openalex.org/W2059812564",
+          "https://openalex.org/W2088198211",
+          "https://openalex.org/W2094519360",
+          "https://openalex.org/W2102074887",
+          "https://openalex.org/W2168393858",
+          "https://openalex.org/W2215061879",
+          "https://openalex.org/W2237953221",
+          "https://openalex.org/W2557414703",
+          "https://openalex.org/W2611395271",
+          "https://openalex.org/W2745740700",
+          "https://openalex.org/W2746713678",
+          "https://openalex.org/W2750111109",
+          "https://openalex.org/W2752666166",
+          "https://openalex.org/W2922472018",
+          "https://openalex.org/W2974883603",
+          "https://openalex.org/W3003695823",
+          "https://openalex.org/W3008682481",
+          "https://openalex.org/W3012602550",
+          "https://openalex.org/W3016587468",
+          "https://openalex.org/W3039559355",
+          "https://openalex.org/W3108830573",
+          "https://openalex.org/W3116907866",
+          "https://openalex.org/W3141311740",
+          "https://openalex.org/W3160360569",
+          "https://openalex.org/W3176014934",
+          "https://openalex.org/W4210925032",
+          "https://openalex.org/W4220709604",
+          "https://openalex.org/W4297014776",
+          "https://openalex.org/W4311892900",
+          "https://openalex.org/W4361298347",
+          "https://openalex.org/W4387311238",
+          "https://openalex.org/W4391616284",
+          "https://openalex.org/W4392643953",
+          "https://openalex.org/W4395036805",
+          "https://openalex.org/W4396871796",
+          "https://openalex.org/W4400978692",
+          "https://openalex.org/W4402271685",
+          "https://openalex.org/W4402641564",
+          "https://openalex.org/W4403204254",
+          "https://openalex.org/W4403486016",
+          "https://openalex.org/W4403524615",
+          "https://openalex.org/W4404184233",
+          "https://openalex.org/W4404414508",
+          "https://openalex.org/W4405443202",
+          "https://openalex.org/W4406099578",
+          "https://openalex.org/W4407504786",
+          "https://openalex.org/W4407764369",
+          "https://openalex.org/W4408552337",
+          "https://openalex.org/W4408996601",
+          "https://openalex.org/W4409737339",
+          "https://openalex.org/W4410397244",
+          "https://openalex.org/W4411024076",
+          "https://openalex.org/W4411184126",
+          "https://openalex.org/W4414039416",
+          "https://openalex.org/W4414060975",
+          "https://openalex.org/W4415057069",
+          "https://openalex.org/W4415775792",
+          "https://openalex.org/W4415924781",
+          "https://openalex.org/W4417268210",
+          "https://openalex.org/W4417401529",
+          "https://openalex.org/W7125530473",
+          "https://openalex.org/W7127344184",
+          "https://openalex.org/W7128161823",
+          "https://openalex.org/W7134954078",
+          "https://openalex.org/W7150844210",
+          "https://openalex.org/W7154472344"
+        ],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2611.04347",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "https://doi.org/10.1103/7dmx-h9h3",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "title-search",
+        "matchConfidence": 0.99,
+        "matchVerification": "exact-arxiv",
+        "matchEvidence": {
+          "verification": "exact-arxiv",
+          "identifierMatch": "arxiv",
+          "titleScore": 1.0,
+          "authorScore": 1.0,
+          "yearScore": 1.0,
+          "hasAuthorEvidence": true,
+          "hasYearEvidence": true,
+          "seedTitle": "Altermagnetism-induced higher-order topological Dirac semimetals in two-dimensional nonsymmorphic systems",
+          "candidateTitle": "Altermagnetism-induced higher-order topological Dirac semimetals in two-dimensional nonsymmorphic systems",
+          "seedAuthors": [
+            "Lizhou Liu; Cheng-Ming Miao; Ying-Tao Zhang; Qing-Feng Sun"
+          ],
+          "candidateAuthors": [
+            "Lizhou Liu",
+            "Cheng-Ming Miao",
+            "Ying-Tao Zhang",
+            "Qing-Feng Sun"
+          ],
+          "seedYear": 2026,
+          "candidateYear": 2026,
+          "seedDoi": "",
+          "candidateDoi": "10.1103/7dmx-h9h3",
+          "seedArxivId": "2611.04347",
+          "candidateArxivIds": [
+            "2611.04347"
+          ],
+          "candidateOpenAlexId": "https://openalex.org/W7221056100",
+          "warnings": []
+        },
+        "matchedFromPdf": false,
+        "updatedAt": 1794450514951,
+        "metadataError": "",
+        "citations": {
+          "count": 0,
+          "source": "OpenAlex",
+          "updatedAt": 1794450514951
+        }
+      },
+      "citations": {
+        "count": 0,
+        "source": "OpenAlex",
+        "updatedAt": 1794450514951
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1794450514972,
+        "updatedAt": 1794450514972,
+        "source": "upload-metadata",
+        "title": "Altermagnetism-induced higher-order topological Dirac semimetals in two-dimensional nonsymmorphic systems",
+        "authors": [
+          "Lizhou Liu",
+          "Cheng-Ming Miao",
+          "Ying-Tao Zhang",
+          "Qing-Feng Sun"
+        ],
+        "affiliations": [
+          "Peking University",
+          "Hebei Normal University"
+        ],
+        "publicationStatus": "published",
+        "journal": "Physical review. B./Physical review. B",
+        "year": 2026,
+        "volume": "114",
+        "issue": "28",
+        "pages": "",
+        "publisher": "American Physical Society",
+        "doi": "10.1103/7dmx-h9h3",
+        "arxivId": "2611.04347",
+        "citationKey": "Liu2026altermagnetism",
+        "bibtexEntryType": "article",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.1103/7dmx-h9h3",
+          "arxiv": "https://arxiv.org/abs/2611.04347",
+          "publisher": "https://doi.org/10.1103/7dmx-h9h3",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "在二维非简单对称三层 Dirac 体系中用 altermagnetic 序诱导高阶拓扑 Dirac 半金属，实现受对称性保护的体能 Dirac 点与带隙边缘态共存",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
+    },
+    {
+      "id": "ziek5eccwh47xd6lbla",
+      "title": "Majorana corner modes and tunable braiding in an altermagnet-superconductor heterostructure",
+      "filename": "YajieWu-Majorana corner modes and tunable braiding in an AM-SC heterostructure.pdf",
+      "path": "https://cheneit.github.io/cheneit-pdf-2026/data/files/2026/11/ziek5eccwh47xd6lbla.pdf",
+      "kind": "pdf",
+      "topics": [
+        "Majorana",
+        "Altermagnet"
+      ],
+      "topic": "Majorana",
+      "tags": [
+        "refs_update"
+      ],
+      "ts": 1794450559432,
+      "createdTs": 1794450559432,
+      "size": 5938793,
+      "desc": "在蜂窝晶格 altermagnet–超导异质结中实现零外场下的 Majorana 角模，并给出可调编织所需的边界质量条件",
+      "imagePath": "data/files/2026/11/images/ziek5eccwh47xd6lbla__wu2026_majorana-corner-modes-and-tunable-braidi.png",
+      "storage": {
+        "owner": "cheneit",
+        "repo": "cheneit-pdf-2026",
+        "branch": "main",
+        "path": "data/files/2026/11/ziek5eccwh47xd6lbla.pdf"
+      },
+      "uploadStatus": "ready",
+      "uploadError": "",
+      "imageUploadError": "",
+      "groups": [],
+      "scholarly": {
+        "title": "Majorana corner modes and tunable braiding in an altermagnet-superconductor heterostructure",
+        "doi": "10.48550/arxiv.2611.07645",
+        "arxivId": "2611.07645",
+        "openAlexId": "https://openalex.org/W7225397581",
+        "publicationDate": "2026-11-05",
+        "year": 2026,
+        "venue": "arXiv (Cornell University)",
+        "venueId": "https://openalex.org/S4306400194",
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University",
+        "type": "preprint",
+        "authors": [
+          {
+            "name": "Yingli Gao",
+            "openAlexId": "https://openalex.org/A5161037344",
+            "orcid": "",
+            "position": "first",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Xi'an Technological University",
+                "openAlexId": "https://openalex.org/I4210110558",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Kai Zhang",
+            "openAlexId": "https://openalex.org/A5161025971",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Xi'an Technological University",
+                "openAlexId": "https://openalex.org/I4210110558",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Ling-Zheng Meng",
+            "openAlexId": "https://openalex.org/A5088659013",
+            "orcid": "https://orcid.org/0000-0001-6261-3601",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": []
+          },
+          {
+            "name": "Junpeng Hou",
+            "openAlexId": "https://openalex.org/A5160224255",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Pinterest (United States)",
+                "openAlexId": "https://openalex.org/I4401726932",
+                "countryCode": "US",
+                "type": "company"
+              }
+            ]
+          },
+          {
+            "name": "Ning Li",
+            "openAlexId": "https://openalex.org/A5161028226",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Xi'an Technological University",
+                "openAlexId": "https://openalex.org/I4210110558",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Yajie Wu",
+            "openAlexId": "https://openalex.org/A5100569938",
+            "orcid": "https://orcid.org/0009-0008-2819-8158",
+            "position": "last",
+            "corresponding": false,
+            "institutions": []
+          }
+        ],
+        "institutions": [
+          {
+            "name": "Xi'an Technological University",
+            "openAlexId": "https://openalex.org/I4210110558",
+            "countryCode": "CN",
+            "type": "education"
+          },
+          {
+            "name": "Pinterest (United States)",
+            "openAlexId": "https://openalex.org/I4401726932",
+            "countryCode": "US",
+            "type": "company"
+          }
+        ],
+        "abstract": "Zeeman fields are usually required for realizing and manipulating Majorana corner modes at the cost of suppressed superconducting pairing. Altermagnetism offers a new route toward realizing Majorana corner modes under zero net external magnetic fields. Here we propose a theoretical scheme to host Majorana corner modes in a honeycomb-lattice altermagnet-superconductor heterostructure. In contrast to previous studies on square lattices, altermagnetism yields distinct effective low-energy edge masses on various inequivalent edges of the honeycomb lattice. Within a low-energy edge-theory framework, we establish the conditions under which Majorana corner modes emerge for both bearded and zigzag edge terminations. We further explicitly construct a complete set of Clifford gates by tuning the altermagnetic anisotropy and chemical potential of the heterostructure. Our results provide a promising platform for the realization and manipulation of Majorana corner modes.",
+        "automaticTopics": [
+          {
+            "name": "Topological Materials and Phenomena",
+            "id": "https://openalex.org/T10657",
+            "score": 0.9951000213623047,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Magnetic properties of thin films",
+            "id": "https://openalex.org/T10049",
+            "score": 0.0012000000569969416,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Physics of Superconductivity and Magnetism",
+            "id": "https://openalex.org/T10037",
+            "score": 0.000699999975040555,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Topological Materials and Phenomena",
+        "keywords": [
+          "Majorana corner modes",
+          "altermagnetism",
+          "honeycomb lattice",
+          "Clifford gates",
+          "braiding",
+          "topological superconductivity"
+        ],
+        "relatedWorks": [
+          "https://openalex.org/W4388540560",
+          "https://openalex.org/W4402271685",
+          "https://openalex.org/W4417267733",
+          "https://openalex.org/W4417253810",
+          "https://openalex.org/W7123270228",
+          "https://openalex.org/W2599303404",
+          "https://openalex.org/W7127344184",
+          "https://openalex.org/W3034004703",
+          "https://openalex.org/W4380322028",
+          "https://openalex.org/W3189228352"
+        ],
+        "referencedWorks": [
+          "https://openalex.org/W7123270228",
+          "https://openalex.org/W7214666482"
+        ],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2611.07645",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "https://arxiv.org/abs/2611.07645",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "title-search",
+        "matchConfidence": 0.99,
+        "matchVerification": "exact-arxiv",
+        "matchEvidence": {
+          "verification": "exact-arxiv",
+          "identifierMatch": "arxiv",
+          "titleScore": 1.0,
+          "authorScore": 1.0,
+          "yearScore": 1.0,
+          "hasAuthorEvidence": true,
+          "hasYearEvidence": true,
+          "seedTitle": "Majorana corner modes and tunable braiding in an altermagnet-superconductor heterostructure",
+          "candidateTitle": "Majorana corner modes and tunable braiding in an altermagnet-superconductor heterostructure",
+          "seedAuthors": [
+            "Yingli Gao; Kai Zhang; Ling-Zheng Meng; Junpeng Hou; Ning Li; Ya-Jie Wu"
+          ],
+          "candidateAuthors": [
+            "Yingli Gao",
+            "Kai Zhang",
+            "Ling-Zheng Meng",
+            "Junpeng Hou",
+            "Ning Li",
+            "Yajie Wu"
+          ],
+          "seedYear": 2026,
+          "candidateYear": 2026,
+          "seedDoi": "",
+          "candidateDoi": "10.48550/arxiv.2611.07645",
+          "seedArxivId": "2611.07645",
+          "candidateArxivIds": [
+            "2611.07645"
+          ],
+          "candidateOpenAlexId": "https://openalex.org/W7225397581",
+          "warnings": []
+        },
+        "matchedFromPdf": false,
+        "updatedAt": 1794450559426,
+        "metadataError": "",
+        "citations": {
+          "count": 0,
+          "source": "OpenAlex",
+          "updatedAt": 1794450559426
+        }
+      },
+      "citations": {
+        "count": 0,
+        "source": "OpenAlex",
+        "updatedAt": 1794450559426
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1794450559433,
+        "updatedAt": 1794450559433,
+        "source": "upload-metadata",
+        "title": "Majorana corner modes and tunable braiding in an altermagnet-superconductor heterostructure",
+        "authors": [
+          "Yingli Gao",
+          "Kai Zhang",
+          "Ling-Zheng Meng",
+          "Junpeng Hou",
+          "Ning Li",
+          "Yajie Wu"
+        ],
+        "affiliations": [
+          "Xi'an Technological University",
+          "Pinterest (United States)"
+        ],
+        "publicationStatus": "preprint",
+        "journal": "arXiv (Cornell University)",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University",
+        "doi": "10.48550/arxiv.2611.07645",
+        "arxivId": "2611.07645",
+        "citationKey": "Gao2026majorana",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.48550/arxiv.2611.07645",
+          "arxiv": "https://arxiv.org/abs/2611.07645",
+          "publisher": "https://arxiv.org/abs/2611.07645",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "在蜂窝晶格 altermagnet–超导异质结中实现零外场下的 Majorana 角模，并给出可调编织所需的边界质量条件",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
+    },
+    {
+      "id": "hws3iip5x2amw3eji0f",
+      "title": "Nonlinear Interaction and Topological Selection Rules in two Skyrmion Merging: Emergence of Skyrmionium Textures",
+      "filename": "Sbiaa-Nonlinear interaction and topological selection rules in two skyrmion merging-Emergence of skyrmionium textures_markedref.pdf",
+      "path": "https://cheneit.github.io/cheneit-pdf-2026/data/files/2026/11/hws3iip5x2amw3eji0f.pdf",
+      "kind": "pdf",
+      "topics": [
+        "Skyrmion"
+      ],
+      "topic": "Skyrmion",
+      "tags": [
+        "refs_update"
+      ],
+      "ts": 1794450567862,
+      "createdTs": 1794450567862,
+      "size": 4862985,
+      "desc": "结合解析模型与微磁模拟，给出两个 Néel 天顶子合并时形成普通 skyrmion 还是 skyrmionium 的拓扑选择定则",
+      "imagePath": "data/files/2026/11/images/hws3iip5x2amw3eji0f__sbiaa2026_nonlinear-interaction-and-topological-se.png",
+      "storage": {
+        "owner": "cheneit",
+        "repo": "cheneit-pdf-2026",
+        "branch": "main",
+        "path": "data/files/2026/11/hws3iip5x2amw3eji0f.pdf"
+      },
+      "uploadStatus": "ready",
+      "uploadError": "",
+      "imageUploadError": "",
+      "groups": [],
+      "scholarly": {
+        "title": "Nonlinear Interaction and Topological Selection Rules in two Skyrmion Merging: Emergence of Skyrmionium Textures",
+        "doi": "10.48550/arxiv.2611.07807",
+        "arxivId": "2611.07807",
+        "openAlexId": "https://openalex.org/W7225412660",
+        "publicationDate": "2026-11-05",
+        "year": 2026,
+        "venue": "arXiv (Cornell University)",
+        "venueId": "https://openalex.org/S4306400194",
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University",
+        "type": "preprint",
+        "authors": [
+          {
+            "name": "M. Al Busaidi",
+            "openAlexId": "https://openalex.org/A5161082528",
+            "orcid": "",
+            "position": "first",
+            "corresponding": false,
+            "institutions": []
+          },
+          {
+            "name": "T. Hakioglu",
+            "openAlexId": "https://openalex.org/A5161096657",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Istanbul Technical University",
+                "openAlexId": "https://openalex.org/I48912391",
+                "countryCode": "TR",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "R. Sbiaa",
+            "openAlexId": "https://openalex.org/A5161106958",
+            "orcid": "",
+            "position": "last",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "Sultan Qaboos University",
+                "openAlexId": "https://openalex.org/I47818738",
+                "countryCode": "OM",
+                "type": "education"
+              }
+            ]
+          }
+        ],
+        "institutions": [
+          {
+            "name": "Istanbul Technical University",
+            "openAlexId": "https://openalex.org/I48912391",
+            "countryCode": "TR",
+            "type": "education"
+          },
+          {
+            "name": "Sultan Qaboos University",
+            "openAlexId": "https://openalex.org/I47818738",
+            "countryCode": "OM",
+            "type": "education"
+          }
+        ],
+        "abstract": "The nonlinear interaction of closely spaced magnetic skyrmions remains poorly understood, particularly the conditions governing their merger into a single skyrmion or a stable skyrmionium. Here, we investigate the merging dynamics of two Néel skyrmions using analytical modelling and micromagnetic simulations based on Landau-Lifshitz-Gilbert dynamics. We examine the effects of exchange, Dzyaloshinskii-Moriya interaction, anisotropy, and magnetostatic energies by varying the initial separation, polarity, winding number, and skyrmion size. Our results reveal a topological selection rule: skyrmions with identical polarity and opposite winding numbers form a stable skyrmionium at intermediate overlap, while all other configurations relax into a single skyrmion. We also identify a critical radius below which the skyrmionium collapses, showing that its formation requires both the appropriate topology and a minimum size. Energy analysis reveals that the transition involves cooperative relaxation of exchange frustration and redistribution of Dzyaloshinskii-Moriya and magnetostatic energies, leading to a double-domain-wall structure. The resulting skyrmionium exhibits persistent breathing oscillations around an equilibrium radius, confirming its dynamical stability as a metastable state. These findings establish a predictive framework for controlling skyrmion merging and provide design guidelines for engineering skyrmionium textures in chiral magnetic nanostructures.",
+        "automaticTopics": [
+          {
+            "name": "Magnetic properties of thin films",
+            "id": "https://openalex.org/T10049",
+            "score": 0.9984999895095825,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Magnetic Properties of Alloys",
+            "id": "https://openalex.org/T11782",
+            "score": 9.999999747378752e-05,
+            "subfield": "Electronic, Optical and Magnetic Materials",
+            "field": "Materials Science",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Topological Materials and Phenomena",
+            "id": "https://openalex.org/T10657",
+            "score": 9.999999747378752e-05,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Magnetic properties of thin films",
+        "keywords": [
+          "magnetic skyrmions",
+          "skyrmionium",
+          "Néel skyrmions",
+          "Dzyaloshinskii-Moriya interaction",
+          "exchange interaction",
+          "magnetostatic energy",
+          "breathing oscillations",
+          "metastable states",
+          "micromagnetic simulation"
+        ],
+        "relatedWorks": [
+          "https://openalex.org/W4409240796",
+          "https://openalex.org/W3043127403",
+          "https://openalex.org/W4377223912",
+          "https://openalex.org/W4392379721",
+          "https://openalex.org/W4402876633",
+          "https://openalex.org/W2997865089",
+          "https://openalex.org/W3097756050",
+          "https://openalex.org/W2944478050",
+          "https://openalex.org/W7134920189",
+          "https://openalex.org/W3114880773"
+        ],
+        "referencedWorks": [],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2611.07807",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "https://arxiv.org/abs/2611.07807",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "title-search",
+        "matchConfidence": 0.99,
+        "matchVerification": "exact-arxiv",
+        "matchEvidence": {
+          "verification": "exact-arxiv",
+          "identifierMatch": "arxiv",
+          "titleScore": 1.0,
+          "authorScore": 1.0,
+          "yearScore": 1.0,
+          "hasAuthorEvidence": true,
+          "hasYearEvidence": true,
+          "seedTitle": "Nonlinear Interaction and Topological Selection Rules in two Skyrmion Merging: Emergence of Skyrmionium Textures",
+          "candidateTitle": "Nonlinear Interaction and Topological Selection Rules in two Skyrmion Merging: Emergence of Skyrmionium Textures",
+          "seedAuthors": [
+            "M. Al Busaidi; T. Hakioglu; R. Sbiaa"
+          ],
+          "candidateAuthors": [
+            "M. Al Busaidi",
+            "T. Hakioglu",
+            "R. Sbiaa"
+          ],
+          "seedYear": 2026,
+          "candidateYear": 2026,
+          "seedDoi": "",
+          "candidateDoi": "10.48550/arxiv.2611.07807",
+          "seedArxivId": "2611.07807",
+          "candidateArxivIds": [
+            "2611.07807"
+          ],
+          "candidateOpenAlexId": "https://openalex.org/W7225412660",
+          "warnings": []
+        },
+        "matchedFromPdf": false,
+        "updatedAt": 1794450567858,
+        "metadataError": "",
+        "citations": {
+          "count": 0,
+          "source": "OpenAlex",
+          "updatedAt": 1794450567858
+        }
+      },
+      "citations": {
+        "count": 0,
+        "source": "OpenAlex",
+        "updatedAt": 1794450567858
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1794450567863,
+        "updatedAt": 1794450567863,
+        "source": "upload-metadata",
+        "title": "Nonlinear Interaction and Topological Selection Rules in two Skyrmion Merging: Emergence of Skyrmionium Textures",
+        "authors": [
+          "M. Al Busaidi",
+          "T. Hakioglu",
+          "R. Sbiaa"
+        ],
+        "affiliations": [
+          "Istanbul Technical University",
+          "Sultan Qaboos University"
+        ],
+        "publicationStatus": "preprint",
+        "journal": "arXiv (Cornell University)",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University",
+        "doi": "10.48550/arxiv.2611.07807",
+        "arxivId": "2611.07807",
+        "citationKey": "Busaidi2026nonlinear",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.48550/arxiv.2611.07807",
+          "arxiv": "https://arxiv.org/abs/2611.07807",
+          "publisher": "https://arxiv.org/abs/2611.07807",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "结合解析模型与微磁模拟，给出两个 Néel 天顶子合并时形成普通 skyrmion 还是 skyrmionium 的拓扑选择定则",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     }
   ],
   "historicalMetadataUpdatedAt": 1787560753289,
