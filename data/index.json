@@ -54255,6 +54255,314 @@
           "starred": false
         }
       }
+    },
+    {
+      "id": "aelfomgq33x82es7s7f",
+      "title": "Coexistence and Interconversion of Multiple-Order Majorana Modes in Topological Superconductor Films with Varying Thickness",
+      "filename": "Zhangzhenyu_group_2026_Coexistence and Interconversion of Multiple-Order Majorana modes in topological superconductor films with varying thickness.pdf",
+      "path": "https://cheneit.github.io/cheneit-pdf-2026/data/files/2026/11/aelfomgq33x82es7s7f.pdf",
+      "kind": "pdf",
+      "topics": [
+        "Majorana"
+      ],
+      "topic": "Majorana",
+      "tags": [
+        "refs_update"
+      ],
+      "ts": 1794450632130,
+      "createdTs": 1794450632130,
+      "size": 2132680,
+      "desc": "在 C2h 对称拓扑超导薄膜中揭示厚度调控下多重 Majorana 模的共存与相互转换，并给出电场开关机制",
+      "imagePath": "data/files/2026/11/images/aelfomgq33x82es7s7f__zhang2026_coexistence-and-interconversion-of-multi.png",
+      "storage": {
+        "owner": "cheneit",
+        "repo": "cheneit-pdf-2026",
+        "branch": "main",
+        "path": "data/files/2026/11/aelfomgq33x82es7s7f.pdf"
+      },
+      "uploadStatus": "ready",
+      "uploadError": "",
+      "imageUploadError": "",
+      "groups": [],
+      "scholarly": {
+        "title": "Coexistence and Interconversion of Multiple-Order Majorana Modes in Topological Superconductor Films with Varying Thickness",
+        "doi": "10.48550/arxiv.2609.24311",
+        "arxivId": "2609.24311",
+        "openAlexId": "https://openalex.org/W7214005288",
+        "publicationDate": "2026-09-21",
+        "year": 2026,
+        "venue": "arXiv (Cornell University)",
+        "venueId": "https://openalex.org/S4306400194",
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University",
+        "type": "preprint",
+        "authors": [
+          {
+            "name": "Zhizhong Ding",
+            "openAlexId": "https://openalex.org/A5152467083",
+            "orcid": "",
+            "position": "first",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Science and Technology of China",
+                "openAlexId": "https://openalex.org/I126520041",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Chuanbao Zhang",
+            "openAlexId": "https://openalex.org/A5152473414",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Science and Technology of China",
+                "openAlexId": "https://openalex.org/I126520041",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Shunhong Zhang",
+            "openAlexId": "https://openalex.org/A5010617648",
+            "orcid": "https://orcid.org/0000-0003-2120-4574",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Science and Technology of China",
+                "openAlexId": "https://openalex.org/I126520041",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Xiaoyu Zhu",
+            "openAlexId": "https://openalex.org/A5152444561",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": []
+          },
+          {
+            "name": "Wei Qin",
+            "openAlexId": "https://openalex.org/A5152455320",
+            "orcid": "",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Science and Technology of China",
+                "openAlexId": "https://openalex.org/I126520041",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Ping Cui",
+            "openAlexId": "https://openalex.org/A5055212155",
+            "orcid": "https://orcid.org/0000-0003-3196-2563",
+            "position": "middle",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Science and Technology of China",
+                "openAlexId": "https://openalex.org/I126520041",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          },
+          {
+            "name": "Zhenyu Zhang",
+            "openAlexId": "https://openalex.org/A5152475074",
+            "orcid": "",
+            "position": "last",
+            "corresponding": false,
+            "institutions": [
+              {
+                "name": "University of Science and Technology of China",
+                "openAlexId": "https://openalex.org/I126520041",
+                "countryCode": "CN",
+                "type": "education"
+              }
+            ]
+          }
+        ],
+        "institutions": [
+          {
+            "name": "University of Science and Technology of China",
+            "openAlexId": "https://openalex.org/I126520041",
+            "countryCode": "CN",
+            "type": "education"
+          }
+        ],
+        "abstract": "We theoretically investigate the thickness-dependent evolution of Majorana modes in $C_{2h}$-symmetric topological superconductor films (such as the recently discovered 2M-WS$_2$) proximity coupled with magnetic insulators. For sufficiently thick films, two Majorana bound states coexist as end modes at the surface and interface along a vortex line, with the interfacial mode evolving into a chiral Majorana edge mode upon increasing the proximity-induced exchange field. The intrinsic $C_{2h}$ crystalline symmetry selects two chiral Majorana modes circulating along the hinges on two of the four side surfaces of the film. When the penetration depth of the exchange field is sufficiently shallow, the two circulating modes are localized near the interface, but with qualitatively different subsequent evolutions. One of them further collapses to form two Majorana corner modes, while the other merges with the chiral Majorana mode circulating around the interface. Importantly, the corner modes are well decoupled from the interfacial chiral mode, thereby enabling an unprecedented coexistence of first-, second-, and third-order Majorana modes within a single material platform. We further show that such coexistence persists even in the ultrathin-film limit, where the electric-field-controlled two-dimensional $Z_2$ topology offers an extra advantage to readily interconvert the multiple-order Majorana modes. These findings highlight the pivotal role of the proper crystalline symmetry in enabling emergence, manipulation, and potential braiding of Majorana modes for demonstrating non-Abelian statistics and fault-tolerant quantum computation.",
+        "automaticTopics": [
+          {
+            "name": "Topological Materials and Phenomena",
+            "id": "https://openalex.org/T10657",
+            "score": 0.9994999766349792,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Advanced Condensed Matter Physics",
+            "id": "https://openalex.org/T11682",
+            "score": 9.999999747378752e-05,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          },
+          {
+            "name": "Magnetic properties of thin films",
+            "id": "https://openalex.org/T10049",
+            "score": 0.0,
+            "subfield": "Condensed Matter Physics",
+            "field": "Physics and Astronomy",
+            "domain": "Physical Sciences"
+          }
+        ],
+        "primaryTopic": "Topological Materials and Phenomena",
+        "keywords": [
+          "Majorana bound states",
+          "topological superconductors",
+          "C2h symmetry",
+          "film thickness dependence",
+          "proximity effect",
+          "magnetic insulators",
+          "chiral Majorana edge modes",
+          "corner modes",
+          "hinge modes",
+          "exchange field",
+          "Z2 topological phase",
+          "non-Abelian statistics"
+        ],
+        "relatedWorks": [
+          "https://openalex.org/W4385876351",
+          "https://openalex.org/W2898744626",
+          "https://openalex.org/W2728882668",
+          "https://openalex.org/W2809567989",
+          "https://openalex.org/W3192740543",
+          "https://openalex.org/W4389189156",
+          "https://openalex.org/W2402995946",
+          "https://openalex.org/W4386363367",
+          "https://openalex.org/W7167607980",
+          "https://openalex.org/W4404987438"
+        ],
+        "referencedWorks": [],
+        "openAccess": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2609.24311",
+          "any_repository_has_fulltext": true
+        },
+        "landingPageUrl": "https://arxiv.org/abs/2609.24311",
+        "metadataSource": "OpenAlex",
+        "matchMethod": "title-search",
+        "matchConfidence": 0.99,
+        "matchVerification": "exact-arxiv",
+        "matchEvidence": {
+          "verification": "exact-arxiv",
+          "identifierMatch": "arxiv",
+          "titleScore": 1.0,
+          "authorScore": 1.0,
+          "yearScore": 1.0,
+          "hasAuthorEvidence": true,
+          "hasYearEvidence": true,
+          "seedTitle": "Coexistence and Interconversion of Multiple-Order Majorana Modes in Topological Superconductor Films with Varying Thickness",
+          "candidateTitle": "Coexistence and Interconversion of Multiple-Order Majorana Modes in Topological Superconductor Films with Varying Thickness",
+          "seedAuthors": [
+            "Zhizhong Ding; Chuanbao Zhang; Shunhong Zhang; Xiaoyu Zhu; Wei Qin; Ping Cui; Zhenyu Zhang"
+          ],
+          "candidateAuthors": [
+            "Zhizhong Ding",
+            "Chuanbao Zhang",
+            "Shunhong Zhang",
+            "Xiaoyu Zhu",
+            "Wei Qin",
+            "Ping Cui",
+            "Zhenyu Zhang"
+          ],
+          "seedYear": 2026,
+          "candidateYear": 2026,
+          "seedDoi": "",
+          "candidateDoi": "10.48550/arxiv.2609.24311",
+          "seedArxivId": "2609.24311",
+          "candidateArxivIds": [
+            "2609.24311"
+          ],
+          "candidateOpenAlexId": "https://openalex.org/W7214005288",
+          "warnings": []
+        },
+        "matchedFromPdf": false,
+        "updatedAt": 1794450632128,
+        "metadataError": "",
+        "citations": {
+          "count": 0,
+          "source": "OpenAlex",
+          "updatedAt": 1794450632128
+        }
+      },
+      "citations": {
+        "count": 0,
+        "source": "OpenAlex",
+        "updatedAt": 1794450632128
+      },
+      "paperCard": {
+        "schemaVersion": 1,
+        "frozenAt": 1794450632132,
+        "updatedAt": 1794450632132,
+        "source": "upload-metadata",
+        "title": "Coexistence and Interconversion of Multiple-Order Majorana Modes in Topological Superconductor Films with Varying Thickness",
+        "authors": [
+          "Zhizhong Ding",
+          "Chuanbao Zhang",
+          "Shunhong Zhang",
+          "Xiaoyu Zhu",
+          "Wei Qin",
+          "Ping Cui",
+          "Zhenyu Zhang"
+        ],
+        "affiliations": [
+          "University of Science and Technology of China"
+        ],
+        "publicationStatus": "preprint",
+        "journal": "arXiv (Cornell University)",
+        "year": 2026,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University",
+        "doi": "10.48550/arxiv.2609.24311",
+        "arxivId": "2609.24311",
+        "citationKey": "Ding2026coexistence",
+        "bibtexEntryType": "misc",
+        "links": {
+          "pdf": "",
+          "doi": "https://doi.org/10.48550/arxiv.2609.24311",
+          "arxiv": "https://arxiv.org/abs/2609.24311",
+          "publisher": "https://arxiv.org/abs/2609.24311",
+          "code": "",
+          "project": ""
+        },
+        "evaluation": {
+          "shortReview": "在 C2h 对称拓扑超导薄膜中揭示厚度调控下多重 Majorana 模的共存与相互转换，并给出电场开关机制",
+          "relevance": "",
+          "readingStatus": "unread",
+          "starred": false
+        }
+      }
     }
   ],
   "historicalMetadataUpdatedAt": 1787560753289,
