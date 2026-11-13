@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "updaterVersion": "5.3",
   "mode": "daily",
-  "generatedAt": "2026-11-12T08:28:58.729370+00:00",
+  "generatedAt": "2026-11-13T08:09:14.796771+00:00",
   "acceptThreshold": 0.78,
   "summary": {
     "accepted": 140,
@@ -11,8 +11,8 @@
     "error": 0,
     "conflicts": 1,
     "pdfParsed": 0,
-    "exactVerified": 115,
-    "compositeVerified": 25
+    "exactVerified": 140,
+    "compositeVerified": 0
   },
   "results": [
     {
@@ -4409,9 +4409,9 @@
       "itemId": "aelfomgq33x82es7s7f",
       "originalTitle": "Coexistence and Interconversion of Multiple-Order Majorana Modes in Topological Superconductor Films with Varying Thickness",
       "status": "accepted",
-      "confidence": 0.88,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Coexistence and Interconversion of Multiple-Order Majorana Modes in Topological Superconductor Films with Varying Thickness",
@@ -4428,11 +4428,13 @@
         "Zhenyu Zhang"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 0.0,
-      "yearScore": 0.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -4441,9 +4443,9 @@
       "itemId": "gemc43zltxtpw4mrjlh",
       "originalTitle": "Interface engineering of spin triplet Cooper pairs for spin-valve implementation",
       "status": "accepted",
-      "confidence": 0.88,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Interface engineering of spin triplet Cooper pairs for spin-valve implementation",
@@ -4457,11 +4459,13 @@
         "Kartik Senapati"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 0.0,
-      "yearScore": 0.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -4470,9 +4474,9 @@
       "itemId": "t43iux1e9npo51l7hna",
       "originalTitle": "Parallel Simulation of Josephson Junctions With Multiplicative Noise",
       "status": "accepted",
-      "confidence": 0.88,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Parallel Simulation of Josephson Junctions With Multiplicative Noise",
@@ -4487,11 +4491,13 @@
         "Giovanni Filatrella"
       ],
       "year": 2018,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 0.0,
-      "yearScore": 0.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -4500,9 +4506,9 @@
       "itemId": "w8w5plmeioyxa54l57e",
       "originalTitle": "Scaling of qubit coherence in quantum dot based Majorana chains: Rabi and Ramsey oscillations of Majorana qubits formed by four and six quantum dots",
       "status": "accepted",
-      "confidence": 0.88,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Scaling of qubit coherence in quantum dot based Majorana chains: Rabi and Ramsey oscillations of Majorana qubits formed by four and six quantum dots",
@@ -4514,11 +4520,13 @@
         "S. Das Sarma"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 0.0,
-      "yearScore": 0.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -4527,9 +4535,9 @@
       "itemId": "hhzl6mk8vi94cov50zg",
       "originalTitle": "The Superconducting Talbot Effect in Phased-Array Josephson Junctions",
       "status": "accepted",
-      "confidence": 0.88,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "The Superconducting Talbot Effect in Phased-Array Josephson Junctions",
@@ -4541,11 +4549,13 @@
         "Ziying Li"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 0.0,
-      "yearScore": 0.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -4554,9 +4564,9 @@
       "itemId": "q1yh0yuxsqaq4fgcg1c",
       "originalTitle": "Altermagnetism in Folded Iron Chain Systems",
       "status": "accepted",
-      "confidence": 0.88,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Altermagnetism in Folded Iron Chain Systems",
@@ -4572,11 +4582,12 @@
         "Elbio R. Dagotto"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 0.0,
-      "yearScore": 0.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -4585,9 +4596,9 @@
       "itemId": "z5z2hrx1hdlpkyzinse",
       "originalTitle": "Hidden Staggered Superconducting Order in V2Se2O-Family Altermagnets",
       "status": "accepted",
-      "confidence": 0.88,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Hidden Staggered Superconducting Order in V2Se2O-Family Altermagnets",
@@ -4601,11 +4612,13 @@
         "Junwei Liu"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 0.0,
-      "yearScore": 0.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -4642,9 +4655,9 @@
       "itemId": "d817f6ri9lq1rf0fyoh",
       "originalTitle": "Majorana Edge-to-bound State Transition in Interferometric Superconductor Rings",
       "status": "accepted",
-      "confidence": 0.88,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Majorana Edge-to-bound State Transition in Interferometric Superconductor Rings",
@@ -4666,11 +4679,12 @@
         "Qianghua Wang"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 0.0,
-      "yearScore": 0.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -4679,9 +4693,9 @@
       "itemId": "ir2dzq5cycfeh7zwknd",
       "originalTitle": "Majorana Zero Modes in Fractional Vortices",
       "status": "accepted",
-      "confidence": 0.88,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Majorana Zero Modes in Fractional Vortices",
@@ -4697,11 +4711,13 @@
         "Noah F. Q. Yuan"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 0.0,
-      "yearScore": 0.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -4710,9 +4726,9 @@
       "itemId": "1dlj9kebwudbbu5vufd",
       "originalTitle": "Strain-tunable van Hove singularity and superconducting dome in monolayer kagome metal CsTi3Bi5",
       "status": "accepted",
-      "confidence": 0.9721,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Strain-tunable van Hove singularity and superconducting dome in monolayer kagome metal CsTi$_3$Bi$_5$",
@@ -4727,11 +4743,13 @@
         "Wenjian Lu"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 0.9744,
-      "authorScore": 0.9474,
+      "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -4769,9 +4787,9 @@
       "itemId": "jrcwuxwzgkk55obp1rc",
       "originalTitle": "Dynamics of Majorana tetron qubits under quasiparticle poisoning",
       "status": "accepted",
-      "confidence": 1.0,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Dynamics of Majorana tetron qubits under quasiparticle poisoning",
@@ -4783,11 +4801,13 @@
         "Bernard van Heck"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -4796,9 +4816,9 @@
       "itemId": "qxqqlz3n2tl0cyfqdrg",
       "originalTitle": "Electrical injection and control of vector spin flow in altermagnets",
       "status": "accepted",
-      "confidence": 0.9855,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Electrical injection and control of vector spin flow in altermagnets",
@@ -4812,11 +4832,12 @@
         "Tao Yu"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 0.9091,
+      "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -4825,9 +4846,9 @@
       "itemId": "242dubo2tjz9uvpep7e",
       "originalTitle": "Gate-tunable superconductor-semiconductor coupling and its impact on zero-energy modes in PbTe-Pb nanowires",
       "status": "accepted",
-      "confidence": 0.88,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Gate-tunable superconductor-semiconductor coupling and its impact on zero-energy modes in PbTe-Pb nanowires",
@@ -4849,11 +4870,13 @@
         "Lining Yang"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 0.0,
-      "yearScore": 0.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -4862,9 +4885,9 @@
       "itemId": "nsm9p9ziughwmjvghnf",
       "originalTitle": "Higher-order topological quantum battery",
       "status": "accepted",
-      "confidence": 0.88,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Higher-order topological quantum battery",
@@ -4875,11 +4898,13 @@
         "Motohiko Ezawa"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 0.0,
-      "yearScore": 0.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -4888,9 +4913,9 @@
       "itemId": "vm7r9oqormrps7afgja",
       "originalTitle": "Mirror-symmetry engineering of altermagnetism based on monolayer hexagonal lattices",
       "status": "accepted",
-      "confidence": 0.99,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "exact-arxiv",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Mirror-symmetry engineering of altermagnetism based on monolayer hexagonal lattices",
@@ -4902,11 +4927,12 @@
         "Zhi-Gang Shao"
       ],
       "year": 2026,
-      "identifierMatch": "arxiv",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 0.0,
-      "yearScore": 0.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
@@ -4916,9 +4942,9 @@
       "itemId": "ck0xpu247hcafi7nv8d",
       "originalTitle": "Parity-Selective Quantum Interference in Unconventional Magnets",
       "status": "accepted",
-      "confidence": 0.88,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Parity-Selective Quantum Interference in Unconventional Magnets",
@@ -4933,11 +4959,13 @@
         "X. C. Xie"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 0.0,
-      "yearScore": 0.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -4946,9 +4974,9 @@
       "itemId": "eu50p9gg3fyu3rrjlgd",
       "originalTitle": "Quantized conductance at the Majorana phase transition in a disordered superconducting wire",
       "status": "accepted",
-      "confidence": 0.96,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Quantized Conductance at the Majorana Phase Transition in a Disordered Superconducting Wire",
@@ -4963,11 +4991,13 @@
         "C. W. J. Beenakker"
       ],
       "year": 2011,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
       "authorScore": 1.0,
-      "yearScore": 0.5,
+      "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -4976,9 +5006,9 @@
       "itemId": "y7jtwv7l7bdbf1w2zug",
       "originalTitle": "Quantum Monte-Carlo study of spin-valley ferromagnetism in rhombohedral graphene",
       "status": "accepted",
-      "confidence": 0.99,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "exact-arxiv",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Quantum Monte-Carlo study of spin-valley ferromagnetism in rhombohedral graphene",
@@ -4993,11 +5023,12 @@
         "Chunli Huang"
       ],
       "year": 2026,
-      "identifierMatch": "arxiv",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 0.0,
-      "yearScore": 0.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
@@ -5007,9 +5038,9 @@
       "itemId": "j98oq626z1cda2f10vh",
       "originalTitle": "Spin-conserving and spin-flip magnetic scattering in the altermagnetic spin-splitter effect",
       "status": "accepted",
-      "confidence": 0.99,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "exact-arxiv",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Spin-conserving and spin-flip magnetic scattering in the altermagnetic spin-splitter effect",
@@ -5021,11 +5052,12 @@
         "Hao Yu"
       ],
       "year": 2026,
-      "identifierMatch": "arxiv",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 0.0,
-      "yearScore": 0.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
@@ -5035,9 +5067,9 @@
       "itemId": "dmxq47osbkf942x29pb",
       "originalTitle": "Topological Transitions of Evanescent Waves",
       "status": "accepted",
-      "confidence": 1.0,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Topological Transitions of Evanescent Waves",
@@ -5052,11 +5084,13 @@
         "Frank Schindler"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -5065,9 +5099,9 @@
       "itemId": "h5nebi30cn4m6dgmfod",
       "originalTitle": "Superconducting qubit based on altermagnets",
       "status": "accepted",
-      "confidence": 0.92,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Superconducting qubit based on altermagnets",
@@ -5081,11 +5115,13 @@
         "Peng-Bo Li"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 0.0,
+      "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -5094,9 +5130,9 @@
       "itemId": "oschj2z1x1gy4tycpva",
       "originalTitle": "Time-reversal-odd Transport in Odd-Parity Magnets",
       "status": "accepted",
-      "confidence": 0.88,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Time-reversal-odd Transport in Odd-Parity Magnets",
@@ -5111,11 +5147,13 @@
         "Wanxiang Feng"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 0.0,
-      "yearScore": 0.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -5124,9 +5162,9 @@
       "itemId": "pneafjy3799of4l8gua",
       "originalTitle": "Heat current and noise in a point-like junction between normal metal and fractional quantum Hall edge state with ν= 1/3",
       "status": "accepted",
-      "confidence": 1.0,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Heat current and noise in a point-like junction between normal metal and fractional quantum hall edge state with $ν= 1/3$",
@@ -5140,11 +5178,13 @@
         "Adeline Crépieux"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -5153,9 +5193,9 @@
       "itemId": "y49ct04t8ivun72nknd",
       "originalTitle": "Heterogeneous superconductivity emerging from a charge-stripe state in kagome lattices",
       "status": "accepted",
-      "confidence": 0.88,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Heterogeneous superconductivity emerging from a charge-stripe state in kagome lattices",
@@ -5177,11 +5217,12 @@
         "Zhenyu Wang"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 0.0,
-      "yearScore": 0.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -5190,9 +5231,9 @@
       "itemId": "ubemtnj1tu0gxnlugkb",
       "originalTitle": "Intrinsic Raman Modes and Crystal Symmetry of Altermagnetic alpha-MnTe",
       "status": "accepted",
-      "confidence": 0.9571,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Intrinsic Raman Modes and Crystal Symmetry of Altermagnetic $α$-MnTe",
@@ -5214,11 +5255,12 @@
         "卢炳儒"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 0.9559,
-      "authorScore": 0.9412,
+      "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -5227,9 +5269,9 @@
       "itemId": "6ppb046lxaycyq2rnlf",
       "originalTitle": "Altermagnetism-induced higher-order topological Dirac semimetals in two-dimensional nonsymmorphic systems",
       "status": "accepted",
-      "confidence": 0.88,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Altermagnetism-induced higher-order topological Dirac semimetals in two-dimensional nonsymmorphic systems",
@@ -5243,11 +5285,13 @@
         "Qing-Feng Sun"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 0.0,
-      "yearScore": 0.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -5256,9 +5300,9 @@
       "itemId": "ziek5eccwh47xd6lbla",
       "originalTitle": "Majorana corner modes and tunable braiding in an altermagnet-superconductor heterostructure",
       "status": "accepted",
-      "confidence": 0.88,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Majorana corner modes and tunable braiding in an altermagnet-superconductor heterostructure",
@@ -5274,11 +5318,13 @@
         "Yajie Wu"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 0.0,
-      "yearScore": 0.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -5287,9 +5333,9 @@
       "itemId": "hws3iip5x2amw3eji0f",
       "originalTitle": "Nonlinear Interaction and Topological Selection Rules in two Skyrmion Merging: Emergence of Skyrmionium Textures",
       "status": "accepted",
-      "confidence": 0.88,
+      "confidence": 0.995,
       "method": "openalex-id-revalidated",
-      "verification": "composite",
+      "verification": "exact-doi",
       "verified": true,
       "stage": "index",
       "candidateTitle": "Nonlinear Interaction and Topological Selection Rules in two Skyrmion Merging: Emergence of Skyrmionium Textures",
@@ -5302,11 +5348,13 @@
         "R. Sbiaa"
       ],
       "year": 2026,
-      "identifierMatch": "",
+      "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 0.0,
-      "yearScore": 0.0,
+      "authorScore": 1.0,
+      "yearScore": 1.0,
       "warnings": [
+        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
