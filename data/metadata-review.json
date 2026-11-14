@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "updaterVersion": "5.3",
   "mode": "daily",
-  "generatedAt": "2026-11-13T08:09:14.796771+00:00",
+  "generatedAt": "2026-11-14T07:48:42.725145+00:00",
   "acceptThreshold": 0.78,
   "summary": {
     "accepted": 140,
@@ -11,8 +11,8 @@
     "error": 0,
     "conflicts": 1,
     "pdfParsed": 0,
-    "exactVerified": 140,
-    "compositeVerified": 0
+    "exactVerified": 139,
+    "compositeVerified": 1
   },
   "results": [
     {
@@ -2835,14 +2835,14 @@
       "itemId": "35lxgvaxq9ommvq72ph",
       "originalTitle": "Symmetry Criteria for Unconventional Magnetism",
       "status": "accepted",
-      "confidence": 0.995,
+      "confidence": 0.9188,
       "method": "openalex-id-revalidated",
-      "verification": "exact-doi",
+      "verification": "composite",
       "verified": true,
       "stage": "index",
-      "candidateTitle": "Spin Group Symmetry Criteria For Unconventional Magnetism",
-      "currentTitle": "Spin Group Symmetry Criteria For Unconventional Magnetism",
-      "doi": "10.48550/arxiv.2603.07643",
+      "candidateTitle": "Spin group symmetry criteria for unconventional magnetism",
+      "currentTitle": "Spin group symmetry criteria for unconventional magnetism",
+      "doi": "10.1016/j.newton.2026.100735",
       "openAlexId": "https://openalex.org/W7134843066",
       "authors": [
         "Xun-Jiang Luo",
@@ -2851,7 +2851,7 @@
         "K. T. Law"
       ],
       "year": 2026,
-      "identifierMatch": "doi",
+      "identifierMatch": "",
       "titleScore": 0.8932,
       "authorScore": 1.0,
       "yearScore": 1.0,
