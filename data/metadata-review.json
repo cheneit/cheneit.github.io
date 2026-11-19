@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "updaterVersion": "5.3",
   "mode": "daily",
-  "generatedAt": "2026-11-18T08:46:09.674023+00:00",
+  "generatedAt": "2026-11-19T09:03:10.561551+00:00",
   "acceptThreshold": 0.78,
   "summary": {
     "accepted": 140,
@@ -148,13 +148,13 @@
         "Alessandro Crippa",
         "Elia Strambini",
         "Mario Cuoco",
-        "Luigi Amico A",
+        "Luigi Amico",
         "Francesco Giazotto"
       ],
       "year": 2025,
       "identifierMatch": "doi",
       "titleScore": 1.0,
-      "authorScore": 0.9861,
+      "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [],
       "message": ""
@@ -498,7 +498,8 @@
       "yearScore": 0.5,
       "warnings": [
         "stored-openalex-id-title-conflict",
-        "stored-openalex-id-author-conflict"
+        "stored-openalex-id-author-conflict",
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
     },
@@ -721,7 +722,9 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [],
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
@@ -1284,21 +1287,22 @@
       "itemId": "bhiyz3nvczsmjjjv5ic",
       "originalTitle": "XC_PhD_thesis_basis",
       "status": "review",
-      "confidence": 0.4178,
+      "confidence": 0.384,
       "method": "title-search",
       "verification": "unverified",
       "verified": false,
       "stage": "index",
-      "candidateTitle": "Bimonadicity and the Explicit Basis Property",
+      "candidateTitle": "Self-Index based on LZ77 (thesis)",
       "currentTitle": "",
-      "doi": "10.70930/tac/mhnxxdtd",
-      "openAlexId": "https://openalex.org/W589623120",
+      "doi": "10.48550/arxiv.1112.4578",
+      "openAlexId": "https://openalex.org/W2399752528",
       "authors": [
-        "Matías Menni"
+        "Sebastian Kreft",
+        "Gonzalo Navarro"
       ],
-      "year": 2012,
+      "year": 2011,
       "identifierMatch": "",
-      "titleScore": 0.4444,
+      "titleScore": 0.4,
       "authorScore": 0.0,
       "yearScore": 0.0,
       "warnings": [],
@@ -1327,7 +1331,9 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [],
+      "warnings": [
+        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
@@ -1603,7 +1609,7 @@
         "Joseph Weston",
         "Benoit Gaury",
         "Benoît Rossignol",
-        "Christoph Groth",
+        "Christoph Waldemar Groth",
         "Xavier Waintal"
       ],
       "year": 2021,
@@ -1929,7 +1935,9 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [],
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
@@ -2244,9 +2252,7 @@
       "titleScore": 0.8824,
       "authorScore": 1.0,
       "yearScore": 0.5,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -2273,9 +2279,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 0.5,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -3965,13 +3969,13 @@
       "authors": [
         "Anonymous",
         "Kristian Mæland",
-        "Haye Hinrichsen B",
+        "Haye Hinrichsen",
         "Björn Trauzettel"
       ],
       "year": 2026,
       "identifierMatch": "doi",
       "titleScore": 0.7571,
-      "authorScore": 0.8378,
+      "authorScore": 0.8534,
       "yearScore": 1.0,
       "warnings": [
         "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
