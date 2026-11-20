@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "updaterVersion": "5.3",
   "mode": "daily",
-  "generatedAt": "2026-11-19T09:03:10.561551+00:00",
+  "generatedAt": "2026-11-20T08:46:17.700398+00:00",
   "acceptThreshold": 0.78,
   "summary": {
     "accepted": 140,
@@ -498,8 +498,7 @@
       "yearScore": 0.5,
       "warnings": [
         "stored-openalex-id-title-conflict",
-        "stored-openalex-id-author-conflict",
-        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests"
+        "stored-openalex-id-author-conflict"
       ],
       "message": ""
     },
@@ -722,9 +721,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -1331,9 +1328,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -1709,16 +1704,16 @@
       "authors": [
         "Zhuying Wang",
         "Shuikang Yu",
+        "Xingkai Cheng",
         "Xiaoyu Xiao",
+        "Wanru Ma",
         "Yitian Ma",
         "Feixiong Quan",
         "Hongxi Song",
         "Yunmei Zhang",
         "Priti Yadav",
         "Haohao Sheng",
-        "Xiangbiao Shi",
-        "Zhijun Wang",
-        "Qian Niu"
+        "Xiangbiao Shi"
       ],
       "year": 2026,
       "identifierMatch": "doi",
@@ -1783,11 +1778,11 @@
         "Kai Chang",
         "Hongxin Yang"
       ],
-      "year": 2025,
+      "year": 2026,
       "identifierMatch": "doi",
       "titleScore": 1.0,
       "authorScore": 1.0,
-      "yearScore": 0.5,
+      "yearScore": 1.0,
       "warnings": [],
       "message": ""
     },
@@ -1935,9 +1930,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -2252,7 +2245,9 @@
       "titleScore": 0.8824,
       "authorScore": 1.0,
       "yearScore": 0.5,
-      "warnings": [],
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
@@ -2279,7 +2274,9 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 0.5,
-      "warnings": [],
+      "warnings": [
+        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      ],
       "message": ""
     },
     {
