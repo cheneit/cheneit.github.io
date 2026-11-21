@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "updaterVersion": "5.3",
   "mode": "daily",
-  "generatedAt": "2026-11-20T08:46:17.700398+00:00",
+  "generatedAt": "2026-11-21T08:28:47.489806+00:00",
   "acceptThreshold": 0.78,
   "summary": {
     "accepted": 140,
@@ -1272,11 +1272,11 @@
         "Prashant Gupta",
         "Dirk K. Morr"
       ],
-      "year": 2025,
+      "year": 2026,
       "identifierMatch": "doi",
       "titleScore": 1.0,
       "authorScore": 1.0,
-      "yearScore": 1.0,
+      "yearScore": 0.5,
       "warnings": [],
       "message": ""
     },
@@ -1549,11 +1549,11 @@
         "Yongpan Li",
         "Cheng‐Cheng Liu"
       ],
-      "year": 2025,
+      "year": 2026,
       "identifierMatch": "doi",
       "titleScore": 1.0,
       "authorScore": 1.0,
-      "yearScore": 1.0,
+      "yearScore": 0.5,
       "warnings": [],
       "message": ""
     },
@@ -1804,11 +1804,11 @@
         "Christophe Berthod",
         "Louk Rademaker"
       ],
-      "year": 2025,
+      "year": 2026,
       "identifierMatch": "doi",
       "titleScore": 0.814,
       "authorScore": 1.0,
-      "yearScore": 0.5,
+      "yearScore": 1.0,
       "warnings": [],
       "message": ""
     },
@@ -1866,11 +1866,11 @@
         "Niclas Heinsdorf",
         "Marcel Franz"
       ],
-      "year": 2025,
+      "year": 2026,
       "identifierMatch": "doi",
       "titleScore": 1.0,
       "authorScore": 1.0,
-      "yearScore": 0.5,
+      "yearScore": 1.0,
       "warnings": [],
       "message": ""
     },
@@ -1893,11 +1893,11 @@
         "Yong Guo",
         "Yu-Xian Li"
       ],
-      "year": 2025,
+      "year": 2026,
       "identifierMatch": "doi",
       "titleScore": 0.5375,
       "authorScore": 1.0,
-      "yearScore": 0.5,
+      "yearScore": 1.0,
       "warnings": [
         "stored-openalex-id-title-conflict"
       ],
@@ -2099,11 +2099,11 @@
         "Efstratios Manousakis",
         "Efthimios Kaxiras"
       ],
-      "year": 2025,
+      "year": 2026,
       "identifierMatch": "doi",
       "titleScore": 1.0,
       "authorScore": 1.0,
-      "yearScore": 0.5,
+      "yearScore": 1.0,
       "warnings": [],
       "message": ""
     },
@@ -2240,11 +2240,11 @@
         "E. Rossi",
         "W. Pan"
       ],
-      "year": 2025,
+      "year": 2026,
       "identifierMatch": "doi",
       "titleScore": 0.8824,
       "authorScore": 1.0,
-      "yearScore": 0.5,
+      "yearScore": 1.0,
       "warnings": [
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
@@ -2269,11 +2269,11 @@
         "Pauli Virtanen",
         "Tero Tapio Heikkilä"
       ],
-      "year": 2025,
+      "year": 2026,
       "identifierMatch": "doi",
       "titleScore": 1.0,
       "authorScore": 1.0,
-      "yearScore": 0.5,
+      "yearScore": 1.0,
       "warnings": [
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
