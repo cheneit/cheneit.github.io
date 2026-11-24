@@ -2,12 +2,12 @@
   "schemaVersion": 2,
   "updaterVersion": "5.3",
   "mode": "daily",
-  "generatedAt": "2026-11-23T09:16:36.503121+00:00",
+  "generatedAt": "2026-11-24T11:07:45.770640+00:00",
   "acceptThreshold": 0.78,
   "summary": {
     "accepted": 140,
-    "review": 16,
-    "unmatched": 27,
+    "review": 17,
+    "unmatched": 26,
     "error": 0,
     "conflicts": 1,
     "pdfParsed": 0,
@@ -1250,9 +1250,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -1279,33 +1277,32 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 0.5,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
       "itemId": "bhiyz3nvczsmjjjv5ic",
       "originalTitle": "XC_PhD_thesis_basis",
-      "status": "unmatched",
-      "confidence": 0.0,
-      "method": "no-result",
+      "status": "review",
+      "confidence": 0.384,
+      "method": "title-search",
       "verification": "unverified",
       "verified": false,
       "stage": "index",
-      "candidateTitle": "",
+      "candidateTitle": "Self-Index based on LZ77 (thesis)",
       "currentTitle": "",
-      "doi": "",
-      "openAlexId": "",
-      "authors": [],
-      "year": null,
-      "identifierMatch": "",
-      "titleScore": null,
-      "authorScore": null,
-      "yearScore": null,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+      "doi": "10.48550/arxiv.1112.4578",
+      "openAlexId": "https://openalex.org/W2399752528",
+      "authors": [
+        "Sebastian Kreft",
+        "Gonzalo Navarro"
       ],
+      "year": 2011,
+      "identifierMatch": "",
+      "titleScore": 0.4,
+      "authorScore": 0.0,
+      "yearScore": 0.0,
+      "warnings": [],
       "message": "No identity-verified daily match"
     },
     {
@@ -1331,10 +1328,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -1369,9 +1363,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -1398,9 +1390,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -1428,9 +1418,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -1456,9 +1444,7 @@
       "titleScore": 0.875,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -1483,8 +1469,7 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
-        "stored-openalex-id-title-conflict",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+        "stored-openalex-id-title-conflict"
       ],
       "message": ""
     },
@@ -1512,9 +1497,7 @@
       "authorScore": 1.0,
       "yearScore": 0.5,
       "warnings": [
-        "stored-openalex-id-title-conflict",
-        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+        "stored-openalex-id-title-conflict"
       ],
       "message": ""
     },
@@ -1545,8 +1528,7 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
-        "stored-openalex-id-title-conflict",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+        "stored-openalex-id-title-conflict"
       ],
       "message": ""
     },
@@ -1555,7 +1537,7 @@
       "originalTitle": "Li2025PRL-Quantum metric-based optical selection rules",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -1572,11 +1554,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 0.5,
-      "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
-        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -1584,7 +1562,7 @@
       "originalTitle": "Abbout2018PRL - Cooperative Charge Pumping and Enhanced Skyrmion Mobility",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -1604,9 +1582,7 @@
       "authorScore": 1.0,
       "yearScore": 0.0,
       "warnings": [
-        "stored-openalex-id-year-conflict",
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+        "stored-openalex-id-year-conflict"
       ],
       "message": ""
     },
@@ -1615,7 +1591,7 @@
       "originalTitle": "Kloss2021NJP - Tkwant a software package for time-dependent quantum transport",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -1637,9 +1613,7 @@
       "authorScore": 1.0,
       "yearScore": 0.0,
       "warnings": [
-        "stored-openalex-id-year-conflict",
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+        "stored-openalex-id-year-conflict"
       ],
       "message": ""
     },
@@ -1648,7 +1622,7 @@
       "originalTitle": "Gruber2025arXiv-Skyrmion Lattice Order Controlled by Confinement Geometry",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -1674,10 +1648,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -1685,7 +1656,7 @@
       "originalTitle": " Lombardi2025CM-Supercurrent_modulation_in_InSb_nanoflag-based_Jos",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -1713,9 +1684,7 @@
       "authorScore": 1.0,
       "yearScore": 0.5,
       "warnings": [
-        "stored-openalex-id-title-conflict",
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+        "stored-openalex-id-title-conflict"
       ],
       "message": ""
     },
@@ -1724,7 +1693,7 @@
       "originalTitle": "Wang2025arXiv-Atomic-scale spin sensing of a 2D d-wave altermagnet via helical tunneling",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -1751,10 +1720,7 @@
       "titleScore": 0.9933,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -1762,7 +1728,7 @@
       "originalTitle": "Fu2025arXiv-Atomic-scale visualization of d-wave altermagnetism",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -1787,10 +1753,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 0.5,
-      "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -1798,7 +1761,7 @@
       "originalTitle": "Ga2026PRB-Chiral geometry driven chiral magnetism",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -1820,10 +1783,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -1831,7 +1791,7 @@
       "originalTitle": "Venditti2026PRB-Angular momentum of vortex-core MZM",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -1849,10 +1809,7 @@
       "titleScore": 0.814,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -1860,7 +1817,7 @@
       "originalTitle": "Sun2016PRL-MZM detected with spin selective Andreev reflection in the vortex of a topological superconductor",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -1888,9 +1845,7 @@
       "authorScore": 1.0,
       "yearScore": 0.0,
       "warnings": [
-        "stored-openalex-id-year-conflict",
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+        "stored-openalex-id-year-conflict"
       ],
       "message": ""
     },
@@ -1899,7 +1854,7 @@
       "originalTitle": "Heinsdorf2026PRB-Proximitizing altermagnets with conventional superconductors",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -1916,11 +1871,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
-        "arxiv-search failed: request failed: HTTP Error 429: Too Many Requests",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -1928,7 +1879,7 @@
       "originalTitle": "Wang2026PRB-Quantized CAR in AM-AMTSC-AM heterojunction",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -1948,9 +1899,7 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
-        "stored-openalex-id-title-conflict",
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+        "stored-openalex-id-title-conflict"
       ],
       "message": ""
     },
@@ -1959,7 +1908,7 @@
       "originalTitle": "Dong2025arXiv-Spontaneous emergence of altermagnetism in the single-orbital extended Hubbard model",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -1981,10 +1930,7 @@
       "titleScore": 1.0,
       "authorScore": 1.0,
       "yearScore": 1.0,
-      "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
-      ],
+      "warnings": [],
       "message": ""
     },
     {
@@ -1992,7 +1938,7 @@
       "originalTitle": "Nowak2025PRB-sgm anistropy Fermi surface",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2014,9 +1960,7 @@
       "authorScore": 1.0,
       "yearScore": 0.5,
       "warnings": [
-        "stored-openalex-id-title-conflict",
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+        "stored-openalex-id-title-conflict"
       ],
       "message": ""
     },
@@ -2025,7 +1969,7 @@
       "originalTitle": "Cayao2026JPSJ-NH JJ with Four MZM",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2043,9 +1987,7 @@
       "authorScore": 1.0,
       "yearScore": 0.5,
       "warnings": [
-        "stored-openalex-id-title-conflict",
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
-        "title-search failed: request failed: HTTP Error 429: Too Many Requests"
+        "stored-openalex-id-title-conflict"
       ],
       "message": ""
     },
@@ -2100,7 +2042,7 @@
       "originalTitle": "Wang2026arXiv-Electric field switching of altermagnetic spin-splitting in multiferroic skyrmions",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2128,7 +2070,6 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
@@ -2138,7 +2079,7 @@
       "originalTitle": "Zhu2026PRB-Wavefunction textures in twisted bilayer graphene from first principles",
       "status": "accepted",
       "confidence": 0.995,
-      "method": "openalex-id-revalidated",
+      "method": "doi-query",
       "verification": "exact-doi",
       "verified": true,
       "stage": "index",
@@ -2160,7 +2101,6 @@
       "authorScore": 1.0,
       "yearScore": 1.0,
       "warnings": [
-        "DOI query failed: request failed: HTTP Error 429: Too Many Requests",
         "title-search failed: request failed: HTTP Error 429: Too Many Requests"
       ],
       "message": ""
